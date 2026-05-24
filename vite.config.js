@@ -11,7 +11,7 @@ import inject from "@rollup/plugin-inject";
 const isElectron = process.env.ELECTRON === "true";
 
 export default defineConfig({
-  base: isElectron ? "./" : "/PTWASpecialEducation/",
+  base: isElectron ? "./" : "/PTWASPEDAaron/",
   plugins: [
     vue(),
     inject({
