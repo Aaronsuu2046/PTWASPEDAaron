@@ -42,6 +42,10 @@ export default {
         );
       },
     },
+    isWrong: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ["numberChanged", "replyAnswer"],
   data() {
@@ -60,6 +64,17 @@ export default {
         result.splice(insertPosition, 0, ".");
       }
       return result;
+    },
+  },
+  watch: {
+    isWrong(val) {
+      if (val) {
+        this.isChecking = true;
+        this.checkDigits();
+      } else {
+        this.isChecking = false;
+        this.correctDigits = [];
+      }
     },
   },
   mounted() {
@@ -134,7 +149,7 @@ export default {
     .digit {
       font-size: 2rem;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 2px solid #ccc;
       min-width: 40px;
       text-align: center;
       cursor: pointer;
@@ -145,7 +160,7 @@ export default {
       }
 
       &--error {
-        color: red;
+        border-color: red;
       }
     }
   }
