@@ -141,9 +141,7 @@ export default {
       console.log("浮動計算板已關閉");
     },
     closeScratch() {
-      // 當計算紙關閉時，回到功能選擇狀態
-      this.activeTab = "none";
-      console.log("計算紙已關閉，回到功能選擇");
+      this.$emit("close");
     },
     saveScratchCanvas(canvasImage) {
       this.scratchBackground = canvasImage;
