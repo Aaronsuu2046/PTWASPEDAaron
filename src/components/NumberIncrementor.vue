@@ -1,6 +1,6 @@
 ﻿<template>
   <div class="number-incrementor__container">
-    <div class="number-display">
+    <div class="number-display" :class="{ 'number-display--error': isWrong }">
       <span v-if="componentConfig.prefix" class="prefix">{{
         componentConfig.prefix
       }}</span>
@@ -41,6 +41,10 @@ export default {
           (!prop.decimalPlaces || typeof prop.decimalPlaces === "number")
         );
       },
+    },
+    isWrong: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ["numberChanged", "replyAnswer"],
@@ -116,6 +120,12 @@ export default {
 
   .number-display {
     display: flex;
+    border: 2px solid transparent;
+    border-radius: 4px;
+
+    &--error {
+      border-color: red;
+    }
 
     .prefix,
     .suffix {

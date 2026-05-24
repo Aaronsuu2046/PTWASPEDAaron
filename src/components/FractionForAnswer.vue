@@ -4,7 +4,7 @@
       <span v-if="componentConfig.prefix" class="prefix">{{
         componentConfig.prefix
       }}</span>
-      <div class="fraction-container">
+      <div class="fraction-container" :class="{ 'fraction-container--error': isWrong }">
         <input
           ref="numerator"
           class="fraction-input numerator"
@@ -45,6 +45,10 @@ export default {
     componentConfig: {
       type: Object,
       required: true,
+    },
+    isWrong: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ["recordAnswer", "replyAnswer"],
@@ -152,6 +156,13 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.fraction-container--error {
+  border-color: red;
 }
 
 .fraction-input {
