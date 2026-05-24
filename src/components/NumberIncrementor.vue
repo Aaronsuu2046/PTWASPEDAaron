@@ -1,6 +1,6 @@
 ﻿<template>
   <div class="number-incrementor__container">
-    <div class="number-display" :class="{ 'number-display--error': isWrong }">
+    <div class="number-display">
       <span v-if="componentConfig.prefix" class="prefix">{{
         componentConfig.prefix
       }}</span>
@@ -66,6 +66,17 @@ export default {
       return result;
     },
   },
+  watch: {
+    isWrong(val) {
+      if (val) {
+        this.isChecking = true;
+        this.checkDigits();
+      } else {
+        this.isChecking = false;
+        this.correctDigits = [];
+      }
+    },
+  },
   mounted() {
     emitter.on("checkAnswer", () => {
       this.isChecking = true;
@@ -120,12 +131,6 @@ export default {
 
   .number-display {
     display: flex;
-    border: 2px solid transparent;
-    border-radius: 4px;
-
-    &--error {
-      border-color: red;
-    }
 
     .prefix,
     .suffix {
@@ -144,7 +149,7 @@ export default {
     .digit {
       font-size: 2rem;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 2px solid #ccc;
       min-width: 40px;
       text-align: center;
       cursor: pointer;
@@ -155,7 +160,7 @@ export default {
       }
 
       &--error {
-        color: red;
+        border-color: red;
       }
     }
   }
