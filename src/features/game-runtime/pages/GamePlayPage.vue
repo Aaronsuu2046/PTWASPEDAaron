@@ -135,6 +135,7 @@
     </section>
     <CalculatorTool
       v-if="calculatorToolVisible"
+      ref="calculatorTool"
       :visible="calculatorToolVisible"
       @close="calculatorToolVisible = false"
       @save-canvas="saveCanvasBackground"
@@ -416,6 +417,8 @@ export default {
       });
     },
     nextQuestion() {
+      this.scratchSheetBackground = null;
+      this.$refs.calculatorTool?.clearDrawing();
       this.isPassLevel[this.Nowlevel - 1] = true;
       this.resetWrongTimes();
       if (this.checkUnansweredQuestions()) {
@@ -463,6 +466,8 @@ export default {
       return false;
     },
     previousQuestion() {
+      this.scratchSheetBackground = null;
+      this.$refs.calculatorTool?.clearDrawing();
       this.resetWrongTimes();
       if (this.Nowlevel > 1) {
         this.Nowlevel--;

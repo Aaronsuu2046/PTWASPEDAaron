@@ -241,10 +241,14 @@ export default {
         }
       });
 
-      Object.entries(this.finalAnswers).forEach(([index, answer]) => {
-        if (answer !== this.componentConfig.finalAnswers[index]) {
-          wrongFinal.add(index);
-        }
+      const finalPositions = this.getFinalInputPositions();
+      finalPositions.forEach((pos, i) => {
+        const answer = (this.finalAnswers[pos] || "").toString().trim();
+        const correct = (this.componentConfig.finalAnswers?.[i] || "").toString();
+        const isCorrect = !isNaN(correct)
+          ? Number(answer) === Number(correct)
+          : answer === correct;
+        if (!isCorrect) wrongFinal.add(String(pos));
       });
 
       this.wrongEquationInputs = wrongEq;
@@ -281,10 +285,26 @@ export default {
       return userAnswer === this.answers[answerIndex];
     },
 
+    getFinalInputPositions() {
+      return this.parsedFinalAnswer
+        .map((item, idx) => (item.isInput ? idx : null))
+        .filter((idx) => idx !== null);
+    },
+
     areFinalAnswersCorrect() {
-      return Object.entries(this.finalAnswers).every(
-        ([index, answer]) => answer === this.componentConfig.finalAnswers[index]
-      );
+      if (
+        !this.componentConfig.finalAnswers ||
+        this.componentConfig.finalAnswers.length === 0
+      )
+        return true;
+      const positions = this.getFinalInputPositions();
+      return positions.every((pos, i) => {
+        const answer = (this.finalAnswers[pos] || "").toString().trim();
+        const correct = (this.componentConfig.finalAnswers[i] || "").toString();
+        if (answer === "") return false;
+        if (!isNaN(correct)) return Number(answer) === Number(correct);
+        return answer === correct;
+      });
     },
 
     parseFinalAnswerString() {
