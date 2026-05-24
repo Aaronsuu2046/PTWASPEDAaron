@@ -5,6 +5,15 @@
         <img :src="logo" alt="Program the World" />
       </RouterLink>
     </div>
+    <div class="global-search">
+      <input
+        v-model="searchKeyword"
+        type="text"
+        placeholder="輸入課程代碼搜尋"
+        @keyup.enter="doSearch"
+      />
+      <button type="button" @click="doSearch">搜尋</button>
+    </div>
     <ul>
       <li>
         <a href="https://programtheworld.tw/donate/donate" alt="捐款">
@@ -53,7 +62,16 @@ export default {
       effort: getSystemAssets("effort.png", "nav_bar"),
       about: getSystemAssets("about.png", "nav_bar"),
       facebook: getSystemAssets("facebook.png", "nav_bar"),
+      searchKeyword: "",
     };
+  },
+  methods: {
+    doSearch() {
+      const q = this.searchKeyword.trim();
+      if (q) {
+        this.$router.push({ name: "browser", params: { grade: "3" }, query: { q } });
+      }
+    },
   },
 };
 </script>
@@ -71,6 +89,49 @@ nav {
 nav div img {
   height: 4rem;
   width: auto;
+}
+
+.global-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input {
+    height: 2.2rem;
+    padding: 0 0.8rem;
+    border: 2px solid #e0a070;
+    border-radius: 20px;
+    font-size: 1rem;
+    width: 220px;
+    outline: none;
+    background: #fff8f3;
+
+    &:focus {
+      border-color: #c0703a;
+    }
+  }
+
+  button {
+    height: 2.2rem;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #c0703a;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #9a5a2e;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  .global-search {
+    display: none;
+  }
 }
 
 nav ul {

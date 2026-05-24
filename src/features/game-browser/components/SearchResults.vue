@@ -20,7 +20,7 @@
         :key="item.id"
         class="card game-card"
         style="width: 18rem"
-        @click="$emit('enterGame', item.id, item.Name)"
+        @click="$emit('enterGame', item.id, item.Name, item.grade, item.subject)"
       >
         <game-card
           :game-info="item"
