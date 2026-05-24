@@ -1,0 +1,1091 @@
+{
+  "id": "MA3096",
+  "introvideo": "src",
+  "GameType": "SelfDefine",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "塗一塗，再比比看，在口裡填入>、<或="
+  },
+  "GameConfig": {
+    "CheckAnswerMode": "Button"
+  },
+  "Questions": [
+    [
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 4,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{8}"
+            },
+            "Suffix": "個圓"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{8}"
+            },
+            "Suffix": "個圓"
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 5,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 5
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 5,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 2,
+                "denominator": 5
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{5}"
+            },
+            "Suffix": "個圓"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{2}{5}"
+            },
+            "Suffix": "個圓"
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 6,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 3,
+                "denominator": 6
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 6,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 4,
+                "denominator": 6
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{3}{6}"
+            },
+            "Suffix": "個圓"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{6}"
+            },
+            "Suffix": "個圓"
+          }
+        ],
+        "Answer": "Small"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 6,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 6
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 6,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 1,
+                "denominator": 6
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{6}"
+            },
+            "Suffix": "個圓"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{1}{6}"
+            },
+            "Suffix": "個圓"
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 3,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "circle",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{3}{8}"
+            },
+            "Suffix": "個圓"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{8}"
+            },
+            "Suffix": "個圓"
+          }
+        ],
+        "Answer": "Small"
+      }
+    ],
+    [
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 3,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 1,
+                "denominator": 3
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 3,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 2,
+                "denominator": 3
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{1}{3}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{2}{3}"
+            }
+          }
+        ],
+        "Answer": "Small"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 5,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 5
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 5,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 3,
+                "denominator": 5
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{5}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{3}{5}"
+            }
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 7,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 3,
+                "denominator": 7
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 7,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 4,
+                "denominator": 7
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{3}{7}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{7}"
+            }
+          }
+        ],
+        "Answer": "Small"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 9,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 7,
+                "denominator": 9
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 9,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 9
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{7}{9}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{9}"
+            }
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 11,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 3,
+                "denominator": 11
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 11,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 7,
+                "denominator": 11
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{3}{11}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{7}{11}"
+            }
+          }
+        ],
+        "Answer": "Small"
+      }
+    ],
+    [
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 4,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 4,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{8}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{8}"
+            }
+          }
+        ],
+        "Answer": "Equal"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 6,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 3,
+                "denominator": 6
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 6,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 6
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{3}{6}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{6}"
+            }
+          }
+        ],
+        "Answer": "Small"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 2,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 8,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 2,
+                "denominator": 8
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{2}{8}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{2}{8}"
+            }
+          }
+        ],
+        "Answer": "Equal"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 10,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 7,
+                "denominator": 10
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 10,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 5,
+                "denominator": 10
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{7}{10}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{10}"
+            }
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 12,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 6,
+                "denominator": 12
+              }
+            }
+          },
+          {
+            "Name": "InteractiveFractionVisual",
+            "Data": {
+              "Numerator": 0,
+              "Denominator": 12,
+              "shape": "rect",
+              "DisplayOnly": false,
+              "answer": {
+                "numerator": 7,
+                "denominator": 12
+              }
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{6}{12}"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{7}{12}"
+            }
+          }
+        ],
+        "Answer": "Small"
+      }
+    ],
+    [
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 4,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 11,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{11}"
+            },
+            "Suffix": "盒蘋果"
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "1盒蘋果"
+            }
+          }
+        ],
+        "Answer": "Small"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 6,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 8,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{6}{11}"
+            },
+            "Suffix": "盒蘋果"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{8}{11}"
+            },
+            "Suffix": "盒蘋果"
+          }
+        ],
+        "Answer": "Small"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 11,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 11,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{11}{11}"
+            },
+            "Suffix": "盒蘋果"
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "1盒蘋果"
+            }
+          }
+        ],
+        "Answer": "Equal"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 11,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 5,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "1盒蘋果"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{11}"
+            },
+            "Suffix": "盒蘋果"
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 5,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 7,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{11}"
+            },
+            "Suffix": "盒蘋果"
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{7}{11}"
+            },
+            "Suffix": "盒蘋果"
+          }
+        ],
+        "Answer": "Small"
+      }
+    ],
+    [
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 4,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 2,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{4}{11}"
+            },
+            "Suffix": "盒蘋果"
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "2顆蘋果"
+            }
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 5,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 5,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{5}{11}"
+            },
+            "Suffix": "盒蘋果"
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "5顆蘋果"
+            }
+          }
+        ],
+        "Answer": "Equal"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 7,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 6,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "7顆蘋果"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{6}{11}"
+            },
+            "Suffix": "盒蘋果"
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 8,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 7,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "8顆蘋果"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{7}{11}"
+            },
+            "Suffix": "盒蘋果"
+          }
+        ],
+        "Answer": "Big"
+      },
+      {
+        "QuestionText": "先塗一塗，再比比看!",
+        "Description": "把>、<或=拖曳到框框中",
+        "Datas": [
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 9,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "FillImages",
+            "Data": {
+              "frame": 11,
+              "frameImage": "apple_frame.png",
+              "fill": 9,
+              "fillImage": "apple_fill.png"
+            }
+          },
+          {
+            "Name": "TextOnly",
+            "Data": {
+              "Text": "9顆蘋果"
+            }
+          },
+          {
+            "Name": "FractionDisplay",
+            "Data": {
+              "Content": "\\frac{9}{11}"
+            },
+            "Suffix": "盒蘋果"
+          }
+        ],
+        "Answer": "Equal"
+      }
+    ]
+  ]
+}

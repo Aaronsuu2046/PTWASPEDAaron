@@ -1,0 +1,39 @@
+{
+    "id": "MA3029",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "[Insert question.]"
+    },
+    "TotalLevel": 1,
+    "GameType": "SelectGameMulti",
+    "GameConfig": {
+
+    },
+    "Hint":{
+
+    },
+    "Questions": [
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "選擇正確的答案"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "請問以下數字中哪個是分數?$question$",
+                    "Selection": [{"Text": "1"},{"Text": "2"},{"Text": "1/4"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "請問以下數字中哪個是分數?$question$",
+                    "Selection": [{"Text": "1/2"},{"Text": "1"}],
+                    "Answer": 0      
+                }
+            ]
+        }
+    ]
+}      

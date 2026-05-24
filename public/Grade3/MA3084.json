@@ -1,0 +1,428 @@
+{
+  "id": "MA3084",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "TotalLevel": 1,
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "1200",
+            "operand2": "1300"
+          },
+          "answer": "2500",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$1公升200毫升 + 1公升300毫升 = $i$公升$i$毫升",
+          "Answer": [2, 500]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "1300",
+            "operand2": "1100"
+          },
+          "answer": "2400",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$1公升300毫升 + 1公升100毫升 = $i$公升$i$毫升",
+          "Answer": [2, 400]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "1100",
+            "operand2": "1200"
+          },
+          "answer": "2300",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$1公升100毫升 + 1公升200毫升 = $i$公升$i$毫升",
+          "Answer": [2, 300]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "1400",
+            "operand2": "1300"
+          },
+          "answer": "2700",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$1公升400毫升 + 1公升300毫升 = $i$公升$i$毫升",
+          "Answer": [2, 700]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "1600",
+            "operand2": "1300"
+          },
+          "answer": "2900",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$1公升600毫升 + 1公升300毫升 = $i$公升$i$毫升",
+          "Answer": [2, 900]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5500",
+            "operand2": "2400"
+          },
+          "answer": "3100",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升500毫升 - 2公升400毫升 = $i$公升$i$毫升",
+          "Answer": [3, 100]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5400",
+            "operand2": "1100"
+          },
+          "answer": "4300",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升400毫升 - 1公升100毫升 = $i$公升$i$毫升",
+          "Answer": [4, 300]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5600",
+            "operand2": "2200"
+          },
+          "answer": "3400",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升600毫升 - 2公升200毫升 = $i$公升$i$毫升",
+          "Answer": [3, 400]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5800",
+            "operand2": "2300"
+          },
+          "answer": "3500",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升800毫升 - 2公升300毫升 = $i$公升$i$毫升",
+          "Answer": [3, 500]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5600",
+            "operand2": "1100"
+          },
+          "answer": "4500",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升600毫升 - 1公升100毫升 = $i$公升$i$毫升",
+          "Answer": [4, 500]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "3000",
+            "operand2": "1100"
+          },
+          "answer": "1900",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$3000毫升 - 1公升100毫升 = $i$毫升$n$單位換算：1公升100毫升 = $i$毫升",
+          "Answer": [1900, 1100]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "4000",
+            "operand2": "1200"
+          },
+          "answer": "2800",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$4000毫升 - 1公升200毫升 = $i$毫升$n$單位換算：1公升200毫升 = $i$毫升",
+          "Answer": [2800, 1200]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5000",
+            "operand2": "1400"
+          },
+          "answer": "3600",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5000毫升 - 1公升400毫升 = $i$毫升$n$單位換算：1公升400毫升 = $i$毫升",
+          "Answer": [3600, 1400]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "6000",
+            "operand2": "1300"
+          },
+          "answer": "4700",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$6000毫升 - 1公升300毫升 = $i$毫升$n$單位換算：1公升300毫升 = $i$毫升",
+          "Answer": [4700, 1300]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "2000",
+            "operand2": "1200"
+          },
+          "answer": "800",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$2000毫升 - 1公升200毫升 = $i$毫升$n$單位換算：1公升200毫升 = $i$毫升",
+          "Answer": [800, 1200]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "4350",
+            "operand2": "1200"
+          },
+          "answer": "5550",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$4公升350毫升 + 1200毫升 = $i$毫升$n$單位換算：4公升350毫升 = $i$毫升",
+          "Answer": [5550, 4350]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "3200",
+            "operand2": "1550"
+          },
+          "answer": "4750",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$3公升200毫升 + 1550毫升 = $i$毫升$n$單位換算：3公升200毫升 = $i$毫升",
+          "Answer": [4750, 3200]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "2550",
+            "operand2": "1100"
+          },
+          "answer": "3650",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$2公升550毫升 + 1100毫升 = $i$毫升$n$單位換算：2公升550毫升 = $i$毫升",
+          "Answer": [3650, 2550]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "3450",
+            "operand2": "1200"
+          },
+          "answer": "4650",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$3公升450毫升 + 1200毫升 = $i$毫升$n$單位換算：3公升450毫升 = $i$毫升",
+          "Answer": [4650, 3450]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "4600",
+            "operand2": "1150"
+          },
+          "answer": "5750",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$4公升600毫升 + 1150毫升 = $i$毫升$n$單位換算：4公升600毫升 = $i$毫升",
+          "Answer": [5750, 4600]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "6200",
+            "operand2": "2150"
+          },
+          "answer": "4050",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$6公升200毫升 - 2150毫升 = $i$毫升$n$單位換算：2150毫升 = $i$公升$i$毫升",
+          "Answer": [4050, 2, 150]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5300",
+            "operand2": "1150"
+          },
+          "answer": "4150",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升300毫升 - 1150毫升 = $i$毫升$n$單位換算：1150毫升 = $i$公升$i$毫升",
+          "Answer": [4150, 1, 150]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5500",
+            "operand2": "3250"
+          },
+          "answer": "2250",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$5公升500毫升 - 3250毫升 = $i$毫升$n$單位換算：3250毫升 = $i$公升$i$毫升",
+          "Answer": [2250, 3, 250]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "3700",
+            "operand2": "2350"
+          },
+          "answer": "1350",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$3公升700毫升 - 2350毫升 = $i$毫升$n$單位換算：2350毫升 = $i$公升$i$毫升",
+          "Answer": [1350, 2, 350]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "4800",
+            "operand2": "2550"
+          },
+          "answer": "2250",
+          "unitType": "Volume"
+        },
+        "markdown": {
+          "Render": "# 請回答以下問題：$n$4公升800毫升 - 2550毫升 = $i$毫升$n$單位換算：2550毫升 = $i$公升$i$毫升",
+          "Answer": [2250, 2, 550]
+        }
+      }
+    ]
+  ]
+}

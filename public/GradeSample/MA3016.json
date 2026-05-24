@@ -1,0 +1,21 @@
+{
+    "id": "MA3015",
+    "introvideo": "src",
+    "TotalLevel": 1,
+    "GameType": "FindTheItemGame",
+    "GameConfig":{
+        "RadiusBounes":"px",
+        "LineColor":"#000000",
+        "AutoCenterPoint":"false"
+    },
+    "Questions": [
+        [
+            {
+                "Text": "找出躲在圖片中的數字吧！",
+                "Objs":[ { "Name": "0", "Location": [ 29, 37 ], "LeftTop": [ 16, 24 ], "RightBottom": [ 45, 48 ] }, { "Name": "1", "Location": [ 464, 75 ], "LeftTop": [ 451, 62 ], "RightBottom": [ 486, 88 ] }, { "Name": "2", "Location": [ 252, 45 ], "LeftTop": [ 236, 29 ], "RightBottom": [ 266, 56 ] }, { "Name": "3", "Location": [ 572, 359 ], "LeftTop": [ 554, 332 ], "RightBottom": [ 592, 377 ] }, { "Name": "4", "Location": [ 441, 213 ], "LeftTop": [ 429, 200 ], "RightBottom": [ 453, 221 ] }, { "Name": "5", "Location": [ 520, 57 ], "LeftTop": [ 507, 44 ], "RightBottom": [ 528, 69 ] }, { "Name": "6", "Location": [ 62, 131 ], "LeftTop": [ 47, 111 ], "RightBottom": [ 79, 147 ] }, { "Name": "7", "Location": [ 274, 310 ], "LeftTop": [ 254, 295 ], "RightBottom": [ 292, 327 ] }, { "Name": "8", "Location": [ 47, 324 ], "LeftTop": [ 33, 313 ], "RightBottom": [ 58, 334 ] }, { "Name": "9", "Location": [ 527, 238 ], "LeftTop": [ 513, 223 ], "RightBottom": [ 536, 254 ] }, { "Name": "10", "Location": [ 25, 256 ], "LeftTop": [ 10, 242 ], "RightBottom": [ 42, 269 ] }],
+                "ObjNum":11,
+                "img": "FindItemGameSample1.jpg"
+            }
+        ]
+    ]
+}

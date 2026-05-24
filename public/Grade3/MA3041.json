@@ -1,0 +1,402 @@
+{
+  "id": "MA3041",
+  "introvideo": "MA3041.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "20",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 20 X 6 = $i$",
+          "Answer": [120]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "20",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 20 X 8 = $i$",
+          "Answer": [160]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "30",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 30 X 4 = $i$",
+          "Answer": [120]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "40",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 40 X 5 = $i$",
+          "Answer": [200]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "50",
+            "operand2": "2"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 50 X 2 = $i$",
+          "Answer": [100]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "80",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 80 X 7 = $i$",
+          "Answer": [560]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "70",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 70 X 6 = $i$",
+          "Answer": [420]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "60",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 60 X 7 = $i$",
+          "Answer": [420]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "90",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 90 X 6 = $i$",
+          "Answer": [540]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "50",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 50 X 8 = $i$",
+          "Answer": [400]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "52",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 52 X 4 = $i$",
+          "Answer": [208]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "21",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 21 X 9 = $i$",
+          "Answer": [189]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "31",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 31 X 6 = $i$",
+          "Answer": [186]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "73",
+            "operand2": "2"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 73 X 2 = $i$",
+          "Answer": [146]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "81",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 81 X 5 = $i$",
+          "Answer": [405]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "36",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 36 X 4 = $i$",
+          "Answer": [144]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "43",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 43 X 5 = $i$",
+          "Answer": [215]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "25",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 25 X 8 = $i$",
+          "Answer": [200]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "19",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 19 X 6 = $i$",
+          "Answer": [114]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "17",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 17 X 7 = $i$",
+          "Answer": [119]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "67",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 67 X 6 = $i$",
+          "Answer": [402]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "88",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 88 X 3 = $i$",
+          "Answer": [264]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "78",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 78 X 4 = $i$",
+          "Answer": [312]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "68",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 68 X 8 = $i$",
+          "Answer": [544]
+        }
+      },
+      {
+        "calculator": {
+          "type": "multiply",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "87",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 87 X 5 = $i$",
+          "Answer": [435]
+        }
+      }
+    ]
+  ]
+}

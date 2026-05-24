@@ -1,0 +1,34 @@
+{
+    "id": "MA3029",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "[Insert question.]"
+    },
+    "TotalLevel": 1,
+    "GameType": "CopyItem",
+    "GameConfig": {
+        
+    },
+    "Hint":{
+        
+    },
+    "Questions": [
+        {
+            "Title": "123456",
+            "Questions": [
+                "請放入五個糖果"
+            ],
+            "Items": [
+                {
+                    "Name": "ImageContainer",
+                    "Amount": 5,
+                    "Data": {
+                        "Src": "sugar.png",
+                        "Alt": "糖果照片"
+                    }
+                }
+            ]
+        }
+    ]
+}

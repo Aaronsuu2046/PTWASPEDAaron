@@ -1,0 +1,298 @@
+{
+  "id": "MA3017",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "口裡的數是多少?填填看"
+  },
+  "GameType": "NumberLock",
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": false,
+      "down": true
+    }
+  },
+  "Questions": [
+    [
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 1,
+            "max": 9,
+            "min": 0,
+            "blank_pos": [2, 3, 6, 8]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 2,
+            "max": 18,
+            "min": 0,
+            "blank_pos": [6, 10, 12, 18]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 5,
+            "max": 45,
+            "min": 0,
+            "blank_pos": [15, 25, 30, 45]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 3,
+            "max": 27,
+            "min": 0,
+            "blank_pos": [9, 15, 18, 27]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 2,
+            "max": 18,
+            "min": 0,
+            "blank_pos": [4, 6, 12, 16]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 10,
+            "max": 90,
+            "min": 0,
+            "blank_pos": [30, 50, 70, 80]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 100,
+            "max": 1000,
+            "min": 0,
+            "blank_pos": [300, 500, 900, 1000]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 1000,
+            "max": 9000,
+            "min": 0,
+            "blank_pos": [2000, 4000, 6000, 8000]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 100,
+            "max": 900,
+            "min": 0,
+            "blank_pos": [200, 300, 600, 800]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 10,
+            "max": 100,
+            "min": 0,
+            "blank_pos": [40, 50, 70, 100]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 500,
+            "max": 4000,
+            "min": 0,
+            "blank_pos": [1500, 2500, 3000, 4000]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 200,
+            "max": 1800,
+            "min": 0,
+            "blank_pos": [600, 800, 1400, 1600]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 30,
+            "max": 270,
+            "min": 0,
+            "blank_pos": [90, 150, 180, 270]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 20,
+            "max": 180,
+            "min": 0,
+            "blank_pos": [40, 60, 120, 160]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "請在框框中填入正確的數字",
+            "Size": "large"
+          }
+        },
+        "downComponent": {
+          "Name": "NumberLineWithBlank",
+          "Data": {
+            "spacing": 50,
+            "max": 450,
+            "min": 0,
+            "blank_pos": [150, 300, 350, 450]
+          }
+        }
+      }
+    ]
+  ]
+}

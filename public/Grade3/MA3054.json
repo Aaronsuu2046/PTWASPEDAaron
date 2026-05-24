@@ -1,0 +1,357 @@
+{
+  "id": "MA3054",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用三角板做做看"
+  },
+  "GameType": "SelectGameMulti",
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": false,
+      "down": true
+    }
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "SelectionType": "TextOnly",
+        "TopContainer": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "用三角板做做看",
+            "Size": "title-medium"
+          }
+        },
+        "SlotComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "grid",
+            "background": "white",
+            "backgroundRatio": { "width": 40, "height": 12 },
+            "images": [
+              {
+                "path": "1-2.png",
+                "ratio": { "width": 6, "height": 6 },
+                "snapToGrid": false,
+                "draggable": false,
+                "presetPosition": { "x": 2, "y": 2 }
+              },
+              {
+                "path": "triangle-ruler.png",
+                "ratio": { "width": 8, "height": 5 },
+                "snapToGrid": false,
+                "rotatable": true,
+                "draggable": true,
+                "presetPosition": { "x": 14, "y": 3 }
+              }
+            ]
+          }
+        },
+        "Questions": [
+          {
+            "Question": "圖形的4條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的4個角都是直角嗎?$question$",
+            "Selection": [
+              { "Text": "是", "Size": "medium" },
+              { "Text": "不是", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形是什麼形狀?$question$",
+            "Selection": [
+              { "Text": "長方形", "Size": "medium" },
+              { "Text": "正方形", "Size": "medium" }
+            ],
+            "Answer": 1
+          }
+        ]
+      },
+      {
+        "SelectionType": "TextOnly",
+        "TopContainer": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "用三角板做做看",
+            "Size": "title-medium"
+          }
+        },
+        "SlotComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "grid",
+            "background": "white",
+            "backgroundRatio": { "width": 40, "height": 12 },
+            "images": [
+              {
+                "path": "1-3.png",
+                "ratio": { "width": 10, "height": 10 },
+                "snapToGrid": false,
+                "rotatable": false,
+                "draggable": false,
+                "presetPosition": { "x": 2, "y": 1 }
+              },
+              {
+                "path": "triangle-ruler.png",
+                "ratio": { "width": 8, "height": 5 },
+                "snapToGrid": false,
+                "rotatable": true,
+                "draggable": true,
+                "presetPosition": { "x": 14, "y": 3 }
+              }
+            ]
+          }
+        },
+        "Questions": [
+          {
+            "Question": "圖形的4條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的4個角都是直角嗎?$question$",
+            "Selection": [
+              { "Text": "是", "Size": "medium" },
+              { "Text": "不是", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形是什麼形狀?$question$",
+            "Selection": [
+              { "Text": "長方形", "Size": "medium" },
+              { "Text": "正方形", "Size": "medium" }
+            ],
+            "Answer": 1
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "SelectionType": "TextOnly",
+        "TopContainer": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "用三角板做做看",
+            "Size": "title-medium"
+          }
+        },
+        "SlotComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "grid",
+            "background": "white",
+            "backgroundRatio": { "width": 40, "height": 12 },
+            "images": [
+              {
+                "path": "2-1.png",
+                "ratio": { "width": 5, "height": 10 },
+                "snapToGrid": false,
+                "draggable": false,
+                "presetPosition": { "x": 4, "y": 1 }
+              },
+              {
+                "path": "triangle-ruler.png",
+                "ratio": { "width": 8, "height": 5 },
+                "snapToGrid": false,
+                "rotatable": true,
+                "draggable": true,
+                "presetPosition": { "x": 14, "y": 3 }
+              }
+            ]
+          }
+        },
+        "Questions": [
+          {
+            "Question": "圖形的上、下兩條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的左、右兩條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的4個角都是直角嗎?$question$",
+            "Selection": [
+              { "Text": "是", "Size": "medium" },
+              { "Text": "不是", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形是什麼形狀?$question$",
+            "Selection": [
+              { "Text": "長方形", "Size": "medium" },
+              { "Text": "正方形", "Size": "medium" }
+            ],
+            "Answer": 0
+          }
+        ]
+      },
+      {
+        "SelectionType": "TextOnly",
+        "TopContainer": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "用三角板做做看",
+            "Size": "title-medium"
+          }
+        },
+        "SlotComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "grid",
+            "background": "white",
+            "backgroundRatio": { "width": 40, "height": 12 },
+            "images": [
+              {
+                "path": "2-2.png",
+                "ratio": { "width": 15, "height": 10 },
+                "snapToGrid": false,
+                "draggable": false,
+                "presetPosition": { "x": 1, "y": 1 }
+              },
+              {
+                "path": "triangle-ruler.png",
+                "ratio": { "width": 8, "height": 5 },
+                "snapToGrid": false,
+                "rotatable": true,
+                "draggable": true,
+                "presetPosition": { "x": 18, "y": 3 }
+              }
+            ]
+          }
+        },
+        "Questions": [
+          {
+            "Question": "圖形的上、下兩條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的左、右兩條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的4個角都是直角嗎?$question$",
+            "Selection": [
+              { "Text": "是", "Size": "medium" },
+              { "Text": "不是", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形是什麼形狀?$question$",
+            "Selection": [
+              { "Text": "長方形", "Size": "medium" },
+              { "Text": "正方形", "Size": "medium" }
+            ],
+            "Answer": 0
+          }
+        ]
+      },
+      {
+        "SelectionType": "TextOnly",
+        "TopContainer": {
+          "Name": "TextOnly",
+          "Data": {
+            "Text": "用三角板做做看",
+            "Size": "title-medium"
+          }
+        },
+        "SlotComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "grid",
+            "background": "white",
+            "backgroundRatio": { "width": 40, "height": 12 },
+            "images": [
+              {
+                "path": "2-3.png",
+                "ratio": { "width": 7.5, "height": 9 },
+                "snapToGrid": false,
+                "draggable": false,
+                "presetPosition": { "x": 4, "y": 1 }
+              },
+              {
+                "path": "triangle-ruler.png",
+                "ratio": { "width": 8, "height": 5 },
+                "snapToGrid": false,
+                "rotatable": true,
+                "draggable": true,
+                "presetPosition": { "x": 14, "y": 3 }
+              }
+            ]
+          }
+        },
+        "Questions": [
+          {
+            "Question": "圖形的上、下兩條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的左、右兩條邊一樣長嗎?$question$",
+            "Selection": [
+              { "Text": "一樣長", "Size": "medium" },
+              { "Text": "不一樣長", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形的4個角都是直角嗎?$question$",
+            "Selection": [
+              { "Text": "是", "Size": "medium" },
+              { "Text": "不是", "Size": "medium" }
+            ],
+            "Answer": 0
+          },
+          {
+            "Question": "圖形是什麼形狀?$question$",
+            "Selection": [
+              { "Text": "長方形", "Size": "medium" },
+              { "Text": "正方形", "Size": "medium" }
+            ],
+            "Answer": 0
+          }
+        ]
+      }
+    ]
+  ]
+}

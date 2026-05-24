@@ -1,0 +1,34 @@
+name: CI Test
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16 # 使用與專案需求匹配的 Node.js 版本
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # (可選) Build project to ensure it works
+      - name: Build Project
+        run: npm run build

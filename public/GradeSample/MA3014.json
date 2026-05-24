@@ -1,0 +1,84 @@
+{
+    "id": "MA3014",
+    "introvideo": "src",
+    "TotalLevel": 1,
+    "GameType": "ClassifyGame",
+    "ItemsWithImage": true,
+    "GameConfig":{
+
+    },
+    "Questions": [
+        {   
+            "Text": "請將以下物品分類成一般垃圾、資源回收物、有害垃圾",
+            "InitBox": "物品",
+            "Question": [
+                {
+                    "Tag": "1",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text" : "衛生紙"
+                    }
+                },
+                {
+                    "Tag": "2",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text" : "橡皮筋"
+                    }
+                },
+                {
+                    "Tag": "3",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text" : "寶特瓶"
+                    }
+                },
+                {
+                    "Tag": "4",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text" : "鐵鋁罐"
+                    }
+                },
+                {
+                    "Tag": "5",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text" : "鋁箔包"
+                    }
+                },
+                {
+                    "Tag" : "6",
+                    "Name": "Water",
+                    "Data": {
+                        "Scale": "1000",
+                        "Ml": "300"
+                    }
+                },
+                {
+                    "Tag" : "7",
+                    "Name": "Clock",
+                    "Data": {
+                        "sec" : "0",
+                        "min" : "20",
+                        "hour" : "1"
+                    }
+                }
+            ],
+            "Answer": [
+                {
+                    "GroupName": "一般垃圾",
+                    "Tags": ["1", "2"]
+                },
+                {
+                    "GroupName": "資源回收物",
+                    "Tags": ["3", "4", "5"]
+                },
+                {
+                    "GroupName": "有害垃圾",
+                    "Tags": []
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,462 @@
+{
+  "id": "MA3094",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "按照順序填填看"
+  },
+  "GameType": "LinkToImage",
+  "GameConfig": {},
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "1-1.png",
+        "Selections": ["\\frac{2}{6}", "\\frac{4}{6}"],
+        "MountPoint": [
+          {
+            "x": 201,
+            "y": 41,
+            "Connect2": "\\frac{2}{6}"
+          },
+          {
+            "x": 469,
+            "y": 42,
+            "Connect2": "\\frac{4}{6}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "1-2.png",
+        "Selections": ["\\frac{5}{7}", "\\frac{3}{7}"],
+        "MountPoint": [
+          {
+            "x": 334,
+            "y": 42,
+            "Connect2": "\\frac{3}{7}"
+          },
+          {
+            "x": 602.5,
+            "y": 41,
+            "Connect2": "\\frac{5}{7}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "1-3.png",
+        "Selections": ["\\frac{5}{6}", "\\frac{3}{6}"],
+        "MountPoint": [
+          {
+            "x": 334,
+            "y": 42,
+            "Connect2": "\\frac{3}{6}"
+          },
+          {
+            "x": 602.5,
+            "y": 41,
+            "Connect2": "\\frac{5}{6}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "1-4.png",
+        "Selections": ["\\frac{2}{7}", "\\frac{4}{7}"],
+        "MountPoint": [
+          {
+            "x": 201,
+            "y": 41,
+            "Connect2": "\\frac{2}{7}"
+          },
+          {
+            "x": 469,
+            "y": 42,
+            "Connect2": "\\frac{4}{7}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "1-5.png",
+        "Selections": ["\\frac{4}{8}", "\\frac{2}{8}"],
+        "MountPoint": [
+          {
+            "x": 201,
+            "y": 41,
+            "Connect2": "\\frac{2}{8}"
+          },
+          {
+            "x": 469,
+            "y": 42,
+            "Connect2": "\\frac{4}{8}"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "2-1.png",
+        "Selections": ["\\frac{3}{9}", "\\frac{5}{9}"],
+        "MountPoint": [
+          {
+            "x": 334,
+            "y": 42,
+            "Connect2": "\\frac{3}{9}"
+          },
+          {
+            "x": 602.5,
+            "y": 41,
+            "Connect2": "\\frac{5}{9}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "2-2.png",
+        "Selections": ["\\frac{5}{8}", "\\frac{3}{8}"],
+        "MountPoint": [
+          {
+            "x": 334,
+            "y": 42,
+            "Connect2": "\\frac{3}{8}"
+          },
+          {
+            "x": 602.5,
+            "y": 41,
+            "Connect2": "\\frac{5}{8}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "2-3.png",
+        "Selections": ["\\frac{2}{9}", "\\frac{4}{9}"],
+        "MountPoint": [
+          {
+            "x": 201,
+            "y": 41,
+            "Connect2": "\\frac{2}{9}"
+          },
+          {
+            "x": 469,
+            "y": 42,
+            "Connect2": "\\frac{4}{9}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "2-4.png",
+        "Selections": ["\\frac{2}{10}", "\\frac{4}{10}"],
+        "MountPoint": [
+          {
+            "x": 201,
+            "y": 41,
+            "Connect2": "\\frac{2}{10}"
+          },
+          {
+            "x": 469,
+            "y": 42,
+            "Connect2": "\\frac{4}{10}"
+          }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "2-5.png",
+        "Selections": ["\\frac{5}{11}", "\\frac{3}{11}"],
+        "MountPoint": [
+          {
+            "x": 334,
+            "y": 42,
+            "Connect2": "\\frac{3}{11}"
+          },
+          {
+            "x": 602.5,
+            "y": 41,
+            "Connect2": "\\frac{5}{11}"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-1.png",
+        "Selections": ["\\frac{7}{10}", "\\frac{9}{10}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{7}{10}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{9}{10}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-2.png",
+        "Selections": ["\\frac{8}{11}", "\\frac{6}{11}"],
+        "MountPoint": [
+          { "x": 334, "y": 42, "Connect2": "\\frac{6}{11}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{8}{11}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-3.png",
+        "Selections": ["\\frac{6}{10}", "\\frac{9}{10}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{6}{10}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{9}{10}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-4.png",
+        "Selections": ["\\frac{9}{11}", "\\frac{7}{11}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{7}{11}" },
+          { "x": 334, "y": 42, "Connect2": "\\frac{9}{11}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-5.png",
+        "Selections": ["\\frac{1}{10}", "\\frac{4}{10}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{1}{10}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{4}{10}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-6.png",
+        "Selections": ["\\frac{8}{11}", "\\frac{5}{11}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{5}{11}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{8}{11}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-7.png",
+        "Selections": ["\\frac{5}{9}", "\\frac{7}{9}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{5}{9}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{7}{9}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-8.png",
+        "Selections": ["\\frac{6}{8}", "\\frac{4}{8}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{4}{8}" },
+          { "x": 334, "y": 42, "Connect2": "\\frac{6}{8}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-9.png",
+        "Selections": ["\\frac{5}{9}", "\\frac{8}{9}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{5}{9}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{8}{9}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "3-10.png",
+        "Selections": ["\\frac{6}{8}", "\\frac{4}{8}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{4}{8}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{6}{8}" }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-1.png",
+        "Selections": ["\\frac{5}{6}", "\\frac{3}{6}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{5}{6}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{3}{6}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-2.png",
+        "Selections": ["\\frac{3}{8}", "\\frac{5}{8}"],
+        "MountPoint": [
+          { "x": 334, "y": 42, "Connect2": "\\frac{5}{8}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{3}{8}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-3.png",
+        "Selections": ["\\frac{5}{7}", "\\frac{3}{7}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{5}{7}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{3}{7}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-4.png",
+        "Selections": ["\\frac{4}{8}", "\\frac{7}{8}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{7}{8}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{4}{8}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-5.png",
+        "Selections": ["\\frac{8}{9}", "\\frac{6}{9}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{8}{9}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{6}{9}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-6.png",
+        "Selections": ["\\frac{2}{6}", "\\frac{5}{6}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{5}{6}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{2}{6}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-7.png",
+        "Selections": ["\\frac{8}{9}", "\\frac{5}{9}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{8}{9}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{5}{9}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-8.png",
+        "Selections": ["\\frac{4}{7}", "\\frac{6}{7}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{6}{7}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{4}{7}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-9.png",
+        "Selections": ["\\frac{8}{10}", "\\frac{6}{10}"],
+        "MountPoint": [
+          { "x": 334, "y": 42, "Connect2": "\\frac{8}{10}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{6}{10}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "4-10.png",
+        "Selections": ["\\frac{5}{11}", "\\frac{7}{11}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{7}{11}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{5}{11}" }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-1.png",
+        "Selections": ["\\frac{4}{6}", "\\frac{2}{6}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{4}{6}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{2}{6}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-2.png",
+        "Selections": ["\\frac{2}{8}", "\\frac{4}{8}"],
+        "MountPoint": [
+          { "x": 334, "y": 42, "Connect2": "\\frac{4}{8}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{2}{8}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-3.png",
+        "Selections": ["\\frac{4}{7}", "\\frac{6}{7}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{6}{7}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{4}{7}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-4.png",
+        "Selections": ["\\frac{6}{8}", "\\frac{3}{8}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{6}{8}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{3}{8}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-5.png",
+        "Selections": ["\\frac{11}{12}", "\\frac{9}{12}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{11}{12}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{9}{12}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-6.png",
+        "Selections": ["\\frac{5}{10}", "\\frac{8}{10}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{8}{10}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{5}{10}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-7.png",
+        "Selections": ["\\frac{5}{12}", "\\frac{2}{12}"],
+        "MountPoint": [
+          { "x": 66, "y": 43, "Connect2": "\\frac{5}{12}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{2}{12}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-8.png",
+        "Selections": ["\\frac{4}{7}", "\\frac{6}{7}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{6}{7}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{4}{7}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-9.png",
+        "Selections": ["\\frac{3}{5}", "\\frac{1}{5}"],
+        "MountPoint": [
+          { "x": 334, "y": 42, "Connect2": "\\frac{3}{5}" },
+          { "x": 602.5, "y": 41, "Connect2": "\\frac{1}{5}" }
+        ]
+      },
+      {
+        "Question": "請將分數連接到正確的圖形",
+        "BGSrc": "5-10.png",
+        "Selections": ["\\frac{4}{9}", "\\frac{6}{9}"],
+        "MountPoint": [
+          { "x": 201, "y": 41, "Connect2": "\\frac{6}{9}" },
+          { "x": 469, "y": 42, "Connect2": "\\frac{4}{9}" }
+        ]
+      }
+    ]
+  ]
+}

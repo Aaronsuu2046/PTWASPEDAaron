@@ -1,0 +1,462 @@
+{
+  "id": "MA3063",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "估估看，下面圖形的面積大約有多少"
+  },
+  "GameType": "TrueFalseGame",
+  "GameConfig": {},
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "Question": "ㄅ的面積小於9平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "f.jpg",
+                  "ratio": { "width": 3, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "ㄉ的面積小於4平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "j.jpg",
+                  "ratio": { "width": 2, "height": 2 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "B的面積大於12平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "b.jpg",
+                  "ratio": { "width": 3, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "D的面積大於6平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "d.jpg",
+                  "ratio": { "width": 2, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "ㄇ的面積小於16平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "h.jpg",
+                  "ratio": { "width": 4, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "A的面積小於9平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "a.jpg",
+                  "ratio": { "width": 3, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "ㄆ的面積小於20平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "g.jpg",
+                  "ratio": { "width": 4, "height": 5 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "E的面積大於9平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "e.jpg",
+                  "ratio": { "width": 3, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "ㄈ的面積小於12平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "i.jpg",
+                  "ratio": { "width": 3, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "C的面積小於16平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "c.jpg",
+                  "ratio": { "width": 4, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "ㄅ的面積大於9平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "f.jpg",
+                  "ratio": { "width": 3, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "C的面積大於16平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "c.jpg",
+                  "ratio": { "width": 4, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "ㄇ的面積大於16平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "h.jpg",
+                  "ratio": { "width": 4, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "E的面積小於9平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "e.jpg",
+                  "ratio": { "width": 3, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "ㄆ的面積大於20平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "g.jpg",
+                  "ratio": { "width": 4, "height": 5 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "A的面積大於9平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "a.jpg",
+                  "ratio": { "width": 3, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "ㄈ的面積大於12平方公分嗎??(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "i.jpg",
+                  "ratio": { "width": 3, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "B的面積小於12平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "b.jpg",
+                  "ratio": { "width": 3, "height": 4 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "D的面積小於6平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": true,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "d.jpg",
+                  "ratio": { "width": 2, "height": 3 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": "ㄉ的面積大於4平方公分嗎?(以下每一格是1平方公分)",
+        "Answer": false,
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "grid",
+              "backgroundRatio": { "width": 10, "height": 9 },
+              "images": [
+                {
+                  "path": "j.jpg",
+                  "ratio": { "width": 2, "height": 2 },
+                  "snapToGrid": true,
+                  "rotatable": true,
+                  "draggable": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}

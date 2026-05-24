@@ -1,0 +1,4007 @@
+{
+  "id": "MA3093",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "移動物品，再填填看"
+  },
+  "GameType": "NumberLock",
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": false,
+      "down": true
+    }
+  },
+  "Questions": [
+    [
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "藍莓口味是全部的",
+            "numerator": 4,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "藍莓口味是全部的",
+            "numerator": 5,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "藍莓口味是全部的",
+            "numerator": 3,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "藍莓口味是全部的",
+            "numerator": 4,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "藍莓口味是全部的",
+            "numerator": 3,
+            "denominator": 12
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "抹茶口味是全部的",
+            "numerator": 3,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "抹茶口味是全部的",
+            "numerator": 6,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "抹茶口味是全部的",
+            "numerator": 7,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "抹茶口味是全部的",
+            "numerator": 4,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "抹茶口味是全部的",
+            "numerator": 5,
+            "denominator": 12
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "草莓口味是全部的",
+            "numerator": 5,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "草莓口味是全部的",
+            "numerator": 1,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "草莓口味是全部的",
+            "numerator": 2,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "草莓口味是全部的",
+            "numerator": 4,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "藍莓口味是全部的",
+            "numerator": 3,
+            "denominator": 12
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "弟弟吃了2個甜甜圈，是吃掉了",
+            "suffix": "盒甜甜圈",
+            "numerator": 2,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "弟弟吃了3個甜甜圈，是吃掉了",
+            "suffix": "盒甜甜圈",
+            "numerator": 3,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "弟弟吃了8個甜甜圈，是吃掉了",
+            "suffix": "盒甜甜圈",
+            "numerator": 8,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "弟弟吃了6個甜甜圈，是吃掉了",
+            "suffix": "盒甜甜圈",
+            "numerator": 6,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "FractionForAnswer",
+          "Data": {
+            "prefix": "弟弟吃了4個甜甜圈，是吃掉了",
+            "suffix": "盒甜甜圈",
+            "numerator": 4,
+            "denominator": 12
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "哥哥吃了3/12盒甜甜圈，也就是吃了$i$個甜甜圈。",
+            "Answer": [3]
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "哥哥吃了4/12盒甜甜圈，也就是吃了$i$個甜甜圈。",
+            "Answer": [4]
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "哥哥吃了2/12盒甜甜圈，也就是吃了$i$個甜甜圈。",
+            "Answer": [2]
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "哥哥吃了6/12盒甜甜圈，也就是吃了$i$個甜甜圈。",
+            "Answer": [6]
+          }
+        }
+      },
+      {
+        "questionText": "一盒甜甜圈12個，有3種口味。",
+        "topComponent": {
+          "Name": "DragImages",
+          "Data": {
+            "backgroundType": "color",
+            "background": "white",
+            "backgroundRatio": {
+              "width": 10,
+              "height": 4
+            },
+            "images": [
+              {
+                "path": "box.png",
+                "ratio": {
+                  "width": 5,
+                  "height": 3
+                },
+                "draggable": false,
+                "presetPosition": {
+                  "x": 4.5,
+                  "y": 0.5
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 4.58,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 5.32,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "blueberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 6.24,
+                  "y": 1.1
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 7.18,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": {
+                  "x": 8.06,
+                  "y": 1.08
+                }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.82, "y": 1.06 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 4.59, "y": 2.57 }
+              },
+              {
+                "path": "matcha.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 5.34, "y": 2.55 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 6.19, "y": 2.53 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 7.19, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.07, "y": 2.56 }
+              },
+              {
+                "path": "strawberry.png",
+                "ratio": {
+                  "width": 0.6,
+                  "height": 0.4
+                },
+                "draggable": true,
+                "presetPosition": { "x": 8.83, "y": 2.55 }
+              }
+            ]
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "哥哥吃了5/12盒甜甜圈，也就是吃了$i$個甜甜圈。",
+            "Answer": [5]
+          }
+        }
+      }
+    ]
+  ]
+}

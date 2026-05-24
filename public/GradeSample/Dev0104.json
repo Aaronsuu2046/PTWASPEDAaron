@@ -1,0 +1,336 @@
+{
+    "TotalLevel": 4,
+    "GameType": "CalculatorGame",
+    "GameConfig": {},
+    "Hint": {},
+    "Questions": [
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "CustomeUnit": null,
+                "NumberAmount": 5,
+                "Preset": {
+                    "Number": ["456", "289"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "745",
+                    "Number": ["456", "289"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["609", "199"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "808",
+                    "Number": ["609", "199"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["149", "254"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "403",
+                    "Number": ["149", "254"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["364", "456"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "820",
+                    "Number": ["364", "456"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["584", "358"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "942",
+                    "Number": ["584", "358"],
+                    "Symbol": "+"
+                }
+            }
+        ],
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["465", "722"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "1187",
+                    "Number": ["465", "722"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["858", "211"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "1069",
+                    "Number": ["858", "211"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["974", "412"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "1386",
+                    "Number": ["974", "412"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["627", "540"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "1039",
+                    "Number": ["627", "540"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["713", "325"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "1038",
+                    "Number": ["713", "325"],
+                    "Symbol": "+"
+                }
+            }
+        ],
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["3224", "398"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "3622",
+                    "Number": ["3224", "398"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["2362", "189"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "2551",
+                    "Number": ["2362", "189"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["2128", "395"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "2523",
+                    "Number": ["2128", "395"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["4183", "548"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "4731",
+                    "Number": ["4183", "548"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["1257", "553"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "1810",
+                    "Number": ["1257", "553"],
+                    "Symbol": "+"
+                }
+            }
+        ],
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["5425", "2742"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "8167",
+                    "Number": ["5425", "2742"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["6610", "2571"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "9181",
+                    "Number": ["6610", "2571"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["4385", "2810"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "7195",
+                    "Number": ["4385", "2810"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["6526", "1862"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "8388",
+                    "Number": ["6526", "1862"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 2,
+                "NumberAmount": 5,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["2684", "5405"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "8089",
+                    "Number": ["2684", "5405"],
+                    "Symbol": "+"
+                }
+            }
+        ]
+    ]
+}

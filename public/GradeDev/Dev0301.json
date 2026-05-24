@@ -1,0 +1,29 @@
+{
+    "id": "Dev0301",
+    "GameType": "MoneyDrag",
+    "GameConfig": {},
+    "Questions": [
+        [
+            {
+                "title": "拿出正確的錢幣",
+                "amount": 123,
+                "upperComponent": {
+                    "Name": "ImageContainer",
+                    "Data": {
+                        "Src": "fan123.png",
+                        "Alt": ""
+                    }
+                },
+                "Items": {
+                    "1": "true",
+                    "5": "true",
+                    "10": "true",
+                    "50": "true",
+                    "100": "true",
+                    "500": "true",
+                    "1000": "true"
+                }
+            }
+        ]
+    ]
+}

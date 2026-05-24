@@ -1,0 +1,98 @@
+{
+    "id": "MA3011",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "小明剛剛學會看時鐘，但是他在寫作業的時候忘記了部分的答案，請聰明的你/妳幫助小明檢查答案"
+    },
+    "TotalLevel": 6,
+    "GameType": "TrueFalseGame",
+    "GameConfig": {
+        "GlobalTitle": "請問以下的時間正確嗎?"
+    },
+    "Hint":{
+        "ShowAs" : "Single",
+        "Rule" : {
+            "RuleType": "WrongTimes"
+        },
+        "Data" :{
+            "MaxWrongTimes" : 2,
+            "SourceType" : "video",
+            "FilePath" : "hint1.mp4"
+        }
+    },
+    "Questions": [
+        {
+            "Question": "1:40",
+            "Answer": false,
+            "img": "level1.png",
+            "SlotComponents" : [{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "level1.png",
+                    "Alt": "ddd"
+                }
+            }]
+        },
+        {
+            "Question": "1:25",
+            "Answer": true,
+            "SlotComponents" :[ {
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "level2.png",
+                    "Alt": " ddd"
+                }
+            }],
+            "img": "level2.png"
+        },
+        {
+            "Question": "1:20",
+            "Answer": false,
+            "img": "level3.png",
+            "SlotComponents" : [{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "level3.png",
+                    "Alt": "ddd "
+                }
+            }]
+        },
+        {
+            "Question": "5:40",
+            "Answer": true,
+            "img": "level4.png",
+            "SlotComponents" : [{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "level4.png",
+                    "Alt": " dd"
+                }
+            }]
+        },
+        {
+            "Question": "7:00",
+            "Answer": true,
+            "img": "level5.png",
+            "SlotComponents" : [{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "level5.png",
+                    "Alt": " dd"
+                }
+            }]
+        },
+        {
+            "Question": "3:20",
+            "Answer": true,
+            "SlotComponents" : [{
+                "Name" : "Clock",
+                "Data" : {
+                    "hour": 3,
+                    "min": 20,
+                    "sec": 0
+                }
+            }]
+        }
+    ]
+}

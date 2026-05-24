@@ -1,0 +1,247 @@
+{
+    "id": "MA_Pub_01",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "算算看，有多少小動物在圖片中，並且圈出正確的答案吧！"
+    },
+    "TotalLevel": 4,
+    "GameType": "SelectGameMulti",
+    "GameConfig": {        
+    },
+    "Hint":{
+
+    },
+    "Questions": [
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "1-1.png",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "老鼠有?$question$隻",
+                    "Selection": [{"Text": "7", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "9", "Size": "Small"}],
+                    "Answer": 0      
+                },
+                {
+                    "Question": "河馬有?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "7", "Size": "Small"}],
+                    "Answer": 1
+                },
+                {
+                    "Question": "小貓有?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "7", "Size": "Small"},{"Text": "8", "Size": "Small"}],
+                    "Answer": 2
+                }
+            ]
+        },
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊圈選正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "2-1.png",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "小鳥有?$question$隻",
+                    "Selection": [{"Text": "8", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "9", "Size": "Small"}],
+                    "Answer": 0
+                },
+                {
+                    "Question": "小鹿有?$question$隻",
+                    "Selection": [{"Text": "4", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "7", "Size": "Small"}],
+                    "Answer": 1
+                },
+                {
+                    "Question": "兔子有?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "7", "Size": "Small"},{"Text": "8", "Size": "Small"}],
+                    "Answer": 1
+                }
+            ]
+        },
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊圈選正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "3-1.png",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "海星有?$question$隻",
+                    "Selection": [{"Text": "9", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "7", "Size": "Small"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "小丑魚有?$question$隻",
+                    "Selection": [{"Text": "4", "Size": "Small"},{"Text": "7", "Size": "Small"},{"Text": "6", "Size": "Small"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "海豚?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "7", "Size": "Small"},{"Text": "8", "Size": "Small"}],
+                    "Answer": 0
+                },
+                {
+                    "Question": "鯊魚?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "4", "Size": "Small"},{"Text": "8", "Size": "Small"}],
+                    "Answer": 1
+                }
+            ]
+        },
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊圈選正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "4-1.png",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "企鵝有?$question$隻",
+                    "Selection": [{"Text": "9", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "7", "Size": "Small"}],
+                    "Answer": 1
+                },
+                {
+                    "Question": "北極熊有?$question$隻",
+                    "Selection": [{"Text": "4", "Size": "Small"},{"Text": "7", "Size": "Small"},{"Text": "3", "Size": "Small"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "海豹?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "7", "Size": "Small"},{"Text": "4", "Size": "Small"}],
+                    "Answer": 2
+                }                
+            ]
+        },
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊圈選正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "5-1.jpeg",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "小雞有?$question$隻",
+                    "Selection": [{"Text": "1", "Size": "Small"},{"Text": "4", "Size": "Small"},{"Text": "3", "Size": "Small"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "小豬有?$question$隻",
+                    "Selection": [{"Text": "1", "Size": "Small"},{"Text": "2", "Size": "Small"},{"Text": "3", "Size": "Small"}],
+                    "Answer": 1
+                },
+                {
+                    "Question": "熊貓?$question$隻",
+                    "Selection": [{"Text": "1", "Size": "Small"},{"Text": "3", "Size": "Small"},{"Text": "2", "Size": "Small"}],
+                    "Answer": 0
+                }                
+            ]
+        },
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊圈選正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "6-1.jpeg",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "小貓有?$question$隻",
+                    "Selection": [{"Text": "1", "Size": "Small"},{"Text": "4", "Size": "Small"},{"Text": "3", "Size": "Small"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "刺蝟有?$question$隻",
+                    "Selection": [{"Text": "2", "Size": "Small"},{"Text": "1", "Size": "Small"},{"Text": "3", "Size": "Small"}],
+                    "Answer": 0
+                }                
+            ]
+        },
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請點擊圈選正確的數字"
+                }
+            },
+            "SlotComponent":{
+                "Name": "ImageContainer",
+                "Data": {
+                    "Src": "7-1.jpeg",
+                    "Alt": "動物照片"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "松鼠有?$question$隻",
+                    "Selection": [{"Text": "1", "Size": "Small"},{"Text": "4", "Size": "Small"},{"Text": "3", "Size": "Small"}],
+                    "Answer": 0
+                },
+                {
+                    "Question": "蝴蝶有?$question$隻",
+                    "Selection": [{"Text": "5", "Size": "Small"},{"Text": "6", "Size": "Small"},{"Text": "7", "Size": "Small"}],
+                    "Answer": 2
+                },
+                {
+                    "Question": "小雞有?$question$隻",
+                    "Selection": [{"Text": "1", "Size": "Small"},{"Text": "3", "Size": "Small"},{"Text": "6", "Size": "Small"}],
+                    "Answer": 2
+                }
+            ]
+        }
+    ]
+}      

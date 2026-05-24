@@ -1,0 +1,54 @@
+{
+    "id": "MA3011",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "小明剛剛學會看時鐘，但是他在寫作業的時候忘記了部分的答案，請聰明的你/妳幫助小明檢查答案"
+    },
+    "TotalLevel": 1,
+    "GameType": "LinktoImageGame",
+    "GameConfig": {
+        "GlobalTitle": "請問以下的時間正確嗎?"
+    },
+    "Hint":{
+        "ShowAs" : "Single",
+        "Rule" : {
+            "RuleType": "WrongTimes"
+        },
+        "Data" :{
+            "MaxWrongTimes" : 2,
+            "SourceType" : "video",
+            "FilePath" : "hint1.mp4"
+        }
+    },
+    "Questions": [
+        {
+            "Question": "Which one is the correct answer?",
+            "BGSrc": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+            "SelectionType": "Text",
+            "Selections": ["1", "2", "3", "4", "5", "6"],
+            "MountPoint": [
+                {
+                    "Connect2": "1",
+                    "X": 100,
+                    "Y": 100
+                },
+                {
+                    "Connect2": "2",
+                    "X": 200,
+                    "Y": 100
+                },
+                {
+                    "Connect2": "3",
+                    "X": 300,
+                    "Y": 200
+                },
+                {
+                    "Connect2": ["4", "5"],
+                    "X": 400,
+                    "Y": 300
+                }
+            ]
+        }
+    ]
+}

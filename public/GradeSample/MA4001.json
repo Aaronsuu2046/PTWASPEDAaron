@@ -1,0 +1,688 @@
+{
+    "id":"MA4001",
+    "introvideo": "src",
+    "TotalLevel": 5,
+    "GameType" : "CompareGame",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "數學不好的哥哥打算買運動相關的用品，請聰明的你幫哥哥算出總共要花多少錢"
+    },
+    "GameConfig": {
+        "CustomeSymbol": true,
+        "SystemSymbol": "BigSmall",
+        "WithImage": false,
+        "CheckAnswerMode": "Button"
+    },
+    
+    "Questions": [
+        [
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 5,
+                                "Unit" : "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 4,
+                                "Unit" : "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 5,
+                                "Child" : 5,
+                                "Unit" : "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 5,
+                                "Child" : 2,
+                                "Unit" : "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 6,
+                                "Child" : 3,
+                                "Unit" : "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 6,
+                                "Child" : 4,
+                                "Unit" : "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 6,
+                                "Child" : 5,
+                                "Unit" : "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 6,
+                                "Child" : 1,
+                                "Unit" : "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 3,
+                                "Unit" : "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CircleChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 5,
+                                "Unit" : "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 3,
+                                "Child" : 1,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 3,
+                                "Child" : 2,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 5,
+                                "Child" : 5,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 5,
+                                "Child" : 3,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 7,
+                                "Child" : 3,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 7,
+                                "Child" : 4,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 9,
+                                "Child" : 7,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 9,
+                                "Child" : 5,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 3,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 7,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 4,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 4,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Equal"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 6,
+                                "Child" : 3,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 6,
+                                "Child" : 5,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 2,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 8,
+                                "Child" : 2,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Equal"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 10,
+                                "Child" : 7,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 10,
+                                "Child" : 5,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 12,
+                                "Child" : 6,
+                                "Unit": "個圓"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 12,
+                                "Child" : 7,
+                                "Unit": "個圓"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 4,
+                                "Unit": "盒"
+                            }                        
+                        },
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "一盒"
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 6,
+                                "Unit": "盒"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 8,
+                                "Unit": "盒"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 11,
+                                "Unit": "盒"
+                            }                        
+                        },
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "一盒"
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Equal"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 = ，且一盒蘋果有11顆。",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "一盒"
+                            }             
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 5,
+                                "Unit": "盒"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 5,
+                                "Unit": "盒"
+                            }                        
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 7,
+                                "Unit": "盒"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 4,
+                                "Unit": "盒"
+                            }                        
+                        },
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "兩顆"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 5,
+                                "Unit": "盒"
+                            }                        
+                        },
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "五顆"
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "七顆"
+                            }             
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 6,
+                                "Unit": "盒"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": " 八顆"
+                            }             
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 7,
+                                "Unit": "盒"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "比大小",
+                "Description": "比大小",
+                "SlotComponentVerifycation": true,
+                "OptionBarTitle": "塗一塗，再比比看，在口裡填入 >、< 或 =，且一盒蘋果有11顆。 ",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "TextOnly",
+                            "Data" : {
+                                "Text": "九顆"
+                            }             
+                        },
+                        {
+                            "Name" : "CoulorBarChart",
+                            "Data" : {
+                                "Mother" : 11,
+                                "Child" : 9,
+                                "Unit": "盒"
+                            }                        
+                        }
+                    ]
+                ],
+                "Answer": ["Equal"]
+            }
+        ]
+    ]
+}

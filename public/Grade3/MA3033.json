@@ -1,0 +1,626 @@
+{
+  "id": "MA3033",
+  "GameType": "CompareGame",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在口裡填入>、<或="
+  },
+  "GameConfig": {
+    "CustomeSymbol": true,
+    "SystemSymbol": "BigSmall",
+    "WithImage": false,
+    "CheckAnswerMode": "Button"
+  },
+  "Questions": [
+    [
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "4公分",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "42毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "6公分",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "60毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "3公分",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "22毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "7公分",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "79毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "9公分",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "80毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "9公分4毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "94毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "5公分7毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "67毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "6公分2毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "59毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "4公分4毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "48毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "5公分6毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "55毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "14毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "10公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "120毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "12公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "110毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "15公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "140毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "10公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "13毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "13公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "127毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "12公分1毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "137毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "13公分7毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "121毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "11公分9毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "123毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "10公分3毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "134毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "14公分1毫米",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "11公分2毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "12公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "10公分2毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "11公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "11公分6毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "11公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "19公分2毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "19公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "比大小",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "12公分9毫米",
+                "Size": "large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "13公分",
+                "Size": "large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      }
+    ]
+  ]
+}

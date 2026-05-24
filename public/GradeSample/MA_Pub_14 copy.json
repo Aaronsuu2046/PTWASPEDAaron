@@ -1,0 +1,163 @@
+{
+    "id": "MA_Pub_14",
+    "TotalLevel": 2,
+    "GameType": "LinkGame",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "連連看，把一樣的數連起來"
+    },
+    "GameConfig":{
+        "CheckingMode": "OnSubmit",
+        "_THE_OTHER_IS_OnSubmit":"OnAnswered"
+    },
+    "Questions": [
+        [
+            {   
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData":[
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "174.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "194.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "276.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "294.PNG" } }
+                        ],
+                        [
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 194 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 174 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 276 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 294 } }
+                        ],
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "一百七十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "二百九十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "一百九十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "二百七十六", "Zhuyin": true ,"Size": "Tiny" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,1]],
+                    [[0,1],[1,0]],
+                    [[0,2],[1,2]],
+                    [[0,3],[1,3]],
+                    [[2,0],[3,2]],
+                    [[2,1],[3,0]],
+                    [[2,2],[3,3]],
+                    [[2,3],[3,1]]
+                ]
+            }
+        ],
+        [
+            {   
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData":[
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "334.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "344.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "438.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "448.PNG" } }
+                        ],
+                        [
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 344 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 448 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 334 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 438 } }
+                        ],
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "三百四十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "三百三十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "四百四十八", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "四百三十八", "Zhuyin": true, "Size": "Tiny" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,2]],
+                    [[0,1],[1,0]],
+                    [[0,2],[1,3]],
+                    [[0,3],[1,1]],
+                    [[2,0],[3,0]],
+                    [[2,1],[3,2]],
+                    [[2,2],[3,1]],
+                    [[2,3],[3,3]]
+                ]
+            }
+        ],
+        [
+            {   
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData":[
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "34.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "44.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "38.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "48.PNG" } }
+                        ],
+                        [
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 44 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 48 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 34 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 38 } }
+                        ],
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "四十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "三十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "四十八", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "三十八", "Zhuyin": true, "Size": "Tiny" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,2]],
+                    [[0,1],[1,0]],
+                    [[0,2],[1,3]],
+                    [[0,3],[1,1]],
+                    [[2,0],[3,0]],
+                    [[2,1],[3,2]],
+                    [[2,2],[3,1]],
+                    [[2,3],[3,3]]
+                ]
+            }
+        ],
+        [
+            {   
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData":[
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "76.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "88.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "96.PNG" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "54.PNG" } }
+                        ],
+                        [
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 88 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 76 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 96 } },
+                            { "Name": "NumberBoard", "Data": { "Unit": ["百位","十位", "個位"], "Number": 54 } }
+                        ],
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "七十六", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "五十四", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "八十八", "Zhuyin": true, "Size": "Tiny" } },
+                            { "Name": "TextOnly", "Data": { "Text": "九十六", "Zhuyin": true ,"Size": "Tiny" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,1]],
+                    [[0,1],[1,0]],
+                    [[0,2],[1,2]],
+                    [[0,3],[1,3]],
+                    [[2,0],[3,2]],
+                    [[2,1],[3,0]],
+                    [[2,2],[3,3]],
+                    [[2,3],[3,1]]
+                ]
+            }
+        ]
+    ]
+}

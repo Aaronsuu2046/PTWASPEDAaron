@@ -1,0 +1,370 @@
+{
+  "id": "MA3153",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在定位板上記記看，並回答問題"
+  },
+  "GameType": "NumberLock",
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": true,
+      "down": true
+    }
+  },
+  "Questions": [
+    [
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "8.6是$i$個1和$i$個0.1合起來的",
+            "Answer": ["8", "6"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 86,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "3.7是$i$個1和$i$個0.1合起來的",
+            "Answer": ["3", "7"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 37,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "4.5是$i$個1和$i$個0.1合起來的",
+            "Answer": ["4", "5"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 45,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "2.4是$i$個1和$i$個0.1合起來的",
+            "Answer": ["2", "4"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 24,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "6.7是$i$個1和$i$個0.1合起來的",
+            "Answer": ["6", "7"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 67,
+            "isInput": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "10個0.1合起來是$i$",
+            "Answer": ["1"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 10,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "65個0.1合起來是$i$",
+            "Answer": ["6.5"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 65,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "89個0.1合起來是$i$",
+            "Answer": ["8.9"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 89,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "22個0.1合起來是$i$",
+            "Answer": ["2.2"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 22,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "43個0.1合起來是$i$",
+            "Answer": ["4.3"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 43,
+            "isInput": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "4個1和9個0.1合起來是$i$",
+            "Answer": ["4.9"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 49,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "8個1和3個0.1合起來是$i$",
+            "Answer": ["8.3"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 83,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "5個1和1個0.1合起來是$i$",
+            "Answer": ["5.1"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 51,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "6個1和6個0.1合起來是$i$",
+            "Answer": ["6.6"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 66,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "9個1和9個0.1合起來是$i$",
+            "Answer": ["9.9"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 99,
+            "isInput": true
+          }
+        }
+      }
+    ],
+    [
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "2個1和10個0.1合起來是$i$",
+            "Answer": ["3"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 30,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "4個1和11個0.1合起來是$i$",
+            "Answer": ["5.1"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 51,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "6個1和15個0.1合起來是$i$",
+            "Answer": ["7.5"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 75,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "8個1和12個0.1合起來是$i$",
+            "Answer": ["9.2"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 92,
+            "isInput": true
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "3個1和14個0.1合起來是$i$",
+            "Answer": ["4.4"]
+          }
+        },
+        "downComponent": {
+          "Name": "NumberBoard",
+          "Data": {
+            "Unit": ["個位", "十分位"],
+            "Number": 44,
+            "isInput": true
+          }
+        }
+      }
+    ]
+  ]
+}

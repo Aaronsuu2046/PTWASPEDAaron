@@ -1,0 +1,426 @@
+{
+  "id": "MA3021",
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "Questions": [
+    [
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "456",
+            "operand2": "289"
+          },
+          "answer": "745",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 456 + 289 = $i$",
+          "Answer": [745]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "609",
+            "operand2": "199"
+          },
+          "answer": "808",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 609 + 199 = $i$",
+          "Answer": [808]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "149",
+            "operand2": "254"
+          },
+          "answer": "403",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 149 + 254 = $i$",
+          "Answer": [403]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "364",
+            "operand2": "456"
+          },
+          "answer": "820",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 364 + 456 = $i$",
+          "Answer": [820]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "584",
+            "operand2": "358"
+          },
+          "answer": "942",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 584 + 358 = $i$",
+          "Answer": [942]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "465",
+            "operand2": "722"
+          },
+          "answer": "1187",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 465 + 722 = $i$",
+          "Answer": [1187]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "858",
+            "operand2": "211"
+          },
+          "answer": "1069",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 858 + 211 = $i$",
+          "Answer": [1069]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "974",
+            "operand2": "412"
+          },
+          "answer": "1386",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 974 + 412 = $i$",
+          "Answer": [1386]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "627",
+            "operand2": "540"
+          },
+          "answer": "1167",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 627 + 540 = $i$",
+          "Answer": [1167]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "713",
+            "operand2": "325"
+          },
+          "answer": "1038",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 713 + 325 = $i$",
+          "Answer": [1038]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "3224",
+            "operand2": "398"
+          },
+          "answer": "3622",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 3224 + 398 = $i$",
+          "Answer": [3622]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "2362",
+            "operand2": "189"
+          },
+          "answer": "2551",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 2362 + 189 = $i$",
+          "Answer": [2551]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "2128",
+            "operand2": "395"
+          },
+          "answer": "2523",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 2128 + 395 = $i$",
+          "Answer": [2523]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "4183",
+            "operand2": "548"
+          },
+          "answer": "4731",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 4183 + 548 = $i$",
+          "Answer": [4731]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "1257",
+            "operand2": "553"
+          },
+          "answer": "1810",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 1257 + 553 = $i$",
+          "Answer": [1810]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "5425",
+            "operand2": "2742"
+          },
+          "answer": "8167",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 5425 + 2742 = $i$",
+          "Answer": [8167]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "6610",
+            "operand2": "2571"
+          },
+          "answer": "9181",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 6610 + 2571 = $i$",
+          "Answer": [9181]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "4385",
+            "operand2": "2810"
+          },
+          "answer": "7195",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 4385 + 2810 = $i$",
+          "Answer": [7195]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "6526",
+            "operand2": "1862"
+          },
+          "answer": "8388",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 6526 + 1862 = $i$",
+          "Answer": [8388]
+        }
+      },
+      {
+        "calculator": {
+          "type": "add",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "2684",
+            "operand2": "5405"
+          },
+          "answer": "8089",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 2684 + 5405 = $i$",
+          "Answer": [8089]
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "哥哥買了一雙1289元的運動鞋，和一件1455元的棒球衣，一共花了多少元?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "1289 $$ 1455 = $i$",
+          "Answer": ["+", 2744]
+        },
+        "image": {
+          "Src": "5-1.png"
+        }
+      },
+      {
+        "headQuestion": "哥哥買了一雙1569元的運動鞋，和一件2466元的棒球衣，一共花了多少元?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "1569 $$ 2466 = $i$",
+          "Answer": ["+", 4035]
+        },
+        "image": {
+          "Src": "5-2.png"
+        }
+      },
+      {
+        "headQuestion": "哥哥買了一雙2795元的運動鞋，和一件1388元的棒球衣，一共花了多少元?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "2795 $$ 1388 = $i$",
+          "Answer": ["+", 4183]
+        },
+        "image": {
+          "Src": "5-3.png"
+        }
+      },
+      {
+        "headQuestion": "哥哥買了一雙2449元的運動鞋，和一件1888元的棒球衣，一共花了多少元?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "2449 $$ 1888 = $i$",
+          "Answer": ["+", 4337]
+        },
+        "image": {
+          "Src": "5-4.png"
+        }
+      },
+      {
+        "headQuestion": "哥哥買了一雙1686元的運動鞋，和一件2785元的棒球衣，一共花了多少元?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "1686 $$ 2785 = $i$",
+          "Answer": ["+", 4471]
+        },
+        "image": {
+          "Src": "5-5.png"
+        }
+      }
+    ]
+  ]
+}

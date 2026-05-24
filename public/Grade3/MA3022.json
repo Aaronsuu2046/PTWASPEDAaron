@@ -1,0 +1,426 @@
+{
+  "id": "MA3022",
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "Questions": [
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "355",
+            "operand2": "62"
+          },
+          "answer": "273",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 355 - 62 = $i$",
+          "Answer": [273]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "751",
+            "operand2": "83"
+          },
+          "answer": "668",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 751 - 83 = $i$",
+          "Answer": [668]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "527",
+            "operand2": "65"
+          },
+          "answer": "462",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 527 - 65 = $i$",
+          "Answer": [462]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "624",
+            "operand2": "59"
+          },
+          "answer": "565",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 624 - 59 = $i$",
+          "Answer": [565]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "412",
+            "operand2": "63"
+          },
+          "answer": "349",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 412 - 63 = $i$",
+          "Answer": [349]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "452",
+            "operand2": "138"
+          },
+          "answer": "314",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 452 - 138 = $i$",
+          "Answer": [314]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "363",
+            "operand2": "215"
+          },
+          "answer": "148",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 363 - 215 = $i$",
+          "Answer": [148]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "585",
+            "operand2": "427"
+          },
+          "answer": "158",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 585 - 427 = $i$",
+          "Answer": [158]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "674",
+            "operand2": "365"
+          },
+          "answer": "309",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 674 - 365 = $i$",
+          "Answer": [309]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "437",
+            "operand2": "119"
+          },
+          "answer": "318",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 437 - 119 = $i$",
+          "Answer": [318]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "925",
+            "operand2": "351"
+          },
+          "answer": "574",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 925 - 351 = $i$",
+          "Answer": [574]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "738",
+            "operand2": "185"
+          },
+          "answer": "553",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 738 - 185 = $i$",
+          "Answer": [553]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "612",
+            "operand2": "250"
+          },
+          "answer": "362",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 612 - 250 = $i$",
+          "Answer": [362]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "841",
+            "operand2": "581"
+          },
+          "answer": "260",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 841 - 581 = $i$",
+          "Answer": [260]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "746",
+            "operand2": "695"
+          },
+          "answer": "51",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 746 - 695 = $i$",
+          "Answer": [51]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "455",
+            "operand2": "167"
+          },
+          "answer": "288",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 455 - 167 = $i$",
+          "Answer": [288]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "621",
+            "operand2": "475"
+          },
+          "answer": "146",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 621 - 475 = $i$",
+          "Answer": [146]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "567",
+            "operand2": "289"
+          },
+          "answer": "278",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 567 - 289 = $i$",
+          "Answer": [278]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "470",
+            "operand2": "296"
+          },
+          "answer": "174",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 470 - 296 = $i$",
+          "Answer": [174]
+        }
+      },
+      {
+        "calculator": {
+          "type": "sub",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "845",
+            "operand2": "367"
+          },
+          "answer": "478",
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "# 845 - 367 = $i$",
+          "Answer": [478]
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "媽媽有835元，買了一條褲子花了769元，還剩下多少元?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "835 $$ 769 = $i$",
+          "Answer": ["-", 66]
+        },
+        "image": {
+          "Src": "5-1.png"
+        }
+      },
+      {
+        "headQuestion": "媽媽有510元，買了一件褲子花了345元，還剩下多少元?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "510 $$ 345 = $i$",
+          "Answer": ["-", 165]
+        },
+        "image": {
+          "Src": "5-2.png"
+        }
+      },
+      {
+        "headQuestion": "媽媽有673元，買了一件褲子花了188元，還剩下多少元?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "673 $$ 188 = $i$",
+          "Answer": ["-", 485]
+        },
+        "image": {
+          "Src": "5-3.png"
+        }
+      },
+      {
+        "headQuestion": "媽媽有740元，買了一件褲子花了359元，還剩下多少元?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "740 $$ 359 = $i$",
+          "Answer": ["-", 381]
+        },
+        "image": {
+          "Src": "5-4.png"
+        }
+      },
+      {
+        "headQuestion": "媽媽有930元，買了一件褲子花了485元，還剩下多少元?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "930 $$ 485 = $i$",
+          "Answer": ["-", 563]
+        },
+        "image": {
+          "Src": "5-5.png"
+        }
+      }
+    ]
+  ]
+}

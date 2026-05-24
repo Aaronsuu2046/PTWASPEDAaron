@@ -1,0 +1,315 @@
+{
+  "id": "MA3184",
+  "GameType": "SelectGame",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "選選看適合的時間單位"
+  },
+  "GameConfig": {
+    "GlobalTitle": "請選擇正確的單位",
+    "RandomMode": true
+  },
+  "Hint": {
+    "ShowAs": "Single",
+    "Rule": {
+      "RuleType": "WrongTimes"
+    },
+    "Data": {
+      "MaxWrongTimes": 2,
+      "SourceType": "video",
+      "FilePath": "hint1.mp4"
+    }
+  },
+  "Questions": [
+    [
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "唱一首歌要3 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "1-1.png",
+              "Alt": "唱歌的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "吃一個漢堡要6 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "1-2.png",
+              "Alt": "吃漢堡的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "看一則新聞要4 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "1-3.png",
+              "Alt": "看新聞的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "洗手大約需要1 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "1-4.png",
+              "Alt": "洗手的圖示"
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "晚上睡覺睡了8 (        )，請問使用哪個單位?",
+        "Answer": "小時",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "2-1.png",
+              "Alt": "睡覺的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "一場電影播放2 (        )，請問使用哪個單位?",
+        "Answer": "小時",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "2-2.png",
+              "Alt": "電影播放的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "高雄搭火車到台北要4 (        )，請問使用哪個單位?",
+        "Answer": "小時",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "2-3.png",
+              "Alt": "搭火車的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "整理房間花了1 (        )，請問使用哪個單位?",
+        "Answer": "小時",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "2-4.png",
+              "Alt": "整理房間的圖示"
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "出國旅行玩7 (        )，請問使用哪個單位?",
+        "Answer": "日",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "3-1.png",
+              "Alt": "出國旅行的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "中秋連假放了3 (        )，請問使用哪個單位?",
+        "Answer": "日",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "3-2.png",
+              "Alt": "中秋連假的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "跟家人去露營玩2 (        )，請問使用哪個單位?",
+        "Answer": "日",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "3-3.png",
+              "Alt": "露營的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "運動會舉行1 (        )，請問使用哪個單位?",
+        "Answer": "日",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "3-4.png",
+              "Alt": "運動會的圖示"
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "洗澡用了15 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "4-1.png",
+              "Alt": "洗澡的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "吃午餐要30 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "4-2.png",
+              "Alt": "吃午餐的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "一節數學課40 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "4-3.png",
+              "Alt": "數學課的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "看一集卡通要23 (        )，請問使用哪個單位?",
+        "Answer": "分鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "4-4.png",
+              "Alt": "看卡通的圖示"
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "喝一口水要4 (        )，請問使用哪個單位?",
+        "Answer": "秒鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "5-1.png",
+              "Alt": "喝水的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "短跑100公尺需要12 (        )，請問使用哪個單位?",
+        "Answer": "秒鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "5-2.png",
+              "Alt": "短跑的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "穿一雙襪子需要16 (        )，請問使用哪個單位?",
+        "Answer": "秒鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "5-3.png",
+              "Alt": "穿襪子的圖示"
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["日", "小時", "分鐘", "秒鐘"],
+        "Question_Text": "猜拳一次用了5 (        )，請問使用哪個單位?",
+        "Answer": "秒鐘",
+        "SlotComponents": [
+          {
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "5-4.png",
+              "Alt": "猜拳的圖示"
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}

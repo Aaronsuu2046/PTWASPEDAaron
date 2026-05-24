@@ -1,0 +1,26 @@
+{
+    "id": "MA3019",
+    "introvideo": "src",
+    "TotalLevel": 1,
+    "GameType": "LinkGame",
+    "GameConfig":{
+        
+    },
+    "Questions": [
+        {   
+            "Question": {
+                "text": "題目文字",
+                "RowData":[
+                    [{"Name": "ImageContainer","Data":{"Src":"Cat.png"}},{"Name": "ImageContainer","Data":{"Src":"Cat.png"}},{"Name": "ImageContainer","Data":{"Src":"Cat.png"}}],
+                    [{"Name": "ImageContainer","Data":{"Src":"Cat.png"}},{"Name": "ImageContainer","Data":{"Src":"Cat.png"}},{"Name": "ImageContainer","Data":{"Src":"Cat.png"}}],
+                    [{"Name": "ImageContainer","Data":{"Src":"Cat.png"}},{"Name": "ImageContainer","Data":{"Src":"Cat.png"}},{"Name": "ImageContainer","Data":{"Src":"Cat.png"}}]
+                ]
+            },
+            "Answer": [
+                [[0,0],[1,0]],
+                [[0,1],[1,2]],
+                [[0,2],[1,1]]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "MA3164",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "移動圓到圓心，再填填看"
+  },
+  "GameType": "SelfDefine",
+  "GameConfig": {
+    "GlobalTitle": "[Insert title.]"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "Question": "小橘在釣魚，他只能釣距離他2公分以內的魚，那麼他可以釣到幾隻魚呢?",
+        "Unit": "塊",
+        "Options": ["直徑4公分", "直徑2公分"],
+        "Radius": [4, 2],
+        "CorrectRadius": 0,
+        "TargetImage": "fishman.png",
+        "FoodImage": "fish.png",
+        "Answer": 5
+      },
+      {
+        "Question": "小橘在釣魚，他只能釣距離他3公分以內的魚，那麼他可以釣到幾隻魚呢?",
+        "Unit": "塊",
+        "Options": ["直徑6公分", "直徑3公分"],
+        "Radius": [6, 3],
+        "CorrectRadius": 0,
+        "TargetImage": "fishman.png",
+        "FoodImage": "fish.png",
+        "Answer": 6
+      },
+      {
+        "Question": "小橘在釣魚，他只能釣距離他4公分以內的魚，那麼他可以釣到幾隻魚呢?",
+        "Unit": "塊",
+        "Options": ["直徑8公分", "直徑4公分"],
+        "Radius": [8, 4],
+        "CorrectRadius": 0,
+        "TargetImage": "fishman.png",
+        "FoodImage": "fish.png",
+        "Answer": 9
+      }
+    ],
+    [
+      {
+        "Question": "小老鼠搬起司，他搬光了距離他2公分以內的起司，是搬了幾塊起司？",
+        "Unit": "塊",
+        "Options": ["半徑2公分", "半徑4公分"],
+        "Radius": [2, 4],
+        "CorrectRadius": 0,
+        "TargetImage": "rat.png",
+        "FoodImage": "cheese.png",
+        "Answer": 6
+      },
+      {
+        "Question": "小老鼠搬起司，他搬光了距離他3公分以內的起司，是搬了幾塊起司？",
+        "Unit": "塊",
+        "Options": ["半徑6公分", "半徑3公分"],
+        "Radius": [6, 3],
+        "CorrectRadius": 0,
+        "TargetImage": "rat.png",
+        "FoodImage": "cheese.png",
+        "Answer": 7
+      },
+      {
+        "Question": "小老鼠搬起司，他搬光了距離他4公分以內的起司，是搬了幾塊起司？",
+        "Unit": "塊",
+        "Options": ["半徑8公分", "半徑4公分"],
+        "Radius": [8, 4],
+        "CorrectRadius": 0,
+        "TargetImage": "rat.png",
+        "FoodImage": "cheese.png",
+        "Answer": 9
+      }
+    ]
+  ]
+}

@@ -1,0 +1,88 @@
+{
+    "id": "Dev02_OneDimensionalForm",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "[Insert question.]"
+    },
+    "TotalLevel": 2,
+    "GameType": "OneDimensionalForm",
+    "GameConfig": {
+    },
+    "Hint":{
+        
+    },
+    "Questions": [
+        {
+            "FormTitle": {
+                "Type":"TextOnly",
+                "Data":{
+                    "Text": "價目表",
+                    "Size": "large"
+                }
+            },
+            "Form":"BreakfastShop",
+            "Questions":[
+                {
+                    "Text": "1. 漢堡系列中，哪一種最貴?",
+                    "Type":"DefaultDragBox",
+                    "Data":{
+                        "answer": "雙層牛肉漢堡.jpg"
+                    }
+                },
+                {
+                    "Text": "2. 哪一種餐點價格和鮪魚蛋吐司一樣?",
+                    "Type":"DefaultDragBox",
+                    "Data":{
+                        "answer": "牛肉漢堡.jpg"
+                    }
+                },
+                {
+                    "Text": "3. 阿美想要買一份豬排漢堡和一杯阿華田，一共要付多少錢呢?",
+                    "Type":"NumberIncrementor",
+                    "Data":{
+                        "digitCount": 2,
+                        "answer": 60
+                    }
+                }
+            ]
+        },
+        {
+            "FormTitle": {
+                "Type":"TextOnly",
+                "Data":{
+                    "Text": "台南市立美術館票價表",
+                    "Size": "large"
+                }
+            },
+            "Form":"TainanMuseum",
+            "Questions":[
+                {
+                    "Text": "就讀台北市立國小三年級的樂樂和爸爸、媽媽去參觀，票價一共是多少元?",
+                    "Type":"NumberIncrementor",
+                    "Data":{
+                        "digitCount": 3,
+                        "answer": 500
+                    }
+                },
+                {
+                    "Text": "奶奶去台南市立美術館，不需要收費，請問奶奶是使用哪種票種?",
+                    "Type":"DefaultDragBox",
+                    "Data":{
+                        "answer": "設籍台南市65歲以上市民"
+                    }
+                },
+                {
+                    "Text": "高雄旅行社舉辦台南市立美術館一日遊的活動，有15人報名，一個人的票價是多少元? ",
+                    "Type":"NumberIncrementor",
+                    "Data":{
+                        "digitCount": 3,
+                        "answer": 150
+                    }
+                }
+            ]
+            
+            
+        }
+    ]
+}

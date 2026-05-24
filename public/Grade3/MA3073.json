@@ -1,0 +1,558 @@
+{
+  "id": "MA3073",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用除法算式記記看"
+  },
+  "TotalLevel": 3,
+  "GameType": "NumberLock",
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": false,
+      "down": true
+    }
+  },
+  "Questions": [
+    [
+      {
+        "questionText": "有9糖果，平分給2個人，盡量分完，每個人可以分到幾顆?還剩下幾糖果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 9
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["9", "2", "4", "1"],
+            "finalAnswerTemplate": "分到 _ 顆，剩下 _ 糖果",
+            "finalAnswers": ["4", "1"]
+          }
+        }
+      },
+      {
+        "questionText": "有11糖果，平分給2個人，盡量分完，每個人可以分到幾顆?還剩下幾糖果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 11
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["11", "2", "5", "1"],
+            "finalAnswerTemplate": "分到 _ 顆，剩下 _ 糖果",
+            "finalAnswers": ["5", "1"]
+          }
+        }
+      },
+      {
+        "questionText": "有13糖果，平分給2個人，盡量分完，每個人可以分到幾顆?還剩下幾糖果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 13
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["13", "2", "6", "1"],
+            "finalAnswerTemplate": "分到 _ 顆，剩下 _ 糖果",
+            "finalAnswers": ["6", "1"]
+          }
+        }
+      },
+      {
+        "questionText": "有10糖果，平分給3個人，盡量分完，每個人可以分到幾顆?還剩下幾糖果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 10
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["10", "3", "3", "1"],
+            "finalAnswerTemplate": "分到 _ 顆，剩下 _ 糖果",
+            "finalAnswers": ["3", "1"]
+          }
+        }
+      },
+      {
+        "questionText": "有11糖果，平分給3個人，盡量分完，每個人可以分到幾顆?還剩下幾糖果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 11
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["11", "3", "3", "2"],
+            "finalAnswerTemplate": "分到 _ 顆，剩下 _ 糖果",
+            "finalAnswers": ["3", "2"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有14甜甜圈，平分給3個人，盡量分完，每個人可以分到幾盤?還剩下幾甜甜圈?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "donut.png",
+            "Alt": "甜甜圈",
+            "Count": 14
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["14", "3", "4", "2"],
+            "finalAnswerTemplate": "分到 _ 盤，剩下 _ 甜甜圈",
+            "finalAnswers": ["4", "2"]
+          }
+        }
+      },
+      {
+        "questionText": "有11甜甜圈，平分給4個人，盡量分完，每個人可以分到幾盤?還剩下幾甜甜圈?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "donut.png",
+            "Alt": "甜甜圈",
+            "Count": 11
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["11", "4", "2", "3"],
+            "finalAnswerTemplate": "分到 _ 盤，剩下 _ 甜甜圈",
+            "finalAnswers": ["2", "3"]
+          }
+        }
+      },
+      {
+        "questionText": "有16甜甜圈，平分給3個人，盡量分完，每個人可以分到幾盤?還剩下幾甜甜圈?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "donut.png",
+            "Alt": "甜甜圈",
+            "Count": 16
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["16", "3", "5", "1"],
+            "finalAnswerTemplate": "分到 _ 盤，剩下 _ 甜甜圈",
+            "finalAnswers": ["5", "1"]
+          }
+        }
+      },
+      {
+        "questionText": "有17甜甜圈，平分給4個人，盡量分完，每個人可以分到幾盤?還剩下幾甜甜圈?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "donut.png",
+            "Alt": "甜甜圈",
+            "Count": 17
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["17", "4", "4", "1"],
+            "finalAnswerTemplate": "分到 _ 盤，剩下 _ 甜甜圈",
+            "finalAnswers": ["4", "1"]
+          }
+        }
+      },
+      {
+        "questionText": "有19甜甜圈，平分給4個人，盡量分完，每個人可以分到幾盤?還剩下幾甜甜圈?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "donut.png",
+            "Alt": "甜甜圈",
+            "Count": 19
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["19", "4", "4", "3"],
+            "finalAnswerTemplate": "分到 _ 盤，剩下 _ 甜甜圈",
+            "finalAnswers": ["4", "3"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有21棒棒糖，平分給6個人，盡量分完，每個人可以分到幾根?還剩下幾棒棒糖?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "lollipop.png",
+            "Alt": "棒棒糖",
+            "Count": 21
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["21", "6", "3", "3"],
+            "finalAnswerTemplate": "分到 _ 根，剩下 _ 棒棒糖",
+            "finalAnswers": ["3", "3"]
+          }
+        }
+      },
+      {
+        "questionText": "有27棒棒糖，平分給5個人，盡量分完，每個人可以分到幾根?還剩下幾棒棒糖?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "lollipop.png",
+            "Alt": "棒棒糖",
+            "Count": 27
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["27", "5", "5", "2"],
+            "finalAnswerTemplate": "分到 _ 根，剩下 _ 棒棒糖",
+            "finalAnswers": ["5", "2"]
+          }
+        }
+      },
+      {
+        "questionText": "有29棒棒糖，平分給6個人，盡量分完，每個人可以分到幾根?還剩下幾棒棒糖?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "lollipop.png",
+            "Alt": "棒棒糖",
+            "Count": 29
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["29", "6", "4", "5"],
+            "finalAnswerTemplate": "分到 _ 根，剩下 _ 棒棒糖",
+            "finalAnswers": ["4", "5"]
+          }
+        }
+      },
+      {
+        "questionText": "有19棒棒糖，平分給5個人，盡量分完，每個人可以分到幾根?還剩下幾棒棒糖?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "lollipop.png",
+            "Alt": "棒棒糖",
+            "Count": 19
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["19", "5", "3", "4"],
+            "finalAnswerTemplate": "分到 _ 根，剩下 _ 棒棒糖",
+            "finalAnswers": ["3", "4"]
+          }
+        }
+      },
+      {
+        "questionText": "有20棒棒糖，平分給6個人，盡量分完，每個人可以分到幾根?還剩下幾棒棒糖?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "lollipop.png",
+            "Alt": "棒棒糖",
+            "Count": 20
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["20", "6", "3", "2"],
+            "finalAnswerTemplate": "分到 _ 根，剩下 _ 棒棒糖",
+            "finalAnswers": ["3", "2"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有25蘋果，平分給7個人，盡量分完，每個人可以分到幾袋?還剩下幾蘋果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "apple.png",
+            "Alt": "蘋果",
+            "Count": 25
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["25", "7", "3", "4"],
+            "finalAnswerTemplate": "分到 _ 袋，剩下 _ 蘋果",
+            "finalAnswers": ["3", "4"]
+          }
+        }
+      },
+      {
+        "questionText": "有27蘋果，平分給8個人，盡量分完，每個人可以分到幾袋?還剩下幾蘋果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "apple.png",
+            "Alt": "蘋果",
+            "Count": 27
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["27", "8", "3", "3"],
+            "finalAnswerTemplate": "分到 _ 袋，剩下 _ 蘋果",
+            "finalAnswers": ["3", "3"]
+          }
+        }
+      },
+      {
+        "questionText": "有18蘋果，平分給7個人，盡量分完，每個人可以分到幾袋?還剩下幾蘋果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "apple.png",
+            "Alt": "蘋果",
+            "Count": 18
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["18", "7", "2", "4"],
+            "finalAnswerTemplate": "分到 _ 袋，剩下 _ 蘋果",
+            "finalAnswers": ["2", "4"]
+          }
+        }
+      },
+      {
+        "questionText": "有19蘋果，平分給8個人，盡量分完，每個人可以分到幾袋?還剩下幾蘋果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "apple.png",
+            "Alt": "蘋果",
+            "Count": 19
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["19", "8", "2", "3"],
+            "finalAnswerTemplate": "分到 _ 袋，剩下 _ 蘋果",
+            "finalAnswers": ["2", "3"]
+          }
+        }
+      },
+      {
+        "questionText": "有21蘋果，平分給8個人，盡量分完，每個人可以分到幾袋?還剩下幾蘋果?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "apple.png",
+            "Alt": "蘋果",
+            "Count": 21
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["21", "8", "2", "5"],
+            "finalAnswerTemplate": "分到 _ 袋，剩下 _ 蘋果",
+            "finalAnswers": ["2", "5"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有30巧克力，平分給7個人，盡量分完，每個人可以分到幾條?還剩下幾巧克力?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "chocolate.png",
+            "Alt": "巧克力",
+            "Count": 30
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["30", "7", "4", "2"],
+            "finalAnswerTemplate": "分到 _ 條，剩下 _ 巧克力",
+            "finalAnswers": ["4", "2"]
+          }
+        }
+      },
+      {
+        "questionText": "有30巧克力，平分給9個人，盡量分完，每個人可以分到幾條?還剩下幾巧克力?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "chocolate.png",
+            "Alt": "巧克力",
+            "Count": 30
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["30", "9", "3", "3"],
+            "finalAnswerTemplate": "分到 _ 條，剩下 _ 巧克力",
+            "finalAnswers": ["3", "3"]
+          }
+        }
+      },
+      {
+        "questionText": "有26巧克力，平分給9個人，盡量分完，每個人可以分到幾條?還剩下幾巧克力?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "chocolate.png",
+            "Alt": "巧克力",
+            "Count": 26
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["26", "9", "2", "8"],
+            "finalAnswerTemplate": "分到 _ 條，剩下 _ 巧克力",
+            "finalAnswers": ["2", "8"]
+          }
+        }
+      },
+      {
+        "questionText": "有24巧克力，平分給7個人，盡量分完，每個人可以分到幾條?還剩下幾巧克力?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "chocolate.png",
+            "Alt": "巧克力",
+            "Count": 24
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["24", "7", "3", "3"],
+            "finalAnswerTemplate": "分到 _ 條，剩下 _ 巧克力",
+            "finalAnswers": ["3", "3"]
+          }
+        }
+      },
+      {
+        "questionText": "有17巧克力，平分給9個人，盡量分完，每個人可以分到幾條?還剩下幾巧克力?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "chocolate.png",
+            "Alt": "巧克力",
+            "Count": 17
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ … _",
+            "answers": ["17", "9", "1", "8"],
+            "finalAnswerTemplate": "分到 _ 條，剩下 _ 巧克力",
+            "finalAnswers": ["1", "8"]
+          }
+        }
+      }
+    ]
+  ]
+}

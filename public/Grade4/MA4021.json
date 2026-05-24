@@ -1,0 +1,47 @@
+{
+  "id": "MA4021",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      { "operand1": 1000, "operand2": 7, "billCount": 7 },
+      { "operand1": 1000, "operand2": 3, "billCount": 3 },
+      { "operand1": 1000, "operand2": 5, "billCount": 5 },
+      { "operand1": 1000, "operand2": 6, "billCount": 6 },
+      { "operand1": 1000, "operand2": 9, "billCount": 9 }
+    ],
+    [
+      { "operand1": 3000, "operand2": 6 },
+      { "operand1": 5000, "operand2": 3 },
+      { "operand1": 6000, "operand2": 2 },
+      { "operand1": 2000, "operand2": 9 },
+      { "operand1": 7000, "operand2": 5 }
+    ],
+    [
+      { "operand1": 1123, "operand2": 2 },
+      { "operand1": 1325, "operand2": 3 },
+      { "operand1": 2316, "operand2": 4 },
+      { "operand1": 3142, "operand2": 3 },
+      { "operand1": 1273, "operand2": 6 }
+    ],
+    [
+      { "operand1": 2120, "operand2": 6 },
+      { "operand1": 4260, "operand2": 3 },
+      { "operand1": 5100, "operand2": 5 },
+      { "operand1": 6100, "operand2": 4 },
+      { "operand1": 1130, "operand2": 9 }
+    ],
+    [
+      { "operand1": 2009, "operand2": 7 },
+      { "operand1": 6508, "operand2": 3 },
+      { "operand1": 3090, "operand2": 2 },
+      { "operand1": 5012, "operand2": 6 },
+      { "operand1": 8208, "operand2": 4 }
+    ]
+  ]
+}

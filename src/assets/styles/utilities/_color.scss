@@ -1,0 +1,49 @@
+$primary-color: #c4cfc5;
+$sub-color: #f0f4ef;
+$accent-color: #0077b6; // 藍色點綴色
+$dark-color: #1D1D1D;
+$light-color: #ffffff;
+$submit-color: #80cbc4;
+$success-color: #64b5f6; // 藍色成功色
+$error-color: #dc3545;
+$highlight-color: #198754;
+$warning-color: #ffb703;
+$alert-color: #ff6f61;
+$info-color: lighten($success-color, 20%);
+$hyperlink-color: #0077b6;
+
+
+$primary-btn-bg: $primary-color;
+$primary-btn-hover-bg: darken($primary-color, 20%);
+$primary-btn-text: #ffffff;
+
+$secondary-btn-bg: lighten($accent-color, 20%);
+$secondary-btn-hover-bg: lighten($accent-color, 10%);
+$secondary-btn-text: #1D1D1D;
+
+$success-btn-bg: $success-color;
+$success-btn-hover-bg: darken($success-color, 10%);
+$success-btn-text: #ffffff;
+
+$warning-btn-bg: $warning-color;
+$warning-btn-hover-bg: darken($warning-color, 10%);
+$warning-btn-text: #ffffff;
+
+$error-btn-bg: $error-color;
+$error-btn-hover-bg: darken($error-color, 10%);
+$error-btn-text: #ffffff;
+
+$disabled-btn-bg: lighten($dark-color, 40%);
+$disabled-btn-text: lighten($dark-color, 60%);
+
+$submit-btn-bg: $submit-color;
+$submit-btn-hover-bg: darken($submit-color, 10%);
+$submit-btn-text: #ffffff;
+
+// $info-btn-bg: darken(#6c757d, 0%); // 按鈕顏色稍微加深
+// $info-btn-hover-bg: darken(#6c757d, 2%); // 懸停時按鈕顏色稍微加深
+// $info-btn-text: #ffffff; // 白色文字顏色
+
+$info-btn-bg: #A9B6AD;
+
+$hightlight-color: #198754;

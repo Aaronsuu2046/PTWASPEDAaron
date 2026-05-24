@@ -1,0 +1,558 @@
+{
+  "id": "MA3071",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用除法算式記記看"
+  },
+  "TotalLevel": 3,
+  "GameType": "NumberLock",
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": false,
+      "down": true
+    }
+  },
+  "Questions": [
+    [
+      {
+        "questionText": "把7朵花，每7朵花綁一束，最多可以綁成幾束?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "flower.png",
+            "Alt": "花",
+            "Count": 7
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["7", "7", "1"],
+            "finalAnswerTemplate": "_ 束",
+            "finalAnswers": ["1"]
+          }
+        }
+      },
+      {
+        "questionText": "把6朵花，每6朵花綁一束，最多可以綁成幾束?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "flower.png",
+            "Alt": "花",
+            "Count": 6
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["6", "6", "1"],
+            "finalAnswerTemplate": "_ 束",
+            "finalAnswers": ["1"]
+          }
+        }
+      },
+      {
+        "questionText": "把9朵花，每9朵花綁一束，最多可以綁成幾束?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "flower.png",
+            "Alt": "花",
+            "Count": 9
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["9", "9", "1"],
+            "finalAnswerTemplate": "_ 束",
+            "finalAnswers": ["1"]
+          }
+        }
+      },
+      {
+        "questionText": "把5朵花，每5朵花綁一束，最多可以綁成幾束?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "flower.png",
+            "Alt": "花",
+            "Count": 5
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["5", "5", "1"],
+            "finalAnswerTemplate": "_ 束",
+            "finalAnswers": ["1"]
+          }
+        }
+      },
+      {
+        "questionText": "把8朵花，每8朵花綁一束，最多可以綁成幾束?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "flower.png",
+            "Alt": "花",
+            "Count": 8
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["8", "8", "1"],
+            "finalAnswerTemplate": "_ 束",
+            "finalAnswers": ["1"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "把8台玩具車，2台裝一箱，最多可以裝成幾箱?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "toy-car.png",
+            "Alt": "玩具車",
+            "Count": 8
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["8", "2", "4"],
+            "finalAnswerTemplate": "_ 箱",
+            "finalAnswers": ["4"]
+          }
+        }
+      },
+      {
+        "questionText": "把10台玩具車，2台裝一箱，最多可以裝成幾箱?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "toy-car.png",
+            "Alt": "玩具車",
+            "Count": 10
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["10", "2", "5"],
+            "finalAnswerTemplate": "_ 箱",
+            "finalAnswers": ["5"]
+          }
+        }
+      },
+      {
+        "questionText": "把9台玩具車，3台裝一箱，最多可以裝成幾箱?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "toy-car.png",
+            "Alt": "玩具車",
+            "Count": 9
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["9", "3", "3"],
+            "finalAnswerTemplate": "_ 箱",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "把12台玩具車，3台裝一箱，最多可以裝成幾箱?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "toy-car.png",
+            "Alt": "玩具車",
+            "Count": 12
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["12", "3", "4"],
+            "finalAnswerTemplate": "_ 箱",
+            "finalAnswers": ["4"]
+          }
+        }
+      },
+      {
+        "questionText": "把12台玩具車，2台裝一箱，最多可以裝成幾箱",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "toy-car.png",
+            "Alt": "玩具車",
+            "Count": 12
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["12", "2", "6"],
+            "finalAnswerTemplate": "_ 箱",
+            "finalAnswers": ["6"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "把16顆糖果，4顆裝一袋，最多可以裝成幾盤?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 16
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["16", "4", "4"],
+            "finalAnswerTemplate": "_ 袋",
+            "finalAnswers": ["4"]
+          }
+        }
+      },
+      {
+        "questionText": "把12顆糖果，4顆裝一袋，最多可以裝成幾盤?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 12
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["12", "4", "3"],
+            "finalAnswerTemplate": "_ 袋",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "把15顆糖果，5顆裝一袋，最多可以裝成幾盤?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 15
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["15", "5", "3"],
+            "finalAnswerTemplate": "_ 袋",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "把20顆糖果，4顆裝一袋，最多可以裝成幾盤?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 20
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["20", "4", "5"],
+            "finalAnswerTemplate": "_ 袋",
+            "finalAnswers": ["5"]
+          }
+        }
+      },
+      {
+        "questionText": "把20顆糖果，5顆裝一袋，最多可以裝成幾盤?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "candy.png",
+            "Alt": "糖果",
+            "Count": 20
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["20", "5", "4"],
+            "finalAnswerTemplate": "_ 袋",
+            "finalAnswers": ["4"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有18枝鉛筆，平分成6堆，盡量分完，每堆有幾枝鉛筆?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "pencil.png",
+            "Alt": "鉛筆",
+            "Count": 18
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["18", "6", "3"],
+            "finalAnswerTemplate": "_ 枝",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "有30枝鉛筆，平分給6堆，盡量分完，每堆有幾枝鉛筆?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "pencil.png",
+            "Alt": "鉛筆",
+            "Count": 30
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["30", "6", "5"],
+            "finalAnswerTemplate": "_ 枝",
+            "finalAnswers": ["5"]
+          }
+        }
+      },
+      {
+        "questionText": "有14枝鉛筆，平分給7堆，盡量分完，每堆有幾枝鉛筆?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "pencil.png",
+            "Alt": "鉛筆",
+            "Count": 14
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["14", "7", "2"],
+            "finalAnswerTemplate": "_ 枝",
+            "finalAnswers": ["2"]
+          }
+        }
+      },
+      {
+        "questionText": "有21枝鉛筆，平分給7堆，盡量分完，每堆有幾枝鉛筆?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "pencil.png",
+            "Alt": "鉛筆",
+            "Count": 21
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["21", "7", "3"],
+            "finalAnswerTemplate": "_ 枝",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "有12枝鉛筆，平分給6堆，盡量分完，每堆有幾枝鉛筆?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "pencil.png",
+            "Alt": "鉛筆",
+            "Count": 12
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["12", "6", "2"],
+            "finalAnswerTemplate": "_ 枝",
+            "finalAnswers": ["2"]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "把18顆氣球，每9顆分給一個人，最多可以分給幾個人?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "balloon.png",
+            "Alt": "氣球",
+            "Count": 18
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["18", "9", "2"],
+            "finalAnswerTemplate": "_ 個人",
+            "finalAnswers": ["2"]
+          }
+        }
+      },
+      {
+        "questionText": "把16顆氣球，每8顆分給一個人，最多可以分給幾個人?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "balloon.png",
+            "Alt": "氣球",
+            "Count": 16
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["16", "8", "2"],
+            "finalAnswerTemplate": "_ 個人",
+            "finalAnswers": ["2"]
+          }
+        }
+      },
+      {
+        "questionText": "把24顆氣球，每8顆分給一個人，最多可以分給幾個人?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "balloon.png",
+            "Alt": "氣球",
+            "Count": 24
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["24", "8", "3"],
+            "finalAnswerTemplate": "_ 個人",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "把27顆氣球，每9顆分給一個人，最多可以分給幾個人? ",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "balloon.png",
+            "Alt": "氣球",
+            "Count": 27
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["27", "9", "3"],
+            "finalAnswerTemplate": "_ 個人",
+            "finalAnswers": ["3"]
+          }
+        }
+      },
+      {
+        "questionText": "把14顆氣球，每7顆分給一個人，最多可以分給幾個人?",
+        "middleText": "用除法算式記記看",
+        "topComponent": {
+          "Name": "RepeatImage",
+          "Data": {
+            "Src": "balloon.png",
+            "Alt": "氣球",
+            "Count": 14
+          }
+        },
+        "downComponent": {
+          "Name": "InteractiveMathEquation",
+          "Data": {
+            "equation": "_ ÷ _ = _ ",
+            "answers": ["14", "7", "2"],
+            "finalAnswerTemplate": "_ 個人",
+            "finalAnswers": ["2"]
+          }
+        }
+      }
+    ]
+  ]
+}

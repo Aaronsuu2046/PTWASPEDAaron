@@ -1,0 +1,747 @@
+{
+  "id": "MA3173",
+  "introvideo": "src",
+  "GameType": "SelfDefine",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": ""
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "Question": "84÷7=12",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "84",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "12",
+              "operand2": "7"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "78÷6=13",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "78",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "13",
+              "operand2": "6"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "45÷3=15",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "45",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "45",
+              "operand2": "3"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "86÷2=43",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "86",
+            "operand2": "2"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "43",
+              "operand2": "2"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "72÷4=18",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "72",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "18",
+              "operand2": "4"
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "540÷5=108",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "540",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "108",
+              "operand2": "5"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "135÷3=45",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "135",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "45",
+              "operand2": "3"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "804÷4=201",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "804",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "201",
+              "operand2": "4"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "336÷3=112",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "336",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "112",
+              "operand2": "3"
+            }
+          }
+        ]
+      },
+      {
+        "Question": "318÷6=53",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "318",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "53",
+              "operand2": "6"
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "85÷6=14...1",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "85",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "14",
+              "operand2": "6"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "84",
+              "operand2": "1"
+            },
+            "answer": 85
+          }
+        ]
+      },
+      {
+        "Question": "88÷7=12...4",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "88",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "12",
+              "operand2": "7"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "84",
+              "operand2": "4"
+            },
+            "answer": 88
+          }
+        ]
+      },
+      {
+        "Question": "93÷5=18...3",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "93",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "18",
+              "operand2": "5"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "90",
+              "operand2": "2"
+            },
+            "answer": 93
+          }
+        ]
+      },
+      {
+        "Question": "90÷8=11...2",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "90",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "16",
+              "operand2": "4"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "64",
+              "operand2": "1"
+            },
+            "answer": 90
+          }
+        ]
+      },
+      {
+        "Question": "65÷4=16...1",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "65",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "16",
+              "operand2": "4"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "64",
+              "operand2": "1"
+            },
+            "answer": 65
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "290÷4=72...2",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "290",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "72",
+              "operand2": "4"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "288",
+              "operand2": "2"
+            },
+            "answer": 290
+          }
+        ]
+      },
+      {
+        "Question": "169÷6=28...1",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "169",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "28",
+              "operand2": "1"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "24",
+              "operand2": "1"
+            },
+            "answer": 169
+          }
+        ]
+      },
+      {
+        "Question": "170÷8=21...2",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "170",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "21",
+              "operand2": "2"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "42",
+              "operand2": "2"
+            },
+            "answer": 170
+          }
+        ]
+      },
+      {
+        "Question": "188÷9=20...8",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "188",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "20",
+              "operand2": "8"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "180",
+              "operand2": "8"
+            },
+            "answer": 188
+          }
+        ]
+      },
+      {
+        "Question": "164÷7=23...3",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "164",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "23",
+              "operand2": "3"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "161",
+              "operand2": "3"
+            },
+            "answer": 164
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": "429÷4=107...1",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "429",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "107",
+              "operand2": "1"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "428",
+              "operand2": "1"
+            },
+            "answer": 429
+          }
+        ]
+      },
+      {
+        "Question": "716÷7=102...2",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "716",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "102",
+              "operand2": "2"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "612",
+              "operand2": "2"
+            },
+            "answer": 716
+          }
+        ]
+      },
+      {
+        "Question": "347÷3=115...2",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "347",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "115",
+              "operand2": "2"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "345",
+              "operand2": "2"
+            },
+            "answer": 347
+          }
+        ]
+      },
+      {
+        "Question": "904÷6=150...4",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "904",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "150",
+              "operand2": "4"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "600",
+              "operand2": "4"
+            },
+            "answer": 904
+          }
+        ]
+      },
+      {
+        "Question": "606÷5=121...1",
+        "questionBoard": {
+          "type": "division",
+          "mode": "display",
+          "operands": {
+            "operand1": "606",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "answerBoard": [
+          {
+            "type": "multiply",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "121",
+              "operand2": "1"
+            }
+          },
+          {
+            "type": "add",
+            "mode": "checkAnswer",
+            "unitType": "Number",
+            "operands": {
+              "operand1": "605",
+              "operand2": "1"
+            },
+            "answer": 606
+          }
+        ]
+      }
+    ]
+  ]
+}

@@ -1,0 +1,617 @@
+{
+  "id": "MA3154",
+  "GameType": "CompareGame",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在口裡填入>、<或="
+  },
+  "GameConfig": {
+    "CustomeSymbol": true,
+    "SystemSymbol": "BigSmall",
+    "WithImage": false,
+    "CheckAnswerMode": "Button"
+  },
+
+  "Questions": [
+    [
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.1",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.8",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.4",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.6",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.9",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.3",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.5",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.2",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.7",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.9",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "1.7",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "1.6",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "3.4",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "4.2",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "2.5",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "1.4",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "5.4",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "5.2",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "3.8",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "8.3",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "3",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.3",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "3.8",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "3",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "5",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "4.7",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "2",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "2.0",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "7",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "6.9",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{5}{10}"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.3",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.5",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{9}{10}"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{6}{10}"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.6",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{2}{10}"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.4",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{8}{10}"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.9",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Small"]
+      }
+    ],
+    [
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "5",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{5}{10}"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{1}{10}"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.1",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "9",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{9}{10}"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Big"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{3}{10}"
+              }
+            },
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.3",
+                "Size": "title-large"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      },
+      {
+        "QuestionText": "小數的大小比較",
+        "Description": "在框框裡拖入>、<或= ",
+        "SlotComponentVerifycation": false,
+        "Datas": [
+          [
+            {
+              "Name": "TextOnly",
+              "Data": {
+                "Text": "0.4",
+                "Size": "title-large"
+              }
+            },
+            {
+              "Name": "FractionDisplay",
+              "Data": {
+                "Content": "\\frac{4}{10}"
+              }
+            }
+          ]
+        ],
+        "Answer": ["Equal"]
+      }
+    ]
+  ]
+}

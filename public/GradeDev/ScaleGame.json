@@ -1,0 +1,37 @@
+{
+    "id": "Dev02_ScaleGame",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "[Insert question.]"
+    },
+    "TotalLevel": 2,
+    "GameType": "SelfDefine",
+    "GameConfig": {
+        "GlobalTitle": "[Insert title.]"
+    },
+    "Hint":{
+        
+    },
+    "Questions": [
+        {
+            "imageSrc": "placeholder.png",
+            "answer": 500,
+            "question": "[Insert question 1.][Answer: 500]",
+            "customOptions": {
+                "scaleVerify": true,
+                "scaleBG": null
+            }
+        },
+
+        {
+            "imageSrc": "placeholder.png",
+            "answer": 1250,
+            "question": "[Insert question 2.][Answer: 1250]",
+            "customOptions": {
+                "scaleVerify": true,
+                "scaleBG": null
+            }
+        }
+    ]
+}

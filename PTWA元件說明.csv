@@ -1,0 +1,49 @@
+﻿分類,元件名稱,檔案路徑,Props,顯示內容,互動方式,Emit 事件,用途說明
+顯示類,TextOnly,src/components/TextOnly.vue,"componentConfig (Text, Size)",置中文字，可設定字體大小,無（純展示）,—,純文字顯示，支援 Size prop 調整字體大小
+顯示類,ImageContainer,src/components/ImageContainer.vue,"gameId, componentConfig (Src)",單張遊戲圖片，自動縮放,無（純展示）,—,顯示遊戲素材圖片，自動對齊容器大小
+顯示類,ImageWithText,src/components/ImageWithText.vue,"gameId, componentConfig (Src, Text)",圖片在上、文字在下的垂直排列,無（純展示）,—,圖片加文字的垂直組合顯示
+顯示類,CardWithButton,src/components/CardWithButton.vue,"text, altText, imageURL (皆 String)",圖片加下方文字的卡片格式,無（純展示）,—,簡單的圖片文字卡片版面
+顯示類,RepeatImage,src/components/RepeatImage.vue,"componentConfig, gameId",格子中重複顯示多張同樣圖片,無（純展示）,—,在響應式格子中重複展示相同圖片
+顯示類,MarkdownRenderer,src/components/MarkdownRenderer.vue,"componentConfig (Render, Answer)",渲染 Markdown，含嵌入式互動輸入框,點擊輸入框開啟虛擬鍵盤,replyAnswer,彈性 Markdown 內容渲染，支援嵌入互動元素
+顯示類,FractionText,src/components/FractionText.vue,text (String),用 KaTeX 渲染文字中的 LaTeX 分數,無（純展示）,—,將文字中嵌入的 LaTeX 分數以 KaTeX 渲染
+顯示類,FractionDisplay,src/components/FractionDisplay.vue,"componentConfig (Numerator, Denominator)",標準分子/分母格式的分數文字,無（純展示）,—,以文字顯示標準分數格式
+顯示類,MoneyDisplay,src/components/MoneyDisplay.vue,componentConfig (Denomination),對應面額的紙鈔或硬幣圖片,無（純展示）,—,根據面額顯示對應的金錢圖片
+顯示類,MoneyGenerator,src/components/MoneyGenerator.vue,componentConfig (紙鈔/硬幣面額與數量),整組紙鈔與硬幣的組合排列,無（純展示）,—,顯示完整的金錢組合（紙鈔列與硬幣列）
+時鐘類,AnalogClock,src/components/AnalogClock.vue,"componentConfig (Hour, Minute, Second)",Canvas 繪製指針式時鐘（時針/分針/秒針）,響應視窗大小調整,—,渲染可設定時間的指針式時鐘
+時鐘類,ElectronicClock,src/components/ElectronicClock.vue,"componentConfig (Hour, Minute, Second)",Konva 繪製七段顯示器風格數字時鐘,響應容器大小調整,—,以七段 LED 風格渲染數字時鐘
+數字與計算類,NumberBoard,src/components/NumberBoard.vue,"componentConfig (Unit, Number, isInput)",位值板，各位數字可點擊循環 0-9,點擊數字格循環，答錯標紅,replyAnswer,互動式位值板，用於數字輸入練習
+數字與計算類,NumberBoardInput,src/components/NumberBoardInput.vue,"componentConfig (Unit, Number)",位值板，各位用文字輸入框填寫,文字輸入,replyAnswer,可打字輸入的位值板
+數字與計算類,NumberIncrementor,src/components/NumberIncrementor.vue,"componentConfig (digitCount, decimalPlaces, answer)",可點擊遞增的各位數字，支援小數點,點擊各位數字遞增，答錯標紅,"numberChanged, replyAnswer",互動式數字遞增器，用於數字輸入
+數字與計算類,NumberLine,src/components/NumberLine.vue,"componentConfig (Start, End, Increment, Annotate, Blank)",數線上有空格供填入,文字輸入填空,replyAnswer,含填空格的數線，練習數字位置識別
+數字與計算類,NumberLineVisualizer,src/components/NumberLineVisualizer.vue,"componentConfig (total, segments, stepLabel, displayOneSegment)",數線段落視覺化，含弧線連結,無（純展示，響應縮放）,—,數線段落可視化展示，含標籤與連接弧線
+數字與計算類,NumberLineWithBlank,src/components/NumberLineWithBlank.vue,"componentConfig (min, max, spacing, blank_pos)",帶矩形空格的數線,點擊空格開啟虛擬數字鍵盤,replyAnswer,互動式數線填空，搭配虛擬鍵盤輸入
+數字與計算類,CalculationBoard,src/components/CalculationBoard.vue,componentConfig,計算板（委派給 GenericBoard）,點擊格子輸入數字,replyAnswer,計算板包裝元件，支援加減乘除
+數字與計算類,InteractiveMathEquation,src/components/InteractiveMathEquation.vue,"componentConfig (equation, answers, finalAnswerTemplate)",含空格的數學算式，可填數字與符號,點擊空格開啟鍵盤，下拉選擇運算符號,replyAnswer,互動數學算式，空格可填數字與運算符
+分數類,FractionChart,src/components/FractionChart.vue,"componentConfig (shape, numerator, denominator)",圓形或矩形靜態分數圖示,無（純展示）,—,靜態分數概念可視化（圓/矩形）
+分數類,FractionForAnswer,src/components/FractionForAnswer.vue,"componentConfig (Numerator, Denominator, Answer)",分子/分母輸入框，搭配虛擬鍵盤,點擊輸入框開啟浮動數字鍵盤,"recordAnswer, replyAnswer",學生輸入分數答案的作答元件
+分數類,InteractiveFractionVisual,src/components/InteractiveFractionVisual.vue,"componentConfig (Numerator, Denominator, shape...)",互動式分數視覺（圓/矩形/格/杯）,+/- 按鈕或滑鼠滾輪調整分子,replyAnswer,多種視覺形式的互動分數操作元件
+分數類,DragFraction,src/components/DragFraction.vue,componentConfig,分數視覺加 +/- 調整按鈕,點擊 +/- 調整分數並驗證答案,"replyAnswer, recordAnswer",點擊按鈕調整分數值並驗證
+分數類,KonvaFractionText,src/components/KonvaFractionText.vue,"numerator, denominator, x, y, fontSize, color...",在 Konva Canvas 上渲染分數文字,自動測量並調整佈局,—,供 Konva Canvas 合成使用的分數文字渲染
+拖拉互動類,DragImages,src/components/DragImages.vue,"componentConfig, gameId",Canvas 背景圖上有多張可拖移的圖片,滑鼠拖移圖片，含邊界檢查,—,多張圖片在 Canvas 上的自由拖移互動
+拖拉互動類,DragOnNumberLine,src/components/DragOnNumberLine.vue,"componentConfig, gameId",數線上有可拖移的圓點或圖片,沿數線拖移，吸附到最近刻度,replyAnswer,在數線上拖移定位，練習數字位置
+拖拉互動類,DragToAlign,src/components/DragToAlign.vue,"componentConfig, gameId",格線畫布上有可拖移圖片,拖移圖片對齊格線,—,格線對齊拖移練習
+拖拉互動類,FreeDrag,src/components/FreeDrag.vue,"gameId, componentConfig",背景圖上有多張可自由拖移的圖片複本,拖移圖片，支援 Z 軸層級管理,—,多圖片自由拖移，支援層級排列
+拖拉互動類,DragFractionCircle,src/components/utilities/drag-fraction/DragFractionCircle.vue,"numerator, denominator, gameWidth, gameHeight",可拖移的圓形分數片與分母圓,拖移分數片放入對應分母圓,addFill,拖放圓形分數片練習分數填充
+拖拉互動類,DragFractionRect,src/components/utilities/drag-fraction/DragFractionRect.vue,"numerator, denominator, gameWidth, gameHeight",可拖移的矩形分數片與分母矩形,拖移分數片放入對應分母矩形,addFill,拖放矩形分數片練習分數填充
+繪圖類,DrawingBoard,src/components/DrawingBoard.vue,"componentConfig (color, brushSize)",自由手繪白板畫布,指針事件繪製/橡皮擦,—,自由手繪白板，支援顏色切換與橡皮擦
+繪圖類,DrawImage,src/components/DrawImage.vue,"componentConfig, gameId",可點擊切換狀態的圖片格子,點擊圖片格子切換選取/未選取,replyAnswer,點擊圖片格子切換狀態，用於分數視覺練習
+繪圖類,DrawImageTable,src/components/DrawImageTable.vue,"componentConfig, gameId",表格式圖片，可點擊著色,點擊格子切換背景色,—,表格式圖片點擊著色（已標示為 deprecated）
+繪圖類,DrawShapes,src/components/DrawShapes.vue,componentConfig,格點畫布供繪製幾何圖形,點擊/拖拉連線畫圖形，驗證形狀,replyAnswer,在格點上畫幾何圖形並驗證（三角/矩形/梯形/平行四邊形）
+圖表類,CircleChart,src/components/CircleChart.vue,componentConfig,可點擊扇形的圓餅圖,點擊扇形切換顏色填充,replyAnswer,互動圓餅圖，用於分數教學
+圖表類,CoulorBarChart,src/components/CoulorBarChart.vue,componentConfig,可點擊格子的長條圖,點擊格子切換填色,replyAnswer,格子長條圖，分數視覺化（注意：檔名有 typo）
+量測類,WaterDisplay,src/components/WaterDisplay.vue,"componentConfig (Scale, Ml)",多個容器顯示水量（毫升）,無（純展示）,—,靜態顯示多個容器的液體容量
+量測類,WaterScrollable,src/components/WaterScrollable.vue,"componentConfig (Scale, Ml)",單一容器可調整水量,+/- 按鈕或滑鼠滾輪調整容量,updateML,互動式液體容量調整，含視覺水位回饋
+量測類,ScalePointer,src/components/ScalePointer.vue,"componentConfig, gameId",可拖動指針的磅秤,拖移指針到目標刻度,replyAnswer,互動式磅秤，練習重量讀取
+量測類,FillImages,src/components/FillImages.vue,"componentConfig, gameId",可點擊切換填充的格子陣列,點擊格子切換填充可見性,replyAnswer,可填充格子陣列，用於分數視覺練習
+輸入工具類,FloatNumPad,src/components/FloatNumPad.vue,"componentConfig (top, left 定位)",浮動虛擬數字鍵盤（0-9 + 小數點）,按鈕點擊，含清除/關閉,buttonClicked,觸控友好的浮動數字鍵盤
+輸入工具類,FloatOperatorPad,src/components/FloatOperatorPad.vue,componentConfig (定位),浮動數學運算符號鍵盤（+−×÷）,按鈕點擊，含關閉,buttonClicked,浮動運算符號選擇鍵盤
+輸入工具類,GenericBoard,src/components/utilities/calculation-board/GenericBoard.vue,"data (Object), config (含 getGrid 方法)",計算板表格（進位/借位列、算式列）,點擊格子輸入數字或循環運算符,replyAnswer,通用計算板核心元件，支援加減乘除四則運算
+遊戲控制類,touchscreenJoystick,src/components/touchscreenJoystick.vue,"position (Object), radius (Number)",觸控搖桿（底座圓 + 可移動圓點）,觸控/拖拉，發出方向事件,move (left/right/up/down/idle),觸控搖桿控制，用於迷宮/競速遊戲
+遊戲控制類,interactiveBin,src/components/interactiveBin.vue,"config (x, y, width, open)",可開合的垃圾桶圖示（含貓咪臉）,emit 位置資訊供拖放偵測,getBinPos,拖放式刪除互動的垃圾桶圖示
+製作工具類,LinktoImageGameMaker,src/components/maker/LinktoImageGameMaker.vue,無,圖片上傳介面，可點擊標記座標點,上傳圖片、點擊標記座標、輸出 JSON,—,開發者工具：在圖片上標記點座標並產出 JSON
+製作工具類,FindItemGameMaker,src/components/FindItemGameMaker.vue,無,找找看遊戲關卡編輯器,拖拉設定物品位置與區域,—,製作「找找看」遊戲關卡的開發者工具

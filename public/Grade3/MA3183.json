@@ -1,0 +1,504 @@
+{
+  "id": "MA3183",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "選選看，完成時間的換算"
+  },
+  "GameType": "TrackGame",
+  "GameConfig": {},
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "9分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["540秒", "450秒", "54秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "10分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["600秒", "660秒", "106秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4分鐘15秒",
+              "Size": "title-large"
+            },
+            "Selections": ["252秒", "250秒", "255秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "3小時",
+              "Size": "title-large"
+            },
+            "Selections": ["160分鐘", "180分鐘", "150分鐘"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時8分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["148分鐘", "138分鐘", "128分鐘"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "8分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["480秒", "450秒", "48秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "12分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["780秒", "720秒", "660秒"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "3分鐘27秒",
+              "Size": "title-large"
+            },
+            "Selections": ["207秒", "270秒", "327秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "3小時",
+              "Size": "title-large"
+            },
+            "Selections": ["180分鐘", "160分鐘", "150分鐘"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時25分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["165分鐘", "145分鐘", "155分鐘"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "9分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["540秒", "54秒", "450秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "10分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["600秒", "106秒", "660秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2分鐘33秒",
+              "Size": "title-large"
+            },
+            "Selections": ["135秒", "123秒", "153秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時",
+              "Size": "title-large"
+            },
+            "Selections": ["360分鐘", "240分鐘", "120分鐘"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4小時11分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["215分鐘", "251分鐘", "241分鐘"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "7分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["420秒", "84秒", "120秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "15分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["980秒", "900秒", "990秒"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "5分鐘45秒",
+              "Size": "title-large"
+            },
+            "Selections": ["354秒", "545秒", "345秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4小時",
+              "Size": "title-large"
+            },
+            "Selections": ["400分鐘", "245分鐘", "240分鐘"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "3小時5分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["185分鐘", "305分鐘", "165分鐘"],
+            "AnswerIndex": 0
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "5分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["270秒", "30秒", "300秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "13分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["870秒", "720秒", "780秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4分鐘15秒",
+              "Size": "title-large"
+            },
+            "Selections": ["252秒", "250秒", "255秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "5小時",
+              "Size": "title-large"
+            },
+            "Selections": ["330分鐘", "360分鐘", "300分鐘"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "1小時10分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["110分鐘", "70分鐘", "90分鐘"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "8分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["48秒", "450秒", "480秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "13分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["780秒", "720秒", "870秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "6分鐘10秒",
+              "Size": "title-large"
+            },
+            "Selections": ["370秒", "610秒", "310秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "1小時",
+              "Size": "title-large"
+            },
+            "Selections": ["66分鐘", "60分鐘", "36分鐘"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時8分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["138分鐘", "148分鐘", "128分鐘"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "9分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["540秒", "450秒", "54秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "11分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["660秒", "110秒", "600秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2分鐘33秒",
+              "Size": "title-large"
+            },
+            "Selections": ["135秒", "153秒", "123秒"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時",
+              "Size": "title-large"
+            },
+            "Selections": ["120分鐘", "360分鐘", "240分鐘"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4小時11分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["251分鐘", "215分鐘", "241分鐘"],
+            "AnswerIndex": 0
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "5分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["30秒", "300秒", "270秒"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "12分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["780秒", "720秒", "660秒"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2分鐘33秒",
+              "Size": "title-large"
+            },
+            "Selections": ["153秒", "135秒", "123秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時",
+              "Size": "title-large"
+            },
+            "Selections": ["240分鐘", "120分鐘", "360分鐘"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "1小時10分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["110分鐘", "90分鐘", "70分鐘"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "8分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["480秒", "48秒", "450秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "13分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["780秒", "720秒", "870秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2分鐘33秒",
+              "Size": "title-large"
+            },
+            "Selections": ["123秒", "135秒", "153秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4小時",
+              "Size": "title-large"
+            },
+            "Selections": ["245分鐘", "240分鐘", "400分鐘"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4小時11分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["251分鐘", "241分鐘", "215分鐘"],
+            "AnswerIndex": 0
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "7分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["420秒", "120秒", "84秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "13分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["780秒", "720秒", "870秒"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "3分鐘27秒",
+              "Size": "title-large"
+            },
+            "Selections": ["327秒", "270秒", "207秒"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "2小時",
+              "Size": "title-large"
+            },
+            "Selections": ["240分鐘", "360分鐘", "120分鐘"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "TextOnly",
+            "Data": {
+              "Text": "4小時11分鐘",
+              "Size": "title-large"
+            },
+            "Selections": ["241分鐘", "251分鐘", "215分鐘"],
+            "AnswerIndex": 1
+          }
+        ]
+      }
+    ]
+  ]
+}

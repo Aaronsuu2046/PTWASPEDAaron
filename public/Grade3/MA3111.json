@@ -1,0 +1,373 @@
+{
+  "id": "MA3111",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用分數板排排看"
+  },
+  "GameType": "SelfDefine",
+  "GameConfig": {},
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{2}{2}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 2,
+            "denominator": 2
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{3}{3}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 3,
+            "denominator": 3
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{4}{4}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 4,
+            "denominator": 4
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{2}{2}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 2,
+            "denominator": 2
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{3}{3}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 3,
+            "denominator": 3
+          }
+        }
+      }
+    ],
+    [
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{4}{4}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 4,
+            "denominator": 4
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{5}{5}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 5,
+            "denominator": 5
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{6}{6}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 6,
+            "denominator": 6
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{4}{4}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 4,
+            "denominator": 4
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{5}{5}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 5,
+            "denominator": 5
+          }
+        }
+      }
+    ],
+    [
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{6}{6}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 6,
+            "denominator": 6
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{7}{7}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 7,
+            "denominator": 7
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{4}{4}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 4,
+            "denominator": 4
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{7}{7}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 7,
+            "denominator": 7
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{8}{8}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 8,
+            "denominator": 8
+          }
+        }
+      }
+    ],
+    [
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{10}{10}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 10,
+            "denominator": 10
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{9}{9}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 9,
+            "denominator": 9
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{9}{9}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 9,
+            "denominator": 9
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{9}{9}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 9,
+            "denominator": 9
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{8}{8}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 8,
+            "denominator": 8
+          }
+        }
+      }
+    ],
+    [
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{11}{11}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 11,
+            "denominator": 11
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{12}{12}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "circle",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 12,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{10}{10}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 10,
+            "denominator": 10
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{12}{12}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 12,
+            "denominator": 12
+          }
+        }
+      },
+      {
+        "question": {
+          "fraction": { "Content": "\\frac{11}{11}" },
+          "description": "用分數板排排看，並回答問題"
+        },
+        "answerData": {
+          "shape": "rect",
+          "verifyOption": "answer",
+          "answer": {
+            "numerator": 11,
+            "denominator": 11
+          }
+        }
+      }
+    ]
+  ]
+}

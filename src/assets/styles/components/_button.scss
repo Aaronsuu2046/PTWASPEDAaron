@@ -1,0 +1,33 @@
+@import '../variables';
+
+
+.button-basic {
+    // border: solid;
+    border-radius: $border-radius;
+    transform: scale(1);
+    transition: $transition-time;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+}
+
+button {
+    border: solid;
+    border-radius: $border-radius;
+    transform: scale(1);
+    transition: $transition-time;
+    color: black;
+}
+
+.button-border {
+    @extend .button-basic;
+    border: none;
+}
+
+.button--animation {
+    @extend .button-border;
+    &:hover {
+        transform: scale($transform-scale);
+        transition: $transition-time;
+    }
+}

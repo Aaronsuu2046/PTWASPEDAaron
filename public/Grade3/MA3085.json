@@ -1,0 +1,428 @@
+{
+  "id": "MA3085",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "TotalLevel": 1,
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": false,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "headQuestion": "把150毫升的牛奶和1公升550毫升的紅茶混在一起變奶茶，泡好的奶茶共幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "150毫升 $$ 1公升550毫升 = $i$公升$i$毫升",
+          "Answer": ["+", 1, 700]
+        },
+        "image": {
+          "Src": "1-1.png"
+        }
+      },
+      {
+        "headQuestion": "把250毫升的牛奶和1公升450毫升的紅茶混在一起變奶茶，泡好的奶茶共幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "250毫升 $$ 1公升450毫升 = $i$公升$i$毫升",
+          "Answer": ["+", 1, 700]
+        },
+        "image": {
+          "Src": "1-2.png"
+        }
+      },
+      {
+        "headQuestion": "把150毫升的牛奶和1公升350毫升的紅茶混在一起變奶茶，泡好的奶茶共幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "150毫升 $$ 1公升350毫升 = $i$公升$i$毫升",
+          "Answer": ["+", 1, 500]
+        },
+        "image": {
+          "Src": "1-3.png"
+        }
+      },
+      {
+        "headQuestion": "把350毫升的牛奶和1公升550毫升的紅茶混在一起變奶茶，泡好的奶茶共幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "350毫升 $$ 1公升550毫升 = $i$公升$i$毫升",
+          "Answer": ["+", 1, 900]
+        },
+        "image": {
+          "Src": "1-4.png"
+        }
+      },
+      {
+        "headQuestion": "把250毫升的牛奶和1公升550毫升的紅茶混在一起變奶茶，泡好的奶茶共幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "250毫升 $$ 1公升550毫升 = $i$公升$i$毫升",
+          "Answer": ["+", 1, 800]
+        },
+        "image": {
+          "Src": "1-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "一桶冬瓜茶有4公升700毫升，喝掉1630毫升後，還剩下幾公升幾毫升",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "4公升700毫升 - 1630毫升 =$i$公升$i$毫升$n$(單位換算：1630毫升 = $i$公升$i$毫升)",
+          "Answer": ["-", 3, 70, 1, 630]
+        },
+        "image": {
+          "Src": "2-1.png"
+        }
+      },
+      {
+        "headQuestion": "一桶冬瓜茶有3公升500毫升，喝掉1210毫升後，還剩下幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "3公升500毫升 - 1210毫升 = $i$公升$i$毫升$n$(單位換算：1210毫升 = $i$公升$i$毫升)",
+          "Answer": [2, 290, 1, 210]
+        },
+        "image": {
+          "Src": "2-2.png"
+        }
+      },
+      {
+        "headQuestion": "一桶冬瓜茶有4公升890毫升，喝掉1180毫升後，還剩下幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "4公升890毫升 - 1180毫升 =$n$$i$公升$i$毫升$n$(單位換算：1180毫升 = $i$公升$i$毫升)",
+          "Answer": [3, 710, 1, 180]
+        },
+        "image": {
+          "Src": "2-3.png"
+        }
+      },
+      {
+        "headQuestion": "一桶冬瓜茶有5公升990毫升，喝掉1540毫升後，還剩下幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "5公升990毫升 - 1540毫升 =$n$$i$公升$i$毫升$n$(單位換算：1540毫升 = $i$公升$i$毫升)",
+          "Answer": [4, 450, 1, 540]
+        },
+        "image": {
+          "Src": "2-4.png"
+        }
+      },
+      {
+        "headQuestion": "一桶冬瓜茶有4公升490毫升，喝掉1230毫升後，還剩下幾公升幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "4公升490毫升 - 1230毫升 = $i$公升$i$毫升$n$(單位換算：1230毫升 = $i$公升$i$毫升)",
+          "Answer": [3, 260, 1, 230]
+        },
+        "image": {
+          "Src": "2-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "家裡有4公升100毫升的西瓜汁，哥哥喝掉160毫升後，還剩下幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "4公升100毫升 - 160毫升 = $i$毫升",
+          "Answer": [3940, 4100]
+        },
+        "image": {
+          "Src": "3-1.png"
+        }
+      },
+      {
+        "headQuestion": "家裡有3公升100毫升的西瓜汁，哥哥喝掉150毫升後，還剩下幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "3公升100毫升 - 150毫升 = $i$毫升",
+          "Answer": [2950, 3100]
+        },
+        "image": {
+          "Src": "3-2.png"
+        }
+      },
+      {
+        "headQuestion": "家裡有4公升300毫升的西瓜汁，哥哥喝掉850毫升後，還剩下幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "4公升300毫升 - 850毫升 = $i$毫升",
+          "Answer": [3450, 4300]
+        },
+        "image": {
+          "Src": "3-3.png"
+        }
+      },
+      {
+        "headQuestion": "家裡有4公升200毫升的西瓜汁，哥哥喝掉950毫升後，還剩下幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "4公升200毫升 - 950毫升 = $i$毫升",
+          "Answer": [3250, 4200]
+        },
+        "image": {
+          "Src": "3-4.png"
+        }
+      },
+      {
+        "headQuestion": "家裡有3公升300毫升的西瓜汁，哥哥喝掉750毫升後，還剩下幾毫升?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "3公升300毫升 - 750毫升 = $i$毫升",
+          "Answer": [2550, 3300]
+        },
+        "image": {
+          "Src": "3-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "爸爸買了兩個容量不同的水壺，小的水壺可以裝790毫升，大的水壺可以裝1公升220毫升，兩個水壺共可裝幾公升幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "1公升220毫升 + 790毫升 =$n$$i$公升$i$毫升",
+          "Answer": [2, 10]
+        },
+        "image": {
+          "Src": "4-1.png"
+        }
+      },
+      {
+        "headQuestion": "爸爸買了兩個容量不同的水壺，小的水壺可以裝850毫升，大的水壺可以裝1公升250毫升，兩個水壺共可裝幾公升幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "1公升250毫升 + 850毫升 =$n$$i$公升$i$毫升",
+          "Answer": [2, 100]
+        },
+        "image": {
+          "Src": "4-2.png"
+        }
+      },
+      {
+        "headQuestion": "爸爸買了兩個容量不同的水壺，小的水壺可以裝715毫升，大的水壺可以裝1公升550毫升，兩個水壺共可裝幾公升幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "1公升550毫升 + 715毫升 =$n$$i$公升$i$毫升",
+          "Answer": [2, 265]
+        },
+        "image": {
+          "Src": "4-3.png"
+        }
+      },
+      {
+        "headQuestion": "爸爸買了兩個容量不同的水壺，小的水壺可以裝655毫升，大的水壺可以裝1公升550毫升，兩個水壺共可裝幾公升幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "1公升550毫升 + 655毫升 =$n$$i$公升$i$毫升",
+          "Answer": [2, 205]
+        },
+        "image": {
+          "Src": "4-4.png"
+        }
+      },
+      {
+        "headQuestion": "爸爸買了兩個容量不同的水壺，小的水壺可以裝785毫升，大的水壺可以裝1公升450毫升，兩個水壺共可裝幾公升幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "1公升450毫升 + 850毫升 =$n$$i$公升$i$毫升",
+          "Answer": [2, 300]
+        },
+        "image": {
+          "Src": "4-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "一桶礦泉水6公升，小明一家人上午喝掉一些後，還剩下2075毫升，他們上午喝掉幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "6公升 - 2075毫升 = $i$ 毫升$n$(單位換算：6公升 = $i$毫升)",
+          "Answer": [3925, 6000]
+        },
+        "image": {
+          "Src": "5-1.png"
+        }
+      },
+      {
+        "headQuestion": "一桶礦泉水5公升，小明一家人上午喝掉一些後，還剩下2750毫升，他們上午喝掉幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "5公升 - 2750毫升 = $i$ 毫升$n$(單位換算：5公升 = $i$毫升)",
+          "Answer": [2225, 5000]
+        },
+        "image": {
+          "Src": "5-2.png"
+        }
+      },
+      {
+        "headQuestion": "一桶礦泉水5公升，小明一家人上午喝掉一些後，還剩下2400毫升，他們上午喝掉幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "5公升 - 2400毫升 = $i$ 毫升$n$(單位換算：5公升 = $i$毫升)",
+          "Answer": [2600, 5000]
+        },
+        "image": {
+          "Src": "5-3.png"
+        }
+      },
+      {
+        "headQuestion": "一桶礦泉水6公升，小明一家人上午喝掉一些後，還剩下2850毫升，他們上午喝掉幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "6公升 - 2850毫升 = $i$ 毫升$n$(單位換算：6公升 = $i$毫升)",
+          "Answer": [3150, 6000]
+        },
+        "image": {
+          "Src": "5-4.png"
+        }
+      },
+      {
+        "headQuestion": "一桶礦泉水6公升，小明一家人上午喝掉一些後，還剩下2995毫升，他們上午喝掉幾毫升的水?",
+        "calculator": {
+          "unitType": "Volume",
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4
+        },
+        "markdown": {
+          "Render": "6公升 - 2995毫升 = $i$ 毫升$n$(單位換算：6公升 = $i$毫升)",
+          "Answer": [3005, 6000]
+        },
+        "image": {
+          "Src": "5-5.png"
+        }
+      }
+    ]
+  ]
+}

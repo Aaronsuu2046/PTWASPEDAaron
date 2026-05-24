@@ -1,0 +1,218 @@
+{
+  "id": "MA3055",
+  "introvideo": "src",
+  "GameType": "ClassifyGame",
+  "GameConfig": {},
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "分類看看，哪些圖形是正方形?哪些圖形是長方形?哪些圖形都不是?"
+  },
+  "Questions": [
+    [
+      {
+        "Text": "請將以下的圖片分類成是角或不是角",
+        "InitBox": "形狀",
+        "Question": [
+          {
+            "Tag": "1",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "none-1.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "2",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "none-2.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "3",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "square-1.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "4",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "square-2.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "5",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "rectangle-1.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "6",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "rectangle-2.jpg",
+              "Alt": "一個形狀"
+            }
+          }
+        ],
+        "Answer": [
+          {
+            "GroupName": "正方形",
+            "Items": ["3", "4"]
+          },
+          {
+            "GroupName": "長方形",
+            "Items": ["5", "6"]
+          },
+          {
+            "GroupName": "都不是",
+            "Items": ["1", "2"]
+          }
+        ]
+      },
+      {
+        "Text": "請將以下的圖片分類成是角或不是角",
+        "InitBox": "形狀",
+        "Question": [
+          {
+            "Tag": "1",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "none-3.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "2",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "none-4.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "3",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "square-3.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "4",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "square-4.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "5",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "rectangle-3.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "6",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "rectangle-4.jpg",
+              "Alt": "一個形狀"
+            }
+          }
+        ],
+        "Answer": [
+          {
+            "GroupName": "正方形",
+            "Items": ["3", "4"]
+          },
+          {
+            "GroupName": "長方形",
+            "Items": ["5", "6"]
+          },
+          {
+            "GroupName": "都不是",
+            "Items": ["1", "2"]
+          }
+        ]
+      },
+      {
+        "Text": "請將以下的圖片分類成是角或不是角",
+        "InitBox": "形狀",
+        "Question": [
+          {
+            "Tag": "1",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "none-5.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "2",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "none-6.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "3",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "square-5.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "4",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "square-4.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "5",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "rectangle-5.jpg",
+              "Alt": "一個形狀"
+            }
+          },
+          {
+            "Tag": "6",
+            "Name": "ImageContainer",
+            "Data": {
+              "Src": "rectangle-1.jpg",
+              "Alt": "一個形狀"
+            }
+          }
+        ],
+        "Answer": [
+          {
+            "GroupName": "正方形",
+            "Items": ["3", "4"]
+          },
+          {
+            "GroupName": "長方形",
+            "Items": ["5", "6"]
+          },
+          {
+            "GroupName": "都不是",
+            "Items": ["1", "2"]
+          }
+        ]
+      }
+    ]
+  ]
+}

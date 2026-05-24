@@ -1,0 +1,401 @@
+{
+  "id": "MA3074",
+  "introvideo": "src",
+  "GameType": "WordProblemWithCalculator",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用除法直式算算看"
+  },
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Questions": [
+    [
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "40",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "40 ÷ 5 = $i$",
+          "Answer": [8]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "10",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "10 ÷ 5 = $i$",
+          "Answer": [2]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "32",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "32 ÷ 4 = $i$",
+          "Answer": [8]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "27",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "27 ÷ 3 = $i$",
+          "Answer": [9]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "24",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "24 ÷ 4 = $i$",
+          "Answer": [6]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "23",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "23 ÷ 4 = $i$ ... $i$",
+          "Answer": [5, 3]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "22",
+            "operand2": "3"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "22 ÷ 3 = $i$ ... $i$",
+          "Answer": [7, 1]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "25",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "25 ÷ 4 = $i$ ... $i$",
+          "Answer": [6, 1]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "27",
+            "operand2": "5"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "27 ÷ 5 = $i$ ... $i$",
+          "Answer": [5, 2]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "30",
+            "operand2": "4"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "30 ÷ 4 = $i$ ... $i$",
+          "Answer": [7, 2]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "36",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "36 ÷ 6 = $i$",
+          "Answer": [6]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "72",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "72 ÷ 9 = $i$",
+          "Answer": [8]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "48",
+            "operand2": "6"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "48 ÷ 6 = $i$",
+          "Answer": [8]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "49",
+            "operand2": "7"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "49 ÷ 7 = $i$",
+          "Answer": [7]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "64",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "64 ÷ 8 = $i$",
+          "Answer": [8]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "58",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "58 ÷ 8 = $i$ ... $i$",
+          "Answer": [7, 2]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "59",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "59 ÷ 8 = $i$ ... $i$",
+          "Answer": [7, 3]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "62",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "62 ÷ 8 = $i$ ... $i$",
+          "Answer": [7, 6]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "70",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "70 ÷ 8 = $i$ ... $i$",
+          "Answer": [8, 6]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "69",
+            "operand2": "8"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "69 ÷ 8 = $i$ ... $i$",
+          "Answer": [8, 5]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "64",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "64 ÷ 9 = $i$ ... $i$",
+          "Answer": [7, 1]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "80",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "80 ÷ 9 = $i$ ... $i$",
+          "Answer": [8, 2]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "50",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "50 ÷ 9 = $i$ ... $i$",
+          "Answer": [5, 5]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "62",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "62 ÷ 9 = $i$ ... $i$",
+          "Answer": [6, 8]
+        }
+      },
+      {
+        "calculator": {
+          "type": "division",
+          "mode": "checkAnswer",
+          "operands": {
+            "operand1": "46",
+            "operand2": "9"
+          },
+          "unitType": "Number"
+        },
+        "markdown": {
+          "Render": "46 ÷ 9 = $i$ ... $i$",
+          "Answer": [5, 1]
+        }
+      }
+    ]
+  ]
+}

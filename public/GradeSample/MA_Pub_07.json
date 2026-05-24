@@ -1,0 +1,388 @@
+{
+    "id":"MA_Pub_07",
+    "TotalLevel": 5,
+    "GameType" : "CompareGame",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "請比較兩邊的定位版中的數字大小，並拖曳>、<或=到框框中"
+    },
+    "GameConfig": {
+        "CustomeSymbol": true,
+        "SystemSymbol": "BigSmall",
+        "WithImage": false,
+        "CheckAnswerMode": "Button"
+    },
+    "Questions": [
+        [
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 990
+                            }          
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 1000
+                            }                 
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 5311
+                            }               
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 6311
+                            }              
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 8712
+                            }              
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 8439
+                            }              
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "OptionBarTitle": "把>、<或=拖曳到框框中",
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 2135
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 2132
+                            }            
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "數字比大小",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 9874
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 9894
+                            }           
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 3560
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 3952
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 3418
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 2981
+                            }            
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 6000
+                            }              
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 6001
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                           "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 4672
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 4672
+                            }            
+                        }
+                    ]
+                ],
+                "Answer": ["Equal"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 6232
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 6270
+                            }              
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 4001
+                            }              
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 3999
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 4950
+                            }              
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 4590
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            }
+        ],
+        [
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 7089
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 7708
+                            }              
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 1034
+                            }              
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 1304
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Small"]
+            },
+            {
+                "QuestionText": "數字比大小",
+                "Description": "把>、<或=拖曳到框框中",
+                "SlotComponentVerifycation": false,
+                "Datas": [
+                    [
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 1350
+                            }             
+                        },
+                        {
+                            "Name" : "NumberBoard",
+                            "Data": {
+                            "Unit": ["千位", "百位", "十位", "個位"],
+                            "Number": 1035
+                            }             
+                        }
+                    ]
+                ],
+                "Answer": ["Big"]
+            }
+        ]
+    ]
+}

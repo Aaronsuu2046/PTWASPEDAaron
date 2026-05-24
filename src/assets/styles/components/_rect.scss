@@ -1,0 +1,36 @@
+@import '../variables';
+
+.container-title {
+    display: flex;
+    align-items: center;
+    border: $border--normal solid black;
+    border-radius: $border-radius;
+    padding: $padding--small $padding--medium ;
+    p {
+        font-size: $text-large;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.container-subtitle {
+    display: flex;
+    align-items: center;
+    border: $border--normal solid black;
+    border-radius: $border-radius;
+    padding: $padding--small $padding--medium ;
+    p {
+        font-size: $text-medium;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+.container-basic {
+    display: flex;
+    align-items: center;
+    // border: $border--normal solid black;
+    border-radius: $border-radius;
+    transition: transform $transition-time ease;
+}

@@ -1,0 +1,565 @@
+﻿<template>
+  <div ref="container">
+    <v-stage
+      :config="configKonva"
+      @pointerdown="drawNewLine"
+      @pointermove="moveLine"
+      @pointerup="stopDrawing"
+    >
+      <v-layer>
+        <v-line
+          v-for="(pointSet, index) in configGrid"
+          :key="index"
+          :points="pointSet"
+          :stroke="'#aaa'"
+        />
+        <v-image :config="configReturnBtn" @pointerdown="deleteLine" />
+      </v-layer>
+      <v-layer>
+        <v-line
+          v-for="(line, index) in configLine"
+          :key="index"
+          :config="line"
+          :stroke-width="5"
+        />
+        <v-circle
+          v-for="(point, index) in configGivenPoint"
+          :key="index"
+          :config="point"
+        />
+      </v-layer>
+    </v-stage>
+  </div>
+</template>
+
+<script>
+import { getSystemAssets } from "@/lib/get-assets.js";
+
+export default {
+  components: {},
+
+  props: {
+    componentConfig: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  emits: ["replyAnswer"],
+  data() {
+    return {
+      configKonva: {},
+      ratio: {
+        width: 15,
+        height: 15,
+      },
+      gridPos: {
+        x: [],
+        y: [],
+      },
+      configGrid: [],
+      configReturnBtn: {},
+      configLine: [],
+      configGivenPoint: [],
+
+      drawing: false,
+      currentPoint: {},
+      sides: [],
+    };
+  },
+
+  mounted() {
+    this.getData();
+    this.initializeScene();
+    this.setGrid();
+    this.drawGrid();
+    this.drawReturnBtn();
+    // Only draw given points if provided as a non-empty array
+    if (
+      Array.isArray(this.componentConfig?.givenPoints) &&
+      this.componentConfig.givenPoints.length > 0
+    ) {
+      this.drawGiven();
+    }
+  },
+
+  methods: {
+    getData() {
+      const bgRatio = this.componentConfig?.bgRatio;
+      if (
+        bgRatio &&
+        typeof bgRatio.width === "number" &&
+        typeof bgRatio.height === "number"
+      ) {
+        this.ratio = bgRatio;
+      }
+    },
+    initializeScene() {
+      this.gameWidth = this.$refs.container.clientWidth;
+      this.configKonva.width = this.gameWidth;
+      this.configKonva.height =
+        (this.gameWidth * this.ratio.height) / this.ratio.width;
+    },
+    setGrid() {
+      for (let i = 0; i <= this.ratio.width; ++i)
+        this.gridPos.x.push((i * this.configKonva.width) / this.ratio.width);
+      for (let i = 0; i <= this.ratio.height; ++i)
+        this.gridPos.y.push((i * this.configKonva.height) / this.ratio.height);
+    },
+    drawGrid() {
+      for (let i = 1; i < this.ratio.width; ++i) {
+        this.configGrid.push([
+          this.gridPos.x[i],
+          0,
+          this.gridPos.x[i],
+          this.configKonva.height,
+        ]);
+      }
+      for (let i = 1; i < this.ratio.height; ++i) {
+        this.configGrid.push([
+          0,
+          this.gridPos.y[i],
+          this.configKonva.width,
+          this.gridPos.y[i],
+        ]);
+      }
+    },
+    drawReturnBtn() {
+      const returnBtn = new window.Image();
+      returnBtn.src = getSystemAssets("backArrow.png", "icon");
+      this.configReturnBtn.image = returnBtn;
+      this.configReturnBtn.x = this.gameWidth * 0.85;
+      this.configReturnBtn.y = this.configKonva.height - this.gameWidth * 0.15;
+      this.configReturnBtn.width = this.gameWidth * 0.15;
+      this.configReturnBtn.height = this.gameWidth * 0.15;
+    },
+    drawGiven() {
+      for (const point in this.componentConfig.givenPoints) {
+        this.configGivenPoint.push({
+          x: this.gridPos.x[this.componentConfig.givenPoints[point][0]],
+          y: this.gridPos.y[this.componentConfig.givenPoints[point][1]],
+          radius: this.configKonva.width * 0.01,
+          stroke: "brown",
+          fill: "white",
+        });
+      }
+      if (this.componentConfig.givenPoints.length > 1) {
+        for (let i = 0; i < this.componentConfig.givenPoints.length - 1; ++i) {
+          this.configLine.push({
+            points: [
+              this.configGivenPoint[i].x,
+              this.configGivenPoint[i].y,
+              this.configGivenPoint[i + 1].x,
+              this.configGivenPoint[i + 1].y,
+            ],
+            stroke: "brown",
+          });
+        }
+      }
+    },
+    drawNewLine(e) {
+      this.drawing = true;
+
+      this.currentPoint = this.getClosestPoint(
+        e.target.getStage().getPointerPosition()
+      );
+      this.configLine.push({
+        points: [
+          this.gridPos.x[this.currentPoint.x],
+          this.gridPos.y[this.currentPoint.y],
+          e.target.getStage().getPointerPosition().x,
+          e.target.getStage().getPointerPosition().y,
+        ],
+        stroke: "green",
+        strokeWidth: 8,
+      });
+    },
+    moveLine(e) {
+      if (this.drawing) {
+        const id = this.configLine.length - 1;
+        this.configLine[id].points = [
+          this.gridPos.x[this.currentPoint.x],
+          this.gridPos.y[this.currentPoint.y],
+          e.target.getStage().getPointerPosition().x,
+          e.target.getStage().getPointerPosition().y,
+        ];
+      }
+    },
+    stopDrawing(e) {
+      const id = this.configLine.length - 1;
+      const pointerPoint = this.getClosestPoint(
+        e.target.getStage().getPointerPosition()
+      );
+      this.drawing = false;
+      this.configLine[id].points = [
+        this.gridPos.x[this.currentPoint.x],
+        this.gridPos.y[this.currentPoint.y],
+        this.gridPos.x[pointerPoint.x],
+        this.gridPos.y[pointerPoint.y],
+      ];
+      if (
+        this.isSamePoint(
+          this.getPointSetFromLine(id)[0],
+          this.getPointSetFromLine(id)[1]
+        )
+      )
+        this.configLine.splice(id, 1);
+
+      this.mergeLastTwoIfColinear();
+      this.verify();
+    },
+
+    getClosestPoint(pos) {
+      let x, y;
+      let distance = 999;
+      for (let i = 0; i <= this.ratio.width; ++i) {
+        if (Math.abs(pos.x - this.gridPos.x[i]) < distance) {
+          x = i;
+          distance = Math.abs(pos.x - this.gridPos.x[i]);
+        }
+      }
+      distance = 999;
+      for (let i = 0; i <= this.ratio.height; ++i) {
+        if (Math.abs(pos.y - this.gridPos.y[i]) < distance) {
+          y = i;
+          distance = Math.abs(pos.y - this.gridPos.y[i]);
+        }
+      }
+      return { x, y };
+    },
+    slope(id) {
+      const pointSet = this.getPointSetFromLine(id);
+      if (pointSet[0].x === pointSet[1].x) return "vertical";
+
+      const k =
+        (pointSet[0].y - pointSet[1].y) / (pointSet[0].x - pointSet[1].x);
+
+      return Math.round(k * 100) / 100;
+    },
+    isParallel(id1, id2) {
+      if (this.slope(id1) === this.slope(id2)) return true;
+      else return false;
+    },
+    isPerpendicular(id1, id2) {
+      if (this.slope(id1) === "vertical" || this.slope(id2) === "vertical") {
+        if (this.slope(id1) === 0 || this.slope(id2) === 0) return true;
+        else return false;
+      } else if (this.slope(id1) * this.slope(id2) === -1) return true;
+      else return false;
+    },
+    isLinked(id1, id2) {
+      const pointSet1 = this.getPointSetFromLine(id1),
+        pointSet2 = this.getPointSetFromLine(id2);
+      if (this.isSameLine(id1, id2) || id1 === id2) return false;
+      else if (
+        this.isSamePoint(pointSet1[0], pointSet2[0]) ||
+        this.isSamePoint(pointSet1[0], pointSet2[1]) ||
+        this.isSamePoint(pointSet1[1], pointSet2[1]) ||
+        this.isSamePoint(pointSet1[1], pointSet2[0])
+      ) {
+        return true;
+      } else return false;
+    },
+    findLinks(id) {
+      const links = [];
+      for (const line in this.configLine) {
+        if (this.isLinked(id, line)) {
+          links.push(line);
+        }
+      }
+      return links;
+    },
+    isLinkedByLines(id1, id2) {
+      if (id1 === id2) return false;
+      const linkingLines = [];
+      for (const link1 in this.findLinks(id1)) {
+        for (const link2 in this.findLinks(id2)) {
+          if (this.findLinks(id1)[link1] === this.findLinks(id2)[link2]) {
+            linkingLines.push(this.findLinks(id1)[link1]);
+            if (linkingLines.length === 2) {
+              return linkingLines;
+            }
+          }
+        }
+      }
+      return false;
+    },
+    getPointSetFromLine(id) {
+      return [
+        {
+          x: this.configLine[id].points[0],
+          y: this.configLine[id].points[1],
+        },
+        {
+          x: this.configLine[id].points[2],
+          y: this.configLine[id].points[3],
+        },
+      ];
+    },
+    lengthInGrid(id) {
+      const pointOnGrid1 = this.getClosestPoint(
+        this.getPointSetFromLine(id)[0]
+      );
+      const pointOnGrid2 = this.getClosestPoint(
+        this.getPointSetFromLine(id)[1]
+      );
+      return Math.abs(
+        pointOnGrid1.x + pointOnGrid1.y - pointOnGrid2.x - pointOnGrid2.y
+      );
+    },
+    isSamePoint(point1, point2) {
+      if (point1.x === point2.x && point1.y === point2.y) return true;
+      else return false;
+    },
+    isSameLine(id1, id2) {
+      const pointSet1 = this.getPointSetFromLine(id1),
+        pointSet2 = this.getPointSetFromLine(id2);
+      if (
+        (this.isSamePoint(pointSet1[0], pointSet2[0]) &&
+          this.isSamePoint(pointSet1[1], pointSet2[1])) ||
+        (this.isSamePoint(pointSet1[0], pointSet2[1]) &&
+          this.isSamePoint(pointSet1[1], pointSet2[0]))
+      )
+        return true;
+      else return false;
+    },
+    isIntersected() {
+      for (const i in this.configLine) {
+        const pointSet1 = this.getPointSetFromLine(i);
+        for (const j in this.configLine) {
+          if (j < i || this.isSameLine(i, j)) continue;
+          const pointSet2 = this.getPointSetFromLine(j);
+          if (
+            this.cross(
+              this.vector(pointSet1[0], pointSet2[1]),
+              this.vector(pointSet2[0], pointSet2[1])
+            ) *
+              this.cross(
+                this.vector(pointSet1[1], pointSet2[1]),
+                this.vector(pointSet2[0], pointSet2[1])
+              ) <
+              0 &&
+            this.cross(
+              this.vector(pointSet2[0], pointSet1[1]),
+              this.vector(pointSet1[0], pointSet1[1])
+            ) *
+              this.cross(
+                this.vector(pointSet2[1], pointSet1[1]),
+                this.vector(pointSet1[0], pointSet1[1])
+              ) <
+              0
+          ) {
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+    vector(point1, point2) {
+      return { x: point1.x - point2.x, y: point1.y - point2.y };
+    },
+    cross(vector1, vector2) {
+      return vector1.x * vector2.y - vector1.y * vector2.x;
+    },
+    isTriangle() {
+      this.sides = [];
+      for (const line in this.configLine) {
+        if (this.findLinks(line).length >= 2) {
+          this.sides.push(line);
+          for (const i in this.findLinks(line)) {
+            for (const j in this.findLinks(line)) {
+              if (
+                this.isLinked(this.findLinks(line)[i], this.findLinks(line)[j])
+              ) {
+                this.sides = [
+                  line,
+                  this.findLinks(line)[i],
+                  this.findLinks(line)[j],
+                ];
+                return true;
+              }
+            }
+          }
+        }
+      }
+      return false;
+    },
+    isQuadrilateral() {
+      for (const i in this.configLine) {
+        for (const j in this.configLine) {
+          if (this.isLinkedByLines(i, j)) {
+            this.sides = [
+              i,
+              this.isLinkedByLines(i, j)[0],
+              j,
+              this.isLinkedByLines(i, j)[1],
+            ];
+            return true;
+          }
+        }
+      }
+      return false;
+    },
+    isTrapezium() {
+      if (this.isQuadrilateral()) {
+        if (
+          (this.isParallel(this.sides[0], this.sides[2]) &&
+            !this.isParallel(this.sides[1], this.sides[3])) ||
+          (!this.isParallel(this.sides[0], this.sides[2]) &&
+            this.isParallel(this.sides[1], this.sides[3]))
+        ) {
+          return true;
+        }
+      }
+      return false;
+    },
+    isParallelogram() {
+      if (this.isQuadrilateral()) {
+        if (
+          this.isParallel(this.sides[0], this.sides[2]) &&
+          this.isParallel(this.sides[1], this.sides[3])
+        ) {
+          return true;
+        }
+      }
+      return false;
+    },
+    isRectangle() {
+      if (this.isParallelogram()) {
+        if (this.isPerpendicular(this.sides[0], this.sides[1])) {
+          return true;
+        }
+      }
+      return false;
+    },
+    deleteLine() {
+      if (this.configLine.length === 0) return;
+      const id = this.configLine.length - 1;
+      if (this.configLine[id].stroke !== "brown") {
+        this.configLine.splice(id, 1);
+      }
+    },
+    verify() {
+      if (this.isIntersected()) {
+        this.$emit("replyAnswer", false);
+      } else if (this.componentConfig.verifyOption === "shape") {
+        switch (this.componentConfig.answer) {
+          case "triangle":
+            this.$emit("replyAnswer", this.isTriangle());
+            break;
+          case "rectangle":
+            this.$emit("replyAnswer", this.isRectangle());
+            break;
+          case "trapezium":
+            this.$emit("replyAnswer", this.isTrapezium());
+            break;
+          case "parallelogram":
+            this.$emit("replyAnswer", this.isParallelogram());
+            break;
+        }
+      } else if (this.componentConfig.verifyOption === "rect")
+        this.verifyRectangle();
+    },
+    verifyRectangle() {
+      if (this.isRectangle()) {
+        const height = this.lengthInGrid(this.sides[0]),
+          width = this.lengthInGrid(this.sides[1]);
+        if (
+          (this.componentConfig.answer[0] === height &&
+            this.componentConfig.answer[1] === width) ||
+          (this.componentConfig.answer[0] === width &&
+            this.componentConfig.answer[1] === height)
+        ) {
+          this.$emit("replyAnswer", true);
+          return;
+        }
+      }
+      this.$emit("replyAnswer", false);
+    },
+
+    mergeLastTwoIfColinear() {
+      const lastTwo = this.getLastTwoUserLines();
+      if (!lastTwo) return;
+
+      const [a, b] = lastTwo;
+      if (!this.areColinear(a, b)) return;
+      if (!this.areTouching(a, b)) return;
+
+      this.mergeLines(a, b);
+    },
+
+    // 取得最後兩條「使用者畫的線」（排除棕色 given 線）
+    getLastTwoUserLines() {
+      const userLines = this.configLine.filter(
+        (line) => line.stroke !== "brown"
+      );
+      if (userLines.length < 2) return null;
+
+      const a = userLines[userLines.length - 2];
+      const b = userLines[userLines.length - 1];
+      return [a, b];
+    },
+
+    getLinePoints(line) {
+      return {
+        p1: { x: line.points[0], y: line.points[1] },
+        p2: { x: line.points[2], y: line.points[3] },
+      };
+    },
+
+    areColinear(a, b) {
+      const { p1: p1a, p2: p2a } = this.getLinePoints(a);
+      const { p1: p1b, p2: p2b } = this.getLinePoints(b);
+
+      const sameY = p1a.y === p2a.y && p1b.y === p2b.y && p1a.y === p1b.y;
+      const sameX = p1a.x === p2a.x && p1b.x === p2b.x && p1a.x === p1b.x;
+
+      return sameY || sameX;
+    },
+
+    areTouching(a, b) {
+      const { p1: p1a, p2: p2a } = this.getLinePoints(a);
+      const { p1: p1b, p2: p2b } = this.getLinePoints(b);
+
+      const isSame = (p, q) => p.x === q.x && p.y === q.y;
+
+      return (
+        isSame(p1a, p1b) ||
+        isSame(p1a, p2b) ||
+        isSame(p2a, p1b) ||
+        isSame(p2a, p2b)
+      );
+    },
+
+    mergeLines(a, b) {
+      const { p1: p1a, p2: p2a } = this.getLinePoints(a);
+      const { p1: p1b, p2: p2b } = this.getLinePoints(b);
+
+      const isHorizontal = p1a.y === p2a.y;
+      const isVertical = p1a.x === p2a.x;
+
+      if (!isHorizontal && !isVertical) return;
+
+      if (isHorizontal) {
+        const y = p1a.y;
+        const xs = [p1a.x, p2a.x, p1b.x, p2b.x];
+        const minX = Math.min(...xs);
+        const maxX = Math.max(...xs);
+        a.points = [minX, y, maxX, y];
+      } else if (isVertical) {
+        const x = p1a.x;
+        const ys = [p1a.y, p2a.y, p1b.y, p2b.y];
+        const minY = Math.min(...ys);
+        const maxY = Math.max(...ys);
+        a.points = [x, minY, x, maxY];
+      }
+
+      // 從 configLine 裡刪掉 b（用參考比對）
+      const index = this.configLine.indexOf(b);
+      if (index !== -1) {
+        this.configLine.splice(index, 1);
+      }
+    },
+  },
+};
+</script>

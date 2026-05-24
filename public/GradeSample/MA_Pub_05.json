@@ -1,0 +1,83 @@
+{
+    "id": "MA_Pub_10",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "數數看圖片裡面有多少隻動物?"
+    },
+    "TotalLevel": 1,
+    "GameType": "Track",
+    "GameConfig": {},
+    "Hint": {},
+    "Questions": [
+        {
+            "Question": [
+                {
+                    "name": "ImageContainer",
+                    "Data": {
+                        "Src": "pudding3.png",
+                        "Alt": "ddd"
+                    },
+                    "Selections": [
+                        "3",
+                        "2",
+                        "4"
+                    ],
+                    "AnswerIndex": 0
+                },
+                {
+                    "name": "ImageContainer",
+                    "Data": {
+                        "Src": "soda5.png",
+                        "Alt": "ddd"
+                    },
+                    "Selections": [
+                        "6",
+                        "5",
+                        "7"
+                    ],
+                    "AnswerIndex": 1
+                },
+                {
+                    "name": "ImageContainer",
+                    "Data": {
+                        "Src": "lolipop2.png",
+                        "Alt": "ddd"
+                    },
+                    "Selections": [
+                        "4",
+                        "1",
+                        "2"
+                    ],
+                    "AnswerIndex": 2
+                },
+                {
+                    "name": "ImageContainer",
+                    "Data": {
+                        "Src": "pencil6.png",
+                        "Alt": "ddd"
+                    },
+                    "Selections": [
+                        "6",
+                        "7",
+                        "8"
+                    ],
+                    "AnswerIndex": 0
+                },
+                {
+                    "name": "ImageContainer",
+                    "Data": {
+                        "Src": "eraser1.png",
+                        "Alt": "ddd"
+                    },
+                    "Selections": [
+                        "2",
+                        "1",
+                        "3"
+                    ],
+                    "AnswerIndex": 1
+                }
+            ]
+            
+        }
+    ]
+}

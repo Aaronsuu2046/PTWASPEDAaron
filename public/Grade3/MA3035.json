@@ -1,0 +1,427 @@
+{
+  "id": "MA3035",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": false,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "headQuestion": "奶奶種了小番茄，本來的高度是5公分，經過幾天後，長高了17毫米，現在小番茄的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$17毫米 = $i$公分$i$毫米$n$橫式：$n$5公分$$17毫米 = $i$公分$i$毫米",
+          "Answer": [1, 7, "+", 6, 7]
+        },
+        "image": {
+          "Src": "1-1.png"
+        }
+      },
+      {
+        "headQuestion": "奶奶種了小番茄，本來的高度是4公分3毫米，經過幾天後，長高了26毫米，現在小番茄的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$26毫米 = $i$公分$i$毫米$n$橫式：$n$4公分3毫米$$26毫米 = $i$公分$i$毫米",
+          "Answer": [2, 6, "+", 6, 9]
+        },
+        "image": {
+          "Src": "1-2.png"
+        }
+      },
+      {
+        "headQuestion": "教室有種綠豆，本來的高度是6公分，經過幾天後，長高了22毫米，現在綠豆的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$22毫米 = $i$公分$i$毫米$n$橫式：$n$6公分$$22毫米 = $i$公分$i$毫米",
+          "Answer": [2, 2, "+", 8, 2]
+        },
+        "image": {
+          "Src": "1-3.png"
+        }
+      },
+      {
+        "headQuestion": "教室有種綠豆，本來的高度是5公分7毫米，經過幾天後，長高了31毫米，現在綠豆的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$31毫米 = $i$公分$i$毫米$n$橫式：$n$5公分7毫米$$31毫米 = $i$公分$i$毫米",
+          "Answer": [3, 1, "+", 8, 8]
+        },
+        "image": {
+          "Src": "1-4.png"
+        }
+      },
+      {
+        "headQuestion": "教室有種綠豆，本來的高度是3公分4毫米，經過幾天後，長高了45毫米，現在綠豆的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$45毫米 = $i$公分$i$毫米$n$橫式：$n$3公分4毫米$$45毫米 = $i$公分$i$毫米",
+          "Answer": [4, 5, "+", 7, 9]
+        },
+        "image": {
+          "Src": "1-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "姐姐有兩條顏色不同的緞帶，綠色長8公分2毫米，黃色長3公分9毫米，姐姐把兩條緞帶接在一起，請問兩條緞帶加起來共長幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$8公分2毫米$$3公分9毫米 = $i$公分$i$毫米",
+          "Answer": ["+", 12, 1]
+        },
+        "image": {
+          "Src": "2-1.png"
+        }
+      },
+      {
+        "headQuestion": "姐姐有兩條顏色不同的緞帶，綠色長6公分5毫米，黃色長2公分5毫米，姐姐把兩條緞帶接在一起，請問兩條緞帶加起來共長幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$6公分5毫米$$2公分5毫米 = $i$公分$i$毫米",
+          "Answer": ["+", 9, 0]
+        },
+        "image": {
+          "Src": "2-2.png"
+        }
+      },
+      {
+        "headQuestion": "阿拓有兩條顏色不同的緞帶，紅色長7公分6毫米，藍色長1公分8毫米，阿拓把兩條緞帶接在一起，請問兩條緞帶加起來共長幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$7公分6毫米$$1公分8毫米 = $i$公分$i$毫米",
+          "Answer": ["+", 9, 4]
+        },
+        "image": {
+          "Src": "2-3.png"
+        }
+      },
+      {
+        "headQuestion": "阿拓有兩條顏色不同的緞帶，紅色長5公分4毫米，藍色長6公分9毫米，阿拓把兩條緞帶接在一起，請問兩條緞帶加起來共長幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$5公分4毫米$$6公分9毫米 = $i$公分$i$毫米",
+          "Answer": ["+", 12, 3]
+        },
+        "image": {
+          "Src": "2-4.png"
+        }
+      },
+      {
+        "headQuestion": "阿拓有兩條顏色不同的緞帶，紅色長6公分6毫米，藍色長6公分8毫米，阿拓把兩條緞帶接在一起，請問兩條緞帶加起來共長幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$6公分6毫米$$6公分8毫米 = $i$公分$i$毫米",
+          "Answer": ["+", 13, 4]
+        },
+        "image": {
+          "Src": "2-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "繩子有18公分8毫米，用剪刀剪掉52毫米，請問繩子剩下幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$52毫米 = $i$公分$i$毫米$n$橫式：$n$18公分8毫米$$52毫米 = $i$公分$i$毫米",
+          "Answer": [5, 2, "-", 13, 6]
+        },
+        "image": {
+          "Src": "3-1.png"
+        }
+      },
+      {
+        "headQuestion": "繩子有9公分7毫米，用剪刀剪掉33毫米，請問繩子剩下幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$33毫米 = $i$公分$i$毫米$n$橫式：$n$9公分7毫米$$33毫米 = $i$公分$i$毫米",
+          "Answer": [3, 3, "-", 6, 4]
+        },
+        "image": {
+          "Src": "3-2.png"
+        }
+      },
+      {
+        "headQuestion": "綠緞帶有12公分7毫米，用剪刀剪掉25毫米，請問綠緞帶剩下幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$25毫米 = $i$公分$i$毫米$n$橫式：$n$12公分7毫米$$25毫米 = $i$公分$i$毫米",
+          "Answer": [2, 5, "-", 10, 2]
+        },
+        "image": {
+          "Src": "3-3.png"
+        }
+      },
+      {
+        "headQuestion": "綠緞帶有7公分8毫米，用剪刀剪掉46毫米，請問綠緞帶剩下幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$46毫米 = $i$公分$i$毫米$n$橫式：$n$7公分8毫米$$46毫米 = $i$公分$i$毫米",
+          "Answer": [4, 6, "-", 3, 2]
+        },
+        "image": {
+          "Src": "3-4.png"
+        }
+      },
+      {
+        "headQuestion": "綠緞帶有10公分9毫米，用剪刀剪掉65毫米，請問綠緞帶剩下幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$65毫米 = $i$公分$i$毫米$n$橫式：$n$10公分9毫米$$65毫米 = $i$公分$i$毫米",
+          "Answer": [6, 5, "-", 4, 4]
+        },
+        "image": {
+          "Src": "3-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "阿海的鉛筆長17公分3毫米，小田的鉛筆比阿海的短3公分8毫米，請問小田的鉛筆長度是幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$17公分3毫米$$3公分8毫米 = $i$公分$i$毫米",
+          "Answer": ["-", 13, 5]
+        },
+        "image": {
+          "Src": "4-1.png"
+        }
+      },
+      {
+        "headQuestion": "阿海的鉛筆長14公分2毫米，小田的鉛筆比阿海的短2公分7毫米，請問小田的鉛筆長度是幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$14公分2毫米$$2公分7毫米 = $i$公分$i$毫米",
+          "Answer": ["-", 11, 5]
+        },
+        "image": {
+          "Src": "4-2.png"
+        }
+      },
+      {
+        "headQuestion": "阿海的鉛筆長13公分6毫米，小田的鉛筆比阿海的短5公分8毫米，請問小田的鉛筆長度是幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$13公分6毫米$$5公分8毫米 = $i$公分$i$毫米",
+          "Answer": ["-", 7, 8]
+        },
+        "image": {
+          "Src": "4-3.png"
+        }
+      },
+      {
+        "headQuestion": "姐姐的手鍊長15公分2毫米，妹妹的手鍊比姐姐的短4公分6毫米，請問妹妹的手鍊長度是幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$15公分2毫米$$4公分6毫米 = $i$公分$i$毫米",
+          "Answer": ["-", 10, 6]
+        },
+        "image": {
+          "Src": "4-4.png"
+        }
+      },
+      {
+        "headQuestion": "姐姐的手鍊長16公分5毫米，妹妹的手鍊比姐姐的短3公分7毫米，請問妹妹的手鍊長度是幾公分幾毫米?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "橫式：$n$16公分5毫米$$3公分7毫米 = $i$公分$i$毫米",
+          "Answer": ["-", 12, 8]
+        },
+        "image": {
+          "Src": "4-5.png"
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "哥哥有兩個杯子，馬克杯高度是87毫米，保溫杯比馬克杯高7公分5毫米，請問保溫杯的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$87毫米 = $i$公分$i$毫米$n$橫式：$n$7公分5毫米$$87毫米 = $i$公分$i$毫米",
+          "Answer": [8, 7, "+", 16, 2]
+        },
+        "image": {
+          "Src": "5-1.png"
+        }
+      },
+      {
+        "headQuestion": "哥哥有兩個杯子，馬克杯高度是98毫米，保溫杯比馬克杯高6公分8毫米，請問保溫杯的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$98毫米 = $i$公分$i$毫米$n$橫式：$n$6公分8毫米$$98毫米 = $i$公分$i$毫米",
+          "Answer": [9, 8, "+", 16, 6]
+        },
+        "image": {
+          "Src": "5-2.png"
+        }
+      },
+      {
+        "headQuestion": "大熊有一個馬克杯高度是96毫米，他又買了一個玻璃杯，玻璃杯比馬克杯高11公分7毫米，請問玻璃杯的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$96毫米 = $i$公分$i$毫米$n$橫式：$n$11公分7毫米$$96毫米 = $i$公分$i$毫米",
+          "Answer": [9, 6, "+", 21, 3]
+        },
+        "image": {
+          "Src": "5-3.png"
+        }
+      },
+      {
+        "headQuestion": "大熊有一個馬克杯高度是101毫米，他又買了一個玻璃杯，玻璃杯比馬克杯高5公分8毫米，請問玻璃杯的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$101毫米 = $i$公分$i$毫米$n$橫式：$n$5公分8毫米$$101毫米 = $i$公分$i$毫米",
+          "Answer": [10, 1, "+", 15, 9]
+        },
+        "image": {
+          "Src": "5-4.png"
+        }
+      },
+      {
+        "headQuestion": "大熊有一個馬克杯高度是123毫米，他又買了一個玻璃杯，玻璃杯比馬克杯高6公分4毫米，請問玻璃杯的高度是幾公分幾毫米?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Length"
+        },
+        "markdown": {
+          "Render": "單位換算：$n$123毫米 = $i$公分$i$毫米$n$橫式：$n$6公分4毫米$$123毫米 = $i$公分$i$毫米",
+          "Answer": [12, 3, "+", 18, 7]
+        },
+        "image": {
+          "Src": "5-5.png"
+        }
+      }
+    ]
+  ]
+}

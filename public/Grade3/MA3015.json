@@ -1,0 +1,524 @@
+{
+  "id": "MA3015",
+  "introvideo": "MA3015.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "拿出正確的錢幣"
+  },
+  "GameType": "MoneyDrag",
+  "GameConfig": {
+    "auto-rand": true
+  },
+  "Questions": [
+    [
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 1100,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-1.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 1000,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-2.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 1200,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-3.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 1350,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-4.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 1450,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-5.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      }
+    ],
+    [
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2150,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-1.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2360,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-2.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2710,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-3.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2840,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-4.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2620,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-5.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      }
+    ],
+    [
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2457,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-1.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2156,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-2.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2312,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-3.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2673,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-4.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 2985,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-5.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      }
+    ],
+    [
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 659,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "4-1.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 749,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "4-2.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 867,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "4-3.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 499,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "4-4.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 599,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "4-5.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      }
+    ],
+    [
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 6889,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "5-1.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 6871,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "5-2.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 7052,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "5-3.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 8235,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "5-4.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      },
+      {
+        "title": "拿出正確的錢幣",
+        "amount": 6759,
+        "upperComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "5-5.png",
+            "Alt": ""
+          }
+        },
+        "Items": {
+          "1": "true",
+          "5": "true",
+          "10": "true",
+          "50": "true",
+          "100": "true",
+          "500": "true",
+          "1000": "true"
+        }
+      }
+    ]
+  ]
+}

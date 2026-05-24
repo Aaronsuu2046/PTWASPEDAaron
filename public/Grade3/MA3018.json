@@ -1,0 +1,508 @@
+{
+  "id": "MA3018",
+  "GameType": "NumberLock",
+  "introvideo": "MA3018.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在數線上做做看"
+  },
+  "GameConfig": {
+    "NumberPadAutoDisappear": false,
+    "layout": {
+      "top": true,
+      "down": true,
+      "pad": false
+    },
+    "checkAnswer": {
+      "top": false,
+      "down": true
+    }
+  },
+  "Questions": [
+    [
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-1.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有兩條緞帶，黃色緞帶長6公分，綠色緞帶長5公分，接在一起會是幾公分?$n$6+5=$i$",
+            "Answer": [11]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-2.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有兩條緞帶，黃色緞帶長8公分，綠色緞帶長6公分，接在一起會是幾公分?$n$8+6=$i$",
+            "Answer": [14]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-3.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有兩條緞帶，黃色緞帶長3公分，綠色緞帶長7公分，接在一起會是幾公分?$n$3+7=$i$",
+            "Answer": [10]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-4.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有兩條緞帶，黃色緞帶長5公分，綠色緞帶長7公分，接在一起會是幾公分?$n$5+7=$i$",
+            "Answer": [12]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-5.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有兩條緞帶，黃色緞帶長6公分，綠色緞帶長6公分，接在一起會是幾公分?$n$6+6=$i$",
+            "Answer": [12]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-1.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有一條長12公分的緞帶，剪掉5公分，這條緞帶還剩下幾公分?$n$12-5=$i$",
+            "Answer": [7]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-2.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有一條長12公分的緞帶，剪掉7公分，這條緞帶還剩下幾公分?$n$12-7=$i$",
+            "Answer": [5]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-3.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有一條長13公分的緞帶，剪掉6公分，這條緞帶還剩下幾公分?$n$13-6=$i$",
+            "Answer": [7]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-4.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有一條長11公分的緞帶，剪掉9公分，這條緞帶還剩下幾公分?$n$11-9=$i$",
+            "Answer": [2]
+          }
+        }
+      },
+      {
+        "topComponent": {
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-5.png"
+          }
+        },
+        "NumberPadAutoDisappear": false,
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "有一條長13公分的緞帶，剪掉4公分，這條緞帶還剩下幾公分?$n$13-4=$i$",
+            "Answer": [9]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有一隻小鴨停在數線1的位置。小鴨向右移動6格，會停在哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 1,
+            "image": "duck.png",
+            "finalPosition": 7
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "1 + 6 = $i$",
+            "Answer": [7]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線2的位置。小鴨向右移動3格，會停在哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 2,
+            "image": "duck.png",
+            "finalPosition": 5
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "2 + 3 = $i$",
+            "Answer": [5]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線3的位置。小鴨向右移動11格，會停在哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 3,
+            "image": "duck.png",
+            "finalPosition": 14
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "3 + 11 = $i$",
+            "Answer": [14]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線3的位置。小鴨向右移動10格，會停在哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 3,
+            "image": "duck.png",
+            "finalPosition": 13
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "3 + 10 = $i$",
+            "Answer": [13]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線4的位置。小鴨向右移動8格，會停在哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 4,
+            "image": "duck.png",
+            "finalPosition": 12
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "4 + 8 = $i$",
+            "Answer": [12]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "小鴨從9的位置，向左移動3格，會到哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 9,
+            "image": "duck.png",
+            "finalPosition": 6
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "9 - 3 = $i$",
+            "Answer": [6]
+          }
+        }
+      },
+      {
+        "questionText": "小鴨從15的位置，向左移動8格，會到哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 15,
+            "image": "duck.png",
+            "finalPosition": 7
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "15 - 8 = $i$",
+            "Answer": [7]
+          }
+        }
+      },
+      {
+        "questionText": "小鴨從11的位置，向左移動6格，會到哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 11,
+            "image": "duck.png",
+            "finalPosition": 5
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "11 - 6 = $i$",
+            "Answer": [5]
+          }
+        }
+      },
+      {
+        "questionText": "小鴨從12的位置，向左移動4格，會到哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 12,
+            "image": "duck.png",
+            "finalPosition": 8
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "12 - 4 = $i$",
+            "Answer": [8]
+          }
+        }
+      },
+      {
+        "questionText": "小鴨從13的位置，向左移動5格，會到哪一個數字上呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 13,
+            "image": "duck.png",
+            "finalPosition": 8
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "13 - 5 = $i$",
+            "Answer": [8]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "questionText": "有一隻小鴨停在數線3的位置，牠想吃的糖果在數線14的位置上。小鴨要向右移動多少格，才會到達糖果在的位置呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 3,
+            "image": "duck.png",
+            "finalPosition": 14
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "14 - 3 = $i$",
+            "Answer": [11]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線5的位置，牠想吃的糖果在數線10的位置上。小鴨要向右移動多少格，才會到達糖果在的位置呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 5,
+            "image": "duck.png",
+            "finalPosition": 10
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "10 - 5 = $i$",
+            "Answer": [5]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線12的位置，牠想吃的糖果在數線8的位置上。小鴨要向左移動多少格，才會到達糖果在的位置呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 12,
+            "image": "duck.png",
+            "finalPosition": 8
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "12 - 8 = $i$",
+            "Answer": [4]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線13的位置，牠想吃的糖果在數線6的位置上。小鴨要向左移動多少格，才會到達糖果在的位置呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 13,
+            "image": "duck.png",
+            "finalPosition": 6
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "13 - 6 = $i$",
+            "Answer": [7]
+          }
+        }
+      },
+      {
+        "questionText": "有一隻小鴨停在數線15的位置，牠想吃的糖果在數線4的位置上。小鴨要向左移動多少格，才會到達糖果在的位置呢?",
+        "topComponent": {
+          "Name": "DragOnNumberLine",
+          "Data": {
+            "spacing": 1,
+            "max": 15,
+            "min": 0,
+            "init_pos": 15,
+            "image": "duck.png",
+            "finalPosition": 4
+          }
+        },
+        "downComponent": {
+          "Name": "MarkdownRenderer",
+          "Data": {
+            "Render": "15 - 4 = $i$",
+            "Answer": [11]
+          }
+        }
+      }
+    ]
+  ]
+}

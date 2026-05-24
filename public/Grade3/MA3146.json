@@ -1,0 +1,357 @@
+{
+  "id": "MA3186",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "headQuestion": "奶奶買了兩本書，一本重167公克，另一本重312公克，合起來共重幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：$n$167公克 $$ 312公克 = $i$公克",
+          "Answer": ["+", 479]
+        }
+      },
+      {
+        "headQuestion": "奶奶買了兩本書，一本重254公克，另一本重232公克，合起來共重幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：$n$254公克 $$ 232公克 = $i$公克",
+          "Answer": ["+", 486]
+        }
+      },
+      {
+        "headQuestion": "奶奶買了兩本書，一本重183公克，另一本重213公克，合起來共重幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：$n$183公克 $$ 213公克 = $i$公克",
+          "Answer": ["+", 396]
+        }
+      },
+      {
+        "headQuestion": "奶奶買了兩本書，一本重150公克，另一本重145公克，合起來共重幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：$n$150公克 $$ 145公克 = $i$公克",
+          "Answer": ["+", 295]
+        }
+      },
+      {
+        "headQuestion": "奶奶買了兩本書，一本重175公克，另一本重210公克，合起來共重幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：$n$175公克 $$ 210公克 = $i$公克",
+          "Answer": ["+", 385]
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "妹妹重25公斤，她抱著小狗一起秤重，共重34公斤，小狗有多重?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Custom",
+          "customUnit": ["公斤"]
+        },
+        "markdown": {
+          "Render": "橫式：$n$34公斤 $$ 25公斤 = $i$公斤",
+          "Answer": ["-", 9]
+        }
+      },
+      {
+        "headQuestion": "妹妹重15公斤，她抱著小狗一起秤重，共重21公斤，小狗有多重?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Custom",
+          "customUnit": ["公斤"]
+        },
+        "markdown": {
+          "Render": "橫式：$n$21公斤 $$ 15公斤 = $i$公斤",
+          "Answer": ["-", 6]
+        }
+      },
+      {
+        "headQuestion": "妹妹重18公斤，她抱著小狗一起秤重，共重29公斤，小狗有多重?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Custom",
+          "customUnit": ["公斤"]
+        },
+        "markdown": {
+          "Render": "橫式：$n$29公斤 $$ 18公斤 = $i$公斤",
+          "Answer": ["-", 11]
+        }
+      },
+      {
+        "headQuestion": "妹妹重19公斤，她抱著小狗一起秤重，共重25公斤，小狗有多重?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Custom",
+          "customUnit": ["公斤"]
+        },
+        "markdown": {
+          "Render": "橫式：$n$25公斤 $$ 19公斤 = $i$公斤",
+          "Answer": ["-", 6]
+        }
+      },
+      {
+        "headQuestion": "妹妹重21公斤，她抱著小狗一起秤重，共重30公斤，小狗有多重?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 3,
+          "unitType": "Custom",
+          "customUnit": ["公斤"]
+        },
+        "markdown": {
+          "Render": "橫式：$n$30公斤 $$ 21公斤 = $i$公斤",
+          "Answer": ["-", 6]
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "爸爸買了4570公克的蘋果和1公斤400公克的櫻桃，這兩種水果共重幾公斤幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "4570公克 = $i$公斤$i$公克$n$橫式：$n$$i$公斤$i$公克 $$ 1公斤400公克 =$n$$i$公斤$i$公克",
+          "Answer": [4, 570, 4, 570, "+", 5, 970]
+        }
+      },
+      {
+        "headQuestion": "爸爸買了2500公克的蘋果和1公斤200公克的櫻桃，這兩種水果共重幾公斤幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "2500公克 = $i$公斤$i$公克$n$橫式：$n$$i$公斤$i$公克 $$ 1公斤200公克 = $i$公斤$i$公克",
+          "Answer": [2, 500, 2, 500, "+", 3, 700]
+        }
+      },
+      {
+        "headQuestion": "爸爸買了3250公克的蘋果和1公斤500公克的櫻桃，這兩種水果共重幾公斤幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "3250公克 = $i$公斤$i$公克$n$橫式：$n$$i$公斤$i$公克 $$ 1公斤500公克 = $i$公斤$i$公克",
+          "Answer": [3, 250, 3, 250, "+", 4, 750]
+        }
+      },
+      {
+        "headQuestion": "爸爸買了2100公克的蘋果和1公斤250公克的櫻桃，這兩種水果共重幾公斤幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "2100公克 = $i$公斤$i$公克$n$橫式：$n$$i$公斤$i$公克 $$ 1公斤250公克 = $i$公斤$i$公克",
+          "Answer": [2, 100, 2, 100, "+", 3, 350]
+        }
+      },
+      {
+        "headQuestion": "爸爸買了2350公克的蘋果和1公斤550公克的櫻桃，這兩種水果共重幾公斤幾公克?",
+        "calculator": {
+          "type": "add",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "2350公克 = $i$公斤$i$公克$n$橫式：$n$$i$公斤$i$公克 $$ 1公斤550公克 = $i$公斤$i$公克",
+          "Answer": [2, 350, 2, 350, "+", 3, 900]
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "大提琴和琴盒共重3公斤703公克，琴盒重400公克，大提琴有多少公斤多少公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：3公斤703公克 $$ 400公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 3, 303]
+        }
+      },
+      {
+        "headQuestion": "大提琴和琴盒共重3公斤850公克，琴盒重400公克，大提琴有多少公斤多少公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：3公斤850公克 $$ 400公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 3, 450]
+        }
+      },
+      {
+        "headQuestion": "大提琴和琴盒共重3公斤995公克，琴盒重550公克，大提琴有多少公斤多少公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：3公斤995公克 $$ 550公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 3, 445]
+        }
+      },
+      {
+        "headQuestion": "大提琴和琴盒共重3公斤280公克，琴盒重150公克，大提琴有多少公斤多少公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：3公斤280公克 $$ 150公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 3, 130]
+        }
+      },
+      {
+        "headQuestion": "大提琴和琴盒共重3公斤785公克，琴盒重355公克，大提琴有多少公斤多少公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：3公斤785公克 $$ 355公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 3, 430]
+        }
+      }
+    ],
+    [
+      {
+        "headQuestion": "空籃子重400公克，放入橘子後，橘子連籃子共重2公斤185公克，橘子重幾公斤幾公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：2公斤185公克 $$ 400公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 1, 785]
+        }
+      },
+      {
+        "headQuestion": "空籃子重200公克，放入橘子後，橘子連籃子共重4公斤90公克，橘子重幾公斤幾公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：4公斤90公克 $$ 200公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 3, 890]
+        }
+      },
+      {
+        "headQuestion": "空籃子重300公克，放入橘子後，橘子連籃子共重2公斤250公克，橘子重幾公斤幾公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：2公斤250公克 $$ 300公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 1, 950]
+        }
+      },
+      {
+        "headQuestion": "空籃子重350公克，放入橘子後，橘子連籃子共重3公斤100公克，橘子重幾公斤幾公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：3公斤100公克 $$ 350公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 2, 750]
+        }
+      },
+      {
+        "headQuestion": "空籃子重150公克，放入橘子後，橘子連籃子共重2公斤50公克，橘子重幾公斤幾公克?",
+        "calculator": {
+          "type": "sub",
+          "mode": "freeInput",
+          "digit": 4,
+          "unitType": "Weight"
+        },
+        "markdown": {
+          "Render": "橫式：2公斤50公克 $$ 150公克 =$n$$i$公斤$i$公克",
+          "Answer": ["-", 1, 900]
+        }
+      }
+    ]
+  ]
+}

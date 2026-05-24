@@ -1,0 +1,97 @@
+{
+    "id": "MA_Pub_11",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "請拿出正確數量的東西"
+    },
+    "TotalLevel": 1,
+    "GameType": "CopyItem",
+    "GameConfig": {
+        
+    },
+    "Hint":{
+        
+    },
+    "Questions": [
+        {
+            "Title": "將正確數量的糖果拉到左邊的框框中",
+            "Questions": [
+                "請放入五顆糖果"
+            ],
+            "Items": [
+                {
+                    "Name": "ImageContainer",
+                    "Amount": 5,
+                    "Data": {
+                        "Src": "candy.png",
+                        "Alt": "糖果照片"
+                    }
+                }
+            ]
+        },
+        {
+            "Title": "將正確數量的鯊魚拉到左邊的框框中",
+            "Questions": [
+                "請放入十隻鯊魚"
+            ],
+            "Items": [
+                {
+                    "Name": "ImageContainer",
+                    "Amount": 10,
+                    "Data": {
+                        "Src": "shark.png",
+                        "Alt": "鯊魚"
+                    }
+                }
+            ]
+        },
+        {
+            "Title": "將正確數量的蜜蜂拉到左邊的框框中",
+            "Questions": [
+                "請放入兩隻蜜蜂"
+            ],
+            "Items": [
+                {
+                    "Name": "ImageContainer",
+                    "Amount": 2,
+                    "Data": {
+                        "Src": "bee.png",
+                        "Alt": "蜜蜂"
+                    }
+                }
+            ]
+        },
+        {
+            "Title": "將正確數量的企鵝拉到左邊的框框中",
+            "Questions": [
+                "請放入八隻企鵝"
+            ],
+            "Items": [
+                {
+                    "Name": "ImageContainer",
+                    "Amount": 8,
+                    "Data": {
+                        "Src": "penguin.png",
+                        "Alt": "企鵝"
+                    }
+                }
+            ]
+        },{
+            "Title": "將正確數量的大象拉 到左邊的框框中",
+            "Questions": [
+                "請放入九隻大象"
+            ],
+            "Items": [
+                {
+                    "Name": "ImageContainer",
+                    "Amount": 9,
+                    "Data": {
+                        "Src": "elephant.png",
+                        "Alt": "大象"
+                    }
+                }
+            ]
+        }
+
+    ]
+}

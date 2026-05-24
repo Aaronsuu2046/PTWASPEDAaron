@@ -1,0 +1,58 @@
+{
+    "id":"MA3023",
+    "introvideo": "src",
+    "TotalLevel": 2,
+    "GameType" : "FillinBlank",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "數學不好的哥哥打算買運動相關的用品，請聰明的你幫哥哥算出總共要花多少錢"
+    },
+    "GameConfig": {
+        "WithImage": true
+    },
+    "_Comment" : "CheckAnswerMode: OnFill, OnClick",
+    "Questions": [
+        [{
+            "Question_Text": "Sample Question",
+            "AssistiveComponent":["Numpad"],
+            "SlotComponents":[
+                {
+                    "Name" : "Clock",
+                    "Data" : {
+                        "hour": 3,
+                        "min": 20,
+                        "sec": 0
+                    }
+                }
+            ],
+            "Question" : [
+                ["橫式: 3時5分","$input","25分"],
+                ["$gap","=", "$input", "時", "$input" ,"分"],
+                ["$gap","答案: 下午","$input","時","$input","分"]
+            ],
+            "Answer": ["+","3","30","3","30"],
+            "SubQuestionTitle": "請填入正確的數字"
+        }],
+        [{
+            "Question_Text": "Sample Question",
+            "AssistiveComponent":["Numpad"],
+            "SlotComponents":[
+                {
+                    "Name" : "Clock",
+                    "Data" : {
+                        "hour": 3,
+                        "min": 20,
+                        "sec": 0
+                    }
+                }
+            ],
+            "Question" : [
+                ["橫式: 3時5分","$input","25分"],
+                ["$gap","=", "$input", "時", "$input" ,"分"],
+                ["$gap","答案: 下午","$input","時","$input","分"]
+            ],
+            "Answer": ["+","3","30","3","30"],
+            "SubQuestionTitle": "請填入正確的數字"
+        }]
+    ]
+}

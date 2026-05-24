@@ -1,0 +1,325 @@
+{
+    "TotalLevel": 4,
+    "GameType": "CalculatorGame",
+    "GameConfig": {},
+    "Hint": {},
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "請使用計算器將以下的數字相加"
+    },
+    "Questions": [
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "CustomeUnit": null,
+                "NumberAmount": 3,
+                "Preset": {
+                    "Number": ["56", "39"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "95",
+                    "Number": ["56", "39"],
+                    "Symbol": "+"
+                }
+            },
+            
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["29", "54"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "83",
+                    "Number": ["29", "54"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["14", "56"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "70",
+                    "Number": ["14", "56"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["4", "88"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "92",
+                    "Number": ["4", "88"],
+                    "Symbol": "+"
+                }
+            }
+        ],
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["65", "22"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "87",
+                    "Number": ["65", "22"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["58", "11"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "69",
+                    "Number": ["58", "11"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["74", "12"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "86",
+                    "Number": ["74", "12"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["27", "40"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "67",
+                    "Number": ["27", "40"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["13", "25"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "38",
+                    "Number": ["13", "25"],
+                    "Symbol": "+"
+                }
+            }
+        ],
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["24", "18"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "42",
+                    "Number": ["24", "18"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["62", "89"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "151",
+                    "Number": ["62", "89"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["28", "35"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "63",
+                    "Number": ["28", "35"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["47", "36"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "83",
+                    "Number": ["47", "36"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["57", "53"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "110",
+                    "Number": ["57", "53"],
+                    "Symbol": "+"
+                }
+            }
+        ],
+        [
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["25", "42"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "67",
+                    "Number": ["25", "42"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["10", "71"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "81",
+                    "Number": ["10", "71"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["85", "10"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "95",
+                    "Number": ["85", "10"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["26", "62"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "88",
+                    "Number": ["26", "62"],
+                    "Symbol": "+"
+                }
+            },
+            {
+                "Unit": "Number",
+                "CarryAmount": 1,
+                "NumberAmount": 3,
+                "CustomeUnit": null,
+                "Preset": {
+                    "Number": ["84", "5"],
+                    "Symbol": "+"
+                },
+                "Answer": {
+                    "Carry": [],
+                    "Answer": "89",
+                    "Number": ["84", "5"],
+                    "Symbol": "+"
+                }
+            }
+        ]
+    ]
+}

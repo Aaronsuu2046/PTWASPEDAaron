@@ -1,0 +1,221 @@
+{
+  "id": "MA3051",
+  "introvideo": "src",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "分類看看，哪些是角?哪些不是角?"
+  },
+  "GameType": "ClassifyGame",
+  "ItemsWithImage": true,
+  "GameConfig": {},
+  "Questions": [
+    {
+      "Text": "請將以下的圖片分類成是角或不是角",
+      "InitBox": "物品",
+      "Question": [
+        {
+          "Tag": "1",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-1.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "2",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-2.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "3",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-3.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "4",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-4.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "5",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-5.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "6",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-6.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "7",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "1-7.PNG",
+            "Alt": "一個角度"
+          }
+        }
+      ],
+      "Answer": [
+        {
+          "GroupName": "是角",
+          "Items": ["2", "5", "6", "7"]
+        },
+        {
+          "GroupName": "不是角",
+          "Items": ["1", "3", "4"]
+        }
+      ]
+    },
+    {
+      "Text": "請將以下的圖片分類成是角或不是角",
+      "InitBox": "物品",
+      "Question": [
+        {
+          "Tag": "1",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-1.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "2",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-2.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "3",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-3.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "4",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-4.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "6",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-6.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "7",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "2-7.PNG",
+            "Alt": "一個角度"
+          }
+        }
+      ],
+      "Answer": [
+        {
+          "GroupName": "是角",
+          "Items": ["3", "4", "7"]
+        },
+        {
+          "GroupName": "不是角",
+          "Items": ["1", "2", "6"]
+        }
+      ]
+    },
+    {
+      "Text": "請將以下的圖片分類成是角或不是角",
+      "InitBox": "物品",
+      "Question": [
+        {
+          "Tag": "1",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-1.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "2",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-2.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "3",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-3.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "4",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-4.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "5",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-5.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "6",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-6.PNG",
+            "Alt": "一個角度"
+          }
+        },
+        {
+          "Tag": "7",
+          "Name": "ImageContainer",
+          "Data": {
+            "Src": "3-7.PNG",
+            "Alt": "一個角度"
+          }
+        }
+      ],
+      "Answer": [
+        {
+          "GroupName": "是角",
+          "Items": ["1", "4", "5", "6"]
+        },
+        {
+          "GroupName": "不是角",
+          "Items": ["2", "3", "7"]
+        }
+      ]
+    }
+  ]
+}

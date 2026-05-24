@@ -1,0 +1,16 @@
+{
+    "id": "Dev02_ComponentTesters",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "TEST"
+    },
+    "TotalLevel": 2,
+    "GameType": "ComponentTesters",
+    "GameConfig": {
+    },
+    "Hint":{
+        
+    },
+    "Questions": []
+}

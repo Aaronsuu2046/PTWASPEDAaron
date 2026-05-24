@@ -1,0 +1,93 @@
+{
+    "id": "MA3028",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "小明剛剛學會看時鐘，但是他在寫作業的時候忘記了部分的答案，請聰明的你/妳幫助小明檢查答案"
+    },
+    "TotalLevel": 1,
+    "GameType": "PairingGame",
+    "GameConfig": {
+        "GlobalTitle": "請問以下的時間正確嗎?"
+    },
+    "Hint":{
+        "ShowAs" : "Single",
+        "Rule" : {
+            "RuleType": "WrongTimes"
+        },
+        "Data" :{
+            "MaxWrongTimes" : 2,
+            "SourceType" : "video",
+            "FilePath" : "hint1.mp4"
+        }
+    },
+    "Questions": [
+        {
+            "Properties": [
+                {
+                    "Tag": "1",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text": "Hello"
+                    }
+                },
+                {
+                    "Tag": "2",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text": "World"
+                    }
+                },
+                {
+                    "Tag": "3",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text": "foo"
+                    }
+                },
+                {
+                    "Tag": "4",
+                    "Name": "TextOnly",
+                    "Data": {
+                        "Text": "Bar"
+                    }
+                },
+                {
+                    "Tag": "5",
+                    "Name": "Clock",
+                    "Data": {
+                        "sec": 0,
+                        "min": 0,
+                        "hour": 1
+                    }
+                },
+                {
+                    "Tag": "6",
+                    "Name": "Water",
+                    "Data": {
+                        "Scale": 1000,
+                        "Ml": 100
+                    }
+                }
+            ],
+            "Pairs": [
+                {
+                    "Question": "Hello",
+                    "Answer": "1"
+                },
+                {
+                    "Question": "World",
+                    "Answer": "2"
+                },
+                {
+                    "Question": "Foo",
+                    "Answer": "3"
+                },
+                {
+                    "Question": "Bar",
+                    "Answer": "4"
+                }
+            ]
+        }
+    ]
+}

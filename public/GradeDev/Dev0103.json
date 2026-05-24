@@ -1,0 +1,50 @@
+{
+    "id": "MA3029",
+    "introvideo": "hint1.mp4",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "[Insert question.]"
+    },
+    "TotalLevel": 1,
+    "GameType": "SelectGameMulti",
+    "GameConfig": {
+
+    },
+    "Hint":{
+
+    },
+    "Questions": [
+        {
+            "SelectionType": "TextOnly",
+            "TopContainer": {
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "NumberLock"
+                }
+            },
+            "SlotComponent":{
+                "Name": "TextOnly",
+                "Data": {
+                    "Text": "請問以下數字$question$中哪個是分數?"
+                }
+            },
+            "Questions": [
+                {
+                    "Question": "請問以下數字中哪個是分數?$question$",
+                    "Selection": [{"Text": "1/2"},{"Text": "1/3"},{"Text": "1/4"},{"Text": "1/5"}],
+                    "Answer": 0      
+                },
+                {
+                    "Question": "請問以下數字中哪個是分數?$question$",
+                    "Selection": [{"Text": "1/2"},{"Text": "1/3"},{"Text": "1/4"},{"Text": "1/5"}],
+                    "Answer": 0      
+                },
+                {
+                    "Question": "請問以下數字中哪個是分數?$question$",
+                    "Selection": [{"Text": "1/2"},{"Text": "1/3"},{"Text": "1/4"},{"Text": "1/5"}],
+                    "Answer": 0      
+                }
+            ]
+        }
+    ]
+}      

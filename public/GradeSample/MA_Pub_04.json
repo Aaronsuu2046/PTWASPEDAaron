@@ -1,0 +1,135 @@
+{
+    "id": "MA_Pub_04",
+    "TotalLevel": 4,
+    "GameType": "LinkGame",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "連連看，把一樣的數連起來"
+    },
+    "GameConfig":{
+        "CheckingMode": "OnSubmit",
+        "_THE_OTHER_IS_OnSubmit":"OnAnswered"
+    },
+    "Questions": [
+        [
+            {
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData": [
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_02.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_01.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_03.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_04.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_05.jpg" } }
+                        ],
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "5", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "2", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "3", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "1", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "4", "Zhuyin": false ,"Size": "Large" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,1]],
+                    [[0,1],[1,3]],
+                    [[0,2],[1,2]],
+                    [[0,3],[1,4]],
+                    [[0,4],[1,0]]
+                ]
+            }            
+        ],
+        [
+            {
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData": [
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "6", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "10", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "5", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "2", "Zhuyin": false, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "7", "Zhuyin": false ,"Size": "Large" } }
+                        ],
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_05.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_10.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_02.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_07.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_06.jpg" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,4]],
+                    [[0,1],[1,1]],
+                    [[0,2],[1,0]],
+                    [[0,3],[1,2]],
+                    [[0,4],[1,3]]
+                ]
+            }            
+        ],
+        [
+            {
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData": [
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "十", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "八", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "三", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "六", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "四", "Zhuyin": true ,"Size": "Large" } }
+                        ],
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_04.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_08.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_06.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_10.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_03.jpg" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,3]],
+                    [[0,1],[1,1]],
+                    [[0,2],[1,4]],
+                    [[0,3],[1,2]],
+                    [[0,4],[1,0]]
+                ]
+            }            
+        ],
+        [
+            {
+                "Question": {
+                    "text": "把一樣的數連起來",
+                    "RowData": [
+                        [
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_03.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_01.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_04.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_02.jpg" } },
+                            { "Name": "ImageContainer", "Data": { "Src": "hand_05.jpg" } }
+                        ],
+                        [
+                            { "Name": "TextOnly", "Data": { "Text": "四", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "二", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "五", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "一", "Zhuyin": true, "Size": "Large" } },
+                            { "Name": "TextOnly", "Data": { "Text": "三", "Zhuyin": true ,"Size": "Large" } }
+                        ]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,4]],
+                    [[0,1],[1,3]],
+                    [[0,2],[1,0]],
+                    [[0,3],[1,1]],
+                    [[0,4],[1,2]]
+                ]
+            }            
+        ]
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "id": "MA_Pub_02",
+    "TotalLevel": 1,
+    "GameType": "FindTheItemGame",
+    "GameConfig":{
+        "RadiusBounes":"px",
+        "LineColor":"#000000",
+        "AutoCenterPoint":"false"
+    },
+    "Questions": [
+        [
+            {
+                "Text": "找出躲在圖片中的數字吧！",
+                "Objs":[ 
+                    { "Name": "0", "xRange": [ 21, 61 ], "yRange": [ 23, 64 ] }, 
+                    { "Name": "1", "xRange": [ 601, 642 ], "yRange": [ 71, 111 ] }, 
+                    { "Name": "2", "xRange": [ 318, 350 ], "yRange": [ 33, 70 ] }, 
+                    { "Name": "3", "xRange": [ 760, 770 ], "yRange": [ 415, 474 ] }, 
+                    { "Name": "4", "xRange": [ 579, 608 ], "yRange": [ 251, 277 ] }, 
+                    { "Name": "5", "xRange": [ 686, 704 ], "yRange": [ 55, 81 ] }, 
+                    { "Name": "6", "xRange": [ 61, 109 ], "yRange": [ 135, 182 ] }, 
+                    { "Name": "7", "xRange": [ 341, 389 ], "yRange": [ 362, 405 ] }, 
+                    { "Name": "8", "xRange": [ 47, 73 ], "yRange": [ 390, 413 ] }, 
+                    { "Name": "9", "xRange": [ 687, 712 ], "yRange": [ 277, 313 ] }, 
+                    { "Name": "10", "xRange": [ 14, 53 ], "yRange": [ 303, 338 ] }
+                ],
+                "tolerance":15,
+                "ObjNum":11,
+                "img": "FindItemGameSample1.jpg",
+                "SpeakerIcon":"SpeakerIcon"
+            }
+        ],
+        [
+            {
+                "Text": "找出躲在圖片中的數字吧！",
+                "Objs":[ 
+                    { "Name": "0", "xRange": [ 718, 786 ], "yRange": [ 4, 61 ] }, 
+                    { "Name": "1", "xRange": [ 84, 125 ], "yRange": [ 135, 198 ] }, 
+                    { "Name": "2", "xRange": [ 717, 779 ], "yRange": [ 300, 348 ] }, 
+                    { "Name": "3", "xRange": [ 535, 594 ], "yRange": [ 26, 100 ] }, 
+                    { "Name": "4", "xRange": [ 486, 555 ], "yRange": [ 387, 438 ] }, 
+                    { "Name": "5", "xRange": [ 389, 434 ], "yRange": [ 303, 341 ] }, 
+                    { "Name": "6", "xRange": [ 208, 244 ], "yRange": [ 99, 139 ] }, 
+                    { "Name": "7", "xRange": [ 476, 537 ], "yRange": [ 206, 279 ] }, 
+                    { "Name": "8", "xRange": [ 647, 686 ], "yRange": [ 185, 222 ] }, 
+                    { "Name": "9", "xRange": [ 125, 158 ], "yRange": [ 345, 378 ] }, 
+                    { "Name": "10", "xRange": [ 218, 288 ], "yRange": [ 255, 312 ] }
+                ],
+                "tolerance":15,
+                "ObjNum":11,
+                "img": "FindItemGameSample2.png",
+                "SpeakerIcon":"SpeakerIcon"
+            }
+        ],
+        [
+            {
+                "Text": "找出躲在圖片中的數字吧！",
+                "Objs":[ 
+                    { "Name": "0", "xRange": [ 298, 413 ], "yRange": [ 317, 400 ] },
+                    { "Name": "1", "xRange": [ 754, 799 ], "yRange": [ 449, 492 ] },
+                    { "Name": "2", "xRange": [ 331, 396 ], "yRange": [ 86, 167 ] },
+                    { "Name": "3", "xRange": [ 192, 242 ], "yRange": [ 2, 56 ] },
+                    { "Name": "4", "xRange": [ 270, 307 ], "yRange": [ 433, 476 ] },
+                    { "Name": "5", "xRange": [ 126, 221 ], "yRange": [ 320, 453 ] },
+                    { "Name": "6", "xRange": [ 619, 656 ], "yRange": [ 256, 310 ] },
+                    { "Name": "7", "xRange": [ 135, 235 ], "yRange": [ 76, 220 ] },
+                    { "Name": "8", "xRange": [ 46, 95 ], "yRange": [ 474, 513 ] },
+                    { "Name": "9", "xRange": [ 684, 728 ], "yRange": [ 161, 217 ] },
+                    { "Name": "10", "xRange": [ 719, 755 ], "yRange": [ 292, 363 ] }
+                ],
+                "tolerance":15,
+                "ObjNum":11,
+                "img": "FindItemGameSample3.png",
+                "SpeakerIcon":"SpeakerIcon"
+            }
+        ],
+        [
+            {
+                "Text": "找出躲在圖片中的數字吧！",
+                "Objs":[ 
+                    { "Name": "0", "xRange": [ 542, 600 ], "yRange": [ 306, 369 ] },
+                    { "Name": "1", "xRange": [ 599, 646 ], "yRange": [ 472, 543 ] },
+                    { "Name": "2", "xRange": [ 155, 217 ], "yRange": [ 211, 256 ] },
+                    { "Name": "3", "xRange": [ 448, 496 ], "yRange": [ 42, 93 ] },
+                    { "Name": "4", "xRange": [ 269, 311 ], "yRange": [ 110, 162 ] },
+                    { "Name": "5", "xRange": [ 51, 112 ], "yRange": [ 134, 270 ] },
+                    { "Name": "6", "xRange": [ 265, 318 ], "yRange": [ 173, 224 ] },
+                    { "Name": "7", "xRange": [ 384, 462 ], "yRange": [ 283, 338 ] },
+                    { "Name": "8", "xRange": [ 8, 74 ], "yRange": [ 395, 456 ] }, 
+                    { "Name": "9", "xRange": [ 545, 640 ], "yRange": [ 31, 93 ] },
+                    { "Name": "10", "xRange": [ 182, 242 ], "yRange": [ 272, 342 ] }
+                ],
+                "tolerance":15,
+                "ObjNum":11,
+                "img": "FindItemGameSample4.png",
+                "SpeakerIcon":"SpeakerIcon"
+            }
+        ]
+    ]
+}

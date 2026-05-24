@@ -1,0 +1,65 @@
+{
+  "id": "MA3056",
+  "GameType": "SelfDefine",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在邊長為1cm的方格紙上畫畫看"
+  },
+  "GameConfig": {
+    "GlobalTitle": "請選擇正確的角度",
+    "RandomMode": true
+  },
+  "Hint": {
+    "ShowAs": "Single",
+    "Rule": {
+      "RuleType": "WrongTimes"
+    },
+    "Data": {
+      "MaxWrongTimes": 2,
+      "SourceType": "video",
+      "FilePath": "hint1.mp4"
+    }
+  },
+  "Questions": [
+    [
+      {
+        "headQuestion": "請畫出一個邊長為2公分的正方形",
+        "answer": [2, 2]
+      },
+      {
+        "headQuestion": "請畫出一個邊長為3公分的正方形",
+        "answer": [3, 3]
+      },
+      {
+        "headQuestion": "請畫出一個邊長為6公分的正方形",
+        "answer": [6, 6]
+      },
+      {
+        "headQuestion": "請畫出一個邊長為4公分的正方形",
+        "answer": [4, 4]
+      },
+      {
+        "headQuestion": "請畫出一個邊長為5公分的正方形",
+        "answer": [5, 5]
+      }
+    ],
+    [
+      {
+        "headQuestion": "請畫出一個長邊為4公分，短邊為2公分的長方形",
+        "answer": [4, 2]
+      },
+      {
+        "headQuestion": "請畫出一個長邊為5公分，短邊為2公分的長方形",
+        "answer": [5, 2]
+      },
+      {
+        "headQuestion": "請畫出一個長邊為7公分，短邊為3公分的長方形",
+        "answer": [7, 3]
+      },
+      {
+        "headQuestion": "請畫出一個長邊為6公分，短邊為4公分的長方形",
+        "answer": [6, 4]
+      }
+    ]
+  ]
+}

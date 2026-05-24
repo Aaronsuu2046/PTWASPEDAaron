@@ -1,0 +1,225 @@
+{
+  "id": "MA3081",
+  "introvideo": "hint1.mp4",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "將量杯裝到指定的位置"
+  },
+  "GameType": "SelfDefine",
+  "GameConfig": {
+    "GlobalTitle": "[Insert title.]"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "Question": "請在水杯中裝入50毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 50
+      },
+      {
+        "Question": "請在水杯中裝入100毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 100
+      },
+      {
+        "Question": "請在水杯中裝入150毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 150
+      },
+      {
+        "Question": "請在水杯中裝入200毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 200
+      },
+      {
+        "Question": "請在水杯中裝入250毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 250
+      }
+    ],
+    [
+      {
+        "Question": "請在水杯中裝入140毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 140
+      },
+      {
+        "Question": "請在水杯中裝入130毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 130
+      },
+      {
+        "Question": "請在水杯中裝入90毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 90
+      },
+      {
+        "Question": "請在水杯中裝入110毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 110
+      },
+      {
+        "Question": "請在水杯中裝入60毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 60
+      }
+    ],
+    [
+      {
+        "Question": "請在水杯中裝入210毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 210
+      },
+      {
+        "Question": "請在水杯中裝入240毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 240
+      },
+      {
+        "Question": "請在水杯中裝入170毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 170
+      },
+      {
+        "Question": "請在水杯中裝入180毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 180
+      },
+      {
+        "Question": "請在水杯中裝入220毫升",
+        "waterContainer": {
+          "Scale": 250,
+          "Ml": 0
+        },
+        "answer": 220
+      }
+    ],
+    [
+      {
+        "Question": "請在水杯中裝入700毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 700
+      },
+      {
+        "Question": "請在水杯中裝入900毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 900
+      },
+      {
+        "Question": "請在水杯中裝入100毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 100
+      },
+      {
+        "Question": "請在水杯中裝入200毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 200
+      },
+      {
+        "Question": "請在水杯中裝入500毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 500
+      }
+    ],
+    [
+      {
+        "Question": "請在水杯中裝入600毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 600
+      },
+      {
+        "Question": "請在水杯中裝入300毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 300
+      },
+      {
+        "Question": "請在水杯中裝入400毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 400
+      },
+      {
+        "Question": "請在水杯中裝入800毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 800
+      },
+      {
+        "Question": "請在水杯中裝入1000毫升",
+        "waterContainer": {
+          "Scale": 1000,
+          "Ml": 0
+        },
+        "answer": 1000
+      }
+    ]
+  ]
+}

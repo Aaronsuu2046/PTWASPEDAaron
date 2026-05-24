@@ -1,0 +1,426 @@
+{
+  "id": "MA3185",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "GameType": "WordProblemWithCalculator",
+  "GameConfig": {
+    "calculatorVerify": true,
+    "markdownVerify": true,
+    "calculator": "CalculationBoard"
+  },
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "629",
+            "operand2": "3  "
+          },
+          "answer": "929"
+        },
+        "markdown": {
+          "Render": "6時29分 + 3時= $i$時$i$分",
+          "Answer": [9, 29]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "911",
+            "operand2": "2  "
+          },
+          "answer": "1111"
+        },
+        "markdown": {
+          "Render": "9時11分 + 2時= $i$時$i$分",
+          "Answer": [11, 11]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "308",
+            "operand2": "4  "
+          },
+          "answer": "708"
+        },
+        "markdown": {
+          "Render": "3時8分 + 4時= $i$時$i$分",
+          "Answer": [7, 8]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "754",
+            "operand2": "1  "
+          },
+          "answer": "854"
+        },
+        "markdown": {
+          "Render": "7時54分 + 1時= $i$時$i$分",
+          "Answer": [8, 54]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "413",
+            "operand2": "6  "
+          },
+          "answer": "1013"
+        },
+        "markdown": {
+          "Render": "4時13分 + 6時= $i$時$i$分",
+          "Answer": [10, 13]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "1003",
+            "operand2": "5  "
+          },
+          "answer": "503"
+        },
+        "markdown": {
+          "Render": "10時3分 - 5時= $i$時$i$分",
+          "Answer": [5, 3]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "943",
+            "operand2": "3  "
+          },
+          "answer": "643"
+        },
+        "markdown": {
+          "Render": "9時43分 - 3時= $i$時$i$分",
+          "Answer": [6, 43]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "750",
+            "operand2": "4  "
+          },
+          "answer": "350"
+        },
+        "markdown": {
+          "Render": "7時50分 - 4時= $i$時$i$分",
+          "Answer": [3, 50]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "1112",
+            "operand2": "8  "
+          },
+          "answer": "312"
+        },
+        "markdown": {
+          "Render": "11時12分 - 8時= $i$時$i$分",
+          "Answer": [3, 12]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "633",
+            "operand2": "5  "
+          },
+          "answer": "133"
+        },
+        "markdown": {
+          "Render": "6時33分 - 5時= $i$時$i$分",
+          "Answer": [1, 33]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "105",
+            "operand2": "45"
+          },
+          "answer": "150"
+        },
+        "markdown": {
+          "Render": "1時5分 + 45分= $i$時$i$分",
+          "Answer": [1, 50]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "412",
+            "operand2": "27"
+          },
+          "answer": "439"
+        },
+        "markdown": {
+          "Render": "4時12分 + 27分= $i$時$i$分",
+          "Answer": [4, 39]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "1133",
+            "operand2": "7"
+          },
+          "answer": "1140"
+        },
+        "markdown": {
+          "Render": "11時33分 + 7分= $i$時$i$分",
+          "Answer": [11, 40]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "608",
+            "operand2": "38"
+          },
+          "answer": "646"
+        },
+        "markdown": {
+          "Render": "6時8分 + 38分= $i$時$i$分",
+          "Answer": [6, 46]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "224",
+            "operand2": "31"
+          },
+          "answer": "255"
+        },
+        "markdown": {
+          "Render": "2時24分 + 31分= $i$時$i$分",
+          "Answer": [2, 55]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "749",
+            "operand2": "23"
+          },
+          "answer": "726"
+        },
+        "markdown": {
+          "Render": "7時49分 - 23分= $i$時$i$分",
+          "Answer": [7, 26]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "150",
+            "operand2": "15"
+          },
+          "answer": "135"
+        },
+        "markdown": {
+          "Render": "1時50分 - 15分= $i$時$i$分",
+          "Answer": [1, 35]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "336",
+            "operand2": "18"
+          },
+          "answer": "318"
+        },
+        "markdown": {
+          "Render": "3時36分 - 18分= $i$時$i$分",
+          "Answer": [3, 18]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "1245",
+            "operand2": "33"
+          },
+          "answer": "1212"
+        },
+        "markdown": {
+          "Render": "12時45分 - 33分= $i$時$i$分",
+          "Answer": [12, 12]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "554",
+            "operand2": "9"
+          },
+          "answer": "545"
+        },
+        "markdown": {
+          "Render": "5時54分 - 9分= $i$時$i$分",
+          "Answer": [5, 45]
+        }
+      }
+    ],
+    [
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "235",
+            "operand2": "110"
+          },
+          "answer": "125"
+        },
+        "markdown": {
+          "Render": "2時35分 - 1時10分= $i$時$i$分",
+          "Answer": [1, 25]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "520",
+            "operand2": "325"
+          },
+          "answer": "845"
+        },
+        "markdown": {
+          "Render": "5時20分 + 3時25分= $i$時$i$分",
+          "Answer": [8, 45]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "854",
+            "operand2": "232"
+          },
+          "answer": "622"
+        },
+        "markdown": {
+          "Render": "8時54分 - 2時32分= $i$時$i$分",
+          "Answer": [6, 22]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "subtract",
+          "operands": {
+            "operand1": "318",
+            "operand2": "209"
+          },
+          "answer": "109"
+        },
+        "markdown": {
+          "Render": "3時18分 - 2時9分= $i$時$i$分",
+          "Answer": [1, 9]
+        }
+      },
+      {
+        "calculator": {
+          "mode": "checkAnswer",
+          "unitType": "Time",
+          "type": "add",
+          "operands": {
+            "operand1": "631",
+            "operand2": "212"
+          },
+          "answer": "843"
+        },
+        "markdown": {
+          "Render": "6時31分 + 2時12分= $i$時$i$分",
+          "Answer": [8, 43]
+        }
+      }
+    ]
+  ]
+}

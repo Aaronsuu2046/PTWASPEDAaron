@@ -1,0 +1,756 @@
+{
+  "id": "MA3014",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "先點數錢幣，再選選看"
+  },
+  "introvideo": "MA3014.mp4",
+  "TotalLevel": 1,
+  "GameType": "TrackGame",
+  "GameConfig": {},
+  "Hint": {},
+  "Questions": [
+    [
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 2,
+              "Fives": 0,
+              "Ones": 4
+            },
+            "Selections": ["1424", "1444", "1414"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 4,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1461", "1606", "1046"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 1,
+              "Fives": 0,
+              "Ones": 10
+            },
+            "Selections": ["2002", "2020", "2011"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 5,
+              "FiveHundreds": 0,
+              "Hundreds": 1,
+              "Fifties": 0,
+              "Tens": 12,
+              "Fives": 0,
+              "Ones": 3
+            },
+            "Selections": ["5223", "5123", "5213"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 12,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 0
+            },
+            "Selections": ["5130", "5230", "4930"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 6,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 1
+            },
+            "Selections": ["2701", "2641", "2631"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 3,
+              "Fifties": 0,
+              "Tens": 0,
+              "Fives": 0,
+              "Ones": 8
+            },
+            "Selections": ["2318", "2308", "2038"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 9,
+              "Fifties": 0,
+              "Tens": 4,
+              "Fives": 0,
+              "Ones": 12
+            },
+            "Selections": ["1952", "1942", "1912"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 10,
+              "Fives": 0,
+              "Ones": 4
+            },
+            "Selections": ["3104", "3204", "3014"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 12,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 0
+            },
+            "Selections": ["5230", "4930", "5130"],
+            "AnswerIndex": 0
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 3,
+              "Fifties": 0,
+              "Tens": 7,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1387", "1376", "1367"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 4,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1461", "1606", "1046"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 10
+            },
+            "Selections": ["2040", "2031", "2039"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 13,
+              "Fives": 0,
+              "Ones": 1
+            },
+            "Selections": ["2631", "2531", "2431"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 12,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 0
+            },
+            "Selections": ["4930", "5230", "5130"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 2,
+              "Fives": 0,
+              "Ones": 4
+            },
+            "Selections": ["1414", "1444", "1424"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 3,
+              "Fifties": 0,
+              "Tens": 0,
+              "Fives": 0,
+              "Ones": 8
+            },
+            "Selections": ["2308", "2318", "2038"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 10
+            },
+            "Selections": ["2039", "2040", "2031"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 13,
+              "Fives": 0,
+              "Ones": 1
+            },
+            "Selections": ["2631", "2431", "2531"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 13,
+              "Fifties": 0,
+              "Tens": 6,
+              "Fives": 0,
+              "Ones": 7
+            },
+            "Selections": ["4967", "5167", "5367"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 6,
+              "Fifties": 0,
+              "Tens": 2,
+              "Fives": 0,
+              "Ones": 9
+            },
+            "Selections": ["1299", "1639", "1629"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 4,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1046", "1606", "1461"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 1,
+              "Fives": 0,
+              "Ones": 10
+            },
+            "Selections": ["2002", "2020", "2011"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 5,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 10,
+              "Fives": 0,
+              "Ones": 5
+            },
+            "Selections": ["5105", "5015", "5005"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 10,
+              "Fifties": 0,
+              "Tens": 6,
+              "Fives": 0,
+              "Ones": 0
+            },
+            "Selections": ["4960", "5160", "5060"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 2,
+              "Fives": 0,
+              "Ones": 4
+            },
+            "Selections": ["1444", "1424", "1414"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 4,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1046", "1606", "1461"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 6,
+              "Fifties": 0,
+              "Tens": 0,
+              "Fives": 0,
+              "Ones": 11
+            },
+            "Selections": ["3601", "3621", "3611"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 13,
+              "Fives": 0,
+              "Ones": 1
+            },
+            "Selections": ["2531", "2431", "2631"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 13,
+              "Fifties": 0,
+              "Tens": 6,
+              "Fives": 0,
+              "Ones": 7
+            },
+            "Selections": ["4967", "5367", "5167"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 3,
+              "Fifties": 0,
+              "Tens": 7,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1376", "1387", "1367"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 3,
+              "Fifties": 0,
+              "Tens": 0,
+              "Fives": 0,
+              "Ones": 8
+            },
+            "Selections": ["2318", "2308", "2038"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 10
+            },
+            "Selections": ["2031", "2039", "2040"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 5,
+              "FiveHundreds": 0,
+              "Hundreds": 1,
+              "Fifties": 0,
+              "Tens": 12,
+              "Fives": 0,
+              "Ones": 3
+            },
+            "Selections": ["5223", "5123", "5213"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 10,
+              "Fifties": 0,
+              "Tens": 0,
+              "Fives": 0,
+              "Ones": 9
+            },
+            "Selections": ["2109", "1909", "2009"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 4,
+              "Fifties": 0,
+              "Tens": 7,
+              "Fives": 0,
+              "Ones": 7
+            },
+            "Selections": ["2477", "2378", "2676"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 8,
+              "Fives": 0,
+              "Ones": 5
+            },
+            "Selections": ["3585", "3850", "3085"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 9,
+              "Fifties": 0,
+              "Tens": 4,
+              "Fives": 0,
+              "Ones": 12
+            },
+            "Selections": ["1942", "1952", "1912"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 10,
+              "Fives": 0,
+              "Ones": 4
+            },
+            "Selections": ["3014", "3104", "3204"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 13,
+              "Fifties": 0,
+              "Tens": 6,
+              "Fives": 0,
+              "Ones": 7
+            },
+            "Selections": ["5167", "4967", "5367"],
+            "AnswerIndex": 2
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 3,
+              "Fifties": 0,
+              "Tens": 7,
+              "Fives": 0,
+              "Ones": 6
+            },
+            "Selections": ["1376", "1387", "1367"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 8,
+              "Fives": 0,
+              "Ones": 5
+            },
+            "Selections": ["3850", "3585", "3085"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 6,
+              "Fifties": 0,
+              "Tens": 0,
+              "Fives": 0,
+              "Ones": 11
+            },
+            "Selections": ["3601", "3611", "3621"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 1,
+              "Fifties": 0,
+              "Tens": 10,
+              "Fives": 0,
+              "Ones": 1
+            },
+            "Selections": ["3301", "3111", "3201"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 13,
+              "Fifties": 0,
+              "Tens": 6,
+              "Fives": 0,
+              "Ones": 7
+            },
+            "Selections": ["4967", "5367", "5167"],
+            "AnswerIndex": 1
+          }
+        ]
+      },
+      {
+        "Question": [
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 1,
+              "FiveHundreds": 0,
+              "Hundreds": 6,
+              "Fifties": 0,
+              "Tens": 2,
+              "Fives": 0,
+              "Ones": 9
+            },
+            "Selections": ["1299", "1629", "1639"],
+            "AnswerIndex": 1
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 3,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 8,
+              "Fives": 0,
+              "Ones": 5
+            },
+            "Selections": ["3850", "3585", "3085"],
+            "AnswerIndex": 2
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 2,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 3,
+              "Fives": 0,
+              "Ones": 10
+            },
+            "Selections": ["2040", "2039", "2031"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 5,
+              "FiveHundreds": 0,
+              "Hundreds": 0,
+              "Fifties": 0,
+              "Tens": 10,
+              "Fives": 0,
+              "Ones": 5
+            },
+            "Selections": ["5105", "5015", "5005"],
+            "AnswerIndex": 0
+          },
+          {
+            "name": "MoneyGenerator",
+            "Data": {
+              "Thousands": 4,
+              "FiveHundreds": 0,
+              "Hundreds": 10,
+              "Fifties": 0,
+              "Tens": 6,
+              "Fives": 0,
+              "Ones": 0
+            },
+            "Selections": ["5060", "4960", "5160"],
+            "AnswerIndex": 0
+          }
+        ]
+      }
+    ]
+  ]
+}

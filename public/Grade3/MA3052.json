@@ -1,0 +1,1649 @@
+{
+  "id": "MA3052",
+  "GameType": "SelectGame",
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "比比看，哪個角最大?哪個角最小?"
+  },
+  "GameConfig": {
+    "GlobalTitle": "請選擇正確的角度",
+    "RandomMode": true
+  },
+  "Hint": {
+    "ShowAs": "Single",
+    "Rule": {
+      "RuleType": "WrongTimes"
+    },
+    "Data": {
+      "MaxWrongTimes": 2,
+      "SourceType": "video",
+      "FilePath": "hint1.mp4"
+    }
+  },
+  "Questions": [
+    [
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "1-1a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "1-1b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "1-2a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "1-2b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "1-3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "1-3b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "1-4a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "1-4b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "1-5a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "1-5b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "1-6a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "1-6b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "2-1a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "2-1b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "2-2a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "2-2b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "2-3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "2-3b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "2-4a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "2-4b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "2-5a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "2-5b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2"],
+        "Question_Text": "請問哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "2-6a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "2-6b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["∠1", "∠5"],
+        "Question_Text": "請問∠1和∠5哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "3b.png",
+                  "ratio": {
+                    "width": 2,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠2", "∠4"],
+        "Question_Text": "請問∠2和∠4哪一個角比較大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "3b.png",
+                  "ratio": {
+                    "width": 2,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠3", "∠5"],
+        "Question_Text": "請問∠3和∠5哪一個角比較大?",
+        "Answer": "∠5",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "3b.png",
+                  "ratio": {
+                    "width": 2,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠3", "∠6"],
+        "Question_Text": "請問∠3和∠6哪一個角比較大? ",
+        "Answer": "∠6",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "3b.png",
+                  "ratio": {
+                    "width": 2,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠4"],
+        "Question_Text": "請問∠4和∠1哪一個角比較大?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 6,
+                "height": 6
+              },
+              "images": [
+                {
+                  "path": "3a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "3b.png",
+                  "ratio": {
+                    "width": 2,
+                    "height": 2
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 3,
+                    "y": 2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["∠A", "∠B", "∠C"],
+        "Question_Text": "圖形中，哪一個角最大?",
+        "Answer": "∠B",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 12,
+                "height": 12
+              },
+              "images": [
+                {
+                  "path": "4-1.png",
+                  "ratio": {
+                    "width": 7,
+                    "height": 7
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 2
+                  }
+                },
+                {
+                  "path": "4-1a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0.5,
+                    "y": 0.5
+                  }
+                },
+                {
+                  "path": "4-1b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 7.2
+                  }
+                },
+                {
+                  "path": "4-1c.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 8.1,
+                    "y": 7.2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠A", "∠B", "∠C"],
+        "Question_Text": "圖形中，哪一個角最小?",
+        "Answer": "∠A",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 12,
+                "height": 12
+              },
+              "images": [
+                {
+                  "path": "4-1.png",
+                  "ratio": {
+                    "width": 7,
+                    "height": 7
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 2
+                  }
+                },
+                {
+                  "path": "4-1a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0.5,
+                    "y": 0.5
+                  }
+                },
+                {
+                  "path": "4-1b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 7.2
+                  }
+                },
+                {
+                  "path": "4-1c.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 8.1,
+                    "y": 7.2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠A", "∠B"],
+        "Question_Text": "請問∠A和∠B哪一個角比較大?",
+        "Answer": "∠B",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 12,
+                "height": 12
+              },
+              "images": [
+                {
+                  "path": "4-1.png",
+                  "ratio": {
+                    "width": 7,
+                    "height": 7
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 2
+                  }
+                },
+                {
+                  "path": "4-1a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0.5,
+                    "y": 0.5
+                  }
+                },
+                {
+                  "path": "4-1b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 7.2
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠ㄅ", "∠ㄆ", "∠ㄇ"],
+        "Question_Text": "圖形中，哪一個角最大?",
+        "Answer": "∠ㄅ",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 15,
+                "height": 15
+              },
+              "images": [
+                {
+                  "path": "4-2.png",
+                  "ratio": {
+                    "width": 12,
+                    "height": 9
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1.5
+                  }
+                },
+                {
+                  "path": "4-2a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.7,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "4-2b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0,
+                    "y": 8.5
+                  }
+                },
+                {
+                  "path": "4-2c.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 11,
+                    "y": 7
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠ㄅ", "∠ㄆ", "∠ㄇ"],
+        "Question_Text": "圖形中，哪一個角最小?",
+        "Answer": "∠ㄆ",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 15,
+                "height": 15
+              },
+              "images": [
+                {
+                  "path": "4-2.png",
+                  "ratio": {
+                    "width": 12,
+                    "height": 9
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1.5
+                  }
+                },
+                {
+                  "path": "4-2a.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.7,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "4-2b.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0,
+                    "y": 8.5
+                  }
+                },
+                {
+                  "path": "4-2c.png",
+                  "ratio": {
+                    "width": 3,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 11,
+                    "y": 7
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "Question": ["∠1", "∠2", "∠3", "∠4"],
+        "Question_Text": "圖形中，哪一個角最大?",
+        "Answer": "∠3",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 13,
+                "height": 13
+              },
+              "images": [
+                {
+                  "path": "5-1.png",
+                  "ratio": {
+                    "width": 11,
+                    "height": 6.5
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 2
+                  }
+                },
+                {
+                  "path": "5-1a.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 9.2,
+                    "y": 5.3
+                  }
+                },
+                {
+                  "path": "5-1b.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0,
+                    "y": 5.5
+                  }
+                },
+                {
+                  "path": "5-1c.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1.7
+                  }
+                },
+                {
+                  "path": "5-1d.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.2,
+                    "y": 0.5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2", "∠3", "∠4"],
+        "Question_Text": "圖形中，哪一個角最小?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 13,
+                "height": 13
+              },
+              "images": [
+                {
+                  "path": "5-1.png",
+                  "ratio": {
+                    "width": 11,
+                    "height": 6.5
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 2
+                  }
+                },
+                {
+                  "path": "5-1a.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 9.2,
+                    "y": 5.3
+                  }
+                },
+                {
+                  "path": "5-1b.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0,
+                    "y": 5.5
+                  }
+                },
+                {
+                  "path": "5-1c.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 1.7
+                  }
+                },
+                {
+                  "path": "5-1d.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.2,
+                    "y": 0.5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠2", "∠4"],
+        "Question_Text": "請問∠4和∠2哪一個角比較大?",
+        "Answer": "∠4",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 13,
+                "height": 13
+              },
+              "images": [
+                {
+                  "path": "5-1.png",
+                  "ratio": {
+                    "width": 11,
+                    "height": 6.5
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 1,
+                    "y": 2
+                  }
+                },
+                {
+                  "path": "5-1b.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0,
+                    "y": 5.5
+                  }
+                },
+                {
+                  "path": "5-1d.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.2,
+                    "y": 0.5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2", "∠3", "∠4", "∠5"],
+        "Question_Text": "圖形中，哪一個角最大?",
+        "Answer": "∠2",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 15,
+                "height": 15
+              },
+              "images": [
+                {
+                  "path": "5-2.png",
+                  "ratio": {
+                    "width": 12,
+                    "height": 7.5
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "5-2a.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0.3,
+                    "y": 7.6
+                  }
+                },
+                {
+                  "path": "5-2b.png",
+                  "ratio": {
+                    "width": 5,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.5,
+                    "y": 8.5
+                  }
+                },
+                {
+                  "path": "5-2c.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 11.5,
+                    "y": 4
+                  }
+                },
+                {
+                  "path": "5-2d.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 7.5,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "5-2e.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 2.5,
+                    "y": 3.5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠1", "∠2", "∠3", "∠4", "∠5"],
+        "Question_Text": "圖形中，哪一個角最小?",
+        "Answer": "∠1",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 15,
+                "height": 15
+              },
+              "images": [
+                {
+                  "path": "5-2.png",
+                  "ratio": {
+                    "width": 12,
+                    "height": 7.5
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "5-2a.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 0.3,
+                    "y": 7.6
+                  }
+                },
+                {
+                  "path": "5-2b.png",
+                  "ratio": {
+                    "width": 5,
+                    "height": 3
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 5.5,
+                    "y": 8.5
+                  }
+                },
+                {
+                  "path": "5-2c.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 11.5,
+                    "y": 4
+                  }
+                },
+                {
+                  "path": "5-2d.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 7.5,
+                    "y": 1
+                  }
+                },
+                {
+                  "path": "5-2e.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 2.5,
+                    "y": 3.5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "Question": ["∠3", "∠5"],
+        "Question_Text": "請問∠5和∠3哪一個角比較大?",
+        "Answer": "∠5",
+        "SlotComponents": [
+          {
+            "Name": "DragImages",
+            "Data": {
+              "backgroundType": "color",
+              "background": "white",
+              "backgroundRatio": {
+                "width": 15,
+                "height": 15
+              },
+              "images": [
+                {
+                  "path": "5-2.png",
+                  "ratio": {
+                    "width": 12,
+                    "height": 7.5
+                  },
+                  "draggable": false,
+                  "rotatable": false,
+                  "presetPosition": {
+                    "x": 2,
+                    "y": 3
+                  }
+                },
+                {
+                  "path": "5-2c.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 11.5,
+                    "y": 4
+                  }
+                },
+
+                {
+                  "path": "5-2e.png",
+                  "ratio": {
+                    "width": 4,
+                    "height": 4
+                  },
+                  "draggable": true,
+                  "rotatable": true,
+                  "presetPosition": {
+                    "x": 2.5,
+                    "y": 3.5
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  ]
+}

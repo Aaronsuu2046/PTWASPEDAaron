@@ -1,0 +1,162 @@
+{
+    "id": "MA4009",
+    "introvideo": "",
+    "TotalLevel": 5,
+    "GameType": "SelectGame",
+    "IntroText": {
+        "Type": "PlainText",
+        "Content": "小明剛剛學會看時鐘，但是他在寫作業的時候忘記了部分的答案，請聰明的你/妳幫助小明檢查答案"
+    },
+    "GameConfig":{
+        "GlobalTitle": "估估看，哪一個數最接近正確答案?",
+        "RandomMode": true
+    },
+    "Hint":{
+        "ShowAs" : "Single",
+        "Rule" : {
+            "RuleType": "WrongTimes"
+        },
+        "Data" :{
+            "MaxWrongTimes" : 2,
+            "SourceType" : "video",
+            "FilePath" : "hint1.mp4"
+        }
+    },
+    "Questions": [
+        [
+            {
+                "Question": ["900","1000","1100"],
+                "Question_Text": "910+100大約是多少呢?",
+                "Answer":  "1000"
+            },
+            {
+                "Question": ["1000","1100","1200"],
+                "Question_Text": "885+110大約是多少呢?",
+                "Answer":  "1000"
+            },
+            {
+                "Question": ["500","600","700"],
+                "Question_Text": "310+299大約是多少呢?",
+                "Answer":  "600"
+            },
+            {
+                "Question": ["900","1000","1100"],
+                "Question_Text": "499+599大約是多少呢?",
+                "Answer":  "1000"
+            },
+            {
+                "Question": ["9000","1000","1100"],
+                "Question_Text": "799+299大約是多少呢?",
+                "Answer":  "1000"
+            }
+        ],
+        [
+            {
+                "Question": ["4000","5000","6000"],
+                "Question_Text": "1910+3100大約是多少呢?",
+                "Answer":  "5000"
+            },
+            {
+                "Question": ["4000","5000","6000"],
+                "Question_Text": "2910+1100大約是多少呢?",
+                "Answer":  "4000"
+            },
+            {
+                "Question": ["3000","4000","5000"],
+                "Question_Text": "1810+1210大約是多少呢?",
+                "Answer":  "4000"
+            },
+            {
+                "Question": ["3000","4000","5000"],
+                "Question_Text": "1700+2305大約是多少呢?",
+                "Answer":  "4000"
+            },
+            {
+                "Question": ["4000","5000","6000"],
+                "Question_Text": "3610+1400大約是多少呢?",
+                "Answer":  "5000"
+            }
+        ],
+        [
+            {
+                "Question": ["6000","5000","4000"],
+                "Question_Text": "7000-1130大約是多少呢?",
+                "Answer":  "6000"
+            },
+            {
+                "Question": ["6000","5000","4000"],
+                "Question_Text": "6000-1010大約是多少呢?",
+                "Answer":  "5000"
+            },
+            {
+                "Question": ["6000","5000","4000"],
+                "Question_Text": "6000-1100大約是多少呢?",
+                "Answer":  "5000"
+            },
+            {
+                "Question": ["7000","6000","5000"],
+                "Question_Text": "8000-1100大約是多少呢?",
+                "Answer":  "7000"
+            },
+            {
+                "Question": ["6000","5000","4000"],
+                "Question_Text": "7000-2030大約是多少呢?",
+                "Answer":  "6000"
+            }
+        ],
+        [
+            {
+                "Question": ["200","300","400"],
+                "Question_Text": "小美有505元，跟朋友吃飯花了193元後，大約還剩下多少元?",
+                "Answer":  "300"
+            },
+            {
+                "Question": ["200","300","400"],
+                "Question_Text": "小美有600元，跟朋友吃飯花了185元後，大約還剩下多少元?",
+                "Answer":  "400"
+            },
+            {
+                "Question": ["600","500","400"],
+                "Question_Text": "小美有810元，跟朋友吃飯花了280元後，大約還剩下多少元?",
+                "Answer":  "500"
+            },
+            {
+                "Question": ["100","200","300"],
+                "Question_Text": "小美有410元，跟朋友吃飯花了189元後，大約還剩下多少元?",
+                "Answer":  "200"
+            },
+            {
+                "Question": ["300","400","500"],
+                "Question_Text": "小美有605元，跟朋友吃飯花了220元後，大約還剩下多少元?",
+                "Answer":  "400"
+            }
+        ],
+        [
+            {
+                "Question": ["1300","1400","1500"],
+                "Question_Text": "媽媽買了698元的吹風機和709元的桌燈，大約花了多少元?",
+                "Answer":  "1400"
+            },
+            {
+                "Question": ["1000","900","800"],
+                "Question_Text": "媽媽買了599元的吹風機和310元的桌燈，大約花了多少元?",
+                "Answer":  "900"
+            },
+            {
+                "Question": ["1500","1600","1700"],
+                "Question_Text": "媽媽買了699元的吹風機和899元的桌燈，大約花了多少元?",
+                "Answer":  "1600"
+            },
+            {
+                "Question": ["1200","1300","1400"],
+                "Question_Text": "媽媽買了499元的吹風機和785元的桌燈，大約花了多少元?",
+                "Answer":  "1300"
+            },
+            {
+                "Question": ["1000","1100","1200"],
+                "Question_Text": "媽媽買了799元的吹風機和280元的桌燈，大約花了多少元?",
+                "Answer":  "1100"
+            }
+        ]
+    ]
+}

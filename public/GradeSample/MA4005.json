@@ -1,0 +1,99 @@
+{
+    "id": "MA4005",
+    "introvideo": "src",
+    "TotalLevel": 2,
+    "GameType": "LinkGame",
+    "GameConfig":{
+        
+    },
+    "Questions": [
+        [
+            {   
+                "Question": {
+                    "text": "連連看!牛奶150ml，礦泉水210ml，汽水250ml",
+                    "RowData":[
+                        [{ "Name": "ImageContainer", "Data": { "Src": "milk.png" } }, { "Name": "ImageContainer", "Data": { "Src": "water.png" } }, { "Name": "ImageContainer", "Data": { "Src": "cola.png" } }],
+                        [{ "Name": "ImageContainer", "Data": { "Src": "250ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "150ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "210ml.png" } }]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,1]],
+                    [[0,1],[1,2]],
+                    [[0,2],[1,0]]
+                ]
+            },
+            {   
+                "Question": {
+                    "text": "連連看!西瓜汁140ml，紅茶100ml，奶茶90ml",
+                    "RowData":[
+                        [{ "Name": "ImageContainer", "Data": { "Src": "watermelon-juice.png" } }, { "Name": "ImageContainer", "Data": { "Src": "black-tea.png" } }, { "Name": "ImageContainer", "Data": { "Src": "bubble-tea.png" } }],
+                        [{ "Name": "ImageContainer", "Data": { "Src": "100ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "140ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "90ml.png" } }]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,1]],
+                    [[0,1],[1,0]],
+                    [[0,2],[1,2]]
+                ]
+            },
+            {   
+                "Question": {
+                    "text": "連連看!柳橙汁230ml，豆漿170ml，運動飲料210ml",
+                    "RowData":[
+                        [{ "Name": "ImageContainer", "Data": { "Src": "orange-juice.png" } }, { "Name": "ImageContainer", "Data": { "Src": "soy-milk.png" } }, { "Name": "ImageContainer", "Data": { "Src": "energy-drink.png" } }],
+                        [{ "Name": "ImageContainer", "Data": { "Src": "210ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "170ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "230ml.png" } }]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,2]],
+                    [[0,1],[1,1]],
+                    [[0,2],[1,0]]
+                ]
+            }
+        ],
+        [
+            {   
+                "Question": {
+                    "text": "連連看!將一樣多的杯子連起來",
+                    "RowData":[
+                        [{ "Name": "ImageContainer", "Data": { "Src": "1500ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "900ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "1200ml.png" } }],
+                        [{ "Name": "ImageContainer", "Data": { "Src": "2-1500ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "2-1200ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "2-900ml.png" } }]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,0]],
+                    [[0,1],[1,2]],
+                    [[0,2],[1,1]]
+                ]
+            },
+            {   
+                "Question": {
+                    "text": "連連看!將一樣多的杯子連起來",
+                    "RowData":[
+                        [{ "Name": "ImageContainer", "Data": { "Src": "1000ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "1900ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "1700ml.png" } }],
+                        [{ "Name": "ImageContainer", "Data": { "Src": "2-1900ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "2-1700ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "2-1000ml.png" } }]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,2]],
+                    [[0,1],[1,0]],
+                    [[0,2],[1,1]]
+                ]
+            },
+            {   
+                "Question": {
+                    "text": "連連看!將一樣多的杯子連起來",
+                    "RowData":[
+                        [{ "Name": "ImageContainer", "Data": { "Src": "1600ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "1400ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "1800ml.png" } }],
+                        [{ "Name": "ImageContainer", "Data": { "Src": "2-1800ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "2-1600ml.png" } }, { "Name": "ImageContainer", "Data": { "Src": "2-1400ml.png" } }]
+                    ]
+                },
+                "Answer": [
+                    [[0,0],[1,1]],
+                    [[0,1],[1,2]],
+                    [[0,2],[1,0]]
+                ]
+            }
+        ]
+    ]
+}
