@@ -478,7 +478,8 @@ export default {
       this.DotLocation = [];
       this.IndexMappingTable = [];
       this.ComponentConfig = [];
-      for (const ColumnIndex in this.gameData.Question.RowData) {
+      const totalColumns = this.gameData.Question.RowData.length;
+      for (let ColumnIndex = 0; ColumnIndex < totalColumns; ColumnIndex++) {
         const ColumnObjectAmount =
           this.gameData.Question.RowData[ColumnIndex].length;
         // Whe we calculate each object's heght, we add MiniGap at the top and bottom of the column
@@ -497,10 +498,7 @@ export default {
             this.gameData.Question.RowData[ColumnIndex][ObjectInfo].Data;
 
           //Dot Settings, if not first or last column, add 2 dots at each side
-          if (
-            ColumnIndex !== 0 &&
-            ColumnIndex !== this.gameData.Question.RowData.length - 1
-          ) {
+          if (ColumnIndex !== 0 && ColumnIndex !== totalColumns - 1) {
             this.IndexMappingTable.push([
               parseInt(DotColIndex + 1),
               parseInt(ObjectInfo),
@@ -526,10 +524,7 @@ export default {
               X: NowX + this.ComponentPositionConfig.ObjectWidth + this.MiniGap,
               Y: NowY + this.ComponentPositionConfig.ObjectHeight / 2,
             });
-          } else if (
-            ColumnIndex ===
-            this.gameData.Question.RowData.length - 1
-          ) {
+          } else if (ColumnIndex === totalColumns - 1) {
             this.IndexMappingTable.push([
               parseInt(DotColIndex),
               parseInt(ObjectInfo),
@@ -545,10 +540,7 @@ export default {
         NowX +=
           this.ComponentPositionConfig.ObjectWidth +
           this.ComponentPositionConfig.BlankWidth;
-        if (
-          ColumnIndex !== 0 &&
-          ColumnIndex !== this.gameData.Question.RowData.length - 1
-        ) {
+        if (ColumnIndex !== 0 && ColumnIndex !== totalColumns - 1) {
           DotColIndex += 2;
         } else {
           DotColIndex += 1;

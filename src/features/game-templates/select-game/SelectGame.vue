@@ -181,7 +181,7 @@ export default {
         border: none;
         background-color: $primary-btn-bg;
         height: 25%;
-        font-size: $text-small;
+        font-size: 28px;
       }
     }
     .component-container {
@@ -203,7 +203,7 @@ export default {
         @extend .button-basic;
         border-radius: 15px;
         border: none;
-        font-size: $text-small;
+        font-size: 28px;
       }
       .info__card {
         height: 30%;

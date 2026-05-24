@@ -69,11 +69,16 @@ export default {
     };
   },
   mounted() {
+    this.destroyed = false;
     this.initializeScene();
     this.initializeOption();
     this.requiredCorrect =
       this.gameData.requiredCorrect || this.trueOptions.length;
     this.game = window.setInterval(this.update, 20);
+  },
+  beforeUnmount() {
+    this.destroyed = true;
+    window.clearInterval(this.game);
   },
 
   methods: {
@@ -182,12 +187,14 @@ export default {
       this.configObjects.hole.push(hole);
       window.setTimeout(this.burrowAnimation, 200, id);
       const nextSpawn = Math.random() * 2000 + 1000;
-      window.setTimeout(this.spawnMole, nextSpawn);
+      window.setTimeout(() => { if (!this.destroyed) this.spawnMole(); }, nextSpawn);
     },
     positionWithoutOverlap() {
-      let overlap = false;
-      const position = canvasTools.randomPosition(this.boundaries);
+      let position;
+      let overlap;
       do {
+        overlap = false;
+        position = canvasTools.randomPosition(this.boundaries);
         for (
           let i = this.startId;
           i < this.configObjects.position.length;
@@ -197,8 +204,10 @@ export default {
           if (
             canvasTools.distance(position, this.configObjects.position[i]) <
             this.gameWidth * 0.2
-          )
+          ) {
             overlap = true;
+            break;
+          }
         }
       } while (overlap);
       return position;
