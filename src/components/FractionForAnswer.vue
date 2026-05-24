@@ -4,10 +4,11 @@
       <span v-if="componentConfig.prefix" class="prefix">{{
         componentConfig.prefix
       }}</span>
-      <div class="fraction-container" :class="{ 'fraction-container--error': isWrong }">
+      <div class="fraction-container">
         <input
           ref="numerator"
           class="fraction-input numerator"
+          :class="{ 'fraction-input--error': numeratorError }"
           type="text"
           @click="showNumPad('numerator', $event)"
         />
@@ -15,6 +16,7 @@
         <input
           ref="denominator"
           class="fraction-input denominator"
+          :class="{ 'fraction-input--error': denominatorError }"
           type="text"
           @click="showNumPad('denominator', $event)"
         />
@@ -60,9 +62,23 @@ export default {
         left: 0,
       },
       activeInputRef: "",
-      // 定義常數
-      numPadOffset: 10, // 虛擬鍵盤與目標輸入框的間距
+      numPadOffset: 10,
+      numeratorError: false,
+      denominatorError: false,
     };
+  },
+  watch: {
+    isWrong(val) {
+      if (val) {
+        const userNumerator = parseInt(this.$refs.numerator?.value, 10);
+        const userDenominator = parseInt(this.$refs.denominator?.value, 10);
+        this.numeratorError = isNaN(userNumerator) || userNumerator !== this.componentConfig.numerator;
+        this.denominatorError = isNaN(userDenominator) || userDenominator !== this.componentConfig.denominator;
+      } else {
+        this.numeratorError = false;
+        this.denominatorError = false;
+      }
+    },
   },
   methods: {
     showNumPad(inputRef, event) {
@@ -95,7 +111,6 @@ export default {
       const userNumerator = parseInt(this.$refs.numerator.value, 10);
       const userDenominator = parseInt(this.$refs.denominator.value, 10);
 
-      // 檢查是否有輸入值和分母不為0
       if (
         isNaN(userNumerator) ||
         isNaN(userDenominator) ||
@@ -105,7 +120,6 @@ export default {
         return;
       }
 
-      // 計算實際的小數值來比較
       const correctValue =
         this.componentConfig.numerator / this.componentConfig.denominator;
       const userValue = userNumerator / userDenominator;
@@ -156,13 +170,6 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  padding: 4px;
-}
-
-.fraction-container--error {
-  border-color: red;
 }
 
 .fraction-input {
@@ -173,6 +180,12 @@ export default {
   width: 80%;
   text-align: center;
   font-size: 1.5rem;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+}
+
+.fraction-input--error {
+  border-color: red;
 }
 
 .line {
