@@ -37,7 +37,11 @@ export default {
     },
   },
   created() {
-    this.configs = this.componentConfig;
+    this.configs = {
+      ...this.componentConfig,
+      Scale: Number(this.componentConfig.Scale),
+      Ml: Number(this.componentConfig.Ml),
+    };
   },
   mounted() {
     this.$nextTick(() => {

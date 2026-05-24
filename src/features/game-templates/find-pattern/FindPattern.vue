@@ -331,7 +331,7 @@ export default {
       )
         return;
 
-      const id = e.target.index,
+      const id = e.target.index - this.configAnswerZones.length,
         rotationIndex = this.getClickRotationIndex(
           this.configFillings[id],
           e.target.getStage().getPointerPosition()
@@ -347,6 +347,11 @@ export default {
       } else {
         this.configFillings[id].visible = true;
         this.answers[this.configBlocks[id].answerIndex] = rotationIndex;
+        const answerIdx = Number(this.configBlocks[id].answerIndex);
+        if (this.configAnswerZones[answerIdx]) {
+          this.configAnswerZones[answerIdx].stroke = "black";
+          this.configAnswerZones[answerIdx].dash = [10, 5];
+        }
       }
 
       this.configFillings[id].rotation =
@@ -365,6 +370,11 @@ export default {
       e.target.y(this.configDraggables[id].y);
     },
     newDraggable(slot, imageID) {
+      const answerIdx = Number(this.configBlocks[slot].answerIndex);
+      if (this.configAnswerZones[answerIdx]) {
+        this.configAnswerZones[answerIdx].stroke = "black";
+        this.configAnswerZones[answerIdx].dash = [10, 5];
+      }
       const block = {
         x: this.configBlocks[slot].x,
         y: this.configBlocks[slot].y,
@@ -453,6 +463,12 @@ export default {
       }
     },
     removeWrongAnswers(wrongAnswers) {
+      for (const i of wrongAnswers) {
+        if (this.configAnswerZones[i]) {
+          this.configAnswerZones[i].stroke = "red";
+          this.configAnswerZones[i].dash = [];
+        }
+      }
       switch (this.gameData.AnswerType) {
         case "Drag":
           for (const i in this.configDraggables) {
