@@ -450,6 +450,8 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: $gap--small;
+  max-height: 100%;
+  overflow: hidden;
   .game-area {
     display: flex;
     flex-direction: row;
@@ -469,6 +471,8 @@ export default {
   a {
     font-size: $text-medium;
     font-weight: $text-bold;
+    white-space: normal;
+    word-break: break-all;
   }
 }
 

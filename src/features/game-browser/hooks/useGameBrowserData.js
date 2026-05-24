@@ -1,6 +1,6 @@
 import { reactive, computed, toRefs } from "vue";
-import { loadSubjectData } from "../services/data.js";
-import { findGamesInSubjectData } from "../lib/search.js";
+import { loadSubjectData, loadGlobalSearchData } from "../services/data.js";
+import { findGamesInSubjectData, findGamesGlobally } from "../lib/search.js";
 import { session } from "../services/session.js";
 import { EXTERNAL_LINKS, SUBJECTS } from "../config.js";
 import * as TEXTREADER from "@/lib/readtext.js";
@@ -119,25 +119,20 @@ export function useGameBrowserData() {
     stopReading();
   }
 
-  function searchGame(keyword) {
-    const results = [];
-    for (const subject of SUBJECTS) {
-      const data = state.subjectData[subject];
-      if (!data) continue;
-      results.push(...findGamesInSubjectData(data, keyword));
-    }
-    state.searchResult = results;
+  async function searchGame(keyword) {
+    const allData = await loadGlobalSearchData();
+    state.searchResult = findGamesGlobally(allData, keyword);
     switchMode("search");
   }
 
-  function toGameRoute(gameId, gameName) {
+  function toGameRoute(gameId, gameName, grade, subject) {
     stopReading();
     return {
       name: "game",
       params: {
         id: gameId,
-        grade: state.grade,
-        subject: state.currentSubject,
+        grade: grade || state.grade,
+        subject: subject || state.currentSubject,
         gameName,
       },
     };

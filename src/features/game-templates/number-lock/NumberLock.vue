@@ -95,23 +95,22 @@ export default {
   },
   computed: {},
   created() {
-    const NewArr = [];
-    let cnt = 0;
-    for (const i in this.gameData.Data) {
-      NewArr.push(this.gameData.Data[i]);
-      // Initial the ComponentAnswer
-      if (this.gameData.Data[i].Blank === true) {
-        this.ComponentsAnswers[cnt] = false;
-      }
-      cnt++;
-      if (i !== this.gameData.Data.length - 1) {
-        NewArr.push({
-          Arrow: true,
-        });
+    if (this.gameData.Data) {
+      const NewArr = [];
+      let cnt = 0;
+      for (const i in this.gameData.Data) {
+        NewArr.push(this.gameData.Data[i]);
+        if (this.gameData.Data[i].Blank === true) {
+          this.ComponentsAnswers[cnt] = false;
+        }
         cnt++;
+        if (i !== this.gameData.Data.length - 1) {
+          NewArr.push({ Arrow: true });
+          cnt++;
+        }
       }
+      this.FinalData = NewArr;
     }
-    this.FinalData = NewArr;
     emitter.on("submitAnswer", this.CheckAnswer);
   },
   mounted() {
@@ -199,6 +198,7 @@ export default {
 /* Your component-specific styles go here */
 .outter-container {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -209,10 +209,9 @@ export default {
 .left-column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: $gap--small;
-  max-height: 100%;
-  overflow-y: auto;
+  height: 100%;
+  min-height: 0;
 
   .text-area {
     flex-shrink: 0;
@@ -223,7 +222,6 @@ export default {
     white-space: pre-wrap;
   }
   .game-area {
-    min-height: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,12 +229,15 @@ export default {
     background-color: #f0f0f0;
 
     &--top {
-      flex-shrink: 0;
+      flex: 1 1 0%;
+      min-height: 0;
+      overflow-y: auto;
+      align-items: flex-start;
     }
 
     &--down {
-      flex: 1;
-      min-height: 0;
+      flex: 0 0 auto;
+      padding: $gap--small;
     }
   }
 }
