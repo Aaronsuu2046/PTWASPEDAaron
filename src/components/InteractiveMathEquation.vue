@@ -28,7 +28,9 @@
             v-model="userAnswers[index]"
             type="text"
             class="interactive-equation__input"
-            @touchstart="handleInputClick(index, $event)"
+            :class="{ 'interactive-equation__input--wrong': wrongEquationInputs.has(index) }"
+            @click="handleInputClick(index, $event)"
+            @touchstart.prevent="handleInputClick(index, $event)"
             @input="validateAnswers()"
           />
         </template>
@@ -49,7 +51,9 @@
           v-model="finalAnswers[index]"
           type="text"
           class="interactive-equation__input"
-          @touchstart="handleFinalAnswerClick($event, index)"
+          :class="{ 'interactive-equation__input--wrong': wrongFinalInputs.has(String(index)) }"
+          @click="handleFinalAnswerClick($event, index)"
+          @touchstart.prevent="handleFinalAnswerClick($event, index)"
           @input="validateAnswers()"
         />
         <span v-else class="interactive-equation__text">{{ item.value }}</span>
@@ -66,6 +70,7 @@
 
 <script>
 import { defineAsyncComponent } from "vue";
+import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 
 export default {
   name: "InteractiveMathEquation",
@@ -104,6 +109,8 @@ export default {
       numPadOffset: 10,
       finalAnswers: {},
       parsedFinalAnswer: [],
+      wrongEquationInputs: new Set(),
+      wrongFinalInputs: new Set(),
     };
   },
 
@@ -119,6 +126,11 @@ export default {
 
   created() {
     this.initialize();
+    emitter.on("checkAnswer", this.markWrong);
+  },
+
+  beforeUnmount() {
+    emitter.off("checkAnswer", this.markWrong);
   },
 
   methods: {
@@ -214,9 +226,29 @@ export default {
     },
 
     validateAnswers() {
-      if (this.isAllInputsValid) {
-        this.$emit("replyAnswer", true);
-      }
+      this.wrongEquationInputs = new Set();
+      this.wrongFinalInputs = new Set();
+      this.$emit("replyAnswer", this.isAllInputsValid);
+    },
+
+    markWrong() {
+      const wrongEq = new Set();
+      const wrongFinal = new Set();
+
+      Object.keys(this.userAnswers).forEach((indexStr) => {
+        if (!this.isAnswerCorrect(indexStr)) {
+          wrongEq.add(Number(indexStr));
+        }
+      });
+
+      Object.entries(this.finalAnswers).forEach(([index, answer]) => {
+        if (answer !== this.componentConfig.finalAnswers[index]) {
+          wrongFinal.add(index);
+        }
+      });
+
+      this.wrongEquationInputs = wrongEq;
+      this.wrongFinalInputs = wrongFinal;
     },
 
     areAllAnswersFilled() {
@@ -272,14 +304,19 @@ export default {
 .interactive-equation {
   $self: &;
   font-size: 24px;
-  height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $gap--small;
+  padding: $gap--tiny;
 
   &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: $gap--tiny;
     gap: $gap--tiny;
   }
 
@@ -295,6 +332,11 @@ export default {
     &:focus {
       outline: none;
       border-color: #4a4aff;
+    }
+
+    &--wrong {
+      border-color: red !important;
+      background-color: #ffe0e0;
     }
   }
 
@@ -318,9 +360,8 @@ export default {
   &__final-answer {
     display: flex;
     gap: $gap--small;
-    padding: $gap--tiny;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
   }
 }
 </style>
