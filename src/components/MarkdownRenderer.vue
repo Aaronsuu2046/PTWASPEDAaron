@@ -44,17 +44,17 @@
           {{ option }}
         </div>
       </div>
-      <FloatNumPad
-        v-if="isShowNumPad"
-        :component-config="floatNumPadLocation"
-        @button-clicked="fillToInput"
-      />
-      <FloatOperatorPad
-        v-if="isShowOperatorPad"
-        :component-config="operatorPadLocation"
-        @button-clicked="handleOperatorSelect"
-      />
     </template>
+    <FloatNumPad
+      v-if="isShowNumPad"
+      :component-config="floatNumPadLocation"
+      @button-clicked="fillToInput"
+    />
+    <FloatOperatorPad
+      v-if="isShowOperatorPad"
+      :component-config="operatorPadLocation"
+      @button-clicked="handleOperatorSelect"
+    />
   </div>
 </template>
 <script>
