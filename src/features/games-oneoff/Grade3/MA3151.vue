@@ -20,7 +20,7 @@
             <FractionForAnswer
               :component-config="gameData.answer.fraction"
               :game-id="gameId"
-              :is-wrong="isWrong"
+              :is-wrong="fractionWrong"
               class="fraction-answer"
               @reply-answer="handleAnswer(1, $event)"
             />
@@ -34,7 +34,7 @@
             <NumberIncrementor
               :component-config="gameData.answer.decimal"
               :game-id="gameId"
-              :is-wrong="isWrong"
+              :is-wrong="decimalWrong"
               @reply-answer="handleAnswer(2, $event)"
             />
             <span class="answer-suffix">{{ gameData.answer.suffix }}</span>
@@ -88,7 +88,8 @@ export default {
         fraction: false,
         decimal: false,
       },
-      isWrong: false,
+      fractionWrong: false,
+      decimalWrong: false,
     };
   },
   computed: {
@@ -113,12 +114,13 @@ export default {
     },
     handleAnswer(answerType, answer) {
       console.log(answerType, answer);
-      this.isWrong = false;
       if (answerType === 0) {
         this.userAnswer.question = answer;
       } else if (answerType === 1) {
+        this.fractionWrong = false;
         this.userAnswer.fraction = answer;
       } else if (answerType === 2) {
+        this.decimalWrong = false;
         this.userAnswer.decimal = answer;
       }
     },
@@ -134,7 +136,8 @@ export default {
       if (isCorrect) {
         this.$emit("next-question");
       } else {
-        this.isWrong = true;
+        this.fractionWrong = !this.userAnswer.fraction;
+        this.decimalWrong = !this.userAnswer.decimal;
       }
     },
     checkAnswer() {
