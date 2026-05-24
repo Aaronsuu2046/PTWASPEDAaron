@@ -82,10 +82,12 @@ export default {
   },
   async created() {
     await this.browser.init(this.$route.params.grade);
+    const q = this.$route.query.q;
+    if (q) await this.browser.searchGame(q);
   },
   methods: {
-    onEnterGame(gameId, gameName) {
-      this.router.push(this.browser.toGameRoute(gameId, gameName));
+    onEnterGame(gameId, gameName, grade, subject) {
+      this.router.push(this.browser.toGameRoute(gameId, gameName, grade, subject));
     },
     goHome() {
       this.router.push({ name: "Home" });
