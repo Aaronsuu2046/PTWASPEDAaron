@@ -1,3 +1,19 @@
+export function findGamesGlobally(allGradesData, keyword) {
+  if (!keyword || !Array.isArray(allGradesData)) return [];
+  const seen = new Set();
+  const results = [];
+  for (const { grade, subject, data } of allGradesData) {
+    const items = findGamesInSubjectData(data, keyword);
+    for (const item of items) {
+      if (!seen.has(item.id)) {
+        seen.add(item.id);
+        results.push({ ...item, grade, subject });
+      }
+    }
+  }
+  return results;
+}
+
 export function findGamesInSemester(semesterGameItem = [], keyword = "") {
   if (!keyword) return [];
   const lower = keyword.toLowerCase();

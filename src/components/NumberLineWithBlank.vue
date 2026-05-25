@@ -23,8 +23,8 @@
             height: rect.height,
             fill: rect.fill,
             cornerRadius: rect.cornerRadius,
-            stroke: rectClickedList[id] ? 'blue' : 'black',
-            strokeWidth: rectClickedList[id] ? 3 : 1,
+            stroke: wrongAnswerList[id] ? 'red' : (rectClickedList[id] ? 'blue' : 'black'),
+            strokeWidth: wrongAnswerList[id] || rectClickedList[id] ? 3 : 1,
           }"
           @click="rectClicked(id, rect)"
           @touchstart="rectClicked(id, rect)"
@@ -44,6 +44,7 @@
 
 <script>
 import { defineAsyncComponent } from "vue";
+import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 export default {
   components: {
     FloatingNumPad: defineAsyncComponent(
@@ -70,6 +71,7 @@ export default {
       configRect: [],
       isClickRectID: undefined,
       rectClickedList: [],
+      wrongAnswerList: [],
       rectPadding: 5,
 
       blankContent: [],
@@ -89,6 +91,10 @@ export default {
       this.initializeScene();
       this.initializeNumberLine();
     });
+    emitter.on("checkAnswer", this.markWrongAnswers);
+  },
+  beforeUnmount() {
+    emitter.off("checkAnswer", this.markWrongAnswers);
   },
   methods: {
     initializeScene() {
@@ -227,8 +233,15 @@ export default {
         textID: index,
       };
     },
+    markWrongAnswers() {
+      this.wrongAnswerList = this.blankContent.map(
+        (content, index) =>
+          content.toString() !== this.componentConfig.blank_pos[index].toString()
+      );
+    },
     rectClicked(id, rect) {
       this.isClickRectID = id;
+      this.wrongAnswerList = [];
       this.deselectAllRects();
       this.rectClickedList[id] = true;
 

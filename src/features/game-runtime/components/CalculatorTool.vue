@@ -15,6 +15,7 @@
         <!-- 計算紙 -->
         <div v-if="activeTab === 'scratch'" class="scratch-panel">
           <ScratchSheets
+            ref="scratchSheet"
             :background-image="scratchBackground"
             @close-sheet="closeScratch"
             @save-canvas="saveScratchCanvas"
@@ -149,6 +150,10 @@ export default {
     },
     handleCalculatorResult(result) {
       console.log("計算結果:", result);
+    },
+    clearDrawing() {
+      this.scratchBackground = null;
+      this.$refs.scratchSheet?.clearCanvas();
     },
   },
 };

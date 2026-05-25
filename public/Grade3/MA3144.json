@@ -443,14 +443,14 @@
             "unit": "kg",
             "Data": {
               "digitCount": 2,
-              "answer": 1
+              "answer": 5
             }
           },
           {
             "unit": "g",
             "Data": {
               "digitCount": 3,
-              "answer": 9
+              "answer": 10
             }
           }
         ]
@@ -472,13 +472,15 @@
           {
             "unit": "kg",
             "Data": {
-              "digitCount": 2
+              "digitCount": 2,
+              "answer": 1
             }
           },
           {
             "unit": "g",
             "Data": {
-              "digitCount": 3
+              "digitCount": 3,
+              "answer": 9
             }
           }
         ]

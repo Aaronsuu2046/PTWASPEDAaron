@@ -3,7 +3,7 @@
     <div v-if="gameData.headQuestion" class="head-container">
       <p>{{ gameData.headQuestion }}</p>
     </div>
-    <div class="word-problem">
+    <div :class="['word-problem', { 'word-problem--no-image': !gameData.image }]">
       <div class="left-container">
         <ImageContainer
           v-if="gameData.image"
@@ -224,6 +224,38 @@ export default {
     .image-container {
       flex: 1;
       width: 100%;
+    }
+  }
+
+  &--no-image {
+    .left-container {
+      align-items: center;
+      justify-content: center;
+
+      .markdown {
+        max-height: none;
+        width: fit-content;
+        max-width: 90%;
+
+        :deep(.markdown-container) {
+          span,
+          p {
+            font-size: $text-large;
+          }
+
+          h1,
+          h2,
+          h3 {
+            font-size: $text-large;
+          }
+
+          input {
+            font-size: $text-large;
+            min-width: 40px;
+            max-width: 80px;
+          }
+        }
+      }
     }
   }
 }
