@@ -528,6 +528,61 @@
     "lableName": "下學期",
     "gameItem": [
       {
+        "Title": "1 - 分數的加減",
+        "Section": [
+          {
+            "Title": "和1一樣大的數",
+            "Games": [
+              {
+                "id": "MA3111",
+                "Name": "和1一樣大的數",
+                "Description": "用分數板排排看",
+                "Img": "",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "分數的加法",
+            "Games": [
+              {
+                "id": "MA3112",
+                "Name": "分數的加法(計算題)",
+                "Description": "先用分數板排排看，再算算看",
+                "Img": "",
+                "status": "ready"
+              },
+              {
+                "id": "MA3113",
+                "Name": "分數的加法(應用題)",
+                "Description": "先用分數板排排看，再算算看",
+                "Img": "",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "分數的減法",
+            "Games": [
+              {
+                "id": "MA3114",
+                "Name": "分數的減法(計算題)",
+                "Description": "先用分數板排排看，再算算看",
+                "Img": "",
+                "status": "ready"
+              },
+              {
+                "id": "MA3115",
+                "Name": "分數的減法(應用題)",
+                "Description": "先用分數板排排看，再算算看",
+                "Img": "",
+                "status": "ready"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "Title": "2 - 除法",
         "Section": [
           {
