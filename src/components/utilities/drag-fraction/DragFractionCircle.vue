@@ -100,10 +100,10 @@ export default {
       this.radius = this.gameWidth * 0.075;
       this.centerRadius = this.radius * 1.5;
       this.boundaries = {
-        up: this.centerRadius,
-        down: this.gameHeight - this.centerRadius,
-        left: this.centerRadius,
-        right: this.gameWidth * 0.75 - this.centerRadius,
+        up: this.radius,
+        down: this.gameHeight - this.radius,
+        left: this.radius,
+        right: this.gameWidth * 0.75 - this.radius,
       };
     },
     initialize() {
