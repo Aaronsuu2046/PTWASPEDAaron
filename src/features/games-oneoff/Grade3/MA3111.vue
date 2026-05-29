@@ -11,6 +11,7 @@
             <div class="fraction-input-wrapper">
               <div
                 class="numerator-input"
+                :class="{ 'numerator-input--error': inputError }"
                 @click="showNumPad"
               >{{ userNumeratorInput !== '' ? userNumeratorInput : ' ' }}</div>
               <div class="fraction-line"></div>
@@ -88,6 +89,7 @@ export default {
       parsedDenominator: parsed.denominator,
       numPadVisible: false,
       numPadPosition: { top: 0, left: 0 },
+      inputError: false,
     };
   },
   computed: {
@@ -123,10 +125,12 @@ export default {
     numPadButtonClicked(label) {
       if (label === "清除") {
         this.userNumeratorInput = "";
+        this.inputError = false;
       } else if (label === "關閉") {
         this.numPadVisible = false;
       } else {
         this.userNumeratorInput = this.userNumeratorInput === "" ? String(label) : this.userNumeratorInput + String(label);
+        this.inputError = false;
       }
     },
     drag(answer) {
@@ -148,9 +152,11 @@ export default {
         isCorrect ? "正確" : "錯誤",
       ]);
       if (isCorrect) {
+        this.inputError = false;
         this.$emit("play-effect", "CorrectSound");
         this.$emit("next-question");
       } else {
+        this.inputError = true;
         this.$emit("play-effect", "WrongSound");
       }
     },
@@ -248,6 +254,10 @@ export default {
 
   &:hover {
     border-color: #4a90d9;
+  }
+
+  &--error {
+    border-color: red;
   }
 }
 
