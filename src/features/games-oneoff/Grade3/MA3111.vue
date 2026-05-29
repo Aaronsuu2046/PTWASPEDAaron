@@ -174,35 +174,34 @@ export default {
 }
 
 .game__fraction-input-display {
-  flex: 2;
+  flex: 3;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .fraction-input-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.3rem;
 }
 
 .numerator-input {
-  width: 3rem;
-  height: 2.5rem;
-  font-size: 1.8rem;
+  width: 5rem;
+  height: 4rem;
+  font-size: 3rem;
   text-align: center;
-  border: 2px solid #333;
-  border-radius: 4px;
+  border: 3px solid #333;
+  border-radius: 6px;
   outline: none;
 
   &:focus {
     border-color: #4a90d9;
   }
 
-  /* hide number input spinners */
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -211,16 +210,16 @@ export default {
 
 .fraction-line {
   width: 100%;
-  border-top: 3px solid #333;
+  border-top: 4px solid #333;
 }
 
 .denominator-number {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .equals-sign {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #333;
 }
