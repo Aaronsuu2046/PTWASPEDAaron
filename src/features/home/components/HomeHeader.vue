@@ -94,37 +94,30 @@ nav div img {
 .global-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 
   input {
-    height: 2.2rem;
-    padding: 0 0.8rem;
-    border: 2px solid #e0a070;
-    border-radius: 20px;
+    height: 3rem;
+    padding: 0 1rem;
+    border: none;
+    border-radius: $border-radius;
     font-size: 1rem;
     width: 220px;
-    outline: none;
-    background: #fff8f3;
 
     &:focus {
-      border-color: #c0703a;
+      outline: 3px solid blue;
     }
   }
 
   button {
-    height: 2.2rem;
+    height: 3rem;
     padding: 0 1rem;
     border: none;
-    border-radius: 20px;
-    background-color: #c0703a;
-    color: white;
+    border-radius: $border-radius;
+    background-color: #f4fc93;
+    color: #333;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: #9a5a2e;
-    }
   }
 }
 

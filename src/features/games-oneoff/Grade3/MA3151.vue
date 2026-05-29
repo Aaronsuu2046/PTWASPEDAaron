@@ -20,6 +20,7 @@
             <FractionForAnswer
               :component-config="gameData.answer.fraction"
               :game-id="gameId"
+              :is-wrong="fractionWrong"
               class="fraction-answer"
               @reply-answer="handleAnswer(1, $event)"
             />
@@ -33,6 +34,7 @@
             <NumberIncrementor
               :component-config="gameData.answer.decimal"
               :game-id="gameId"
+              :is-wrong="decimalWrong"
               @reply-answer="handleAnswer(2, $event)"
             />
             <span class="answer-suffix">{{ gameData.answer.suffix }}</span>
@@ -86,6 +88,8 @@ export default {
         fraction: false,
         decimal: false,
       },
+      fractionWrong: false,
+      decimalWrong: false,
     };
   },
   computed: {
@@ -113,8 +117,10 @@ export default {
       if (answerType === 0) {
         this.userAnswer.question = answer;
       } else if (answerType === 1) {
+        this.fractionWrong = false;
         this.userAnswer.fraction = answer;
       } else if (answerType === 2) {
+        this.decimalWrong = false;
         this.userAnswer.decimal = answer;
       }
     },
@@ -127,7 +133,12 @@ export default {
         isCorrect ? "正確" : "錯誤",
       ]);
       this.$emit("play-effect", isCorrect ? "CorrectSound" : "WrongSound");
-      isCorrect ? this.$emit("next-question") : null;
+      if (isCorrect) {
+        this.$emit("next-question");
+      } else {
+        this.fractionWrong = !this.userAnswer.fraction;
+        this.decimalWrong = !this.userAnswer.decimal;
+      }
     },
     checkAnswer() {
       switch (this.answerType) {
