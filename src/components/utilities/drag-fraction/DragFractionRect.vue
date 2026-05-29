@@ -95,6 +95,10 @@ export default {
         width: this.gameWidth * 0.2,
         height: this.gameHeight * 0.15,
       };
+      this.centerRectAttr = {
+        width: this.rectAttr.width * 1.5,
+        height: this.rectAttr.height * 1.5,
+      };
       this.numeratorSnapTo = canvasTools.corner({
         x: this.gameWidth * 0.875,
         y: this.gameHeight * 0.2,
@@ -126,23 +130,27 @@ export default {
       );
       let i;
       for (i = 0; i < this.fill.length; ++i) {
-        if (this.fill[i] > 0) {
+        if (this.fill[i] > 0 && this.configDenominator.rect[i]) {
+          const isCenter = this.configDenominator.frame[i] &&
+            this.configDenominator.frame[i].width === this.centerRectAttr.width;
+          const targetWidth = (isCenter ? this.centerRectAttr.width : this.rectAttr.width) * this.fill[i];
           this.configDenominator.rect[i].width = this.animation(
             this.configDenominator.rect[i].width,
-            this.rectAttr.width * this.fill[i]
+            targetWidth
           );
         }
       }
-      if (this.configDenominator.slice[i - 1].slices !== this.denominator)
+      if (this.configDenominator.slice[i - 1] &&
+          this.configDenominator.slice[i - 1].slices !== this.denominator)
         this.configDenominator.slice[i - 1].slices = this.denominator;
     },
     animation(currentWidth, targetWidth) {
-      if (Math.abs(currentWidth - targetWidth) < 1) {
+      if (Math.abs(currentWidth - targetWidth) < 5) {
         currentWidth = targetWidth;
       } else if (currentWidth < targetWidth) {
-        currentWidth += 1;
+        currentWidth += 5;
       } else if (currentWidth > targetWidth) {
-        currentWidth -= 1;
+        currentWidth -= 5;
       }
       return currentWidth;
     },
@@ -207,10 +215,12 @@ export default {
     denominatorDragMove(e) {
       const id = e.target.attrs.name;
       if (this.configDenominator.rect[id].visible) {
-        e.target.x(Math.max(e.target.x(), this.boundaries.left));
-        e.target.x(Math.min(e.target.x(), this.boundaries.right));
-        e.target.y(Math.max(e.target.y(), this.boundaries.up));
-        e.target.y(Math.min(e.target.y(), this.boundaries.down));
+        const fw = this.configDenominator.frame[id].width;
+        const fh = this.configDenominator.frame[id].height;
+        e.target.x(Math.max(e.target.x(), 0));
+        e.target.x(Math.min(e.target.x(), this.gameWidth * 0.75 - fw));
+        e.target.y(Math.max(e.target.y(), 0));
+        e.target.y(Math.min(e.target.y(), this.gameHeight - fh));
       }
       this.configDenominator.frame[id].x = e.target.x();
       this.configDenominator.frame[id].y = e.target.y();
@@ -234,6 +244,11 @@ export default {
       const id = e.target.attrs.name;
       if (!this.configDenominator.rect[id].visible) {
         if (canvasTools.isInBound(e.target.position(), this.boundaries)) {
+          this.configDenominator.frame[id].width = this.centerRectAttr.width;
+          this.configDenominator.frame[id].height = this.centerRectAttr.height;
+          this.configDenominator.rect[id].height = this.centerRectAttr.height;
+          this.configDenominator.slice[id].width = this.centerRectAttr.width;
+          this.configDenominator.slice[id].height = this.centerRectAttr.height;
           this.drawDenominator();
           this.configDenominator.rect[id].visible = true;
         } else {
@@ -255,12 +270,14 @@ export default {
     },
     numeratorDragEnd(e) {
       for (let i = 0; i < this.fill.length; ++i) {
-        if (this.configDenominator.rect[i].visible) {
+        if (this.configDenominator.rect[i] && this.configDenominator.rect[i].visible) {
+          const fw = this.configDenominator.frame[i].width;
+          const fh = this.configDenominator.frame[i].height;
           const range = {
-            up: this.configDenominator.rect[i].y,
-            down: this.configDenominator.rect[i].y + this.rectAttr.height,
-            left: this.configDenominator.rect[i].x,
-            right: this.configDenominator.rect[i].x + this.rectAttr.width,
+            up: this.configDenominator.frame[i].y,
+            down: this.configDenominator.frame[i].y + fh,
+            left: this.configDenominator.frame[i].x,
+            right: this.configDenominator.frame[i].x + fw,
           };
           if (
             canvasTools.isInBound(canvasTools.center(e.target.attrs), range)
