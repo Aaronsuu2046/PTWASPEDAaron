@@ -28,6 +28,8 @@
   />
 
   <v-shape :config="configNumerator" @dragend="numeratorDragEnd" />
+  <v-rect :config="configUndoBtn" @click="undoFill" @tap="undoFill" />
+  <v-text :config="configUndoText" @click="undoFill" @tap="undoFill" />
 </template>
 
 <script>
@@ -77,9 +79,16 @@ export default {
         open: false,
       },
       binPosition: {},
-
+      configUndoBtn: {},
+      configUndoText: {},
       fill: [],
+      fillHistory: [],
     };
+  },
+
+  watch: {
+    numerator() { this.fillHistory = []; },
+    denominator() { this.fillHistory = []; },
   },
 
   beforeMount() {
@@ -99,6 +108,12 @@ export default {
       this.denominatorSnapTo.y = this.gameHeight * 0.7;
       this.radius = this.gameWidth * 0.075;
       this.centerRadius = this.radius * 1.5;
+      const btnW = this.gameWidth * 0.18;
+      const btnH = this.gameHeight * 0.1;
+      const btnX = this.gameWidth * 0.375 - btnW / 2;
+      const btnY = this.gameHeight * 0.86;
+      this.configUndoBtn = { x: btnX, y: btnY, width: btnW, height: btnH, fill: "#4a90d9", cornerRadius: btnH * 0.25 };
+      this.configUndoText = { x: btnX, y: btnY, width: btnW, height: btnH, text: "復原", fontSize: btnH * 0.5, fill: "white", fontStyle: "bold", align: "center", verticalAlign: "middle" };
       this.boundaries = {
         up: this.radius,
         down: this.gameHeight - this.radius,
@@ -273,6 +288,7 @@ export default {
           ) {
             if (this.fill[i] + 1 / this.numerator <= 1) {
               this.fill[i] += 1 / this.numerator;
+              this.fillHistory.push({ index: i, amount: 1 / this.numerator });
               this.$emit("addFill", this.fill);
             }
             break;
@@ -281,6 +297,12 @@ export default {
       }
       e.target.x(this.numeratorSnapTo.x);
       e.target.y(this.numeratorSnapTo.y);
+    },
+    undoFill() {
+      if (this.fillHistory.length === 0) return;
+      const last = this.fillHistory.pop();
+      this.fill[last.index] = Math.max(0, this.fill[last.index] - last.amount);
+      this.$emit("addFill", this.fill);
     },
     destory(id) {
       for (const object in this.configDenominator) {
