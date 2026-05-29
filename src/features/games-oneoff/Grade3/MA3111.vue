@@ -6,18 +6,24 @@
     <div class="game__interaction-area">
       <div class="game__fraction-panel">
         <div class="game__fraction-input-display">
-          <div class="fraction-input-wrapper">
-            <input
-              v-model.number="userNumeratorInput"
-              type="number"
-              class="numerator-input"
-              min="1"
-            />
-            <div class="fraction-line"></div>
-            <span class="denominator-number">{{ parsedDenominator }}</span>
+          <span class="question-label">題目</span>
+          <div class="fraction-row">
+            <div class="fraction-input-wrapper">
+              <div
+                class="numerator-input"
+                @click="showNumPad"
+              >{{ userNumeratorInput !== '' ? userNumeratorInput : ' ' }}</div>
+              <div class="fraction-line"></div>
+              <span class="denominator-number">{{ parsedDenominator }}</span>
+            </div>
+            <span class="equals-sign">= {{ parsedResult }}</span>
           </div>
-          <span class="equals-sign">= {{ parsedResult }}</span>
         </div>
+        <FloatNumPad
+          v-if="numPadVisible"
+          :component-config="numPadPosition"
+          @button-clicked="numPadButtonClicked"
+        />
         <FractionChart
           :component-config="chartData"
           :game-id="gameId"
@@ -46,6 +52,9 @@ export default {
     FractionChart,
     DragFraction: defineAsyncComponent(
       () => import("@/components/DragFraction.vue")
+    ),
+    FloatNumPad: defineAsyncComponent(
+      () => import("@/components/FloatNumPad.vue")
     ),
   },
   props: {
@@ -77,6 +86,8 @@ export default {
       userNumeratorInput: "",
       parsedNumerator: parsed.numerator,
       parsedDenominator: parsed.denominator,
+      numPadVisible: false,
+      numPadPosition: { top: 0, left: 0 },
     };
   },
   computed: {
@@ -100,6 +111,23 @@ export default {
       if (match)
         return { numerator: parseInt(match[1]), denominator: parseInt(match[2]) };
       return { numerator: 1, denominator: 1 };
+    },
+    showNumPad(event) {
+      const rect = event.target.getBoundingClientRect();
+      this.numPadPosition = {
+        top: `${rect.bottom + window.scrollY + 8}px`,
+        left: `${rect.left + window.scrollX}px`,
+      };
+      this.numPadVisible = true;
+    },
+    numPadButtonClicked(label) {
+      if (label === "清除") {
+        this.userNumeratorInput = "";
+      } else if (label === "關閉") {
+        this.numPadVisible = false;
+      } else {
+        this.userNumeratorInput = this.userNumeratorInput === "" ? String(label) : this.userNumeratorInput + String(label);
+      }
     },
     drag(answer) {
       this.isAnswerCorrect = answer;
@@ -176,9 +204,24 @@ export default {
 .game__fraction-input-display {
   flex: 3;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+}
+
+.question-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  align-self: flex-start;
+  padding-left: 0.5rem;
+}
+
+.fraction-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -196,15 +239,15 @@ export default {
   text-align: center;
   border: 3px solid #333;
   border-radius: 6px;
-  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  background: white;
 
-  &:focus {
+  &:hover {
     border-color: #4a90d9;
-  }
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
   }
 }
 
