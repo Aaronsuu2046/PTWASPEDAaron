@@ -28,6 +28,8 @@
   />
 
   <v-shape :config="configNumerator" @dragend="numeratorDragEnd" />
+  <v-rect :config="configUndoBtn" @click="undoFill" @tap="undoFill" />
+  <v-text :config="configUndoText" @click="undoFill" @tap="undoFill" />
 </template>
 
 <script>
@@ -77,9 +79,16 @@ export default {
         open: false,
       },
       binPosition: {},
-
+      configUndoBtn: {},
+      configUndoText: {},
       fill: [],
+      fillHistory: [],
     };
+  },
+
+  watch: {
+    numerator() { this.fillHistory = []; },
+    denominator() { this.fillHistory = []; },
   },
 
   beforeMount() {
@@ -98,6 +107,13 @@ export default {
       this.denominatorSnapTo.x = this.gameWidth * 0.875;
       this.denominatorSnapTo.y = this.gameHeight * 0.7;
       this.radius = this.gameWidth * 0.075;
+      this.centerRadius = this.radius * 1.5;
+      const btnW = this.gameWidth * 0.18;
+      const btnH = this.gameHeight * 0.1;
+      const btnX = this.gameWidth * 0.75 - btnW - this.gameWidth * 0.02;
+      const btnY = this.gameHeight * 0.86;
+      this.configUndoBtn = { x: btnX, y: btnY, width: btnW, height: btnH, fill: "#4a90d9", cornerRadius: btnH * 0.25 };
+      this.configUndoText = { x: btnX, y: btnY, width: btnW, height: btnH, text: "復原", fontSize: btnH * 0.5, fill: "white", fontStyle: "bold", align: "center", verticalAlign: "middle" };
       this.boundaries = {
         up: this.radius,
         down: this.gameHeight - this.radius,
@@ -117,7 +133,7 @@ export default {
       );
       let i;
       for (i = 0; i < this.fill.length; ++i) {
-        if (this.fill[i] > 0) {
+        if (this.configDenominator.circle[i]) {
           this.configDenominator.circle[i].endRadians = this.animation(
             this.configDenominator.circle[i].endRadians,
             Math.PI * 2 * this.fill[i]
@@ -128,12 +144,12 @@ export default {
         this.configDenominator.slice[i - 1].slices = this.denominator;
     },
     animation(currentRadians, targetRadians) {
-      if (Math.abs(currentRadians - targetRadians) < 0.02) {
+      if (Math.abs(currentRadians - targetRadians) < 0.1) {
         currentRadians = targetRadians;
       } else if (currentRadians < targetRadians) {
-        currentRadians += 0.02;
+        currentRadians += 0.1;
       } else if (currentRadians > targetRadians) {
-        currentRadians -= 0.02;
+        currentRadians -= 0.1;
       }
       return currentRadians;
     },
@@ -241,6 +257,9 @@ export default {
       const id = e.target.attrs.name;
       if (!this.configDenominator.circle[id].visible) {
         if (canvasTools.isInBound(e.target.position(), this.boundaries)) {
+          this.configDenominator.frame[id].radius = this.centerRadius;
+          this.configDenominator.circle[id].radius = this.centerRadius;
+          this.configDenominator.slice[id].radius = this.centerRadius;
           this.drawDenominator();
           this.configDenominator.circle[id].visible = true;
         } else {
@@ -265,10 +284,11 @@ export default {
             canvasTools.distance(
               e.target.position(),
               this.configDenominator.circle[i]
-            ) <= this.radius
+            ) <= this.configDenominator.frame[i].radius
           ) {
             if (this.fill[i] + 1 / this.numerator <= 1) {
               this.fill[i] += 1 / this.numerator;
+              this.fillHistory.push({ index: i, amount: 1 / this.numerator });
               this.$emit("addFill", this.fill);
             }
             break;
@@ -277,6 +297,12 @@ export default {
       }
       e.target.x(this.numeratorSnapTo.x);
       e.target.y(this.numeratorSnapTo.y);
+    },
+    undoFill() {
+      if (this.fillHistory.length === 0) return;
+      const last = this.fillHistory.pop();
+      this.fill[last.index] = Math.max(0, this.fill[last.index] - last.amount);
+      this.$emit("addFill", this.fill);
     },
     destory(id) {
       for (const object in this.configDenominator) {

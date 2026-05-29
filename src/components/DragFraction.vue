@@ -27,6 +27,9 @@
         />
       </v-layer>
       <v-layer>
+        <v-text :config="configFillLabel" />
+      </v-layer>
+      <v-layer>
         <v-shape
           v-for="(arrow, index) in configArrow"
           :key="index"
@@ -92,6 +95,7 @@ export default {
       numerator: 3,
       denominator: 3,
       componentKey: 0,
+      configFillLabel: { text: "", x: 0, y: 0, fontSize: 0, fill: "#333", fontStyle: "bold" },
     };
   },
 
@@ -126,6 +130,10 @@ export default {
       this.configSideBar.x = this.gameWidth * 0.75;
       this.drawArrow();
       this.drawNumber();
+      this.configFillLabel.x = this.gameWidth * 0.02;
+      this.configFillLabel.y = this.gameHeight * 0.04;
+      this.configFillLabel.fontSize = this.gameWidth * 0.07;
+      this.configFillLabel.text = `0/${this.denominator}`;
     },
 
     drawArrow() {
@@ -217,6 +225,7 @@ export default {
       this.drawAfterAdjusted();
     },
     drawAfterAdjusted() {
+      this.configFillLabel.text = `0/${this.denominator}`;
       this.configNumeratorNumber.text = this.numerator;
       if (this.numerator >= 10)
         this.configNumeratorNumber.x = this.gameWidth * 0.85;
@@ -254,6 +263,8 @@ export default {
       for (const fraction in fill) {
         total += fill[fraction];
       }
+      const filledParts = Math.round(total * this.denominator);
+      this.configFillLabel.text = `${filledParts}/${this.denominator}`;
       if (this.componentConfig.verifyOption === "answer") {
         const answer =
           this.componentConfig.answer.numerator /

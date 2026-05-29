@@ -83,7 +83,7 @@ export default {
     },
     getCircleConfig(fillRatio, config) {
       return {
-        radius: this.gameWidth * config.radiusRatio,
+        radius: Math.min(this.gameWidth, this.gameHeight) * config.radiusRatio,
         fill: "#4C5B3A",
         stroke: "transparent",
         x: this.gameWidth / 2,
@@ -117,7 +117,7 @@ export default {
     },
     getCircleSlicesConfig(config) {
       return {
-        radius: this.gameWidth * config.radiusRatio,
+        radius: Math.min(this.gameWidth, this.gameHeight) * config.radiusRatio,
         stroke: "black",
         strokeWidth: 2,
         x: this.gameWidth / 2,

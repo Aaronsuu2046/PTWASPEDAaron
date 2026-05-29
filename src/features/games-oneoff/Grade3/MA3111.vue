@@ -5,20 +5,32 @@
     </div>
     <div class="game__interaction-area">
       <div class="game__fraction-panel">
-        <FractionDisplay
-          :component-config="questionFraction"
-          :game-id="gameId"
-          class="game__fraction-display"
-        ></FractionDisplay>
+        <div class="game__fraction-input-display">
+          <span class="question-label">題目</span>
+          <div class="fraction-row">
+            <div class="fraction-input-wrapper">
+              <div
+                class="numerator-input"
+                :class="{ 'numerator-input--error': inputError }"
+                @click="showNumPad"
+              >{{ userNumeratorInput !== '' ? userNumeratorInput : ' ' }}</div>
+              <div class="fraction-line"></div>
+              <span class="denominator-number">{{ parsedDenominator }}</span>
+            </div>
+            <span class="equals-sign">= {{ parsedResult }}</span>
+          </div>
+        </div>
+        <FloatNumPad
+          v-if="numPadVisible"
+          :component-config="numPadPosition"
+          @button-clicked="numPadButtonClicked"
+        />
         <FractionChart
           :component-config="chartData"
           :game-id="gameId"
           class="game__chart-container"
           @mounted="calculateChartSize"
-        ></FractionChart>
-        <button class="game__check-answer-btn" @click="checkAnswer">
-          送出答案
-        </button>
+        />
       </div>
       <DragFraction
         :component-config="configFraction"
@@ -26,7 +38,7 @@
         class="game__answer-area"
         @reply-answer="drag"
         @record-answer="handleRecordAnswer"
-      ></DragFraction>
+      />
     </div>
   </div>
 </template>
@@ -34,14 +46,16 @@
 <script>
 import { defineAsyncComponent } from "vue";
 import FractionChart from "@/components/FractionChart.vue";
+import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+
 export default {
   components: {
     FractionChart,
-    FractionDisplay: defineAsyncComponent(
-      () => import("@/components/FractionDisplay.vue")
-    ),
     DragFraction: defineAsyncComponent(
       () => import("@/components/DragFraction.vue")
+    ),
+    FloatNumPad: defineAsyncComponent(
+      () => import("@/components/FloatNumPad.vue")
     ),
   },
   props: {
@@ -56,40 +70,93 @@ export default {
   },
   emits: ["add-record", "play-effect", "next-question"],
   data() {
+    const parsed = this.parseFractionContent(
+      this.gameData.question.fraction.Content
+    );
     return {
       configFraction: this.gameData.answerData,
       chartWidth: 0,
       chartHeight: 0,
-      isAnswerCorrect: false,
       questionDescription: this.gameData.question.description,
       questionFraction: this.gameData.question.fraction,
       chartData: {
         shape: this.gameData.answerData.shape,
-        numerator: this.gameData.answerData.answer.numerator, // 分子
-        denominator: this.gameData.answerData.answer.denominator, // 分母
+        numerator: this.gameData.answerData.answer.numerator,
+        denominator: this.gameData.answerData.answer.denominator,
       },
+      userNumeratorInput: "",
+      parsedNumerator: parsed.numerator,
+      parsedDenominator: parsed.denominator,
+      numPadVisible: false,
+      numPadPosition: { top: 0, left: 0 },
+      inputError: false,
     };
   },
-  computed: {},
+  computed: {
+    parsedResult() {
+      if (this.parsedDenominator === 0) return "";
+      const r = this.parsedNumerator / this.parsedDenominator;
+      return Number.isInteger(r)
+        ? r.toString()
+        : `${this.parsedNumerator}/${this.parsedDenominator}`;
+    },
+  },
+  created() {
+    emitter.on("submitAnswer", this.checkAnswer);
+  },
+  beforeUnmount() {
+    emitter.off("submitAnswer", this.checkAnswer);
+  },
   methods: {
+    parseFractionContent(content) {
+      const match = content.match(/\\frac\{(\d+)\}\{(\d+)\}/);
+      if (match)
+        return { numerator: parseInt(match[1]), denominator: parseInt(match[2]) };
+      return { numerator: 1, denominator: 1 };
+    },
+    showNumPad(event) {
+      const rect = event.target.getBoundingClientRect();
+      this.numPadPosition = {
+        top: `${rect.bottom + window.scrollY + 8}px`,
+        left: `${rect.left + window.scrollX}px`,
+      };
+      this.numPadVisible = true;
+    },
+    numPadButtonClicked(label) {
+      if (label === "清除") {
+        this.userNumeratorInput = "";
+        this.inputError = false;
+      } else if (label === "關閉") {
+        this.numPadVisible = false;
+      } else {
+        this.userNumeratorInput = this.userNumeratorInput === "" ? String(label) : this.userNumeratorInput + String(label);
+        this.inputError = false;
+      }
+    },
     drag(answer) {
       this.isAnswerCorrect = answer;
     },
     calculateChartSize() {
       const fractionChart = this.$refs.fractionChart;
       if (fractionChart) {
-        this.chartWidth = fractionChart.offsetWidth * 0.85 || 150; // 確保有預設值
-        this.chartHeight = fractionChart.offsetHeight * 0.85 || 150; // 確保有預設值
-      } else {
-        console.error("FractionChart not found!");
+        this.chartWidth = fractionChart.offsetWidth * 0.85 || 150;
+        this.chartHeight = fractionChart.offsetHeight * 0.85 || 150;
       }
     },
     checkAnswer() {
-      this.$emit("add-record", this.recordedAnswer);
-      if (this.isAnswerCorrect) {
+      const isCorrect =
+        Number(this.userNumeratorInput) === this.parsedNumerator;
+      this.$emit("add-record", [
+        this.parsedNumerator.toString(),
+        this.userNumeratorInput.toString(),
+        isCorrect ? "正確" : "錯誤",
+      ]);
+      if (isCorrect) {
+        this.inputError = false;
         this.$emit("play-effect", "CorrectSound");
-        this.$emit("next-question", true);
+        this.$emit("next-question");
       } else {
+        this.inputError = true;
         this.$emit("play-effect", "WrongSound");
       }
     },
@@ -115,7 +182,8 @@ export default {
   height: 15%;
   padding: $padding--small;
   align-items: center;
-  @extend .game-section--border;
+  border: $border--normal solid #000;
+  border-radius: $border-radius;
 }
 
 .game__question-description {
@@ -136,10 +204,77 @@ export default {
   width: 30%;
   height: 100%;
   padding: $padding--small;
+  gap: 0.5rem;
 }
 
-.game__fraction-display {
-  flex: 2;
+.game__fraction-input-display {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.question-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  align-self: flex-start;
+  padding-left: 0.5rem;
+}
+
+.fraction-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fraction-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.numerator-input {
+  width: 5rem;
+  height: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  border: 3px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  background: white;
+
+  &:hover {
+    border-color: #4a90d9;
+  }
+
+  &--error {
+    border-color: red;
+  }
+}
+
+.fraction-line {
+  width: 100%;
+  border-top: 4px solid #333;
+}
+
+.denominator-number {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.equals-sign {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .game__chart-container {
@@ -151,16 +286,5 @@ export default {
 .game__answer-area {
   width: 70%;
   height: 100%;
-}
-
-.game__check-answer-btn {
-  flex: 1;
-  border: none;
-  background-color: $submit-color;
-}
-
-.game-section--border {
-  border: $border--normal solid #000;
-  border-radius: $border-radius;
 }
 </style>
