@@ -98,11 +98,12 @@ export default {
       this.denominatorSnapTo.x = this.gameWidth * 0.875;
       this.denominatorSnapTo.y = this.gameHeight * 0.7;
       this.radius = this.gameWidth * 0.075;
+      this.centerRadius = this.radius * 1.2;
       this.boundaries = {
-        up: this.radius,
-        down: this.gameHeight - this.radius,
-        left: this.radius,
-        right: this.gameWidth * 0.75 - this.radius,
+        up: this.centerRadius,
+        down: this.gameHeight - this.centerRadius,
+        left: this.centerRadius,
+        right: this.gameWidth * 0.75 - this.centerRadius,
       };
     },
     initialize() {
@@ -128,12 +129,12 @@ export default {
         this.configDenominator.slice[i - 1].slices = this.denominator;
     },
     animation(currentRadians, targetRadians) {
-      if (Math.abs(currentRadians - targetRadians) < 0.02) {
+      if (Math.abs(currentRadians - targetRadians) < 0.1) {
         currentRadians = targetRadians;
       } else if (currentRadians < targetRadians) {
-        currentRadians += 0.02;
+        currentRadians += 0.1;
       } else if (currentRadians > targetRadians) {
-        currentRadians -= 0.02;
+        currentRadians -= 0.1;
       }
       return currentRadians;
     },
@@ -241,6 +242,9 @@ export default {
       const id = e.target.attrs.name;
       if (!this.configDenominator.circle[id].visible) {
         if (canvasTools.isInBound(e.target.position(), this.boundaries)) {
+          this.configDenominator.frame[id].radius = this.centerRadius;
+          this.configDenominator.circle[id].radius = this.centerRadius;
+          this.configDenominator.slice[id].radius = this.centerRadius;
           this.drawDenominator();
           this.configDenominator.circle[id].visible = true;
         } else {
@@ -265,7 +269,7 @@ export default {
             canvasTools.distance(
               e.target.position(),
               this.configDenominator.circle[i]
-            ) <= this.radius
+            ) <= this.configDenominator.frame[i].radius
           ) {
             if (this.fill[i] + 1 / this.numerator <= 1) {
               this.fill[i] += 1 / this.numerator;
