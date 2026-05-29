@@ -98,7 +98,7 @@ export default {
       this.denominatorSnapTo.x = this.gameWidth * 0.875;
       this.denominatorSnapTo.y = this.gameHeight * 0.7;
       this.radius = this.gameWidth * 0.075;
-      this.centerRadius = this.radius * 1.2;
+      this.centerRadius = this.radius * 1.5;
       this.boundaries = {
         up: this.centerRadius,
         down: this.gameHeight - this.centerRadius,
