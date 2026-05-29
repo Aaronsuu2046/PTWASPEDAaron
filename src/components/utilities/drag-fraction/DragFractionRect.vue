@@ -229,11 +229,8 @@ export default {
       this.configDenominator.slice[id].x = e.target.x();
       this.configDenominator.slice[id].y = e.target.y();
       if (
-        canvasTools.distance(
-          canvasTools.center(e.target.attrs),
-          this.binPosition
-        ) <
-        this.gameWidth * 0.05
+        canvasTools.distance(e.target.position(), this.binPosition) <
+        this.gameWidth * 0.15
       ) {
         this.configBin.open = true;
       } else {
@@ -258,11 +255,8 @@ export default {
         }
       }
       if (
-        canvasTools.distance(
-          canvasTools.center(e.target.attrs),
-          this.binPosition
-        ) <
-        this.gameWidth * 0.05
+        canvasTools.distance(e.target.position(), this.binPosition) <
+        this.gameWidth * 0.15
       ) {
         this.configBin.open = false;
         this.destory(id);
