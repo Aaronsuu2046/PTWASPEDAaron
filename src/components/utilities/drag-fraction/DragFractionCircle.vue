@@ -110,7 +110,7 @@ export default {
       this.centerRadius = this.radius * 1.5;
       const btnW = this.gameWidth * 0.18;
       const btnH = this.gameHeight * 0.1;
-      const btnX = this.gameWidth * 0.375 - btnW / 2;
+      const btnX = this.gameWidth * 0.75 - btnW - this.gameWidth * 0.02;
       const btnY = this.gameHeight * 0.86;
       this.configUndoBtn = { x: btnX, y: btnY, width: btnW, height: btnH, fill: "#4a90d9", cornerRadius: btnH * 0.25 };
       this.configUndoText = { x: btnX, y: btnY, width: btnW, height: btnH, text: "復原", fontSize: btnH * 0.5, fill: "white", fontStyle: "bold", align: "center", verticalAlign: "middle" };
@@ -133,7 +133,7 @@ export default {
       );
       let i;
       for (i = 0; i < this.fill.length; ++i) {
-        if (this.fill[i] > 0) {
+        if (this.configDenominator.circle[i]) {
           this.configDenominator.circle[i].endRadians = this.animation(
             this.configDenominator.circle[i].endRadians,
             Math.PI * 2 * this.fill[i]
