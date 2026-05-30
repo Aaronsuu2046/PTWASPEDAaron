@@ -102,14 +102,11 @@ header {
 
   .navbar-brand {
     img {
-      @media (max-width: 576px) {
-        height: 7vh;
-        width: auto;
-      }
-
-      @media (min-width: 576px) {
-        max-width: 20vw;
-      }
+      height: auto;
+      max-height: 8vh;
+      width: auto;
+      max-width: 20vw;
+      object-fit: contain;
     }
   }
 
