@@ -351,8 +351,8 @@ button {
 .empty-message {
   text-align: center;
   color: #6c757d;
-  background-color: #f8f9fa;
-  border: 2px solid #e9ecef;
+  background-color: #f4c49f;
+  border: 2px solid #e8a870;
   border-radius: 20px;
   padding: 2rem 2.5rem;
 
