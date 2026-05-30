@@ -352,6 +352,7 @@ button {
   text-align: center;
   color: #6c757d;
   background-color: #f8f9fa;
+  border: 2px solid #e9ecef;
   border-radius: 20px;
   padding: 2rem 2.5rem;
 
