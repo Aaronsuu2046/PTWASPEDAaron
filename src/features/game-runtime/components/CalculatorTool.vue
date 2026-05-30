@@ -351,6 +351,9 @@ button {
 .empty-message {
   text-align: center;
   color: #6c757d;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
 
   h3 {
     margin-bottom: 10px;
