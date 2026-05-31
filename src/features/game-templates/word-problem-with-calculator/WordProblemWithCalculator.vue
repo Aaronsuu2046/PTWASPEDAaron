@@ -240,19 +240,19 @@ export default {
         :deep(.markdown-container) {
           span,
           p {
-            font-size: $text-large;
+            font-size: 3.6rem;
           }
 
           h1,
           h2,
           h3 {
-            font-size: $text-large;
+            font-size: 3.6rem;
           }
 
           input {
-            font-size: $text-large;
-            min-width: 40px;
-            max-width: 80px;
+            font-size: 3.6rem;
+            min-width: 72px;
+            max-width: 144px;
           }
         }
       }

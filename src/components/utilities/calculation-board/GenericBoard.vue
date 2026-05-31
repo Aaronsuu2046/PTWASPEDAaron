@@ -41,6 +41,7 @@
             :class="{
               'table__button--question': !item.editable,
               'table__button--answer': item.editable,
+              'table__button--operator': item.editable === 'operator',
               'table__button--place-value': item.class === 'place-value-cell',
               'table__button--wrong': item.isWrong,
               'table__button--crossed-out':
@@ -351,6 +352,14 @@ button {
 
 .table__button--answer {
   background-color: #f0f4ef;
+  cursor: pointer;
+}
+
+.table__button--operator {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
