@@ -317,6 +317,7 @@ export default {
     text-align: center;
     vertical-align: middle;
     overflow: hidden;
+    position: relative;
   }
 }
 
@@ -356,11 +357,16 @@ button {
 }
 
 .table__button--operator {
-  font-size: 2rem;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .table__button--place-value {
