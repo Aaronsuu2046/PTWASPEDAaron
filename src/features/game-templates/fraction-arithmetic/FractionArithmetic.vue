@@ -16,18 +16,16 @@
             :game-id="gameId"
             class="math-expression__fraction"
           ></FractionDisplay>
-          <span
-            class="question__math-symbol"
-            :class="{ clickable: mode === 'application' }"
-            @click="toggleOperation"
-          >
-            {{
-              mode === "application"
-                ? userOperation === " "
-                  ? "?"
-                  : userOperation
-                : operation
-            }}
+          <input
+            v-if="mode === 'application'"
+            class="operation-input"
+            :class="{ 'operation-input--error': operationWrong }"
+            :value="userOperation === ' ' ? '?' : userOperation"
+            readonly
+            @click="selectOperation"
+          />
+          <span v-else class="question__math-symbol">
+            {{ operation }}
           </span>
           <FractionDisplay
             :component-config="questionRightTerm"
@@ -39,6 +37,7 @@
             ref="fractionsComponent"
             :component-config="answerData"
             :game-id="gameId"
+            :is-wrong="answerWrong"
             @record-answer="handleRecordAnswer"
             @reply-answer="handleValidation"
           ></FractionForAnswer>
@@ -95,11 +94,27 @@ export default {
       checkCalculationData: this.gameData.acheckCalculationData,
       answerData: this.gameData.answer,
       isAnswerRight: false,
+      answerWrong: false,
+      operationWrong: false,
       mode: isApplication ? "application" : "arithmetic",
       userOperation: isApplication
         ? " " // 一開始是空格
         : this.gameData.question.operationType,
     };
+  },
+  watch: {
+    gameData: {
+      handler() {
+        this.answerWrong = false;
+        this.operationWrong = false;
+        this.isAnswerRight = false;
+        // 根據新的 gameData 更新 mode
+        const isApplication = !!this.gameData.answer?.operation;
+        this.mode = isApplication ? "application" : "arithmetic";
+        this.userOperation = isApplication ? " " : this.gameData.question.operationType;
+      },
+      deep: true,
+    },
   },
   created() {
     emitter.on("submitAnswer", this.triggerValidation);
@@ -111,7 +126,7 @@ export default {
     handleValidation(result) {
       this.isAnswerRight = result;
     },
-    toggleOperation() {
+    selectOperation() {
       if (this.mode === "application") {
         this.userOperation = this.userOperation === "+" ? "-" : "+";
       }
@@ -121,9 +136,21 @@ export default {
 
       // 新增：應用題要比對 operation
       let isCorrect = this.isAnswerRight;
+      let operationCorrect = true;
+
       if (this.mode === "application") {
-        isCorrect =
-          isCorrect && this.userOperation === this.gameData.answer.operation;
+        operationCorrect = this.userOperation === this.gameData.answer.operation;
+        isCorrect = isCorrect && operationCorrect;
+      }
+
+      // 分數答案錯誤時才顯示分數框紅框（不受操作符影響）
+      if (!this.isAnswerRight) {
+        this.answerWrong = true;
+      }
+
+      // 操作符錯誤時才顯示操作符紅框
+      if (!operationCorrect) {
+        this.operationWrong = true;
       }
 
       if (isCorrect) {
@@ -178,6 +205,27 @@ export default {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+}
+
+.operation-input {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  flex-shrink: 0;
+
+  &--error {
+    border-color: red;
+    border-width: 2px;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 }
 
 .question__description {
