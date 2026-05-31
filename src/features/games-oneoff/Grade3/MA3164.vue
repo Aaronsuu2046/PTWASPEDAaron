@@ -423,7 +423,7 @@ export default {
 }
 
 .question {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   padding: 0;
   margin: 0;
   width: 100%;
