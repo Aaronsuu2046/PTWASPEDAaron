@@ -261,7 +261,9 @@ export default {
             this.wrongInputIndex.includes(totalIndex) &&
             this.$refs.inputRefs[inputIndex]
           ) {
-            this.$refs.inputRefs[inputIndex].style.backgroundColor = "red";
+            this.$refs.inputRefs[inputIndex].style.borderColor = "red";
+            this.$refs.inputRefs[inputIndex].style.borderWidth = "2px";
+            this.$refs.inputRefs[inputIndex].style.backgroundColor = "white";
           }
           inputIndex++;
           totalIndex++;
@@ -329,8 +331,9 @@ export default {
   }
 
   &.wrong-answer {
-    background-color: red !important;
-    color: white !important;
+    border-color: red !important;
+    border-width: 2px !important;
+    background-color: white !important;
   }
 }
 
