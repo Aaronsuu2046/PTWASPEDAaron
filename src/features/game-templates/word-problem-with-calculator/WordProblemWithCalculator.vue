@@ -236,9 +236,16 @@ export default {
         max-height: none;
         width: auto;
         max-width: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         :deep(.markdown-container) {
           white-space: nowrap;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap;
 
           span,
           p {
