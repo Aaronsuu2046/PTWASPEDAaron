@@ -123,10 +123,7 @@ export default {
   },
   methods: {
     initializeScene() {
-      // 基於 canvas-wrapper 的實際寬度來計算
-      const wrapper = document.querySelector('.canvas-wrapper');
-      const maxWidth = wrapper ? wrapper.clientWidth : 600;
-      this.gameWidth = Math.min(maxWidth * 0.95, 600);
+      this.gameWidth = this.$refs.container.clientWidth * 0.8;
       this.gameHeight = this.gameWidth / 2;
       this.configKonva.width = this.gameWidth;
       this.configKonva.height = this.gameHeight;
@@ -421,13 +418,14 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .question {
-  font-size: 2rem;
-  padding: 1rem 0;
+  font-size: 1.6rem;
+  padding: 0;
+  margin: 0;
   width: 100%;
 }
 
@@ -435,21 +433,17 @@ export default {
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex: 1;
   min-height: 0;
-  max-height: 600px;
 }
 
 .canvas-wrapper {
-  flex: 0 0 auto;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 0;
-  max-width: 600px;
-  max-height: 600px;
-  overflow: hidden;
 }
 
 .answer {
