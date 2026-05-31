@@ -1,7 +1,52 @@
 <template>
-  <div ref="container" :key="containerKey">
+  <div ref="container" :key="containerKey" class="game-container">
     <div class="question">
       {{ gameData.Question }}
+    </div>
+    <div class="content">
+      <div class="canvas-wrapper">
+        <v-stage :config="configKonva">
+          <v-layer>
+            <v-rect :config="configBG" />
+          </v-layer>
+          <v-layer>
+            <v-image :config="configTarget" />
+            <v-shape
+              v-for="(food, index) in configFood"
+              :key="index"
+              :config="food"
+            />
+          </v-layer>
+          <v-layer>
+            <v-circle
+              :key="ringKey"
+              :config="configRing"
+              @dragend="handleDragEnd"
+            />
+            <v-rect
+              v-for="(shadow, index) in configShadows"
+              :key="index"
+              :config="shadow"
+              @click="handleButton(index)"
+              @tap="handleButton(index)"
+            />
+            <v-rect
+              v-for="(button, index) in configButtons"
+              :key="index"
+              :config="button"
+              @click="handleButton(index)"
+              @tap="handleButton(index)"
+            />
+            <v-text
+              v-for="(option, index) in configOptions"
+              :key="index"
+              :config="option"
+              @click="handleButton(index)"
+              @tap="handleButton(index)"
+            />
+          </v-layer>
+        </v-stage>
+      </div>
       <div class="answer">
         <number-incrementor
           :game-id="gameId"
@@ -12,47 +57,6 @@
         <!-- <button @click="checkAnswer">提交答案</button> -->
       </div>
     </div>
-    <v-stage :config="configKonva">
-      <v-layer>
-        <v-rect :config="configBG" />
-      </v-layer>
-      <v-layer>
-        <v-image :config="configTarget" />
-        <v-shape
-          v-for="(food, index) in configFood"
-          :key="index"
-          :config="food"
-        />
-      </v-layer>
-      <v-layer>
-        <v-circle
-          :key="ringKey"
-          :config="configRing"
-          @dragend="handleDragEnd"
-        />
-        <v-rect
-          v-for="(shadow, index) in configShadows"
-          :key="index"
-          :config="shadow"
-          @click="handleButton(index)"
-          @tap="handleButton(index)"
-        />
-        <v-rect
-          v-for="(button, index) in configButtons"
-          :key="index"
-          :config="button"
-          @click="handleButton(index)"
-          @tap="handleButton(index)"
-        />
-        <v-text
-          v-for="(option, index) in configOptions"
-          :key="index"
-          :config="option"
-          @click="handleButton(index)"
-          @tap="handleButton(index)"
-        />
-      </v-layer>
-    </v-stage>
   </div>
 </template>
 
@@ -409,17 +413,50 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.game-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  padding: 2rem;
+}
+
 .question {
   font-size: 2rem;
-  align-items: center;
-  width: 80%;
+  padding: 1rem 0;
+  width: 100%;
 }
+
+.content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+}
+
 .answer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-left: auto;
-  width: fit-content;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  min-width: 150px;
 }
+
 button {
   margin-left: 3vw;
   border: none;
