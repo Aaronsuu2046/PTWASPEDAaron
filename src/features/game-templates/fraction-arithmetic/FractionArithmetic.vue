@@ -141,10 +141,12 @@ export default {
         isCorrect = isCorrect && operationCorrect;
       }
 
-      if (!isCorrect) {
+      // 分數答案錯誤時才顯示分數框紅框（不受操作符影響）
+      if (!this.isAnswerRight) {
         this.answerWrong = true;
       }
 
+      // 操作符錯誤時才顯示操作符紅框
       if (!operationCorrect) {
         this.operationWrong = true;
       }
