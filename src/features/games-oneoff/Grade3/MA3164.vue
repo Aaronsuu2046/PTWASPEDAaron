@@ -123,7 +123,10 @@ export default {
   },
   methods: {
     initializeScene() {
-      this.gameWidth = this.$refs.container.clientWidth * 0.8;
+      // 基於 canvas-wrapper 的實際寬度來計算
+      const wrapper = document.querySelector('.canvas-wrapper');
+      const maxWidth = wrapper ? wrapper.clientWidth : 600;
+      this.gameWidth = Math.min(maxWidth * 0.95, 600);
       this.gameHeight = this.gameWidth / 2;
       this.configKonva.width = this.gameWidth;
       this.configKonva.height = this.gameHeight;
@@ -432,17 +435,21 @@ export default {
   display: flex;
   gap: 2rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex: 1;
   min-height: 0;
+  max-height: 600px;
 }
 
 .canvas-wrapper {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 0;
+  max-width: 600px;
+  max-height: 600px;
+  overflow: hidden;
 }
 
 .answer {
