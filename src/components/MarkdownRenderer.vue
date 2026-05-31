@@ -335,12 +335,15 @@ export default {
 }
 
 input {
-  min-width: 20px;
-  max-width: 50px;
-  border: 1px solid #000;
+  min-width: 60px;
+  max-width: 120px;
+  height: 50px;
+  border: 2px solid #000;
   border-radius: $border-radius;
-  padding: 5px;
+  padding: 8px;
   margin: 5px;
+  font-size: 1.5rem;
+  text-align: center;
 }
 .markdown-container {
   width: 100%;

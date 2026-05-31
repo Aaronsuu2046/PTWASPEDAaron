@@ -260,8 +260,13 @@ export default {
 
           input {
             font-size: 3.6rem;
-            min-width: 72px;
-            max-width: 144px;
+            min-width: 130px;
+            max-width: 180px;
+            height: 80px;
+            padding: 12px;
+            border: 2px solid #000;
+            text-align: center;
+            line-height: 1;
           }
 
           .math-symbol-btn {
