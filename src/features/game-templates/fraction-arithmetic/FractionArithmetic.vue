@@ -110,6 +110,10 @@ export default {
         this.answerWrong = false;
         this.operationWrong = false;
         this.isAnswerRight = false;
+        // 根據新的 gameData 更新 mode
+        const isApplication = !!this.gameData.answer?.operation;
+        this.mode = isApplication ? "application" : "arithmetic";
+        this.userOperation = isApplication ? " " : this.gameData.question.operationType;
       },
       deep: true,
     },
