@@ -9,11 +9,6 @@
       </h1>
     </div>
     <div class="check-calculation">
-      <DragFraction
-        :component-config="checkCalculationData"
-        :game-id="gameId"
-        class="check-calculation-components"
-      ></DragFraction>
       <div class="calculation-container">
         <div class="question__math-expression">
           <FractionDisplay
@@ -52,6 +47,11 @@
           送出答案
         </button> -->
       </div>
+      <DragFraction
+        :component-config="checkCalculationData"
+        :game-id="gameId"
+        class="check-calculation-components"
+      ></DragFraction>
     </div>
   </div>
 </template>
@@ -194,7 +194,7 @@ export default {
 }
 
 .calculation-container {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   flex-direction: column;
   gap: $gap--small;
@@ -216,7 +216,7 @@ export default {
 }
 
 .check-calculation-components {
-  flex: 3;
+  flex: 1;
 }
 
 .check-answer-btn {
