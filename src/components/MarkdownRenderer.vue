@@ -261,7 +261,9 @@ export default {
             this.wrongInputIndex.includes(totalIndex) &&
             this.$refs.inputRefs[inputIndex]
           ) {
-            this.$refs.inputRefs[inputIndex].style.backgroundColor = "red";
+            this.$refs.inputRefs[inputIndex].style.borderColor = "red";
+            this.$refs.inputRefs[inputIndex].style.borderWidth = "2px";
+            this.$refs.inputRefs[inputIndex].style.backgroundColor = "white";
           }
           inputIndex++;
           totalIndex++;
@@ -314,30 +316,37 @@ export default {
 .math-symbol-btn {
   border: 1px solid #000;
   border-radius: 20px;
-  font-size: $text-small;
+  font-size: 1.5rem;
   padding: 0;
-  min-width: 40px;
-  height: 40px;
+  min-width: 50px;
+  height: 50px;
   background-color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: #f0f0f0;
   }
 
   &.wrong-answer {
-    background-color: red !important;
-    color: white !important;
+    border-color: red !important;
+    border-width: 2px !important;
+    background-color: white !important;
   }
 }
 
 input {
-  min-width: 20px;
-  max-width: 50px;
-  border: 1px solid #000;
+  min-width: 60px;
+  max-width: 120px;
+  height: 50px;
+  border: 2px solid #000;
   border-radius: $border-radius;
-  padding: 5px;
+  padding: 8px;
   margin: 5px;
+  font-size: 1.5rem;
+  text-align: center;
 }
 .markdown-container {
   width: 100%;

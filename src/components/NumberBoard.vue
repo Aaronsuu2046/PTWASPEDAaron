@@ -168,7 +168,9 @@ export default {
     }
 
     &--wrong {
-      background-color: red !important;
+      border-color: red !important;
+      border-width: 2px !important;
+      background-color: white !important;
     }
   }
 }

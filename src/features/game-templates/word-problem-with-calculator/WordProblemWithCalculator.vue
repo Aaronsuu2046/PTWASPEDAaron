@@ -234,25 +234,45 @@ export default {
 
       .markdown {
         max-height: none;
-        width: fit-content;
-        max-width: 90%;
+        width: auto;
+        max-width: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         :deep(.markdown-container) {
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap;
+
           span,
           p {
-            font-size: $text-large;
+            font-size: 3.6rem;
           }
 
           h1,
           h2,
           h3 {
-            font-size: $text-large;
+            font-size: 3.6rem;
           }
 
           input {
-            font-size: $text-large;
-            min-width: 40px;
-            max-width: 80px;
+            font-size: 3.6rem;
+            min-width: 130px;
+            max-width: 180px;
+            height: 80px;
+            padding: 12px;
+            border: 2px solid #000;
+            text-align: center;
+            line-height: 1;
+          }
+
+          .math-symbol-btn {
+            font-size: 3.6rem;
+            min-width: 72px;
+            height: 72px;
           }
         }
       }

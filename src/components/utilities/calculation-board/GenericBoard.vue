@@ -41,6 +41,7 @@
             :class="{
               'table__button--question': !item.editable,
               'table__button--answer': item.editable,
+              'table__button--operator': item.editable === 'operator',
               'table__button--place-value': item.class === 'place-value-cell',
               'table__button--wrong': item.isWrong,
               'table__button--crossed-out':
@@ -316,6 +317,7 @@ export default {
     text-align: center;
     vertical-align: middle;
     overflow: hidden;
+    position: relative;
   }
 }
 
@@ -352,6 +354,19 @@ button {
 .table__button--answer {
   background-color: #f0f4ef;
   cursor: pointer;
+}
+
+.table__button--operator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .table__button--place-value {
