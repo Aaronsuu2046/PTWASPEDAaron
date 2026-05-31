@@ -314,12 +314,15 @@ export default {
 .math-symbol-btn {
   border: 1px solid #000;
   border-radius: 20px;
-  font-size: $text-small;
+  font-size: 1.5rem;
   padding: 0;
-  min-width: 40px;
-  height: 40px;
+  min-width: 50px;
+  height: 50px;
   background-color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: #f0f0f0;

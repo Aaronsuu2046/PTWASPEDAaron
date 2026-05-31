@@ -234,10 +234,12 @@ export default {
 
       .markdown {
         max-height: none;
-        width: fit-content;
-        max-width: 90%;
+        width: auto;
+        max-width: none;
 
         :deep(.markdown-container) {
+          white-space: nowrap;
+
           span,
           p {
             font-size: 3.6rem;
@@ -253,6 +255,12 @@ export default {
             font-size: 3.6rem;
             min-width: 72px;
             max-width: 144px;
+          }
+
+          .math-symbol-btn {
+            font-size: 3.6rem;
+            min-width: 72px;
+            height: 72px;
           }
         }
       }
