@@ -18,7 +18,7 @@
           ></FractionDisplay>
           <span
             class="question__math-symbol"
-            :class="{ clickable: mode === 'application' }"
+            :class="{ clickable: mode === 'application', 'operation-error': operationWrong }"
             @click="toggleOperation"
           >
             {{
@@ -97,6 +97,7 @@ export default {
       answerData: this.gameData.answer,
       isAnswerRight: false,
       answerWrong: false,
+      operationWrong: false,
       mode: isApplication ? "application" : "arithmetic",
       userOperation: isApplication
         ? " " // 一開始是空格
@@ -107,6 +108,7 @@ export default {
     gameData: {
       handler() {
         this.answerWrong = false;
+        this.operationWrong = false;
         this.isAnswerRight = false;
       },
       deep: true,
@@ -132,13 +134,19 @@ export default {
 
       // 新增：應用題要比對 operation
       let isCorrect = this.isAnswerRight;
+      let operationCorrect = true;
+
       if (this.mode === "application") {
-        isCorrect =
-          isCorrect && this.userOperation === this.gameData.answer.operation;
+        operationCorrect = this.userOperation === this.gameData.answer.operation;
+        isCorrect = isCorrect && operationCorrect;
       }
 
       if (!isCorrect) {
         this.answerWrong = true;
+      }
+
+      if (!operationCorrect) {
+        this.operationWrong = true;
       }
 
       if (isCorrect) {
@@ -193,6 +201,11 @@ export default {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+
+  &.operation-error {
+    border: 2px solid red;
+    border-radius: 8px;
+  }
 }
 
 .question__description {
