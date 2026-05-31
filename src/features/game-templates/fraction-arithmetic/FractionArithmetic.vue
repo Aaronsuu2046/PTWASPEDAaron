@@ -39,6 +39,7 @@
             ref="fractionsComponent"
             :component-config="answerData"
             :game-id="gameId"
+            :is-wrong="answerWrong"
             @record-answer="handleRecordAnswer"
             @reply-answer="handleValidation"
           ></FractionForAnswer>
@@ -95,6 +96,7 @@ export default {
       checkCalculationData: this.gameData.acheckCalculationData,
       answerData: this.gameData.answer,
       isAnswerRight: false,
+      answerWrong: false,
       mode: isApplication ? "application" : "arithmetic",
       userOperation: isApplication
         ? " " // 一開始是空格
@@ -110,6 +112,7 @@ export default {
   methods: {
     handleValidation(result) {
       this.isAnswerRight = result;
+      this.answerWrong = !result;
     },
     toggleOperation() {
       if (this.mode === "application") {
@@ -125,6 +128,8 @@ export default {
         isCorrect =
           isCorrect && this.userOperation === this.gameData.answer.operation;
       }
+
+      this.answerWrong = !isCorrect;
 
       if (isCorrect) {
         this.$emit("play-effect", "CorrectSound");
