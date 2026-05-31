@@ -16,18 +16,16 @@
             :game-id="gameId"
             class="math-expression__fraction"
           ></FractionDisplay>
-          <span
-            class="question__math-symbol"
-            :class="{ clickable: mode === 'application', 'operation-error': operationWrong }"
-            @click="toggleOperation"
-          >
-            {{
-              mode === "application"
-                ? userOperation === " "
-                  ? "?"
-                  : userOperation
-                : operation
-            }}
+          <input
+            v-if="mode === 'application'"
+            class="operation-input"
+            :class="{ 'operation-input--error': operationWrong }"
+            :value="userOperation === ' ' ? '?' : userOperation"
+            readonly
+            @click="selectOperation"
+          />
+          <span v-else class="question__math-symbol">
+            {{ operation }}
           </span>
           <FractionDisplay
             :component-config="questionRightTerm"
@@ -128,7 +126,7 @@ export default {
     handleValidation(result) {
       this.isAnswerRight = result;
     },
-    toggleOperation() {
+    selectOperation() {
       if (this.mode === "application") {
         this.userOperation = this.userOperation === "+" ? "-" : "+";
       }
@@ -207,10 +205,26 @@ export default {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+}
 
-  &.operation-error {
-    border: 2px solid red;
-    border-radius: 8px;
+.operation-input {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  flex-shrink: 0;
+
+  &--error {
+    border-color: red;
+    border-width: 2px;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
   }
 }
 
