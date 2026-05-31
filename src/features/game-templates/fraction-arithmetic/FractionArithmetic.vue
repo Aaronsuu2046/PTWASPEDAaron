@@ -103,6 +103,15 @@ export default {
         : this.gameData.question.operationType,
     };
   },
+  watch: {
+    gameData: {
+      handler() {
+        this.answerWrong = false;
+        this.isAnswerRight = false;
+      },
+      deep: true,
+    },
+  },
   created() {
     emitter.on("submitAnswer", this.triggerValidation);
   },
@@ -112,7 +121,6 @@ export default {
   methods: {
     handleValidation(result) {
       this.isAnswerRight = result;
-      this.answerWrong = !result;
     },
     toggleOperation() {
       if (this.mode === "application") {
@@ -129,7 +137,9 @@ export default {
           isCorrect && this.userOperation === this.gameData.answer.operation;
       }
 
-      this.answerWrong = !isCorrect;
+      if (!isCorrect) {
+        this.answerWrong = true;
+      }
 
       if (isCorrect) {
         this.$emit("play-effect", "CorrectSound");
