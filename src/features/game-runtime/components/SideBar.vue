@@ -63,18 +63,6 @@
         </div>
       </button>
       <button
-        v-if="gameStatus === 'Progressing' && showSubmitButton"
-        class="btn btn-primary text-nowrap img-hover-zoom"
-        @click="submitAnswer()"
-      >
-        <div class="d-flex align-items-center">
-          <div class="">
-            <i class="bi bi-check" />
-          </div>
-          <div class="mx-auto">送出答案</div>
-        </div>
-      </button>
-      <button
         class="btn btn-primary text-nowrap img-hover-zoom"
         @click="reloadPage()"
       >
@@ -218,6 +206,26 @@
         </div>
       </button>
       <slot name="hint" />
+
+      <!-- 愛心裝飾 -->
+      <div class="hearts-decoration">
+        <span class="heart">♥</span>
+        <span class="heart">♥</span>
+      </div>
+
+      <!-- 送出答案按鈕 -->
+      <button
+        v-if="gameStatus === 'Progressing' && showSubmitButton"
+        class="btn btn-submit text-nowrap img-hover-zoom"
+        @click="submitAnswer()"
+      >
+        <div class="d-flex align-items-center">
+          <div class="">
+            <i class="bi bi-check" />
+          </div>
+          <div class="mx-auto">送出答案</div>
+        </div>
+      </button>
     </div>
 
     <!-- 重現代碼 -->
@@ -478,5 +486,30 @@ export default {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
+  .hearts-decoration {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin: 0.5rem 0;
+
+    .heart {
+      font-size: 1.8rem;
+      color: #ff69b4;
+    }
+  }
+
+  .btn-submit {
+    background-color: #52c41a !important;
+    color: white !important;
+
+    div {
+      color: white !important;
+    }
+
+    i {
+      color: white !important;
+    }
+  }
 }
 </style>
