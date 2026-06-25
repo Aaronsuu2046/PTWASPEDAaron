@@ -495,11 +495,17 @@ export default {
 
     .heart {
       font-size: 1.8rem;
-      color: #ff69b4;
+      color: #e74c3c;
     }
   }
 
   .btn-submit {
+    align-self: center;
+    width: 93%;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    height: 4rem;
+    padding: 0.4rem;
     background-color: #52c41a !important;
     color: white !important;
 
