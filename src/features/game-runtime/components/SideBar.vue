@@ -298,7 +298,6 @@
         </div>
       </div>
     </div>
-    {{ isFullScreen }}
   </div>
 </template>
 <script>
