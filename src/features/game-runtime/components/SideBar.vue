@@ -205,15 +205,6 @@
           <div class="mx-auto" @click="handleEnterFullScreen">退出全螢幕</div>
         </div>
       </button>
-      <slot name="hint" />
-
-      <!-- 愛心裝飾 -->
-      <div class="hearts-decoration">
-        <span class="heart">♥</span>
-        <span class="heart">♥</span>
-      </div>
-
-      <!-- 送出答案按鈕 -->
       <button
         v-if="gameStatus === 'Progressing' && showSubmitButton"
         class="btn btn-submit text-nowrap img-hover-zoom"
@@ -226,6 +217,7 @@
           <div class="mx-auto">送出答案</div>
         </div>
       </button>
+      <slot name="hint" />
     </div>
 
     <!-- 重現代碼 -->
@@ -487,25 +479,7 @@ export default {
   -moz-user-select: none;
   -ms-user-select: none;
 
-  .hearts-decoration {
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    margin: 0.5rem 0;
-
-    .heart {
-      font-size: 1.8rem;
-      color: #e74c3c;
-    }
-  }
-
   .btn-submit {
-    align-self: center;
-    width: 93%;
-    font-size: 1.2rem;
-    border-radius: 12px;
-    height: 4rem;
-    padding: 0.4rem;
     background-color: #52c41a !important;
     color: white !important;
 
