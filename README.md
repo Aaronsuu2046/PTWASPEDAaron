@@ -16,6 +16,12 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 **Recommended IDE Setup**
 VS Code + Volar (and disable Vetur) + TypeScript Vue Plugin (Volar).
 
+**本機開發指令**
+- `npm install`：安裝相依套件
+- `npm run dev`：啟動開發伺服器
+- `npm run build`：建置正式版本
+- `npm run lint`：執行 ESLint 檢查
+
 ## 如何參與此專案
 可以透過github發起PR，更多詳情可以跟PTWA或是我聯絡
 email: chenyouduan@gmail.com
