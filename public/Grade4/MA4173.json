@@ -1,0 +1,177 @@
+{
+  "id": "MA4173",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "觀察奇偶數的規律並回答問題"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "type": "cards",
+        "question": "用這四張字卡排排看。排出最大的三位數且是偶數。",
+        "cards": [1, 3, 4, 6],
+        "slots": 3,
+        "answer": "634"
+      },
+      {
+        "type": "cards",
+        "question": "用這四張字卡排排看。排出最小的三位數且是偶數。",
+        "cards": [1, 3, 4, 6],
+        "slots": 3,
+        "answer": "134"
+      },
+      {
+        "type": "cards",
+        "question": "用這四張字卡排排看。排出最大的三位數且是奇數。",
+        "cards": [1, 3, 4, 6],
+        "slots": 3,
+        "answer": "643"
+      },
+      {
+        "type": "cards",
+        "question": "用這四張字卡排排看。排出最小的三位數且是奇數。",
+        "cards": [1, 3, 4, 6],
+        "slots": 3,
+        "answer": "143"
+      }
+    ],
+    [
+      {
+        "type": "cards",
+        "question": "用這五張字卡排排看。排出最大的四位數且是偶數。",
+        "cards": [2, 3, 5, 8, 9],
+        "slots": 4,
+        "answer": "9852"
+      },
+      {
+        "type": "cards",
+        "question": "用這五張字卡排排看。排出最小的四位數且是偶數。",
+        "cards": [2, 3, 5, 8, 9],
+        "slots": 4,
+        "answer": "2358"
+      },
+      {
+        "type": "cards",
+        "question": "用這五張字卡排排看。排出最大的四位數且是奇數。",
+        "cards": [2, 3, 5, 8, 9],
+        "slots": 4,
+        "answer": "9853"
+      },
+      {
+        "type": "cards",
+        "question": "用這五張字卡排排看。排出最小的四位數且是奇數。",
+        "cards": [2, 3, 5, 8, 9],
+        "slots": 4,
+        "answer": "2359"
+      }
+    ],
+    [
+      {
+        "type": "choice",
+        "stem": "這是一張自製的加法表，觀察看看並回答問題。",
+        "table": "+",
+        "question": "奇數 + 奇數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "偶"
+      },
+      {
+        "type": "choice",
+        "stem": "這是一張自製的加法表，觀察看看並回答問題。",
+        "table": "+",
+        "question": "偶數 + 偶數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "偶"
+      },
+      {
+        "type": "choice",
+        "stem": "這是一張自製的加法表，觀察看看並回答問題。",
+        "table": "+",
+        "question": "奇數 + 偶數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "奇"
+      },
+      {
+        "type": "choice",
+        "stem": "這是一張自製的加法表，觀察看看並回答問題。",
+        "table": "+",
+        "question": "偶數 + 奇數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "奇"
+      }
+    ],
+    [
+      {
+        "type": "choice",
+        "stem": "這是一張自製的乘法表，觀察看看並回答問題。",
+        "table": "×",
+        "question": "奇數 × 奇數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "奇"
+      },
+      {
+        "type": "choice",
+        "stem": "這是一張自製的乘法表，觀察看看並回答問題。",
+        "table": "×",
+        "question": "偶數 × 偶數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "偶"
+      },
+      {
+        "type": "choice",
+        "stem": "這是一張自製的乘法表，觀察看看並回答問題。",
+        "table": "×",
+        "question": "奇數 × 偶數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "偶"
+      },
+      {
+        "type": "choice",
+        "stem": "這是一張自製的乘法表，觀察看看並回答問題。",
+        "table": "×",
+        "question": "偶數 × 奇數是（　）數。",
+        "options": ["奇", "偶"],
+        "answer": "偶"
+      }
+    ],
+    [
+      {
+        "type": "choice",
+        "stem": "判斷下面算式的結果是奇數還是偶數？圈圈看。",
+        "question": "5382 + 2319",
+        "options": ["奇數", "偶數"],
+        "answer": "奇數"
+      },
+      {
+        "type": "choice",
+        "stem": "判斷下面算式的結果是奇數還是偶數？圈圈看。",
+        "question": "4698 − 3182",
+        "options": ["奇數", "偶數"],
+        "answer": "偶數"
+      },
+      {
+        "type": "choice",
+        "stem": "判斷下面算式的結果是奇數還是偶數？圈圈看。",
+        "question": "4937 − 2363",
+        "options": ["奇數", "偶數"],
+        "answer": "偶數"
+      },
+      {
+        "type": "choice",
+        "stem": "判斷下面算式的結果是奇數還是偶數？圈圈看。",
+        "question": "1568 × 4231",
+        "options": ["奇數", "偶數"],
+        "answer": "偶數"
+      },
+      {
+        "type": "choice",
+        "stem": "判斷下面算式的結果是奇數還是偶數？圈圈看。",
+        "question": "1087 × 2313",
+        "options": ["奇數", "偶數"],
+        "answer": "奇數"
+      }
+    ]
+  ]
+}
