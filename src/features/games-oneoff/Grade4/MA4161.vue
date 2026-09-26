@@ -82,7 +82,7 @@
 <script>
 import { defineAsyncComponent } from "vue";
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import PartitionedShape from "./games/MA4161/PartitionedShape.vue";
+import PartitionedShape from "@/components/PartitionedShape.vue";
 
 const MAX_DIGITS = 2;
 
