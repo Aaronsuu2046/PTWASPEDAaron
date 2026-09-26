@@ -22,6 +22,7 @@ const componentsMapping = {
   FloatNumPad: () => import("@/components/FloatNumPad.vue"),
   DragImages: () => import("@/components/DragImages.vue"),
   FractionDisplay: () => import("@/components/FractionDisplay.vue"),
+  FractionWithShape: () => import("@/components/FractionWithShape.vue"),
   CalculationBoard: () => import("@/components/CalculationBoard.vue"),
 };
 export function GetComponents(name) {
