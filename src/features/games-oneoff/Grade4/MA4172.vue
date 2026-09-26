@@ -12,10 +12,9 @@
       <template v-if="isFragment">
         <div class="base-table" :style="gridStyle(base.cols)">
           <span v-for="cell in baseCells" :key="cell" class="base-table__cell">
-            {{ cell }}
+            {{ cell <= base.maxShown ? cell : "" }}
           </span>
         </div>
-        <p v-if="base.order === 'row'" class="base-table__more">⋮</p>
         <div class="fragment-list">
           <button
             v-for="option in gameData.options"
@@ -43,64 +42,100 @@
         </div>
       </template>
 
-      <!-- 關卡 3：4 月月曆 -->
-      <table v-else-if="gameData.type === 'calendar'" class="calendar">
-        <tr>
-          <th colspan="7" class="calendar__month">4 月</th>
-        </tr>
-        <tr>
-          <th v-for="day in WEEKDAYS" :key="day">{{ day }}</th>
-        </tr>
-        <tr v-for="(week, index) in calendarWeeks" :key="index">
-          <td v-for="(day, col) in week" :key="col">{{ day || "" }}</td>
-        </tr>
-      </table>
+      <!-- 關卡 3～5：圖表與選項；座位表題的選項放在右側，節省高度 -->
+      <div v-else class="choice-area" :class="{ 'choice-area--side': isSeat }">
+        <!-- 關卡 3：4 月月曆 -->
+        <table v-if="gameData.type === 'calendar'" class="calendar">
+          <tr>
+            <th colspan="7" class="calendar__month">4 月</th>
+          </tr>
+          <tr>
+            <th
+              v-for="(day, col) in WEEKDAYS"
+              :key="day"
+              :class="{ 'calendar--weekend': col === 0 || col === 6 }"
+            >
+              {{ day }}
+            </th>
+          </tr>
+          <tr v-for="(week, weekIndex) in calendarWeeks" :key="weekIndex">
+            <td
+              v-for="(day, col) in week"
+              :key="col"
+              :class="{
+                'calendar--weekend': col === 0 || col === 6,
+                calendar__hidden: isHiddenCell(day, weekIndex),
+              }"
+            >
+              {{ day !== null && isDayVisible(day) ? day : "" }}
+            </td>
+          </tr>
+        </table>
 
-      <!-- 關卡 4：高鐵座位表 -->
-      <div v-else-if="gameData.type === 'hsr'" class="seat-map">
-        <span class="seat-map__window">窗戶</span>
-        <div class="seat-map__rows">
-          <div v-for="row in [1, 2, 3]" :key="row" class="seat-map__row">
-            <span v-for="seat in ['E', 'D']" :key="seat" class="seat">
-              {{ row }}{{ seat }}
-            </span>
-            <span class="seat-map__aisle">走道</span>
-            <span v-for="seat in ['C', 'B', 'A']" :key="seat" class="seat">
-              {{ row }}{{ seat }}
-            </span>
+        <!-- 關卡 4：高鐵座位表 -->
+        <div v-else-if="gameData.type === 'hsr'" class="seat-map seat-map--hsr">
+          <span class="seat-map__window">窗戶</span>
+          <div class="seat-map__rows">
+            <div class="seat-map__row seat-map__sides">
+              <span>（左邊）</span>
+              <span>（右邊）</span>
+            </div>
+            <div v-for="row in [1, 2, 3, 4]" :key="row" class="seat-map__row">
+              <span v-if="row === 1" class="seat seat--luggage"
+                >行李放置區</span
+              >
+              <template v-else>
+                <span v-for="seat in ['E', 'D']" :key="seat" class="seat">
+                  {{ row }}{{ seat }}
+                </span>
+              </template>
+              <span class="seat-map__aisle">走道</span>
+              <span v-for="seat in ['C', 'B', 'A']" :key="seat" class="seat">
+                {{ row }}{{ seat }}
+              </span>
+            </div>
+            <span class="seat-map__more">⋮</span>
           </div>
+          <span class="seat-map__window">窗戶</span>
         </div>
-        <span class="seat-map__window">窗戶</span>
-      </div>
 
-      <!-- 關卡 5：客運座位表 -->
-      <div v-else-if="gameData.type === 'bus'" class="seat-map">
-        <span class="seat-map__window">窗戶</span>
-        <div class="seat-map__rows">
-          <div v-for="row in BUS_ROWS" :key="row" class="seat-map__row">
-            <span class="seat">{{ row * 3 + 2 }}</span>
-            <span class="seat">{{ row * 3 + 3 }}</span>
-            <span class="seat-map__aisle">走道</span>
-            <span class="seat">{{ row * 3 + 1 }}</span>
+        <!-- 關卡 5：客運座位表 -->
+        <div v-else-if="gameData.type === 'bus'" class="seat-map seat-map--bus">
+          <span class="seat-map__window">窗戶</span>
+          <div class="seat-map__rows">
+            <div class="seat-map__row seat-map__front">
+              <span class="seat-map__driver">司機</span>
+              <span class="seat-map__door">門</span>
+            </div>
+            <div class="seat-map__row seat-map__sides">
+              <span>（左邊）</span>
+              <span>（右邊）</span>
+            </div>
+            <div v-for="row in BUS_ROWS" :key="row" class="seat-map__row">
+              <span class="seat">{{ row * 3 + 2 }}</span>
+              <span class="seat">{{ row * 3 + 3 }}</span>
+              <span class="seat-map__aisle">走道</span>
+              <span class="seat">{{ row * 3 + 1 }}</span>
+            </div>
+            <span class="seat-map__more">⋮</span>
           </div>
-          <span class="seat-map__more">⋮</span>
+          <span class="seat-map__window">窗戶</span>
         </div>
-        <span class="seat-map__window">窗戶</span>
-      </div>
 
-      <div v-if="!isFragment" class="option-group">
-        <button
-          v-for="option in gameData.options"
-          :key="option.label"
-          type="button"
-          :class="{
-            'button--onclick': selected === option.label,
-            'option--wrong': wrong && selected === option.label,
-          }"
-          @click="select(option.label)"
-        >
-          {{ option.label }}<span class="option-text">{{ option.text }}</span>
-        </button>
+        <div class="option-group">
+          <button
+            v-for="option in gameData.options"
+            :key="option.label"
+            type="button"
+            :class="{
+              'button--onclick': selected === option.label,
+              'option--wrong': wrong && selected === option.label,
+            }"
+            @click="select(option.label)"
+          >
+            {{ option.label }}<span class="option-text">{{ option.text }}</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -130,6 +165,9 @@ export default {
   computed: {
     gameIntroText() {
       return this.introText?.Content || "觀察數字排列的規律回答問題";
+    },
+    isSeat() {
+      return ["hsr", "bus"].includes(this.gameData.type);
     },
     isFragment() {
       return this.gameData.type === "fragment";
@@ -169,6 +207,15 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    // 原稿第一週之後被雲朵遮住：看不到的日期和月底後的空白都遮起來
+    isHiddenCell(day, weekIndex) {
+      if (day === null) return weekIndex > 0;
+      return !this.isDayVisible(day);
+    },
+    isDayVisible(day) {
+      const visible = this.gameData.calendar?.visibleDays;
+      return !visible || visible.includes(day);
+    },
     gridStyle(cols) {
       return { gridTemplateColumns: `repeat(${cols}, 1fr)` };
     },
@@ -261,6 +308,7 @@ export default {
 
   &__cell {
     min-width: 2.2rem;
+    min-height: 1.6rem;
     padding: 0.05rem 0.3rem;
     font-size: 1rem;
     text-align: center;
@@ -326,6 +374,16 @@ export default {
   background-color: #ffffff;
   font-size: 1.2rem;
 
+  &--weekend {
+    color: #d32f2f;
+  }
+
+  // 原稿用雲朵遮住的日期
+  &__hidden {
+    background-color: #cfe8f7;
+    border-color: #cfe8f7 !important;
+  }
+
   &__month {
     font-size: 1.3rem;
     background-color: #ffcc80 !important;
@@ -354,13 +412,21 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.2rem;
   }
 
   &__row {
-    display: flex;
+    display: grid;
     align-items: center;
     gap: 0.4rem;
+  }
+
+  &--hsr &__row {
+    grid-template-columns: repeat(2, 3.4rem) 4rem repeat(3, 3.4rem);
+  }
+
+  &--bus &__row {
+    grid-template-columns: repeat(2, 3.4rem) 4rem 3.4rem;
   }
 
   &__aisle {
@@ -388,8 +454,37 @@ export default {
   }
 }
 
+.seat-map__sides {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.seat-map__front {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.seat-map__driver,
+.seat-map__door {
+  padding: 0.2rem 0.8rem;
+  font-size: 0.95rem;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+}
+
+.seat--luggage {
+  grid-column: span 2;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  background-color: #eeeeee;
+}
+
 .seat {
-  min-width: 3.2rem;
+  min-width: 0;
   padding: 0.2rem 0.4rem;
   font-size: 1.15rem;
   font-weight: $font-bold;
@@ -397,6 +492,22 @@ export default {
   background-color: #ffffff;
   border: 2px solid #8d6e63;
   border-radius: 8px 8px 4px 4px;
+}
+
+.choice-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  &--side {
+    flex-direction: row;
+    gap: 2.5rem;
+
+    .option-group {
+      flex-direction: column;
+    }
+  }
 }
 
 .option-group {
