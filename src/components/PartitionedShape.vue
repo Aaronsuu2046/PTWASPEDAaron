@@ -30,6 +30,7 @@
 const SIZE = 200;
 const PAD = 6;
 const BAR = { width: 320, height: 90 };
+const PAPER = { width: 240, height: 180 };
 
 // 將 n 等分排成 rows × cols 的方格，rows ≤ cols（例如 8 → 2 × 4、9 → 3 × 3）
 function gridDims(n) {
@@ -49,7 +50,8 @@ export default {
     shape: {
       type: String,
       required: true,
-      validator: (value) => ["circle", "bar", "square"].includes(value),
+      validator: (value) =>
+        ["circle", "bar", "square", "paper"].includes(value),
     },
     denominator: { type: Number, required: true },
     filled: { type: Number, default: 0 },
@@ -66,26 +68,27 @@ export default {
   },
   computed: {
     shapeName() {
-      return { circle: "圓形", bar: "長條", square: "正方形" }[this.shape];
+      return { circle: "圓形", bar: "長條", square: "正方形", paper: "紙張" }[
+        this.shape
+      ];
+    },
+    size() {
+      if (this.shape === "bar") return BAR;
+      if (this.shape === "paper") return PAPER;
+      return { width: SIZE, height: SIZE };
     },
     viewBox() {
-      return this.shape === "bar"
-        ? `0 0 ${BAR.width} ${BAR.height}`
-        : `0 0 ${SIZE} ${SIZE}`;
+      return `0 0 ${this.size.width} ${this.size.height}`;
     },
     box() {
-      const width = this.shape === "bar" ? BAR.width : SIZE;
-      const height = this.shape === "bar" ? BAR.height : SIZE;
+      const { width, height } = this.size;
       return { x: PAD, y: PAD, w: width - PAD * 2, h: height - PAD * 2 };
     },
     circle() {
       return { cx: SIZE / 2, cy: SIZE / 2, r: SIZE / 2 - PAD };
     },
     grid() {
-      // 長條圖固定一列；正方形排成接近正方的方格
-      return this.shape === "bar"
-        ? { rows: 1, cols: this.denominator }
-        : gridDims(this.denominator);
+      return this.layoutFor(this.denominator);
     },
     parts() {
       if (this.shape === "circle") {
@@ -132,6 +135,21 @@ export default {
     },
   },
   methods: {
+    // 長條圖固定一列；正方形排成接近正方的方格；
+    // 紙張先依原分母切成直條，再把每條橫向等分（像對摺紙張），沒有原分母時只切直條
+    layoutFor(n) {
+      if (this.shape === "square") return gridDims(n);
+      const base = this.baseDenominator;
+      if (
+        this.shape === "paper" &&
+        n === this.denominator &&
+        base > 1 &&
+        n % base === 0
+      ) {
+        return { rows: n / base, cols: base };
+      }
+      return { rows: 1, cols: n };
+    },
     linesFor(n) {
       if (n <= 1) return "";
       if (this.shape === "circle") {
@@ -141,8 +159,7 @@ export default {
           return `M ${cx} ${cy} L ${px} ${py}`;
         }).join(" ");
       }
-      const { rows, cols } =
-        this.shape === "bar" ? { rows: 1, cols: n } : gridDims(n);
+      const { rows, cols } = this.layoutFor(n);
       const { x, y, w, h } = this.box;
       const vertical = Array.from({ length: cols - 1 }, (_, i) => {
         const px = x + ((i + 1) * w) / cols;
