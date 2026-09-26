@@ -1,0 +1,682 @@
+{
+  "id": "MA4172",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "觀察數字排列的規律回答問題"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 6,
+          "cols": 5,
+          "order": "row"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 9],
+              [0, 1, 10],
+              [0, 2, null]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 1],
+              [1, 0, 6],
+              [2, 0, null]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, 10],
+              [1, 0, null],
+              [1, 1, 15]
+            ]
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 6,
+          "cols": 5,
+          "order": "row"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, null],
+              [0, 1, 6],
+              [0, 2, 7]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 15],
+              [1, 0, null],
+              [1, 1, 22]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, null],
+              [0, 1, 23],
+              [0, 2, 24]
+            ]
+          }
+        ],
+        "answer": "ㄇ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 6,
+          "cols": 5,
+          "order": "row"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 16],
+              [0, 1, null],
+              [1, 1, 22]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 7],
+              [0, 1, 8],
+              [1, 0, 13],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, null],
+              [1, 0, 17],
+              [2, 0, 21]
+            ]
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 6,
+          "cols": 5,
+          "order": "row"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 16],
+              [0, 1, 17],
+              [1, 0, null],
+              [1, 1, 23]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 2],
+              [0, 1, 3],
+              [1, 0, 6],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, null],
+              [0, 1, 14],
+              [0, 2, 15]
+            ]
+          }
+        ],
+        "answer": "ㄇ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 6,
+          "cols": 5,
+          "order": "row"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, null],
+              [0, 1, 10],
+              [0, 2, 11]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 10],
+              [1, 0, null],
+              [2, 0, 20]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, 11],
+              [1, 0, 15],
+              [1, 1, null]
+            ]
+          }
+        ],
+        "answer": "ㄆ"
+      }
+    ],
+    [
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 3,
+          "cols": 7,
+          "order": "column"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, null],
+              [0, 1, 12],
+              [0, 2, 14]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 9],
+              [1, 0, 10],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, 2],
+              [0, 1, null],
+              [0, 2, 8]
+            ]
+          }
+        ],
+        "answer": "ㄇ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 3,
+          "cols": 7,
+          "order": "column"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 4],
+              [0, 1, 5],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 1, null],
+              [1, 0, 3],
+              [1, 1, 6]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, null],
+              [1, 0, 4],
+              [2, 0, 5]
+            ]
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 3,
+          "cols": 7,
+          "order": "column"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 7],
+              [0, 1, 10],
+              [1, 0, 8],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 21],
+              [1, 0, 22],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, 17],
+              [1, 0, null],
+              [2, 0, 19]
+            ]
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 3,
+          "cols": 7,
+          "order": "column"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 9],
+              [0, 1, 12],
+              [0, 2, null]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 22],
+              [1, 0, null],
+              [1, 1, 27]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 0, 6],
+              [0, 1, null],
+              [1, 0, 7],
+              [1, 1, 9]
+            ]
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "fragment",
+        "question": "如果剪去其中一塊，並擦掉一些數字，可能是下面哪一張？",
+        "base": {
+          "rows": 3,
+          "cols": 7,
+          "order": "column"
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "cells": [
+              [0, 0, 18],
+              [1, 0, 19],
+              [1, 1, null]
+            ]
+          },
+          {
+            "label": "ㄆ",
+            "cells": [
+              [0, 0, 21],
+              [1, 0, 22],
+              [2, 0, null]
+            ]
+          },
+          {
+            "label": "ㄇ",
+            "cells": [
+              [0, 1, null],
+              [1, 0, 15],
+              [1, 1, 18]
+            ]
+          }
+        ],
+        "answer": "ㄇ"
+      }
+    ],
+    [
+      {
+        "type": "calendar",
+        "question": "4 月 30 日是星期幾呢？",
+        "calendar": {
+          "firstWeekday": 3,
+          "days": 30
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "星期三"
+          },
+          {
+            "label": "ㄆ",
+            "text": "星期四"
+          },
+          {
+            "label": "ㄇ",
+            "text": "星期五"
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "calendar",
+        "question": "4 月 15 日是星期幾呢？",
+        "calendar": {
+          "firstWeekday": 3,
+          "days": 30
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "星期一"
+          },
+          {
+            "label": "ㄆ",
+            "text": "星期二"
+          },
+          {
+            "label": "ㄇ",
+            "text": "星期三"
+          }
+        ],
+        "answer": "ㄇ"
+      },
+      {
+        "type": "calendar",
+        "question": "4 月 21 日是星期幾呢？",
+        "calendar": {
+          "firstWeekday": 3,
+          "days": 30
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "星期一"
+          },
+          {
+            "label": "ㄆ",
+            "text": "星期二"
+          },
+          {
+            "label": "ㄇ",
+            "text": "星期三"
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "calendar",
+        "question": "4 月 25 日是星期幾呢？",
+        "calendar": {
+          "firstWeekday": 3,
+          "days": 30
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "星期六"
+          },
+          {
+            "label": "ㄆ",
+            "text": "星期日"
+          },
+          {
+            "label": "ㄇ",
+            "text": "星期一"
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "calendar",
+        "question": "4 月 19 日是星期幾呢？",
+        "calendar": {
+          "firstWeekday": 3,
+          "days": 30
+        },
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "星期五"
+          },
+          {
+            "label": "ㄆ",
+            "text": "星期六"
+          },
+          {
+            "label": "ㄇ",
+            "text": "星期日"
+          }
+        ],
+        "answer": "ㄇ"
+      }
+    ],
+    [
+      {
+        "type": "hsr",
+        "stem": "下面是高鐵的座位表，根據座位表回答下面的問題。",
+        "question": "走道左邊座位的英文是什麼？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "B"
+          },
+          {
+            "label": "ㄆ",
+            "text": "C"
+          },
+          {
+            "label": "ㄇ",
+            "text": "D"
+          }
+        ],
+        "answer": "ㄇ"
+      },
+      {
+        "type": "hsr",
+        "stem": "下面是高鐵的座位表，根據座位表回答下面的問題。",
+        "question": "靠窗戶座位的英文是什麼？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "A"
+          },
+          {
+            "label": "ㄆ",
+            "text": "B"
+          },
+          {
+            "label": "ㄇ",
+            "text": "C"
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "hsr",
+        "stem": "下面是高鐵的座位表，根據座位表回答下面的問題。",
+        "question": "走道右邊座位的英文是什麼？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "B"
+          },
+          {
+            "label": "ㄆ",
+            "text": "C"
+          },
+          {
+            "label": "ㄇ",
+            "text": "D"
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "hsr",
+        "stem": "下面是高鐵的座位表，根據座位表回答下面的問題。",
+        "question": "哪個英文表示左右兩邊都有座位呢？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "A"
+          },
+          {
+            "label": "ㄆ",
+            "text": "B"
+          },
+          {
+            "label": "ㄇ",
+            "text": "C"
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "hsr",
+        "stem": "下面是高鐵的座位表，根據座位表回答下面的問題。",
+        "question": "靠左邊窗戶座位的英文是什麼？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "C"
+          },
+          {
+            "label": "ㄆ",
+            "text": "D"
+          },
+          {
+            "label": "ㄇ",
+            "text": "E"
+          }
+        ],
+        "answer": "ㄇ"
+      }
+    ],
+    [
+      {
+        "type": "bus",
+        "stem": "下面是客運座位號碼的排列方式，根據座位表回答下面問題。",
+        "question": "座位號碼 21 號，表示座位是靠窗戶還是走道？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "靠窗戶"
+          },
+          {
+            "label": "ㄆ",
+            "text": "靠走道"
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "bus",
+        "stem": "下面是客運座位號碼的排列方式，根據座位表回答下面問題。",
+        "question": "座位號碼 29 號，表示座位是靠窗戶還是走道？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "靠窗戶"
+          },
+          {
+            "label": "ㄆ",
+            "text": "靠走道"
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "bus",
+        "stem": "下面是客運座位號碼的排列方式，根據座位表回答下面問題。",
+        "question": "如果想坐靠窗戶又靠走道的座位，可以選擇哪個座位？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "28"
+          },
+          {
+            "label": "ㄆ",
+            "text": "32"
+          }
+        ],
+        "answer": "ㄅ"
+      },
+      {
+        "type": "bus",
+        "stem": "下面是客運座位號碼的排列方式，根據座位表回答下面問題。",
+        "question": "如果想坐靠走道且不靠窗戶的座位，可以選擇哪個座位？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "28"
+          },
+          {
+            "label": "ㄆ",
+            "text": "18"
+          }
+        ],
+        "answer": "ㄆ"
+      },
+      {
+        "type": "bus",
+        "stem": "下面是客運座位號碼的排列方式，根據座位表回答下面問題。",
+        "question": "如果想坐靠窗戶又靠走道的座位，可以選擇哪個座位？",
+        "options": [
+          {
+            "label": "ㄅ",
+            "text": "34"
+          },
+          {
+            "label": "ㄆ",
+            "text": "30"
+          }
+        ],
+        "answer": "ㄅ"
+      }
+    ]
+  ]
+}
