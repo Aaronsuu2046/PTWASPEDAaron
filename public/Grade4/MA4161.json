@@ -1,0 +1,711 @@
+{
+  "id": "MA4161",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "塗塗看，再回答問題"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "shape": "circle",
+        "denominator": 3,
+        "shapeCount": 1,
+        "paintable": true,
+        "equation": [
+          {
+            "numerator": [
+              {
+                "answer": 3
+              }
+            ],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "text": "1"
+          }
+        ]
+      },
+      {
+        "shape": "circle",
+        "denominator": 4,
+        "shapeCount": 1,
+        "paintable": true,
+        "equation": [
+          {
+            "text": "1"
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 4
+              }
+            ],
+            "denominator": [4]
+          }
+        ]
+      },
+      {
+        "shape": "bar",
+        "denominator": 6,
+        "shapeCount": 1,
+        "paintable": true,
+        "equation": [
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [6]
+          },
+          {
+            "text": "="
+          },
+          {
+            "text": "1"
+          }
+        ]
+      },
+      {
+        "shape": "square",
+        "denominator": 9,
+        "shapeCount": 1,
+        "paintable": true,
+        "equation": [
+          {
+            "text": "1"
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 9
+              }
+            ],
+            "denominator": [9]
+          }
+        ]
+      },
+      {
+        "shape": "circle",
+        "denominator": 5,
+        "shapeCount": 1,
+        "paintable": true,
+        "equation": [
+          {
+            "numerator": [
+              {
+                "answer": 5
+              }
+            ],
+            "denominator": [5]
+          },
+          {
+            "text": "="
+          },
+          {
+            "text": "1"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "shape": "square",
+        "denominator": 4,
+        "shapeCount": 2,
+        "paintable": true,
+        "equation": [
+          {
+            "numerator": [
+              {
+                "answer": 8
+              }
+            ],
+            "denominator": [4]
+          },
+          {
+            "text": "="
+          },
+          {
+            "text": "2"
+          }
+        ]
+      },
+      {
+        "shape": "circle",
+        "denominator": 2,
+        "shapeCount": 3,
+        "paintable": true,
+        "equation": [
+          {
+            "text": "3"
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [2]
+          }
+        ]
+      },
+      {
+        "shape": "circle",
+        "denominator": 3,
+        "shapeCount": 4,
+        "paintable": true,
+        "equation": [
+          {
+            "text": "4"
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 12
+              }
+            ],
+            "denominator": [3]
+          }
+        ]
+      },
+      {
+        "shape": "bar",
+        "denominator": 5,
+        "shapeCount": 3,
+        "paintable": true,
+        "equation": [
+          {
+            "numerator": [
+              {
+                "answer": 15
+              }
+            ],
+            "denominator": [5]
+          },
+          {
+            "text": "="
+          },
+          {
+            "text": "3"
+          }
+        ]
+      },
+      {
+        "shape": "circle",
+        "denominator": 3,
+        "shapeCount": 3,
+        "paintable": true,
+        "equation": [
+          {
+            "numerator": [
+              {
+                "answer": 9
+              }
+            ],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "text": "3"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "shape": "bar",
+        "denominator": 6,
+        "filled": 2,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [1],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [6]
+          }
+        ],
+        "baseDenominator": 3
+      },
+      {
+        "shape": "bar",
+        "denominator": 8,
+        "filled": 2,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [1],
+            "denominator": [4]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [8]
+          }
+        ],
+        "baseDenominator": 4
+      },
+      {
+        "shape": "square",
+        "denominator": 4,
+        "filled": 2,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [1],
+            "denominator": [2]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [4]
+          }
+        ],
+        "baseDenominator": 2
+      },
+      {
+        "shape": "circle",
+        "denominator": 9,
+        "filled": 3,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [1],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 3
+              }
+            ],
+            "denominator": [9]
+          }
+        ],
+        "baseDenominator": 3
+      },
+      {
+        "shape": "circle",
+        "denominator": 8,
+        "filled": 4,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [1],
+            "denominator": [2]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 4
+              }
+            ],
+            "denominator": [8]
+          }
+        ],
+        "baseDenominator": 2
+      }
+    ],
+    [
+      {
+        "shape": "bar",
+        "denominator": 6,
+        "filled": 4,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 4
+              }
+            ],
+            "denominator": [6]
+          }
+        ],
+        "baseDenominator": 3
+      },
+      {
+        "shape": "circle",
+        "denominator": 7,
+        "filled": 7,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [4],
+            "denominator": [4]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 7
+              }
+            ],
+            "denominator": [7]
+          }
+        ]
+      },
+      {
+        "shape": "square",
+        "denominator": 8,
+        "filled": 4,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [4]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 4
+              }
+            ],
+            "denominator": [8]
+          }
+        ],
+        "baseDenominator": 4
+      },
+      {
+        "shape": "circle",
+        "denominator": 9,
+        "filled": 6,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [9]
+          }
+        ],
+        "baseDenominator": 3
+      },
+      {
+        "shape": "circle",
+        "denominator": 10,
+        "filled": 6,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [3],
+            "denominator": [5]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [10]
+          }
+        ],
+        "baseDenominator": 5
+      }
+    ],
+    [
+      {
+        "shape": "bar",
+        "denominator": 6,
+        "filled": 4,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              2,
+              "×",
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [
+              3,
+              "×",
+              {
+                "answer": 2
+              }
+            ]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 4
+              }
+            ],
+            "denominator": [6]
+          }
+        ],
+        "baseDenominator": 3
+      },
+      {
+        "shape": "circle",
+        "denominator": 10,
+        "filled": 8,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [4],
+            "denominator": [5]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              4,
+              "×",
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [
+              5,
+              "×",
+              {
+                "answer": 2
+              }
+            ]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 8
+              }
+            ],
+            "denominator": [10]
+          }
+        ],
+        "baseDenominator": 5
+      },
+      {
+        "shape": "circle",
+        "denominator": 12,
+        "filled": 8,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              2,
+              "×",
+              {
+                "answer": 4
+              }
+            ],
+            "denominator": [
+              3,
+              "×",
+              {
+                "answer": 4
+              }
+            ]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 8
+              }
+            ],
+            "denominator": [12]
+          }
+        ],
+        "baseDenominator": 3
+      },
+      {
+        "shape": "bar",
+        "denominator": 8,
+        "filled": 6,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [3],
+            "denominator": [4]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              3,
+              "×",
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [
+              4,
+              "×",
+              {
+                "answer": 2
+              }
+            ]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [8]
+          }
+        ],
+        "baseDenominator": 4
+      },
+      {
+        "shape": "bar",
+        "denominator": 12,
+        "filled": 6,
+        "shapeCount": 1,
+        "paintable": false,
+        "equation": [
+          {
+            "numerator": [3],
+            "denominator": [6]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              3,
+              "×",
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [
+              6,
+              "×",
+              {
+                "answer": 2
+              }
+            ]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [12]
+          }
+        ],
+        "baseDenominator": 6
+      }
+    ]
+  ]
+}
