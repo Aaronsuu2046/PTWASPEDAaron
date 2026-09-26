@@ -44,11 +44,11 @@
         <table v-if="gameData.table" class="op-table">
           <tr>
             <th class="op-table__corner">{{ tableSymbol }}</th>
-            <th v-for="col in TABLE_RANGE" :key="`h-${col}`">{{ col }}</th>
+            <th v-for="col in tableRange" :key="`h-${col}`">{{ col }}</th>
           </tr>
-          <tr v-for="row in TABLE_RANGE" :key="`r-${row}`">
+          <tr v-for="row in tableRange" :key="`r-${row}`">
             <th>{{ row }}</th>
-            <td v-for="col in TABLE_RANGE" :key="`c-${row}-${col}`">
+            <td v-for="col in tableRange" :key="`c-${row}-${col}`">
               {{ tableValue(row, col) }}
             </td>
           </tr>
@@ -67,6 +67,26 @@
             {{ option }}
           </button>
         </div>
+        <!-- 關卡 5：原稿附的奇偶規律提示，按鈕切換顯示 -->
+        <template v-if="gameData.hint">
+          <button
+            type="button"
+            class="hint-button"
+            @click="showHint = !showHint"
+          >
+            {{ showHint ? "收起提示" : "看提示" }}
+          </button>
+          <div v-if="showHint" class="hint-box">
+            <div
+              v-for="group in HINTS"
+              :key="group.title"
+              class="hint-box__group"
+            >
+              <p class="hint-box__title">{{ group.title }}</p>
+              <p v-for="rule in group.rules" :key="rule">{{ rule }}</p>
+            </div>
+          </div>
+        </template>
       </template>
     </div>
   </div>
@@ -86,10 +106,38 @@ export default {
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
-      // 自製加法表／乘法表的範圍
-      TABLE_RANGE: [1, 2, 3, 4, 5, 6],
       // 每個空格放的是 cards 的索引，null 表示空
       slots: Array.from({ length: this.gameData.slots || 0 }, () => null),
+      HINTS: [
+        {
+          title: "加法規律",
+          rules: [
+            "奇數＋奇數＝偶數",
+            "偶數＋偶數＝偶數",
+            "奇數＋偶數＝奇數",
+            "偶數＋奇數＝奇數",
+          ],
+        },
+        {
+          title: "減法規律",
+          rules: [
+            "奇數－奇數＝偶數",
+            "偶數－偶數＝偶數",
+            "奇數－偶數＝奇數",
+            "偶數－奇數＝奇數",
+          ],
+        },
+        {
+          title: "乘法規律",
+          rules: [
+            "奇數×奇數＝奇數",
+            "偶數×偶數＝偶數",
+            "奇數×偶數＝偶數",
+            "偶數×奇數＝偶數",
+          ],
+        },
+      ],
+      showHint: false,
       selected: "",
       wrong: false,
       answered: false,
@@ -104,6 +152,10 @@ export default {
     },
     isExpr() {
       return !this.isCards && !this.gameData.table;
+    },
+    // 自製加法表／乘法表的範圍（依原稿：加法 1～5、乘法 11～13）
+    tableRange() {
+      return this.gameData.tableRange || [1, 2, 3, 4, 5];
     },
     tableSymbol() {
       return this.gameData.table === "+" ? "+" : "×";
@@ -288,6 +340,34 @@ export default {
     padding: 0.6rem 1.5rem;
     font-size: 28px;
     background-color: $primary-btn-bg;
+  }
+}
+
+.hint-button {
+  padding: 0.3rem 1.2rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #fb8c00;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hint-box {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.6rem 1rem;
+  background-color: #ffffff;
+  border: 3px solid #fb8c00;
+  border-radius: 12px;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  &__title {
+    font-weight: $font-bold;
   }
 }
 
