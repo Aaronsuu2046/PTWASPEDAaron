@@ -6,7 +6,15 @@
 
     <div class="game-area">
       <div class="work-panel">
-        <p class="question-text">{{ gameData.question }}</p>
+        <div class="question-row">
+          <p class="question-text">{{ gameData.question }}</p>
+          <!-- 選填：長方形／正方形示意圖 -->
+          <RectFigure
+            v-if="gameData.figure"
+            class="work-figure"
+            :figure="gameData.figure"
+          />
+        </div>
 
         <!-- 做法：每一步都是「數 運算 數 = 數」；點格子後用右邊的按鍵填 -->
         <div class="work-block">
@@ -44,13 +52,38 @@
             >
               {{ display("answer") }}
             </button>
-            <span class="work-unit">{{ gameData.unit }}</span>
+            <!-- 選填：有 unitOptions 時要選對單位 -->
+            <template v-if="gameData.unitOptions">
+              <button
+                v-for="unit in gameData.unitOptions"
+                :key="unit"
+                type="button"
+                class="unit-option"
+                :class="{
+                  'unit-option--selected': values.unit === unit,
+                  'unit-option--wrong':
+                    values.unit === unit && wrongKeys.includes('unit'),
+                  'unit-option--correct': answered && values.unit === unit,
+                }"
+                :data-unit="unit"
+                @click="chooseUnit(unit)"
+              >
+                {{ unit }}
+              </button>
+            </template>
+            <span v-else class="work-unit">{{ gameData.unit }}</span>
           </div>
         </div>
       </div>
 
+      <!-- 選填 revealMs：答對後停留，讓學生看完整做法再進下一題 -->
+      <div v-if="revealing" class="reveal">
+        <p class="reveal__title">答對了！</p>
+        <p class="reveal__text">看看完整的做法</p>
+      </div>
+
       <!-- 按鍵：選到數字格可按數字，選到符號格可按運算符號 -->
-      <div class="pad">
+      <div v-else class="pad">
         <div class="pad__ops">
           <button
             v-for="op in OPS"
@@ -95,6 +128,7 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+import RectFigure from "./RectFigure.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -106,6 +140,7 @@ const MAX_LENGTH = 7;
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
 export default {
   name: "WordProblemQuestion",
+  components: { RectFigure },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
@@ -120,6 +155,8 @@ export default {
       active: "s0a",
       wrongKeys: [],
       answered: false,
+      revealing: false,
+      revealTimer: null,
     };
   },
   computed: {
@@ -144,6 +181,7 @@ export default {
   },
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
+    clearTimeout(this.revealTimer);
   },
   methods: {
     showOp(op) {
@@ -160,6 +198,10 @@ export default {
         "fill-box--wrong": this.wrongKeys.includes(key),
         "fill-box--correct": this.answered,
       };
+    },
+    chooseUnit(unit) {
+      if (this.answered) return;
+      this.setValue("unit", unit);
     },
     activate(key) {
       if (this.answered) return;
@@ -222,6 +264,8 @@ export default {
       });
       if (!this.sameNumber(this.values.answer, this.gameData.answer))
         wrong.push("answer");
+      if (this.gameData.unitOptions && this.values.unit !== this.gameData.unit)
+        wrong.push("unit");
       return wrong;
     },
     formatSteps(pick) {
@@ -246,12 +290,17 @@ export default {
         op: this.values[`s${s}op`],
         b: this.values[`s${s}b`],
         result: this.values[`s${s}result`],
-      }))}，答：${this.values.answer || "_"} ${this.gameData.unit}`;
+      }))}，答：${this.values.answer || "_"} ${
+        this.gameData.unitOptions ? this.values.unit || "_" : this.gameData.unit
+      }`;
       this.$emit("add-record", [expected, actual, isCorrect ? "正確" : "錯誤"]);
       if (isCorrect) {
         this.answered = true;
         // 答對後顯示標準做法
-        const filled = { answer: this.gameData.answer };
+        const filled = {
+          answer: this.gameData.answer,
+          unit: this.gameData.unit,
+        };
         this.gameData.steps.forEach((step, s) => {
           filled[`s${s}a`] = step.a;
           filled[`s${s}op`] = step.op;
@@ -260,7 +309,15 @@ export default {
         });
         this.values = filled;
         this.$emit("play-effect", "CorrectSound");
-        this.$emit("next-question");
+        if (this.gameData.revealMs > 0) {
+          this.revealing = true;
+          this.revealTimer = setTimeout(
+            () => this.$emit("next-question"),
+            this.gameData.revealMs
+          );
+        } else {
+          this.$emit("next-question");
+        }
       } else {
         this.$emit("play-effect", "WrongSound");
       }
@@ -317,6 +374,23 @@ export default {
   line-height: 1.6;
   background-color: #fff8e1;
   border: 3px solid #ffcc80;
+  border-radius: 14px;
+}
+
+.question-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .question-text {
+    flex: 1;
+  }
+}
+
+.work-figure {
+  width: 13rem;
+  flex-shrink: 0;
+  background-color: #ffffff;
   border-radius: 14px;
 }
 
@@ -380,6 +454,61 @@ export default {
     color: #2e7d32;
     border: 3px solid #43a047;
     background-color: #e8f5e9;
+  }
+}
+
+.unit-option {
+  height: 3rem;
+  white-space: nowrap;
+  padding: 0 0.7rem;
+  font-size: 1.4rem;
+  font-weight: $font-bold;
+  color: #333333;
+  background-color: #ffffff;
+  border: 3px solid #ffcc80;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &--selected {
+    color: #1565c0;
+    border-color: #1e88e5;
+    background-color: #e3f2fd;
+  }
+
+  &--wrong {
+    color: #c62828;
+    border-color: #e53935;
+    background-color: #ffebee;
+  }
+
+  &--correct {
+    color: #2e7d32;
+    border-color: #43a047;
+    background-color: #e8f5e9;
+  }
+}
+
+.reveal {
+  width: 15rem;
+  flex-shrink: 0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: #e8f5e9;
+  border: 4px solid #66bb6a;
+  border-radius: 18px;
+
+  &__title {
+    margin: 0;
+    font-size: 2rem;
+    white-space: nowrap;
+    font-weight: $font-bold;
+    color: #2e7d32;
+  }
+
+  &__text {
+    margin: 0.5rem 0 0;
+    font-size: 1.4rem;
+    color: #33691e;
   }
 }
 
