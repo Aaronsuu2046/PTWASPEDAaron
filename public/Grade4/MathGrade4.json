@@ -1120,9 +1120,9 @@
               {
                 "id": "MA4173",
                 "Name": "奇偶數的規律",
-                "Description": "拖動數字找出規律",
+                "Description": "點選或拖動數字找出規律",
                 "Img": "MA4173.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
