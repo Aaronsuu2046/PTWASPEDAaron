@@ -1,0 +1,197 @@
+{
+  "id": "MA4166",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "□裡的數是多少？填填看"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 3,
+        "range": 1,
+        "target": 2
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 4,
+        "range": 1,
+        "target": 3
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 4,
+        "range": 1,
+        "target": 2
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 5,
+        "range": 1,
+        "target": 2
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 5,
+        "range": 1,
+        "target": 4
+      }
+    ],
+    [
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 3,
+        "range": 2,
+        "target": 5
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 3,
+        "range": 2,
+        "target": 4
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 4,
+        "range": 2,
+        "target": 6
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 4,
+        "range": 2,
+        "target": 7
+      },
+      {
+        "mode": "fill",
+        "hint": "unit",
+        "denominator": 5,
+        "range": 2,
+        "target": 9
+      }
+    ],
+    [
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 3,
+        "range": 1,
+        "target": 2
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 4,
+        "range": 1,
+        "target": 3
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 4,
+        "range": 1,
+        "target": 2
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 5,
+        "range": 1,
+        "target": 2
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 5,
+        "range": 1,
+        "target": 3
+      }
+    ],
+    [
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 3,
+        "range": 2,
+        "target": 5
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 4,
+        "range": 2,
+        "target": 6
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 4,
+        "range": 2,
+        "target": 5
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 5,
+        "range": 2,
+        "target": 9
+      },
+      {
+        "mode": "fill",
+        "hint": "scale",
+        "denominator": 5,
+        "range": 2,
+        "target": 7
+      }
+    ],
+    [
+      {
+        "mode": "duck",
+        "hint": "scale",
+        "denominator": 4,
+        "range": 1,
+        "target": 3
+      },
+      {
+        "mode": "duck",
+        "hint": "scale",
+        "denominator": 4,
+        "range": 2,
+        "target": 6
+      },
+      {
+        "mode": "duck",
+        "hint": "scale",
+        "denominator": 5,
+        "range": 1,
+        "target": 4
+      },
+      {
+        "mode": "duck",
+        "hint": "scale",
+        "denominator": 5,
+        "range": 2,
+        "target": 8
+      },
+      {
+        "mode": "duck",
+        "hint": "scale",
+        "denominator": 3,
+        "range": 2,
+        "target": 4
+      }
+    ]
+  ]
+}
