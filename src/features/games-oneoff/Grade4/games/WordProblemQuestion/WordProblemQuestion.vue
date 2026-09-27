@@ -14,6 +14,11 @@
             class="work-figure work-figure--composite"
             :figure="gameData.figure"
           />
+          <TileFigure
+            v-else-if="gameData.figure && gameData.figure.shape === 'tiles'"
+            class="work-figure work-figure--tiles"
+            :figure="gameData.figure"
+          />
           <RectFigure
             v-else-if="gameData.figure"
             class="work-figure"
@@ -135,6 +140,7 @@
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import RectFigure from "./RectFigure.vue";
 import CompositeFigure from "./CompositeFigure.vue";
+import TileFigure from "./TileFigure.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -146,7 +152,7 @@ const MAX_LENGTH = 7;
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
 export default {
   name: "WordProblemQuestion",
-  components: { RectFigure, CompositeFigure },
+  components: { RectFigure, CompositeFigure, TileFigure },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
@@ -443,6 +449,10 @@ export default {
 
 .work-figure--composite {
   width: 16rem;
+}
+
+.work-figure--tiles {
+  width: 13rem;
 }
 
 .work-block {
