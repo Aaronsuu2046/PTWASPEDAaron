@@ -9,8 +9,13 @@
         <div class="question-row">
           <p class="question-text">{{ gameData.question }}</p>
           <!-- 選填：長方形／正方形示意圖 -->
+          <CompositeFigure
+            v-if="gameData.figure && gameData.figure.shape === 'composite'"
+            class="work-figure work-figure--composite"
+            :figure="gameData.figure"
+          />
           <RectFigure
-            v-if="gameData.figure"
+            v-else-if="gameData.figure"
             class="work-figure"
             :figure="gameData.figure"
           />
@@ -129,6 +134,7 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import RectFigure from "./RectFigure.vue";
+import CompositeFigure from "./CompositeFigure.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -140,7 +146,7 @@ const MAX_LENGTH = 7;
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
 export default {
   name: "WordProblemQuestion",
-  components: { RectFigure },
+  components: { RectFigure, CompositeFigure },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
@@ -245,6 +251,18 @@ export default {
     },
     // 回傳答錯的格子
     findWrongKeys() {
+      const wrong =
+        this.gameData.stepCheck === "consistent"
+          ? this.findInconsistentSteps()
+          : this.findStepMismatches();
+      if (!this.sameNumber(this.values.answer, this.gameData.answer))
+        wrong.push("answer");
+      if (this.gameData.unitOptions && this.values.unit !== this.gameData.unit)
+        wrong.push("unit");
+      return wrong;
+    },
+    // 預設：每一步都要和標準做法相同（× 與 + 可交換兩數）
+    findStepMismatches() {
       const wrong = [];
       this.gameData.steps.forEach((step, s) => {
         const v = (part) => this.values[`s${s}${part}`];
@@ -262,10 +280,36 @@ export default {
         if (!this.sameNumber(v("result"), step.result))
           wrong.push(`s${s}result`);
       });
-      if (!this.sameNumber(this.values.answer, this.gameData.answer))
-        wrong.push("answer");
-      if (this.gameData.unitOptions && this.values.unit !== this.gameData.unit)
-        wrong.push("unit");
+      return wrong;
+    },
+    // 選填 stepCheck: "consistent"：接受等價做法，只要每一步都算對、
+    // 最後一步等於答案即可
+    findInconsistentSteps() {
+      const wrong = [];
+      const last = this.gameData.steps.length - 1;
+      this.gameData.steps.forEach((_, s) => {
+        const key = (part) => `s${s}${part}`;
+        const num = (part) => this.values[key(part)];
+        const filled = (part) =>
+          num(part) !== undefined &&
+          num(part) !== "" &&
+          !Number.isNaN(Number(num(part)));
+        ["a", "b", "result"].forEach((part) => {
+          if (!filled(part)) wrong.push(key(part));
+        });
+        const op = this.values[key("op")];
+        if (!OPS.includes(op)) wrong.push(key("op"));
+        if (wrong.some((k) => k.startsWith(`s${s}`))) return;
+        const a = Number(num("a"));
+        const b = Number(num("b"));
+        const value = { "+": a + b, "-": a - b, "×": a * b, "÷": a / b }[op];
+        if (!this.sameNumber(num("result"), value)) wrong.push(key("result"));
+        else if (
+          s === last &&
+          !this.sameNumber(num("result"), this.gameData.answer)
+        )
+          wrong.push(key("result"));
+      });
       return wrong;
     },
     formatSteps(pick) {
@@ -301,13 +345,16 @@ export default {
           answer: this.gameData.answer,
           unit: this.gameData.unit,
         };
+        // consistent 模式保留學生自己的等價做法，其餘顯示標準做法
+        const keepOwn = this.gameData.stepCheck === "consistent";
         this.gameData.steps.forEach((step, s) => {
+          if (keepOwn) return;
           filled[`s${s}a`] = step.a;
           filled[`s${s}op`] = step.op;
           filled[`s${s}b`] = step.b;
           filled[`s${s}result`] = step.result;
         });
-        this.values = filled;
+        this.values = keepOwn ? { ...this.values, ...filled } : filled;
         this.$emit("play-effect", "CorrectSound");
         if (this.gameData.revealMs > 0) {
           this.revealing = true;
@@ -392,6 +439,10 @@ export default {
   flex-shrink: 0;
   background-color: #ffffff;
   border-radius: 14px;
+}
+
+.work-figure--composite {
+  width: 16rem;
 }
 
 .work-block {

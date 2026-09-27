@@ -1,0 +1,589 @@
+{
+  "id": "MA4141",
+  "GameType": "SelfDefine",
+  "TotalLevel": 3,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "算算看，下面圖形的周長是多少？"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "question": "算算看，這個長方形的周長是多少？",
+        "figure": {
+          "shape": "rect",
+          "length": 3,
+          "width": 2,
+          "unit": "公分"
+        },
+        "steps": [
+          {
+            "a": "3",
+            "op": "+",
+            "b": "2",
+            "result": "5"
+          },
+          {
+            "a": "5",
+            "op": "×",
+            "b": "2",
+            "result": "10"
+          }
+        ],
+        "answer": "10",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個長方形的周長是多少？",
+        "figure": {
+          "shape": "rect",
+          "length": 21,
+          "width": 15,
+          "unit": "m"
+        },
+        "steps": [
+          {
+            "a": "21",
+            "op": "+",
+            "b": "15",
+            "result": "36"
+          },
+          {
+            "a": "36",
+            "op": "×",
+            "b": "2",
+            "result": "72"
+          }
+        ],
+        "answer": "72",
+        "unit": "m",
+        "unitOptions": ["m", "m²"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個長方形的周長是多少？",
+        "figure": {
+          "shape": "rect",
+          "length": 5,
+          "width": 3,
+          "unit": "公分"
+        },
+        "steps": [
+          {
+            "a": "5",
+            "op": "+",
+            "b": "3",
+            "result": "8"
+          },
+          {
+            "a": "8",
+            "op": "×",
+            "b": "2",
+            "result": "16"
+          }
+        ],
+        "answer": "16",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個長方形的周長是多少？",
+        "figure": {
+          "shape": "rect",
+          "length": 6,
+          "width": 4,
+          "unit": "公分"
+        },
+        "steps": [
+          {
+            "a": "6",
+            "op": "+",
+            "b": "4",
+            "result": "10"
+          },
+          {
+            "a": "10",
+            "op": "×",
+            "b": "2",
+            "result": "20"
+          }
+        ],
+        "answer": "20",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個長方形的周長是多少？",
+        "figure": {
+          "shape": "rect",
+          "length": 7,
+          "width": 4,
+          "unit": "m"
+        },
+        "steps": [
+          {
+            "a": "7",
+            "op": "+",
+            "b": "4",
+            "result": "11"
+          },
+          {
+            "a": "11",
+            "op": "×",
+            "b": "2",
+            "result": "22"
+          }
+        ],
+        "answer": "22",
+        "unit": "m",
+        "unitOptions": ["m", "m²"],
+        "stepCheck": "consistent"
+      }
+    ],
+    [
+      {
+        "question": "算算看，這個正方形的周長是多少？",
+        "figure": {
+          "shape": "square",
+          "length": 10,
+          "unit": "cm"
+        },
+        "steps": [
+          {
+            "a": "10",
+            "op": "×",
+            "b": "4",
+            "result": "40"
+          }
+        ],
+        "answer": "40",
+        "unit": "cm",
+        "unitOptions": ["cm", "cm²"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個正方形的周長是多少？",
+        "figure": {
+          "shape": "square",
+          "length": 3,
+          "unit": "公分"
+        },
+        "steps": [
+          {
+            "a": "3",
+            "op": "×",
+            "b": "4",
+            "result": "12"
+          }
+        ],
+        "answer": "12",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個正方形的周長是多少？",
+        "figure": {
+          "shape": "square",
+          "length": 12,
+          "unit": "cm"
+        },
+        "steps": [
+          {
+            "a": "12",
+            "op": "×",
+            "b": "4",
+            "result": "48"
+          }
+        ],
+        "answer": "48",
+        "unit": "cm",
+        "unitOptions": ["cm", "cm²"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個正方形的周長是多少？",
+        "figure": {
+          "shape": "square",
+          "length": 16,
+          "unit": "m"
+        },
+        "steps": [
+          {
+            "a": "16",
+            "op": "×",
+            "b": "4",
+            "result": "64"
+          }
+        ],
+        "answer": "64",
+        "unit": "m",
+        "unitOptions": ["m", "m²"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "算算看，這個正方形的周長是多少？",
+        "figure": {
+          "shape": "square",
+          "length": 11,
+          "unit": "cm"
+        },
+        "steps": [
+          {
+            "a": "11",
+            "op": "×",
+            "b": "4",
+            "result": "44"
+          }
+        ],
+        "answer": "44",
+        "unit": "cm",
+        "unitOptions": ["cm", "cm²"],
+        "stepCheck": "consistent"
+      }
+    ],
+    [
+      {
+        "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 8,
+              "color": "blue"
+            },
+            {
+              "x": 4,
+              "y": 0,
+              "w": 4,
+              "h": 8,
+              "color": "blue"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 4,
+              "label": "4"
+            },
+            {
+              "side": "bottom",
+              "from": 4,
+              "to": 8,
+              "label": "4"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 8,
+              "label": "8"
+            }
+          ],
+          "unit": "公分",
+          "label": "圖卡拼成的圖形"
+        },
+        "steps": [
+          {
+            "a": "4",
+            "op": "+",
+            "b": "4",
+            "result": "8"
+          },
+          {
+            "a": "8",
+            "op": "×",
+            "b": "4",
+            "result": "32"
+          }
+        ],
+        "answer": "32",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 8,
+              "color": "blue"
+            },
+            {
+              "x": 4,
+              "y": 0,
+              "w": 4,
+              "h": 4,
+              "color": "yellow"
+            },
+            {
+              "x": 4,
+              "y": 4,
+              "w": 4,
+              "h": 4,
+              "color": "yellow"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 4,
+              "label": "4"
+            },
+            {
+              "side": "bottom",
+              "from": 4,
+              "to": 8,
+              "label": "4"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 8,
+              "label": "8"
+            }
+          ],
+          "unit": "公分",
+          "label": "圖卡拼成的圖形"
+        },
+        "steps": [
+          {
+            "a": "4",
+            "op": "+",
+            "b": "4",
+            "result": "8"
+          },
+          {
+            "a": "8",
+            "op": "×",
+            "b": "4",
+            "result": "32"
+          }
+        ],
+        "answer": "32",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 8,
+              "h": 4,
+              "color": "blue"
+            },
+            {
+              "x": 8,
+              "y": 0,
+              "w": 4,
+              "h": 4,
+              "color": "yellow"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 8,
+              "label": "8"
+            },
+            {
+              "side": "bottom",
+              "from": 8,
+              "to": 12,
+              "label": "4"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 4,
+              "label": "4"
+            }
+          ],
+          "unit": "公分",
+          "label": "圖卡拼成的圖形"
+        },
+        "steps": [
+          {
+            "a": "8",
+            "op": "+",
+            "b": "4",
+            "result": "12"
+          },
+          {
+            "a": "12",
+            "op": "+",
+            "b": "4",
+            "result": "16"
+          },
+          {
+            "a": "16",
+            "op": "×",
+            "b": "2",
+            "result": "32"
+          }
+        ],
+        "answer": "32",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4,
+              "color": "yellow"
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "w": 4,
+              "h": 4,
+              "color": "yellow"
+            },
+            {
+              "x": 4,
+              "y": 0,
+              "w": 4,
+              "h": 8,
+              "color": "blue"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 4,
+              "label": "4"
+            },
+            {
+              "side": "bottom",
+              "from": 4,
+              "to": 8,
+              "label": "4"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 8,
+              "label": "8"
+            }
+          ],
+          "unit": "公分",
+          "label": "圖卡拼成的圖形"
+        },
+        "steps": [
+          {
+            "a": "4",
+            "op": "+",
+            "b": "4",
+            "result": "8"
+          },
+          {
+            "a": "8",
+            "op": "×",
+            "b": "4",
+            "result": "32"
+          }
+        ],
+        "answer": "32",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      },
+      {
+        "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 4,
+              "h": 4,
+              "color": "yellow"
+            },
+            {
+              "x": 4,
+              "y": 0,
+              "w": 8,
+              "h": 4,
+              "color": "blue"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 4,
+              "label": "4"
+            },
+            {
+              "side": "bottom",
+              "from": 4,
+              "to": 12,
+              "label": "8"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 4,
+              "label": "4"
+            }
+          ],
+          "unit": "公分",
+          "label": "圖卡拼成的圖形"
+        },
+        "steps": [
+          {
+            "a": "4",
+            "op": "+",
+            "b": "8",
+            "result": "12"
+          },
+          {
+            "a": "12",
+            "op": "+",
+            "b": "4",
+            "result": "16"
+          },
+          {
+            "a": "16",
+            "op": "×",
+            "b": "2",
+            "result": "32"
+          }
+        ],
+        "answer": "32",
+        "unit": "公分",
+        "unitOptions": ["公分", "平方公分"],
+        "stepCheck": "consistent"
+      }
+    ]
+  ]
+}
