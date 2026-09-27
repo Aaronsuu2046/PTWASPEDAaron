@@ -16,9 +16,11 @@
             v-for="(cell, c) in row"
             :key="`c-${r}-${c}`"
             class="pattern-grid__cell"
+            :data-blank="cell === null ? '' : null"
             :class="{
               'pattern-grid__cell--blank': cell === null,
               'pattern-grid__cell--wrong': cell === null && wrong,
+              'pattern-grid__cell--hover': cell === null && overBlank,
               'pattern-grid__cell--block-right': isBlockEdge(c),
             }"
           >
@@ -36,9 +38,9 @@
         </template>
       </div>
 
-      <!-- 選項：點一下放入空格 -->
+      <!-- 選項：點一下或拖曳到空格都可以放入 -->
       <div class="option-area">
-        <p class="option-hint">點選圖形放入空格</p>
+        <p class="option-hint">點選或拖曳圖形放入空格</p>
         <div class="option-list">
           <button
             v-for="(option, index) in gameData.options"
@@ -50,12 +52,29 @@
               { 'option-tile--selected': selected === index + 1 },
             ]"
             :aria-label="`選項 ${index + 1}`"
-            @click="select(index + 1)"
+            @click="onOptionClick(index + 1)"
+            @pointerdown="startDrag($event, index + 1)"
+            @pointermove="onDrag"
+            @pointerup="endDrag"
+            @pointercancel="cancelDrag"
           >
             <PatternTile :kind="gameData.kind" :variant="option" />
           </button>
         </div>
       </div>
+    </div>
+
+    <!-- 拖曳中跟著手指／滑鼠移動的圖塊 -->
+    <div
+      v-if="drag && drag.moved"
+      class="drag-ghost"
+      :class="`option-tile--${gameData.kind}`"
+      :style="{ left: `${drag.x}px`, top: `${drag.y}px` }"
+    >
+      <PatternTile
+        :kind="gameData.kind"
+        :variant="gameData.options[drag.index - 1]"
+      />
     </div>
   </div>
 </template>
@@ -63,6 +82,9 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import PatternTile from "./games/MA4171/PatternTile.vue";
+
+// 移動超過這個距離（px）才算拖曳，否則視為點選
+const DRAG_THRESHOLD = 8;
 
 export default {
   name: "MA4171",
@@ -75,7 +97,14 @@ export default {
   },
   emits: ["play-effect", "next-question", "add-record"],
   data() {
-    return { selected: null, wrong: false, answered: false };
+    return {
+      selected: null,
+      wrong: false,
+      answered: false,
+      drag: null,
+      overBlank: false,
+      suppressClick: false,
+    };
   },
   computed: {
     gameIntroText() {
@@ -102,6 +131,58 @@ export default {
     select(index) {
       this.selected = index;
       this.wrong = false;
+    },
+    onOptionClick(index) {
+      // 拖曳結束時瀏覽器仍會送出 click，略過這一次
+      if (this.suppressClick) {
+        this.suppressClick = false;
+        return;
+      }
+      this.select(index);
+    },
+    startDrag(event, index) {
+      if (event.button !== undefined && event.button !== 0) return;
+      this.suppressClick = false;
+      this.drag = {
+        index,
+        startX: event.clientX,
+        startY: event.clientY,
+        x: event.clientX,
+        y: event.clientY,
+        moved: false,
+      };
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    },
+    onDrag(event) {
+      if (!this.drag) return;
+      this.drag.x = event.clientX;
+      this.drag.y = event.clientY;
+      if (
+        !this.drag.moved &&
+        Math.hypot(
+          event.clientX - this.drag.startX,
+          event.clientY - this.drag.startY
+        ) > DRAG_THRESHOLD
+      ) {
+        this.drag.moved = true;
+      }
+      if (this.drag.moved) this.overBlank = this.isOverBlank(event);
+    },
+    endDrag(event) {
+      if (!this.drag) return;
+      if (this.drag.moved) {
+        this.suppressClick = true;
+        if (this.isOverBlank(event)) this.select(this.drag.index);
+      }
+      this.cancelDrag();
+    },
+    cancelDrag() {
+      this.drag = null;
+      this.overBlank = false;
+    },
+    isOverBlank(event) {
+      const target = document.elementFromPoint(event.clientX, event.clientY);
+      return !!target?.closest("[data-blank]");
     },
     checkAnswer() {
       if (this.answered) return;
@@ -179,6 +260,11 @@ export default {
       background-color: #ffebee;
     }
 
+    &--hover {
+      outline-color: #43a047;
+      background-color: #e8f5e9;
+    }
+
     &--block-right {
       border-right: 3px solid #555555;
     }
@@ -230,8 +316,10 @@ export default {
   background: #ffffff;
   border: 3px solid #9e9e9e;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: grab;
   overflow: hidden;
+  touch-action: none;
+  user-select: none;
 
   &--heart,
   &--cornerHeart {
@@ -242,6 +330,25 @@ export default {
   &--selected {
     border-color: #1e88e5;
     box-shadow: 0 0 0 3px #90caf9;
+  }
+}
+.drag-ghost {
+  position: fixed;
+  z-index: 1000;
+  width: 5.6rem;
+  height: 4.2rem;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.85;
+  background: #ffffff;
+  border: 3px solid #1e88e5;
+  border-radius: 6px;
+  overflow: hidden;
+
+  &.option-tile--heart,
+  &.option-tile--cornerHeart {
+    width: 4.4rem;
+    height: 4.4rem;
   }
 }
 </style>
