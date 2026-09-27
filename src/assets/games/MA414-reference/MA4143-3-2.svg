@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+<title id="title">MA4143-3-2</title>
+<desc id="desc">依需求文件另行繪製的數學題圖，供 PTWA 小學數學遊戲參考。</desc>
+<rect width="100%" height="100%" fill="#fffaf0"/>
+
+<style>
+  .title{font:700 24px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#243b53}
+  .label{font:700 20px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334e68}
+  .small{font:600 16px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#52606d}
+  .dim{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#d6336c}
+  .formula{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#495057}
+  .shapeLine{stroke:#2f3e46;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+  .thin{stroke:#6c757d;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .dash{stroke:#868e96;stroke-width:2;stroke-dasharray:6 6;fill:none;stroke-linecap:round}
+  .guide{stroke:#f08c00;stroke-width:3;fill:none;stroke-linecap:round}
+  .tileLine{stroke:#7b8794;stroke-width:2}
+</style>
+
+<text x="28" y="42" class="title" text-anchor="start">MA4143-3-2</text><text x="28" y="72" class="small" text-anchor="start">認識 1 平方公尺</text><text x="28" y="100" class="small" text-anchor="start">剩下 3 組 2 格磁磚：6 平方公尺</text><rect x="220" y="125" width="52" height="52" fill="#74c0fc" class="tileLine"/><circle cx="246.0" cy="151.0" r="10" fill="#4dabf7" opacity="0.55"/><rect x="272" y="125" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M284,137 L312,165 M312,137 L284,165" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="324" y="125" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M336,137 L364,165 M364,137 L336,165" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="376" y="125" width="52" height="52" fill="#74c0fc" class="tileLine"/><circle cx="402.0" cy="151.0" r="10" fill="#4dabf7" opacity="0.55"/><rect x="220" y="177" width="52" height="52" fill="#74c0fc" class="tileLine"/><circle cx="246.0" cy="203.0" r="10" fill="#4dabf7" opacity="0.55"/><rect x="272" y="177" width="52" height="52" fill="#74c0fc" class="tileLine"/><circle cx="298.0" cy="203.0" r="10" fill="#4dabf7" opacity="0.55"/><rect x="324" y="177" width="52" height="52" fill="#74c0fc" class="tileLine"/><circle cx="350.0" cy="203.0" r="10" fill="#4dabf7" opacity="0.55"/><rect x="376" y="177" width="52" height="52" fill="#74c0fc" class="tileLine"/><circle cx="402.0" cy="203.0" r="10" fill="#4dabf7" opacity="0.55"/><rect x="220" y="229" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M232,241 L260,269 M260,241 L232,269" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="272" y="229" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M284,241 L312,269 M312,241 L284,269" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="324" y="229" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M336,241 L364,269 M364,241 L336,269" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="376" y="229" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M388,241 L416,269 M416,241 L388,269" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="220" y="281" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M232,293 L260,321 M260,293 L232,321" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="272" y="281" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M284,293 L312,321 M312,293 L284,321" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="324" y="281" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M336,293 L364,321 M364,293 L336,321" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><rect x="376" y="281" width="52" height="52" fill="#f1f3f5" class="tileLine"/><path d="M388,293 L416,321 M416,293 L388,321" stroke="#adb5bd" stroke-width="2" opacity="0.8"/><text x="28" y="360" class="formula" text-anchor="start">每一小格代表 1 平方公尺；藍色為剩下完好的磁磚。</text>
+</svg>

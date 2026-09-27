@@ -27,3 +27,6 @@ release/
 
 # Claude Code local config
 .claude/
+
+# Codex temporary working files
+.codex-tmp/

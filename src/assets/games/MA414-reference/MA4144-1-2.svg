@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+<title id="title">MA4144-1-2</title>
+<desc id="desc">依需求文件另行繪製的數學題圖，供 PTWA 小學數學遊戲參考。</desc>
+<rect width="100%" height="100%" fill="#fffaf0"/>
+
+<style>
+  .title{font:700 24px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#243b53}
+  .label{font:700 20px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334e68}
+  .small{font:600 16px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#52606d}
+  .dim{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#d6336c}
+  .formula{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#495057}
+  .shapeLine{stroke:#2f3e46;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+  .thin{stroke:#6c757d;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .dash{stroke:#868e96;stroke-width:2;stroke-dasharray:6 6;fill:none;stroke-linecap:round}
+  .guide{stroke:#f08c00;stroke-width:3;fill:none;stroke-linecap:round}
+  .tileLine{stroke:#7b8794;stroke-width:2}
+</style>
+
+<text x="28" y="42" class="title" text-anchor="start">MA4144-1-2</text><text x="28" y="72" class="small" text-anchor="start">複合圖形的面積</text><text x="28" y="100" class="small" text-anchor="start">拆成 6×6 正方形與 15×3 長方形</text><polygon points="220,130 340,130 340,70 400,70 400,330 340,330 340,250 220,250" fill="#d8ccf1" class="shapeLine"/><line x1="220" y1="115" x2="340" y2="115" class="dash"/><path d="M220,115 l8,-5 M220,115 l8,5 M340,115 l-8,-5 M340,115 l-8,5" class="dash"/><text x="280.0" y="105.0" class="dim" text-anchor="middle">6 公分</text><line x1="340" y1="340" x2="400" y2="340" class="dash"/><path d="M340,340 l8,-5 M340,340 l8,5 M400,340 l-8,-5 M400,340 l-8,5" class="dash"/><text x="370.0" y="330.0" class="dim" text-anchor="middle">3 公分</text><line x1="195" y1="130" x2="195" y2="250" class="dash"/><path d="M195,130 l8,-5 M195,130 l8,5 M195,250 l-8,-5 M195,250 l-8,5" class="dash"/><text x="195.0" y="180.0" class="dim" text-anchor="middle">6 公分</text><line x1="420" y1="70" x2="420" y2="330" class="dash"/><path d="M420,70 l8,-5 M420,70 l8,5 M420,330 l-8,-5 M420,330 l-8,5" class="dash"/><text x="420.0" y="190.0" class="dim" text-anchor="middle">15 公分</text>
+</svg>

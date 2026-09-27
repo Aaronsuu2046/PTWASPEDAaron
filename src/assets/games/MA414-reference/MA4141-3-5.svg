@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+<title id="title">MA4141-3-5</title>
+<desc id="desc">依需求文件另行繪製的數學題圖，供 PTWA 小學數學遊戲參考。</desc>
+<rect width="100%" height="100%" fill="#fffaf0"/>
+
+<style>
+  .title{font:700 24px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#243b53}
+  .label{font:700 20px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334e68}
+  .small{font:600 16px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#52606d}
+  .dim{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#d6336c}
+  .formula{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#495057}
+  .shapeLine{stroke:#2f3e46;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+  .thin{stroke:#6c757d;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .dash{stroke:#868e96;stroke-width:2;stroke-dasharray:6 6;fill:none;stroke-linecap:round}
+  .guide{stroke:#f08c00;stroke-width:3;fill:none;stroke-linecap:round}
+  .tileLine{stroke:#7b8794;stroke-width:2}
+</style>
+
+<text x="28" y="42" class="title" text-anchor="start">MA4141-3-5</text><text x="28" y="72" class="small" text-anchor="start">長方形、正方形的周長</text><text x="28" y="100" class="small" text-anchor="start">4 × 4 正方形加 8 × 4 長方形，形成 12 × 4 長方形</text><rect x="160" y="180" width="110" height="90" rx="8" fill="#fff3bf" class="shapeLine"/><rect x="270" y="180" width="220" height="90" rx="8" fill="#d0ebff" class="shapeLine"/><line x1="270" y1="180" x2="270" y2="270" class="thin"/><line x1="160" y1="285" x2="270" y2="285" class="dash"/><path d="M160,285 l8,-5 M160,285 l8,5 M270,285 l-8,-5 M270,285 l-8,5" class="dash"/><text x="215.0" y="309.0" class="dim" text-anchor="middle">4 公分</text><line x1="270" y1="285" x2="490" y2="285" class="dash"/><path d="M270,285 l8,-5 M270,285 l8,5 M490,285 l-8,-5 M490,285 l-8,5" class="dash"/><text x="380.0" y="309.0" class="dim" text-anchor="middle">8 公分</text><line x1="140" y1="180" x2="140" y2="270" class="dash"/><path d="M140,180 l8,-5 M140,180 l8,5 M140,270 l-8,-5 M140,270 l-8,5" class="dash"/><text x="140.0" y="215.0" class="dim" text-anchor="middle">4 公分</text><text x="28" y="360" class="formula" text-anchor="start">周長：(12 + 4) × 2 = 32 公分</text>
+</svg>

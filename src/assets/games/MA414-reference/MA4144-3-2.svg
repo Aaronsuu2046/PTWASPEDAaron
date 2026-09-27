@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+<title id="title">MA4144-3-2</title>
+<desc id="desc">依需求文件另行繪製的數學題圖，供 PTWA 小學數學遊戲參考。</desc>
+<rect width="100%" height="100%" fill="#fffaf0"/>
+
+<style>
+  .title{font:700 24px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#243b53}
+  .label{font:700 20px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334e68}
+  .small{font:600 16px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#52606d}
+  .dim{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#d6336c}
+  .formula{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#495057}
+  .shapeLine{stroke:#2f3e46;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+  .thin{stroke:#6c757d;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .dash{stroke:#868e96;stroke-width:2;stroke-dasharray:6 6;fill:none;stroke-linecap:round}
+  .guide{stroke:#f08c00;stroke-width:3;fill:none;stroke-linecap:round}
+  .tileLine{stroke:#7b8794;stroke-width:2}
+</style>
+
+<text x="28" y="42" class="title" text-anchor="start">MA4144-3-2</text><text x="28" y="72" class="small" text-anchor="start">複合圖形的面積</text><text x="28" y="100" class="small" text-anchor="start">大長方形 10×12，扣掉中間 5×10</text><rect x="180" y="120" width="360" height="220" rx="8" fill="#fff3bf" class="shapeLine"/><rect x="330" y="120" width="150" height="220" fill="#fffaf0" class="shapeLine"/><line x1="330" y1="120" x2="330" y2="340" class="thin"/><line x1="480" y1="120" x2="480" y2="340" class="thin"/><line x1="180" y1="355" x2="540" y2="355" class="dash"/><path d="M180,355 l8,-5 M180,355 l8,5 M540,355 l-8,-5 M540,355 l-8,5" class="dash"/><text x="360.0" y="345.0" class="dim" text-anchor="middle">12 公分</text><line x1="155" y1="120" x2="155" y2="340" class="dash"/><path d="M155,120 l8,-5 M155,120 l8,5 M155,340 l-8,-5 M155,340 l-8,5" class="dash"/><text x="155.0" y="220.0" class="dim" text-anchor="middle">10 公分</text><line x1="330" y1="105" x2="480" y2="105" class="dash"/><path d="M330,105 l8,-5 M330,105 l8,5 M480,105 l-8,-5 M480,105 l-8,5" class="dash"/><text x="405.0" y="95.0" class="dim" text-anchor="middle">5 公分</text><text x="28" y="378" class="formula" text-anchor="start">白色區域為扣除部分。</text>
+</svg>

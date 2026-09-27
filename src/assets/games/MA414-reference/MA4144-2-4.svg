@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+<title id="title">MA4144-2-4</title>
+<desc id="desc">依需求文件另行繪製的數學題圖，供 PTWA 小學數學遊戲參考。</desc>
+<rect width="100%" height="100%" fill="#fffaf0"/>
+
+<style>
+  .title{font:700 24px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#243b53}
+  .label{font:700 20px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#334e68}
+  .small{font:600 16px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#52606d}
+  .dim{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#d6336c}
+  .formula{font:700 18px 'Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;fill:#495057}
+  .shapeLine{stroke:#2f3e46;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+  .thin{stroke:#6c757d;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+  .dash{stroke:#868e96;stroke-width:2;stroke-dasharray:6 6;fill:none;stroke-linecap:round}
+  .guide{stroke:#f08c00;stroke-width:3;fill:none;stroke-linecap:round}
+  .tileLine{stroke:#7b8794;stroke-width:2}
+</style>
+
+<text x="28" y="42" class="title" text-anchor="start">MA4144-2-4</text><text x="28" y="72" class="small" text-anchor="start">複合圖形的面積</text><text x="28" y="100" class="small" text-anchor="start">大長方形 16×17，扣掉 12×12 正方形</text><rect x="180" y="100" width="310" height="240" rx="8" fill="#d8ccf1" class="shapeLine"/><rect x="280" y="165" width="150" height="120" fill="#fffaf0" class="shapeLine"/><line x1="180" y1="355" x2="490" y2="355" class="dash"/><path d="M180,355 l8,-5 M180,355 l8,5 M490,355 l-8,-5 M490,355 l-8,5" class="dash"/><text x="335.0" y="345.0" class="dim" text-anchor="middle">17 公分</text><line x1="155" y1="100" x2="155" y2="340" class="dash"/><path d="M155,100 l8,-5 M155,100 l8,5 M155,340 l-8,-5 M155,340 l-8,5" class="dash"/><text x="155.0" y="210.0" class="dim" text-anchor="middle">16 公分</text><line x1="280" y1="150" x2="430" y2="150" class="dash"/><path d="M280,150 l8,-5 M280,150 l8,5 M430,150 l-8,-5 M430,150 l-8,5" class="dash"/><text x="355.0" y="140.0" class="dim" text-anchor="middle">12 公分</text><line x1="450" y1="165" x2="450" y2="285" class="dash"/><path d="M450,165 l8,-5 M450,165 l8,5 M450,285 l-8,-5 M450,285 l-8,5" class="dash"/><text x="450.0" y="215.0" class="dim" text-anchor="middle">12 公分</text><text x="28" y="378" class="formula" text-anchor="start">白色區域為扣除部分。</text>
+</svg>
