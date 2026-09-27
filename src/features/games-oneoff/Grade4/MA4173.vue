@@ -10,7 +10,8 @@
         {{ gameData.question }}
       </p>
 
-      <!-- 關卡 1、2：點字卡依序放進空格，點空格可把字卡退回 -->
+      <!-- 關卡 1、2：點字卡依序放進空格，點空格可把字卡退回；
+           也可以把字卡拖到指定空格，或把空格裡的字卡拖到別格／拖出去退回 -->
       <template v-if="isCards">
         <div class="slot-list" :class="{ 'slot-list--wrong': wrong }">
           <button
@@ -18,8 +19,21 @@
             :key="`slot-${index}`"
             type="button"
             class="digit-card digit-card--slot"
-            :class="{ 'digit-card--empty': card === null }"
-            @click="returnCard(index)"
+            :class="{
+              'digit-card--empty': card === null,
+              'digit-card--hover': drag && drag.moved && hoverSlot === index,
+              'digit-card--dragging':
+                drag &&
+                drag.moved &&
+                drag.from === 'slot' &&
+                drag.index === index,
+            }"
+            :data-slot="index"
+            @click="onClick(() => returnCard(index))"
+            @pointerdown="card !== null && startDrag($event, 'slot', index)"
+            @pointermove="onDrag"
+            @pointerup="endDrag"
+            @pointercancel="cancelDrag"
           >
             {{ card === null ? "" : gameData.cards[card] }}
           </button>
@@ -30,9 +44,20 @@
             :key="`card-${index}`"
             type="button"
             class="digit-card"
-            :class="{ 'digit-card--used': slots.includes(index) }"
+            :class="{
+              'digit-card--used': slots.includes(index),
+              'digit-card--dragging':
+                drag &&
+                drag.moved &&
+                drag.from === 'card' &&
+                drag.index === index,
+            }"
             :disabled="slots.includes(index)"
-            @click="placeCard(index)"
+            @click="onClick(() => placeCard(index))"
+            @pointerdown="startDrag($event, 'card', index)"
+            @pointermove="onDrag"
+            @pointerup="endDrag"
+            @pointercancel="cancelDrag"
           >
             {{ digit }}
           </button>
@@ -89,11 +114,23 @@
         </template>
       </template>
     </div>
+
+    <!-- 拖曳中跟著手指／滑鼠移動的字卡 -->
+    <div
+      v-if="drag && drag.moved"
+      class="digit-card drag-ghost"
+      :style="{ left: `${drag.x}px`, top: `${drag.y}px` }"
+    >
+      {{ gameData.cards[dragCard] }}
+    </div>
   </div>
 </template>
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+
+// 移動超過這個距離（px）才算拖曳，否則視為點選
+const DRAG_THRESHOLD = 8;
 
 export default {
   name: "MA4173",
@@ -138,6 +175,9 @@ export default {
         },
       ],
       showHint: false,
+      drag: null,
+      hoverSlot: null,
+      suppressClick: false,
       selected: "",
       wrong: false,
       answered: false,
@@ -159,6 +199,13 @@ export default {
     },
     tableSymbol() {
       return this.gameData.table === "+" ? "+" : "×";
+    },
+    // 拖曳中的字卡（cards 的索引）
+    dragCard() {
+      if (!this.drag) return null;
+      return this.drag.from === "card"
+        ? this.drag.index
+        : this.slots[this.drag.index];
     },
     userAnswer() {
       if (!this.isCards) return this.selected;
@@ -185,6 +232,78 @@ export default {
     },
     returnCard(slotIndex) {
       this.slots[slotIndex] = null;
+      this.wrong = false;
+    },
+    onClick(action) {
+      // 拖曳結束時瀏覽器仍會送出 click，略過這一次
+      if (this.suppressClick) {
+        this.suppressClick = false;
+        return;
+      }
+      action();
+    },
+    startDrag(event, from, index) {
+      if (event.button !== undefined && event.button !== 0) return;
+      this.suppressClick = false;
+      this.drag = {
+        from,
+        index,
+        startX: event.clientX,
+        startY: event.clientY,
+        x: event.clientX,
+        y: event.clientY,
+        moved: false,
+      };
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    },
+    onDrag(event) {
+      if (!this.drag) return;
+      this.drag.x = event.clientX;
+      this.drag.y = event.clientY;
+      if (
+        !this.drag.moved &&
+        Math.hypot(
+          event.clientX - this.drag.startX,
+          event.clientY - this.drag.startY
+        ) > DRAG_THRESHOLD
+      ) {
+        this.drag.moved = true;
+      }
+      if (this.drag.moved) this.hoverSlot = this.slotAt(event);
+    },
+    endDrag(event) {
+      if (!this.drag) return;
+      if (this.drag.moved) {
+        this.suppressClick = true;
+        this.dropCard(this.slotAt(event));
+      }
+      this.cancelDrag();
+    },
+    cancelDrag() {
+      this.drag = null;
+      this.hoverSlot = null;
+    },
+    slotAt(event) {
+      const target = document.elementFromPoint(event.clientX, event.clientY);
+      const slot = target?.closest("[data-slot]");
+      return slot ? Number(slot.dataset.slot) : null;
+    },
+    // 字卡放到指定空格：原本在那格的字卡會跟來源交換（來自字卡區則退回）
+    dropCard(slotIndex) {
+      const { from, index } = this.drag;
+      const card = this.dragCard;
+      if (from === "slot") {
+        if (slotIndex === null) {
+          this.slots[index] = null;
+        } else {
+          this.slots[index] = this.slots[slotIndex];
+          this.slots[slotIndex] = card;
+        }
+      } else if (slotIndex !== null) {
+        this.slots[slotIndex] = card;
+      } else {
+        return;
+      }
       this.wrong = false;
     },
     selectOption(option) {
@@ -305,6 +424,32 @@ export default {
     opacity: 0.3;
     cursor: default;
   }
+
+  &--hover {
+    border-color: #43a047;
+    background-color: #e8f5e9;
+  }
+
+  &--dragging {
+    opacity: 0.3;
+  }
+}
+
+.slot-list .digit-card,
+.card-list .digit-card {
+  touch-action: none;
+  user-select: none;
+}
+
+.drag-ghost {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.9;
 }
 
 .op-table {
