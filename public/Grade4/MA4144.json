@@ -1,0 +1,1086 @@
+{
+  "id": "MA4144",
+  "GameType": "SelfDefine",
+  "TotalLevel": 3,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "算算看，下面圖形的面積是多少？"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "question": "把圖形分成正方形和長方形，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 2,
+              "h": 2,
+              "color": "purple"
+            },
+            {
+              "x": 2,
+              "y": 1,
+              "w": 3,
+              "h": 1,
+              "color": "purple"
+            }
+          ],
+          "dims": [
+            {
+              "at": [0, 0, 2, 0],
+              "pos": "top",
+              "label": "2"
+            },
+            {
+              "at": [0, 0, 0, 2],
+              "pos": "left",
+              "label": "2"
+            },
+            {
+              "at": [2, 1, 5, 1],
+              "pos": "top",
+              "label": "3"
+            },
+            {
+              "at": [5, 1, 5, 2],
+              "pos": "right",
+              "label": "1"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "2",
+            "op": "×",
+            "b": "2",
+            "result": "4"
+          },
+          {
+            "a": "3",
+            "op": "×",
+            "b": "1",
+            "result": "3"
+          },
+          {
+            "a": "4",
+            "op": "+",
+            "b": "3",
+            "result": "7"
+          }
+        ],
+        "answer": "7",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "把圖形分成正方形和長方形，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 6,
+              "y": 0,
+              "w": 3,
+              "h": 15,
+              "color": "purple"
+            },
+            {
+              "x": 0,
+              "y": 4,
+              "w": 6,
+              "h": 6,
+              "color": "purple"
+            }
+          ],
+          "dims": [
+            {
+              "at": [0, 4, 6, 4],
+              "pos": "top",
+              "label": "6"
+            },
+            {
+              "at": [0, 4, 0, 10],
+              "pos": "left",
+              "label": "6"
+            },
+            {
+              "at": [9, 0, 9, 15],
+              "pos": "right",
+              "label": "15"
+            },
+            {
+              "at": [6, 15, 9, 15],
+              "pos": "bottom",
+              "label": "3"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "6",
+            "op": "×",
+            "b": "6",
+            "result": "36"
+          },
+          {
+            "a": "15",
+            "op": "×",
+            "b": "3",
+            "result": "45"
+          },
+          {
+            "a": "36",
+            "op": "+",
+            "b": "45",
+            "result": "81"
+          }
+        ],
+        "answer": "81",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "把圖形分成正方形和長方形，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 4,
+              "w": 9,
+              "h": 5,
+              "color": "purple"
+            },
+            {
+              "x": 5,
+              "y": 0,
+              "w": 4,
+              "h": 4,
+              "color": "purple"
+            }
+          ],
+          "dims": [
+            {
+              "at": [5, 0, 9, 0],
+              "pos": "top",
+              "label": "4"
+            },
+            {
+              "at": [9, 0, 9, 4],
+              "pos": "right",
+              "label": "4"
+            },
+            {
+              "at": [0, 9, 9, 9],
+              "pos": "bottom",
+              "label": "9"
+            },
+            {
+              "at": [0, 4, 0, 9],
+              "pos": "left",
+              "label": "5"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "4",
+            "op": "×",
+            "b": "4",
+            "result": "16"
+          },
+          {
+            "a": "5",
+            "op": "×",
+            "b": "9",
+            "result": "45"
+          },
+          {
+            "a": "16",
+            "op": "+",
+            "b": "45",
+            "result": "61"
+          }
+        ],
+        "answer": "61",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "把圖形分成正方形和長方形，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 6,
+              "y": 0,
+              "w": 4,
+              "h": 12,
+              "color": "purple"
+            },
+            {
+              "x": 0,
+              "y": 6,
+              "w": 6,
+              "h": 6,
+              "color": "purple"
+            }
+          ],
+          "dims": [
+            {
+              "at": [6, 0, 10, 0],
+              "pos": "top",
+              "label": "4"
+            },
+            {
+              "at": [10, 0, 10, 12],
+              "pos": "right",
+              "label": "12"
+            },
+            {
+              "at": [0, 6, 6, 6],
+              "pos": "top",
+              "label": "6"
+            },
+            {
+              "at": [0, 6, 0, 12],
+              "pos": "left",
+              "label": "6"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "6",
+            "op": "×",
+            "b": "6",
+            "result": "36"
+          },
+          {
+            "a": "4",
+            "op": "×",
+            "b": "12",
+            "result": "48"
+          },
+          {
+            "a": "36",
+            "op": "+",
+            "b": "48",
+            "result": "84"
+          }
+        ],
+        "answer": "84",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "把圖形分成正方形和長方形，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 6,
+              "w": 16,
+              "h": 5,
+              "color": "purple"
+            },
+            {
+              "x": 5,
+              "y": 0,
+              "w": 6,
+              "h": 6,
+              "color": "purple"
+            }
+          ],
+          "dims": [
+            {
+              "at": [5, 0, 11, 0],
+              "pos": "top",
+              "label": "6"
+            },
+            {
+              "at": [11, 0, 11, 6],
+              "pos": "right",
+              "label": "6"
+            },
+            {
+              "at": [0, 11, 16, 11],
+              "pos": "bottom",
+              "label": "16"
+            },
+            {
+              "at": [0, 6, 0, 11],
+              "pos": "left",
+              "label": "5"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "6",
+            "op": "×",
+            "b": "6",
+            "result": "36"
+          },
+          {
+            "a": "5",
+            "op": "×",
+            "b": "16",
+            "result": "80"
+          },
+          {
+            "a": "36",
+            "op": "+",
+            "b": "80",
+            "result": "116"
+          }
+        ],
+        "answer": "116",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      }
+    ],
+    [
+      {
+        "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 8,
+              "h": 5,
+              "color": "blue"
+            },
+            {
+              "x": 4,
+              "y": 1,
+              "w": 3,
+              "h": 3,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "top",
+              "from": 0,
+              "to": 8,
+              "label": "8"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 5,
+              "label": "5"
+            },
+            {
+              "at": [4, 5, 7, 5],
+              "pos": "bottom",
+              "label": "3",
+              "guideTo": 4
+            },
+            {
+              "at": [8, 1, 8, 4],
+              "pos": "right",
+              "label": "3",
+              "guideTo": 7
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "8",
+            "op": "×",
+            "b": "5",
+            "result": "40"
+          },
+          {
+            "a": "3",
+            "op": "×",
+            "b": "3",
+            "result": "9"
+          },
+          {
+            "a": "40",
+            "op": "-",
+            "b": "9",
+            "result": "31"
+          }
+        ],
+        "answer": "31",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 20,
+              "h": 20,
+              "color": "blue"
+            },
+            {
+              "x": 4,
+              "y": 4,
+              "w": 5,
+              "h": 10,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "top",
+              "from": 0,
+              "to": 20,
+              "label": "20"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 20,
+              "label": "20"
+            },
+            {
+              "at": [4, 20, 9, 20],
+              "pos": "bottom",
+              "label": "5",
+              "guideTo": 14
+            },
+            {
+              "at": [20, 4, 20, 14],
+              "pos": "right",
+              "label": "10",
+              "guideTo": 9
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "20",
+            "op": "×",
+            "b": "20",
+            "result": "400"
+          },
+          {
+            "a": "10",
+            "op": "×",
+            "b": "5",
+            "result": "50"
+          },
+          {
+            "a": "400",
+            "op": "-",
+            "b": "50",
+            "result": "350"
+          }
+        ],
+        "answer": "350",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 12,
+              "h": 12,
+              "color": "blue"
+            },
+            {
+              "x": 4,
+              "y": 2,
+              "w": 4,
+              "h": 8,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "top",
+              "from": 0,
+              "to": 12,
+              "label": "12"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 12,
+              "label": "12"
+            },
+            {
+              "at": [4, 12, 8, 12],
+              "pos": "bottom",
+              "label": "4",
+              "guideTo": 10
+            },
+            {
+              "at": [12, 2, 12, 10],
+              "pos": "right",
+              "label": "8",
+              "guideTo": 8
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "12",
+            "op": "×",
+            "b": "12",
+            "result": "144"
+          },
+          {
+            "a": "4",
+            "op": "×",
+            "b": "8",
+            "result": "32"
+          },
+          {
+            "a": "144",
+            "op": "-",
+            "b": "32",
+            "result": "112"
+          }
+        ],
+        "answer": "112",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 17,
+              "h": 16,
+              "color": "purple"
+            },
+            {
+              "x": 3,
+              "y": 2,
+              "w": 12,
+              "h": 12,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 17,
+              "label": "17"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 16,
+              "label": "16"
+            },
+            {
+              "at": [3, 0, 15, 0],
+              "pos": "top",
+              "label": "12",
+              "guideTo": 2
+            },
+            {
+              "at": [17, 2, 17, 14],
+              "pos": "right",
+              "label": "12",
+              "guideTo": 15
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "16",
+            "op": "×",
+            "b": "17",
+            "result": "272"
+          },
+          {
+            "a": "12",
+            "op": "×",
+            "b": "12",
+            "result": "144"
+          },
+          {
+            "a": "272",
+            "op": "-",
+            "b": "144",
+            "result": "128"
+          }
+        ],
+        "answer": "128",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 12,
+              "h": 16,
+              "color": "orange"
+            },
+            {
+              "x": 4,
+              "y": 10,
+              "w": 4,
+              "h": 4,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "top",
+              "from": 0,
+              "to": 12,
+              "label": "12"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 16,
+              "label": "16"
+            },
+            {
+              "at": [4, 16, 8, 16],
+              "pos": "bottom",
+              "label": "4",
+              "guideTo": 14
+            },
+            {
+              "at": [12, 10, 12, 14],
+              "pos": "right",
+              "label": "4",
+              "guideTo": 8
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "16",
+            "op": "×",
+            "b": "12",
+            "result": "192"
+          },
+          {
+            "a": "4",
+            "op": "×",
+            "b": "4",
+            "result": "16"
+          },
+          {
+            "a": "192",
+            "op": "-",
+            "b": "16",
+            "result": "176"
+          }
+        ],
+        "answer": "176",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      }
+    ],
+    [
+      {
+        "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 25,
+              "h": 20,
+              "color": "orange"
+            },
+            {
+              "x": 12,
+              "y": 0,
+              "w": 5,
+              "h": 20,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 25,
+              "label": "25"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 20,
+              "label": "20"
+            },
+            {
+              "at": [12, 0, 17, 0],
+              "pos": "top",
+              "label": "5"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "20",
+            "op": "×",
+            "b": "25",
+            "result": "500"
+          },
+          {
+            "a": "5",
+            "op": "×",
+            "b": "20",
+            "result": "100"
+          },
+          {
+            "a": "500",
+            "op": "-",
+            "b": "100",
+            "result": "400"
+          }
+        ],
+        "answer": "400",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 12,
+              "h": 10,
+              "color": "yellow"
+            },
+            {
+              "x": 5,
+              "y": 0,
+              "w": 5,
+              "h": 10,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 12,
+              "label": "12"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 10,
+              "label": "10"
+            },
+            {
+              "at": [5, 0, 10, 0],
+              "pos": "top",
+              "label": "5"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "10",
+            "op": "×",
+            "b": "12",
+            "result": "120"
+          },
+          {
+            "a": "5",
+            "op": "×",
+            "b": "10",
+            "result": "50"
+          },
+          {
+            "a": "120",
+            "op": "-",
+            "b": "50",
+            "result": "70"
+          }
+        ],
+        "answer": "70",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 20,
+              "h": 18,
+              "color": "yellow"
+            },
+            {
+              "x": 6,
+              "y": 0,
+              "w": 6,
+              "h": 18,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 20,
+              "label": "20"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 18,
+              "label": "18"
+            },
+            {
+              "at": [6, 0, 12, 0],
+              "pos": "top",
+              "label": "6"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "20",
+            "op": "×",
+            "b": "18",
+            "result": "360"
+          },
+          {
+            "a": "6",
+            "op": "×",
+            "b": "18",
+            "result": "108"
+          },
+          {
+            "a": "360",
+            "op": "-",
+            "b": "108",
+            "result": "252"
+          }
+        ],
+        "answer": "252",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 15,
+              "h": 9,
+              "color": "orange"
+            },
+            {
+              "x": 0,
+              "y": 3,
+              "w": 15,
+              "h": 2,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "top",
+              "from": 0,
+              "to": 15,
+              "label": "15"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 9,
+              "label": "9"
+            },
+            {
+              "side": "right",
+              "from": 0,
+              "to": 3,
+              "label": "3"
+            },
+            {
+              "side": "right",
+              "from": 3,
+              "to": 5,
+              "label": "2"
+            },
+            {
+              "side": "right",
+              "from": 5,
+              "to": 9,
+              "label": "4"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "15",
+            "op": "×",
+            "b": "9",
+            "result": "135"
+          },
+          {
+            "a": "15",
+            "op": "×",
+            "b": "2",
+            "result": "30"
+          },
+          {
+            "a": "135",
+            "op": "-",
+            "b": "30",
+            "result": "105"
+          }
+        ],
+        "answer": "105",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      },
+      {
+        "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
+        "figure": {
+          "shape": "composite",
+          "pieces": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 25,
+              "h": 15,
+              "color": "green"
+            },
+            {
+              "x": 5,
+              "y": 0,
+              "w": 4,
+              "h": 15,
+              "color": "white"
+            }
+          ],
+          "dims": [
+            {
+              "side": "bottom",
+              "from": 0,
+              "to": 25,
+              "label": "25"
+            },
+            {
+              "side": "left",
+              "from": 0,
+              "to": 15,
+              "label": "15"
+            },
+            {
+              "at": [5, 0, 9, 0],
+              "pos": "top",
+              "label": "4"
+            }
+          ],
+          "unit": "公分",
+          "label": "複合圖形"
+        },
+        "steps": [
+          {
+            "a": "15",
+            "op": "×",
+            "b": "25",
+            "result": "375"
+          },
+          {
+            "a": "15",
+            "op": "×",
+            "b": "4",
+            "result": "60"
+          },
+          {
+            "a": "375",
+            "op": "-",
+            "b": "60",
+            "result": "315"
+          }
+        ],
+        "answer": "315",
+        "unit": "平方公分",
+        "unitOptions": ["公分", "平方公分"],
+        "revealMs": 3000
+      }
+    ]
+  ]
+}
