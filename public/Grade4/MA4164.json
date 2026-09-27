@@ -1,0 +1,2160 @@
+{
+  "id": "MA4164",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "question": "\\frac{2}{3} + \\frac{1}{6} = ？",
+        "operands": [
+          {
+            "numerator": 2,
+            "denominator": 3
+          },
+          {
+            "numerator": 1,
+            "denominator": 6
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [2, "×", 2],
+                "denominator": [3, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [6]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [3]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [6]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [6]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 5
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{3}{5} + \\frac{2}{15} = ？",
+        "operands": [
+          {
+            "numerator": 3,
+            "denominator": 5
+          },
+          {
+            "numerator": 2,
+            "denominator": 15
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 3],
+                "denominator": [5, "×", 3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 9
+                  }
+                ],
+                "denominator": [15]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [5]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [2],
+                "denominator": [15]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 9
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 15
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [2],
+                "denominator": [15]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 11
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 15
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{1}{3} + \\frac{1}{12} = ？",
+        "operands": [
+          {
+            "numerator": 1,
+            "denominator": 3
+          },
+          {
+            "numerator": 1,
+            "denominator": 12
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [1, "×", 4],
+                "denominator": [3, "×", 4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [12]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [3]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 5
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{2}{5} + \\frac{3}{10} = ？",
+        "operands": [
+          {
+            "numerator": 2,
+            "denominator": 5
+          },
+          {
+            "numerator": 3,
+            "denominator": 10
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [2, "×", 2],
+                "denominator": [5, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [10]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [5]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [3],
+                "denominator": [10]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [3],
+                "denominator": [10]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{3}{4} + \\frac{1}{8} = ？",
+        "operands": [
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 8
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 2],
+                "denominator": [4, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [8]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [8]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [8]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "question": "\\frac{9}{10} - \\frac{2}{5} = ？",
+        "operands": [
+          {
+            "numerator": 9,
+            "denominator": 10
+          },
+          {
+            "numerator": 2,
+            "denominator": 5
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [2, "×", 2],
+                "denominator": [5, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [10]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [9],
+                "denominator": [10]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [2],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [9],
+                "denominator": [10]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 5
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{5}{6} - \\frac{3}{12} = ？",
+        "operands": [
+          {
+            "numerator": 5,
+            "denominator": 6
+          },
+          {
+            "numerator": 3,
+            "denominator": 12
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [5, "×", 2],
+                "denominator": [6, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 10
+                  }
+                ],
+                "denominator": [12]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [3],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 10
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [3],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{7}{8} - \\frac{1}{2} = ？",
+        "operands": [
+          {
+            "numerator": 7,
+            "denominator": 8
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [1, "×", 4],
+                "denominator": [2, "×", 4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [8]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [7],
+                "denominator": [8]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [1],
+                "denominator": [2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [7],
+                "denominator": [8]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{5}{12} - \\frac{1}{4} = ？",
+        "operands": [
+          {
+            "numerator": 5,
+            "denominator": 12
+          },
+          {
+            "numerator": 1,
+            "denominator": 4
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [1, "×", 3],
+                "denominator": [4, "×", 3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [12]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [12]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [1],
+                "denominator": [4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [5],
+                "denominator": [12]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 2
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "\\frac{5}{6} - \\frac{1}{3} = ？",
+        "operands": [
+          {
+            "numerator": 5,
+            "denominator": 6
+          },
+          {
+            "numerator": 1,
+            "denominator": 3
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [1, "×", 2],
+                "denominator": [3, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 2
+                  }
+                ],
+                "denominator": [6]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [1],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 2
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "question": "1 盒糖果有 10 顆。姐姐吃了 \\frac{3}{5} 盒，妹妹吃了 \\frac{2}{10} 盒，兩人共吃了幾盒糖果？",
+        "operands": [
+          {
+            "numerator": 3,
+            "denominator": 5
+          },
+          {
+            "numerator": 2,
+            "denominator": 10
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 2],
+                "denominator": [5, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [10]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [5]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [2],
+                "denominator": [10]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [2],
+                "denominator": [10]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 8
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 8
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "candy",
+          "count": 10
+        }
+      },
+      {
+        "question": "1 盒糖果有 9 顆。姐姐吃了 \\frac{2}{3} 盒，妹妹吃了 \\frac{2}{9} 盒，兩人共吃了幾盒糖果？",
+        "operands": [
+          {
+            "numerator": 2,
+            "denominator": 3
+          },
+          {
+            "numerator": 2,
+            "denominator": 9
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [2, "×", 3],
+                "denominator": [3, "×", 3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [9]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [3]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [2],
+                "denominator": [9]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 9
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [2],
+                "denominator": [9]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 8
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 9
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 8
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 9
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "candy",
+          "count": 9
+        }
+      },
+      {
+        "question": "1 盒糖果有 10 顆。姐姐吃了 \\frac{1}{5} 盒，妹妹吃了 \\frac{7}{10} 盒，兩人共吃了幾盒糖果？",
+        "operands": [
+          {
+            "numerator": 1,
+            "denominator": 5
+          },
+          {
+            "numerator": 7,
+            "denominator": 10
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [1, "×", 2],
+                "denominator": [5, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 2
+                  }
+                ],
+                "denominator": [10]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [5]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [7],
+                "denominator": [10]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 2
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [7],
+                "denominator": [10]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 9
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 9
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "candy",
+          "count": 10
+        }
+      },
+      {
+        "question": "1 盒糖果有 8 顆。姐姐吃了 \\frac{3}{4} 盒，妹妹吃了 \\frac{1}{8} 盒，兩人共吃了幾盒糖果？",
+        "operands": [
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 8
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 2],
+                "denominator": [4, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [8]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [8]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [8]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "candy",
+          "count": 8
+        }
+      },
+      {
+        "question": "1 盒糖果有 12 顆。姐姐吃了 \\frac{3}{4} 盒，妹妹吃了 \\frac{1}{12} 盒，兩人共吃了幾盒糖果？",
+        "operands": [
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 12
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 3],
+                "denominator": [4, "×", 3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 9
+                  }
+                ],
+                "denominator": [12]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 9
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "+"
+              },
+              {
+                "numerator": [1],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 10
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 10
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "candy",
+          "count": 12
+        }
+      }
+    ],
+    [
+      {
+        "question": "1 盒雞蛋有 12 顆。冰箱裡有 \\frac{5}{6} 盒雞蛋，媽媽用掉 \\frac{3}{12} 盒，還剩幾盒？",
+        "operands": [
+          {
+            "numerator": 5,
+            "denominator": 6
+          },
+          {
+            "numerator": 3,
+            "denominator": 12
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [5, "×", 2],
+                "denominator": [6, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 10
+                  }
+                ],
+                "denominator": [12]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [3],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 10
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [3],
+                "denominator": [12]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 7
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 12
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "egg",
+          "count": 12
+        }
+      },
+      {
+        "question": "1 盒雞蛋有 10 顆。冰箱裡有 \\frac{9}{10} 盒雞蛋，媽媽用掉 \\frac{3}{5} 盒，還剩幾盒？",
+        "operands": [
+          {
+            "numerator": 9,
+            "denominator": 10
+          },
+          {
+            "numerator": 3,
+            "denominator": 5
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 2],
+                "denominator": [5, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [10]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [9],
+                "denominator": [10]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [3],
+                "denominator": [5]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [9],
+                "denominator": [10]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 10
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "egg",
+          "count": 10
+        }
+      },
+      {
+        "question": "1 盒雞蛋有 8 顆。冰箱裡有 \\frac{3}{4} 盒雞蛋，媽媽用掉 \\frac{1}{8} 盒，還剩幾盒？",
+        "operands": [
+          {
+            "numerator": 3,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 8
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [3, "×", 2],
+                "denominator": [4, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [8]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [3],
+                "denominator": [4]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [1],
+                "denominator": [8]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 6
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [1],
+                "denominator": [8]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 5
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 5
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "egg",
+          "count": 8
+        }
+      },
+      {
+        "question": "1 盒雞蛋有 8 顆。冰箱裡有 \\frac{7}{8} 盒雞蛋，媽媽用掉 \\frac{1}{2} 盒，還剩幾盒？",
+        "operands": [
+          {
+            "numerator": 7,
+            "denominator": 8
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [1],
+                "denominator": [2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [1, "×", 4],
+                "denominator": [2, "×", 4]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [8]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [7],
+                "denominator": [8]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [1],
+                "denominator": [2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [7],
+                "denominator": [8]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 3
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 8
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "egg",
+          "count": 8
+        }
+      },
+      {
+        "question": "1 盒雞蛋有 6 顆。冰箱裡有 \\frac{5}{6} 盒雞蛋，媽媽用掉 \\frac{2}{3} 盒，還剩幾盒？",
+        "operands": [
+          {
+            "numerator": 5,
+            "denominator": 6
+          },
+          {
+            "numerator": 2,
+            "denominator": 3
+          }
+        ],
+        "rows": [
+          {
+            "label": "先算",
+            "equation": [
+              {
+                "numerator": [2],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [2, "×", 2],
+                "denominator": [3, "×", 2]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [6]
+              }
+            ]
+          },
+          {
+            "label": "後算",
+            "equation": [
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [2],
+                "denominator": [3]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [5],
+                "denominator": [6]
+              },
+              {
+                "text": "-"
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 4
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              },
+              {
+                "text": "="
+              },
+              {
+                "numerator": [
+                  {
+                    "answer": 1
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "答",
+            "equation": [
+              {
+                "numerator": [
+                  {
+                    "answer": 1
+                  }
+                ],
+                "denominator": [
+                  {
+                    "answer": 6
+                  }
+                ]
+              },
+              {
+                "text": "盒"
+              }
+            ]
+          }
+        ],
+        "items": {
+          "type": "egg",
+          "count": 6
+        }
+      }
+    ]
+  ]
+}
