@@ -853,7 +853,7 @@
                 "Name": "分割四邊形",
                 "Description": "把一樣的連起來",
                 "Img": "MA4126.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4127",

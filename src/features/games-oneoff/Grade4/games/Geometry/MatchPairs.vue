@@ -1,5 +1,5 @@
 <template>
-  <div ref="root" class="match">
+  <div ref="root" class="match" :class="{ 'match--compact': compact }">
     <!-- 已配對的連線 -->
     <svg class="match__lines" :width="size.w" :height="size.h">
       <line
@@ -108,6 +108,8 @@ export default {
   props: {
     left: { type: Array, required: true },
     right: { type: Array, required: true },
+    // 選填：項目較多時縮小卡片，平板也放得下
+    compact: { type: Boolean, default: false },
   },
   emits: ["change"],
   data() {
@@ -384,6 +386,27 @@ export default {
 
     &--right {
       left: -0.65rem;
+    }
+  }
+}
+.match--compact {
+  gap: 5rem;
+
+  .match__column {
+    gap: 0.35rem;
+  }
+
+  .match__item {
+    min-height: 3.4rem;
+    font-size: 1.2rem;
+
+    &--shape {
+      height: 4.6rem;
+
+      :deep(.quad-shape) {
+        width: 6.4rem;
+        height: 4.4rem;
+      }
     }
   }
 }
