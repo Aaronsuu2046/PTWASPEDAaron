@@ -76,7 +76,19 @@
         </section>
       </div>
     </div>
-    <section v-if="gameData.Answer" class="compare-game__footer">
+    <!-- 選填：題目設定 Explanation 時，答對後先顯示計算過程，再由學生按「下一題」換題 -->
+    <section v-if="showExplanation" class="compare-game__explanation">
+      <p class="compare-game__explanation-text">
+        <FractionText :text="gameData.Explanation" />
+      </p>
+      <button type="button" class="compare-game__next-btn" @click="goNext">
+        下一題
+      </button>
+    </section>
+    <section
+      v-if="gameData.Answer && !showExplanation"
+      class="compare-game__footer"
+    >
       <div class="compare-game__options-container">
         <draggable
           :list="symbolList"
@@ -120,6 +132,10 @@ export default {
     DrawImage: getComponents("DrawImage"),
     NumberBoard: getComponents("NumberBoard"),
     FractionDisplay: getComponents("FractionDisplay"),
+    FractionWithShape: getComponents("FractionWithShape"),
+    FractionText: defineAsyncComponent(
+      () => import("@/components/FractionText.vue")
+    ),
   },
   props: {
     gameData: {
@@ -139,6 +155,7 @@ export default {
   data() {
     return {
       isSubmitted: false,
+      showExplanation: false,
       selectedGroup: 0,
       userAnswer: [],
       userSymbolAnswer: [],
@@ -224,6 +241,7 @@ export default {
       return true;
     },
     submitAnswer() {
+      if (this.showExplanation) return;
       this.isSubmitted = true;
       let check = true;
       if (this.gameData.Answer) {
@@ -263,8 +281,15 @@ export default {
           this.userSymbolAnswer[0][0].tag,
           "正確",
         ]);
-        this.$emit("next-question");
+        if (this.gameData.Explanation) {
+          this.showExplanation = true;
+        } else {
+          this.$emit("next-question");
+        }
       }
+    },
+    goNext() {
+      this.$emit("next-question");
     },
     handleSlotComponentReply(rowIndex, colIndex, answer) {
       this.isSubmitted = false;
@@ -375,6 +400,38 @@ export default {
     &--wrong {
       background-color: #cc0627c6;
     }
+  }
+
+  &__explanation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #e8f5e9;
+    border: 3px solid #66bb6a;
+    border-radius: 16px;
+  }
+
+  &__explanation-text {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    :deep(.katex) {
+      font-size: 1.4em;
+    }
+  }
+
+  &__next-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #43a047;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
   }
 
   &__footer {

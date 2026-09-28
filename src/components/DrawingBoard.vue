@@ -92,6 +92,9 @@ export default {
       this.ctx.closePath();
       this.previousPos = pos;
     },
+    clear() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
     erase(pos) {
       this.ctx.beginPath();
       this.ctx.clearRect(

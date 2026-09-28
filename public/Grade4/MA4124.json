@@ -1,0 +1,134 @@
+{
+  "id": "MA4124",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "看圖回答問題"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "parts": ["邊 AB 的鄰邊是", null, "和", null],
+        "answers": ["AD", "BC"],
+        "anyOrder": true,
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "AB"
+        },
+        "prefix": "邊"
+      },
+      {
+        "parts": ["邊 AD 的鄰邊是", null, "和", null],
+        "answers": ["AB", "CD"],
+        "anyOrder": true,
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "AD"
+        },
+        "prefix": "邊"
+      },
+      {
+        "parts": ["邊 BC 的鄰邊是", null, "和", null],
+        "answers": ["AB", "CD"],
+        "anyOrder": true,
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "BC"
+        },
+        "prefix": "邊"
+      },
+      {
+        "parts": ["邊 CD 的鄰邊是", null, "和", null],
+        "answers": ["BC", "AD"],
+        "anyOrder": true,
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "CD"
+        },
+        "prefix": "邊"
+      }
+    ],
+    [
+      {
+        "parts": ["邊 AD 的對邊是", null],
+        "answers": ["BC"],
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "AD"
+        },
+        "prefix": "邊"
+      },
+      {
+        "parts": ["邊 BC 的對邊是", null],
+        "answers": ["AD"],
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "BC"
+        },
+        "prefix": "邊"
+      },
+      {
+        "parts": ["邊 AB 的對邊是", null],
+        "answers": ["CD"],
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "AB"
+        },
+        "prefix": "邊"
+      },
+      {
+        "parts": ["邊 CD 的對邊是", null],
+        "answers": ["AB"],
+        "options": ["AB", "BC", "CD", "AD", "AC", "BD"],
+        "highlight": {
+          "side": "CD"
+        },
+        "prefix": "邊"
+      }
+    ],
+    [
+      {
+        "parts": ["∠A 的對角是 ∠", null],
+        "answers": ["C"],
+        "options": ["A", "B", "C", "D"],
+        "highlight": {
+          "angle": "A"
+        }
+      },
+      {
+        "parts": ["∠B 的對角是 ∠", null],
+        "answers": ["D"],
+        "options": ["A", "B", "C", "D"],
+        "highlight": {
+          "angle": "B"
+        }
+      },
+      {
+        "parts": ["∠C 的對角是 ∠", null],
+        "answers": ["A"],
+        "options": ["A", "B", "C", "D"],
+        "highlight": {
+          "angle": "C"
+        }
+      },
+      {
+        "parts": ["∠D 的對角是 ∠", null],
+        "answers": ["B"],
+        "options": ["A", "B", "C", "D"],
+        "highlight": {
+          "angle": "D"
+        }
+      }
+    ],
+    [
+      {
+        "parts": ["這個四邊形有", null, "條對角線"],
+        "answers": ["2"],
+        "options": ["1", "2", "3", "4"],
+        "highlight": {}
+      }
+    ]
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "id": "MA4153",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用計算機點按出正確答案"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "expression": "0.09 × 4",
+        "answer": "0.36"
+      },
+      {
+        "expression": "0.38 × 4",
+        "answer": "1.52"
+      },
+      {
+        "expression": "0.07 × 8",
+        "answer": "0.56"
+      },
+      {
+        "expression": "0.22 × 9",
+        "answer": "1.98"
+      },
+      {
+        "expression": "0.63 × 6",
+        "answer": "3.78"
+      }
+    ],
+    [
+      {
+        "expression": "1.32 × 7",
+        "answer": "9.24"
+      },
+      {
+        "expression": "2.31 × 6",
+        "answer": "13.86"
+      },
+      {
+        "expression": "3.02 × 4",
+        "answer": "12.08"
+      },
+      {
+        "expression": "1.23 × 8",
+        "answer": "9.84"
+      },
+      {
+        "expression": "2.08 × 4",
+        "answer": "8.32"
+      }
+    ],
+    [
+      {
+        "expression": "0.36 × 14",
+        "answer": "5.04"
+      },
+      {
+        "expression": "0.95 × 13",
+        "answer": "12.35"
+      },
+      {
+        "expression": "1.14 × 12",
+        "answer": "13.68"
+      },
+      {
+        "expression": "3.09 × 17",
+        "answer": "52.53"
+      },
+      {
+        "expression": "3.21 × 16",
+        "answer": "51.36"
+      }
+    ],
+    [
+      {
+        "expression": "0.98 × 20",
+        "answer": "19.6"
+      },
+      {
+        "expression": "0.73 × 40",
+        "answer": "29.2"
+      },
+      {
+        "expression": "3.56 × 30",
+        "answer": "106.8"
+      },
+      {
+        "expression": "4.53 × 20",
+        "answer": "90.6"
+      },
+      {
+        "expression": "6.71 × 20",
+        "answer": "134.2"
+      }
+    ],
+    [
+      {
+        "expression": "0.24 × 25",
+        "answer": "6"
+      },
+      {
+        "expression": "1.25 × 12",
+        "answer": "15"
+      },
+      {
+        "expression": "0.25 × 12",
+        "answer": "3"
+      },
+      {
+        "expression": "2.25 × 12",
+        "answer": "27"
+      },
+      {
+        "expression": "1.24 × 25",
+        "answer": "31"
+      }
+    ]
+  ]
+}

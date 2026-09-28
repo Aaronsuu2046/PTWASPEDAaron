@@ -58,7 +58,7 @@
                 "Name": "四位數×一位數(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4022.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -70,14 +70,14 @@
                 "Name": "一、二位數×二位數(計算題)",
                 "Description": "用直式算算看",
                 "Img": "MA4023.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4024",
                 "Name": "一、二位數×二位數(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4024.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -89,14 +89,14 @@
                 "Name": "三、四位數×二位數(計算題)",
                 "Description": "用直式算算看",
                 "Img": "MA4025.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4026",
                 "Name": "三、四位數×二位數(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4026.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
@@ -755,7 +755,7 @@
                 "Name": "三、四位數×三位數(計算+應用)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4111.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -767,7 +767,7 @@
                 "Name": "末幾位為0的乘法",
                 "Description": "把一樣的連起來,再用直式算算看",
                 "Img": "MA4112.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -779,7 +779,7 @@
                 "Name": "三、四位數÷三位數(計算+應用)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4113.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -791,7 +791,7 @@
                 "Name": "末幾位為0的除法",
                 "Description": "把一樣的連起來,再用直式算算看",
                 "Img": "MA4114.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
@@ -808,21 +808,21 @@
                 "Name": "認識互相垂直的兩條直線",
                 "Description": "拖動直線找出垂直的線",
                 "Img": "MA4121.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4122",
                 "Name": "互相垂直的線(夾角=直角)",
                 "Description": "拖動直線找出垂直的線",
                 "Img": "MA4122.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4123",
                 "Name": "認識互相平行的兩條直線",
                 "Description": "分類看看,哪些是互相平行的線?哪些不是?",
                 "Img": "MA4123.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -834,14 +834,14 @@
                 "Name": "認識四邊形的構成要素",
                 "Description": "填填看",
                 "Img": "MA4124.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4125",
                 "Name": "認識各類四邊形及其性質",
                 "Description": "把一樣的配對起來",
                 "Img": "MA4125.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -853,14 +853,14 @@
                 "Name": "分割四邊形",
                 "Description": "把一樣的連起來",
                 "Img": "MA4126.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4127",
                 "Name": "畫四邊形",
                 "Description": "在點陣紙上畫出四邊形",
                 "Img": "MA4127.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
@@ -906,7 +906,7 @@
                 "Name": "長方形、正方形的周長",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4141.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -918,7 +918,7 @@
                 "Name": "長方形、正方形的面積",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4142.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -930,7 +930,7 @@
                 "Name": "認識1平方公尺",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4143.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -942,7 +942,7 @@
                 "Name": "複合圖形的面積",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4144.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
@@ -959,14 +959,14 @@
                 "Name": "一位小數×整數(計算題)",
                 "Description": "用直式算算看",
                 "Img": "MA4151.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4152",
                 "Name": "一位小數×整數(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4152.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -978,14 +978,14 @@
                 "Name": "二位小數×整數(計算題)",
                 "Description": "用直式算算看",
                 "Img": "MA4153.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4154",
                 "Name": "二位小數×整數(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4154.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -997,7 +997,7 @@
                 "Name": "小數計算的應用",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4155.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1009,7 +1009,7 @@
                 "Name": "小數數線",
                 "Description": "拖動數字到正確位置並填填看",
                 "Img": "MA4156.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
@@ -1026,14 +1026,14 @@
                 "Name": "等值分數(連續量情境)",
                 "Description": "塗色並填填看",
                 "Img": "MA4161.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4162",
                 "Name": "等值分數(離散量情境)",
                 "Description": "塗色並填填看",
                 "Img": "MA4162.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1045,7 +1045,7 @@
                 "Name": "簡單異分母分數的比較",
                 "Description": "在口裡填入>、<或=",
                 "Img": "MA4163.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1057,7 +1057,7 @@
                 "Name": "簡單異分母分數的加減(計算+應用)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4164.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1069,7 +1069,7 @@
                 "Name": "分數和小數的互換",
                 "Description": "把一樣的連起來",
                 "Img": "MA4165.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1081,7 +1081,7 @@
                 "Name": "分數數線",
                 "Description": "拖動分數到正確位置並填填看",
                 "Img": "MA4166.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
@@ -1096,9 +1096,9 @@
               {
                 "id": "MA4171",
                 "Name": "圖形的規律",
-                "Description": "拖動圖形找出規律",
+                "Description": "點選或拖動圖形找出規律",
                 "Img": "MA4171.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1110,7 +1110,7 @@
                 "Name": "數字的規律",
                 "Description": "選選看找出規律",
                 "Img": "MA4172.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1120,9 +1120,9 @@
               {
                 "id": "MA4173",
                 "Name": "奇偶數的規律",
-                "Description": "拖動數字找出規律",
+                "Description": "點選或拖動數字找出規律",
                 "Img": "MA4173.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }

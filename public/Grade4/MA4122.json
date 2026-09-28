@@ -1,0 +1,430 @@
+{
+  "id": "MA4122",
+  "GameType": "SelfDefine",
+  "TotalLevel": 2,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "利用三角板找出互相垂直的線，並將直角圈起來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "polygon",
+        "points": [
+          [60, 50],
+          [60, 190],
+          [260, 190],
+          [260, 100]
+        ],
+        "labels": "ABCD",
+        "candidates": [
+          {
+            "x": 60,
+            "y": 50,
+            "label": "A",
+            "right": false
+          },
+          {
+            "x": 60,
+            "y": 190,
+            "label": "B",
+            "right": true
+          },
+          {
+            "x": 260,
+            "y": 190,
+            "label": "C",
+            "right": true
+          },
+          {
+            "x": 260,
+            "y": 100,
+            "label": "D",
+            "right": false
+          }
+        ]
+      },
+      {
+        "kind": "polygon",
+        "points": [
+          [60, 50],
+          [60, 190],
+          [270, 190],
+          [270, 50]
+        ],
+        "labels": "ABCD",
+        "candidates": [
+          {
+            "x": 60,
+            "y": 50,
+            "label": "A",
+            "right": true
+          },
+          {
+            "x": 60,
+            "y": 190,
+            "label": "B",
+            "right": true
+          },
+          {
+            "x": 270,
+            "y": 190,
+            "label": "C",
+            "right": true
+          },
+          {
+            "x": 270,
+            "y": 50,
+            "label": "D",
+            "right": true
+          }
+        ]
+      },
+      {
+        "kind": "polygon",
+        "points": [
+          [60, 75],
+          [60, 190],
+          [260, 190],
+          [260, 45]
+        ],
+        "labels": "ABCD",
+        "candidates": [
+          {
+            "x": 60,
+            "y": 75,
+            "label": "A",
+            "right": false
+          },
+          {
+            "x": 60,
+            "y": 190,
+            "label": "B",
+            "right": true
+          },
+          {
+            "x": 260,
+            "y": 190,
+            "label": "C",
+            "right": true
+          },
+          {
+            "x": 260,
+            "y": 45,
+            "label": "D",
+            "right": false
+          }
+        ]
+      },
+      {
+        "kind": "polygon",
+        "points": [
+          [40, 100],
+          [70, 190],
+          [250, 190],
+          [250, 80],
+          [170, 30]
+        ],
+        "labels": "ABCDE",
+        "candidates": [
+          {
+            "x": 40,
+            "y": 100,
+            "label": "A",
+            "right": false
+          },
+          {
+            "x": 70,
+            "y": 190,
+            "label": "B",
+            "right": false
+          },
+          {
+            "x": 250,
+            "y": 190,
+            "label": "C",
+            "right": true
+          },
+          {
+            "x": 250,
+            "y": 80,
+            "label": "D",
+            "right": false
+          },
+          {
+            "x": 170,
+            "y": 30,
+            "label": "E",
+            "right": false
+          }
+        ]
+      },
+      {
+        "kind": "polygon",
+        "points": [
+          [60, 50],
+          [60, 165],
+          [260, 205],
+          [260, 50]
+        ],
+        "labels": "ABCD",
+        "candidates": [
+          {
+            "x": 60,
+            "y": 50,
+            "label": "A",
+            "right": true
+          },
+          {
+            "x": 60,
+            "y": 165,
+            "label": "B",
+            "right": false
+          },
+          {
+            "x": 260,
+            "y": 205,
+            "label": "C",
+            "right": false
+          },
+          {
+            "x": 260,
+            "y": 50,
+            "label": "D",
+            "right": true
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "kind": "lines",
+        "lines": [
+          {
+            "name": "A",
+            "seg": [40, 180, 290, 180],
+            "color": "#1e88e5"
+          },
+          {
+            "name": "B",
+            "seg": [70, 30, 70, 200],
+            "color": "#e53935"
+          },
+          {
+            "name": "C",
+            "seg": [40, 120, 290, 20],
+            "color": "#43a047"
+          },
+          {
+            "name": "D",
+            "seg": [228, 10, 280, 140],
+            "color": "#8e24aa"
+          }
+        ],
+        "candidates": [
+          {
+            "x": 70.0,
+            "y": 180.0,
+            "label": "AB",
+            "right": true
+          },
+          {
+            "x": 70.0,
+            "y": 108.0,
+            "label": "BC",
+            "right": false
+          },
+          {
+            "x": 240.0,
+            "y": 40.0,
+            "label": "CD",
+            "right": true
+          }
+        ]
+      },
+      {
+        "kind": "lines",
+        "lines": [
+          {
+            "name": "上",
+            "seg": [50.0, 46.4, 290, 90],
+            "color": "#1e88e5"
+          },
+          {
+            "name": "下",
+            "seg": [28.0, 167.4, 268.0, 211.0],
+            "color": "#1e88e5"
+          },
+          {
+            "name": "左",
+            "seg": [73.2, 32.4, 44.8, 188.6],
+            "color": "#e53935"
+          },
+          {
+            "name": "右",
+            "seg": [250, 30, 300, 215],
+            "color": "#43a047"
+          }
+        ],
+        "candidates": [
+          {
+            "x": 70.0,
+            "y": 50.0,
+            "label": "A",
+            "right": true
+          },
+          {
+            "x": 265.0,
+            "y": 85.5,
+            "label": "B",
+            "right": false
+          },
+          {
+            "x": 48.0,
+            "y": 171.0,
+            "label": "D",
+            "right": true
+          }
+        ],
+        "hideLineNames": true,
+        "pointLabels": [
+          {
+            "x": 70.0,
+            "y": 50.0,
+            "text": "A"
+          },
+          {
+            "x": 265.0,
+            "y": 85.5,
+            "text": "B"
+          },
+          {
+            "x": 48.0,
+            "y": 171.0,
+            "text": "D"
+          }
+        ]
+      },
+      {
+        "kind": "lines",
+        "lines": [
+          {
+            "name": "A",
+            "seg": [160, 40, 20, 180],
+            "color": "#1e88e5"
+          },
+          {
+            "name": "B",
+            "seg": [160, 40, 300, 180],
+            "color": "#e53935"
+          },
+          {
+            "name": "C",
+            "seg": [10, 170, 310, 170],
+            "color": "#43a047"
+          }
+        ],
+        "candidates": [
+          {
+            "x": 160.0,
+            "y": 40.0,
+            "label": "AB",
+            "right": true
+          },
+          {
+            "x": 30.0,
+            "y": 170.0,
+            "label": "AC",
+            "right": false
+          },
+          {
+            "x": 290.0,
+            "y": 170.0,
+            "label": "BC",
+            "right": false
+          }
+        ]
+      },
+      {
+        "kind": "lines",
+        "lines": [
+          {
+            "name": "紅",
+            "seg": [40, 200, 290, 40],
+            "color": "#e53935"
+          },
+          {
+            "name": "藍",
+            "seg": [31.2, 75.0, 112.1, 201.3],
+            "color": "#1e88e5"
+          },
+          {
+            "name": "綠",
+            "seg": [178.5, 63.9, 237.8, 156.5],
+            "color": "#43a047"
+          }
+        ],
+        "candidates": [
+          {
+            "x": 90.5,
+            "y": 167.7,
+            "label": "紅藍",
+            "right": true
+          },
+          {
+            "x": 200.1,
+            "y": 97.6,
+            "label": "紅綠",
+            "right": true
+          }
+        ]
+      },
+      {
+        "kind": "lines",
+        "lines": [
+          {
+            "name": "A",
+            "seg": [130, 30, 270, 170],
+            "color": "#1e88e5"
+          },
+          {
+            "name": "B",
+            "seg": [80, 20, 80, 210],
+            "color": "#e53935"
+          },
+          {
+            "name": "C",
+            "seg": [40, 180, 300, 180],
+            "color": "#43a047"
+          },
+          {
+            "name": "D",
+            "seg": [160, 200, 290, 70],
+            "color": "#8e24aa"
+          }
+        ],
+        "candidates": [
+          {
+            "x": 230.0,
+            "y": 130.0,
+            "label": "AD",
+            "right": true
+          },
+          {
+            "x": 80.0,
+            "y": 180.0,
+            "label": "BC",
+            "right": true
+          },
+          {
+            "x": 180.0,
+            "y": 180.0,
+            "label": "CD",
+            "right": false
+          }
+        ]
+      }
+    ]
+  ]
+}

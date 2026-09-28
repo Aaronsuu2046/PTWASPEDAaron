@@ -1,0 +1,587 @@
+{
+  "id": "MA4162",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "塗塗看，再回答問題"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "type": "compare",
+        "question": "\\frac{4}{8}張紙和\\frac{5}{10}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 4,
+            "denominator": 8
+          },
+          {
+            "shape": "paper",
+            "numerator": 5,
+            "denominator": 10
+          }
+        ],
+        "answer": "一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{1}{2}張紙和\\frac{1}{4}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 1,
+            "denominator": 2
+          },
+          {
+            "shape": "paper",
+            "numerator": 1,
+            "denominator": 4
+          }
+        ],
+        "answer": "不一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{2}{6}張紙和\\frac{2}{3}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 2,
+            "denominator": 6
+          },
+          {
+            "shape": "paper",
+            "numerator": 2,
+            "denominator": 3
+          }
+        ],
+        "answer": "不一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{1}{3}張紙和\\frac{2}{6}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 1,
+            "denominator": 3
+          },
+          {
+            "shape": "paper",
+            "numerator": 2,
+            "denominator": 6
+          }
+        ],
+        "answer": "一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{3}{6}張紙和\\frac{6}{12}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 3,
+            "denominator": 6
+          },
+          {
+            "shape": "paper",
+            "numerator": 6,
+            "denominator": 12
+          }
+        ],
+        "answer": "一樣大"
+      }
+    ],
+    [
+      {
+        "type": "compare",
+        "question": "\\frac{6}{9}圓和\\frac{1}{3}圓一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "circle",
+            "numerator": 6,
+            "denominator": 9
+          },
+          {
+            "shape": "circle",
+            "numerator": 1,
+            "denominator": 3
+          }
+        ],
+        "answer": "不一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{4}{10}張紙和\\frac{5}{8}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 4,
+            "denominator": 10
+          },
+          {
+            "shape": "paper",
+            "numerator": 5,
+            "denominator": 8
+          }
+        ],
+        "answer": "不一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{3}{9}張紙和\\frac{3}{6}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 3,
+            "denominator": 9
+          },
+          {
+            "shape": "paper",
+            "numerator": 3,
+            "denominator": 6
+          }
+        ],
+        "answer": "不一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{2}{6}張紙和\\frac{3}{9}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 2,
+            "denominator": 6
+          },
+          {
+            "shape": "paper",
+            "numerator": 3,
+            "denominator": 9
+          }
+        ],
+        "answer": "一樣大"
+      },
+      {
+        "type": "compare",
+        "question": "\\frac{6}{10}張紙和\\frac{3}{5}張紙一樣大嗎？",
+        "shapes": [
+          {
+            "shape": "paper",
+            "numerator": 6,
+            "denominator": 10
+          },
+          {
+            "shape": "paper",
+            "numerator": 3,
+            "denominator": 5
+          }
+        ],
+        "answer": "一樣大"
+      }
+    ],
+    [
+      {
+        "type": "equation",
+        "visual": "paper",
+        "question": "\\frac{2}{5}張色紙和十五分之幾張色紙一樣大？",
+        "shape": "paper",
+        "denominator": 15,
+        "baseDenominator": 5,
+        "filled": 6,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [5]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [15]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "paper",
+        "question": "\\frac{3}{4}張色紙和八分之幾張色紙一樣大？",
+        "shape": "paper",
+        "denominator": 8,
+        "baseDenominator": 4,
+        "filled": 6,
+        "equation": [
+          {
+            "numerator": [3],
+            "denominator": [4]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 6
+              }
+            ],
+            "denominator": [8]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "paper",
+        "question": "\\frac{2}{3}張色紙和十二分之幾張色紙一樣大？",
+        "shape": "paper",
+        "denominator": 12,
+        "baseDenominator": 3,
+        "filled": 8,
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [3]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 8
+              }
+            ],
+            "denominator": [12]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "paper",
+        "question": "\\frac{5}{6}張色紙和十二分之幾張色紙一樣大？",
+        "shape": "paper",
+        "denominator": 12,
+        "baseDenominator": 6,
+        "filled": 10,
+        "equation": [
+          {
+            "numerator": [5],
+            "denominator": [6]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 10
+              }
+            ],
+            "denominator": [12]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "paper",
+        "question": "\\frac{6}{7}張色紙和十四分之幾張色紙一樣大？",
+        "shape": "paper",
+        "denominator": 14,
+        "baseDenominator": 7,
+        "filled": 12,
+        "equation": [
+          {
+            "numerator": [6],
+            "denominator": [7]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 12
+              }
+            ],
+            "denominator": [14]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "equation",
+        "visual": "candy",
+        "question": "糖果1包有10顆，\\frac{2}{10}包糖果和五分之幾包糖果一樣多？",
+        "candy": {
+          "total": 10,
+          "colored": 2,
+          "groups": 5
+        },
+        "equation": [
+          {
+            "numerator": [2],
+            "denominator": [10]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 1
+              }
+            ],
+            "denominator": [5]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "candy",
+        "question": "糖果1包有12顆，\\frac{4}{12}包糖果和六分之幾包糖果一樣多？",
+        "candy": {
+          "total": 12,
+          "colored": 4,
+          "groups": 6
+        },
+        "equation": [
+          {
+            "numerator": [4],
+            "denominator": [12]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [6]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "candy",
+        "question": "糖果1包有10顆，\\frac{5}{10}包糖果和二分之幾包糖果一樣多？",
+        "candy": {
+          "total": 10,
+          "colored": 5,
+          "groups": 2
+        },
+        "equation": [
+          {
+            "numerator": [5],
+            "denominator": [10]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 1
+              }
+            ],
+            "denominator": [2]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "candy",
+        "question": "糖果1包有12顆，\\frac{4}{12}包糖果和三分之幾包糖果一樣多？",
+        "candy": {
+          "total": 12,
+          "colored": 4,
+          "groups": 3
+        },
+        "equation": [
+          {
+            "numerator": [4],
+            "denominator": [12]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 1
+              }
+            ],
+            "denominator": [3]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "candy",
+        "question": "糖果1包有12顆，\\frac{6}{12}包糖果和四分之幾包糖果一樣多？",
+        "candy": {
+          "total": 12,
+          "colored": 6,
+          "groups": 4
+        },
+        "equation": [
+          {
+            "numerator": [6],
+            "denominator": [12]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [4]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "equation",
+        "visual": "beads",
+        "question": "\\frac{3}{9}串珠子和三分之幾串珠子一樣多？",
+        "beads": {
+          "total": 9,
+          "colored": 3
+        },
+        "equation": [
+          {
+            "numerator": [3],
+            "denominator": [9]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 1
+              }
+            ],
+            "denominator": [3]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "beads",
+        "question": "\\frac{4}{8}串珠子和四分之幾串珠子一樣多？",
+        "beads": {
+          "total": 8,
+          "colored": 4
+        },
+        "equation": [
+          {
+            "numerator": [4],
+            "denominator": [8]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 2
+              }
+            ],
+            "denominator": [4]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "beads",
+        "question": "\\frac{4}{8}串珠子和二分之幾串珠子一樣多？",
+        "beads": {
+          "total": 8,
+          "colored": 4
+        },
+        "equation": [
+          {
+            "numerator": [4],
+            "denominator": [8]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 1
+              }
+            ],
+            "denominator": [2]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "beads",
+        "question": "\\frac{6}{10}串珠子和五分之幾串珠子一樣多？",
+        "beads": {
+          "total": 10,
+          "colored": 6
+        },
+        "equation": [
+          {
+            "numerator": [6],
+            "denominator": [10]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 3
+              }
+            ],
+            "denominator": [5]
+          }
+        ]
+      },
+      {
+        "type": "equation",
+        "visual": "beads",
+        "question": "\\frac{5}{10}串珠子和二分之幾串珠子一樣多？",
+        "beads": {
+          "total": 10,
+          "colored": 5
+        },
+        "equation": [
+          {
+            "numerator": [5],
+            "denominator": [10]
+          },
+          {
+            "text": "="
+          },
+          {
+            "numerator": [
+              {
+                "answer": 1
+              }
+            ],
+            "denominator": [2]
+          }
+        ]
+      }
+    ]
+  ]
+}
