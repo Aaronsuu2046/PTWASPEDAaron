@@ -5,9 +5,7 @@
     </div>
 
     <div class="game-area">
-      <p class="how">
-        點角卡再點分類區，或直接拖過去；按「量」可以用量角器量
-      </p>
+      <p class="how">點角卡再點分類區，或直接拖過去；按「量」可以用量角器量</p>
 
       <div
         class="tray"
