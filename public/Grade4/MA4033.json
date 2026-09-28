@@ -1,0 +1,177 @@
+{
+  "id": "MA4033",
+  "GameType": "SelfDefine",
+  "TotalLevel": 1,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "量量看，哪些是銳角、直角或鈍角？"
+  },
+  "GameConfig": {
+    "Pool": [
+      {
+        "id": "a1",
+        "angle": 20,
+        "from": 10,
+        "len": [46, 40],
+        "color": "#e53935",
+        "kind": "acute"
+      },
+      {
+        "id": "a2",
+        "angle": 35,
+        "from": 120,
+        "len": [48, 44],
+        "color": "#1e88e5",
+        "kind": "acute"
+      },
+      {
+        "id": "a3",
+        "angle": 45,
+        "from": 200,
+        "len": [44, 38],
+        "color": "#43a047",
+        "kind": "acute"
+      },
+      {
+        "id": "a4",
+        "angle": 60,
+        "from": 300,
+        "len": [40, 48],
+        "color": "#8e24aa",
+        "kind": "acute"
+      },
+      {
+        "id": "a5",
+        "angle": 75,
+        "from": 60,
+        "len": [42, 42],
+        "color": "#fb8c00",
+        "kind": "acute"
+      },
+      {
+        "id": "r1",
+        "angle": 90,
+        "from": 0,
+        "len": [48, 44],
+        "color": "#43a047",
+        "kind": "right"
+      },
+      {
+        "id": "r2",
+        "angle": 90,
+        "from": 35,
+        "len": [44, 38],
+        "color": "#8e24aa",
+        "kind": "right"
+      },
+      {
+        "id": "r3",
+        "angle": 90,
+        "from": 90,
+        "len": [40, 48],
+        "color": "#fb8c00",
+        "kind": "right"
+      },
+      {
+        "id": "r4",
+        "angle": 90,
+        "from": 160,
+        "len": [42, 42],
+        "color": "#e53935",
+        "kind": "right"
+      },
+      {
+        "id": "r5",
+        "angle": 90,
+        "from": 250,
+        "len": [46, 40],
+        "color": "#1e88e5",
+        "kind": "right"
+      },
+      {
+        "id": "o1",
+        "angle": 105,
+        "from": 0,
+        "len": [44, 38],
+        "color": "#fb8c00",
+        "kind": "obtuse"
+      },
+      {
+        "id": "o2",
+        "angle": 120,
+        "from": 200,
+        "len": [40, 48],
+        "color": "#e53935",
+        "kind": "obtuse"
+      },
+      {
+        "id": "o3",
+        "angle": 135,
+        "from": 30,
+        "len": [42, 42],
+        "color": "#1e88e5",
+        "kind": "obtuse"
+      },
+      {
+        "id": "o4",
+        "angle": 150,
+        "from": 280,
+        "len": [46, 40],
+        "color": "#43a047",
+        "kind": "obtuse"
+      },
+      {
+        "id": "o5",
+        "angle": 165,
+        "from": 110,
+        "len": [48, 44],
+        "color": "#8e24aa",
+        "kind": "obtuse"
+      }
+    ]
+  },
+  "Questions": [
+    [
+      {
+        "kind": "sort",
+        "cards": ["o1", "a2", "r2", "o5", "a1", "a5"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["r1", "r2", "o2", "a4", "r4", "a3"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["r5", "r4", "o5", "a4", "o2"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["a2", "r3", "a4", "o3", "r1", "o5"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["r1", "a4", "r4", "o4", "a2"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["r1", "r2", "a4", "a5", "o5"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["a3", "a4", "a5", "o3", "r2"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["a1", "r2", "o1", "o5", "a3"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["a1", "r5", "o2", "r1", "a2"]
+      },
+      {
+        "kind": "sort",
+        "cards": ["o4", "o3", "r1", "a3", "a5", "r5"]
+      }
+    ]
+  ]
+}
