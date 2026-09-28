@@ -1,0 +1,82 @@
+{
+  "id": "MA4126",
+  "GameType": "SelfDefine",
+  "TotalLevel": 1,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "沿著四邊形的一條對角線剪開，剪開的兩個三角形有什麼關係？"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "square",
+            "diagonal": true
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "rectangle",
+            "diagonal": true
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rhombus",
+            "diagonal": true
+          },
+          {
+            "id": "L3",
+            "kind": "shape",
+            "shape": "parallelogram",
+            "diagonal": true
+          },
+          {
+            "id": "L4",
+            "kind": "shape",
+            "shape": "trapezoid",
+            "diagonal": true
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "兩個全等的等腰直角三角形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "兩個全等的直角三角形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "兩個全等的等腰三角形"
+          },
+          {
+            "id": "R3",
+            "kind": "text",
+            "text": "兩個全等的三角形"
+          },
+          {
+            "id": "R4",
+            "kind": "text",
+            "text": "兩個三角形不是全等圖形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2",
+          "L3": "R3",
+          "L4": "R4"
+        }
+      }
+    ]
+  ]
+}

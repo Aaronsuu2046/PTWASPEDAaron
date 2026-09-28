@@ -6,6 +6,15 @@
 
     <div class="game-area">
       <div class="work-panel">
+        <!-- 選填 calculator：可打開 MA4151 的計算機，看得到計算過程 -->
+        <button
+          v-if="gameData.calculator && !answered"
+          type="button"
+          class="calc-toggle"
+          @click="calcOpen = !calcOpen"
+        >
+          {{ calcOpen ? "收起計算機" : "打開計算機" }}
+        </button>
         <div class="question-row">
           <p class="question-text">{{ gameData.question }}</p>
           <!-- 選填：長方形／正方形示意圖 -->
@@ -86,6 +95,20 @@
         </div>
       </div>
 
+      <div v-if="gameData.calculator" v-show="calcOpen" class="calc-float">
+        <div class="calc-float__head">
+          <span>算好再填到格子裡</span>
+          <button
+            type="button"
+            class="calc-float__close"
+            @click="calcOpen = false"
+          >
+            關閉
+          </button>
+        </div>
+        <KidCalculator />
+      </div>
+
       <!-- 選填 revealMs：答對後停留，讓學生看完整做法再進下一題 -->
       <div v-if="revealing" class="reveal">
         <p class="reveal__title">答對了！</p>
@@ -141,6 +164,7 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import RectFigure from "./RectFigure.vue";
 import CompositeFigure from "./CompositeFigure.vue";
 import TileFigure from "./TileFigure.vue";
+import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -150,10 +174,11 @@ const MAX_LENGTH = 7;
 
 // 應用題共用：題目 { question, steps: [{ a, op, b, result }], answer, unit }
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
+// 選填 calculator: true：畫面上可打開小學生版計算機（顯示計算紀錄）
 // 選填 step.given（例如 ["a"]）：該部分由題目直接給定，不用填
 export default {
   name: "WordProblemQuestion",
-  components: { RectFigure, CompositeFigure, TileFigure },
+  components: { RectFigure, CompositeFigure, TileFigure, KidCalculator },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
@@ -176,6 +201,7 @@ export default {
       wrongKeys: [],
       answered: false,
       revealing: false,
+      calcOpen: false,
       revealTimer: null,
     };
   },
@@ -417,6 +443,7 @@ export default {
 }
 
 .game-area {
+  position: relative;
   flex: 1;
   min-height: 0;
   display: flex;
@@ -425,6 +452,95 @@ export default {
   background-color: $sub-color;
   border-radius: $border-radius;
   padding: $padding--small;
+}
+
+.calc-toggle {
+  align-self: flex-end;
+  padding: 0.35rem 1rem;
+  font-size: 1.2rem;
+  font-weight: $font-bold;
+  color: #ffffff;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 3px 0 #e65100;
+  cursor: pointer;
+}
+
+// 計算機蓋在右邊按鍵區上方
+.calc-float {
+  position: absolute;
+  top: $padding--small;
+  right: $padding--small;
+  bottom: $padding--small;
+  z-index: 5;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background-color: #fffde7;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: $font-bold;
+    color: #6d4c41;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    padding: 0.2rem 0.8rem;
+    font-size: 1.1rem;
+    font-weight: $font-bold;
+    color: #ffffff;
+    background-color: #ef5350;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  :deep(.kid-calc) {
+    flex: 1;
+    min-height: 0;
+  }
+
+  // 留空間給計算紀錄，按鍵壓扁一點
+  :deep(.calc-history) {
+    flex-shrink: 0;
+    min-height: 5.5rem;
+  }
+
+  :deep(.calc-btn) {
+    height: 2.4rem;
+    font-size: 1.4rem;
+  }
+
+  // 平板高度不夠：按鍵與顯示數字再縮小，計算紀錄才看得到
+  @media (max-height: 760px) {
+    :deep(.calc-history) {
+      min-height: 4.2rem;
+    }
+
+    :deep(.calc-btn) {
+      height: 1.95rem;
+      font-size: 1.2rem;
+    }
+
+    :deep(.calc-keypad) {
+      gap: 6px;
+      padding: 6px 10px;
+    }
+
+    :deep(.calc-display__value) {
+      font-size: 2.2rem !important;
+    }
+  }
 }
 
 .work-panel {
