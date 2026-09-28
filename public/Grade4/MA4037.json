@@ -1,0 +1,312 @@
+{
+  "id": "MA4037",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "移動指針，再回答問題。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "grids",
+        "start": 6,
+        "dir": "cw",
+        "turn": 60,
+        "end": 8,
+        "text": "把指針從 6 順時針轉到 8，轉了幾大格？",
+        "unit": "大格",
+        "answer": 2
+      },
+      {
+        "kind": "grids",
+        "start": 12,
+        "dir": "cw",
+        "turn": 30,
+        "end": 1,
+        "text": "把指針從 12 順時針轉到 1，轉了幾大格？",
+        "unit": "大格",
+        "answer": 1
+      },
+      {
+        "kind": "grids",
+        "start": 4,
+        "dir": "cw",
+        "turn": 30,
+        "end": 5,
+        "text": "把指針從 4 順時針轉到 5，轉了幾大格？",
+        "unit": "大格",
+        "answer": 1
+      },
+      {
+        "kind": "grids",
+        "start": 7,
+        "dir": "ccw",
+        "turn": 30,
+        "end": 6,
+        "text": "把指針從 7 逆時針轉到 6，轉了幾大格？",
+        "unit": "大格",
+        "answer": 1
+      },
+      {
+        "kind": "grids",
+        "start": 8,
+        "dir": "ccw",
+        "turn": 120,
+        "end": 4,
+        "text": "把指針從 8 逆時針轉到 4，轉了幾大格？",
+        "unit": "大格",
+        "answer": 4
+      }
+    ],
+    [
+      {
+        "kind": "degree",
+        "start": 6,
+        "dir": "cw",
+        "turn": 60,
+        "end": 8,
+        "text": "把指針從 6 順時針轉到 8，轉了幾度？",
+        "unit": "度",
+        "answer": 60
+      },
+      {
+        "kind": "degree",
+        "start": 12,
+        "dir": "cw",
+        "turn": 120,
+        "end": 4,
+        "text": "把指針從 12 順時針轉到 4，轉了幾度？",
+        "unit": "度",
+        "answer": 120
+      },
+      {
+        "kind": "degree",
+        "start": 5,
+        "dir": "cw",
+        "turn": 150,
+        "end": 10,
+        "text": "把指針從 5 順時針轉到 10，轉了幾度？",
+        "unit": "度",
+        "answer": 150
+      },
+      {
+        "kind": "degree",
+        "start": 3,
+        "dir": "cw",
+        "turn": 180,
+        "end": 9,
+        "text": "把指針從 3 順時針轉到 9，轉了幾度？",
+        "unit": "度",
+        "answer": 180
+      },
+      {
+        "kind": "degree",
+        "start": 1,
+        "dir": "cw",
+        "turn": 120,
+        "end": 5,
+        "text": "把指針從 1 順時針轉到 5，轉了幾度？",
+        "unit": "度",
+        "answer": 120
+      }
+    ],
+    [
+      {
+        "kind": "degree",
+        "start": 9,
+        "dir": "ccw",
+        "turn": 90,
+        "end": 6,
+        "text": "把指針從 9 逆時針轉到 6，轉了幾度？",
+        "unit": "度",
+        "answer": 90
+      },
+      {
+        "kind": "degree",
+        "start": 12,
+        "dir": "ccw",
+        "turn": 60,
+        "end": 10,
+        "text": "把指針從 12 逆時針轉到 10，轉了幾度？",
+        "unit": "度",
+        "answer": 60
+      },
+      {
+        "kind": "degree",
+        "start": 12,
+        "dir": "ccw",
+        "turn": 90,
+        "end": 9,
+        "text": "把指針從 12 逆時針轉到 9，轉了幾度？",
+        "unit": "度",
+        "answer": 90
+      },
+      {
+        "kind": "degree",
+        "start": 4,
+        "dir": "cw",
+        "turn": 120,
+        "end": 8,
+        "text": "把指針從 4 順時針轉到 8，轉了幾度？",
+        "unit": "度",
+        "answer": 120
+      },
+      {
+        "kind": "degree",
+        "start": 6,
+        "dir": "cw",
+        "turn": 150,
+        "end": 11,
+        "text": "把指針從 6 順時針轉到 11，轉了幾度？",
+        "unit": "度",
+        "answer": 150
+      }
+    ],
+    [
+      {
+        "kind": "end",
+        "start": 5,
+        "dir": "cw",
+        "turn": 90,
+        "end": 8,
+        "text": "把指針從 5 順時針轉 90°，會停在哪個數字？",
+        "unit": "",
+        "answer": 8
+      },
+      {
+        "kind": "end",
+        "start": 2,
+        "dir": "cw",
+        "turn": 180,
+        "end": 8,
+        "text": "把指針從 2 順時針轉 180°，會停在哪個數字？",
+        "unit": "",
+        "answer": 8
+      },
+      {
+        "kind": "end",
+        "start": 11,
+        "dir": "cw",
+        "turn": 60,
+        "end": 1,
+        "text": "把指針從 11 順時針轉 60°，會停在哪個數字？",
+        "unit": "",
+        "answer": 1
+      },
+      {
+        "kind": "end",
+        "start": 7,
+        "dir": "ccw",
+        "turn": 150,
+        "end": 2,
+        "text": "把指針從 7 逆時針轉 150°，會停在哪個數字？",
+        "unit": "",
+        "answer": 2
+      },
+      {
+        "kind": "end",
+        "start": 9,
+        "dir": "cw",
+        "turn": 90,
+        "end": 12,
+        "text": "把指針從 9 順時針轉 90°，會停在哪個數字？",
+        "unit": "",
+        "answer": 12
+      }
+    ],
+    [
+      {
+        "kind": "protractor",
+        "ring": "外圈",
+        "turns": [
+          {
+            "dir": "cw",
+            "deg": 120
+          },
+          {
+            "dir": "cw",
+            "deg": 20
+          }
+        ],
+        "first": 120,
+        "answer": 140,
+        "tolerance": 2,
+        "text": "指針從外圈 0° 開始，先順時針轉 120°，再順時針轉 20°。"
+      },
+      {
+        "kind": "protractor",
+        "ring": "內圈",
+        "turns": [
+          {
+            "dir": "ccw",
+            "deg": 160
+          },
+          {
+            "dir": "cw",
+            "deg": 40
+          }
+        ],
+        "first": 160,
+        "answer": 120,
+        "tolerance": 2,
+        "text": "指針從內圈 0° 開始，先逆時針轉 160°，再順時針轉 40°。"
+      },
+      {
+        "kind": "protractor",
+        "ring": "內圈",
+        "turns": [
+          {
+            "dir": "ccw",
+            "deg": 110
+          },
+          {
+            "dir": "cw",
+            "deg": 60
+          }
+        ],
+        "first": 110,
+        "answer": 50,
+        "tolerance": 2,
+        "text": "指針從內圈 0° 開始，先逆時針轉 110°，再順時針轉 60°。"
+      },
+      {
+        "kind": "protractor",
+        "ring": "外圈",
+        "turns": [
+          {
+            "dir": "cw",
+            "deg": 130
+          },
+          {
+            "dir": "ccw",
+            "deg": 60
+          }
+        ],
+        "first": 130,
+        "answer": 70,
+        "tolerance": 2,
+        "text": "指針從外圈 0° 開始，先順時針轉 130°，再逆時針轉 60°。"
+      },
+      {
+        "kind": "protractor",
+        "ring": "外圈",
+        "turns": [
+          {
+            "dir": "cw",
+            "deg": 70
+          },
+          {
+            "dir": "cw",
+            "deg": 90
+          }
+        ],
+        "first": 70,
+        "answer": 160,
+        "tolerance": 2,
+        "text": "指針從外圈 0° 開始，先順時針轉 70°，再順時針轉 90°。"
+      }
+    ]
+  ]
+}
