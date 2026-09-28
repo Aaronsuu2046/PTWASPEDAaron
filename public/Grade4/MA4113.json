@@ -1,0 +1,207 @@
+{
+  "id": "MA4113",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用除法直式算算看"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "division",
+        "dividend": "800",
+        "divisor": "400",
+        "quotient": "2",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "900",
+        "divisor": "300",
+        "quotient": "3",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "600",
+        "divisor": "200",
+        "quotient": "3",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "800",
+        "divisor": "200",
+        "quotient": "4",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "600",
+        "divisor": "300",
+        "quotient": "2",
+        "remainder": "0"
+      }
+    ],
+    [
+      {
+        "kind": "division",
+        "dividend": "730",
+        "divisor": "195",
+        "quotient": "3",
+        "remainder": "145"
+      },
+      {
+        "kind": "division",
+        "dividend": "580",
+        "divisor": "106",
+        "quotient": "5",
+        "remainder": "50"
+      },
+      {
+        "kind": "division",
+        "dividend": "836",
+        "divisor": "175",
+        "quotient": "4",
+        "remainder": "136"
+      },
+      {
+        "kind": "division",
+        "dividend": "997",
+        "divisor": "116",
+        "quotient": "8",
+        "remainder": "69"
+      },
+      {
+        "kind": "division",
+        "dividend": "872",
+        "divisor": "295",
+        "quotient": "2",
+        "remainder": "282"
+      }
+    ],
+    [
+      {
+        "kind": "division",
+        "dividend": "3510",
+        "divisor": "585",
+        "quotient": "6",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "3618",
+        "divisor": "134",
+        "quotient": "27",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "1210",
+        "divisor": "242",
+        "quotient": "5",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "2888",
+        "divisor": "361",
+        "quotient": "8",
+        "remainder": "0"
+      },
+      {
+        "kind": "division",
+        "dividend": "2448",
+        "divisor": "102",
+        "quotient": "24",
+        "remainder": "0"
+      }
+    ],
+    [
+      {
+        "kind": "division",
+        "dividend": "6543",
+        "divisor": "235",
+        "quotient": "27",
+        "remainder": "198"
+      },
+      {
+        "kind": "division",
+        "dividend": "3265",
+        "divisor": "425",
+        "quotient": "7",
+        "remainder": "290"
+      },
+      {
+        "kind": "division",
+        "dividend": "8209",
+        "divisor": "306",
+        "quotient": "26",
+        "remainder": "253"
+      },
+      {
+        "kind": "division",
+        "dividend": "4597",
+        "divisor": "682",
+        "quotient": "6",
+        "remainder": "505"
+      },
+      {
+        "kind": "division",
+        "dividend": "5006",
+        "divisor": "195",
+        "quotient": "25",
+        "remainder": "131"
+      }
+    ],
+    [
+      {
+        "kind": "word",
+        "question": "將 1786 元平均分給 188 個人，每人最多可以分到多少元？剩下多少元？",
+        "dividend": "1786",
+        "divisor": "188",
+        "quotient": "9",
+        "remainder": "94",
+        "unit": "元"
+      },
+      {
+        "kind": "word",
+        "question": "將 1540 元平均分給 115 個人，每人最多可以分到多少元？剩下多少元？",
+        "dividend": "1540",
+        "divisor": "115",
+        "quotient": "13",
+        "remainder": "45",
+        "unit": "元"
+      },
+      {
+        "kind": "word",
+        "question": "將 2460 元平均分給 364 個人，每人最多可以分到多少元？剩下多少元？",
+        "dividend": "2460",
+        "divisor": "364",
+        "quotient": "6",
+        "remainder": "276",
+        "unit": "元"
+      },
+      {
+        "kind": "word",
+        "question": "將 6472 元平均分給 257 個人，每人最多可以分到多少元？剩下多少元？",
+        "dividend": "6472",
+        "divisor": "257",
+        "quotient": "25",
+        "remainder": "47",
+        "unit": "元"
+      },
+      {
+        "kind": "word",
+        "question": "將 1630 元平均分給 384 個人，每人最多可以分到多少元？剩下多少元？",
+        "dividend": "1630",
+        "divisor": "384",
+        "quotient": "4",
+        "remainder": "94",
+        "unit": "元"
+      }
+    ]
+  ]
+}
