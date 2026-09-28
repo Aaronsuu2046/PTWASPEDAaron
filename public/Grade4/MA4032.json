@@ -1,0 +1,252 @@
+{
+  "id": "MA4032",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用量角器量量看、畫畫看。"
+  },
+  "GameConfig": {
+    "Board": {
+      "width": 600,
+      "height": 380,
+      "radius": 165,
+      "ray": 185
+    }
+  },
+  "Questions": [
+    [
+      {
+        "kind": "measure",
+        "text": "量量看，∠2 是幾度？",
+        "unit": "度",
+        "shape": "triangle",
+        "points": {
+          "1": [170.0, 100.8],
+          "2": [170, 300],
+          "3": [285.0, 300.0]
+        },
+        "target": "2",
+        "vertex": [170, 300],
+        "from": 0.0,
+        "angle": 90,
+        "answer": 90
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，∠1 是幾度？",
+        "unit": "度",
+        "shape": "triangle",
+        "points": {
+          "1": [470.0, 110.8],
+          "2": [470, 310],
+          "3": [355.0, 310.0]
+        },
+        "target": "1",
+        "vertex": [470.0, 110.8],
+        "from": 240.0,
+        "angle": 30,
+        "answer": 30
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，∠2 是幾度？",
+        "unit": "度",
+        "shape": "triangle",
+        "points": {
+          "1": [349.2, 60.0],
+          "2": [150, 60],
+          "3": [150.0, 175.0]
+        },
+        "target": "2",
+        "vertex": [150, 60],
+        "from": 270.0,
+        "angle": 90,
+        "answer": 90
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，∠3 是幾度？",
+        "unit": "度",
+        "shape": "triangle",
+        "points": {
+          "1": [230.8, 70.0],
+          "2": [430, 70],
+          "3": [430.0, 185.0]
+        },
+        "target": "3",
+        "vertex": [430.0, 185.0],
+        "from": 90.0,
+        "angle": 60,
+        "answer": 60
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，∠B 是幾度？",
+        "unit": "度",
+        "shape": "triangle",
+        "points": {
+          "A": [245.0, 145.5],
+          "B": [150, 310],
+          "C": [383.1, 310.0]
+        },
+        "target": "B",
+        "vertex": [150, 310],
+        "from": 0.0,
+        "angle": 60,
+        "answer": 60
+      }
+    ],
+    [
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [300, 300],
+        "from": 0,
+        "angle": 120,
+        "answer": 120
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [420, 290],
+        "from": 150,
+        "angle": 30,
+        "answer": 30
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [220, 310],
+        "from": 0,
+        "angle": 90,
+        "answer": 90
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [390, 300],
+        "from": 70,
+        "angle": 110,
+        "answer": 110
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [200, 300],
+        "from": 0,
+        "angle": 70,
+        "answer": 70
+      }
+    ],
+    [
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [190, 300],
+        "from": 35,
+        "angle": 30,
+        "answer": 30
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [400, 100],
+        "from": 210,
+        "angle": 70,
+        "answer": 70
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [320, 190],
+        "from": 110,
+        "angle": 150,
+        "answer": 150
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [150, 110],
+        "from": 315,
+        "angle": 20,
+        "answer": 20
+      },
+      {
+        "kind": "measure",
+        "text": "量量看，這個角是幾度？",
+        "unit": "度",
+        "shape": "angle",
+        "vertex": [420, 190],
+        "from": 150,
+        "angle": 80,
+        "answer": 80
+      }
+    ],
+    [
+      {
+        "kind": "draw",
+        "text": "用量角器畫出 120° 的角",
+        "vertex": [250, 300],
+        "fixed": 0,
+        "start": 45,
+        "answer": 120,
+        "tolerance": 2
+      },
+      {
+        "kind": "draw",
+        "text": "用量角器畫出 120° 的角",
+        "vertex": [380, 300],
+        "fixed": 180,
+        "start": 135,
+        "answer": 120,
+        "tolerance": 2
+      },
+      {
+        "kind": "draw",
+        "text": "用量角器畫出 120° 的角",
+        "vertex": [250, 260],
+        "fixed": 20,
+        "start": 65,
+        "answer": 120,
+        "tolerance": 2
+      },
+      {
+        "kind": "draw",
+        "text": "用量角器畫出 120° 的角",
+        "vertex": [360, 110],
+        "fixed": 200,
+        "start": 245,
+        "answer": 120,
+        "tolerance": 2
+      },
+      {
+        "kind": "draw",
+        "text": "用量角器畫出 120° 的角",
+        "vertex": [300, 200],
+        "fixed": 300,
+        "start": 345,
+        "answer": 120,
+        "tolerance": 2
+      }
+    ]
+  ]
+}

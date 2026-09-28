@@ -29,7 +29,7 @@
         :x="n.outer[0]"
         :y="n.outer[1]"
         class="protractor__num protractor__num--outer"
-        :font-size="R * 0.068"
+        :font-size="R * 0.068 * fontScale"
       >
         {{ 180 - n.deg }}
       </text>
@@ -39,7 +39,7 @@
         :x="n.inner[0]"
         :y="n.inner[1]"
         class="protractor__num protractor__num--inner"
-        :font-size="R * 0.058"
+        :font-size="R * 0.058 * fontScale"
       >
         {{ n.deg }}
       </text>
@@ -65,6 +65,8 @@ export default {
     r: { type: Number, default: 250 },
     // 半透明：疊在題目圖上時看得到底下的線
     glass: { type: Boolean, default: false },
+    // 數字放大倍率：量角器畫得比較小時用
+    fontScale: { type: Number, default: 1 },
   },
   data() {
     return { OUTER_IN, INNER_IN };
