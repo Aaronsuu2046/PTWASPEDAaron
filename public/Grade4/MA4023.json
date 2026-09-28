@@ -1,0 +1,122 @@
+{
+  "id": "MA4023",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用計算機點按出正確答案"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "expression": "4 × 10",
+        "answer": "40"
+      },
+      {
+        "expression": "3 × 10",
+        "answer": "30"
+      },
+      {
+        "expression": "6 × 10",
+        "answer": "60"
+      },
+      {
+        "expression": "7 × 10",
+        "answer": "70"
+      },
+      {
+        "expression": "9 × 10",
+        "answer": "90"
+      }
+    ],
+    [
+      {
+        "expression": "2 × 35",
+        "answer": "70"
+      },
+      {
+        "expression": "9 × 14",
+        "answer": "126"
+      },
+      {
+        "expression": "8 × 25",
+        "answer": "200"
+      },
+      {
+        "expression": "3 × 27",
+        "answer": "81"
+      },
+      {
+        "expression": "6 × 18",
+        "answer": "108"
+      }
+    ],
+    [
+      {
+        "expression": "30 × 10",
+        "answer": "300"
+      },
+      {
+        "expression": "90 × 20",
+        "answer": "1800"
+      },
+      {
+        "expression": "30 × 60",
+        "answer": "1800"
+      },
+      {
+        "expression": "40 × 40",
+        "answer": "1600"
+      },
+      {
+        "expression": "70 × 50",
+        "answer": "3500"
+      }
+    ],
+    [
+      {
+        "expression": "32 × 12",
+        "answer": "384"
+      },
+      {
+        "expression": "24 × 16",
+        "answer": "384"
+      },
+      {
+        "expression": "52 × 83",
+        "answer": "4316"
+      },
+      {
+        "expression": "61 × 42",
+        "answer": "2562"
+      },
+      {
+        "expression": "74 × 52",
+        "answer": "3848"
+      }
+    ],
+    [
+      {
+        "expression": "34 × 40",
+        "answer": "1360"
+      },
+      {
+        "expression": "78 × 60",
+        "answer": "4680"
+      },
+      {
+        "expression": "48 × 70",
+        "answer": "3360"
+      },
+      {
+        "expression": "92 × 30",
+        "answer": "2760"
+      },
+      {
+        "expression": "69 × 50",
+        "answer": "3450"
+      }
+    ]
+  ]
+}
