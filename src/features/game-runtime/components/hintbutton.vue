@@ -147,5 +147,6 @@ export default {
 .Heart p {
   font-size: 2rem;
   margin: 0;
+  color: #e74c3c;
 }
 </style>

@@ -27,3 +27,6 @@ release/
 
 # Claude Code local config
 .claude/
+
+# Agent bridge (Codex-Claude async communication)
+agent-bridge/

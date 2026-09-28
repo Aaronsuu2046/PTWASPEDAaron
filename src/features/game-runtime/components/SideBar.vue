@@ -63,18 +63,6 @@
         </div>
       </button>
       <button
-        v-if="gameStatus === 'Progressing' && showSubmitButton"
-        class="btn btn-primary text-nowrap img-hover-zoom"
-        @click="submitAnswer()"
-      >
-        <div class="d-flex align-items-center">
-          <div class="">
-            <i class="bi bi-check" />
-          </div>
-          <div class="mx-auto">送出答案</div>
-        </div>
-      </button>
-      <button
         class="btn btn-primary text-nowrap img-hover-zoom"
         @click="reloadPage()"
       >
@@ -217,6 +205,18 @@
           <div class="mx-auto" @click="handleEnterFullScreen">退出全螢幕</div>
         </div>
       </button>
+      <button
+        v-if="gameStatus === 'Progressing' && showSubmitButton"
+        class="btn btn-submit text-nowrap img-hover-zoom"
+        @click="submitAnswer()"
+      >
+        <div class="d-flex align-items-center">
+          <div class="">
+            <i class="bi bi-check" />
+          </div>
+          <div class="mx-auto">送出答案</div>
+        </div>
+      </button>
       <slot name="hint" />
     </div>
 
@@ -298,7 +298,6 @@
         </div>
       </div>
     </div>
-    {{ isFullScreen }}
   </div>
 </template>
 <script>
@@ -478,5 +477,18 @@ export default {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
+  .btn-submit {
+    background-color: #52c41a !important;
+    color: white !important;
+
+    div {
+      color: white !important;
+    }
+
+    i {
+      color: white !important;
+    }
+  }
 }
 </style>
