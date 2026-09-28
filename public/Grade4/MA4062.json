@@ -1,0 +1,102 @@
+{
+  "id": "MA4062",
+  "GameType": "SelfDefine",
+  "TotalLevel": 1,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "找出三角形。"
+  },
+  "GameConfig": {
+    "Time": 40,
+    "Lives": 3,
+    "PassScore": 6
+  },
+  "Questions": [
+    [
+      {
+        "items": [
+          {
+            "shape": "setSquareA",
+            "name": "直角三角板A",
+            "isTriangle": true
+          },
+          {
+            "shape": "flag",
+            "name": "三角旗",
+            "isTriangle": true
+          },
+          {
+            "shape": "warningSign",
+            "name": "三角形警示牌",
+            "isTriangle": true
+          },
+          {
+            "shape": "setSquareB",
+            "name": "直角三角板B",
+            "isTriangle": true
+          },
+          {
+            "shape": "yellowAcute",
+            "name": "黃色銳角三角形",
+            "isTriangle": true
+          },
+          {
+            "shape": "greenIsosceles",
+            "name": "綠色等腰三角形",
+            "isTriangle": true
+          },
+          {
+            "shape": "blueRight",
+            "name": "藍色直角三角形",
+            "isTriangle": true
+          },
+          {
+            "shape": "purpleScalene",
+            "name": "紫色不等邊三角形",
+            "isTriangle": true
+          },
+          {
+            "shape": "orangeIsosceles",
+            "name": "橘色等腰三角形",
+            "isTriangle": true
+          },
+          {
+            "shape": "pizza",
+            "name": "披薩片",
+            "isTriangle": false
+          },
+          {
+            "shape": "fan",
+            "name": "扇子",
+            "isTriangle": false
+          },
+          {
+            "shape": "shell",
+            "name": "貝殼",
+            "isTriangle": false
+          },
+          {
+            "shape": "heart",
+            "name": "愛心",
+            "isTriangle": false
+          },
+          {
+            "shape": "wavyTriangle",
+            "name": "波浪邊三角狀圖形",
+            "isTriangle": false
+          },
+          {
+            "shape": "concaveHeart",
+            "name": "上緣凹曲的心形",
+            "isTriangle": false
+          },
+          {
+            "shape": "watermelon",
+            "name": "西瓜片",
+            "isTriangle": false
+          }
+        ]
+      }
+    ]
+  ]
+}
