@@ -82,7 +82,7 @@ export default {
     divisor: { type: String, required: true },
     crossable: { type: Boolean, default: false },
   },
-  emits: ["change"],
+  emits: ["change", "focus"],
   data() {
     return {
       values: {},
@@ -267,6 +267,11 @@ export default {
     activate(id) {
       if (this.solved) return;
       this.active = id;
+      this.$emit("focus");
+    },
+    // 父元件把輸入焦點移到別處時呼叫
+    blur() {
+      this.active = null;
     },
     toggleCross(side, index) {
       if (this.solved) return;
@@ -277,6 +282,7 @@ export default {
     // 放入數字；有 cellId 時放到那一格（拖曳用）
     input(key, cellId = this.active) {
       if (this.solved || !cellId || !(cellId in this.expected)) return;
+      if (this.active !== cellId) this.$emit("focus");
       this.active = cellId;
       this.wrong = this.wrong.filter((id) => id !== cellId);
       if (key === "←") {
