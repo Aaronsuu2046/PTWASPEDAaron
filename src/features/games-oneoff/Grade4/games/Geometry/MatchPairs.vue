@@ -141,9 +141,13 @@ export default {
   mounted() {
     this.layoutLines();
     window.addEventListener("resize", this.layoutLines);
+    // 下方出現提示文字等造成版面高度改變時，項目會移動，連線要跟著重算
+    this.resizeObserver = new ResizeObserver(() => this.layoutLines());
+    this.resizeObserver.observe(this.$refs.root);
   },
   beforeUnmount() {
     window.removeEventListener("resize", this.layoutLines);
+    this.resizeObserver?.disconnect();
   },
   methods: {
     colorOf(leftId) {
