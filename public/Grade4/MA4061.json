@@ -1,0 +1,24 @@
+{
+  "id": "MA4061",
+  "GameType": "SelfDefine",
+  "TotalLevel": 1,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "將三角形的各部位名稱拖到對應位置。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "cards": [
+          "邊",
+          "頂點",
+          "角",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ]
+  ]
+}
