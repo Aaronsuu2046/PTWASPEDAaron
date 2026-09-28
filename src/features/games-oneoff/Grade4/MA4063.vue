@@ -29,7 +29,11 @@
           :aria-label="choice.aria"
           @click="choose(choice.value)"
         >
-          {{ choice.label }}
+          <!-- 用 SVG 畫 ○／×，圖示會在按鈕正中間，不受字型影響 -->
+          <svg class="choice__icon" viewBox="0 0 100 100" aria-hidden="true">
+            <circle v-if="choice.kind === 'o'" cx="50" cy="50" r="34" />
+            <path v-else d="M22 22 L78 78 M78 22 L22 78" />
+          </svg>
         </button>
       </div>
 
@@ -181,14 +185,24 @@ export default {
 .choice {
   width: 8rem;
   height: 8rem;
-  font-size: 5rem;
-  font-weight: $font-bold;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background-color: #ffffff;
   border: 5px solid #b0bec5;
   border-radius: 24px;
   box-shadow: 0 5px 0 #90a4ae;
   cursor: pointer;
+
+  &__icon {
+    width: 72%;
+    height: 72%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 12;
+    stroke-linecap: round;
+  }
 
   &--o {
     color: #1e88e5;
@@ -247,7 +261,6 @@ export default {
   .choice {
     width: 6.5rem;
     height: 6.5rem;
-    font-size: 4rem;
   }
 }
 </style>
