@@ -1,0 +1,305 @@
+{
+  "id": "MA4112",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "試試看末幾位為0的乘法簡便算法"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "7 × 8",
+            "answer": "56"
+          },
+          {
+            "expression": "70 × 8",
+            "answer": "560"
+          },
+          {
+            "expression": "700 × 8",
+            "answer": "5600"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "8 × 8",
+            "answer": "64"
+          },
+          {
+            "expression": "80 × 8",
+            "answer": "640"
+          },
+          {
+            "expression": "800 × 8",
+            "answer": "6400"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "6 × 9",
+            "answer": "54"
+          },
+          {
+            "expression": "60 × 9",
+            "answer": "540"
+          },
+          {
+            "expression": "600 × 9",
+            "answer": "5400"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "5 × 4",
+            "answer": "20"
+          },
+          {
+            "expression": "50 × 4",
+            "answer": "200"
+          },
+          {
+            "expression": "500 × 4",
+            "answer": "2000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "6 × 5",
+            "answer": "30"
+          },
+          {
+            "expression": "60 × 5",
+            "answer": "300"
+          },
+          {
+            "expression": "600 × 5",
+            "answer": "3000"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "3000 × 9",
+            "answer": "27000"
+          },
+          {
+            "expression": "3000 × 90",
+            "answer": "270000"
+          },
+          {
+            "expression": "3000 × 900",
+            "answer": "2700000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "70 × 20",
+            "answer": "1400"
+          },
+          {
+            "expression": "70 × 200",
+            "answer": "14000"
+          },
+          {
+            "expression": "70 × 2000",
+            "answer": "140000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "60 × 70",
+            "answer": "4200"
+          },
+          {
+            "expression": "600 × 70",
+            "answer": "42000"
+          },
+          {
+            "expression": "6000 × 700",
+            "answer": "4200000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "50 × 30",
+            "answer": "1500"
+          },
+          {
+            "expression": "500 × 30",
+            "answer": "15000"
+          },
+          {
+            "expression": "5000 × 300",
+            "answer": "1500000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "4000 × 6",
+            "answer": "24000"
+          },
+          {
+            "expression": "4000 × 60",
+            "answer": "240000"
+          },
+          {
+            "expression": "4000 × 600",
+            "answer": "2400000"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "12 × 500",
+            "answer": "6000"
+          },
+          {
+            "expression": "120 × 500",
+            "answer": "60000"
+          },
+          {
+            "expression": "1200 × 500",
+            "answer": "600000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "2500 × 40",
+            "answer": "100000"
+          },
+          {
+            "expression": "2500 × 400",
+            "answer": "1000000"
+          },
+          {
+            "expression": "25000 × 400",
+            "answer": "10000000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "21 × 300",
+            "answer": "6300"
+          },
+          {
+            "expression": "210 × 300",
+            "answer": "63000"
+          },
+          {
+            "expression": "2100 × 300",
+            "answer": "630000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "1500 × 60",
+            "answer": "90000"
+          },
+          {
+            "expression": "1500 × 600",
+            "answer": "900000"
+          },
+          {
+            "expression": "15000 × 600",
+            "answer": "9000000"
+          }
+        ]
+      },
+      {
+        "mode": "link",
+        "pairs": [
+          {
+            "expression": "25 × 800",
+            "answer": "20000"
+          },
+          {
+            "expression": "250 × 800",
+            "answer": "200000"
+          },
+          {
+            "expression": "2500 × 800",
+            "answer": "2000000"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "mode": "vertical",
+        "a": "140",
+        "b": "700",
+        "answer": "98000"
+      },
+      {
+        "mode": "vertical",
+        "a": "20700",
+        "b": "200",
+        "answer": "4140000"
+      },
+      {
+        "mode": "vertical",
+        "a": "62000",
+        "b": "50",
+        "answer": "3100000"
+      },
+      {
+        "mode": "vertical",
+        "a": "6020",
+        "b": "50",
+        "answer": "301000"
+      },
+      {
+        "mode": "vertical",
+        "a": "1280",
+        "b": "300",
+        "answer": "384000"
+      }
+    ]
+  ]
+}
