@@ -175,6 +175,7 @@ const MAX_LENGTH = 7;
 // 應用題共用：題目 { question, steps: [{ a, op, b, result }], answer, unit }
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
 // 選填 calculator: true：畫面上可打開小學生版計算機（顯示計算紀錄）
+// 選填 step.given（例如 ["a"]）：該部分由題目直接給定，不用填
 export default {
   name: "WordProblemQuestion",
   components: { RectFigure, CompositeFigure, TileFigure, KidCalculator },
@@ -184,12 +185,19 @@ export default {
   },
   emits: ["play-effect", "next-question", "add-record"],
   data() {
+    // 題目給定的部分先放好
+    const values = {};
+    this.gameData.steps.forEach((step, s) => {
+      (step.given || []).forEach((part) => {
+        values[`s${s}${part}`] = step[part];
+      });
+    });
     return {
       OPS,
       STEP_PARTS: ["a", "op", "b", "eq", "result"],
       DIGITS: ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", ".", "←"],
-      values: {},
-      active: "s0a",
+      values,
+      active: null,
       wrongKeys: [],
       answered: false,
       revealing: false,
@@ -208,13 +216,16 @@ export default {
     fieldOrder() {
       const keys = [];
       this.gameData.steps.forEach((_, s) => {
-        ["a", "op", "b", "result"].forEach((part) => keys.push(`s${s}${part}`));
+        ["a", "op", "b", "result"].forEach((part) => {
+          if (!this.isGiven(`s${s}${part}`)) keys.push(`s${s}${part}`);
+        });
       });
       keys.push("answer");
       return keys;
     },
   },
   created() {
+    this.active = this.fieldOrder[0];
     emitter.on("submitAnswer", this.checkAnswer);
   },
   beforeUnmount() {
@@ -229,8 +240,13 @@ export default {
       const value = this.values[key] || "";
       return /op$/.test(key) ? this.showOp(value) : value;
     },
+    isGiven(key) {
+      const [, s, part] = key.match(/^s(\d+)(\w+)$/) || [];
+      return Boolean(s && this.gameData.steps[s].given?.includes(part));
+    },
     boxClass(key, isOp) {
       return {
+        "fill-box--given": this.isGiven(key),
         "fill-box--op": isOp,
         "fill-box--active": !this.answered && this.active === key,
         "fill-box--wrong": this.wrongKeys.includes(key),
@@ -242,7 +258,7 @@ export default {
       this.setValue("unit", unit);
     },
     activate(key) {
-      if (this.answered) return;
+      if (this.answered || this.isGiven(key)) return;
       this.active = key;
     },
     setValue(key, value) {
@@ -631,6 +647,14 @@ export default {
     color: #2e7d32;
     border: 3px solid #43a047;
     background-color: #e8f5e9;
+  }
+
+  // 題目給定的數字：像印好的字，不能點
+  &--given {
+    color: #333333;
+    border: 3px solid transparent;
+    background-color: transparent;
+    cursor: default;
   }
 }
 
