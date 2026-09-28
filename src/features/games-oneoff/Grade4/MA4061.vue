@@ -8,6 +8,28 @@
       <p class="hint">
         點卡片再點空格，也可以直接拖過去；點已放好的空格可以把卡片拿回來
       </p>
+      <!-- 選項卡 -->
+      <div class="tray">
+        <p class="tray__title">選項卡</p>
+        <div class="tray__cards">
+          <button
+            v-for="card in trayCards"
+            :key="card.id"
+            type="button"
+            class="card"
+            :class="{ 'card--selected': selected === card.id }"
+            :data-card="card.id"
+            @pointerdown="startDrag($event, card.id)"
+            @pointermove="onDrag"
+            @pointerup="endDrag"
+            @pointercancel="drag = null"
+            @click="onCardClick(card.id)"
+          >
+            {{ card.text }}
+          </button>
+        </div>
+        <p v-if="!trayCards.length" class="tray__empty">都放好了</p>
+      </div>
       <div class="board">
         <!-- 三角形與「邊、頂點、角」的空格 -->
         <div class="figure">
@@ -37,29 +59,6 @@
           >
             {{ cardText(placed[zone.id]) }}
           </button>
-        </div>
-
-        <!-- 選項卡 -->
-        <div class="tray">
-          <p class="tray__title">選項卡</p>
-          <div class="tray__cards">
-            <button
-              v-for="card in trayCards"
-              :key="card.id"
-              type="button"
-              class="card"
-              :class="{ 'card--selected': selected === card.id }"
-              :data-card="card.id"
-              @pointerdown="startDrag($event, card.id)"
-              @pointermove="onDrag"
-              @pointerup="endDrag"
-              @pointercancel="drag = null"
-              @click="onCardClick(card.id)"
-            >
-              {{ card.text }}
-            </button>
-          </div>
-          <p v-if="!trayCards.length" class="tray__empty">都放好了</p>
         </div>
       </div>
 
@@ -406,11 +405,11 @@ export default {
   border-radius: 12px;
   cursor: pointer;
 
+  // 圖上的空格：至少 21% 寬，放入較長的字（頂點）時跟著變寬
   &--figure {
     position: absolute;
-    width: 21%;
-    min-width: 0;
-    padding: 0;
+    min-width: 21%;
+    padding: 0 0.5rem;
     white-space: nowrap;
   }
 
@@ -440,25 +439,31 @@ export default {
 }
 
 .tray {
+  width: 100%;
+  max-width: 48rem;
+  min-height: 4.4rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 0.9rem;
+  gap: 0.8rem;
+  padding: 0.5rem 0.9rem;
   background-color: #fff3e0;
   border: 3px dashed #ffb74d;
   border-radius: 16px;
 
   &__title {
     margin: 0;
+    flex-shrink: 0;
     font-size: 1.1rem;
     font-weight: $font-bold;
     color: #8d6e63;
   }
 
+  // 選項卡橫向排成一列
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 5.5rem);
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.6rem;
   }
 
@@ -469,7 +474,10 @@ export default {
 }
 
 .card {
+  min-width: 4.6rem;
   height: 3.2rem;
+  padding: 0 1rem;
+  white-space: nowrap;
   font-size: 1.6rem;
   font-weight: $font-bold;
   color: #ffffff;
@@ -491,7 +499,6 @@ export default {
   &--ghost {
     position: fixed;
     z-index: 100;
-    width: 5.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -530,10 +537,6 @@ export default {
   .slot {
     height: 2.8rem;
     font-size: 1.4rem;
-  }
-
-  .tray__cards {
-    grid-template-columns: repeat(2, 4.8rem);
   }
 
   .card {
