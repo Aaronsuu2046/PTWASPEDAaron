@@ -1,0 +1,122 @@
+{
+  "id": "MA4031",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在量角器上找找看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "part",
+        "target": "center",
+        "text": "中心點在哪裡？"
+      }
+    ],
+    [
+      {
+        "kind": "part",
+        "target": "outer",
+        "text": "外圈刻度在哪裡？"
+      }
+    ],
+    [
+      {
+        "kind": "part",
+        "target": "inner",
+        "text": "內圈刻度在哪裡？"
+      }
+    ],
+    [
+      {
+        "kind": "ring",
+        "start": "right",
+        "angle": 60,
+        "text": "這個角要讀哪一圈的刻度？",
+        "options": ["內圈", "外圈"],
+        "answer": "內圈"
+      },
+      {
+        "kind": "ring",
+        "start": "right",
+        "angle": 120,
+        "text": "這個角要讀哪一圈的刻度？",
+        "options": ["內圈", "外圈"],
+        "answer": "內圈"
+      },
+      {
+        "kind": "ring",
+        "start": "left",
+        "angle": 50,
+        "text": "這個角要讀哪一圈的刻度？",
+        "options": ["內圈", "外圈"],
+        "answer": "外圈"
+      },
+      {
+        "kind": "ring",
+        "start": "left",
+        "angle": 130,
+        "text": "這個角要讀哪一圈的刻度？",
+        "options": ["內圈", "外圈"],
+        "answer": "外圈"
+      },
+      {
+        "kind": "ring",
+        "start": "right",
+        "angle": 150,
+        "text": "這個角要讀哪一圈的刻度？",
+        "options": ["內圈", "外圈"],
+        "answer": "內圈"
+      }
+    ],
+    [
+      {
+        "kind": "read",
+        "start": "right",
+        "angle": 50,
+        "ring": "內圈",
+        "text": "這個角是幾度？",
+        "unit": "度",
+        "answer": 50
+      },
+      {
+        "kind": "read",
+        "start": "right",
+        "angle": 150,
+        "ring": "內圈",
+        "text": "這個角是幾度？",
+        "unit": "度",
+        "answer": 150
+      },
+      {
+        "kind": "read",
+        "start": "left",
+        "angle": 100,
+        "ring": "外圈",
+        "text": "這個角是幾度？",
+        "unit": "度",
+        "answer": 100
+      },
+      {
+        "kind": "read",
+        "start": "left",
+        "angle": 40,
+        "ring": "外圈",
+        "text": "這個角是幾度？",
+        "unit": "度",
+        "answer": 40
+      },
+      {
+        "kind": "read",
+        "start": "left",
+        "angle": 130,
+        "ring": "外圈",
+        "text": "這個角是幾度？",
+        "unit": "度",
+        "answer": 130
+      }
+    ]
+  ]
+}
