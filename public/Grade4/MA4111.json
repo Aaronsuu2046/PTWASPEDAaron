@@ -756,7 +756,8 @@
           }
         ],
         "answer": "51615",
-        "unit": "元"
+        "unit": "元",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -770,7 +771,8 @@
           }
         ],
         "answer": "46500",
-        "unit": "元"
+        "unit": "元",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -784,7 +786,8 @@
           }
         ],
         "answer": "55104",
-        "unit": "元"
+        "unit": "元",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -798,7 +801,8 @@
           }
         ],
         "answer": "75600",
-        "unit": "元"
+        "unit": "元",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -812,7 +816,8 @@
           }
         ],
         "answer": "67375",
-        "unit": "元"
+        "unit": "元",
+        "calculator": true
       }
     ],
     [
@@ -828,7 +833,8 @@
           }
         ],
         "answer": "581875",
-        "unit": "公克"
+        "unit": "公克",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -842,7 +848,8 @@
           }
         ],
         "answer": "324720",
-        "unit": "公克"
+        "unit": "公克",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -856,7 +863,8 @@
           }
         ],
         "answer": "269346",
-        "unit": "公克"
+        "unit": "公克",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -870,7 +878,8 @@
           }
         ],
         "answer": "332100",
-        "unit": "公克"
+        "unit": "公克",
+        "calculator": true
       },
       {
         "kind": "word",
@@ -884,7 +893,8 @@
           }
         ],
         "answer": "302565",
-        "unit": "公克"
+        "unit": "公克",
+        "calculator": true
       }
     ]
   ]
