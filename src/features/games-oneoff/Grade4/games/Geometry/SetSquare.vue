@@ -49,6 +49,9 @@
 
 <script>
 // 放在 position: relative 的容器裡；x、y 為直角頂點相對容器的位置
+// 沒有拖動的點一下會發出 tap（帶 clientX、clientY），讓底下的圖形仍可點選
+const TAP_DISTANCE = 6;
+
 export default {
   name: "SetSquare",
   props: {
@@ -56,6 +59,7 @@ export default {
     startY: { type: Number, default: 200 },
     size: { type: Number, default: 150 },
   },
+  emits: ["tap"],
   data() {
     return {
       x: this.startX,
@@ -86,7 +90,15 @@ export default {
       this.x = this.drag.x + event.clientX - this.drag.px;
       this.y = this.drag.y + event.clientY - this.drag.py;
     },
-    endDrag() {
+    endDrag(event) {
+      if (!this.drag) return;
+      const moved = Math.hypot(
+        event.clientX - this.drag.px,
+        event.clientY - this.drag.py
+      );
+      if (event.type === "pointerup" && moved < TAP_DISTANCE) {
+        this.$emit("tap", { clientX: event.clientX, clientY: event.clientY });
+      }
       this.drag = null;
     },
     rotate(step) {

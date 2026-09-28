@@ -815,7 +815,7 @@
                 "Name": "互相垂直的線(夾角=直角)",
                 "Description": "拖動直線找出垂直的線",
                 "Img": "MA4122.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4123",
