@@ -1,7 +1,7 @@
 ﻿<template>
   <div id="Done" class="game-over__container">
     <video
-      :src="fireworkSrc"
+      :src="clearSrc"
       class="effects"
       autoplay
       loop
@@ -22,9 +22,9 @@ export default {
   name: "GameOver",
   emits: ["restart", "downloadRecord", "previousPage"],
   computed: {
-    fireworkSrc() {
-      console.log(getSystemEffectAssets("Firework.mp4"));
-      return getSystemEffectAssets("Firework.mp4");
+    // 全部關卡完成的動畫（H.264 MP4，各瀏覽器都能播）
+    clearSrc() {
+      return getSystemEffectAssets("GameClear.mp4");
     },
   },
   methods: {
