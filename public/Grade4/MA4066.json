@@ -1,0 +1,221 @@
+{
+  "id": "MA4066",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "看圖回答問題。"
+  },
+  "GameConfig": {
+    "Figure": {
+      "correspond": {
+        "A": "D",
+        "B": "E",
+        "C": "F"
+      },
+      "angles": {
+        "A": 53,
+        "B": 90,
+        "C": 37,
+        "D": 53,
+        "E": 90,
+        "F": 37
+      },
+      "lengths": {
+        "AB": 6,
+        "BC": 8,
+        "AC": 10,
+        "DE": 6,
+        "EF": 8,
+        "DF": 10
+      }
+    }
+  },
+  "Questions": [
+    [
+      {
+        "kind": "vertex",
+        "subject": "A",
+        "text": "點 A 的對應頂點是哪一點？",
+        "options": ["D", "E", "F"],
+        "answer": "D"
+      },
+      {
+        "kind": "vertex",
+        "subject": "B",
+        "text": "點 B 的對應頂點是哪一點？",
+        "options": ["D", "E", "F"],
+        "answer": "E"
+      },
+      {
+        "kind": "vertex",
+        "subject": "C",
+        "text": "點 C 的對應頂點是哪一點？",
+        "options": ["D", "E", "F"],
+        "answer": "F"
+      },
+      {
+        "kind": "vertex",
+        "subject": "D",
+        "text": "點 D 的對應頂點是哪一點？",
+        "options": ["A", "B", "C"],
+        "answer": "A"
+      },
+      {
+        "kind": "vertex",
+        "subject": "E",
+        "text": "點 E 的對應頂點是哪一點？",
+        "options": ["A", "B", "C"],
+        "answer": "B"
+      }
+    ],
+    [
+      {
+        "kind": "side",
+        "subject": "AB",
+        "text": "邊 AB 的對應邊是哪一邊？",
+        "options": ["DE", "EF", "DF"],
+        "answer": "DE"
+      },
+      {
+        "kind": "side",
+        "subject": "BC",
+        "text": "邊 BC 的對應邊是哪一邊？",
+        "options": ["DE", "EF", "DF"],
+        "answer": "EF"
+      },
+      {
+        "kind": "side",
+        "subject": "AC",
+        "text": "邊 AC 的對應邊是哪一邊？",
+        "options": ["DE", "EF", "DF"],
+        "answer": "DF"
+      },
+      {
+        "kind": "side",
+        "subject": "DE",
+        "text": "邊 DE 的對應邊是哪一邊？",
+        "options": ["AB", "BC", "AC"],
+        "answer": "AB"
+      },
+      {
+        "kind": "side",
+        "subject": "DF",
+        "text": "邊 DF 的對應邊是哪一邊？",
+        "options": ["AB", "BC", "AC"],
+        "answer": "AC"
+      }
+    ],
+    [
+      {
+        "kind": "angle",
+        "subject": "A",
+        "text": "∠A 的對應角是哪一個角？",
+        "options": ["∠D", "∠E", "∠F"],
+        "answer": "∠D"
+      },
+      {
+        "kind": "angle",
+        "subject": "B",
+        "text": "∠B 的對應角是哪一個角？",
+        "options": ["∠D", "∠E", "∠F"],
+        "answer": "∠E"
+      },
+      {
+        "kind": "angle",
+        "subject": "C",
+        "text": "∠C 的對應角是哪一個角？",
+        "options": ["∠D", "∠E", "∠F"],
+        "answer": "∠F"
+      },
+      {
+        "kind": "angle",
+        "subject": "E",
+        "text": "∠E 的對應角是哪一個角？",
+        "options": ["∠A", "∠B", "∠C"],
+        "answer": "∠B"
+      },
+      {
+        "kind": "angle",
+        "subject": "F",
+        "text": "∠F 的對應角是哪一個角？",
+        "options": ["∠A", "∠B", "∠C"],
+        "answer": "∠C"
+      }
+    ],
+    [
+      {
+        "kind": "degree",
+        "subject": "B",
+        "text": "∠B 是幾度？",
+        "unit": "度",
+        "answer": 90
+      },
+      {
+        "kind": "degree",
+        "subject": "C",
+        "text": "∠C 是幾度？",
+        "unit": "度",
+        "answer": 37
+      },
+      {
+        "kind": "degree",
+        "subject": "D",
+        "text": "∠D 是幾度？",
+        "unit": "度",
+        "answer": 53
+      },
+      {
+        "kind": "degree",
+        "subject": "E",
+        "text": "∠E 是幾度？",
+        "unit": "度",
+        "answer": 90
+      },
+      {
+        "kind": "degree",
+        "subject": "F",
+        "text": "∠F 是幾度？",
+        "unit": "度",
+        "answer": 37
+      }
+    ],
+    [
+      {
+        "kind": "length",
+        "subject": "AB",
+        "text": "邊 AB 是幾公分？",
+        "unit": "公分",
+        "answer": 6
+      },
+      {
+        "kind": "length",
+        "subject": "BC",
+        "text": "邊 BC 是幾公分？",
+        "unit": "公分",
+        "answer": 8
+      },
+      {
+        "kind": "length",
+        "subject": "AC",
+        "text": "邊 AC 是幾公分？",
+        "unit": "公分",
+        "answer": 10
+      },
+      {
+        "kind": "length",
+        "subject": "DE",
+        "text": "邊 DE 是幾公分？",
+        "unit": "公分",
+        "answer": 6
+      },
+      {
+        "kind": "length",
+        "subject": "DF",
+        "text": "邊 DF 是幾公分？",
+        "unit": "公分",
+        "answer": 10
+      }
+    ]
+  ]
+}
