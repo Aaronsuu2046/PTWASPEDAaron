@@ -1,0 +1,633 @@
+{
+  "id": "MA4125",
+  "GameType": "SelfDefine",
+  "TotalLevel": 3,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "將正確的四邊形敘述或圖片配對"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "square"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "rectangle"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rhombus"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "正方形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "長方形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "菱形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "trapezoid"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "parallelogram"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rectangle"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "梯形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "平行四邊形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "長方形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "rhombus"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "trapezoid"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "parallelogram"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "菱形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "梯形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "平行四邊形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "trapezoid"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "square"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rhombus"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "梯形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "正方形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "菱形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "parallelogram"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "square"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rhombus"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "平行四邊形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "正方形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "菱形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      }
+    ],
+    [
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "square"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "rectangle"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rhombus"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "4 個角都是直角，4 條邊都一樣長"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "4 個角都是直角，兩雙對邊分別等長"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "parallelogram"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "trapezoid"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "square"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "兩雙對邊分別互相平行的四邊形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "只有一雙對邊互相平行的四邊形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "4 個角都是直角，4 條邊都一樣長"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "rectangle"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "rhombus"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "parallelogram"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "4 個角都是直角，兩雙對邊分別等長"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "兩雙對邊分別互相平行的四邊形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "parallelogram"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "trapezoid"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "rhombus"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "兩雙對邊分別互相平行的四邊形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "只有一雙對邊互相平行的四邊形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "shape",
+            "shape": "rectangle"
+          },
+          {
+            "id": "L1",
+            "kind": "shape",
+            "shape": "rhombus"
+          },
+          {
+            "id": "L2",
+            "kind": "shape",
+            "shape": "trapezoid"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "4 個角都是直角，兩雙對邊分別等長"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "只有一雙對邊互相平行的四邊形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      }
+    ],
+    [
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "text",
+            "text": "4 個角都是直角，4 條邊都一樣長"
+          },
+          {
+            "id": "L1",
+            "kind": "text",
+            "text": "4 個角都是直角，兩雙對邊分別等長"
+          },
+          {
+            "id": "L2",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "正方形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "長方形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "菱形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "text",
+            "text": "兩雙對邊分別互相平行的四邊形"
+          },
+          {
+            "id": "L1",
+            "kind": "text",
+            "text": "只有一雙對邊互相平行的四邊形"
+          },
+          {
+            "id": "L2",
+            "kind": "text",
+            "text": "4 個角都是直角，4 條邊都一樣長"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "平行四邊形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "梯形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "正方形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "text",
+            "text": "4 個角都是直角，兩雙對邊分別等長"
+          },
+          {
+            "id": "L1",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          },
+          {
+            "id": "L2",
+            "kind": "text",
+            "text": "兩雙對邊分別互相平行的四邊形"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "長方形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "菱形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "平行四邊形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "text",
+            "text": "兩雙對邊分別互相平行的四邊形"
+          },
+          {
+            "id": "L1",
+            "kind": "text",
+            "text": "只有一雙對邊互相平行的四邊形"
+          },
+          {
+            "id": "L2",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "平行四邊形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "梯形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "菱形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      },
+      {
+        "left": [
+          {
+            "id": "L0",
+            "kind": "text",
+            "text": "4 個角都是直角，兩雙對邊分別等長"
+          },
+          {
+            "id": "L1",
+            "kind": "text",
+            "text": "4 條邊都一樣長的四邊形"
+          },
+          {
+            "id": "L2",
+            "kind": "text",
+            "text": "只有一雙對邊互相平行的四邊形"
+          }
+        ],
+        "right": [
+          {
+            "id": "R0",
+            "kind": "text",
+            "text": "長方形"
+          },
+          {
+            "id": "R1",
+            "kind": "text",
+            "text": "菱形"
+          },
+          {
+            "id": "R2",
+            "kind": "text",
+            "text": "梯形"
+          }
+        ],
+        "answer": {
+          "L0": "R0",
+          "L1": "R1",
+          "L2": "R2"
+        }
+      }
+    ]
+  ]
+}
