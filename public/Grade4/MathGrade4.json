@@ -791,7 +791,7 @@
                 "Name": "末幾位為0的除法",
                 "Description": "把一樣的連起來,再用直式算算看",
                 "Img": "MA4114.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
