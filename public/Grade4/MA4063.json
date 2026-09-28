@@ -1,0 +1,571 @@
+{
+  "id": "MA4063",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "想一想，再選選看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "question": "3 條邊都一樣長的三角形，叫做等腰三角形？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              23.0
+            ],
+            [
+              162.4,
+              131.0
+            ],
+            [
+              37.6,
+              131.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#90caf9",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "3 條邊都一樣長的三角形，叫做等邊三角形？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              23.0
+            ],
+            [
+              162.4,
+              131.0
+            ],
+            [
+              37.6,
+              131.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#90caf9",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "3 條邊都一樣長的三角形，叫做正三角形？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              23.0
+            ],
+            [
+              162.4,
+              131.0
+            ],
+            [
+              37.6,
+              131.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#90caf9",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      }
+    ],
+    [
+      {
+        "question": "等腰三角形的 3 條邊一樣長？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100,
+              18
+            ],
+            [
+              40,
+              150
+            ],
+            [
+              160,
+              150
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#f8bbd0",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "正三角形的 3 條邊一樣長？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              23.0
+            ],
+            [
+              162.4,
+              131.0
+            ],
+            [
+              37.6,
+              131.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#90caf9",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      }
+    ],
+    [
+      {
+        "question": "有兩條邊相等的三角形，叫做等邊三角形？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100,
+              18
+            ],
+            [
+              40,
+              150
+            ],
+            [
+              160,
+              150
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#f8bbd0",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "有兩條邊相等的三角形，叫做等腰三角形？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100,
+              18
+            ],
+            [
+              40,
+              150
+            ],
+            [
+              160,
+              150
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#f8bbd0",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "有兩條邊相等的三角形，叫做正三角形？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100,
+              18
+            ],
+            [
+              40,
+              150
+            ],
+            [
+              160,
+              150
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#f8bbd0",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      }
+    ],
+    [
+      {
+        "question": "等邊三角形有兩條一樣長的邊？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              23.0
+            ],
+            [
+              162.4,
+              131.0
+            ],
+            [
+              37.6,
+              131.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#90caf9",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "等腰三角形有兩條一樣長的邊？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100,
+              18
+            ],
+            [
+              40,
+              150
+            ],
+            [
+              160,
+              150
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#f8bbd0",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      }
+    ],
+    [
+      {
+        "question": "這是等腰三角形嗎？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              22.0
+            ],
+            [
+              160.6,
+              127.0
+            ],
+            [
+              39.4,
+              127.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#a5d6a7",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "這是正三角形嗎？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              22.0
+            ],
+            [
+              160.6,
+              127.0
+            ],
+            [
+              39.4,
+              127.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#a5d6a7",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "這是等腰三角形嗎？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              157.0
+            ],
+            [
+              37.6,
+              49.0
+            ],
+            [
+              162.4,
+              49.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#ffcc80",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "這是正三角形嗎？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100.0,
+              157.0
+            ],
+            [
+              37.6,
+              49.0
+            ],
+            [
+              162.4,
+              49.0
+            ]
+          ],
+          "sideType": "equilateral",
+          "color": "#ffcc80",
+          "equal": [
+            0,
+            1,
+            2
+          ]
+        },
+        "hint": "3 條邊都一樣長的三角形，叫做等邊三角形，也叫做正三角形。"
+      },
+      {
+        "question": "這是正三角形嗎？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100,
+              15
+            ],
+            [
+              62,
+              152
+            ],
+            [
+              138,
+              152
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#ce93d8",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "這是等腰三角形嗎？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100,
+              15
+            ],
+            [
+              62,
+              152
+            ],
+            [
+              138,
+              152
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#ce93d8",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "這是正三角形嗎？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              100,
+              40
+            ],
+            [
+              20,
+              140
+            ],
+            [
+              180,
+              140
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#80deea",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "這是等腰三角形嗎？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              100,
+              40
+            ],
+            [
+              20,
+              140
+            ],
+            [
+              180,
+              140
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#80deea",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "這是正三角形嗎？",
+        "answer": false,
+        "figure": {
+          "points": [
+            [
+              30,
+              85
+            ],
+            [
+              170,
+              30
+            ],
+            [
+              170,
+              140
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#fff59d",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      },
+      {
+        "question": "這是等腰三角形嗎？",
+        "answer": true,
+        "figure": {
+          "points": [
+            [
+              30,
+              85
+            ],
+            [
+              170,
+              30
+            ],
+            [
+              170,
+              140
+            ]
+          ],
+          "sideType": "isosceles",
+          "color": "#fff59d",
+          "equal": [
+            0,
+            2
+          ]
+        },
+        "hint": "有兩條邊相等的三角形，叫做等腰三角形。"
+      }
+    ]
+  ]
+}
