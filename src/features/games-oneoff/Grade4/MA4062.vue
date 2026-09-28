@@ -5,7 +5,8 @@
     </div>
 
     <div class="game-area">
-      <div class="status">
+      <!-- 木牌：時間、分數、愛心 -->
+      <div class="status" :style="{ backgroundImage: `url(${ASSETS.board})` }">
         <span class="status__item">
           時間
           <strong :class="{ 'status__time--low': timeLeft <= 10 }">{{
@@ -14,7 +15,7 @@
           秒
         </span>
         <span class="status__item">
-          打到三角形 <strong>{{ hits }}</strong> / {{ passScore }}
+          三角形 <strong>{{ hits }}</strong> / {{ passScore }}
         </span>
         <span class="status__lives" aria-label="生命值">
           <span
@@ -27,29 +28,58 @@
         </span>
       </div>
 
-      <div class="field">
-        <div v-for="(hole, i) in holes" :key="i" class="hole">
-          <div class="hole__pit" />
-          <button
-            v-if="hole"
-            :key="hole.key"
-            type="button"
-            class="mole"
-            :class="{
-              'mole--hit': hole.result === 'hit',
-              'mole--miss': hole.result === 'miss',
-            }"
-            :data-hole="i"
-            :data-triangle="hole.item.isTriangle"
-            :aria-label="`題卡 ${i + 1}`"
-            @pointerdown.prevent="whack(i)"
-          >
-            <TriangleShape :shape="hole.item.shape" />
-            <span v-if="hole.result === 'hit'" class="mole__mark">✔</span>
-            <span v-if="hole.result === 'miss'" class="mole__mark mole__mark--x"
-              >✘</span
+      <div
+        class="field"
+        :style="{ backgroundImage: `url(${ASSETS.background})` }"
+      >
+        <div
+          v-for="(pos, i) in HOLE_POSITIONS"
+          :key="i"
+          class="hole"
+          :style="{ left: `${pos.x}%`, top: `${pos.y}%`, zIndex: pos.z }"
+        >
+          <!-- 洞口以上才看得到：地鼠頭頂著題卡一起升起、落下 -->
+          <div class="hole__window">
+            <button
+              v-if="holes[i]"
+              :key="holes[i].key"
+              type="button"
+              class="mole"
+              :class="{
+                'mole--up': holes[i].up,
+                'mole--hit': holes[i].result === 'hit',
+                'mole--miss': holes[i].result === 'miss',
+              }"
+              :data-hole="i"
+              :data-triangle="holes[i].item.isTriangle"
+              :aria-label="`題卡 ${i + 1}`"
+              @pointerdown.prevent="whack(i)"
             >
-          </button>
+              <span class="mole__card">
+                <TriangleShape :shape="holes[i].item.shape" />
+                <span v-if="holes[i].result === 'hit'" class="mole__mark"
+                  >✔</span
+                >
+                <span
+                  v-if="holes[i].result === 'miss'"
+                  class="mole__mark mole__mark--x"
+                  >✘</span
+                >
+              </span>
+              <img
+                :src="ASSETS.mole"
+                alt=""
+                class="mole__body"
+                draggable="false"
+              />
+            </button>
+          </div>
+          <img
+            :src="ASSETS.hole"
+            alt=""
+            class="hole__mound"
+            draggable="false"
+          />
         </div>
 
         <!-- 開始／結束面板 -->
@@ -91,10 +121,26 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import { getSystemEffectAssets } from "@/lib/get-assets.js";
+import { getGameAssets, getSystemEffectAssets } from "@/lib/get-assets.js";
 import TriangleShape from "./games/Geometry/TriangleShape.vue";
 
 const HOLE_COUNT = 6;
+const ASSETS = {
+  background: getGameAssets("MA4062", "MA4062_background.png"),
+  board: getGameAssets("MA4062", "MA4062_board.png"),
+  hole: getGameAssets("MA4062", "MA4062_hole.png"),
+  mole: getGameAssets("MA4062", "MA4062_mole.png"),
+};
+// 土堆左上角位置（%）：後排在上、前排在下且與後排交錯，前排蓋在後排前面
+const HOLE_POSITIONS = [
+  { x: 4.5, y: 36, z: 1 },
+  { x: 36.5, y: 36, z: 1 },
+  { x: 68.5, y: 36, z: 1 },
+  { x: 20.5, y: 71, z: 2 },
+  { x: 52.5, y: 71, z: 2 },
+  { x: 84.5, y: 71, z: 2 },
+];
+const RISE_MS = 300;
 const MAX_VISIBLE = 4;
 const rand = (min, max) => min + Math.random() * (max - min);
 
@@ -112,6 +158,8 @@ export default {
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
+      ASSETS,
+      HOLE_POSITIONS,
       holes: Array(HOLE_COUNT).fill(null),
       phase: "ready",
       timeLeft: 0,
@@ -188,16 +236,30 @@ export default {
         const item = this.items[Math.floor(Math.random() * this.items.length)];
         this.keySeq += 1;
         const key = this.keySeq;
-        this.setHole(index, { key, item, result: null });
+        this.setHole(index, { key, item, result: null, up: false });
+        // 先放在洞裡，下一刻再升起，才會有動畫
+        this.later(() => this.raise(index, key), 30);
         this.later(
           () => {
-            if (this.holes[index]?.key === key && !this.holes[index].result)
-              this.setHole(index, null);
+            if (!this.holes[index]?.result) this.lower(index, key);
           },
-          rand(1800, 3200)
+          rand(2800, 4500)
         );
       }
-      this.later(this.spawn, rand(450, 1000));
+      this.later(this.spawn, rand(700, 1300));
+    },
+    raise(index, key) {
+      const hole = this.holes[index];
+      if (hole?.key === key) this.setHole(index, { ...hole, up: true });
+    },
+    // 地鼠連同題卡一起縮回洞裡，動畫結束後清空
+    lower(index, key) {
+      const hole = this.holes[index];
+      if (hole?.key !== key) return;
+      this.setHole(index, { ...hole, up: false });
+      this.later(() => {
+        if (this.holes[index]?.key === key) this.setHole(index, null);
+      }, RISE_MS);
     },
     setHole(index, value) {
       const next = [...this.holes];
@@ -214,7 +276,7 @@ export default {
     },
     whack(index) {
       const hole = this.holes[index];
-      if (this.phase !== "playing" || !hole || hole.result) return;
+      if (this.phase !== "playing" || !hole || !hole.up || hole.result) return;
       const isTriangle = hole.item.isTriangle;
       this.setHole(index, { ...hole, result: isTriangle ? "hit" : "miss" });
       this.$emit("add-record", [
@@ -230,9 +292,7 @@ export default {
         this.lives -= 1;
         this.playSound("WrongAnswer.mp3");
       }
-      this.later(() => {
-        if (this.holes[index]?.key === hole.key) this.setHole(index, null);
-      }, 500);
+      this.later(() => this.lower(index, hole.key), 500);
       if (this.lives <= 0) this.endRound();
     },
     endRound() {
@@ -293,15 +353,23 @@ export default {
 }
 
 .status {
+  flex-shrink: 0;
+  width: 27rem;
+  height: 4.4rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  font-size: 1.5rem;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0 2.2rem 0.2rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 1.3rem;
   font-weight: $font-bold;
-  color: #333333;
+  white-space: nowrap;
+  color: #4e342e;
 
   strong {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     color: #1565c0;
   }
 
@@ -311,97 +379,123 @@ export default {
 
   &__lives {
     display: flex;
-    gap: 0.2rem;
+    gap: 0.1rem;
   }
 
   &__heart {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #e53935;
 
     &--lost {
-      color: #cfd8dc;
+      color: #bcaaa4;
     }
   }
 }
 
+// 草地背景（2:1），洞的位置用百分比
 .field {
   position: relative;
   flex: 1;
   min-height: 0;
-  width: 100%;
-  max-width: 48rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.8rem 1.5rem;
-  padding: 0.8rem;
-  background: linear-gradient(#aed581, #7cb342);
+  max-width: 100%;
+  aspect-ratio: 2 / 1;
+  background-size: 100% 100%;
   border-radius: 20px;
+  overflow: hidden;
 }
 
+// 一個洞：寬為草地的 15%，高依土堆圖 4:3（= 草地高度的 22.5%）
 .hole {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
+  position: absolute;
+  width: 15%;
+  height: 22.5%;
 
-  &__pit {
+  &__mound {
     position: absolute;
-    bottom: 0.3rem;
-    width: 80%;
-    height: 22%;
-    background-color: #5d4037;
-    border-radius: 50%;
-    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.5);
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  // 洞口（土堆圖由上往下 22% 處）以上的可見範圍
+  &__window {
+    position: absolute;
+    left: 0;
+    bottom: 78%;
+    z-index: 1;
+    width: 100%;
+    height: 170%;
+    overflow: hidden;
   }
 }
 
+// 地鼠連同頭上的題卡一起升起、落下
 .mole {
-  position: relative;
-  z-index: 1;
-  height: 88%;
-  aspect-ratio: 1;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  background-color: #ffffff;
-  border: 4px solid #8d6e63;
-  border-radius: 18px;
-  box-shadow: 0 5px 0 #6d4c41;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  background: none;
+  border: none;
   cursor: pointer;
   touch-action: manipulation;
-  animation: pop-up 0.25s ease-out;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
 
-  &--hit {
+  &--up {
+    transform: translateY(0);
+  }
+
+  &__card {
+    position: relative;
+    z-index: 1;
+    width: 62%;
+    aspect-ratio: 1;
+    margin-bottom: -15%;
+    padding: 6%;
+    background-color: #ffffff;
+    border: 4px solid #8d6e63;
+    border-radius: 14px;
+    box-shadow: 0 4px 0 #6d4c41;
+  }
+
+  &__body {
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &--hit &__card {
     border-color: #43a047;
     box-shadow: 0 0 0 5px #a5d6a7;
   }
 
-  &--miss {
+  &--miss &__card {
     border-color: #e53935;
     box-shadow: 0 0 0 5px #ffcdd2;
   }
 
   &__mark {
     position: absolute;
-    top: -0.2rem;
-    right: 0.2rem;
-    font-size: 2.2rem;
+    top: -0.3rem;
+    right: 0.1rem;
+    font-size: 2rem;
     font-weight: $font-bold;
     color: #2e7d32;
 
     &--x {
       color: #c62828;
     }
-  }
-}
-
-@keyframes pop-up {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 
@@ -455,13 +549,23 @@ export default {
 
 @media (max-width: 1100px) {
   .status {
-    gap: 1.2rem;
-    font-size: 1.3rem;
+    width: 26rem;
+    height: 3.8rem;
+    gap: 0.7rem;
+    padding: 0 1.8rem 0.2rem;
+    font-size: 1.1rem;
+
+    strong {
+      font-size: 1.45rem;
+    }
   }
 
-  .field {
-    max-width: 40rem;
-    gap: 0.6rem 1rem;
+  .mole__card {
+    border-width: 3px;
+  }
+
+  .mole__mark {
+    font-size: 1.6rem;
   }
 }
 </style>
