@@ -1,0 +1,58 @@
+{
+  "id": "MA4036",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用量角器量量看，再回答問題。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "degree",
+        "text": "鐘面上，指針從 12 開始轉到 1，是轉了幾度？",
+        "target": 30,
+        "unit": "度",
+        "answer": 30,
+        "protractor": true
+      }
+    ],
+    [
+      {
+        "kind": "degree",
+        "text": "鐘面上，指針從 12 開始轉到 3，是轉了幾度？",
+        "target": 90,
+        "unit": "度",
+        "answer": 90
+      }
+    ],
+    [
+      {
+        "kind": "degree",
+        "text": "鐘面上，指針從 12 開始轉半圈到 6，是轉了幾度？",
+        "target": 180,
+        "unit": "度",
+        "answer": 180
+      }
+    ],
+    [
+      {
+        "kind": "degree",
+        "text": "鐘面上，指針從 12 開始轉一圈回到 12，是轉了幾度？",
+        "target": 360,
+        "unit": "度",
+        "answer": 360
+      }
+    ],
+    [
+      {
+        "kind": "name",
+        "text": "指針轉一圈是 360 度，我們稱 360 度的角為什麼角？",
+        "target": 360,
+        "options": ["直角", "平角", "周角"],
+        "answer": "周角"
+      }
+    ]
+  ]
+}
