@@ -1,0 +1,319 @@
+{
+  "id": "MA4034",
+  "GameType": "SelfDefine",
+  "TotalLevel": 3,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "量量看，哪兩個角可以拼成一個平角？"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "straight",
+        "picture": "tent",
+        "pieces": [
+          {
+            "id": "s1",
+            "angle": 90,
+            "shape": "setSquare",
+            "legs": [150, 95],
+            "color": "#ffca28"
+          },
+          {
+            "id": "s2",
+            "angle": 90,
+            "shape": "setSquare",
+            "legs": [95, 150],
+            "color": "#4fc3f7"
+          }
+        ],
+        "answer": ["s1", "s2"]
+      }
+    ],
+    [
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 70,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 50,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 130,
+            "shape": "sector",
+            "color": "#9ccc65"
+          }
+        ],
+        "answer": ["p2", "p3"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 90,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 80,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 100,
+            "shape": "sector",
+            "color": "#9ccc65"
+          }
+        ],
+        "answer": ["p2", "p3"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 60,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 90,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 90,
+            "shape": "sector",
+            "color": "#9ccc65"
+          }
+        ],
+        "answer": ["p2", "p3"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 120,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 50,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 60,
+            "shape": "sector",
+            "color": "#9ccc65"
+          }
+        ],
+        "answer": ["p1", "p3"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 170,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 140,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 40,
+            "shape": "sector",
+            "color": "#9ccc65"
+          }
+        ],
+        "answer": ["p2", "p3"]
+      }
+    ],
+    [
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 10,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 90,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 30,
+            "shape": "sector",
+            "color": "#9ccc65"
+          },
+          {
+            "id": "p4",
+            "angle": 150,
+            "shape": "sector",
+            "color": "#29b6f6"
+          }
+        ],
+        "answer": ["p3", "p4"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 70,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 70,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 100,
+            "shape": "sector",
+            "color": "#9ccc65"
+          },
+          {
+            "id": "p4",
+            "angle": 80,
+            "shape": "sector",
+            "color": "#29b6f6"
+          }
+        ],
+        "answer": ["p3", "p4"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 30,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 20,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 50,
+            "shape": "sector",
+            "color": "#9ccc65"
+          },
+          {
+            "id": "p4",
+            "angle": 160,
+            "shape": "sector",
+            "color": "#29b6f6"
+          }
+        ],
+        "answer": ["p2", "p4"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 70,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 80,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 30,
+            "shape": "sector",
+            "color": "#9ccc65"
+          },
+          {
+            "id": "p4",
+            "angle": 110,
+            "shape": "sector",
+            "color": "#29b6f6"
+          }
+        ],
+        "answer": ["p1", "p4"]
+      },
+      {
+        "kind": "straight",
+        "picture": "turtle",
+        "pieces": [
+          {
+            "id": "p1",
+            "angle": 170,
+            "shape": "sector",
+            "color": "#66bb6a"
+          },
+          {
+            "id": "p2",
+            "angle": 10,
+            "shape": "sector",
+            "color": "#26a69a"
+          },
+          {
+            "id": "p3",
+            "angle": 70,
+            "shape": "sector",
+            "color": "#9ccc65"
+          },
+          {
+            "id": "p4",
+            "angle": 130,
+            "shape": "sector",
+            "color": "#29b6f6"
+          }
+        ],
+        "answer": ["p1", "p2"]
+      }
+    ]
+  ]
+}
