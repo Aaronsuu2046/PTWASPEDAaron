@@ -1,0 +1,1944 @@
+{
+ "id": "MA4065",
+ "GameType": "SelfDefine",
+ "TotalLevel": 5,
+ "IntroText": {
+  "Type": "PlainText",
+  "Content": "找出等腰直角三角形。"
+ },
+ "GameConfig": {},
+ "Questions": [
+  [
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o1",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        32.0,
+        12.0
+       ],
+       [
+        128.0,
+        12.0
+       ],
+       [
+        32.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#bbdefb"
+     },
+     {
+      "optionId": "o2",
+      "kind": "acuteScalene",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        24.3,
+        12.0
+       ],
+       [
+        135.7,
+        31.6
+       ],
+       [
+        47.6,
+        108.0
+       ]
+      ],
+      "angles": [
+       66.4,
+       50.9,
+       62.7
+      ],
+      "color": "#b2ebf2"
+     }
+    ],
+    "answer": "o1"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o3",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        128.0,
+        12.0
+       ],
+       [
+        128.0,
+        108.0
+       ],
+       [
+        32.0,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#c8e6c9"
+     },
+     {
+      "optionId": "o4",
+      "kind": "isoNonRight",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        40.0,
+        12.0
+       ],
+       [
+        120.0,
+        12.0
+       ],
+       [
+        80.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       67.4,
+       67.4,
+       45.2
+      ],
+      "color": "#fff9c4"
+     }
+    ],
+    "answer": "o3"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o5",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        128.0,
+        108.0
+       ],
+       [
+        32.0,
+        108.0
+       ],
+       [
+        128.0,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffe0b2"
+     },
+     {
+      "optionId": "o6",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        12.0,
+        17.5
+       ],
+       [
+        148.0,
+        17.5
+       ],
+       [
+        12.0,
+        102.5
+       ]
+      ],
+      "angles": [
+       90.0,
+       32.0,
+       58.0
+      ],
+      "color": "#dcedc8"
+     }
+    ],
+    "answer": "o5"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o7",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        32.0,
+        108.0
+       ],
+       [
+        32.0,
+        12.0
+       ],
+       [
+        128.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#e1bee7"
+     },
+     {
+      "optionId": "o8",
+      "kind": "equilateral",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        24.6,
+        12.0
+       ],
+       [
+        135.4,
+        12.0
+       ],
+       [
+        80.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       60.0,
+       60.0,
+       60.0
+      ],
+      "color": "#f8bbd0"
+     }
+    ],
+    "answer": "o7"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o9",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        80.0,
+        26.0
+       ],
+       [
+        148.0,
+        94.0
+       ],
+       [
+        12.0,
+        94.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffcdd2"
+     },
+     {
+      "optionId": "o10",
+      "kind": "obtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        12.0,
+        34.2
+       ],
+       [
+        105.8,
+        34.2
+       ],
+       [
+        148.0,
+        85.8
+       ]
+      ],
+      "angles": [
+       20.8,
+       129.3,
+       29.9
+      ],
+      "color": "#d1c4e9"
+     }
+    ],
+    "answer": "o9"
+   }
+  ],
+  [
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o11",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        104.0,
+        60.0
+       ],
+       [
+        56.0,
+        108.0
+       ],
+       [
+        56.0,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffe0b2"
+     },
+     {
+      "optionId": "o12",
+      "kind": "acuteScalene",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        126.3,
+        74.3
+       ],
+       [
+        33.7,
+        108.0
+       ],
+       [
+        66.9,
+        12.0
+       ]
+      ],
+      "angles": [
+       66.4,
+       50.9,
+       62.7
+      ],
+      "color": "#dcedc8"
+     }
+    ],
+    "answer": "o11"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o13",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        80.0,
+        94.0
+       ],
+       [
+        12.0,
+        26.0
+       ],
+       [
+        148.0,
+        26.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#e1bee7"
+     },
+     {
+      "optionId": "o14",
+      "kind": "isoNonRightObtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        96.8,
+        12.0
+       ],
+       [
+        96.8,
+        108.0
+       ],
+       [
+        63.2,
+        60.0
+       ]
+      ],
+      "angles": [
+       35.0,
+       35.0,
+       110.0
+      ],
+      "color": "#f8bbd0"
+     }
+    ],
+    "answer": "o13"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o15",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        56.0,
+        60.0
+       ],
+       [
+        104.0,
+        12.0
+       ],
+       [
+        104.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffcdd2"
+     },
+     {
+      "optionId": "o16",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        90.8,
+        108.0
+       ],
+       [
+        34.3,
+        87.4
+       ],
+       [
+        125.7,
+        12.0
+       ]
+      ],
+      "angles": [
+       89.9,
+       59.6,
+       30.5
+      ],
+      "color": "#d1c4e9"
+     }
+    ],
+    "answer": "o15"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o17",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        49.5,
+        12.0
+       ],
+       [
+        145.5,
+        46.9
+       ],
+       [
+        14.5,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.1,
+       45.0,
+       45.0
+      ],
+      "color": "#b2ebf2"
+     },
+     {
+      "optionId": "o18",
+      "kind": "equilateral",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        38.4,
+        12.0
+       ],
+       [
+        121.6,
+        60.0
+       ],
+       [
+        38.4,
+        108.0
+       ]
+      ],
+      "angles": [
+       60.0,
+       60.0,
+       60.0
+      ],
+      "color": "#bbdefb"
+     }
+    ],
+    "answer": "o17"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o19",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        110.5,
+        108.0
+       ],
+       [
+        14.5,
+        73.1
+       ],
+       [
+        145.5,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.1,
+       45.0,
+       45.0
+      ],
+      "color": "#fff9c4"
+     },
+     {
+      "optionId": "o20",
+      "kind": "obtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        138.8,
+        12.0
+       ],
+       [
+        89.9,
+        96.8
+       ],
+       [
+        21.2,
+        108.0
+       ]
+      ],
+      "angles": [
+       20.8,
+       129.2,
+       30.0
+      ],
+      "color": "#c8e6c9"
+     }
+    ],
+    "answer": "o19"
+   }
+  ],
+  [
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o21",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        32.0,
+        12.0
+       ],
+       [
+        128.0,
+        12.0
+       ],
+       [
+        32.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#bbdefb"
+     },
+     {
+      "optionId": "o22",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        12.0,
+        17.5
+       ],
+       [
+        148.0,
+        17.5
+       ],
+       [
+        12.0,
+        102.5
+       ]
+      ],
+      "angles": [
+       90.0,
+       32.0,
+       58.0
+      ],
+      "color": "#e1bee7"
+     },
+     {
+      "optionId": "o23",
+      "kind": "isoNonRight",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        40.0,
+        12.0
+       ],
+       [
+        120.0,
+        12.0
+       ],
+       [
+        80.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       67.4,
+       67.4,
+       45.2
+      ],
+      "color": "#fff9c4"
+     }
+    ],
+    "answer": "o21"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o24",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        128.0,
+        12.0
+       ],
+       [
+        128.0,
+        108.0
+       ],
+       [
+        32.0,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#c8e6c9"
+     },
+     {
+      "optionId": "o25",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        148.0,
+        20.0
+       ],
+       [
+        148.0,
+        100.0
+       ],
+       [
+        12.0,
+        20.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       59.5,
+       30.5
+      ],
+      "color": "#ffcdd2"
+     },
+     {
+      "optionId": "o26",
+      "kind": "isoNonRightObtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        148.0,
+        83.8
+       ],
+       [
+        12.0,
+        83.8
+       ],
+       [
+        80.0,
+        36.2
+       ]
+      ],
+      "angles": [
+       35.0,
+       35.0,
+       110.0
+      ],
+      "color": "#dcedc8"
+     }
+    ],
+    "answer": "o24"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o27",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        128.0,
+        108.0
+       ],
+       [
+        32.0,
+        108.0
+       ],
+       [
+        128.0,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffe0b2"
+     },
+     {
+      "optionId": "o28",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        148.0,
+        102.5
+       ],
+       [
+        12.0,
+        102.5
+       ],
+       [
+        148.0,
+        17.5
+       ]
+      ],
+      "angles": [
+       90.0,
+       32.0,
+       58.0
+      ],
+      "color": "#b2ebf2"
+     },
+     {
+      "optionId": "o29",
+      "kind": "isoNonRight",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        137.6,
+        12.0
+       ],
+       [
+        137.6,
+        108.0
+       ],
+       [
+        22.4,
+        60.0
+       ]
+      ],
+      "angles": [
+       67.4,
+       67.4,
+       45.2
+      ],
+      "color": "#f8bbd0"
+     }
+    ],
+    "answer": "o27"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o30",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        32.0,
+        108.0
+       ],
+       [
+        32.0,
+        12.0
+       ],
+       [
+        128.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#e1bee7"
+     },
+     {
+      "optionId": "o31",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        12.0,
+        100.0
+       ],
+       [
+        12.0,
+        20.0
+       ],
+       [
+        148.0,
+        100.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       59.5,
+       30.5
+      ],
+      "color": "#fff9c4"
+     },
+     {
+      "optionId": "o32",
+      "kind": "isoNonRightObtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        63.2,
+        108.0
+       ],
+       [
+        63.2,
+        12.0
+       ],
+       [
+        96.8,
+        60.0
+       ]
+      ],
+      "angles": [
+       35.0,
+       35.0,
+       110.0
+      ],
+      "color": "#d1c4e9"
+     }
+    ],
+    "answer": "o30"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o33",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        80.0,
+        26.0
+       ],
+       [
+        148.0,
+        94.0
+       ],
+       [
+        12.0,
+        94.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffcdd2"
+     },
+     {
+      "optionId": "o34",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        48.1,
+        28.8
+       ],
+       [
+        148.0,
+        86.5
+       ],
+       [
+        12.0,
+        91.2
+       ]
+      ],
+      "angles": [
+       90.0,
+       32.0,
+       58.0
+      ],
+      "color": "#dcedc8"
+     },
+     {
+      "optionId": "o35",
+      "kind": "isoNonRight",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        44.0,
+        12.0
+       ],
+       [
+        116.0,
+        31.3
+       ],
+       [
+        56.9,
+        108.0
+       ]
+      ],
+      "angles": [
+       67.3,
+       67.4,
+       45.3
+      ],
+      "color": "#bbdefb"
+     }
+    ],
+    "answer": "o33"
+   }
+  ],
+  [
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o36",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        80.0,
+        94.0
+       ],
+       [
+        12.0,
+        26.0
+       ],
+       [
+        148.0,
+        26.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#c8e6c9"
+     },
+     {
+      "optionId": "o37",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        121.2,
+        59.6
+       ],
+       [
+        93.2,
+        108.0
+       ],
+       [
+        38.8,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       59.6,
+       30.4
+      ],
+      "color": "#ffcdd2"
+     },
+     {
+      "optionId": "o38",
+      "kind": "isoNonRightObtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        148.0,
+        96.2
+       ],
+       [
+        12.0,
+        46.7
+       ],
+       [
+        97.3,
+        23.8
+       ]
+      ],
+      "angles": [
+       35.0,
+       35.0,
+       110.0
+      ],
+      "color": "#f8bbd0"
+     }
+    ],
+    "answer": "o36"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o39",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        104.0,
+        60.0
+       ],
+       [
+        56.0,
+        108.0
+       ],
+       [
+        56.0,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffe0b2"
+     },
+     {
+      "optionId": "o40",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        111.9,
+        91.2
+       ],
+       [
+        12.0,
+        33.5
+       ],
+       [
+        148.0,
+        28.8
+       ]
+      ],
+      "angles": [
+       90.0,
+       32.0,
+       58.0
+      ],
+      "color": "#b2ebf2"
+     },
+     {
+      "optionId": "o41",
+      "kind": "isoNonRight",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        93.4,
+        12.0
+       ],
+       [
+        139.9,
+        92.5
+       ],
+       [
+        20.1,
+        108.0
+       ]
+      ],
+      "angles": [
+       67.4,
+       67.4,
+       45.3
+      ],
+      "color": "#d1c4e9"
+     }
+    ],
+    "answer": "o39"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o42",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        56.0,
+        60.0
+       ],
+       [
+        104.0,
+        12.0
+       ],
+       [
+        104.0,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#e1bee7"
+     },
+     {
+      "optionId": "o43",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        38.8,
+        60.4
+       ],
+       [
+        66.8,
+        12.0
+       ],
+       [
+        121.2,
+        108.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       59.6,
+       30.4
+      ],
+      "color": "#fff9c4"
+     },
+     {
+      "optionId": "o44",
+      "kind": "isoNonRightObtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        49.3,
+        108.0
+       ],
+       [
+        104.8,
+        12.0
+       ],
+       [
+        110.7,
+        79.4
+       ]
+      ],
+      "angles": [
+       35.0,
+       35.0,
+       110.0
+      ],
+      "color": "#bbdefb"
+     }
+    ],
+    "answer": "o42"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o45",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        115.2,
+        82.4
+       ],
+       [
+        44.8,
+        108.0
+       ],
+       [
+        89.6,
+        12.0
+       ]
+      ],
+      "angles": [
+       90.0,
+       45.0,
+       45.0
+      ],
+      "color": "#ffcdd2"
+     },
+     {
+      "optionId": "o46",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        82.3,
+        12.0
+       ],
+       [
+        137.7,
+        108.0
+       ],
+       [
+        22.3,
+        46.6
+       ]
+      ],
+      "angles": [
+       90.0,
+       32.0,
+       58.0
+      ],
+      "color": "#dcedc8"
+     },
+     {
+      "optionId": "o47",
+      "kind": "isoNonRight",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        139.9,
+        27.5
+       ],
+       [
+        93.4,
+        108.0
+       ],
+       [
+        20.1,
+        12.0
+       ]
+      ],
+      "angles": [
+       67.4,
+       67.4,
+       45.3
+      ],
+      "color": "#c8e6c9"
+     }
+    ],
+    "answer": "o45"
+   },
+   {
+    "type": "choose",
+    "options": [
+     {
+      "optionId": "o48",
+      "kind": "RI",
+      "isRightIsosceles": true,
+      "vertices": [
+       [
+        49.5,
+        108.0
+       ],
+       [
+        14.5,
+        12.0
+       ],
+       [
+        145.5,
+        73.1
+       ]
+      ],
+      "angles": [
+       90.1,
+       45.0,
+       45.0
+      ],
+      "color": "#b2ebf2"
+     },
+     {
+      "optionId": "o49",
+      "kind": "rightNonIso",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        101.1,
+        83.7
+       ],
+       [
+        58.9,
+        108.0
+       ],
+       [
+        59.7,
+        12.0
+       ]
+      ],
+      "angles": [
+       89.9,
+       59.6,
+       30.5
+      ],
+      "color": "#f8bbd0"
+     },
+     {
+      "optionId": "o50",
+      "kind": "isoNonRightObtuse",
+      "isRightIsosceles": false,
+      "vertices": [
+       [
+        104.8,
+        108.0
+       ],
+       [
+        49.3,
+        12.0
+       ],
+       [
+        110.7,
+        40.6
+       ]
+      ],
+      "angles": [
+       35.0,
+       35.0,
+       110.0
+      ],
+      "color": "#ffe0b2"
+     }
+    ],
+    "answer": "o48"
+   }
+  ],
+  [
+   {
+    "type": "composite",
+    "outer": [
+     [
+      0,
+      0
+     ],
+     [
+      300,
+      0
+     ],
+     [
+      300,
+      200
+     ],
+     [
+      0,
+      200
+     ]
+    ],
+    "options": [
+     {
+      "optionId": "c0p0",
+      "vertices": [
+       [
+        0,
+        200
+       ],
+       [
+        200,
+        200
+       ],
+       [
+        0,
+        0
+       ]
+      ],
+      "isRightIsosceles": true,
+      "kind": "RI",
+      "color": "#ffcc80"
+     },
+     {
+      "optionId": "c0p1",
+      "vertices": [
+       [
+        300,
+        0
+       ],
+       [
+        300,
+        200
+       ],
+       [
+        200,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "rightNonIso",
+      "color": "#90caf9"
+     },
+     {
+      "optionId": "c0p2",
+      "vertices": [
+       [
+        0,
+        0
+       ],
+       [
+        150,
+        0
+       ],
+       [
+        200,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#a5d6a7"
+     },
+     {
+      "optionId": "c0p3",
+      "vertices": [
+       [
+        150,
+        0
+       ],
+       [
+        300,
+        0
+       ],
+       [
+        200,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "acuteScalene",
+      "color": "#ce93d8"
+     }
+    ],
+    "answer": "c0p0"
+   },
+   {
+    "type": "composite",
+    "outer": [
+     [
+      0,
+      200
+     ],
+     [
+      300,
+      200
+     ],
+     [
+      150,
+      0
+     ]
+    ],
+    "options": [
+     {
+      "optionId": "c1p0",
+      "vertices": [
+       [
+        0,
+        200
+       ],
+       [
+        150,
+        200
+       ],
+       [
+        150,
+        0
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "rightNonIso",
+      "color": "#90caf9"
+     },
+     {
+      "optionId": "c1p1",
+      "vertices": [
+       [
+        150,
+        200
+       ],
+       [
+        250,
+        200
+       ],
+       [
+        150,
+        100
+       ]
+      ],
+      "isRightIsosceles": true,
+      "kind": "RI",
+      "color": "#a5d6a7"
+     },
+     {
+      "optionId": "c1p2",
+      "vertices": [
+       [
+        150,
+        0
+       ],
+       [
+        150,
+        100
+       ],
+       [
+        300,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#ce93d8"
+     },
+     {
+      "optionId": "c1p3",
+      "vertices": [
+       [
+        150,
+        100
+       ],
+       [
+        250,
+        200
+       ],
+       [
+        300,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#fff59d"
+     }
+    ],
+    "answer": "c1p1"
+   },
+   {
+    "type": "composite",
+    "outer": [
+     [
+      0,
+      0
+     ],
+     [
+      300,
+      0
+     ],
+     [
+      300,
+      200
+     ],
+     [
+      0,
+      200
+     ]
+    ],
+    "options": [
+     {
+      "optionId": "c2p0",
+      "vertices": [
+       [
+        0,
+        0
+       ],
+       [
+        300,
+        0
+       ],
+       [
+        100,
+        100
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#a5d6a7"
+     },
+     {
+      "optionId": "c2p1",
+      "vertices": [
+       [
+        300,
+        0
+       ],
+       [
+        300,
+        200
+       ],
+       [
+        100,
+        100
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "isoNonRight",
+      "color": "#ce93d8"
+     },
+     {
+      "optionId": "c2p2",
+      "vertices": [
+       [
+        300,
+        200
+       ],
+       [
+        0,
+        200
+       ],
+       [
+        100,
+        100
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#fff59d"
+     },
+     {
+      "optionId": "c2p3",
+      "vertices": [
+       [
+        0,
+        200
+       ],
+       [
+        0,
+        0
+       ],
+       [
+        100,
+        100
+       ]
+      ],
+      "isRightIsosceles": true,
+      "kind": "RI",
+      "color": "#80deea"
+     }
+    ],
+    "answer": "c2p3"
+   },
+   {
+    "type": "composite",
+    "outer": [
+     [
+      0,
+      200
+     ],
+     [
+      300,
+      200
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "options": [
+     {
+      "optionId": "c3p0",
+      "vertices": [
+       [
+        0,
+        200
+       ],
+       [
+        100,
+        200
+       ],
+       [
+        0,
+        100
+       ]
+      ],
+      "isRightIsosceles": true,
+      "kind": "RI",
+      "color": "#ce93d8"
+     },
+     {
+      "optionId": "c3p1",
+      "vertices": [
+       [
+        0,
+        100
+       ],
+       [
+        100,
+        200
+       ],
+       [
+        300,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#fff59d"
+     },
+     {
+      "optionId": "c3p2",
+      "vertices": [
+       [
+        0,
+        0
+       ],
+       [
+        0,
+        100
+       ],
+       [
+        150,
+        100
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "rightNonIso",
+      "color": "#80deea"
+     },
+     {
+      "optionId": "c3p3",
+      "vertices": [
+       [
+        0,
+        100
+       ],
+       [
+        150,
+        100
+       ],
+       [
+        300,
+        200
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#ffcc80"
+     }
+    ],
+    "answer": "c3p0"
+   },
+   {
+    "type": "composite",
+    "outer": [
+     [
+      0,
+      200
+     ],
+     [
+      300,
+      200
+     ],
+     [
+      240,
+      80
+     ],
+     [
+      60,
+      80
+     ]
+    ],
+    "options": [
+     {
+      "optionId": "c4p0",
+      "vertices": [
+       [
+        100,
+        200
+       ],
+       [
+        200,
+        200
+       ],
+       [
+        150,
+        150
+       ]
+      ],
+      "isRightIsosceles": true,
+      "kind": "RI",
+      "color": "#fff59d"
+     },
+     {
+      "optionId": "c4p1",
+      "vertices": [
+       [
+        0,
+        200
+       ],
+       [
+        100,
+        200
+       ],
+       [
+        150,
+        150
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#80deea"
+     },
+     {
+      "optionId": "c4p2",
+      "vertices": [
+       [
+        200,
+        200
+       ],
+       [
+        300,
+        200
+       ],
+       [
+        150,
+        150
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "obtuse",
+      "color": "#ffcc80"
+     },
+     {
+      "optionId": "c4p3",
+      "vertices": [
+       [
+        300,
+        200
+       ],
+       [
+        240,
+        80
+       ],
+       [
+        150,
+        150
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "acuteScalene",
+      "color": "#90caf9"
+     },
+     {
+      "optionId": "c4p4",
+      "vertices": [
+       [
+        240,
+        80
+       ],
+       [
+        60,
+        80
+       ],
+       [
+        150,
+        150
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "isoNonRightObtuse",
+      "color": "#a5d6a7"
+     },
+     {
+      "optionId": "c4p5",
+      "vertices": [
+       [
+        60,
+        80
+       ],
+       [
+        0,
+        200
+       ],
+       [
+        150,
+        150
+       ]
+      ],
+      "isRightIsosceles": false,
+      "kind": "acuteScalene",
+      "color": "#ce93d8"
+     }
+    ],
+    "answer": "c4p0"
+   }
+  ]
+ ]
+}
