@@ -1,0 +1,197 @@
+{
+  "id": "MA4038",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "下圖中的角是幾度？用算式記記看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "kind": "sum",
+        "parts": [68, 45],
+        "total": 113,
+        "hint": "68+45",
+        "answer": 113
+      },
+      {
+        "kind": "sum",
+        "parts": [90, 57],
+        "total": 147,
+        "hint": "90+57",
+        "answer": 147
+      },
+      {
+        "kind": "sum",
+        "parts": [51, 31],
+        "total": 82,
+        "hint": "51+31",
+        "answer": 82
+      },
+      {
+        "kind": "sum",
+        "parts": [150, 15],
+        "total": 165,
+        "hint": "150+15",
+        "answer": 165
+      },
+      {
+        "kind": "sum",
+        "parts": [90, 30],
+        "total": 120,
+        "hint": "90+30",
+        "answer": 120
+      }
+    ],
+    [
+      {
+        "kind": "rest",
+        "total": 90,
+        "known": 52,
+        "hint": "90-52",
+        "answer": 38
+      },
+      {
+        "kind": "rest",
+        "total": 90,
+        "known": 35,
+        "hint": "90-35",
+        "answer": 55
+      },
+      {
+        "kind": "rest",
+        "total": 90,
+        "known": 29,
+        "hint": "90-29",
+        "answer": 61
+      },
+      {
+        "kind": "rest",
+        "total": 180,
+        "known": 82,
+        "hint": "180-82",
+        "answer": 98
+      },
+      {
+        "kind": "rest",
+        "total": 180,
+        "known": 77,
+        "hint": "180-77",
+        "answer": 103
+      }
+    ],
+    [
+      {
+        "kind": "diff",
+        "big": 178,
+        "small": 70,
+        "hint": "178-70",
+        "answer": 108
+      },
+      {
+        "kind": "diff",
+        "big": 126,
+        "small": 39,
+        "hint": "126-39",
+        "answer": 87
+      },
+      {
+        "kind": "diff",
+        "big": 145,
+        "small": 68,
+        "hint": "145-68",
+        "answer": 77
+      },
+      {
+        "kind": "diff",
+        "big": 120,
+        "small": 35,
+        "hint": "120-35",
+        "answer": 85
+      },
+      {
+        "kind": "diff",
+        "big": 169,
+        "small": 46,
+        "hint": "169-46",
+        "answer": 123
+      }
+    ],
+    [
+      {
+        "kind": "middle",
+        "total": 90,
+        "known": [30, 20],
+        "hint": "90-30-20",
+        "answer": 40
+      },
+      {
+        "kind": "middle",
+        "total": 90,
+        "known": [30, 25],
+        "hint": "90-30-25",
+        "answer": 35
+      },
+      {
+        "kind": "middle",
+        "total": 90,
+        "known": [18, 52],
+        "hint": "90-18-52",
+        "answer": 20
+      },
+      {
+        "kind": "middle",
+        "total": 90,
+        "known": [15, 35],
+        "hint": "90-15-35",
+        "answer": 40
+      },
+      {
+        "kind": "middle",
+        "total": 90,
+        "known": [22, 28],
+        "hint": "90-22-28",
+        "answer": 40
+      }
+    ],
+    [
+      {
+        "kind": "middle",
+        "total": 180,
+        "known": [15, 70],
+        "hint": "180-15-70",
+        "answer": 95
+      },
+      {
+        "kind": "middle",
+        "total": 180,
+        "known": [45, 50],
+        "hint": "180-45-50",
+        "answer": 85
+      },
+      {
+        "kind": "middle",
+        "total": 180,
+        "known": [55, 35],
+        "hint": "180-55-35",
+        "answer": 90
+      },
+      {
+        "kind": "middle",
+        "total": 180,
+        "known": [55, 55],
+        "hint": "180-55-55",
+        "answer": 70
+      },
+      {
+        "kind": "middle",
+        "total": 180,
+        "known": [65, 40],
+        "hint": "180-65-40",
+        "answer": 75
+      }
+    ]
+  ]
+}
