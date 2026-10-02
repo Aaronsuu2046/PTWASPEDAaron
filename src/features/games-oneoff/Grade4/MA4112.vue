@@ -11,7 +11,7 @@
   />
 
   <!-- 關卡 4：定位板直式，填最後的乘積 -->
-  <div v-else class="outer-container">
+  <div v-else ref="root" class="outer-container">
     <div class="title">
       <p>{{ gameIntroText }}</p>
     </div>
@@ -223,7 +223,9 @@ export default {
     },
     syncPad() {
       this.$nextTick(() => {
-        this.padEl = this.$el.querySelector(`[data-col="${this.active}"]`);
+        this.padEl = this.$refs.root?.querySelector(
+          `[data-col="${this.active}"]`
+        );
       });
     },
     // 數字板：數字照原本規則寫入；「刪除」退回上一個寫的數字
@@ -419,6 +421,8 @@ export default {
     border: 3px solid #43a047;
     background-color: #e8f5e9;
   }
+}
+
 @media (max-height: 760px) {
   .game-area {
     gap: 0.5rem;

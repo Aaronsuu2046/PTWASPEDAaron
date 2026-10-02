@@ -25,8 +25,10 @@ export function placeNearAnchor(padWidth, padHeight, anchor, avoid = []) {
     { top: above, left: anchor.right - padWidth },
   ];
   // 再試所有欄位整體的右側／左側（作答格子排成好幾行時，旁邊通常有空位）
-  if (avoid.length) {
-    const all = [anchor, ...avoid];
+  // 只看作答欄位（有 weight 的是功能區按鈕等，不算在欄位範圍內）
+  const fields = avoid.filter((r) => r.weight == null);
+  if (fields.length) {
+    const all = [anchor, ...fields];
     const farRight = Math.max(...all.map((r) => r.right)) + GAP;
     const farLeft = Math.min(...all.map((r) => r.left)) - GAP - padWidth;
     const midY = (anchor.top + anchor.bottom) / 2 - padHeight / 2;

@@ -11,7 +11,7 @@
   />
 
   <!-- 關卡 4：劃掉末尾的 0，再用除法直式算 -->
-  <div v-else class="outer-container">
+  <div v-else ref="root" class="outer-container">
     <div class="title">
       <p>{{ gameIntroText }}</p>
     </div>
@@ -145,7 +145,9 @@ export default {
     syncPad() {
       this.$nextTick(() => {
         const id = this.$refs.division?.active;
-        this.padEl = id ? this.$el.querySelector(`[data-cell="${id}"]`) : null;
+        this.padEl = id
+          ? this.$refs.root?.querySelector(`[data-cell="${id}"]`)
+          : null;
       });
     },
     closePad() {
