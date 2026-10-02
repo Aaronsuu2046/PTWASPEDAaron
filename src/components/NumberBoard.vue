@@ -136,7 +136,7 @@ export default {
   &__row {
     width: 100%;
     display: table-row;
-    font-family: "YuanQuan";
+    font-family: var(--app-font, "YuanQuan");
     box-sizing: border-box;
   }
 
