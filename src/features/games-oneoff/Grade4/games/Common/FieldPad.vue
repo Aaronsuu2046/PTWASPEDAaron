@@ -74,9 +74,14 @@ export default {
       };
       this.anchor = rect(this.field);
       // 其他作答欄位：輸入板盡量不要蓋住，學生才點得到下一格
-      this.avoid = [...document.querySelectorAll("[data-pad-field]")]
+      const fields = [...document.querySelectorAll("[data-pad-field]")]
         .filter((el) => el !== this.field && el.offsetParent)
         .map(rect);
+      // 右側功能區（送出答案等按鈕）更不能蓋住
+      const sidebar = [...document.querySelectorAll(".SideBar")]
+        .filter((el) => el.offsetParent)
+        .map((el) => ({ ...rect(el), weight: 1000 }));
+      this.avoid = [...fields, ...sidebar];
     },
     onButton(label) {
       if (label === "關閉") {

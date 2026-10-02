@@ -2,7 +2,7 @@
 const GAP = 8;
 
 // anchor：欄位在視窗中的位置 { top, left, bottom, right }
-// avoid：盡量不要蓋住的其他欄位位置（選填）
+// avoid：盡量不要蓋住的區域（選填）[{ top, left, bottom, right, weight }]
 // 依序試欄位下方、右側、左側、上方；選放得進視窗、且蓋住其他欄位最少的位置
 export function placeNearAnchor(padWidth, padHeight, anchor, avoid = []) {
   const vw = window.innerWidth;
@@ -51,9 +51,13 @@ export function placeNearAnchor(padWidth, padHeight, anchor, avoid = []) {
     // 夾回視窗內後再評估：不能蓋住目前欄位，其次盡量不蓋其他欄位，再其次離原本位置越近越好
     const pos = { top: clampY(raw.top), left: clampX(raw.left) };
     if (overlap(pos, anchor) > 0) return;
-    const covered = avoid.reduce((sum, r) => sum + overlap(pos, r), 0);
+    // 每個要避開的區域可帶 weight（預設 10），例如功能區的送出按鈕權重更高
+    const covered = avoid.reduce(
+      (sum, r) => sum + overlap(pos, r) * (r.weight ?? 10),
+      0
+    );
     const moved = Math.abs(pos.top - raw.top) + Math.abs(pos.left - raw.left);
-    const score = covered * 10 + moved + order;
+    const score = covered + moved + order;
     if (!best || score < best.score) best = { ...pos, score };
   });
   if (best) return { top: best.top, left: best.left };
