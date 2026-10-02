@@ -99,7 +99,7 @@ export default {
   height: 100%;
   /* min-height: 70px;
   max-height: 140px; */
-  font-family: "YuanQuan";
+  font-family: var(--app-font, "YuanQuan");
 }
 .EachBlanket {
   border: solid;

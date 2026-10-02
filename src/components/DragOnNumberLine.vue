@@ -83,6 +83,14 @@ export default {
   },
 
   methods: {
+    // Konva 畫在 canvas 上，讀不到 CSS 變數；依目前 body 的 --app-font 決定字型
+    appFont() {
+      const font = getComputedStyle(document.body)
+        .getPropertyValue("--app-font")
+        .replace(/["']/g, "")
+        .trim();
+      return font || "YuanQuan";
+    },
     initializeScene() {
       this.gameWidth = this.$refs.container.clientWidth * 0.8;
       this.configKonva.width = this.gameWidth;
@@ -129,14 +137,14 @@ export default {
       const leftLabel = {
         text: "左",
         fontSize: 30,
-        fontFamily: "YuanQuan",
+        fontFamily: this.appFont(),
         x: 0,
         y: this.numberLineY - 50,
       };
       const rightLabel = {
         text: "右",
         fontSize: 30,
-        fontFamily: "YuanQuan",
+        fontFamily: this.appFont(),
         x: this.gameWidth * 0.95,
         y: this.numberLineY - 50,
       };
