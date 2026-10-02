@@ -28,6 +28,7 @@
           :class="cellClass(item.cellId)"
           :style="place(item)"
           :data-cell="item.cellId"
+          data-pad-field
           @click="activate(item.cellId)"
         >
           {{ values[item.cellId] || "" }}

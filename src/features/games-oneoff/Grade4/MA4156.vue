@@ -136,37 +136,32 @@
         <div class="answer-row">
           <span v-if="isRead" class="answer-row__label">□ =</span>
           <span v-else class="answer-row__label">答：</span>
-          <span
+          <button
+            type="button"
             class="answer-box"
             :class="{
+              'answer-box--active': padEl && !answered,
               'answer-box--wrong': wrong,
               'answer-box--correct': answered,
             }"
+            data-pad-field
+            aria-label="答案"
+            @click="openPad"
           >
             {{ input }}
-          </span>
+          </button>
           <span v-if="isDuck" class="answer-row__label">公分</span>
           <span v-if="isDuck && answered" class="equation">
             做法：{{ gameData.equation }}
           </span>
         </div>
-        <div class="key-row">
-          <button
-            v-for="key in KEYS"
-            :key="key"
-            type="button"
-            class="key"
-            :class="{
-              'key--fn': key === '←',
-              'key--clear': key === '清除',
-            }"
-            :disabled="answered"
-            :aria-label="key === '←' ? '刪除一個字' : key"
-            @click="press(key)"
-          >
-            {{ key }}
-          </button>
-        </div>
+        <!-- 點答案格才出現數字板（小數題有小數點） -->
+        <FieldPad
+          :field="answered ? null : padEl"
+          decimal
+          @press="(key) => press(key === 'clear' ? '清除' : key)"
+          @close="padEl = null"
+        />
       </template>
     </div>
   </div>
@@ -174,6 +169,7 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+import FieldPad from "./games/Common/FieldPad.vue";
 
 const MAX_LENGTH = 4;
 // 小鴨題答對後，讓小鴨走到答案並顯示做法，再進下一題
@@ -183,6 +179,7 @@ const DUCK_REVEAL_MS = 2500;
 // mode：read 讀出箭頭所指的小數；mark 在數線上標出小數；duck 小鴨移動後的位置
 export default {
   name: "MA4156",
+  components: { FieldPad },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -197,21 +194,7 @@ export default {
       LEFT: 50,
       RIGHT: 890,
       LINE_Y: 105,
-      KEYS: [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "0",
-        ".",
-        "←",
-        "清除",
-      ],
+      padEl: null,
       input: "",
       markValue: null,
       dragging: false,
@@ -302,6 +285,10 @@ export default {
     },
     endMark() {
       this.dragging = false;
+    },
+    openPad(event) {
+      if (this.answered) return;
+      this.padEl = event.currentTarget;
     },
     press(key) {
       if (this.answered) return;
@@ -544,6 +531,7 @@ export default {
   background-color: #ffffff;
   border: 4px solid #1e88e5;
   border-radius: 12px;
+  cursor: pointer;
 
   &--wrong {
     color: #c62828;
@@ -556,6 +544,11 @@ export default {
     border-color: #43a047;
     background-color: #e8f5e9;
   }
+
+  &--active {
+    border-color: #ffb300;
+    box-shadow: 0 0 0 4px #ffe082;
+  }
 }
 
 .equation {
@@ -563,83 +556,18 @@ export default {
   color: #2e7d32;
   background-color: #e8f5e9;
   border-radius: 10px;
-}
+  @media (max-height: 760px) {
+    .game-area {
+      gap: 0.6rem;
+    }
 
-.key-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.6rem;
-  background-color: #fff8e1;
-  border: 4px solid #ffb74d;
-  border-radius: 16px;
-}
+    .hint-text {
+      font-size: 1.4rem;
+    }
 
-.key {
-  min-width: 3.4rem;
-  height: 3.2rem;
-  padding: 0 0.5rem;
-  line-height: 1;
-  font-size: 1.6rem;
-  font-weight: $font-bold;
-  color: #333333;
-  background-color: #ffffff;
-  border: 2px solid #ffcc80;
-  border-radius: 12px;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-
-  &:active:not(:disabled) {
-    transform: translateY(2px);
-    box-shadow: none;
-  }
-
-  &:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
-
-  &--fn {
-    color: #01579b;
-    background-color: #b3e5fc;
-  }
-
-  &--clear {
-    color: #ffffff;
-    background-color: #ef5350;
-    border: none;
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-height: 760px) {
-  .game-area {
-    gap: 0.6rem;
-  }
-
-  .hint-text {
-    font-size: 1.4rem;
-  }
-
-  .answer-box {
-    height: 3rem;
-  }
-
-  .key {
-    height: 2.7rem;
-  }
-}
-
-@media (max-width: 1100px) {
-  .key-row {
-    gap: 0.35rem;
-    flex-wrap: nowrap;
-  }
-
-  .key {
-    min-width: 2.9rem;
-    padding: 0 0.3rem;
+    .answer-box {
+      height: 3rem;
+    }
   }
 }
 </style>

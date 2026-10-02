@@ -63,11 +63,12 @@
                   type="button"
                   class="answer-cell"
                   :class="{
-                    'answer-cell--active': !answered && active === c,
+                    'answer-cell--active': !answered && padOpen && active === c,
                     'answer-cell--wrong': wrong,
                     'answer-cell--correct': answered,
                   }"
                   :data-col="c"
+                  data-pad-field
                   :aria-label="`${placeNames[c]}位`"
                   @click="activate(c)"
                 >
@@ -79,29 +80,19 @@
         </table>
       </div>
 
-      <div class="key-row">
-        <button
-          v-for="key in KEYS"
-          :key="key"
-          type="button"
-          class="key"
-          :class="{
-            'key--fn': key === '←',
-            'key--clear': key === '清除',
-          }"
-          :disabled="answered"
-          :aria-label="key === '←' ? '往左一格' : key"
-          @click="press(key)"
-        >
-          {{ key }}
-        </button>
-      </div>
+      <!-- 點答案格才出現數字板；寫完一格會往左跳到下一格，數字板跟著移動 -->
+      <FieldPad
+        :field="padOpen && !answered ? padEl : null"
+        @press="onPadKey"
+        @close="padOpen = false"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { defineAsyncComponent } from "vue";
+import FieldPad from "./games/Common/FieldPad.vue";
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 
 const PLACE_NAMES = ["個", "十", "百", "千", "萬", "十萬", "百萬", "千萬"];
@@ -130,6 +121,7 @@ function shuffleNotIdentity(list) {
 export default {
   name: "MA4112",
   components: {
+    FieldPad,
     LinkGame: defineAsyncComponent(
       () => import("@/features/game-templates/link-game/LinkGame.vue")
     ),
@@ -145,13 +137,14 @@ export default {
     const isLink = this.gameData.mode === "link";
     return {
       LINK_CONFIG: { CheckingMode: "OnSubmit" },
-      KEYS: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "←", "清除"],
       // 答案欄的排列順序，建立題目時洗牌一次
       answerOrder: isLink
         ? shuffleNotIdentity(this.gameData.pairs.map((_, i) => i))
         : [],
       answerCells: [],
       active: null,
+      padOpen: false,
+      padEl: null,
       wrong: false,
       answered: false,
     };
@@ -225,6 +218,31 @@ export default {
     activate(c) {
       if (this.answered) return;
       this.active = c;
+      this.padOpen = true;
+      this.syncPad();
+    },
+    syncPad() {
+      this.$nextTick(() => {
+        this.padEl = this.$el.querySelector(`[data-col="${this.active}"]`);
+      });
+    },
+    // 數字板：數字照原本規則寫入；「刪除」退回上一個寫的數字
+    onPadKey(key) {
+      if (key === "clear") {
+        this.press("清除");
+      } else if (key === "←") {
+        if (this.answered || this.active === null) return;
+        const cells = [...this.answerCells];
+        if (!cells[this.active] && this.active + 1 < this.columns) {
+          this.active += 1;
+        }
+        cells[this.active] = "";
+        this.answerCells = cells;
+        this.wrong = false;
+      } else {
+        this.press(key);
+      }
+      this.syncPad();
     },
     press(key) {
       if (this.answered || this.active === null) return;
@@ -401,55 +419,6 @@ export default {
     border: 3px solid #43a047;
     background-color: #e8f5e9;
   }
-}
-
-.key-row {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem;
-  background-color: #fff8e1;
-  border: 4px solid #ffb74d;
-  border-radius: 16px;
-}
-
-.key {
-  min-width: 3.2rem;
-  height: 3rem;
-  padding: 0 0.4rem;
-  line-height: 1;
-  font-size: 1.6rem;
-  font-weight: $font-bold;
-  color: #333333;
-  background-color: #ffffff;
-  border: 2px solid #ffcc80;
-  border-radius: 12px;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-
-  &:active:not(:disabled) {
-    transform: translateY(2px);
-    box-shadow: none;
-  }
-
-  &:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
-
-  &--fn {
-    color: #01579b;
-    background-color: #b3e5fc;
-  }
-
-  &--clear {
-    color: #ffffff;
-    background-color: #ef5350;
-    border: none;
-    font-size: 1.3rem;
-  }
-}
-
 @media (max-height: 760px) {
   .game-area {
     gap: 0.5rem;
@@ -465,10 +434,6 @@ export default {
 
   .answer-cell {
     height: 2.8rem;
-  }
-
-  .key {
-    height: 2.6rem;
   }
 }
 </style>

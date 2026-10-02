@@ -208,18 +208,23 @@
               type="button"
               class="cell"
               :class="{
-                'cell--focus': focus === k,
+                'cell--focus': padEl && focus === k,
                 'cell--filled': inputs[k],
                 'cell--right': solved,
               }"
               :data-cell="cell"
-              @click="focus = k"
+              data-pad-field
+              @click="openPad(k, $event)"
             >
               {{ inputs[k] || "？" }}</button
             >）{{ k === 0 ? "度的角和" : "度的角合起來是平角" }}
           </template>
         </p>
-        <NumPad :disabled="solved" @press="press" @drop="dropDigit" />
+        <FieldPad
+          :field="solved ? null : padEl"
+          @press="press"
+          @close="padEl = null"
+        />
         <p v-if="feedback" class="feedback">{{ feedback }}</p>
       </div>
 
@@ -256,7 +261,7 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import NumPad from "./games/Vertical/NumPad.vue";
+import FieldPad from "./games/Common/FieldPad.vue";
 import MeasureDialog from "./games/Geometry/MeasureDialog.vue";
 
 const W = 600;
@@ -286,7 +291,7 @@ function shuffle(list) {
 // 平角拼圖：把兩個角的頂點放到直線中間的紅點，拼成 180°，再填兩個角的度數
 export default {
   name: "MA4034",
-  components: { NumPad, MeasureDialog },
+  components: { FieldPad, MeasureDialog },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -318,6 +323,7 @@ export default {
       measuring: null,
       inputs: ["", ""],
       focus: 0,
+      padEl: null,
       feedback: "",
       solved: false,
     };
@@ -587,23 +593,24 @@ export default {
     },
 
     // ---- 數字填空 ----
+    // 點哪一格就在那一格旁邊開數字板
+    openPad(k, event) {
+      if (this.solved) return;
+      this.focus = k;
+      this.padEl = event.currentTarget;
+    },
     press(key) {
       if (this.solved) return;
       this.feedback = "";
       const k = this.focus;
-      if (key === "←") {
+      if (key === "clear") {
+        this.inputs[k] = "";
+      } else if (key === "←") {
         this.inputs[k] = this.inputs[k].slice(0, -1);
       } else if (this.inputs[k].length < 3) {
         this.inputs[k] = (this.inputs[k] + key).replace(/^0+(?=\d)/, "");
       }
     },
-    dropDigit(key, cell) {
-      const k = CELLS.indexOf(cell);
-      if (k < 0) return;
-      this.focus = k;
-      this.press(key);
-    },
-
     // ---- 判分 ----
     checkAnswer() {
       if (this.solved) return;

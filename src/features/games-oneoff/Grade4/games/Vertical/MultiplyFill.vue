@@ -54,37 +54,32 @@
         </template>
       </div>
 
-      <!-- 橫式與乘積答案欄，下面是寫答案用的按鍵 -->
+      <!-- 橫式與乘積答案欄：點答案欄會在旁邊出現數字板 -->
       <div class="mfill__pad">
         <p class="mfill__equation">{{ data.a }} × {{ data.b }} =</p>
-        <div
+        <button
+          type="button"
           class="mfill__answer"
           :class="{
+            'mfill__answer--active': padEl && !solved,
             'mfill__answer--wrong': answerWrong,
             'mfill__answer--correct': solved,
           }"
           data-answer
+          data-pad-field
+          aria-label="乘積答案"
+          @click="openPad"
         >
           {{ answer || EMPTY }}
-        </div>
-        <div class="mfill__keys">
-          <button
-            v-for="key in KEYS"
-            :key="key"
-            type="button"
-            class="mfill__key"
-            :class="{
-              'mfill__key--fn': key === '←',
-              'mfill__key--wide': key === '0',
-            }"
-            :disabled="solved"
-            @click="press(key)"
-          >
-            {{ key }}
-          </button>
-        </div>
+        </button>
       </div>
     </div>
+
+    <FieldPad
+      :field="solved ? null : padEl"
+      @press="press"
+      @close="padEl = null"
+    />
 
     <div
       v-if="drag && drag.moved"
@@ -97,8 +92,9 @@
 </template>
 
 <script>
+import FieldPad from "../Common/FieldPad.vue";
+
 const EMPTY = "\u3000"; // 空白時撐住高度
-const KEYS = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "←"];
 const DRAG_THRESHOLD = 8;
 const MAX_ANSWER = 7;
 
@@ -118,13 +114,14 @@ function shuffleNotIdentity(list) {
 // 欄位 1＝個位、2＝十位…；父元件用 ref 呼叫 check() 判分
 export default {
   name: "MultiplyFill",
+  components: { FieldPad },
   props: {
     data: { type: Object, required: true },
   },
   emits: ["change"],
   data() {
     return {
-      KEYS,
+      padEl: null,
       EMPTY,
       tiles: shuffleNotIdentity(this.data.tiles),
       placed: this.data.blanks.map(() => null),
@@ -259,9 +256,14 @@ export default {
       // 拖曳結束後瀏覽器仍會送出 click，先擋掉
       this.drag = { suppress: true };
     },
+    openPad(event) {
+      if (this.solved) return;
+      this.padEl = event.currentTarget;
+    },
     press(key) {
       if (this.solved) return;
-      if (key === "←") this.answer = this.answer.slice(0, -1);
+      if (key === "clear") this.answer = "";
+      else if (key === "←") this.answer = this.answer.slice(0, -1);
       else if (this.answer.length < MAX_ANSWER) this.answer += key;
       this.answerWrong = false;
       this.$emit("change");
@@ -313,6 +315,8 @@ export default {
   }
 
   &__answer {
+    cursor: pointer;
+
     min-width: 9rem;
     height: 3.2rem;
     padding: 0 0.6rem;
@@ -327,6 +331,11 @@ export default {
     border: 3px solid #1e88e5;
     border-radius: 12px;
     box-shadow: 0 0 0 4px #bbdefb;
+
+    &--active {
+      border-color: #ffb300;
+      box-shadow: 0 0 0 4px #ffe082;
+    }
 
     &--wrong {
       color: #c62828;
@@ -477,38 +486,6 @@ export default {
     align-items: center;
     gap: 0.5rem;
   }
-
-  &__keys {
-    display: grid;
-    grid-template-columns: repeat(3, 3.4rem);
-    gap: 0.4rem;
-  }
-
-  &__key {
-    height: 3.2rem;
-    font-size: 1.7rem;
-    font-weight: $font-bold;
-    color: #ffffff;
-    background-color: #42a5f5;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 3px 0 #1976d2;
-    cursor: pointer;
-
-    &--wide {
-      grid-column: span 2;
-    }
-
-    &--fn {
-      background-color: #ffa726;
-      box-shadow: 0 3px 0 #ef6c00;
-    }
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: default;
-    }
-  }
 }
 
 @media (max-width: 1100px) {
@@ -537,15 +514,6 @@ export default {
       width: 3.1rem;
       height: 3.1rem;
       font-size: 1.9rem;
-    }
-
-    &__keys {
-      grid-template-columns: repeat(3, 2.9rem);
-    }
-
-    &__key {
-      height: 2.8rem;
-      font-size: 1.5rem;
     }
   }
 }

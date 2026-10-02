@@ -32,13 +32,15 @@
           :divisor="gameData.divisor"
           crossable
           @change="feedback = ''"
-        />
-        <NumPad
-          :disabled="answered"
-          @press="$refs.division.input($event)"
-          @drop="(key, cell) => $refs.division.input(key, cell)"
+          @focus="openPad"
         />
       </div>
+      <!-- 點直式格子才出現的數字板，填好一格會跟著跳到下一格 -->
+      <FieldPad
+        :field="padOpen && !answered ? padEl : null"
+        @press="onPadKey"
+        @close="closePad"
+      />
       <p v-if="feedback" class="feedback">{{ feedback }}</p>
     </div>
   </div>
@@ -48,7 +50,7 @@
 import { defineAsyncComponent } from "vue";
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import DivisionFill from "./games/Vertical/DivisionFill.vue";
-import NumPad from "./games/Vertical/NumPad.vue";
+import FieldPad from "./games/Common/FieldPad.vue";
 
 function shuffle(list) {
   const result = [...list];
@@ -78,7 +80,7 @@ export default {
       () => import("@/features/game-templates/link-game/LinkGame.vue")
     ),
     DivisionFill,
-    NumPad,
+    FieldPad,
   },
   props: {
     gameData: { type: Object, required: true },
@@ -96,6 +98,8 @@ export default {
         : [],
       feedback: "",
       answered: false,
+      padOpen: false,
+      padEl: null,
     };
   },
   computed: {
@@ -133,6 +137,26 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    // 點直式格子：數字板對準目前的格子（填完一格會自動跳到下一格）
+    openPad() {
+      this.padOpen = true;
+      this.syncPad();
+    },
+    syncPad() {
+      this.$nextTick(() => {
+        const id = this.$refs.division?.active;
+        this.padEl = id ? this.$el.querySelector(`[data-cell="${id}"]`) : null;
+      });
+    },
+    closePad() {
+      this.padOpen = false;
+      this.padEl = null;
+      this.$refs.division?.blur();
+    },
+    onPadKey(key) {
+      this.$refs.division.input(key === "clear" ? "←" : key);
+      this.syncPad();
+    },
     checkAnswer() {
       if (this.answered) return;
       const division = this.$refs.division;

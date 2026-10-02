@@ -35,7 +35,7 @@
           />
         </div>
 
-        <!-- 做法：每一步都是「數 運算 數 = 數」；點格子後用右邊的按鍵填 -->
+        <!-- 做法：每一步都是「數 運算 數 = 數」；點格子會在旁邊出現對應的輸入板 -->
         <div class="work-block">
           <div
             v-for="(step, s) in gameData.steps"
@@ -51,6 +51,7 @@
                 class="fill-box"
                 :class="boxClass(`s${s}${part}`, part === 'op')"
                 :data-key="`s${s}${part}`"
+                data-pad-field
                 :aria-label="part === 'op' ? '運算符號' : '數字'"
                 @click="activate(`s${s}${part}`)"
               >
@@ -66,6 +67,7 @@
               class="fill-box fill-box--answer"
               :class="boxClass('answer', false)"
               data-key="answer"
+              data-pad-field
               aria-label="答案"
               @click="activate('answer')"
             >
@@ -115,46 +117,15 @@
         <p class="reveal__text">看看完整的做法</p>
       </div>
 
-      <!-- 按鍵：選到數字格可按數字，選到符號格可按運算符號 -->
-      <div v-else class="pad">
-        <div class="pad__ops">
-          <button
-            v-for="op in OPS"
-            :key="op"
-            type="button"
-            class="pad-key pad-key--op"
-            :disabled="!activeIsOp"
-            @click="press(op)"
-          >
-            {{ showOp(op) }}
-          </button>
-        </div>
-        <div class="pad__digits">
-          <button
-            v-for="key in DIGITS"
-            :key="key"
-            type="button"
-            class="pad-key"
-            :class="{
-              'pad-key--fn': key === '←',
-              'pad-key--wide': key === '0',
-            }"
-            :disabled="activeIsOp || answered"
-            :aria-label="key === '←' ? '刪除一個字' : key"
-            @click="press(key)"
-          >
-            {{ key }}
-          </button>
-          <button
-            type="button"
-            class="pad-key pad-key--clear"
-            :disabled="answered"
-            @click="press('clear')"
-          >
-            清除
-          </button>
-        </div>
-      </div>
+      <!-- 點數字格開數字板、點符號格開運算符號板；答對後收起 -->
+      <FieldPad
+        :field="answered ? null : activeEl"
+        :kind="activeIsOp ? 'operator' : 'number'"
+        :decimal="allowDecimal"
+        :operators="OPS"
+        @press="press"
+        @close="closePad"
+      />
     </div>
   </div>
 </template>
@@ -165,6 +136,7 @@ import RectFigure from "./RectFigure.vue";
 import CompositeFigure from "./CompositeFigure.vue";
 import TileFigure from "./TileFigure.vue";
 import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
+import FieldPad from "../Common/FieldPad.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -178,7 +150,13 @@ const MAX_LENGTH = 7;
 // 選填 step.given（例如 ["a"]）：該部分由題目直接給定，不用填
 export default {
   name: "WordProblemQuestion",
-  components: { RectFigure, CompositeFigure, TileFigure, KidCalculator },
+  components: {
+    RectFigure,
+    CompositeFigure,
+    TileFigure,
+    KidCalculator,
+    FieldPad,
+  },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
@@ -195,9 +173,10 @@ export default {
     return {
       OPS,
       STEP_PARTS: ["a", "op", "b", "eq", "result"],
-      DIGITS: ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", ".", "←"],
       values,
+      // 目前作答的格子；一開始不選，點格子才出現輸入板
       active: null,
+      activeEl: null,
       wrongKeys: [],
       answered: false,
       revealing: false,
@@ -208,6 +187,14 @@ export default {
   computed: {
     gameIntroText() {
       return this.introText?.Content || "把做法和答案記下來";
+    },
+    // 題目（做法或答案）有小數時才顯示小數點鍵
+    allowDecimal() {
+      const nums = [this.gameData.answer];
+      this.gameData.steps.forEach((step) =>
+        nums.push(step.a, step.b, step.result)
+      );
+      return nums.some((n) => String(n ?? "").includes("."));
     },
     activeIsOp() {
       return /^s\d+op$/.test(this.active);
@@ -225,7 +212,6 @@ export default {
     },
   },
   created() {
-    this.active = this.fieldOrder[0];
     emitter.on("submitAnswer", this.checkAnswer);
   },
   beforeUnmount() {
@@ -260,6 +246,11 @@ export default {
     activate(key) {
       if (this.answered || this.isGiven(key)) return;
       this.active = key;
+      this.activeEl = this.$el.querySelector(`[data-key="${key}"]`);
+    },
+    closePad() {
+      this.active = null;
+      this.activeEl = null;
     },
     setValue(key, value) {
       this.values = { ...this.values, [key]: value };
@@ -274,7 +265,8 @@ export default {
         if (!this.activeIsOp) return;
         this.setValue(this.active, key);
         const next = this.fieldOrder[this.fieldOrder.indexOf(this.active) + 1];
-        if (next) this.active = next;
+        // 選完符號自動跳到下一格，輸入板也換成數字板並移過去
+        if (next) this.activate(next);
       } else if (key === "←") {
         this.setValue(this.active, current.slice(0, -1));
       } else if (!this.activeIsOp) {
@@ -572,19 +564,20 @@ export default {
   }
 }
 
+// 右側按鍵區移除後，圖形依可用寬度放大（SVG 等比例縮放）
 .work-figure {
-  width: 13rem;
+  width: clamp(13rem, 30%, 22rem);
   flex-shrink: 0;
   background-color: #ffffff;
   border-radius: 14px;
 }
 
 .work-figure--composite {
-  width: 16rem;
+  width: clamp(16rem, 36%, 26rem);
 }
 
 .work-figure--tiles {
-  width: 13rem;
+  width: clamp(13rem, 30%, 22rem);
 }
 
 .work-block {
@@ -713,72 +706,6 @@ export default {
   }
 }
 
-.pad {
-  width: 15rem;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 0.7rem;
-  background-color: #fff8e1;
-  border: 4px solid #ffb74d;
-  border-radius: 18px;
-
-  &__ops,
-  &__digits {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.45rem;
-  }
-
-  &__digits {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.pad-key {
-  height: 3rem;
-  padding: 0;
-  line-height: 1;
-  font-size: 1.6rem;
-  font-weight: $font-bold;
-  color: #333333;
-  background-color: #ffffff;
-  border: 2px solid #ffcc80;
-  border-radius: 12px;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-
-  &:active:not(:disabled) {
-    transform: translateY(2px);
-    box-shadow: none;
-  }
-
-  &:disabled {
-    opacity: 0.35;
-    cursor: default;
-  }
-
-  &--op {
-    color: #ffffff;
-    background-color: #ffa726;
-    border: none;
-  }
-
-  &--fn {
-    background-color: #b3e5fc;
-    color: #01579b;
-  }
-
-  &--clear {
-    grid-column: span 3;
-    color: #ffffff;
-    background-color: #ef5350;
-    border: none;
-    font-size: 1.3rem;
-  }
-}
-
 @media (max-height: 760px) {
   .question-text {
     font-size: 1.45rem;
@@ -791,10 +718,6 @@ export default {
 
   .fill-box {
     height: 3rem;
-  }
-
-  .pad-key {
-    height: 2.5rem;
   }
 }
 
@@ -810,10 +733,6 @@ export default {
     &--op {
       min-width: 3.2rem;
     }
-  }
-
-  .pad {
-    width: 13.5rem;
   }
 }
 </style>
