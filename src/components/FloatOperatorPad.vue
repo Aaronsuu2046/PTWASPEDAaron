@@ -3,6 +3,7 @@
     <div
       ref="operatorPad"
       class="floating-operator-pad"
+      :class="{ 'floating-operator-pad--anchored': anchor }"
       :style="{ top: adjustedTop, left: adjustedLeft }"
     >
       <button
@@ -18,30 +19,54 @@
 </template>
 
 <script>
+import {
+  placeNearAnchor,
+  clampToViewport,
+  listenOutside,
+} from "./floatPadPosition.js";
+
 export default {
   name: "FloatOperatorPad",
   props: {
+    // 舊用法：{ top, left } 指定位置
     componentConfig: {
       type: Object,
-      required: true,
+      default: () => ({}),
     },
+    // 選填：欄位位置 { top, left, bottom, right }（視窗座標）；有給就放在欄位旁邊、不蓋住欄位
+    anchor: { type: Object, default: null },
+    // 選填：盡量不要蓋住的其他欄位位置 [{ top, left, bottom, right }]
+    avoid: { type: Array, default: () => [] },
+    // 選填：要顯示的運算符號（預設 +、-、×、÷）
+    operators: { type: Array, default: () => ["+", "-", "×", "÷"] },
+    // 選填：點到面板與欄位以外的地方時送出「關閉」
+    closeOnOutside: { type: Boolean, default: false },
+    keepOpenSelector: { type: String, default: "[data-pad-field]" },
   },
   emits: ["buttonClicked"],
   data() {
     return {
-      buttons: [
-        { label: "+", type: "operator" },
-        { label: "-", type: "operator" },
-        { label: "×", type: "operator" },
-        { label: "÷", type: "operator" },
-        { label: "關閉", type: "close" },
-      ],
       adjustedTop: "0px",
       adjustedLeft: "0px",
+      stopOutside: null,
     };
+  },
+  computed: {
+    buttons() {
+      return [
+        ...this.operators.map((label) => ({ label, type: "operator" })),
+        { label: "關閉", type: "close" },
+      ];
+    },
   },
   watch: {
     componentConfig: {
+      handler() {
+        this.adjustPosition();
+      },
+      deep: true,
+    },
+    anchor: {
       handler() {
         this.adjustPosition();
       },
@@ -51,9 +76,17 @@ export default {
   mounted() {
     this.adjustPosition();
     window.addEventListener("resize", this.adjustPosition);
+    if (this.closeOnOutside) {
+      this.stopOutside = listenOutside(
+        () => this.$refs.operatorPad,
+        this.keepOpenSelector,
+        () => this.$emit("buttonClicked", "關閉")
+      );
+    }
   },
   beforeUnmount() {
     window.removeEventListener("resize", this.adjustPosition);
+    if (this.stopOutside) this.stopOutside();
   },
   methods: {
     handleClick(label) {
@@ -63,32 +96,17 @@ export default {
       this.$nextTick(() => {
         const operatorPad = this.$refs.operatorPad;
         if (!operatorPad) return;
-        const padRect = operatorPad.getBoundingClientRect();
-        const padWidth = padRect.width;
-        const padHeight = padRect.height;
-
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-
-        let top = parseFloat(this.componentConfig.top);
-        let left = parseFloat(this.componentConfig.left);
-
-        if (top + padHeight > viewportHeight) {
-          top = viewportHeight - padHeight;
-        }
-        if (top < 0) {
-          top = 0;
-        }
-
-        if (left + padWidth > viewportWidth) {
-          left = viewportWidth - padWidth;
-        }
-        if (left < 0) {
-          left = 0;
-        }
-
-        this.adjustedTop = `${top}px`;
-        this.adjustedLeft = `${left}px`;
+        const { width, height } = operatorPad.getBoundingClientRect();
+        const pos = this.anchor
+          ? placeNearAnchor(width, height, this.anchor, this.avoid)
+          : clampToViewport(
+              width,
+              height,
+              parseFloat(this.componentConfig.top),
+              parseFloat(this.componentConfig.left)
+            );
+        this.adjustedTop = `${pos.top}px`;
+        this.adjustedLeft = `${pos.left}px`;
       });
     },
     getButtonClass(label) {
@@ -113,6 +131,11 @@ export default {
   gap: $gap--tiny;
   border-radius: $border-radius;
   z-index: 1000;
+
+  &--anchored {
+    position: fixed;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
 }
 
 button {
@@ -135,5 +158,23 @@ button {
   color: white;
   grid-column-start: 1;
   grid-column-end: 3;
+}
+// 依欄位定位時，平板等較小螢幕用小一點的按鍵，面板才放得進欄位旁邊
+@media (max-width: 1100px) {
+  .floating-operator-pad--anchored {
+    padding: 0.4rem;
+
+    .button-number,
+    .button-operator {
+      width: 3.4rem;
+      height: 3.4rem;
+      font-size: 1.7rem;
+    }
+
+    .button-close {
+      width: 7.2rem;
+      height: 3.4rem;
+    }
+  }
 }
 </style>

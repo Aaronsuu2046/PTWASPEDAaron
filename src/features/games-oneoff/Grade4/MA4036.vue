@@ -122,16 +122,28 @@
 
         <template v-if="gameData.kind === 'degree'">
           <div class="number">
-            <div
+            <button
+              type="button"
               class="slot"
               data-cell="answer"
-              :class="{ 'slot--filled': digits, 'slot--right': solved }"
+              data-pad-field
+              aria-label="答案"
+              :class="{
+                'slot--filled': digits,
+                'slot--right': solved,
+                'slot--active': padEl,
+              }"
+              @click="openPad"
             >
               {{ digits || "？" }}
-            </div>
+            </button>
             <span class="number__unit">{{ gameData.unit }}</span>
           </div>
-          <NumPad :disabled="solved" @press="press" @drop="press" />
+          <FieldPad
+            :field="solved ? null : padEl"
+            @press="press"
+            @close="padEl = null"
+          />
         </template>
 
         <div v-else class="options">
@@ -160,7 +172,7 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import NumPad from "./games/Vertical/NumPad.vue";
+import FieldPad from "./games/Common/FieldPad.vue";
 import ProtractorTool from "./games/Geometry/ProtractorTool.vue";
 
 const W = 600;
@@ -188,7 +200,7 @@ const diff = (a, b) => ((((a - b) % 360) + 540) % 360) - 180;
 // 認識周角：鐘面指針從 12 順時針旋轉，看動畫或自己拖動，回答轉了幾度
 export default {
   name: "MA4036",
-  components: { NumPad, ProtractorTool },
+  components: { FieldPad, ProtractorTool },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -210,6 +222,7 @@ export default {
       showTool: false,
       pose: this.toolStart(),
       digits: "",
+      padEl: null,
       choice: "",
       feedback: "",
       solved: false,
@@ -382,10 +395,16 @@ export default {
     },
 
     // ---- 作答 ----
+    openPad(event) {
+      if (this.solved) return;
+      this.padEl = event.currentTarget;
+    },
     press(key) {
       if (this.solved) return;
       this.feedback = "";
-      if (key === "←") {
+      if (key === "clear") {
+        this.digits = "";
+      } else if (key === "←") {
         this.digits = this.digits.slice(0, -1);
       } else if (this.digits.length < 3) {
         this.digits = (this.digits + key).replace(/^0+(?=\d)/, "");
@@ -762,6 +781,16 @@ export default {
 
   .feedback {
     font-size: 1rem;
+  }
+}
+// 答案框可以點：點了在旁邊出現數字板
+.slot {
+  cursor: pointer;
+
+  &--active {
+    border-style: solid;
+    border-color: #ffb300;
+    box-shadow: 0 0 0 4px #ffe082;
   }
 }
 </style>

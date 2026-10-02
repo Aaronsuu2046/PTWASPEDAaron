@@ -75,14 +75,15 @@
             type="button"
             class="sheet__line"
             :class="{
-              'sheet__line--focus': focus === k,
+              'sheet__line--focus': padEl && focus === k,
               'sheet__line--empty': !line,
             }"
             :data-line="k"
-            @click="focus = k"
+            data-pad-field
+            @click="openPad(k, $event)"
           >
-            {{ line || (focus === k ? "" : "點這裡寫算式")
-            }}<span v-if="focus === k" class="caret" />
+            {{ line || (padEl && focus === k ? "" : "點這裡寫算式")
+            }}<span v-if="padEl && focus === k" class="caret" />
           </button>
         </div>
 
@@ -92,34 +93,26 @@
             type="button"
             class="answer__slot"
             :class="{
-              'answer__slot--focus': focus === 'answer',
+              'answer__slot--focus': padEl && focus === 'answer',
               'answer__slot--right': solved,
             }"
             data-line="answer"
-            @click="focus = 'answer'"
+            data-pad-field
+            @click="openPad('answer', $event)"
           >
             {{ answer || "？" }}
           </button>
           度
         </div>
 
-        <div class="pad">
-          <button
-            v-for="key in KEYS"
-            :key="key"
-            type="button"
-            class="pad__key"
-            :class="{
-              'pad__key--op': OPS.includes(key),
-              'pad__key--fn': key === '←' || key === '清除',
-            }"
-            :disabled="solved || (focus === 'answer' && OPS.includes(key))"
-            :aria-label="key === '←' ? '刪除' : key"
-            @click="press(key)"
-          >
-            {{ key }}
-          </button>
-        </div>
+        <!-- 點算式行開「數字＋＋−＝」板，點答案格只開數字板 -->
+        <FieldPad
+          :field="solved ? null : padEl"
+          :kind="focus === 'answer' ? 'number' : 'expression'"
+          :operators="OPS"
+          @press="onPadKey"
+          @close="padEl = null"
+        />
 
         <p v-if="feedback" class="feedback">{{ feedback }}</p>
       </div>
@@ -129,27 +122,11 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+import FieldPad from "./games/Common/FieldPad.vue";
 
 const W = 600;
 const H = 340;
 const RAY = 225;
-const KEYS = [
-  "7",
-  "8",
-  "9",
-  "+",
-  "4",
-  "5",
-  "6",
-  "−",
-  "1",
-  "2",
-  "3",
-  "=",
-  "0",
-  "←",
-  "清除",
-];
 const OPS = ["+", "−", "="];
 const MAX_LINE = 16;
 
@@ -203,6 +180,7 @@ function buildFigure(q) {
 // 角的合成與分解：看圖用加減算出未知角；計算紙的算式會記錄下來，只驗證最後答案
 export default {
   name: "MA4038",
+  components: { FieldPad },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -214,11 +192,11 @@ export default {
     return {
       W,
       H,
-      KEYS,
       OPS,
       lines: ["", ""],
       answer: "",
-      focus: 0,
+      focus: null,
+      padEl: null,
       feedback: "",
       solved: false,
     };
@@ -280,8 +258,16 @@ export default {
     },
 
     // ---- 計算紙輸入 ----
-    press(key) {
+    openPad(target, event) {
       if (this.solved) return;
+      this.focus = target;
+      this.padEl = event.currentTarget;
+    },
+    onPadKey(key) {
+      this.press(key === "clear" ? "清除" : key);
+    },
+    press(key) {
+      if (this.solved || this.focus === null) return;
       this.feedback = "";
       if (this.focus === "answer") {
         if (key === "←") this.answer = this.answer.slice(0, -1);
@@ -603,44 +589,6 @@ export default {
   }
 }
 
-.pad {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.35rem;
-
-  &__key {
-    height: 2.7rem;
-    font-size: 1.5rem;
-    font-weight: $font-bold;
-    color: #ffffff;
-    background-color: #42a5f5;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 3px 0 #1976d2;
-    cursor: pointer;
-
-    &--op {
-      background-color: #ab47bc;
-      box-shadow: 0 3px 0 #7b1fa2;
-    }
-
-    &--fn {
-      font-size: 1.15rem;
-      background-color: #ffa726;
-      box-shadow: 0 3px 0 #ef6c00;
-    }
-
-    &:last-child {
-      grid-column: span 2;
-    }
-
-    &:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-  }
-}
-
 .feedback {
   margin: 0;
   font-size: 1.1rem;
@@ -667,11 +615,6 @@ export default {
       height: 2.8rem;
       font-size: 1.7rem;
     }
-  }
-
-  .pad__key {
-    height: 2.35rem;
-    font-size: 1.3rem;
   }
 
   .legend {

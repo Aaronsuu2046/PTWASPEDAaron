@@ -17,6 +17,7 @@
               class="equation__box"
               :class="hClass(id)"
               :data-cell="id"
+              data-pad-field
               @click="focusH(id)"
             >
               {{ h[id] }}
@@ -29,16 +30,9 @@
             :dividend="gameData.dividend"
             :divisor="gameData.divisor"
             @change="feedback = ''"
-            @focus="hActive = null"
+            @focus="onDivisionFocus"
           />
-          <div class="side">
-            <p class="side__hint">點格子再按數字，也可以把數字拖進格子</p>
-            <NumPad
-              :disabled="answered"
-              @press="pressKey($event)"
-              @drop="(key, cell) => pressKey(key, cell)"
-            />
-          </div>
+          <p class="side__hint">點格子會出現數字板，填好會自動跳到右邊下一格</p>
         </div>
       </template>
 
@@ -57,7 +51,8 @@
                   class="word__box"
                   :class="boxClass(part.id)"
                   :data-cell="part.id"
-                  @click="active = part.id"
+                  data-pad-field
+                  @click="openWord(part.id)"
                 >
                   {{ values[part.id] }}
                 </button>
@@ -71,7 +66,8 @@
                 class="word__box"
                 :class="boxClass('each')"
                 data-cell="each"
-                @click="active = 'each'"
+                data-pad-field
+                @click="openWord('each')"
               >
                 {{ values.each }}
               </button>
@@ -85,27 +81,28 @@
                 class="word__box"
                 :class="boxClass('left')"
                 data-cell="left"
-                @click="active = 'left'"
+                data-pad-field
+                @click="openWord('left')"
               >
                 {{ values.left }}
               </button>
               <span>{{ gameData.unit }}</span>
             </div>
           </div>
-          <div class="side">
-            <p class="side__hint">
-              點格子再按數字；可以用右邊的「計算工具」幫忙算
-            </p>
-            <NumPad
-              :disabled="answered"
-              @press="typeWord($event)"
-              @drop="(key, cell) => typeWord(key, cell)"
-            />
-          </div>
+          <p class="side__hint">
+            點格子會出現數字板；可以用右邊的「計算工具」幫忙算
+          </p>
         </div>
       </template>
 
       <p v-if="feedback" class="feedback">{{ feedback }}</p>
+
+      <!-- 點格子才出現的數字板，會跟著目前的格子移動 -->
+      <FieldPad
+        :field="padOpen && !answered ? padEl : null"
+        @press="onPadKey"
+        @close="closePad"
+      />
     </div>
   </div>
 </template>
@@ -113,7 +110,7 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import DivisionFill from "./games/Vertical/DivisionFill.vue";
-import NumPad from "./games/Vertical/NumPad.vue";
+import FieldPad from "./games/Common/FieldPad.vue";
 
 const FORMULA = [
   { id: "a" },
@@ -130,7 +127,7 @@ const MAX_LEN = 5;
 // 關卡 5 應用題填橫式與「每人最多分到／剩下」
 export default {
   name: "MA4113",
-  components: { DivisionFill, NumPad },
+  components: { DivisionFill, FieldPad },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -143,7 +140,10 @@ export default {
       FORMULA,
       feedback: "",
       answered: false,
-      active: "a",
+      active: null,
+      // 浮動數字板：是否開著、目前對準的格子
+      padOpen: false,
+      padEl: null,
       values: { a: "", b: "", q: "", r: "", each: "", left: "" },
       wrongKeys: [],
       // 橫式括號：hq 商、hr 餘數
@@ -224,6 +224,52 @@ export default {
       if (this.answered) return;
       this.hActive = id;
       this.$refs.division.blur();
+      this.padOpen = true;
+      this.syncPad();
+    },
+    onDivisionFocus() {
+      this.hActive = null;
+      this.padOpen = true;
+      this.syncPad();
+    },
+    openWord(id) {
+      if (this.answered) return;
+      this.active = id;
+      this.padOpen = true;
+      this.syncPad();
+    },
+    // 數字板對準目前的格子（直式填完一格會自動跳到下一格）
+    syncPad() {
+      this.$nextTick(() => {
+        const id = this.isWord
+          ? this.active
+          : this.hActive || this.$refs.division?.active;
+        this.padEl = id ? this.$el.querySelector(`[data-cell="${id}"]`) : null;
+      });
+    },
+    closePad() {
+      this.padOpen = false;
+      this.padEl = null;
+      if (this.isWord) this.active = null;
+      else {
+        this.hActive = null;
+        this.$refs.division?.blur();
+      }
+    },
+    onPadKey(key) {
+      if (this.isWord) {
+        if (key === "clear") {
+          if (this.active) this.values = { ...this.values, [this.active]: "" };
+        } else {
+          this.typeWord(key);
+        }
+      } else if (key === "clear") {
+        if (this.hActive) this.h = { ...this.h, [this.hActive]: "" };
+        else this.$refs.division.input("←");
+      } else {
+        this.pressKey(key);
+      }
+      this.syncPad();
     },
     typeH(key, id = this.hActive) {
       if (this.answered || !id) return;
