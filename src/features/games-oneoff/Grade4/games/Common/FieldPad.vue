@@ -77,8 +77,8 @@ export default {
       const fields = [...document.querySelectorAll("[data-pad-field]")]
         .filter((el) => el !== this.field && el.offsetParent)
         .map(rect);
-      // 右側功能區（送出答案等按鈕）更不能蓋住
-      const sidebar = [...document.querySelectorAll(".SideBar")]
+      // 右側功能區的按鈕（送出答案等）更不能蓋住
+      const sidebar = [...document.querySelectorAll(".SideBar button")]
         .filter((el) => el.offsetParent)
         .map((el) => ({ ...rect(el), weight: 1000 }));
       this.avoid = [...fields, ...sidebar];

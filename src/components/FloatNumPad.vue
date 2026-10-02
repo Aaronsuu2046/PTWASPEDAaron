@@ -238,4 +238,31 @@ button {
   grid-column-start: 1;
   grid-column-end: 4;
 }
+// 依欄位定位時，平板等較小螢幕用小一點的按鍵，面板才放得進欄位旁邊
+@media (max-width: 1100px) {
+  .floating-num-pad--anchored {
+    padding: 0.4rem;
+
+    .button-number,
+    .button-operator {
+      width: 3.4rem;
+      height: 3.4rem;
+      font-size: 1.7rem;
+    }
+
+    .button-clear,
+    .button-close {
+      width: 3.4rem;
+      height: 7.2rem;
+    }
+
+    .button-zero {
+      width: 7.2rem;
+    }
+
+    .button-zero-full {
+      width: 11rem;
+    }
+  }
+}
 </style>
