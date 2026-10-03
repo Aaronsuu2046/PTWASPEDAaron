@@ -14,8 +14,7 @@
         "text": "鐘面上，指針從 12 開始轉到 1，是轉了幾度？",
         "target": 30,
         "unit": "度",
-        "answer": 30,
-        "protractor": true
+        "answer": 30
       }
     ],
     [
