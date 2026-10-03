@@ -43,8 +43,9 @@
             class="work-row"
           >
             <span class="work-label">{{ s === 0 ? "做法：" : "" }}</span>
-            <template v-for="part in STEP_PARTS" :key="`${s}-${part}`">
+            <template v-for="part in stepParts(step)" :key="`${s}-${part}`">
               <span v-if="part === 'eq'" class="work-sign">=</span>
+              <span v-else-if="part === 'dots'" class="work-sign">…</span>
               <button
                 v-else
                 type="button"
@@ -60,7 +61,27 @@
             </template>
           </div>
 
-          <div class="work-row">
+          <!-- 選填 answers：答案分成好幾格（例如商與餘數），每格前後有固定文字與單位 -->
+          <div v-if="gameData.answers" class="work-row work-row--answers">
+            <span class="work-label">答：</span>
+            <template v-for="(ans, k) in gameData.answers" :key="`ans-${k}`">
+              <span v-if="ans.prefix" class="work-unit">{{ ans.prefix }}</span>
+              <button
+                type="button"
+                class="fill-box fill-box--answer"
+                :class="boxClass(`answer${k}`, false)"
+                :data-key="`answer${k}`"
+                data-pad-field
+                aria-label="答案"
+                @click="activate(`answer${k}`)"
+              >
+                {{ display(`answer${k}`) }}
+              </button>
+              <span class="work-unit">{{ ans.unit }}</span>
+            </template>
+          </div>
+
+          <div v-else class="work-row">
             <span class="work-label">答：</span>
             <button
               type="button"
@@ -148,6 +169,8 @@ const MAX_LENGTH = 7;
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
 // 選填 calculator: true：畫面上可打開小學生版計算機（顯示計算紀錄）
 // 選填 step.given（例如 ["a"]）：該部分由題目直接給定，不用填
+// 選填 step.remainder：除法有餘數時，結果後面多一格「… 餘數」（餘數為 0 時可空白或填 0）
+// 選填 answers: [{ prefix, value, unit }]：答案分成好幾格，取代 answer／unit
 export default {
   name: "WordProblemQuestion",
   components: {
@@ -172,7 +195,6 @@ export default {
     });
     return {
       OPS,
-      STEP_PARTS: ["a", "op", "b", "eq", "result"],
       values,
       // 目前作答的格子；一開始不選，點格子才出現輸入板
       active: null,
@@ -191,8 +213,9 @@ export default {
     // 題目（做法或答案）有小數時才顯示小數點鍵
     allowDecimal() {
       const nums = [this.gameData.answer];
+      (this.gameData.answers || []).forEach((ans) => nums.push(ans.value));
       this.gameData.steps.forEach((step) =>
-        nums.push(step.a, step.b, step.result)
+        nums.push(step.a, step.b, step.result, step.remainder)
       );
       return nums.some((n) => String(n ?? "").includes("."));
     },
@@ -203,12 +226,18 @@ export default {
     fieldOrder() {
       const keys = [];
       this.gameData.steps.forEach((_, s) => {
-        ["a", "op", "b", "result"].forEach((part) => {
+        ["a", "op", "b", "result", "rem"].forEach((part) => {
+          if (part === "rem" && !this.hasRemainder(this.gameData.steps[s]))
+            return;
           if (!this.isGiven(`s${s}${part}`)) keys.push(`s${s}${part}`);
         });
       });
-      keys.push("answer");
-      return keys;
+      return keys.concat(this.answerKeys);
+    },
+    answerKeys() {
+      return this.gameData.answers
+        ? this.gameData.answers.map((_, k) => `answer${k}`)
+        : ["answer"];
     },
   },
   created() {
@@ -219,6 +248,13 @@ export default {
     clearTimeout(this.revealTimer);
   },
   methods: {
+    hasRemainder(step) {
+      return step.remainder !== undefined && step.remainder !== null;
+    },
+    stepParts(step) {
+      const parts = ["a", "op", "b", "eq", "result"];
+      return this.hasRemainder(step) ? [...parts, "dots", "rem"] : parts;
+    },
     showOp(op) {
       return OP_LABEL[op] || op;
     },
@@ -295,7 +331,12 @@ export default {
         this.gameData.stepCheck === "consistent"
           ? this.findInconsistentSteps()
           : this.findStepMismatches();
-      if (!this.sameNumber(this.values.answer, this.gameData.answer))
+      if (this.gameData.answers) {
+        this.gameData.answers.forEach((ans, k) => {
+          if (!this.sameNumber(this.values[`answer${k}`], ans.value))
+            wrong.push(`answer${k}`);
+        });
+      } else if (!this.sameNumber(this.values.answer, this.gameData.answer))
         wrong.push("answer");
       if (this.gameData.unitOptions && this.values.unit !== this.gameData.unit)
         wrong.push("unit");
@@ -319,6 +360,13 @@ export default {
         }
         if (!this.sameNumber(v("result"), step.result))
           wrong.push(`s${s}result`);
+        // 餘數：整除時可以空白（只寫商）或填 0
+        if (this.hasRemainder(step)) {
+          const rem = v("rem");
+          const blankOk = Number(step.remainder) === 0 && !rem;
+          if (!blankOk && !this.sameNumber(rem, step.remainder))
+            wrong.push(`s${s}rem`);
+        }
       });
       return wrong;
     },
@@ -356,9 +404,10 @@ export default {
       return this.gameData.steps
         .map((step, s) => {
           const v = pick(step, s);
+          const rem = this.hasRemainder(step) ? ` … ${v.rem || "_"}` : "";
           return `${v.a || "_"} ${this.showOp(v.op) || "_"} ${v.b || "_"} = ${
             v.result || "_"
-          }`;
+          }${rem}`;
         })
         .join("；");
     },
@@ -366,16 +415,33 @@ export default {
       if (this.answered) return;
       this.wrongKeys = this.findWrongKeys();
       const isCorrect = this.wrongKeys.length === 0;
-      const expected = `${this.formatSteps((step) => step)}，答：${
-        this.gameData.answer
-      } ${this.gameData.unit}`;
+      const answers = this.gameData.answers;
+      const answerText = (pickValue) =>
+        answers
+          .map((ans, k) => `${ans.prefix || ""}${pickValue(ans, k)}${ans.unit}`)
+          .join("，");
+      const expected = `${this.formatSteps((step) => ({
+        ...step,
+        rem: step.remainder,
+      }))}，答：${
+        answers
+          ? answerText((ans) => ans.value)
+          : `${this.gameData.answer} ${this.gameData.unit}`
+      }`;
       const actual = `${this.formatSteps((_, s) => ({
         a: this.values[`s${s}a`],
         op: this.values[`s${s}op`],
         b: this.values[`s${s}b`],
         result: this.values[`s${s}result`],
-      }))}，答：${this.values.answer || "_"} ${
-        this.gameData.unitOptions ? this.values.unit || "_" : this.gameData.unit
+        rem: this.values[`s${s}rem`],
+      }))}，答：${
+        answers
+          ? answerText((_, k) => this.values[`answer${k}`] || "_")
+          : `${this.values.answer || "_"} ${
+              this.gameData.unitOptions
+                ? this.values.unit || "_"
+                : this.gameData.unit
+            }`
       }`;
       this.$emit("add-record", [expected, actual, isCorrect ? "正確" : "錯誤"]);
       if (isCorrect) {
@@ -385,6 +451,9 @@ export default {
           answer: this.gameData.answer,
           unit: this.gameData.unit,
         };
+        (this.gameData.answers || []).forEach((ans, k) => {
+          filled[`answer${k}`] = String(ans.value);
+        });
         // consistent 模式保留學生自己的等價做法，其餘顯示標準做法
         const keepOwn = this.gameData.stepCheck === "consistent";
         this.gameData.steps.forEach((step, s) => {
@@ -393,6 +462,7 @@ export default {
           filled[`s${s}op`] = step.op;
           filled[`s${s}b`] = step.b;
           filled[`s${s}result`] = step.result;
+          if (this.hasRemainder(step)) filled[`s${s}rem`] = step.remainder;
         });
         this.values = keepOwn ? { ...this.values, ...filled } : filled;
         this.$emit("play-effect", "CorrectSound");

@@ -32,11 +32,18 @@ export function placeNearAnchor(padWidth, padHeight, anchor, avoid = []) {
     const farRight = Math.max(...all.map((r) => r.right)) + GAP;
     const farLeft = Math.min(...all.map((r) => r.left)) - GAP - padWidth;
     const midY = (anchor.top + anchor.bottom) / 2 - padHeight / 2;
+    // 最後才試所有欄位整體的上方／下方（通常會蓋到題目文字，但不會蓋到作答格）
+    const farAbove = Math.min(...all.map((r) => r.top)) - GAP - padHeight;
+    const farBelow = Math.max(...all.map((r) => r.bottom)) + GAP;
     candidates.push(
       { top: midY, left: farRight },
       { top: anchor.top, left: farRight },
       { top: midY, left: farLeft },
-      { top: anchor.top, left: farLeft }
+      { top: anchor.top, left: farLeft },
+      { top: farAbove, left: anchor.left },
+      { top: farAbove, left: anchor.right - padWidth },
+      { top: farBelow, left: anchor.left },
+      { top: farBelow, left: anchor.right - padWidth }
     );
   }
   const overlap = (pos, r) =>
