@@ -12,41 +12,36 @@
       {
         "no": 1,
         "text": "鎖上瓶蓋",
-        "scene": "cap",
+        "video": "cap-close",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 3
       },
       {
         "no": 2,
         "text": "鬆開螺絲",
-        "scene": "screw",
+        "video": "screw-loosen",
         "answer": "ccw",
-        "color": "#ff8a65",
         "seconds": 3
       },
       {
         "no": 6,
         "text": "移動中的時鐘指針",
-        "scene": "clock",
+        "video": "clock",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 4
       },
       {
         "no": 9,
         "text": "風力發電機",
-        "scene": "turbine",
+        "video": "turbine",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 2
       },
       {
         "no": 13,
         "text": "向前騎腳踏車的車輪",
-        "scene": "bike",
+        "video": "bike",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 2
       }
     ],
@@ -54,33 +49,29 @@
       {
         "no": 3,
         "text": "轉一顆扭蛋",
-        "scene": "capsule",
+        "video": "capsule",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 3
       },
       {
         "no": 4,
         "text": "打開瓶蓋",
-        "scene": "cap",
+        "video": "cap-open",
         "answer": "ccw",
-        "color": "#4db6ac",
         "seconds": 3
       },
       {
         "no": 8,
         "text": "轉動中的摩天輪",
-        "scene": "ferris",
+        "video": "ferris",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 4
       },
       {
         "no": 11,
         "text": "電風扇扇葉",
-        "scene": "fan",
+        "video": "fan",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 2
       }
     ],
@@ -88,33 +79,29 @@
       {
         "no": 5,
         "text": "鎖緊螺絲",
-        "scene": "screw",
+        "video": "screw-tighten",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 3
       },
       {
         "no": 7,
-        "text": "遊樂場旋轉椅",
-        "scene": "ride",
+        "text": "在操場跑道的跑者",
+        "video": "runner",
         "answer": "ccw",
-        "color": "#ff8a65",
         "seconds": 4
       },
       {
         "no": 10,
         "text": "颱風衛星雲圖",
-        "scene": "typhoon",
+        "video": "typhoon",
         "answer": "ccw",
-        "color": "#ff8a65",
         "seconds": 4
       },
       {
         "no": 12,
         "text": "轉動削鉛筆機",
-        "scene": "sharpener",
+        "video": "sharpener",
         "answer": "cw",
-        "color": "#ff8a65",
         "seconds": 3
       }
     ]
