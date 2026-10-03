@@ -47,15 +47,8 @@
             class="turn__start"
           />
 
-          <!-- 指針（拖動旋轉） -->
-          <g data-drag="hand" class="hand">
-            <line
-              :x1="C[0]"
-              :y1="C[1]"
-              :x2="handEnd[0]"
-              :y2="handEnd[1]"
-              class="hand__hit"
-            />
+          <!-- 指針：只由「播放動畫」轉動 -->
+          <g class="hand">
             <line
               :x1="C[0]"
               :y1="C[1]"
@@ -75,7 +68,7 @@
             旋轉中心
           </text>
 
-          <!-- 量角器（只有第 1 題有） -->
+          <!-- 量角器：每一關都可以拿出來量，只是輔助，不列入判分 -->
           <g
             v-if="showTool"
             class="tool"
@@ -100,20 +93,11 @@
           </button>
           <button
             type="button"
-            class="tool-btn tool-btn--reset"
-            @click="resetHand"
-          >
-            指針回到 12
-          </button>
-          <button
-            v-if="gameData.protractor"
-            type="button"
             class="tool-btn tool-btn--green"
             @click="toggleTool"
           >
             {{ showTool ? "收起量角器" : "拿出量角器" }}
           </button>
-          <span class="tools__how">拖動紅色指針可以自己轉轉看</span>
         </div>
       </div>
 
@@ -182,8 +166,6 @@ const FACE = 165;
 const HAND = 130;
 const TOOL_R = 165;
 const PLAY_MS = 2200;
-const SNAP_STEP = 30;
-const SNAP_WITHIN = 6;
 const SNAP_DISTANCE = 24;
 const SNAP_ANGLE = 7;
 
@@ -193,11 +175,9 @@ const onClock = (deg, r) => [
   C[0] + r * Math.sin(rad(deg)),
   C[1] - r * Math.cos(rad(deg)),
 ];
-const clockAngle = (x, y) =>
-  ((Math.atan2(x - C[0], -(y - C[1])) * 180) / Math.PI + 360) % 360;
 const diff = (a, b) => ((((a - b) % 360) + 540) % 360) - 180;
 
-// 認識周角：鐘面指針從 12 順時針旋轉，看動畫或自己拖動，回答轉了幾度
+// 認識周角：按「播放動畫」看鐘面指針從 12 順時針旋轉，可拿出量角器量，回答轉了幾度
 export default {
   name: "MA4036",
   components: { FieldPad, ProtractorTool },
@@ -215,7 +195,7 @@ export default {
       C,
       FACE,
       TOOL_R,
-      // 累計轉了幾度（0～360），轉一圈是 360 而不是回到 0
+      // 動畫累計轉了幾度（0～360），轉一圈是 360 而不是回到 0
       turn: 0,
       drag: null,
       timer: null,
@@ -318,16 +298,12 @@ export default {
       };
       this.timer = requestAnimationFrame(step);
     },
-    resetHand() {
-      cancelAnimationFrame(this.timer);
-      this.turn = 0;
-    },
     toggleTool() {
       this.showTool = !this.showTool;
       if (this.showTool) this.pose = this.toolStart();
     },
 
-    // ---- 拖動：指針、量角器 ----
+    // ---- 拖動量角器：移動、旋轉 ----
     toLocal(event) {
       const svg = this.$refs.svg;
       const pt = svg.createSVGPoint();
@@ -340,27 +316,15 @@ export default {
       if (event.button !== undefined && event.button !== 0) return;
       const kind = event.target.closest?.("[data-drag]")?.dataset.drag;
       if (!kind) return;
-      cancelAnimationFrame(this.timer);
       const p = this.toLocal(event);
-      this.drag = {
-        kind,
-        start: p,
-        pose: { ...this.pose },
-        last: clockAngle(...p),
-      };
+      this.drag = { kind, start: p, pose: { ...this.pose } };
       event.currentTarget.setPointerCapture?.(event.pointerId);
     },
     onDrag(event) {
       if (!this.drag) return;
       const p = this.toLocal(event);
       const { kind, start, pose } = this.drag;
-      if (kind === "hand") {
-        // 累加轉動量，不讓 360 跳回 0
-        const now = clockAngle(...p);
-        const next = this.turn + diff(now, this.drag.last);
-        this.drag.last = now;
-        this.turn = Math.min(360, Math.max(0, next));
-      } else if (kind === "move") {
+      if (kind === "move") {
         this.pose.x = Math.min(W, Math.max(0, pose.x + p[0] - start[0]));
         this.pose.y = Math.min(H, Math.max(0, pose.y + p[1] - start[1]));
       } else if (kind === "rotate") {
@@ -374,14 +338,7 @@ export default {
     },
     endDrag() {
       if (!this.drag) return;
-      const { kind } = this.drag;
       this.drag = null;
-      if (kind === "hand") {
-        // 靠近整數大格（30° 的倍數）時對齊
-        const near = Math.round(this.turn / SNAP_STEP) * SNAP_STEP;
-        if (Math.abs(near - this.turn) <= SNAP_WITHIN) this.turn = near;
-        return;
-      }
       if (Math.hypot(this.pose.x - C[0], this.pose.y - C[1]) < SNAP_DISTANCE) {
         this.pose.x = C[0];
         this.pose.y = C[1];
@@ -569,13 +526,7 @@ export default {
 }
 
 .hand {
-  cursor: grab;
-
-  &__hit {
-    stroke: transparent;
-    stroke-width: 30;
-    stroke-linecap: round;
-  }
+  pointer-events: none;
 
   &__line {
     stroke: #e53935;
@@ -615,14 +566,6 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
-  &__how {
-    flex: 1;
-    min-width: 0;
-    font-size: 1rem;
-    font-weight: $font-bold;
-    color: #6d4c41;
-  }
 }
 
 .tool-btn {
@@ -637,11 +580,6 @@ export default {
   border-radius: 12px;
   box-shadow: 0 3px 0 #4527a0;
   cursor: pointer;
-
-  &--reset {
-    background-color: #78909c;
-    box-shadow: 0 3px 0 #455a64;
-  }
 
   &--green {
     background-color: #43a047;
@@ -768,10 +706,6 @@ export default {
   .tool-btn {
     padding: 0.35rem 0.6rem;
     font-size: 1rem;
-  }
-
-  .tools__how {
-    font-size: 0.85rem;
   }
 
   .option {
