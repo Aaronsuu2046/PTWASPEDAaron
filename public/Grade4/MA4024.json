@@ -17,13 +17,12 @@
             "op": "×",
             "b": "50",
             "result": "300",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "300",
-        "unit": "枝"
+        "unit": "枝",
+        "scratch": "vertical"
       },
       {
         "question": "一盒鉛筆有 7 枝，老師買了 20 盒，共有幾枝鉛筆？",
@@ -33,13 +32,12 @@
             "op": "×",
             "b": "20",
             "result": "140",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "140",
-        "unit": "枝"
+        "unit": "枝",
+        "scratch": "vertical"
       },
       {
         "question": "一盒鉛筆有 8 枝，老師買了 20 盒，共有幾枝鉛筆？",
@@ -49,13 +47,12 @@
             "op": "×",
             "b": "20",
             "result": "160",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "160",
-        "unit": "枝"
+        "unit": "枝",
+        "scratch": "vertical"
       },
       {
         "question": "一盒鉛筆有 5 枝，老師買了 30 盒，共有幾枝鉛筆？",
@@ -65,13 +62,12 @@
             "op": "×",
             "b": "30",
             "result": "150",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "150",
-        "unit": "枝"
+        "unit": "枝",
+        "scratch": "vertical"
       },
       {
         "question": "一盒鉛筆有 9 枝，老師買了 40 盒，共有幾枝鉛筆？",
@@ -81,13 +77,12 @@
             "op": "×",
             "b": "40",
             "result": "360",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "360",
-        "unit": "枝"
+        "unit": "枝",
+        "scratch": "vertical"
       }
     ],
     [
@@ -99,13 +94,12 @@
             "op": "×",
             "b": "16",
             "result": "128",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "128",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "一張集點卡可以貼 5 張貼紙，姐姐集滿了 28 張集點卡，一共是幾張貼紙？",
@@ -115,13 +109,12 @@
             "op": "×",
             "b": "28",
             "result": "140",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "140",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "一張集點卡可以貼 6 張貼紙，姐姐集滿了 29 張集點卡，一共是幾張貼紙？",
@@ -131,13 +124,12 @@
             "op": "×",
             "b": "29",
             "result": "174",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "174",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "一張集點卡可以貼 8 張貼紙，姐姐集滿了 17 張集點卡，一共是幾張貼紙？",
@@ -147,13 +139,12 @@
             "op": "×",
             "b": "17",
             "result": "136",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "136",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "一張集點卡可以貼 9 張貼紙，姐姐集滿了 15 張集點卡，一共是幾張貼紙？",
@@ -163,13 +154,12 @@
             "op": "×",
             "b": "15",
             "result": "135",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "135",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       }
     ],
     [
@@ -181,13 +171,12 @@
             "op": "×",
             "b": "20",
             "result": "400",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "400",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一雙襪子 60 元，買 10 雙要多少元？",
@@ -197,13 +186,12 @@
             "op": "×",
             "b": "10",
             "result": "600",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "600",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一雙襪子 40 元，買 30 雙要多少元？",
@@ -213,13 +201,12 @@
             "op": "×",
             "b": "30",
             "result": "1200",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1200",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一雙襪子 70 元，買 30 雙要多少元？",
@@ -229,13 +216,12 @@
             "op": "×",
             "b": "30",
             "result": "2100",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "2100",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一雙襪子 50 元，買 20 雙要多少元？",
@@ -245,13 +231,12 @@
             "op": "×",
             "b": "20",
             "result": "1000",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1000",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       }
     ],
     [
@@ -263,13 +248,12 @@
             "op": "×",
             "b": "32",
             "result": "1536",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1536",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "廣場上舉辦露天電影院，每排有 42 張椅子，共排了 26 排，一共排了幾張椅子？",
@@ -279,13 +263,12 @@
             "op": "×",
             "b": "26",
             "result": "1092",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1092",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "廣場上舉辦露天電影院，每排有 46 張椅子，共排了 31 排，一共排了幾張椅子？",
@@ -295,13 +278,12 @@
             "op": "×",
             "b": "31",
             "result": "1426",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1426",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "廣場上舉辦露天電影院，每排有 42 張椅子，共排了 32 排，一共排了幾張椅子？",
@@ -311,13 +293,12 @@
             "op": "×",
             "b": "32",
             "result": "1344",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1344",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       },
       {
         "question": "廣場上舉辦露天電影院，每排有 45 張椅子，共排了 32 排，一共排了幾張椅子？",
@@ -327,13 +308,12 @@
             "op": "×",
             "b": "32",
             "result": "1440",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1440",
-        "unit": "張"
+        "unit": "張",
+        "scratch": "vertical"
       }
     ],
     [
@@ -345,13 +325,12 @@
             "op": "×",
             "b": "24",
             "result": "1200",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1200",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥每個月固定存 60 元進撲滿，1 年後哥哥共存了多少元？",
@@ -361,13 +340,12 @@
             "op": "×",
             "b": "12",
             "result": "720",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "720",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥每個月固定存 70 元進撲滿，2 年後哥哥共存了多少元？",
@@ -377,13 +355,12 @@
             "op": "×",
             "b": "24",
             "result": "1680",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1680",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥每個月固定存 80 元進撲滿，2 年後哥哥共存了多少元？",
@@ -393,13 +370,12 @@
             "op": "×",
             "b": "24",
             "result": "1920",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "1920",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥每個月固定存 40 元進撲滿，1 年後哥哥共存了多少元？",
@@ -409,13 +385,12 @@
             "op": "×",
             "b": "12",
             "result": "480",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "480",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       }
     ]
   ]

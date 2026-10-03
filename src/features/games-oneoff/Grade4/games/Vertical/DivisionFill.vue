@@ -253,6 +253,10 @@ export default {
   beforeUnmount() {
     window.removeEventListener("keydown", this.onKey);
   },
+  // 放在 KeepAlive 裡切換到別的直式時，不要再接收鍵盤
+  deactivated() {
+    this.active = null;
+  },
   methods: {
     place(item) {
       return {
