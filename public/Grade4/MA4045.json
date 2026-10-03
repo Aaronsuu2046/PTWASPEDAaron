@@ -1,0 +1,122 @@
+{
+  "id": "MA4045",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用計算機點按出正確答案"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "expression": "540 ÷ 60",
+        "answer": "9"
+      },
+      {
+        "expression": "360 ÷ 60",
+        "answer": "6"
+      },
+      {
+        "expression": "560 ÷ 70",
+        "answer": "8"
+      },
+      {
+        "expression": "810 ÷ 90",
+        "answer": "9"
+      },
+      {
+        "expression": "250 ÷ 50",
+        "answer": "5"
+      }
+    ],
+    [
+      {
+        "expression": "280 ÷ 40",
+        "answer": "7"
+      },
+      {
+        "expression": "320 ÷ 40",
+        "answer": "8"
+      },
+      {
+        "expression": "240 ÷ 30",
+        "answer": "8"
+      },
+      {
+        "expression": "180 ÷ 20",
+        "answer": "9"
+      },
+      {
+        "expression": "270 ÷ 30",
+        "answer": "9"
+      }
+    ],
+    [
+      {
+        "expression": "648 ÷ 81",
+        "answer": "8"
+      },
+      {
+        "expression": "576 ÷ 72",
+        "answer": "8"
+      },
+      {
+        "expression": "648 ÷ 72",
+        "answer": "9"
+      },
+      {
+        "expression": "384 ÷ 64",
+        "answer": "6"
+      },
+      {
+        "expression": "385 ÷ 55",
+        "answer": "7"
+      }
+    ],
+    [
+      {
+        "expression": "837 ÷ 31",
+        "answer": "27"
+      },
+      {
+        "expression": "768 ÷ 32",
+        "answer": "24"
+      },
+      {
+        "expression": "660 ÷ 33",
+        "answer": "20"
+      },
+      {
+        "expression": "850 ÷ 34",
+        "answer": "25"
+      },
+      {
+        "expression": "945 ÷ 35",
+        "answer": "27"
+      }
+    ],
+    [
+      {
+        "expression": "800 ÷ 16",
+        "answer": "50"
+      },
+      {
+        "expression": "810 ÷ 27",
+        "answer": "30"
+      },
+      {
+        "expression": "480 ÷ 24",
+        "answer": "20"
+      },
+      {
+        "expression": "930 ÷ 31",
+        "answer": "30"
+      },
+      {
+        "expression": "760 ÷ 38",
+        "answer": "20"
+      }
+    ]
+  ]
+}
