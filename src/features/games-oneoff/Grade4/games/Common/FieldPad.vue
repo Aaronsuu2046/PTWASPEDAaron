@@ -81,7 +81,11 @@ export default {
       const sidebar = [...document.querySelectorAll(".SideBar button")]
         .filter((el) => el.offsetParent)
         .map((el) => ({ ...rect(el), weight: 1000 }));
-      this.avoid = [...fields, ...sidebar];
+      // 選填：標了 data-pad-avoid 的按鈕（例如計算紙的關閉鍵）也盡量不要蓋住
+      const marked = [...document.querySelectorAll("[data-pad-avoid]")]
+        .filter((el) => el.offsetParent)
+        .map((el) => ({ ...rect(el), weight: 100 }));
+      this.avoid = [...fields, ...sidebar, ...marked];
     },
     onButton(label) {
       if (label === "關閉") {
