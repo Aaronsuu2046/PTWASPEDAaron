@@ -640,6 +640,13 @@ export default {
       if (this.inputs.some(Boolean)) this.markCells(answer);
       const typedWrong = this.wrongCells.some(Boolean);
 
+      // 什麼都還沒做（板子上沒有角、也沒填數字）只提示，不算答錯
+      if (!onBoard.length && !this.inputs.some(Boolean)) {
+        this.feedback = "先把兩個角的頂點放到紅點上，拼成一條直線喔！";
+        return;
+      }
+
+      // 其他沒有完全答對的情況都算答錯：播放答錯音效並記錄
       let message = "";
       if (snapped.length < 2) {
         message = "先把兩個角的頂點放到紅點上，拼成一條直線喔！";
@@ -649,17 +656,11 @@ export default {
         message = `這兩個角合起來${sum > 180 ? "疊在一起了" : "還有空隙"}，不是平角，換一個角試試看。`;
       } else if (this.inputs.every((v) => !v)) {
         this.wrongCells = [true, true];
-        this.feedback = "角拼好了！再把兩個角的度數填進格子裡。";
-        return;
+        message = "角拼好了！再把兩個角的度數填進格子裡。";
       } else if (this.inputs.some((v) => !v)) {
-        this.feedback = "角拼好了！紅框的格子還沒填，把度數填進去。";
-        return;
+        message = "角拼好了！紅框的格子還沒填，把度數填進去。";
       } else if (typedWrong) {
         message = "紅框的角度填錯了，按「量」量量看。";
-      }
-      if (snapped.length < 2 && !this.inputs.some(Boolean)) {
-        this.feedback = message;
-        return;
       }
       const ok = !message;
       this.$emit("add-record", [
