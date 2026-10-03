@@ -18,15 +18,15 @@
     [
       {
         "kind": "part",
-        "target": "outer",
-        "text": "外圈刻度在哪裡？"
+        "target": "outerZero",
+        "text": "外圈刻度 0 在哪裡？"
       }
     ],
     [
       {
         "kind": "part",
-        "target": "inner",
-        "text": "內圈刻度在哪裡？"
+        "target": "innerZero",
+        "text": "內圈刻度 0 在哪裡？"
       }
     ],
     [
@@ -73,48 +73,43 @@
     ],
     [
       {
-        "kind": "read",
+        "kind": "spot",
         "start": "right",
         "angle": 50,
         "ring": "內圈",
-        "text": "這個角是幾度？",
-        "unit": "度",
+        "text": "這個角是幾度？在量角器上點出它的刻度。",
         "answer": 50
       },
       {
-        "kind": "read",
+        "kind": "spot",
         "start": "right",
         "angle": 150,
         "ring": "內圈",
-        "text": "這個角是幾度？",
-        "unit": "度",
+        "text": "這個角是幾度？在量角器上點出它的刻度。",
         "answer": 150
       },
       {
-        "kind": "read",
+        "kind": "spot",
         "start": "left",
         "angle": 100,
         "ring": "外圈",
-        "text": "這個角是幾度？",
-        "unit": "度",
+        "text": "這個角是幾度？在量角器上點出它的刻度。",
         "answer": 100
       },
       {
-        "kind": "read",
+        "kind": "spot",
         "start": "left",
         "angle": 40,
         "ring": "外圈",
-        "text": "這個角是幾度？",
-        "unit": "度",
+        "text": "這個角是幾度？在量角器上點出它的刻度。",
         "answer": 40
       },
       {
-        "kind": "read",
+        "kind": "spot",
         "start": "left",
         "angle": 130,
         "ring": "外圈",
-        "text": "這個角是幾度？",
-        "unit": "度",
+        "text": "這個角是幾度？在量角器上點出它的刻度。",
         "answer": 130
       }
     ]
