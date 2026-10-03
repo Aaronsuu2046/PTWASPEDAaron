@@ -1,0 +1,857 @@
+{
+  "id": "MA4048",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "question": "農夫採收 2870 根玉米，平分裝成 70 箱，一箱有幾根玉米？還剩下幾根？",
+        "steps": [
+          {
+            "a": "2870",
+            "op": "÷",
+            "b": "70",
+            "result": "41",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "一箱有",
+            "value": "41",
+            "unit": "根"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "根"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "corn",
+          "holder": "box",
+          "mode": "share",
+          "total": "2870 根玉米",
+          "rule": "平分裝成 70 箱",
+          "count": 70
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "農夫採收 3150 根玉米，平分裝成 70 箱，一箱有幾根玉米？還剩下幾根？",
+        "steps": [
+          {
+            "a": "3150",
+            "op": "÷",
+            "b": "70",
+            "result": "45",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "一箱有",
+            "value": "45",
+            "unit": "根"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "根"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "corn",
+          "holder": "box",
+          "mode": "share",
+          "total": "3150 根玉米",
+          "rule": "平分裝成 70 箱",
+          "count": 70
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "農夫採收 3180 根玉米，平分裝成 60 箱，一箱有幾根玉米？還剩下幾根？",
+        "steps": [
+          {
+            "a": "3180",
+            "op": "÷",
+            "b": "60",
+            "result": "53",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "一箱有",
+            "value": "53",
+            "unit": "根"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "根"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "corn",
+          "holder": "box",
+          "mode": "share",
+          "total": "3180 根玉米",
+          "rule": "平分裝成 60 箱",
+          "count": 60
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "農夫採收 2560 根玉米，平分裝成 80 箱，一箱有幾根玉米？還剩下幾根？",
+        "steps": [
+          {
+            "a": "2560",
+            "op": "÷",
+            "b": "80",
+            "result": "32",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "一箱有",
+            "value": "32",
+            "unit": "根"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "根"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "corn",
+          "holder": "box",
+          "mode": "share",
+          "total": "2560 根玉米",
+          "rule": "平分裝成 80 箱",
+          "count": 80
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "農夫採收 3240 根玉米，平分裝成 90 箱，一箱有幾根玉米？還剩下幾根？",
+        "steps": [
+          {
+            "a": "3240",
+            "op": "÷",
+            "b": "90",
+            "result": "36",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "一箱有",
+            "value": "36",
+            "unit": "根"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "根"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "corn",
+          "holder": "box",
+          "mode": "share",
+          "total": "3240 根玉米",
+          "rule": "平分裝成 90 箱",
+          "count": 90
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "工廠生產 1538 條充電線，每 20 條裝成一箱，最多可以裝成幾箱？還剩下幾條？",
+        "steps": [
+          {
+            "a": "1538",
+            "op": "÷",
+            "b": "20",
+            "result": "76",
+            "remainder": "18",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝成",
+            "value": "76",
+            "unit": "箱"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "18",
+            "unit": "條"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cable",
+          "holder": "box",
+          "mode": "each",
+          "total": "1538 條充電線",
+          "rule": "每 20 條裝一箱"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "工廠生產 1467 條充電線，每 30 條裝成一箱，最多可以裝成幾箱？還剩下幾條？",
+        "steps": [
+          {
+            "a": "1467",
+            "op": "÷",
+            "b": "30",
+            "result": "48",
+            "remainder": "27",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝成",
+            "value": "48",
+            "unit": "箱"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "27",
+            "unit": "條"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cable",
+          "holder": "box",
+          "mode": "each",
+          "total": "1467 條充電線",
+          "rule": "每 30 條裝一箱"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "工廠生產 1795 條充電線，每 20 條裝成一箱，最多可以裝成幾箱？還剩下幾條？",
+        "steps": [
+          {
+            "a": "1795",
+            "op": "÷",
+            "b": "20",
+            "result": "89",
+            "remainder": "15",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝成",
+            "value": "89",
+            "unit": "箱"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "15",
+            "unit": "條"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cable",
+          "holder": "box",
+          "mode": "each",
+          "total": "1795 條充電線",
+          "rule": "每 20 條裝一箱"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "工廠生產 1721 條充電線，每 30 條裝成一箱，最多可以裝成幾箱？還剩下幾條？",
+        "steps": [
+          {
+            "a": "1721",
+            "op": "÷",
+            "b": "30",
+            "result": "57",
+            "remainder": "11",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝成",
+            "value": "57",
+            "unit": "箱"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "11",
+            "unit": "條"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cable",
+          "holder": "box",
+          "mode": "each",
+          "total": "1721 條充電線",
+          "rule": "每 30 條裝一箱"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "工廠生產 1815 條充電線，每 40 條裝成一箱，最多可以裝成幾箱？還剩下幾條？",
+        "steps": [
+          {
+            "a": "1815",
+            "op": "÷",
+            "b": "40",
+            "result": "45",
+            "remainder": "15",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝成",
+            "value": "45",
+            "unit": "箱"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "15",
+            "unit": "條"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cable",
+          "holder": "box",
+          "mode": "each",
+          "total": "1815 條充電線",
+          "rule": "每 40 條裝一箱"
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "米廠有 2700 公斤的米，每 28 公斤裝成一包，共可以裝成幾包？還剩下幾公斤的米？",
+        "steps": [
+          {
+            "a": "2700",
+            "op": "÷",
+            "b": "28",
+            "result": "96",
+            "remainder": "12",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "共可以裝成",
+            "value": "96",
+            "unit": "包"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "12",
+            "unit": "公斤"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rice",
+          "holder": "ricebag",
+          "mode": "each",
+          "total": "2700 公斤的米",
+          "rule": "每 28 公斤裝一包"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "米廠有 2900 公斤的米，每 35 公斤裝成一包，共可以裝成幾包？還剩下幾公斤的米？",
+        "steps": [
+          {
+            "a": "2900",
+            "op": "÷",
+            "b": "35",
+            "result": "82",
+            "remainder": "30",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "共可以裝成",
+            "value": "82",
+            "unit": "包"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "30",
+            "unit": "公斤"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rice",
+          "holder": "ricebag",
+          "mode": "each",
+          "total": "2900 公斤的米",
+          "rule": "每 35 公斤裝一包"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "米廠有 2700 公斤的米，每 39 公斤裝成一包，共可以裝成幾包？還剩下幾公斤的米？",
+        "steps": [
+          {
+            "a": "2700",
+            "op": "÷",
+            "b": "39",
+            "result": "69",
+            "remainder": "9",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "共可以裝成",
+            "value": "69",
+            "unit": "包"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "9",
+            "unit": "公斤"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rice",
+          "holder": "ricebag",
+          "mode": "each",
+          "total": "2700 公斤的米",
+          "rule": "每 39 公斤裝一包"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "米廠有 2800 公斤的米，每 29 公斤裝成一包，共可以裝成幾包？還剩下幾公斤的米？",
+        "steps": [
+          {
+            "a": "2800",
+            "op": "÷",
+            "b": "29",
+            "result": "96",
+            "remainder": "16",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "共可以裝成",
+            "value": "96",
+            "unit": "包"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "16",
+            "unit": "公斤"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rice",
+          "holder": "ricebag",
+          "mode": "each",
+          "total": "2800 公斤的米",
+          "rule": "每 29 公斤裝一包"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "米廠有 2900 公斤的米，每 51 公斤裝成一包，共可以裝成幾包？還剩下幾公斤的米？",
+        "steps": [
+          {
+            "a": "2900",
+            "op": "÷",
+            "b": "51",
+            "result": "56",
+            "remainder": "44",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "共可以裝成",
+            "value": "56",
+            "unit": "包"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "44",
+            "unit": "公斤"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rice",
+          "holder": "ricebag",
+          "mode": "each",
+          "total": "2900 公斤的米",
+          "rule": "每 51 公斤裝一包"
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "哥哥買了一雙 2352 元的運動鞋，平分 24 期付款，每期要付多少元？",
+        "steps": [
+          {
+            "a": "2352",
+            "op": "÷",
+            "b": "24",
+            "result": "98",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每期要付",
+            "value": "98",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "calendar",
+          "mode": "share",
+          "total": "運動鞋 2352 元",
+          "rule": "平分 24 期付款",
+          "count": 24
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "哥哥買了一雙 1206 元的運動鞋，平分 18 期付款，每期要付多少元？",
+        "steps": [
+          {
+            "a": "1206",
+            "op": "÷",
+            "b": "18",
+            "result": "67",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每期要付",
+            "value": "67",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "calendar",
+          "mode": "share",
+          "total": "運動鞋 1206 元",
+          "rule": "平分 18 期付款",
+          "count": 18
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "哥哥買了一雙 1239 元的運動鞋，平分 21 期付款，每期要付多少元？",
+        "steps": [
+          {
+            "a": "1239",
+            "op": "÷",
+            "b": "21",
+            "result": "59",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每期要付",
+            "value": "59",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "calendar",
+          "mode": "share",
+          "total": "運動鞋 1239 元",
+          "rule": "平分 21 期付款",
+          "count": 21
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "哥哥買了一雙 1496 元的運動鞋，平分 17 期付款，每期要付多少元？",
+        "steps": [
+          {
+            "a": "1496",
+            "op": "÷",
+            "b": "17",
+            "result": "88",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每期要付",
+            "value": "88",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "calendar",
+          "mode": "share",
+          "total": "運動鞋 1496 元",
+          "rule": "平分 17 期付款",
+          "count": 17
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "哥哥買了一雙 1248 元的運動鞋，平分 26 期付款，每期要付多少元？",
+        "steps": [
+          {
+            "a": "1248",
+            "op": "÷",
+            "b": "26",
+            "result": "48",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每期要付",
+            "value": "48",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "calendar",
+          "mode": "share",
+          "total": "運動鞋 1248 元",
+          "rule": "平分 26 期付款",
+          "count": 26
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "甜點店做了 1469 個牛奶糖，每 27 個裝一盒，最多可以裝滿幾盒？還剩下幾個牛奶糖？",
+        "steps": [
+          {
+            "a": "1469",
+            "op": "÷",
+            "b": "27",
+            "result": "54",
+            "remainder": "11",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝滿",
+            "value": "54",
+            "unit": "盒"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "11",
+            "unit": "個"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "candy",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "1469 個牛奶糖",
+          "rule": "每 27 個裝一盒"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "甜點店做了 1068 個牛奶糖，每 27 個裝一盒，最多可以裝滿幾盒？還剩下幾個牛奶糖？",
+        "steps": [
+          {
+            "a": "1068",
+            "op": "÷",
+            "b": "27",
+            "result": "39",
+            "remainder": "15",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝滿",
+            "value": "39",
+            "unit": "盒"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "15",
+            "unit": "個"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "candy",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "1068 個牛奶糖",
+          "rule": "每 27 個裝一盒"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "甜點店做了 1306 個牛奶糖，每 28 個裝一盒，最多可以裝滿幾盒？還剩下幾個牛奶糖？",
+        "steps": [
+          {
+            "a": "1306",
+            "op": "÷",
+            "b": "28",
+            "result": "46",
+            "remainder": "18",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝滿",
+            "value": "46",
+            "unit": "盒"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "18",
+            "unit": "個"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "candy",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "1306 個牛奶糖",
+          "rule": "每 28 個裝一盒"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "甜點店做了 1782 個牛奶糖，每 29 個裝一盒，最多可以裝滿幾盒？還剩下幾個牛奶糖？",
+        "steps": [
+          {
+            "a": "1782",
+            "op": "÷",
+            "b": "29",
+            "result": "61",
+            "remainder": "13",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝滿",
+            "value": "61",
+            "unit": "盒"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "13",
+            "unit": "個"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "candy",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "1782 個牛奶糖",
+          "rule": "每 29 個裝一盒"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "甜點店做了 1555 個牛奶糖，每 29 個裝一盒，最多可以裝滿幾盒？還剩下幾個牛奶糖？",
+        "steps": [
+          {
+            "a": "1555",
+            "op": "÷",
+            "b": "29",
+            "result": "53",
+            "remainder": "18",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以裝滿",
+            "value": "53",
+            "unit": "盒"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "18",
+            "unit": "個"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "candy",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "1555 個牛奶糖",
+          "rule": "每 29 個裝一盒"
+        },
+        "scratch": "division"
+      }
+    ]
+  ]
+}

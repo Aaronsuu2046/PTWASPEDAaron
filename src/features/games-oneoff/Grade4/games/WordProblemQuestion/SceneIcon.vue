@@ -146,6 +146,77 @@
       />
     </g>
 
+    <!-- 玉米 -->
+    <g v-else-if="name === 'corn'">
+      <ellipse
+        rx="7"
+        ry="15"
+        fill="#fdd835"
+        stroke="#f9a825"
+        stroke-width="2"
+      />
+      <path
+        d="M -4 -8 H 4 M -5 -2 H 5 M -5 4 H 5 M -4 10 H 4"
+        stroke="#f9a825"
+        stroke-width="1.5"
+      />
+      <path
+        d="M -2 14 Q -12 6 -10 -6 M 2 14 Q 12 6 10 -6"
+        fill="none"
+        stroke="#7cb342"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+    </g>
+    <!-- 充電線 -->
+    <g v-else-if="name === 'cable'">
+      <path
+        d="M -12 -8 C -2 -16, 8 0, -2 4 S 4 16, 12 10"
+        fill="none"
+        stroke="#546e7a"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <rect x="-17" y="-12" width="8" height="8" rx="2" fill="#90a4ae" />
+      <rect x="10" y="7" width="8" height="7" rx="2" fill="#90a4ae" />
+    </g>
+    <!-- 米（一小堆） -->
+    <g v-else-if="name === 'rice'">
+      <path
+        d="M -15 12 Q 0 -18 15 12 Z"
+        fill="#fffde7"
+        stroke="#bcaaa4"
+        stroke-width="2"
+      />
+      <g fill="#ffffff" stroke="#d7ccc8" stroke-width="1"
+        ><ellipse cx="-4" cy="2" rx="2.5" ry="1.5" /><ellipse
+          cx="4"
+          cy="5"
+          rx="2.5"
+          ry="1.5" /><ellipse cx="0" cy="-4" rx="2.5" ry="1.5"
+      /></g>
+    </g>
+    <!-- 牛奶糖 -->
+    <g v-else-if="name === 'candy'">
+      <rect
+        x="-9"
+        y="-7"
+        width="18"
+        height="14"
+        rx="3"
+        fill="#ffe0b2"
+        stroke="#a1887f"
+        stroke-width="2"
+      />
+      <path
+        d="M -9 -5 L -16 -10 L -16 10 L -9 5 Z M 9 -5 L 16 -10 L 16 10 L 9 5 Z"
+        fill="#ffccbc"
+        stroke="#a1887f"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+      />
+    </g>
+
     <!-- ===== 容器 ===== -->
     <!-- 紙箱 -->
     <g v-else-if="name === 'box'">
@@ -341,6 +412,48 @@
           r="6"
       /></g>
     </g>
+    <!-- 米袋 -->
+    <g v-else-if="name === 'ricebag'">
+      <path
+        d="M -14 -14 Q -16 4 -14 18 H 14 Q 16 4 14 -14 Z"
+        fill="#efebe9"
+        stroke="#8d6e63"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M -10 -14 Q 0 -22 10 -14"
+        fill="none"
+        stroke="#8d6e63"
+        stroke-width="2.5"
+      />
+      <text y="8" class="scene-icon__label">米</text>
+    </g>
+    <!-- 月曆（一期） -->
+    <g v-else-if="name === 'calendar'">
+      <rect
+        x="-15"
+        y="-14"
+        width="30"
+        height="30"
+        rx="4"
+        fill="#ffffff"
+        stroke="#5c6bc0"
+        stroke-width="2.5"
+      />
+      <rect x="-15" y="-14" width="30" height="9" rx="3" fill="#5c6bc0" />
+      <g fill="#c5cae9"
+        ><rect x="-10" y="-1" width="6" height="5" /><rect
+          x="-2"
+          y="-1"
+          width="6"
+          height="5" /><rect x="6" y="-1" width="5" height="5" /><rect
+          x="-10"
+          y="7"
+          width="6"
+          height="5" /><rect x="-2" y="7" width="6" height="5"
+      /></g>
+    </g>
   </g>
 </template>
 
@@ -356,6 +469,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.scene-icon__label {
+  font-size: 12px;
+  font-weight: 700;
+  text-anchor: middle;
+  fill: #6d4c41;
+}
+
 .scene-icon__coin {
   font-size: 13px;
   font-weight: 700;
