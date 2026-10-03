@@ -11,6 +11,17 @@
       class="protractor__divider"
     />
 
+    <!-- 放射導線：由中心點對齊整十刻度往外，停在內圈刻度帶前，不壓到數字 -->
+    <line
+      v-for="g in guides"
+      :key="`g${g.deg}`"
+      x1="0"
+      y1="0"
+      :x2="g.x"
+      :y2="g.y"
+      class="protractor__guide"
+    />
+
     <line
       v-for="t in ticks"
       :key="`t${t.deg}`"
@@ -45,13 +56,8 @@
       </text>
     </g>
 
-    <!-- 0° 線與中心點 -->
+    <!-- 0° 線：中心點就是底邊和放射導線交會的地方 -->
     <line :x1="-R" y1="0" :x2="R" y2="0" class="protractor__base" />
-    <circle cx="0" cy="0" :r="R * 0.035" class="protractor__center" />
-    <path
-      :d="`M ${-R * 0.06} 0 H ${R * 0.06} M 0 ${-R * 0.06} V ${R * 0.02}`"
-      class="protractor__cross"
-    />
   </g>
 </template>
 
@@ -97,6 +103,14 @@ export default {
             y2: e,
           });
         }
+      }
+      return list;
+    },
+    guides() {
+      const list = [];
+      for (let deg = 10; deg < 180; deg += 10) {
+        const [x, y] = polar(deg, INNER_IN * this.R);
+        list.push({ deg, x, y });
       }
       return list;
     },
@@ -194,15 +208,9 @@ export default {
     stroke-width: 3;
   }
 
-  &__center {
-    fill: #ffffff;
-    stroke: #c62828;
-    stroke-width: 2.5;
-  }
-
-  &__cross {
-    stroke: #c62828;
-    stroke-width: 2;
+  &__guide {
+    stroke: #90a4ae;
+    stroke-width: 1.2;
   }
 }
 </style>

@@ -9,7 +9,7 @@
         <svg
           ref="svg"
           class="board__svg"
-          :class="{ 'board__svg--pick': isPart }"
+          :class="{ 'board__svg--pick': isPick }"
           :viewBox="`0 0 ${VIEW_W} ${VIEW_H}`"
           preserveAspectRatio="xMidYMid meet"
           @pointerdown="startMark"
@@ -50,7 +50,7 @@
             </g>
           </g>
         </svg>
-        <p v-if="isPart" class="how">
+        <p v-if="isPick" class="how">
           點一下量角器上的位置，會出現圓圈記號；也可以按住拖動記號。
         </p>
         <p v-else class="how">
@@ -103,33 +103,13 @@
           </div>
         </template>
 
-        <template v-else-if="gameData.kind === 'read'">
-          <div class="number">
-            <button
-              type="button"
-              class="slot slot--number"
-              data-cell="answer"
-              data-pad-field
-              aria-label="答案"
-              :class="{
-                'slot--filled': digits,
-                'slot--right': solved,
-                'slot--active': padEl,
-              }"
-              @click="openPad"
-            >
-              {{ digits || "？" }}
-            </button>
-            <span class="number__unit">{{ gameData.unit }}</span>
-          </div>
-          <FieldPad
-            :field="solved ? null : padEl"
-            @press="press"
-            @close="padEl = null"
-          />
-        </template>
+        <p v-if="angleFigure && isPick" class="side__tip">
+          <span class="how__start">綠色</span>是起始邊，<span class="how__end"
+            >紫色</span
+          >是另一邊。
+        </p>
 
-        <p v-else class="side__tip side__tip--big">
+        <p v-if="isPick" class="side__tip side__tip--big">
           {{ mark ? "選好了就按「送出答案」" : "在量角器上點一下" }}
         </p>
 
@@ -141,7 +121,6 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import FieldPad from "./games/Common/FieldPad.vue";
 import ProtractorTool from "./games/Geometry/ProtractorTool.vue";
 import { polar, protractorPart } from "./games/Geometry/protractor.js";
 
@@ -151,18 +130,34 @@ const CX = 300;
 const CY = 295;
 const R = 250;
 const TAP_DISTANCE = 6;
-const MAX_DIGITS = 3;
+// 點到 0 刻度或指定刻度時，允許偏離的角度
+const ZERO_TOLERANCE = 9;
+const SPOT_TOLERANCE = 4;
 
 const PART_NAMES = {
   center: "中心點",
   outer: "外圈刻度",
   inner: "內圈刻度",
+  outerZero: "外圈刻度 0",
+  innerZero: "內圈刻度 0",
   none: "量角器的其他地方",
 };
 const PART_HINTS = {
   center: "中心點在量角器底邊（0° 線）的正中間喔！",
-  outer: "外圈刻度是最外面那一圈，左邊從 0° 開始數。",
-  inner: "內圈刻度在外圈的裡面，右邊從 0° 開始數。",
+  outerZero: "外圈刻度是最外面那一圈，0 在左邊的最下面。",
+  innerZero: "內圈刻度在外圈的裡面，0 在右邊的最下面。",
+};
+// 0 刻度目標：在哪一圈、靠哪一端（極角 0° 在右、180° 在左）
+const ZERO_TARGETS = {
+  outerZero: { part: "outer", deg: 180 },
+  innerZero: { part: "inner", deg: 0 },
+};
+const RING_PART = { 內圈: "inner", 外圈: "outer" };
+
+// 量角器座標的極角（0° 在右、逆時針；底邊下方一點點算在 0° 或 180° 附近）
+const polarDeg = (x, y) => {
+  const deg = (Math.atan2(-y, x) * 180) / Math.PI;
+  return deg < -90 ? deg + 360 : deg;
 };
 const SIDE_NAME = { right: "右", left: "左" };
 
@@ -172,10 +167,10 @@ const overSlot = (event) =>
     .elementsFromPoint(event.clientX, event.clientY)
     .some((el) => el.closest("[data-slot]"));
 
-// 認識量角器：關卡 1～3 點選部位，關卡 4 判斷讀哪一圈，關卡 5 讀出角度
+// 認識量角器：關卡 1～3 點選部位（2、3 要點到 0 刻度），關卡 4 判斷讀哪一圈，關卡 5 在量角器上點出角度
 export default {
   name: "MA4031",
-  components: { FieldPad, ProtractorTool },
+  components: { ProtractorTool },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -193,8 +188,6 @@ export default {
       mark: null,
       dragging: false,
       choice: "",
-      digits: "",
-      padEl: null,
       pick: null,
       hoverSlot: false,
       suppressClick: false,
@@ -206,8 +199,9 @@ export default {
     gameIntroText() {
       return this.introText?.Content || "在量角器上找找看。";
     },
-    isPart() {
-      return this.gameData.kind === "part";
+    // 關卡 1～3 點部位、關卡 5 點刻度：都在量角器上放圓圈記號
+    isPick() {
+      return this.gameData.kind === "part" || this.gameData.kind === "spot";
     },
     // 起始邊沿 0° 線（向右或向左），另一邊依角度畫出
     angleFigure() {
@@ -235,7 +229,7 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
-    // ---- 關卡 1～3：在量角器上放記號 ----
+    // ---- 關卡 1～3、5：在量角器上放記號 ----
     toLocal(event) {
       const svg = this.$refs.svg;
       const pt = svg.createSVGPoint();
@@ -245,7 +239,7 @@ export default {
       return { x: p.x - CX, y: p.y - CY };
     },
     startMark(event) {
-      if (!this.isPart || this.solved) return;
+      if (!this.isPick || this.solved) return;
       if (event.button !== undefined && event.button !== 0) return;
       this.mark = this.toLocal(event);
       this.dragging = true;
@@ -313,23 +307,6 @@ export default {
       this.hoverSlot = false;
     },
 
-    // ---- 關卡 5：數字鍵盤 ----
-    openPad(event) {
-      if (this.solved) return;
-      this.padEl = event.currentTarget;
-    },
-    press(key) {
-      if (this.solved) return;
-      this.feedback = "";
-      if (key === "clear") {
-        this.digits = "";
-      } else if (key === "←") {
-        this.digits = this.digits.slice(0, -1);
-      } else if (this.digits.length < MAX_DIGITS) {
-        this.digits = (this.digits + key).replace(/^0+(?=\d)/, "");
-      }
-    },
-
     // ---- 判分 ----
     judge() {
       const q = this.gameData;
@@ -337,11 +314,31 @@ export default {
       if (q.kind === "part") {
         if (!this.mark) return { empty: "先在量角器上點一下喔！" };
         const part = protractorPart(this.mark.x, this.mark.y, R);
+        const zero = ZERO_TARGETS[q.target];
+        if (!zero) {
+          return {
+            ok: part === q.target,
+            expected: PART_NAMES[q.target],
+            given: PART_NAMES[part],
+            hint: `你點的是${PART_NAMES[part]}。${PART_HINTS[q.target]}`,
+          };
+        }
+        // 0 刻度：要點在對的那一圈，而且在 0 的那一端
+        const deg = polarDeg(this.mark.x, this.mark.y);
+        const atZero = Math.abs(deg - zero.deg) <= ZERO_TOLERANCE;
+        const ok = part === zero.part && atZero;
+        const given =
+          part === zero.part
+            ? `${PART_NAMES[part]}（不是 0）`
+            : PART_NAMES[part];
         return {
-          ok: part === q.target,
+          ok,
           expected: PART_NAMES[q.target],
-          given: PART_NAMES[part],
-          hint: `你點的是${PART_NAMES[part]}。${PART_HINTS[q.target]}`,
+          given: ok ? PART_NAMES[q.target] : given,
+          hint:
+            part === zero.part
+              ? `你點的是${PART_NAMES[part]}，但不是 0。${PART_HINTS[q.target]}`
+              : `你點的是${PART_NAMES[part]}。${PART_HINTS[q.target]}`,
         };
       }
       if (q.kind === "ring") {
@@ -353,16 +350,31 @@ export default {
           hint: "看綠色的起始邊對準哪一邊的 0°：對準右邊的 0° 讀內圈，對準左邊的 0° 讀外圈。",
         };
       }
-      if (!this.digits) return { empty: "請先用數字鍵輸入答案喔！" };
-      const value = Number(this.digits);
-      const otherRing = 180 - q.answer;
+      // 關卡 5：點在指定那一圈的指定刻度附近
+      if (!this.mark) return { empty: "先在量角器上點出刻度喔！" };
+      const part = protractorPart(this.mark.x, this.mark.y, R);
+      const expected = `${q.ring} ${q.answer}°`;
+      if (part !== "inner" && part !== "outer") {
+        return {
+          ok: false,
+          expected,
+          given: PART_NAMES[part],
+          hint: `要點在刻度上喔！起始邊對準${side}邊的 0°，沿著${q.ring}數到紫色的邊。`,
+        };
+      }
+      const deg = polarDeg(this.mark.x, this.mark.y);
+      const ring = part === "inner" ? "內圈" : "外圈";
+      const reading = Math.round(part === "inner" ? deg : 180 - deg);
+      const nearAnswer = (value) =>
+        Math.abs(value - q.answer) <= SPOT_TOLERANCE;
+      const ok = part === RING_PART[q.ring] && nearAnswer(reading);
       return {
-        ok: value === q.answer,
-        expected: `${q.answer} 度`,
-        given: `${value} 度`,
+        ok,
+        expected,
+        given: `${ring} ${reading}°`,
         hint:
-          value === otherRing
-            ? `你讀到另一圈了！起始邊對準${side}邊的 0°，要讀${q.ring}的數字。`
+          part !== RING_PART[q.ring]
+            ? `你點到${ring}了！起始邊對準${side}邊的 0°，要讀${q.ring}的數字。`
             : `起始邊對準${side}邊的 0°，沿著${q.ring}數到紫色的邊。`,
       };
     },
@@ -576,22 +588,6 @@ export default {
     background-color: #e8f5e9;
     border-color: #43a047;
   }
-
-  &--number {
-    min-width: 6rem;
-  }
-}
-
-.number {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-
-  &__unit {
-    font-size: 1.8rem;
-    font-weight: $font-bold;
-    color: #333333;
-  }
 }
 
 .options {
@@ -676,16 +672,6 @@ export default {
   .feedback {
     font-size: 1.05rem;
     line-height: 1.35;
-  }
-}
-// 答案框可以點：點了在旁邊出現數字板
-.slot {
-  cursor: pointer;
-
-  &--active {
-    border-style: solid;
-    border-color: #ffb300;
-    box-shadow: 0 0 0 4px #ffe082;
   }
 }
 </style>
