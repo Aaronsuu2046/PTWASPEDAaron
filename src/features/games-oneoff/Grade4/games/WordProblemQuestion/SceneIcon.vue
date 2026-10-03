@@ -110,6 +110,42 @@
       <circle cx="-4" cy="-6" r="3" fill="#ffffff" opacity="0.8" />
     </g>
 
+    <!-- 鮮奶（紙盒） -->
+    <g v-else-if="name === 'milk'">
+      <path
+        d="M -10 -8 L 0 -18 L 10 -8 V 16 H -10 Z"
+        fill="#ffffff"
+        stroke="#1e88e5"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <rect x="-10" y="0" width="20" height="9" fill="#90caf9" />
+      <path d="M -10 -8 H 10" stroke="#1e88e5" stroke-width="2" />
+    </g>
+    <!-- 康乃馨 -->
+    <g v-else-if="name === 'carnation'">
+      <path
+        d="M 0 -2 V 18"
+        stroke="#43a047"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+      <path
+        d="M 0 10 Q 7 4 9 8"
+        stroke="#43a047"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"
+      />
+      <path
+        d="M -11 -6 Q -10 -18 0 -16 Q 10 -18 11 -6 Q 6 -1 0 -3 Q -6 -1 -11 -6 Z"
+        fill="#f06292"
+        stroke="#c2185b"
+        stroke-width="2"
+        stroke-linejoin="round"
+      />
+    </g>
+
     <!-- ===== 容器 ===== -->
     <!-- 紙箱 -->
     <g v-else-if="name === 'box'">
@@ -240,6 +276,70 @@
         stroke="#388e3c"
         stroke-width="2"
       />
+    </g>
+    <!-- 豆漿瓶 -->
+    <g v-else-if="name === 'soymilk'">
+      <path
+        d="M -6 -22 H 6 V -14 C 13 -10, 13 -6, 13 0 V 18 H -13 V 0 C -13 -6, -13 -10, -6 -14 Z"
+        fill="#fff8e1"
+        stroke="#a1887f"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <rect x="-13" y="0" width="26" height="18" fill="#ffe0b2" />
+      <rect x="-7" y="-26" width="14" height="6" rx="2" fill="#66bb6a" />
+    </g>
+    <!-- 奶茶杯 -->
+    <g v-else-if="name === 'milkcup'">
+      <path
+        d="M -14 -14 H 14 L 10 18 H -10 Z"
+        fill="#ffffff"
+        stroke="#8d6e63"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <path d="M -13 -6 H 13 L 10 18 H -10 Z" fill="#d7ccc8" />
+    </g>
+    <!-- 珍珠奶茶 -->
+    <g v-else-if="name === 'bubbletea'">
+      <path
+        d="M -14 -14 H 14 L 10 18 H -10 Z"
+        fill="#fff8e1"
+        stroke="#8d6e63"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <path d="M -13 -4 H 13 L 10 18 H -10 Z" fill="#d7ccc8" />
+      <line
+        x1="5"
+        y1="-24"
+        x2="0"
+        y2="4"
+        stroke="#ef5350"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+      <g fill="#5d4037"
+        ><circle cx="-5" cy="12" r="3" /><circle cx="2" cy="14" r="3" /><circle
+          cx="7"
+          cy="10"
+          r="3" /><circle cx="-1" cy="8" r="3"
+      /></g>
+    </g>
+    <!-- 一束花 -->
+    <g v-else-if="name === 'bouquet'">
+      <path
+        d="M -12 -2 L 0 20 L 12 -2 Z"
+        fill="#fff59d"
+        stroke="#f9a825"
+        stroke-width="2"
+        stroke-linejoin="round"
+      />
+      <g fill="#f06292" stroke="#c2185b" stroke-width="1.5"
+        ><circle cx="-7" cy="-8" r="6" /><circle cx="7" cy="-8" r="6" /><circle
+          cy="-14"
+          r="6"
+      /></g>
     </g>
   </g>
 </template>
