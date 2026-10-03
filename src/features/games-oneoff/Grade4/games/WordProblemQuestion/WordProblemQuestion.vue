@@ -5,7 +5,10 @@
     </div>
 
     <div class="game-area">
-      <div class="work-panel">
+      <div
+        class="work-panel"
+        :class="{ 'work-panel--narrow': scratchOpen && !answered }"
+      >
         <!-- 選填 calculator：可打開 MA4151 的計算機，看得到計算過程 -->
         <button
           v-if="gameData.calculator && !answered"
@@ -15,11 +18,22 @@
         >
           {{ calcOpen ? "收起計算機" : "打開計算機" }}
         </button>
+        <!-- 選填 scratch: "division"：打開直式計算紙（只是算算看，不計分） -->
+        <button
+          v-if="gameData.scratch && !answered"
+          type="button"
+          class="calc-toggle calc-toggle--scratch"
+          data-pad-avoid
+          @click="toggleScratch"
+        >
+          {{ scratchOpen ? "收起計算紙" : "打開計算紙" }}
+        </button>
         <div class="question-row">
           <p class="question-text">{{ gameData.question }}</p>
           <!-- 選填：長方形／正方形示意圖 -->
+          <template v-if="scratchOpen && !answered" />
           <CompositeFigure
-            v-if="gameData.figure && gameData.figure.shape === 'composite'"
+            v-else-if="gameData.figure && gameData.figure.shape === 'composite'"
             class="work-figure work-figure--composite"
             :figure="gameData.figure"
           />
@@ -123,6 +137,34 @@
         </div>
       </div>
 
+      <!-- 直式計算紙：除數用學生在做法填的數字，格子用同一個輸入板填，不計分 -->
+      <div v-if="gameData.scratch && scratchOpen && !answered" class="scratch">
+        <div class="scratch__head">
+          <span>計算紙（算算看，不計分）</span>
+          <button
+            type="button"
+            class="calc-float__close"
+            data-pad-avoid
+            @click="toggleScratch"
+          >
+            關閉
+          </button>
+        </div>
+        <div class="scratch__body">
+          <DivisionFill
+            v-if="scratchDivisor"
+            ref="scratch"
+            :key="scratchDivisor"
+            :dividend="String(gameData.steps[0].a)"
+            :divisor="scratchDivisor"
+            @focus="onScratchFocus"
+          />
+          <p v-else class="scratch__tip">
+            先在「做法」填好除數，這裡就會出現直式喔！
+          </p>
+        </div>
+      </div>
+
       <div v-if="gameData.calculator" v-show="calcOpen" class="calc-float">
         <div class="calc-float__head">
           <span>算好再填到格子裡</span>
@@ -164,6 +206,7 @@ import TileFigure from "./TileFigure.vue";
 import SceneFigure from "./SceneFigure.vue";
 import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
 import FieldPad from "../Common/FieldPad.vue";
+import DivisionFill from "../Vertical/DivisionFill.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -178,6 +221,7 @@ const MAX_LENGTH = 7;
 // 選填 step.remainder：除法有餘數時，結果後面多一格「… 餘數」（餘數為 0 時可空白或填 0）
 // 選填 answers: [{ prefix, value, unit }]：答案分成好幾格，取代 answer／unit
 // 選填 figure.shape "scene"：依題意畫的情境圖（SceneFigure）
+// 選填 scratch: "division"：可打開直式計算紙（被除數用第一步的 a，除數用學生填的 b），不計分
 export default {
   name: "WordProblemQuestion",
   components: {
@@ -187,6 +231,7 @@ export default {
     SceneFigure,
     KidCalculator,
     FieldPad,
+    DivisionFill,
   },
   props: {
     gameData: { type: Object, required: true },
@@ -211,6 +256,7 @@ export default {
       answered: false,
       revealing: false,
       calcOpen: false,
+      scratchOpen: false,
       revealTimer: null,
     };
   },
@@ -226,6 +272,11 @@ export default {
         nums.push(step.a, step.b, step.result, step.remainder)
       );
       return nums.some((n) => String(n ?? "").includes("."));
+    },
+    // 計算紙的除數：學生在第一步填的除數（要是正整數才畫直式）
+    scratchDivisor() {
+      const b = this.values.s0b || "";
+      return /^[1-9]\d*$/.test(b) ? b : "";
     },
     activeIsOp() {
       return /^s\d+op$/.test(this.active);
@@ -287,12 +338,31 @@ export default {
       if (this.answered) return;
       this.setValue("unit", unit);
     },
+    toggleScratch() {
+      this.scratchOpen = !this.scratchOpen;
+      if (this.active === "scratch") this.closePad();
+    },
+    // 點了計算紙的格子：輸入板移到那一格
+    onScratchFocus() {
+      this.active = "scratch";
+      this.syncScratchPad();
+    },
+    syncScratchPad() {
+      this.$nextTick(() => {
+        const id = this.$refs.scratch?.active;
+        this.activeEl = id
+          ? this.$el.querySelector(`.scratch [data-cell="${id}"]`)
+          : null;
+      });
+    },
     activate(key) {
       if (this.answered || this.isGiven(key)) return;
+      if (this.active === "scratch") this.$refs.scratch?.blur();
       this.active = key;
       this.activeEl = this.$el.querySelector(`[data-key="${key}"]`);
     },
     closePad() {
+      if (this.active === "scratch") this.$refs.scratch?.blur();
       this.active = null;
       this.activeEl = null;
     },
@@ -302,6 +372,13 @@ export default {
     },
     press(key) {
       if (this.answered || !this.active) return;
+      // 計算紙：只放數字，刪除與清除都是清掉這一格
+      if (this.active === "scratch") {
+        if (/^\d$/.test(key)) this.$refs.scratch?.input(key);
+        else if (key === "←" || key === "clear") this.$refs.scratch?.input("←");
+        this.syncScratchPad();
+        return;
+      }
       const current = this.values[this.active] || "";
       if (key === "clear") {
         this.setValue(this.active, "");
@@ -524,6 +601,93 @@ export default {
   padding: $padding--small;
 }
 
+.calc-toggle--scratch {
+  background-color: #26a69a;
+  box-shadow: 0 3px 0 #00796b;
+}
+
+// 打開計算紙時作答區變窄：格子縮小一點，題目旁的圖先藏起來
+.work-panel--narrow {
+  .fill-box {
+    min-width: 4.4rem;
+    font-size: 1.7rem;
+
+    &--op {
+      min-width: 3rem;
+    }
+  }
+
+  .work-label {
+    width: auto;
+  }
+}
+
+.scratch {
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background-color: #e0f2f1;
+  border: 3px solid #80cbc4;
+  border-radius: 18px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: $font-bold;
+    color: #00695c;
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__tip {
+    margin: 1rem 0.5rem;
+    font-size: 1.3rem;
+    font-weight: $font-bold;
+    line-height: 1.5;
+    color: #00695c;
+  }
+
+  // 計算紙格子小一點，直式整個放得下
+  :deep(.dfill) {
+    --cell: 2.3rem;
+  }
+
+  :deep(.dfill__cell) {
+    font-size: 1.5rem;
+  }
+
+  :deep(.dfill__grid) {
+    padding: 0.4rem 0.6rem;
+    row-gap: 0.1rem;
+  }
+
+  @media (max-width: 1100px), (max-height: 760px) {
+    width: 18rem;
+
+    :deep(.dfill) {
+      --cell: 1.9rem;
+    }
+
+    :deep(.dfill__cell) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
 .calc-toggle {
   align-self: flex-end;
   padding: 0.35rem 1rem;
@@ -689,6 +853,13 @@ export default {
 
 .work-unit {
   font-size: 1.8rem;
+  white-space: nowrap;
+}
+
+// 多格答案放不下時整組換行，文字本身不拆開
+.work-row--answers {
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
 }
 
 .fill-box {
