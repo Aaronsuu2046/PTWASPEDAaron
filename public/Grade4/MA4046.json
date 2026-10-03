@@ -1,0 +1,882 @@
+{
+  "id": "MA4046",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "question": "一瓶豆漿 20 元，爸爸有 160 元，最多可以買幾瓶豆漿？還剩下多少元？",
+        "steps": [
+          {
+            "a": "160",
+            "op": "÷",
+            "b": "20",
+            "result": "8",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "8",
+            "unit": "瓶"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 160 元",
+          "rule": "一瓶 20 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一瓶豆漿 20 元，爸爸有 180 元，最多可以買幾瓶豆漿？還剩下多少元？",
+        "steps": [
+          {
+            "a": "180",
+            "op": "÷",
+            "b": "20",
+            "result": "9",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "9",
+            "unit": "瓶"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 180 元",
+          "rule": "一瓶 20 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一瓶豆漿 30 元，爸爸有 240 元，最多可以買幾瓶豆漿？還剩下多少元？",
+        "steps": [
+          {
+            "a": "240",
+            "op": "÷",
+            "b": "30",
+            "result": "8",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "8",
+            "unit": "瓶"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 240 元",
+          "rule": "一瓶 30 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一瓶豆漿 40 元，爸爸有 360 元，最多可以買幾瓶豆漿？還剩下多少元？",
+        "steps": [
+          {
+            "a": "360",
+            "op": "÷",
+            "b": "40",
+            "result": "9",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "9",
+            "unit": "瓶"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 360 元",
+          "rule": "一瓶 40 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一瓶豆漿 40 元，爸爸有 280 元，最多可以買幾瓶豆漿？還剩下多少元？",
+        "steps": [
+          {
+            "a": "280",
+            "op": "÷",
+            "b": "40",
+            "result": "7",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "7",
+            "unit": "瓶"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 280 元",
+          "rule": "一瓶 40 元"
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "媽媽買了 305 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
+        "steps": [
+          {
+            "a": "305",
+            "op": "÷",
+            "b": "40",
+            "result": "7",
+            "remainder": "25",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以做",
+            "value": "7",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "25",
+            "unit": "毫升"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "305 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "媽媽買了 235 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
+        "steps": [
+          {
+            "a": "235",
+            "op": "÷",
+            "b": "40",
+            "result": "5",
+            "remainder": "35",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以做",
+            "value": "5",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "35",
+            "unit": "毫升"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "235 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "媽媽買了 250 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
+        "steps": [
+          {
+            "a": "250",
+            "op": "÷",
+            "b": "40",
+            "result": "6",
+            "remainder": "10",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以做",
+            "value": "6",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "10",
+            "unit": "毫升"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "250 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "媽媽買了 300 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
+        "steps": [
+          {
+            "a": "300",
+            "op": "÷",
+            "b": "40",
+            "result": "7",
+            "remainder": "20",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以做",
+            "value": "7",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "20",
+            "unit": "毫升"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "300 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "媽媽買了 310 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
+        "steps": [
+          {
+            "a": "310",
+            "op": "÷",
+            "b": "40",
+            "result": "7",
+            "remainder": "30",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以做",
+            "value": "7",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "30",
+            "unit": "毫升"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "310 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "花店進貨 148 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
+        "steps": [
+          {
+            "a": "148",
+            "op": "÷",
+            "b": "26",
+            "result": "5",
+            "remainder": "18",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每束有",
+            "value": "5",
+            "unit": "朵"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "18",
+            "unit": "朵"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "148 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "花店進貨 206 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
+        "steps": [
+          {
+            "a": "206",
+            "op": "÷",
+            "b": "26",
+            "result": "7",
+            "remainder": "24",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每束有",
+            "value": "7",
+            "unit": "朵"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "24",
+            "unit": "朵"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "206 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "花店進貨 232 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
+        "steps": [
+          {
+            "a": "232",
+            "op": "÷",
+            "b": "26",
+            "result": "8",
+            "remainder": "24",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每束有",
+            "value": "8",
+            "unit": "朵"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "24",
+            "unit": "朵"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "232 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "花店進貨 250 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
+        "steps": [
+          {
+            "a": "250",
+            "op": "÷",
+            "b": "26",
+            "result": "9",
+            "remainder": "16",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每束有",
+            "value": "9",
+            "unit": "朵"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "16",
+            "unit": "朵"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "250 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "花店進貨 199 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
+        "steps": [
+          {
+            "a": "199",
+            "op": "÷",
+            "b": "26",
+            "result": "7",
+            "remainder": "17",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每束有",
+            "value": "7",
+            "unit": "朵"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "17",
+            "unit": "朵"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "199 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "同樂會結束後剩下 837 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
+        "steps": [
+          {
+            "a": "837",
+            "op": "÷",
+            "b": "31",
+            "result": "27",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每人可以分到",
+            "value": "27",
+            "unit": "元"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 837 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "同樂會結束後剩下 806 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
+        "steps": [
+          {
+            "a": "806",
+            "op": "÷",
+            "b": "31",
+            "result": "26",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每人可以分到",
+            "value": "26",
+            "unit": "元"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 806 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "同樂會結束後剩下 899 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
+        "steps": [
+          {
+            "a": "899",
+            "op": "÷",
+            "b": "31",
+            "result": "29",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每人可以分到",
+            "value": "29",
+            "unit": "元"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 899 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "同樂會結束後剩下 930 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
+        "steps": [
+          {
+            "a": "930",
+            "op": "÷",
+            "b": "31",
+            "result": "30",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每人可以分到",
+            "value": "30",
+            "unit": "元"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 930 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "同樂會結束後剩下 775 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
+        "steps": [
+          {
+            "a": "775",
+            "op": "÷",
+            "b": "31",
+            "result": "25",
+            "remainder": "0",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "每人可以分到",
+            "value": "25",
+            "unit": "元"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "0",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 775 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        },
+        "scratch": "division"
+      }
+    ],
+    [
+      {
+        "question": "一杯珍珠奶茶 55 元，爸爸有 950 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
+        "steps": [
+          {
+            "a": "950",
+            "op": "÷",
+            "b": "55",
+            "result": "17",
+            "remainder": "15",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "17",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "15",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 950 元",
+          "rule": "一杯 55 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一杯珍珠奶茶 55 元，爸爸有 800 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
+        "steps": [
+          {
+            "a": "800",
+            "op": "÷",
+            "b": "55",
+            "result": "14",
+            "remainder": "30",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "14",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "30",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 800 元",
+          "rule": "一杯 55 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一杯珍珠奶茶 55 元，爸爸有 900 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
+        "steps": [
+          {
+            "a": "900",
+            "op": "÷",
+            "b": "55",
+            "result": "16",
+            "remainder": "20",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "16",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "20",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 900 元",
+          "rule": "一杯 55 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一杯珍珠奶茶 55 元，爸爸有 860 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
+        "steps": [
+          {
+            "a": "860",
+            "op": "÷",
+            "b": "55",
+            "result": "15",
+            "remainder": "35",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "15",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "35",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 860 元",
+          "rule": "一杯 55 元"
+        },
+        "scratch": "division"
+      },
+      {
+        "question": "一杯珍珠奶茶 55 元，爸爸有 920 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
+        "steps": [
+          {
+            "a": "920",
+            "op": "÷",
+            "b": "55",
+            "result": "16",
+            "remainder": "40",
+            "given": ["a"]
+          }
+        ],
+        "answers": [
+          {
+            "prefix": "最多可以買",
+            "value": "16",
+            "unit": "杯"
+          },
+          {
+            "prefix": "，還剩下",
+            "value": "40",
+            "unit": "元"
+          }
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 920 元",
+          "rule": "一杯 55 元"
+        },
+        "scratch": "division"
+      }
+    ]
+  ]
+}
