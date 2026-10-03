@@ -18,9 +18,7 @@
             "b": "4",
             "result": "309",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -34,7 +32,16 @@
             "value": "0",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "bottle",
+          "holder": "box",
+          "mode": "share",
+          "total": "1236 個水壺",
+          "rule": "平分裝成 4 箱",
+          "count": 4
+        }
       },
       {
         "question": "工廠生產了 2149 個水壺，平分裝成 7 箱，一箱有幾個水壺？還剩下幾個水壺？",
@@ -45,9 +52,7 @@
             "b": "7",
             "result": "307",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -61,7 +66,16 @@
             "value": "0",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "bottle",
+          "holder": "box",
+          "mode": "share",
+          "total": "2149 個水壺",
+          "rule": "平分裝成 7 箱",
+          "count": 7
+        }
       },
       {
         "question": "工廠生產了 3642 個水壺，平分裝成 6 箱，一箱有幾個水壺？還剩下幾個水壺？",
@@ -72,9 +86,7 @@
             "b": "6",
             "result": "607",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -88,7 +100,16 @@
             "value": "0",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "bottle",
+          "holder": "box",
+          "mode": "share",
+          "total": "3642 個水壺",
+          "rule": "平分裝成 6 箱",
+          "count": 6
+        }
       },
       {
         "question": "工廠生產了 4872 個水壺，平分裝成 6 箱，一箱有幾個水壺？還剩下幾個水壺？",
@@ -99,9 +120,7 @@
             "b": "6",
             "result": "812",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -115,7 +134,16 @@
             "value": "0",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "bottle",
+          "holder": "box",
+          "mode": "share",
+          "total": "4872 個水壺",
+          "rule": "平分裝成 6 箱",
+          "count": 6
+        }
       },
       {
         "question": "工廠生產了 5814 個水壺，平分裝成 9 箱，一箱有幾個水壺？還剩下幾個水壺？",
@@ -126,9 +154,7 @@
             "b": "9",
             "result": "646",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -142,7 +168,16 @@
             "value": "0",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "bottle",
+          "holder": "box",
+          "mode": "share",
+          "total": "5814 個水壺",
+          "rule": "平分裝成 9 箱",
+          "count": 9
+        }
       }
     ],
     [
@@ -155,9 +190,7 @@
             "b": "7",
             "result": "820",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -171,7 +204,16 @@
             "value": "0",
             "unit": "公分"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rope",
+          "holder": "segment",
+          "mode": "share",
+          "total": "5740 公分",
+          "rule": "平分剪成 7 段",
+          "count": 7
+        }
       },
       {
         "question": "把一條長 2064 公分的繩子平分剪成 4 段，每段長幾公分？還剩下幾公分？",
@@ -182,9 +224,7 @@
             "b": "4",
             "result": "516",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -198,7 +238,16 @@
             "value": "0",
             "unit": "公分"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rope",
+          "holder": "segment",
+          "mode": "share",
+          "total": "2064 公分",
+          "rule": "平分剪成 4 段",
+          "count": 4
+        }
       },
       {
         "question": "把一條長 3090 公分的繩子平分剪成 5 段，每段長幾公分？還剩下幾公分？",
@@ -209,9 +258,7 @@
             "b": "5",
             "result": "618",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -225,7 +272,16 @@
             "value": "0",
             "unit": "公分"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rope",
+          "holder": "segment",
+          "mode": "share",
+          "total": "3090 公分",
+          "rule": "平分剪成 5 段",
+          "count": 5
+        }
       },
       {
         "question": "把一條長 1096 公分的繩子平分剪成 8 段，每段長幾公分？還剩下幾公分？",
@@ -236,9 +292,7 @@
             "b": "8",
             "result": "137",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -252,7 +306,16 @@
             "value": "0",
             "unit": "公分"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rope",
+          "holder": "segment",
+          "mode": "share",
+          "total": "1096 公分",
+          "rule": "平分剪成 8 段",
+          "count": 8
+        }
       },
       {
         "question": "把一條長 3018 公分的繩子平分剪成 6 段，每段長幾公分？還剩下幾公分？",
@@ -263,9 +326,7 @@
             "b": "6",
             "result": "503",
             "remainder": "0",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -279,7 +340,16 @@
             "value": "0",
             "unit": "公分"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "rope",
+          "holder": "segment",
+          "mode": "share",
+          "total": "3018 公分",
+          "rule": "平分剪成 6 段",
+          "count": 6
+        }
       }
     ],
     [
@@ -292,9 +362,7 @@
             "b": "7",
             "result": "679",
             "remainder": "5",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -308,7 +376,15 @@
             "value": "5",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "mooncake",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "4758 顆月餅",
+          "rule": "每 7 顆裝一盒"
+        }
       },
       {
         "question": "糕餅店製作了 4681 顆月餅，每 8 顆裝成一盒，最多可以裝滿幾盒？還剩下幾顆？",
@@ -319,9 +395,7 @@
             "b": "8",
             "result": "585",
             "remainder": "1",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -335,7 +409,15 @@
             "value": "1",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "mooncake",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "4681 顆月餅",
+          "rule": "每 8 顆裝一盒"
+        }
       },
       {
         "question": "糕餅店製作了 5365 顆月餅，每 8 顆裝成一盒，最多可以裝滿幾盒？還剩下幾顆？",
@@ -346,9 +428,7 @@
             "b": "8",
             "result": "670",
             "remainder": "5",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -362,7 +442,15 @@
             "value": "5",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "mooncake",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "5365 顆月餅",
+          "rule": "每 8 顆裝一盒"
+        }
       },
       {
         "question": "糕餅店製作了 3431 顆月餅，每 6 顆裝成一盒，最多可以裝滿幾盒？還剩下幾顆？",
@@ -373,9 +461,7 @@
             "b": "6",
             "result": "571",
             "remainder": "5",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -389,7 +475,15 @@
             "value": "5",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "mooncake",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "3431 顆月餅",
+          "rule": "每 6 顆裝一盒"
+        }
       },
       {
         "question": "糕餅店製作了 7564 顆月餅，每 9 顆裝成一盒，最多可以裝滿幾盒？還剩下幾顆？",
@@ -400,9 +494,7 @@
             "b": "9",
             "result": "840",
             "remainder": "4",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -416,7 +508,15 @@
             "value": "4",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "mooncake",
+          "holder": "giftbox",
+          "mode": "each",
+          "total": "7564 顆月餅",
+          "rule": "每 9 顆裝一盒"
+        }
       }
     ],
     [
@@ -429,9 +529,7 @@
             "b": "6",
             "result": "666",
             "remainder": "4",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -445,7 +543,15 @@
             "value": "4",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "waxapple",
+          "holder": "box",
+          "mode": "each",
+          "total": "4000 個蓮霧",
+          "rule": "每 6 個裝一盒"
+        }
       },
       {
         "question": "果園採收了 5300 個蓮霧，每 6 個裝成一盒，最多可以裝滿幾盒？還剩下幾個？",
@@ -456,9 +562,7 @@
             "b": "6",
             "result": "883",
             "remainder": "2",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -472,7 +576,15 @@
             "value": "2",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "waxapple",
+          "holder": "box",
+          "mode": "each",
+          "total": "5300 個蓮霧",
+          "rule": "每 6 個裝一盒"
+        }
       },
       {
         "question": "果園採收了 8000 個蓮霧，每 9 個裝成一盒，最多可以裝滿幾盒？還剩下幾個？",
@@ -483,9 +595,7 @@
             "b": "9",
             "result": "888",
             "remainder": "8",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -499,7 +609,15 @@
             "value": "8",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "waxapple",
+          "holder": "box",
+          "mode": "each",
+          "total": "8000 個蓮霧",
+          "rule": "每 9 個裝一盒"
+        }
       },
       {
         "question": "果園採收了 6200 個蓮霧，每 7 個裝成一盒，最多可以裝滿幾盒？還剩下幾個？",
@@ -510,9 +628,7 @@
             "b": "7",
             "result": "885",
             "remainder": "5",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -526,7 +642,15 @@
             "value": "5",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "waxapple",
+          "holder": "box",
+          "mode": "each",
+          "total": "6200 個蓮霧",
+          "rule": "每 7 個裝一盒"
+        }
       },
       {
         "question": "果園採收了 4000 個蓮霧，每 7 個裝成一盒，最多可以裝滿幾盒？還剩下幾個？",
@@ -537,9 +661,7 @@
             "b": "7",
             "result": "571",
             "remainder": "3",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -553,7 +675,15 @@
             "value": "3",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "waxapple",
+          "holder": "box",
+          "mode": "each",
+          "total": "4000 個蓮霧",
+          "rule": "每 7 個裝一盒"
+        }
       }
     ],
     [
@@ -566,9 +696,7 @@
             "b": "7",
             "result": "794",
             "remainder": "2",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -582,7 +710,15 @@
             "value": "2",
             "unit": "公升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "tea",
+          "holder": "teabottle",
+          "mode": "each",
+          "total": "5560 公升紅茶",
+          "rule": "每 7 公升裝一瓶"
+        }
       },
       {
         "question": "有 3067 公升的紅茶，每 8 公升裝成一瓶，最多可以裝成幾瓶？還剩下幾公升？",
@@ -593,9 +729,7 @@
             "b": "8",
             "result": "383",
             "remainder": "3",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -609,7 +743,15 @@
             "value": "3",
             "unit": "公升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "tea",
+          "holder": "teabottle",
+          "mode": "each",
+          "total": "3067 公升紅茶",
+          "rule": "每 8 公升裝一瓶"
+        }
       },
       {
         "question": "有 5060 公升的紅茶，每 8 公升裝成一瓶，最多可以裝成幾瓶？還剩下幾公升？",
@@ -620,9 +762,7 @@
             "b": "8",
             "result": "632",
             "remainder": "4",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -636,7 +776,15 @@
             "value": "4",
             "unit": "公升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "tea",
+          "holder": "teabottle",
+          "mode": "each",
+          "total": "5060 公升紅茶",
+          "rule": "每 8 公升裝一瓶"
+        }
       },
       {
         "question": "有 4035 公升的紅茶，每 6 公升裝成一瓶，最多可以裝成幾瓶？還剩下幾公升？",
@@ -647,9 +795,7 @@
             "b": "6",
             "result": "672",
             "remainder": "3",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -663,7 +809,15 @@
             "value": "3",
             "unit": "公升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "tea",
+          "holder": "teabottle",
+          "mode": "each",
+          "total": "4035 公升紅茶",
+          "rule": "每 6 公升裝一瓶"
+        }
       },
       {
         "question": "有 7350 公升的紅茶，每 9 公升裝成一瓶，最多可以裝成幾瓶？還剩下幾公升？",
@@ -674,9 +828,7 @@
             "b": "9",
             "result": "816",
             "remainder": "6",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answers": [
@@ -690,7 +842,15 @@
             "value": "6",
             "unit": "公升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "tea",
+          "holder": "teabottle",
+          "mode": "each",
+          "total": "7350 公升紅茶",
+          "rule": "每 9 公升裝一瓶"
+        }
       }
     ]
   ]
