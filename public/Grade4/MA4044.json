@@ -26,7 +26,15 @@
             "value": "7",
             "unit": "局"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pinball",
+          "mode": "each",
+          "total": "妹妹有 70 元",
+          "rule": "玩一局 10 元"
+        }
       },
       {
         "question": "玩一局彈珠台要 20 元，妹妹帶了 80 元，最多可以玩幾局？",
@@ -45,7 +53,15 @@
             "value": "4",
             "unit": "局"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pinball",
+          "mode": "each",
+          "total": "妹妹有 80 元",
+          "rule": "玩一局 20 元"
+        }
       },
       {
         "question": "玩一局彈珠台要 20 元，妹妹帶了 60 元，最多可以玩幾局？",
@@ -64,7 +80,15 @@
             "value": "3",
             "unit": "局"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pinball",
+          "mode": "each",
+          "total": "妹妹有 60 元",
+          "rule": "玩一局 20 元"
+        }
       },
       {
         "question": "玩一局彈珠台要 30 元，妹妹帶了 90 元，最多可以玩幾局？",
@@ -83,7 +107,15 @@
             "value": "3",
             "unit": "局"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pinball",
+          "mode": "each",
+          "total": "妹妹有 90 元",
+          "rule": "玩一局 30 元"
+        }
       },
       {
         "question": "玩一局彈珠台要 10 元，妹妹帶了 50 元，最多可以玩幾局？",
@@ -102,7 +134,15 @@
             "value": "5",
             "unit": "局"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pinball",
+          "mode": "each",
+          "total": "妹妹有 50 元",
+          "rule": "玩一局 10 元"
+        }
       }
     ],
     [
@@ -129,7 +169,15 @@
             "value": "0",
             "unit": "片"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cookie",
+          "holder": "bag",
+          "mode": "each",
+          "total": "88 片餅乾",
+          "rule": "每 22 片裝一袋"
+        }
       },
       {
         "question": "姐姐烤了 75 片餅乾，每 15 片裝成一袋，最多可以裝成幾袋？還剩下幾片餅乾？",
@@ -154,7 +202,15 @@
             "value": "0",
             "unit": "片"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cookie",
+          "holder": "bag",
+          "mode": "each",
+          "total": "75 片餅乾",
+          "rule": "每 15 片裝一袋"
+        }
       },
       {
         "question": "姐姐烤了 48 片餅乾，每 12 片裝成一袋，最多可以裝成幾袋？還剩下幾片餅乾？",
@@ -179,7 +235,15 @@
             "value": "0",
             "unit": "片"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cookie",
+          "holder": "bag",
+          "mode": "each",
+          "total": "48 片餅乾",
+          "rule": "每 12 片裝一袋"
+        }
       },
       {
         "question": "姐姐烤了 65 片餅乾，每 13 片裝成一袋，最多可以裝成幾袋？還剩下幾片餅乾？",
@@ -204,7 +268,15 @@
             "value": "0",
             "unit": "片"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cookie",
+          "holder": "bag",
+          "mode": "each",
+          "total": "65 片餅乾",
+          "rule": "每 13 片裝一袋"
+        }
       },
       {
         "question": "姐姐烤了 84 片餅乾，每 21 片裝成一袋，最多可以裝成幾袋？還剩下幾片餅乾？",
@@ -229,7 +301,15 @@
             "value": "0",
             "unit": "片"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "cookie",
+          "holder": "bag",
+          "mode": "each",
+          "total": "84 片餅乾",
+          "rule": "每 21 片裝一袋"
+        }
       }
     ],
     [
@@ -256,7 +336,15 @@
             "value": "5",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pen",
+          "mode": "each",
+          "total": "小美有 65 元",
+          "rule": "一支 20 元"
+        }
       },
       {
         "question": "一支原子筆 30 元，小美有 84 元，最多可以買幾支原子筆？還剩下幾元？",
@@ -281,7 +369,15 @@
             "value": "24",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pen",
+          "mode": "each",
+          "total": "小美有 84 元",
+          "rule": "一支 30 元"
+        }
       },
       {
         "question": "一支原子筆 20 元，小美有 76 元，最多可以買幾支原子筆？還剩下幾元？",
@@ -306,7 +402,15 @@
             "value": "16",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pen",
+          "mode": "each",
+          "total": "小美有 76 元",
+          "rule": "一支 20 元"
+        }
       },
       {
         "question": "一支原子筆 20 元，小美有 92 元，最多可以買幾支原子筆？還剩下幾元？",
@@ -331,7 +435,15 @@
             "value": "12",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pen",
+          "mode": "each",
+          "total": "小美有 92 元",
+          "rule": "一支 20 元"
+        }
       },
       {
         "question": "一支原子筆 30 元，小美有 69 元，最多可以買幾支原子筆？還剩下幾元？",
@@ -356,7 +468,15 @@
             "value": "9",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "pen",
+          "mode": "each",
+          "total": "小美有 69 元",
+          "rule": "一支 30 元"
+        }
       }
     ],
     [
@@ -383,7 +503,16 @@
             "value": "5",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "jelly",
+          "holder": "student",
+          "mode": "share",
+          "total": "86 個果凍",
+          "rule": "平分給 27 位學生",
+          "count": 27
+        }
       },
       {
         "question": "老師買了 95 個果凍，想平分給 29 位學生，每位學生可以分到幾個果凍？還剩下幾個？",
@@ -408,7 +537,16 @@
             "value": "8",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "jelly",
+          "holder": "student",
+          "mode": "share",
+          "total": "95 個果凍",
+          "rule": "平分給 29 位學生",
+          "count": 29
+        }
       },
       {
         "question": "老師買了 82 個果凍，想平分給 24 位學生，每位學生可以分到幾個果凍？還剩下幾個？",
@@ -433,7 +571,16 @@
             "value": "10",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "jelly",
+          "holder": "student",
+          "mode": "share",
+          "total": "82 個果凍",
+          "rule": "平分給 24 位學生",
+          "count": 24
+        }
       },
       {
         "question": "老師買了 85 個果凍，想平分給 26 位學生，每位學生可以分到幾個果凍？還剩下幾個？",
@@ -458,7 +605,16 @@
             "value": "7",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "jelly",
+          "holder": "student",
+          "mode": "share",
+          "total": "85 個果凍",
+          "rule": "平分給 26 位學生",
+          "count": 26
+        }
       },
       {
         "question": "老師買了 79 個果凍，想平分給 29 位學生，每位學生可以分到幾個果凍？還剩下幾個？",
@@ -483,7 +639,16 @@
             "value": "21",
             "unit": "個"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "jelly",
+          "holder": "student",
+          "mode": "share",
+          "total": "79 個果凍",
+          "rule": "平分給 29 位學生",
+          "count": 29
+        }
       }
     ],
     [
@@ -510,7 +675,16 @@
             "value": "7",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "marble",
+          "holder": "bag",
+          "mode": "share",
+          "total": "70 顆彈珠",
+          "rule": "平分裝成 21 袋",
+          "count": 21
+        }
       },
       {
         "question": "弟弟有 80 顆彈珠，平分裝成 19 袋，一袋有幾顆彈珠？還剩下幾顆？",
@@ -535,7 +709,16 @@
             "value": "4",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "marble",
+          "holder": "bag",
+          "mode": "share",
+          "total": "80 顆彈珠",
+          "rule": "平分裝成 19 袋",
+          "count": 19
+        }
       },
       {
         "question": "弟弟有 80 顆彈珠，平分裝成 24 袋，一袋有幾顆彈珠？還剩下幾顆？",
@@ -560,7 +743,16 @@
             "value": "8",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "marble",
+          "holder": "bag",
+          "mode": "share",
+          "total": "80 顆彈珠",
+          "rule": "平分裝成 24 袋",
+          "count": 24
+        }
       },
       {
         "question": "弟弟有 90 顆彈珠，平分裝成 19 袋，一袋有幾顆彈珠？還剩下幾顆？",
@@ -585,7 +777,16 @@
             "value": "14",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "marble",
+          "holder": "bag",
+          "mode": "share",
+          "total": "90 顆彈珠",
+          "rule": "平分裝成 19 袋",
+          "count": 19
+        }
       },
       {
         "question": "弟弟有 60 顆彈珠，平分裝成 16 袋，一袋有幾顆彈珠？還剩下幾顆？",
@@ -610,7 +811,16 @@
             "value": "12",
             "unit": "顆"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "marble",
+          "holder": "bag",
+          "mode": "share",
+          "total": "60 顆彈珠",
+          "rule": "平分裝成 16 袋",
+          "count": 16
+        }
       }
     ]
   ]
