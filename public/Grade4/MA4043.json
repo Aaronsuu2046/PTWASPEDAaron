@@ -1,0 +1,122 @@
+{
+  "id": "MA4043",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用計算機點按出正確答案"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "expression": "80 ÷ 20",
+        "answer": "4"
+      },
+      {
+        "expression": "60 ÷ 20",
+        "answer": "3"
+      },
+      {
+        "expression": "90 ÷ 30",
+        "answer": "3"
+      },
+      {
+        "expression": "40 ÷ 20",
+        "answer": "2"
+      },
+      {
+        "expression": "80 ÷ 40",
+        "answer": "2"
+      }
+    ],
+    [
+      {
+        "expression": "65 ÷ 13",
+        "answer": "5"
+      },
+      {
+        "expression": "84 ÷ 12",
+        "answer": "7"
+      },
+      {
+        "expression": "52 ÷ 13",
+        "answer": "4"
+      },
+      {
+        "expression": "84 ÷ 14",
+        "answer": "6"
+      },
+      {
+        "expression": "45 ÷ 15",
+        "answer": "3"
+      }
+    ],
+    [
+      {
+        "expression": "87 ÷ 29",
+        "answer": "3"
+      },
+      {
+        "expression": "70 ÷ 35",
+        "answer": "2"
+      },
+      {
+        "expression": "84 ÷ 21",
+        "answer": "4"
+      },
+      {
+        "expression": "95 ÷ 19",
+        "answer": "5"
+      },
+      {
+        "expression": "88 ÷ 11",
+        "answer": "8"
+      }
+    ],
+    [
+      {
+        "expression": "77 ÷ 11",
+        "answer": "7"
+      },
+      {
+        "expression": "72 ÷ 12",
+        "answer": "6"
+      },
+      {
+        "expression": "91 ÷ 13",
+        "answer": "7"
+      },
+      {
+        "expression": "60 ÷ 15",
+        "answer": "4"
+      },
+      {
+        "expression": "70 ÷ 14",
+        "answer": "5"
+      }
+    ],
+    [
+      {
+        "expression": "64 ÷ 32",
+        "answer": "2"
+      },
+      {
+        "expression": "78 ÷ 26",
+        "answer": "3"
+      },
+      {
+        "expression": "62 ÷ 31",
+        "answer": "2"
+      },
+      {
+        "expression": "86 ÷ 43",
+        "answer": "2"
+      },
+      {
+        "expression": "66 ÷ 33",
+        "answer": "2"
+      }
+    ]
+  ]
+}
