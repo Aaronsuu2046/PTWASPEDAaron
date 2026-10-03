@@ -18,12 +18,11 @@
         >
           {{ calcOpen ? "收起計算機" : "打開計算機" }}
         </button>
-        <!-- 選填 scratch: "division"：打開直式計算紙（只是算算看，不計分） -->
+        <!-- 選填 scratch：打開直式計算紙（只是算算看，不計分） -->
         <button
           v-if="gameData.scratch && !answered"
           type="button"
           class="calc-toggle calc-toggle--scratch"
-          data-pad-avoid
           @click="toggleScratch"
         >
           {{ scratchOpen ? "收起計算紙" : "打開計算紙" }}
@@ -137,7 +136,7 @@
         </div>
       </div>
 
-      <!-- 直式計算紙：除數用學生在做法填的數字，格子用同一個輸入板填，不計分 -->
+      <!-- 直式計算紙：用學生在做法填的算式畫直式，格子用同一個輸入板填，不計分 -->
       <div v-if="gameData.scratch && scratchOpen && !answered" class="scratch">
         <div class="scratch__head">
           <span>計算紙（算算看，不計分）</span>
@@ -150,18 +149,41 @@
             關閉
           </button>
         </div>
+        <!-- 好幾步時可以切換要算哪一步 -->
+        <div v-if="gameData.steps.length > 1" class="scratch__steps">
+          <button
+            v-for="(_, s) in gameData.steps"
+            :key="`scratch-step-${s}`"
+            type="button"
+            class="scratch__step"
+            :class="{ 'scratch__step--on': scratchStep === s }"
+            data-pad-avoid
+            @click="pickScratchStep(s)"
+          >
+            第 {{ s + 1 }} 步
+          </button>
+        </div>
         <div class="scratch__body">
-          <DivisionFill
-            v-if="scratchDivisor"
-            ref="scratch"
-            :key="scratchDivisor"
-            :dividend="String(gameData.steps[0].a)"
-            :divisor="scratchDivisor"
-            @focus="onScratchFocus"
-          />
-          <p v-else class="scratch__tip">
-            先在「做法」填好除數，這裡就會出現直式喔！
-          </p>
+          <KeepAlive>
+            <DivisionFill
+              v-if="scratchExpr && scratchExpr.op === '÷'"
+              ref="scratch"
+              :key="scratchExpr.sig"
+              :dividend="scratchExpr.a"
+              :divisor="scratchExpr.b"
+              @focus="onScratchFocus"
+            />
+            <VerticalScratch
+              v-else-if="scratchExpr"
+              ref="scratch"
+              :key="scratchExpr.sig"
+              :a="scratchExpr.a"
+              :op="scratchExpr.op"
+              :b="scratchExpr.b"
+              @focus="onScratchFocus"
+            />
+          </KeepAlive>
+          <p v-if="!scratchExpr" class="scratch__tip">{{ scratchTip }}</p>
         </div>
       </div>
 
@@ -207,6 +229,7 @@ import SceneFigure from "./SceneFigure.vue";
 import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
 import FieldPad from "../Common/FieldPad.vue";
 import DivisionFill from "../Vertical/DivisionFill.vue";
+import VerticalScratch from "../Vertical/VerticalScratch.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -221,7 +244,8 @@ const MAX_LENGTH = 7;
 // 選填 step.remainder：除法有餘數時，結果後面多一格「… 餘數」（餘數為 0 時可空白或填 0）
 // 選填 answers: [{ prefix, value, unit }]：答案分成好幾格，取代 answer／unit
 // 選填 figure.shape "scene"：依題意畫的情境圖（SceneFigure）
-// 選填 scratch: "division"：可打開直式計算紙（被除數用第一步的 a，除數用學生填的 b），不計分
+// 選填 scratch（例如 "vertical"）：可打開直式計算紙，用學生在做法填的算式畫加減乘除直式，不計分；
+// 好幾步時跟著目前填的那一步，也可以自己切換
 export default {
   name: "WordProblemQuestion",
   components: {
@@ -232,6 +256,7 @@ export default {
     KidCalculator,
     FieldPad,
     DivisionFill,
+    VerticalScratch,
   },
   props: {
     gameData: { type: Object, required: true },
@@ -257,6 +282,7 @@ export default {
       revealing: false,
       calcOpen: false,
       scratchOpen: false,
+      scratchStep: 0,
       revealTimer: null,
     };
   },
@@ -273,10 +299,24 @@ export default {
       );
       return nums.some((n) => String(n ?? "").includes("."));
     },
-    // 計算紙的除數：學生在第一步填的除數（要是正整數才畫直式）
-    scratchDivisor() {
-      const b = this.values.s0b || "";
-      return /^[1-9]\d*$/.test(b) ? b : "";
+    // 計算紙要畫的直式：學生在這一步填好的「數 符號 數」
+    scratchExpr() {
+      const s = this.scratchStep;
+      const a = this.values[`s${s}a`] || "";
+      const op = this.values[`s${s}op`] || "";
+      const b = this.values[`s${s}b`] || "";
+      const num = /^\d+(\.\d+)?$/;
+      if (!OPS.includes(op) || !num.test(a) || !num.test(b)) return null;
+      if (op === "÷" && !(/^[1-9]\d*$/.test(a) && /^[1-9]\d*$/.test(b)))
+        return null;
+      return { a, op, b, sig: `${s}:${a}${op}${b}` };
+    },
+    scratchTip() {
+      const s = this.scratchStep;
+      const which = this.gameData.steps.length > 1 ? `第 ${s + 1} 步的` : "";
+      if (this.values[`s${s}op`] === "÷" && this.values[`s${s}b`])
+        return "直式除法只能算整數喔！";
+      return `先在「做法」填好${which}算式，這裡就會出現直式喔！`;
     },
     activeIsOp() {
       return /^s\d+op$/.test(this.active);
@@ -338,6 +378,10 @@ export default {
       if (this.answered) return;
       this.setValue("unit", unit);
     },
+    pickScratchStep(s) {
+      if (this.active === "scratch") this.closePad();
+      this.scratchStep = s;
+    },
     toggleScratch() {
       this.scratchOpen = !this.scratchOpen;
       if (this.active === "scratch") this.closePad();
@@ -358,6 +402,9 @@ export default {
     activate(key) {
       if (this.answered || this.isGiven(key)) return;
       if (this.active === "scratch") this.$refs.scratch?.blur();
+      // 計算紙跟著目前填的那一步
+      const step = key.match(/^s(\d+)/);
+      if (step) this.scratchStep = Number(step[1]);
       this.active = key;
       this.activeEl = this.$el.querySelector(`[data-key="${key}"]`);
     },
@@ -376,6 +423,8 @@ export default {
       if (this.active === "scratch") {
         if (/^\d$/.test(key)) this.$refs.scratch?.input(key);
         else if (key === "←" || key === "clear") this.$refs.scratch?.input("←");
+        else if (key === "." && this.scratchExpr?.op !== "÷")
+          this.$refs.scratch?.input(".");
         this.syncScratchPad();
         return;
       }
@@ -661,16 +710,42 @@ export default {
     color: #00695c;
   }
 
+  &__steps {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  &__step {
+    flex: 1;
+    padding: 0.2rem 0.4rem;
+    font-size: 1.1rem;
+    font-weight: $font-bold;
+    color: #00695c;
+    background-color: #ffffff;
+    border: 2px solid #80cbc4;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &--on {
+      color: #ffffff;
+      background-color: #26a69a;
+      border-color: #00796b;
+    }
+  }
+
   // 計算紙格子小一點，直式整個放得下
-  :deep(.dfill) {
+  :deep(.dfill),
+  :deep(.vfill) {
     --cell: 2.3rem;
   }
 
-  :deep(.dfill__cell) {
+  :deep(.dfill__cell),
+  :deep(.vfill__cell) {
     font-size: 1.5rem;
   }
 
-  :deep(.dfill__grid) {
+  :deep(.dfill__grid),
+  :deep(.vfill__grid) {
     padding: 0.4rem 0.6rem;
     row-gap: 0.1rem;
   }
@@ -678,11 +753,13 @@ export default {
   @media (max-width: 1100px), (max-height: 760px) {
     width: 18rem;
 
-    :deep(.dfill) {
+    :deep(.dfill),
+    :deep(.vfill) {
       --cell: 1.9rem;
     }
 
-    :deep(.dfill__cell) {
+    :deep(.dfill__cell),
+    :deep(.vfill__cell) {
       font-size: 1.3rem;
     }
   }

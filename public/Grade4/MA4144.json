@@ -77,7 +77,8 @@
         "answer": "7",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "把圖形分成正方形和長方形，算算看面積是多少？",
@@ -147,7 +148,8 @@
         "answer": "81",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "把圖形分成正方形和長方形，算算看面積是多少？",
@@ -217,7 +219,8 @@
         "answer": "61",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "把圖形分成正方形和長方形，算算看面積是多少？",
@@ -287,7 +290,8 @@
         "answer": "84",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "把圖形分成正方形和長方形，算算看面積是多少？",
@@ -357,7 +361,8 @@
         "answer": "116",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ],
     [
@@ -433,7 +438,8 @@
         "answer": "31",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
@@ -507,7 +513,8 @@
         "answer": "350",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
@@ -581,7 +588,8 @@
         "answer": "112",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
@@ -655,7 +663,8 @@
         "answer": "128",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大圖形的面積扣掉白色的部分，算算看面積是多少？",
@@ -729,7 +738,8 @@
         "answer": "176",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ],
     [
@@ -798,7 +808,8 @@
         "answer": "400",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
@@ -865,7 +876,8 @@
         "answer": "70",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
@@ -932,7 +944,8 @@
         "answer": "252",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
@@ -1012,7 +1025,8 @@
         "answer": "105",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用大長方形的面積扣掉白色的部分，算算看面積是多少？",
@@ -1079,7 +1093,8 @@
         "answer": "315",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ]
   ]

@@ -34,7 +34,8 @@
         "answer": "10",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的周長是多少？",
@@ -61,7 +62,8 @@
         "answer": "72",
         "unit": "m",
         "unitOptions": ["m", "m²"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的周長是多少？",
@@ -88,7 +90,8 @@
         "answer": "16",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的周長是多少？",
@@ -115,7 +118,8 @@
         "answer": "20",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的周長是多少？",
@@ -142,7 +146,8 @@
         "answer": "22",
         "unit": "m",
         "unitOptions": ["m", "m²"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       }
     ],
     [
@@ -164,7 +169,8 @@
         "answer": "40",
         "unit": "cm",
         "unitOptions": ["cm", "cm²"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的周長是多少？",
@@ -184,7 +190,8 @@
         "answer": "12",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的周長是多少？",
@@ -204,7 +211,8 @@
         "answer": "48",
         "unit": "cm",
         "unitOptions": ["cm", "cm²"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的周長是多少？",
@@ -224,7 +232,8 @@
         "answer": "64",
         "unit": "m",
         "unitOptions": ["m", "m²"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的周長是多少？",
@@ -244,7 +253,8 @@
         "answer": "44",
         "unit": "cm",
         "unitOptions": ["cm", "cm²"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       }
     ],
     [
@@ -308,7 +318,8 @@
         "answer": "32",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
@@ -377,7 +388,8 @@
         "answer": "32",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
@@ -445,7 +457,8 @@
         "answer": "32",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
@@ -514,7 +527,8 @@
         "answer": "32",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "圖卡拼成下面的圖形，算算看，這個圖形的周長是多少？",
@@ -582,7 +596,8 @@
         "answer": "32",
         "unit": "公分",
         "unitOptions": ["公分", "平方公分"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       }
     ]
   ]

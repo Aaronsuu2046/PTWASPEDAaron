@@ -20,7 +20,8 @@
           }
         ],
         "answer": "7.2",
-        "unit": "公升"
+        "unit": "公升",
+        "scratch": "vertical"
       },
       {
         "question": "豆漿一瓶 2.3 公升，5 瓶豆漿共是多少公升？",
@@ -33,7 +34,8 @@
           }
         ],
         "answer": "11.5",
-        "unit": "公升"
+        "unit": "公升",
+        "scratch": "vertical"
       },
       {
         "question": "豆漿一瓶 1.6 公升，3 瓶豆漿共是多少公升？",
@@ -46,7 +48,8 @@
           }
         ],
         "answer": "4.8",
-        "unit": "公升"
+        "unit": "公升",
+        "scratch": "vertical"
       },
       {
         "question": "豆漿一瓶 1.5 公升，7 瓶豆漿共是多少公升？",
@@ -59,7 +62,8 @@
           }
         ],
         "answer": "10.5",
-        "unit": "公升"
+        "unit": "公升",
+        "scratch": "vertical"
       },
       {
         "question": "豆漿一瓶 3.4 公升，4 瓶豆漿共是多少公升？",
@@ -72,7 +76,8 @@
           }
         ],
         "answer": "13.6",
-        "unit": "公升"
+        "unit": "公升",
+        "scratch": "vertical"
       }
     ],
     [
@@ -87,7 +92,8 @@
           }
         ],
         "answer": "32.4",
-        "unit": "公斤"
+        "unit": "公斤",
+        "scratch": "vertical"
       },
       {
         "question": "一包米重 2.3 公斤，15 包米共重多少公斤？",
@@ -100,7 +106,8 @@
           }
         ],
         "answer": "34.5",
-        "unit": "公斤"
+        "unit": "公斤",
+        "scratch": "vertical"
       },
       {
         "question": "一包米重 3.6 公斤，13 包米共重多少公斤？",
@@ -113,7 +120,8 @@
           }
         ],
         "answer": "46.8",
-        "unit": "公斤"
+        "unit": "公斤",
+        "scratch": "vertical"
       },
       {
         "question": "一包米重 3.4 公斤，14 包米共重多少公斤？",
@@ -126,7 +134,8 @@
           }
         ],
         "answer": "47.6",
-        "unit": "公斤"
+        "unit": "公斤",
+        "scratch": "vertical"
       },
       {
         "question": "一包米重 2.6 公斤，14 包米共重多少公斤？",
@@ -139,7 +148,8 @@
           }
         ],
         "answer": "36.4",
-        "unit": "公斤"
+        "unit": "公斤",
+        "scratch": "vertical"
       }
     ],
     [
@@ -154,7 +164,8 @@
           }
         ],
         "answer": "138",
-        "unit": "公分"
+        "unit": "公分",
+        "scratch": "vertical"
       },
       {
         "question": "做一個蝴蝶結要 7.8 公分的緞帶，做 10 個蝴蝶結需要多長的緞帶？",
@@ -167,7 +178,8 @@
           }
         ],
         "answer": "78",
-        "unit": "公分"
+        "unit": "公分",
+        "scratch": "vertical"
       },
       {
         "question": "做一個蝴蝶結要 4.6 公分的緞帶，做 30 個蝴蝶結需要多長的緞帶？",
@@ -180,7 +192,8 @@
           }
         ],
         "answer": "138",
-        "unit": "公分"
+        "unit": "公分",
+        "scratch": "vertical"
       },
       {
         "question": "做一個蝴蝶結要 5.3 公分的緞帶，做 40 個蝴蝶結需要多長的緞帶？",
@@ -193,7 +206,8 @@
           }
         ],
         "answer": "212",
-        "unit": "公分"
+        "unit": "公分",
+        "scratch": "vertical"
       },
       {
         "question": "做一個蝴蝶結要 3.9 公分的緞帶，做 30 個蝴蝶結需要多長的緞帶？",
@@ -206,7 +220,8 @@
           }
         ],
         "answer": "117",
-        "unit": "公分"
+        "unit": "公分",
+        "scratch": "vertical"
       }
     ],
     [
@@ -221,7 +236,8 @@
           }
         ],
         "answer": "180",
-        "unit": "公克"
+        "unit": "公克",
+        "scratch": "vertical"
       },
       {
         "question": "做一個杯子蛋糕需要 12.4 公克的糖，做 25 個杯子蛋糕需要多少公克的糖？",
@@ -234,7 +250,8 @@
           }
         ],
         "answer": "310",
-        "unit": "公克"
+        "unit": "公克",
+        "scratch": "vertical"
       },
       {
         "question": "做一個杯子蛋糕需要 9.6 公克的糖，做 15 個杯子蛋糕需要多少公克的糖？",
@@ -247,7 +264,8 @@
           }
         ],
         "answer": "144",
-        "unit": "公克"
+        "unit": "公克",
+        "scratch": "vertical"
       },
       {
         "question": "做一個杯子蛋糕需要 13.5 公克的糖，做 22 個杯子蛋糕需要多少公克的糖？",
@@ -260,7 +278,8 @@
           }
         ],
         "answer": "297",
-        "unit": "公克"
+        "unit": "公克",
+        "scratch": "vertical"
       },
       {
         "question": "做一個杯子蛋糕需要 8.4 公克的糖，做 25 個杯子蛋糕需要多少公克的糖？",
@@ -273,7 +292,8 @@
           }
         ],
         "answer": "210",
-        "unit": "公克"
+        "unit": "公克",
+        "scratch": "vertical"
       }
     ],
     [
@@ -288,7 +308,8 @@
           }
         ],
         "answer": "312",
-        "unit": "公里"
+        "unit": "公里",
+        "scratch": "vertical"
       },
       {
         "question": "爺爺的車加 1 公升汽油，平均可行駛 12.9 公里；加 30 公升汽油平均可行駛幾公里？",
@@ -301,7 +322,8 @@
           }
         ],
         "answer": "387",
-        "unit": "公里"
+        "unit": "公里",
+        "scratch": "vertical"
       },
       {
         "question": "爺爺的車加 1 公升汽油，平均可行駛 16.7 公里；加 30 公升汽油平均可行駛幾公里？",
@@ -314,7 +336,8 @@
           }
         ],
         "answer": "501",
-        "unit": "公里"
+        "unit": "公里",
+        "scratch": "vertical"
       },
       {
         "question": "爺爺的車加 1 公升汽油，平均可行駛 13.4 公里；加 40 公升汽油平均可行駛幾公里？",
@@ -327,7 +350,8 @@
           }
         ],
         "answer": "536",
-        "unit": "公里"
+        "unit": "公里",
+        "scratch": "vertical"
       },
       {
         "question": "爺爺的車加 1 公升汽油，平均可行駛 17.4 公里；加 20 公升汽油平均可行駛幾公里？",
@@ -340,7 +364,8 @@
           }
         ],
         "answer": "348",
-        "unit": "公里"
+        "unit": "公里",
+        "scratch": "vertical"
       }
     ]
   ]
