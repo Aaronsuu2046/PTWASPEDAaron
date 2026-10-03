@@ -73,6 +73,7 @@ const OPTIONS = [
   { value: "ccw", label: "逆時針方向旋轉" },
 ];
 const NAMES = { cw: "順時針", ccw: "逆時針" };
+const LOOP_SLACK_MS = 200;
 
 // 順時針和逆時針：看旋轉情境動畫，選方向
 export default {
@@ -116,7 +117,8 @@ export default {
     // 動畫很短，重複播放到題目設定的秒數再停
     onEnded(event) {
       const seconds = this.gameData.seconds ?? 0;
-      if (performance.now() - this.playStart < seconds * 1000) {
+      // 留一點誤差，剛好播滿秒數時不會多播一輪
+      if (performance.now() - this.playStart < seconds * 1000 - LOOP_SLACK_MS) {
         event.target.currentTime = 0;
         event.target.play();
       }
