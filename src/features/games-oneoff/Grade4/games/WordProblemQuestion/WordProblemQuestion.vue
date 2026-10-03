@@ -5,7 +5,10 @@
     </div>
 
     <div class="game-area">
-      <div class="work-panel">
+      <div
+        class="work-panel"
+        :class="{ 'work-panel--narrow': scratchOpen && !answered }"
+      >
         <!-- 選填 calculator：可打開 MA4151 的計算機，看得到計算過程 -->
         <button
           v-if="gameData.calculator && !answered"
@@ -15,17 +18,33 @@
         >
           {{ calcOpen ? "收起計算機" : "打開計算機" }}
         </button>
+        <!-- 選填 scratch: "division"：打開直式計算紙（只是算算看，不計分） -->
+        <button
+          v-if="gameData.scratch && !answered"
+          type="button"
+          class="calc-toggle calc-toggle--scratch"
+          data-pad-avoid
+          @click="toggleScratch"
+        >
+          {{ scratchOpen ? "收起計算紙" : "打開計算紙" }}
+        </button>
         <div class="question-row">
           <p class="question-text">{{ gameData.question }}</p>
           <!-- 選填：長方形／正方形示意圖 -->
+          <template v-if="scratchOpen && !answered" />
           <CompositeFigure
-            v-if="gameData.figure && gameData.figure.shape === 'composite'"
+            v-else-if="gameData.figure && gameData.figure.shape === 'composite'"
             class="work-figure work-figure--composite"
             :figure="gameData.figure"
           />
           <TileFigure
             v-else-if="gameData.figure && gameData.figure.shape === 'tiles'"
             class="work-figure work-figure--tiles"
+            :figure="gameData.figure"
+          />
+          <SceneFigure
+            v-else-if="gameData.figure && gameData.figure.shape === 'scene'"
+            class="work-figure work-figure--scene"
             :figure="gameData.figure"
           />
           <RectFigure
@@ -43,8 +62,9 @@
             class="work-row"
           >
             <span class="work-label">{{ s === 0 ? "做法：" : "" }}</span>
-            <template v-for="part in STEP_PARTS" :key="`${s}-${part}`">
+            <template v-for="part in stepParts(step)" :key="`${s}-${part}`">
               <span v-if="part === 'eq'" class="work-sign">=</span>
+              <span v-else-if="part === 'dots'" class="work-sign">…</span>
               <button
                 v-else
                 type="button"
@@ -60,7 +80,27 @@
             </template>
           </div>
 
-          <div class="work-row">
+          <!-- 選填 answers：答案分成好幾格（例如商與餘數），每格前後有固定文字與單位 -->
+          <div v-if="gameData.answers" class="work-row work-row--answers">
+            <span class="work-label">答：</span>
+            <template v-for="(ans, k) in gameData.answers" :key="`ans-${k}`">
+              <span v-if="ans.prefix" class="work-unit">{{ ans.prefix }}</span>
+              <button
+                type="button"
+                class="fill-box fill-box--answer"
+                :class="boxClass(`answer${k}`, false)"
+                :data-key="`answer${k}`"
+                data-pad-field
+                aria-label="答案"
+                @click="activate(`answer${k}`)"
+              >
+                {{ display(`answer${k}`) }}
+              </button>
+              <span class="work-unit">{{ ans.unit }}</span>
+            </template>
+          </div>
+
+          <div v-else class="work-row">
             <span class="work-label">答：</span>
             <button
               type="button"
@@ -94,6 +134,34 @@
             </template>
             <span v-else class="work-unit">{{ gameData.unit }}</span>
           </div>
+        </div>
+      </div>
+
+      <!-- 直式計算紙：除數用學生在做法填的數字，格子用同一個輸入板填，不計分 -->
+      <div v-if="gameData.scratch && scratchOpen && !answered" class="scratch">
+        <div class="scratch__head">
+          <span>計算紙（算算看，不計分）</span>
+          <button
+            type="button"
+            class="calc-float__close"
+            data-pad-avoid
+            @click="toggleScratch"
+          >
+            關閉
+          </button>
+        </div>
+        <div class="scratch__body">
+          <DivisionFill
+            v-if="scratchDivisor"
+            ref="scratch"
+            :key="scratchDivisor"
+            :dividend="String(gameData.steps[0].a)"
+            :divisor="scratchDivisor"
+            @focus="onScratchFocus"
+          />
+          <p v-else class="scratch__tip">
+            先在「做法」填好除數，這裡就會出現直式喔！
+          </p>
         </div>
       </div>
 
@@ -135,8 +203,10 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import RectFigure from "./RectFigure.vue";
 import CompositeFigure from "./CompositeFigure.vue";
 import TileFigure from "./TileFigure.vue";
+import SceneFigure from "./SceneFigure.vue";
 import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
 import FieldPad from "../Common/FieldPad.vue";
+import DivisionFill from "../Vertical/DivisionFill.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 const OP_LABEL = { "-": "−" };
@@ -148,14 +218,20 @@ const MAX_LENGTH = 7;
 // 學生填每一步的算式與答案；數字以數值比對（7.20 = 7.2）
 // 選填 calculator: true：畫面上可打開小學生版計算機（顯示計算紀錄）
 // 選填 step.given（例如 ["a"]）：該部分由題目直接給定，不用填
+// 選填 step.remainder：除法有餘數時，結果後面多一格「… 餘數」（餘數為 0 時可空白或填 0）
+// 選填 answers: [{ prefix, value, unit }]：答案分成好幾格，取代 answer／unit
+// 選填 figure.shape "scene"：依題意畫的情境圖（SceneFigure）
+// 選填 scratch: "division"：可打開直式計算紙（被除數用第一步的 a，除數用學生填的 b），不計分
 export default {
   name: "WordProblemQuestion",
   components: {
     RectFigure,
     CompositeFigure,
     TileFigure,
+    SceneFigure,
     KidCalculator,
     FieldPad,
+    DivisionFill,
   },
   props: {
     gameData: { type: Object, required: true },
@@ -172,7 +248,6 @@ export default {
     });
     return {
       OPS,
-      STEP_PARTS: ["a", "op", "b", "eq", "result"],
       values,
       // 目前作答的格子；一開始不選，點格子才出現輸入板
       active: null,
@@ -181,6 +256,7 @@ export default {
       answered: false,
       revealing: false,
       calcOpen: false,
+      scratchOpen: false,
       revealTimer: null,
     };
   },
@@ -191,10 +267,16 @@ export default {
     // 題目（做法或答案）有小數時才顯示小數點鍵
     allowDecimal() {
       const nums = [this.gameData.answer];
+      (this.gameData.answers || []).forEach((ans) => nums.push(ans.value));
       this.gameData.steps.forEach((step) =>
-        nums.push(step.a, step.b, step.result)
+        nums.push(step.a, step.b, step.result, step.remainder)
       );
       return nums.some((n) => String(n ?? "").includes("."));
+    },
+    // 計算紙的除數：學生在第一步填的除數（要是正整數才畫直式）
+    scratchDivisor() {
+      const b = this.values.s0b || "";
+      return /^[1-9]\d*$/.test(b) ? b : "";
     },
     activeIsOp() {
       return /^s\d+op$/.test(this.active);
@@ -203,12 +285,18 @@ export default {
     fieldOrder() {
       const keys = [];
       this.gameData.steps.forEach((_, s) => {
-        ["a", "op", "b", "result"].forEach((part) => {
+        ["a", "op", "b", "result", "rem"].forEach((part) => {
+          if (part === "rem" && !this.hasRemainder(this.gameData.steps[s]))
+            return;
           if (!this.isGiven(`s${s}${part}`)) keys.push(`s${s}${part}`);
         });
       });
-      keys.push("answer");
-      return keys;
+      return keys.concat(this.answerKeys);
+    },
+    answerKeys() {
+      return this.gameData.answers
+        ? this.gameData.answers.map((_, k) => `answer${k}`)
+        : ["answer"];
     },
   },
   created() {
@@ -219,6 +307,13 @@ export default {
     clearTimeout(this.revealTimer);
   },
   methods: {
+    hasRemainder(step) {
+      return step.remainder !== undefined && step.remainder !== null;
+    },
+    stepParts(step) {
+      const parts = ["a", "op", "b", "eq", "result"];
+      return this.hasRemainder(step) ? [...parts, "dots", "rem"] : parts;
+    },
     showOp(op) {
       return OP_LABEL[op] || op;
     },
@@ -243,12 +338,31 @@ export default {
       if (this.answered) return;
       this.setValue("unit", unit);
     },
+    toggleScratch() {
+      this.scratchOpen = !this.scratchOpen;
+      if (this.active === "scratch") this.closePad();
+    },
+    // 點了計算紙的格子：輸入板移到那一格
+    onScratchFocus() {
+      this.active = "scratch";
+      this.syncScratchPad();
+    },
+    syncScratchPad() {
+      this.$nextTick(() => {
+        const id = this.$refs.scratch?.active;
+        this.activeEl = id
+          ? this.$el.querySelector(`.scratch [data-cell="${id}"]`)
+          : null;
+      });
+    },
     activate(key) {
       if (this.answered || this.isGiven(key)) return;
+      if (this.active === "scratch") this.$refs.scratch?.blur();
       this.active = key;
       this.activeEl = this.$el.querySelector(`[data-key="${key}"]`);
     },
     closePad() {
+      if (this.active === "scratch") this.$refs.scratch?.blur();
       this.active = null;
       this.activeEl = null;
     },
@@ -258,6 +372,13 @@ export default {
     },
     press(key) {
       if (this.answered || !this.active) return;
+      // 計算紙：只放數字，刪除與清除都是清掉這一格
+      if (this.active === "scratch") {
+        if (/^\d$/.test(key)) this.$refs.scratch?.input(key);
+        else if (key === "←" || key === "clear") this.$refs.scratch?.input("←");
+        this.syncScratchPad();
+        return;
+      }
       const current = this.values[this.active] || "";
       if (key === "clear") {
         this.setValue(this.active, "");
@@ -295,7 +416,12 @@ export default {
         this.gameData.stepCheck === "consistent"
           ? this.findInconsistentSteps()
           : this.findStepMismatches();
-      if (!this.sameNumber(this.values.answer, this.gameData.answer))
+      if (this.gameData.answers) {
+        this.gameData.answers.forEach((ans, k) => {
+          if (!this.sameNumber(this.values[`answer${k}`], ans.value))
+            wrong.push(`answer${k}`);
+        });
+      } else if (!this.sameNumber(this.values.answer, this.gameData.answer))
         wrong.push("answer");
       if (this.gameData.unitOptions && this.values.unit !== this.gameData.unit)
         wrong.push("unit");
@@ -319,6 +445,13 @@ export default {
         }
         if (!this.sameNumber(v("result"), step.result))
           wrong.push(`s${s}result`);
+        // 餘數：整除時可以空白（只寫商）或填 0
+        if (this.hasRemainder(step)) {
+          const rem = v("rem");
+          const blankOk = Number(step.remainder) === 0 && !rem;
+          if (!blankOk && !this.sameNumber(rem, step.remainder))
+            wrong.push(`s${s}rem`);
+        }
       });
       return wrong;
     },
@@ -356,9 +489,10 @@ export default {
       return this.gameData.steps
         .map((step, s) => {
           const v = pick(step, s);
+          const rem = this.hasRemainder(step) ? ` … ${v.rem || "_"}` : "";
           return `${v.a || "_"} ${this.showOp(v.op) || "_"} ${v.b || "_"} = ${
             v.result || "_"
-          }`;
+          }${rem}`;
         })
         .join("；");
     },
@@ -366,16 +500,33 @@ export default {
       if (this.answered) return;
       this.wrongKeys = this.findWrongKeys();
       const isCorrect = this.wrongKeys.length === 0;
-      const expected = `${this.formatSteps((step) => step)}，答：${
-        this.gameData.answer
-      } ${this.gameData.unit}`;
+      const answers = this.gameData.answers;
+      const answerText = (pickValue) =>
+        answers
+          .map((ans, k) => `${ans.prefix || ""}${pickValue(ans, k)}${ans.unit}`)
+          .join("，");
+      const expected = `${this.formatSteps((step) => ({
+        ...step,
+        rem: step.remainder,
+      }))}，答：${
+        answers
+          ? answerText((ans) => ans.value)
+          : `${this.gameData.answer} ${this.gameData.unit}`
+      }`;
       const actual = `${this.formatSteps((_, s) => ({
         a: this.values[`s${s}a`],
         op: this.values[`s${s}op`],
         b: this.values[`s${s}b`],
         result: this.values[`s${s}result`],
-      }))}，答：${this.values.answer || "_"} ${
-        this.gameData.unitOptions ? this.values.unit || "_" : this.gameData.unit
+        rem: this.values[`s${s}rem`],
+      }))}，答：${
+        answers
+          ? answerText((_, k) => this.values[`answer${k}`] || "_")
+          : `${this.values.answer || "_"} ${
+              this.gameData.unitOptions
+                ? this.values.unit || "_"
+                : this.gameData.unit
+            }`
       }`;
       this.$emit("add-record", [expected, actual, isCorrect ? "正確" : "錯誤"]);
       if (isCorrect) {
@@ -385,6 +536,9 @@ export default {
           answer: this.gameData.answer,
           unit: this.gameData.unit,
         };
+        (this.gameData.answers || []).forEach((ans, k) => {
+          filled[`answer${k}`] = String(ans.value);
+        });
         // consistent 模式保留學生自己的等價做法，其餘顯示標準做法
         const keepOwn = this.gameData.stepCheck === "consistent";
         this.gameData.steps.forEach((step, s) => {
@@ -393,6 +547,7 @@ export default {
           filled[`s${s}op`] = step.op;
           filled[`s${s}b`] = step.b;
           filled[`s${s}result`] = step.result;
+          if (this.hasRemainder(step)) filled[`s${s}rem`] = step.remainder;
         });
         this.values = keepOwn ? { ...this.values, ...filled } : filled;
         this.$emit("play-effect", "CorrectSound");
@@ -444,6 +599,93 @@ export default {
   background-color: $sub-color;
   border-radius: $border-radius;
   padding: $padding--small;
+}
+
+.calc-toggle--scratch {
+  background-color: #26a69a;
+  box-shadow: 0 3px 0 #00796b;
+}
+
+// 打開計算紙時作答區變窄：格子縮小一點，題目旁的圖先藏起來
+.work-panel--narrow {
+  .fill-box {
+    min-width: 4.4rem;
+    font-size: 1.7rem;
+
+    &--op {
+      min-width: 3rem;
+    }
+  }
+
+  .work-label {
+    width: auto;
+  }
+}
+
+.scratch {
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 21rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background-color: #e0f2f1;
+  border: 3px solid #80cbc4;
+  border-radius: 18px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: $font-bold;
+    color: #00695c;
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__tip {
+    margin: 1rem 0.5rem;
+    font-size: 1.3rem;
+    font-weight: $font-bold;
+    line-height: 1.5;
+    color: #00695c;
+  }
+
+  // 計算紙格子小一點，直式整個放得下
+  :deep(.dfill) {
+    --cell: 2.3rem;
+  }
+
+  :deep(.dfill__cell) {
+    font-size: 1.5rem;
+  }
+
+  :deep(.dfill__grid) {
+    padding: 0.4rem 0.6rem;
+    row-gap: 0.1rem;
+  }
+
+  @media (max-width: 1100px), (max-height: 760px) {
+    width: 18rem;
+
+    :deep(.dfill) {
+      --cell: 1.9rem;
+    }
+
+    :deep(.dfill__cell) {
+      font-size: 1.3rem;
+    }
+  }
 }
 
 .calc-toggle {
@@ -580,6 +822,11 @@ export default {
   width: clamp(13rem, 30%, 22rem);
 }
 
+.work-figure--scene {
+  width: clamp(14rem, 32%, 22rem);
+  padding: 0.3rem;
+}
+
 .work-block {
   display: flex;
   flex-direction: column;
@@ -606,6 +853,13 @@ export default {
 
 .work-unit {
   font-size: 1.8rem;
+  white-space: nowrap;
+}
+
+// 多格答案放不下時整組換行，文字本身不拆開
+.work-row--answers {
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
 }
 
 .fill-box {
