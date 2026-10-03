@@ -1,5 +1,6 @@
 <template>
   <!-- 半圓量角器：放在父層 <svg> 裡，以中心點為原點 (0,0)、0° 線在 x 軸、刻度在上方 -->
+  <!-- 數字和實體量角器一樣沿著圓弧排，0 與 180 的字尾和底邊切齊 -->
   <g class="protractor" :class="{ 'protractor--glass': glass }">
     <path :d="band(0, R)" class="protractor__body" />
     <path :d="band(OUTER_IN * R, R)" class="protractor__outer" />
@@ -35,24 +36,28 @@
 
     <g class="protractor__numbers">
       <text
-        v-for="n in numbers"
+        v-for="n in outerNumbers"
         :key="`o${n.deg}`"
-        :x="n.outer[0]"
-        :y="n.outer[1]"
+        :x="n.x"
+        :y="n.y"
+        :transform="`rotate(${n.turn} ${n.x} ${n.y})`"
+        :text-anchor="n.anchor"
         class="protractor__num protractor__num--outer"
-        :font-size="R * 0.068 * fontScale"
+        :font-size="outerSize"
       >
-        {{ 180 - n.deg }}
+        {{ n.label }}
       </text>
       <text
-        v-for="n in numbers"
+        v-for="n in innerNumbers"
         :key="`i${n.deg}`"
-        :x="n.inner[0]"
-        :y="n.inner[1]"
+        :x="n.x"
+        :y="n.y"
+        :transform="`rotate(${n.turn} ${n.x} ${n.y})`"
+        :text-anchor="n.anchor"
         class="protractor__num protractor__num--inner"
-        :font-size="R * 0.058 * fontScale"
+        :font-size="innerSize"
       >
-        {{ n.deg }}
+        {{ n.label }}
       </text>
     </g>
 
@@ -63,6 +68,18 @@
 
 <script>
 import { OUTER_IN, INNER_IN, polar } from "./protractor.js";
+
+// 數字中心所在的半徑比例
+const OUTER_NUM = 0.875;
+const INNER_NUM = 0.71;
+// 一個數字的字寬約為字級的 0.55 倍
+const DIGIT_EM = 0.55;
+// 兩端數字離 0° 線的距離、兩端數字和旁邊數字之間的空隙（半徑比例）
+const END_LIFT = 0.01;
+const END_GAP = 0.02;
+// 數字大小（半徑比例）；字放大倍率再大也不超過上限，免得兩端擠在一起
+const OUTER_SIZE = { base: 0.06, max: 0.062 };
+const INNER_SIZE = { base: 0.05, max: 0.047 };
 
 export default {
   name: "ProtractorTool",
@@ -114,22 +131,59 @@ export default {
       }
       return list;
     },
-    numbers() {
-      const R = this.R;
-      const list = [];
-      for (let deg = 0; deg <= 180; deg += 10) {
-        // 左右兩端的數字往上挪一點，避免壓到 0° 線
-        const lift = deg === 0 || deg === 180 ? 4 : 0;
-        list.push({
-          deg,
-          outer: polar(deg + (deg === 0 ? lift : -lift), R * 0.865),
-          inner: polar(deg + (deg === 0 ? lift * 1.4 : -lift * 1.4), R * 0.7),
-        });
-      }
-      return list;
+    outerSize() {
+      return (
+        this.R * Math.min(OUTER_SIZE.base * this.fontScale, OUTER_SIZE.max)
+      );
+    },
+    innerSize() {
+      return (
+        this.R * Math.min(INNER_SIZE.base * this.fontScale, INNER_SIZE.max)
+      );
+    },
+    // 外圈從左邊 0 開始，內圈從右邊 0 開始
+    outerNumbers() {
+      return this.ringNumbers(OUTER_NUM, this.outerSize, (deg) => 180 - deg);
+    },
+    innerNumbers() {
+      return this.ringNumbers(INNER_NUM, this.innerSize, (deg) => deg);
     },
   },
   methods: {
+    // 數字沿著圓弧轉向（字頭朝外），正對自己的刻度
+    // 0° 與 180° 兩端的數字和實體量角器一樣從底邊往上寫，字尾和底邊切齊；
+    // 緊鄰兩端的數字（例如 170）若會碰到，就沿圓弧往上挪一點
+    ringNumbers(radius, size, labelOf) {
+      const R = this.R;
+      const r = radius * R;
+      const len = (label) => String(label).length * DIGIT_EM * size;
+      const list = [];
+      for (let deg = 0; deg <= 180; deg += 10) {
+        const label = labelOf(deg);
+        if (deg === 0 || deg === 180) {
+          const x = deg === 0 ? r : -r;
+          list.push({
+            deg,
+            label,
+            x,
+            y: -END_LIFT * R,
+            turn: 90 - deg,
+            anchor: deg === 0 ? "end" : "start",
+          });
+          continue;
+        }
+        let at = deg;
+        if (deg === 10 || deg === 170) {
+          const end = labelOf(deg === 10 ? 0 : 180);
+          const need = END_LIFT * R + len(end) + END_GAP * R + len(label) / 2;
+          const lift = (Math.asin(Math.min(need / r, 1)) * 180) / Math.PI;
+          at = deg === 10 ? Math.max(10, lift) : Math.min(170, 180 - lift);
+        }
+        const [x, y] = polar(at, r);
+        list.push({ deg, label, x, y, turn: 90 - at, anchor: "middle" });
+      }
+      return list;
+    },
     // 半徑 r1～r2 的上半圓環
     band(r1, r2) {
       if (r1 === 0) {
@@ -190,7 +244,6 @@ export default {
   }
 
   &__num {
-    text-anchor: middle;
     dominant-baseline: central;
     font-weight: 700;
 
