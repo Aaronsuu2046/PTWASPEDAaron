@@ -1,0 +1,172 @@
+{
+  "id": "MA4047",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用直式算算看"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "dividend": "1520",
+        "divisor": "40",
+        "quotient": "38",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1950",
+        "divisor": "50",
+        "quotient": "39",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1680",
+        "divisor": "40",
+        "quotient": "42",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1680",
+        "divisor": "60",
+        "quotient": "28",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1890",
+        "divisor": "70",
+        "quotient": "27",
+        "remainder": "0"
+      }
+    ],
+    [
+      {
+        "dividend": "2166",
+        "divisor": "30",
+        "quotient": "72",
+        "remainder": "6"
+      },
+      {
+        "dividend": "2259",
+        "divisor": "30",
+        "quotient": "75",
+        "remainder": "9"
+      },
+      {
+        "dividend": "2245",
+        "divisor": "40",
+        "quotient": "56",
+        "remainder": "5"
+      },
+      {
+        "dividend": "4308",
+        "divisor": "50",
+        "quotient": "86",
+        "remainder": "8"
+      },
+      {
+        "dividend": "3487",
+        "divisor": "60",
+        "quotient": "58",
+        "remainder": "7"
+      }
+    ],
+    [
+      {
+        "dividend": "1900",
+        "divisor": "51",
+        "quotient": "37",
+        "remainder": "13"
+      },
+      {
+        "dividend": "2000",
+        "divisor": "46",
+        "quotient": "43",
+        "remainder": "22"
+      },
+      {
+        "dividend": "1800",
+        "divisor": "33",
+        "quotient": "54",
+        "remainder": "18"
+      },
+      {
+        "dividend": "1700",
+        "divisor": "24",
+        "quotient": "70",
+        "remainder": "20"
+      },
+      {
+        "dividend": "1900",
+        "divisor": "61",
+        "quotient": "31",
+        "remainder": "9"
+      }
+    ],
+    [
+      {
+        "dividend": "1320",
+        "divisor": "24",
+        "quotient": "55",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1014",
+        "divisor": "26",
+        "quotient": "39",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1134",
+        "divisor": "27",
+        "quotient": "42",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1518",
+        "divisor": "23",
+        "quotient": "66",
+        "remainder": "0"
+      },
+      {
+        "dividend": "1980",
+        "divisor": "22",
+        "quotient": "90",
+        "remainder": "0"
+      }
+    ],
+    [
+      {
+        "dividend": "1234",
+        "divisor": "26",
+        "quotient": "47",
+        "remainder": "12"
+      },
+      {
+        "dividend": "1396",
+        "divisor": "27",
+        "quotient": "51",
+        "remainder": "19"
+      },
+      {
+        "dividend": "1099",
+        "divisor": "28",
+        "quotient": "39",
+        "remainder": "7"
+      },
+      {
+        "dividend": "1379",
+        "divisor": "29",
+        "quotient": "47",
+        "remainder": "16"
+      },
+      {
+        "dividend": "1450",
+        "divisor": "26",
+        "quotient": "55",
+        "remainder": "20"
+      }
+    ]
+  ]
+}

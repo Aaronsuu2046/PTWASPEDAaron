@@ -82,6 +82,9 @@ export default {
     dividend: { type: String, required: true },
     divisor: { type: String, required: true },
     crossable: { type: Boolean, default: false },
+    // 選填：只有商與最後的餘數是要填的答案格（黃色），中間的乘積、相減是輔助格，可填可不填、不判分；
+    // 整除時最後的 0 也算輔助格
+    answerOnly: { type: Boolean, default: false },
   },
   emits: ["change", "focus"],
   data() {
@@ -258,8 +261,15 @@ export default {
         ...(item.type === "line" && item.top ? { alignSelf: "start" } : {}),
       };
     },
+    // answerOnly 時要判分的格子：商，以及有餘數時最後一列
+    isAnswerCell(id) {
+      if (!this.answerOnly || id.startsWith("q")) return true;
+      const last = this.layout.rows.length - 1;
+      return id.startsWith(`r${last}c`) && this.layout.r !== 0;
+    },
     cellClass(id) {
       return {
+        "dfill__input--helper": !this.isAnswerCell(id),
         "dfill__input--active": this.active === id,
         "dfill__input--wrong": this.wrong.includes(id),
         "dfill__input--correct": this.solved,
@@ -314,12 +324,10 @@ export default {
       }
       const exp = this.expected;
       const val = (id) => this.values[id] || "";
-      const complete = Object.entries(exp).every(
-        ([id, d]) => d === "" || val(id) !== ""
-      );
-      this.wrong = Object.keys(exp).filter(
-        (id) => val(id) !== "" && val(id) !== exp[id]
-      );
+      // answerOnly：只檢查答案格，輔助格不管填了什麼都不算
+      const graded = Object.keys(exp).filter((id) => this.isAnswerCell(id));
+      const complete = graded.every((id) => exp[id] === "" || val(id) !== "");
+      this.wrong = graded.filter((id) => val(id) !== "" && val(id) !== exp[id]);
       const correct = complete && this.wrong.length === 0;
       this.solved = correct;
       const quotient = Object.keys(exp)
@@ -457,6 +465,17 @@ export default {
       color: #2e7d32;
       background-color: #c8e6c9;
       border-color: #43a047;
+    }
+
+    // 輔助格：可以寫計算過程，不用填也不判分
+    &--helper {
+      color: #546e7a;
+      background-color: #ffffff;
+      border: 2px dashed #b0bec5;
+    }
+
+    &--helper.dfill__input--active {
+      border: 3px solid #1e88e5;
     }
   }
 
