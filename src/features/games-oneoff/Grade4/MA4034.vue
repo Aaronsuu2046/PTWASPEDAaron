@@ -204,20 +204,22 @@
       <div class="side">
         <p class="sentence">
           <template v-for="(cell, k) in CELLS" :key="cell">
-            （<button
+            <button
               type="button"
               class="cell"
               :class="{
                 'cell--focus': padEl && focus === k,
                 'cell--filled': inputs[k],
+                'cell--wrong': wrongCells[k],
                 'cell--right': solved,
               }"
               :data-cell="cell"
               data-pad-field
               @click="openPad(k, $event)"
             >
-              {{ inputs[k] || "？" }}</button
-            >）{{ k === 0 ? "度的角和" : "度的角合起來是平角" }}
+              {{ inputs[k] || "？" }}
+            </button>
+            {{ k === 0 ? "度的角和" : "度的角合起來是平角" }}
           </template>
         </p>
         <FieldPad
@@ -322,6 +324,8 @@ export default {
       chip: null,
       measuring: null,
       inputs: ["", ""],
+      // 送出後逐格標示填錯（或沒填）的格子
+      wrongCells: [false, false],
       focus: 0,
       padEl: null,
       feedback: "",
@@ -603,6 +607,8 @@ export default {
       if (this.solved) return;
       this.feedback = "";
       const k = this.focus;
+      // 改了這一格就清掉這一格的錯誤標示，另一格維持
+      this.wrongCells[k] = false;
       if (key === "clear") {
         this.inputs[k] = "";
       } else if (key === "←") {
@@ -612,6 +618,16 @@ export default {
       }
     },
     // ---- 判分 ----
+    // 兩個角度可以對調：逐格和正確答案一對一配對（90＋90 這類重複答案也按格數配）
+    markCells(answer) {
+      const remaining = [...answer];
+      this.wrongCells = this.inputs.map((v) => {
+        const i = v ? remaining.indexOf(Number(v)) : -1;
+        if (i < 0) return true;
+        remaining.splice(i, 1);
+        return false;
+      });
+    },
     checkAnswer() {
       if (this.solved) return;
       const snapped = this.pieces.filter((p) => p.where === "board" && p.side);
@@ -620,7 +636,9 @@ export default {
       const answer = this.gameData.answer
         .map((id) => this.pieces.find((p) => p.id === id).angle)
         .sort((a, b) => a - b);
-      const typed = this.inputs.map(Number).sort((a, b) => a - b);
+      // 有填任何一格就逐格標示
+      if (this.inputs.some(Boolean)) this.markCells(answer);
+      const typedWrong = this.wrongCells.some(Boolean);
 
       let message = "";
       if (snapped.length < 2) {
@@ -629,11 +647,15 @@ export default {
         message = "板子上只能留兩個角，把多的放回去。";
       } else if (sum !== 180) {
         message = `這兩個角合起來${sum > 180 ? "疊在一起了" : "還有空隙"}，不是平角，換一個角試試看。`;
-      } else if (this.inputs.some((v) => !v)) {
-        this.feedback = "角拼好了！再把兩個角的度數填進括號裡。";
+      } else if (this.inputs.every((v) => !v)) {
+        this.wrongCells = [true, true];
+        this.feedback = "角拼好了！再把兩個角的度數填進格子裡。";
         return;
-      } else if (typed.join() !== answer.join()) {
-        message = "角度填錯了，按「量」量量看。";
+      } else if (this.inputs.some((v) => !v)) {
+        this.feedback = "角拼好了！紅框的格子還沒填，把度數填進去。";
+        return;
+      } else if (typedWrong) {
+        message = "紅框的角度填錯了，按「量」量量看。";
       }
       if (snapped.length < 2 && !this.inputs.some(Boolean)) {
         this.feedback = message;
@@ -959,8 +981,15 @@ export default {
 }
 
 .cell {
+  // 數字在格子正中間
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 4.6rem;
   height: 3.2rem;
+  margin: 0 0.25rem;
+  padding: 0 0.4rem;
+  line-height: 1;
   font-size: 1.8rem;
   vertical-align: middle;
   font-weight: $font-bold;
@@ -979,6 +1008,13 @@ export default {
   &--focus {
     border-color: #ffb300;
     box-shadow: 0 0 0 4px #ffe082;
+  }
+
+  &--wrong {
+    color: #c62828;
+    background-color: #ffebee;
+    border-style: solid;
+    border-color: #e53935;
   }
 
   &--right {
