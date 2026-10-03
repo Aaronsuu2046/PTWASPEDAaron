@@ -32,7 +32,15 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 160 元",
+          "rule": "一瓶 20 元"
+        }
       },
       {
         "question": "一瓶豆漿 20 元，爸爸有 180 元，最多可以買幾瓶豆漿？還剩下多少元？",
@@ -57,7 +65,15 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 180 元",
+          "rule": "一瓶 20 元"
+        }
       },
       {
         "question": "一瓶豆漿 30 元，爸爸有 240 元，最多可以買幾瓶豆漿？還剩下多少元？",
@@ -82,7 +98,15 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 240 元",
+          "rule": "一瓶 30 元"
+        }
       },
       {
         "question": "一瓶豆漿 40 元，爸爸有 360 元，最多可以買幾瓶豆漿？還剩下多少元？",
@@ -107,7 +131,15 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 360 元",
+          "rule": "一瓶 40 元"
+        }
       },
       {
         "question": "一瓶豆漿 40 元，爸爸有 280 元，最多可以買幾瓶豆漿？還剩下多少元？",
@@ -132,7 +164,15 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "soymilk",
+          "mode": "each",
+          "total": "爸爸有 280 元",
+          "rule": "一瓶 40 元"
+        }
       }
     ],
     [
@@ -159,7 +199,15 @@
             "value": "25",
             "unit": "毫升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "305 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        }
       },
       {
         "question": "媽媽買了 235 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
@@ -184,7 +232,15 @@
             "value": "35",
             "unit": "毫升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "235 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        }
       },
       {
         "question": "媽媽買了 250 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
@@ -209,7 +265,15 @@
             "value": "10",
             "unit": "毫升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "250 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        }
       },
       {
         "question": "媽媽買了 300 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
@@ -234,7 +298,15 @@
             "value": "20",
             "unit": "毫升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "300 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        }
       },
       {
         "question": "媽媽買了 310 毫升的鮮奶，做一杯奶茶需要 40 毫升，最多可以做幾杯奶茶？還剩下幾毫升的鮮奶？",
@@ -259,7 +331,15 @@
             "value": "30",
             "unit": "毫升"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "milk",
+          "holder": "milkcup",
+          "mode": "each",
+          "total": "310 毫升鮮奶",
+          "rule": "一杯用 40 毫升"
+        }
       }
     ],
     [
@@ -286,7 +366,16 @@
             "value": "18",
             "unit": "朵"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "148 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        }
       },
       {
         "question": "花店進貨 206 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
@@ -311,7 +400,16 @@
             "value": "24",
             "unit": "朵"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "206 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        }
       },
       {
         "question": "花店進貨 232 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
@@ -336,7 +434,16 @@
             "value": "24",
             "unit": "朵"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "232 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        }
       },
       {
         "question": "花店進貨 250 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
@@ -361,7 +468,16 @@
             "value": "16",
             "unit": "朵"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "250 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        }
       },
       {
         "question": "花店進貨 199 朵康乃馨，平分綁成 26 束，每束有幾朵康乃馨？還剩下幾朵？",
@@ -386,7 +502,16 @@
             "value": "17",
             "unit": "朵"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "carnation",
+          "holder": "bouquet",
+          "mode": "share",
+          "total": "199 朵康乃馨",
+          "rule": "平分綁成 26 束",
+          "count": 26
+        }
       }
     ],
     [
@@ -413,7 +538,16 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 837 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        }
       },
       {
         "question": "同樂會結束後剩下 806 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
@@ -438,7 +572,16 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 806 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        }
       },
       {
         "question": "同樂會結束後剩下 899 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
@@ -463,7 +606,16 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 899 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        }
       },
       {
         "question": "同樂會結束後剩下 930 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
@@ -488,7 +640,16 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 930 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        }
       },
       {
         "question": "同樂會結束後剩下 775 元，平分還給 31 位小朋友，每人可以分到多少元？還剩下多少元？",
@@ -513,7 +674,16 @@
             "value": "0",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "student",
+          "mode": "share",
+          "total": "剩下 775 元",
+          "rule": "平分給 31 位小朋友",
+          "count": 31
+        }
       }
     ],
     [
@@ -540,7 +710,15 @@
             "value": "15",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 950 元",
+          "rule": "一杯 55 元"
+        }
       },
       {
         "question": "一杯珍珠奶茶 55 元，爸爸有 800 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
@@ -565,7 +743,15 @@
             "value": "30",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 800 元",
+          "rule": "一杯 55 元"
+        }
       },
       {
         "question": "一杯珍珠奶茶 55 元，爸爸有 900 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
@@ -590,7 +776,15 @@
             "value": "20",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 900 元",
+          "rule": "一杯 55 元"
+        }
       },
       {
         "question": "一杯珍珠奶茶 55 元，爸爸有 860 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
@@ -615,7 +809,15 @@
             "value": "35",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 860 元",
+          "rule": "一杯 55 元"
+        }
       },
       {
         "question": "一杯珍珠奶茶 55 元，爸爸有 920 元，最多可以買幾杯珍珠奶茶？還剩下多少元？",
@@ -640,7 +842,15 @@
             "value": "40",
             "unit": "元"
           }
-        ]
+        ],
+        "figure": {
+          "shape": "scene",
+          "item": "coin",
+          "holder": "bubbletea",
+          "mode": "each",
+          "total": "爸爸有 920 元",
+          "rule": "一杯 55 元"
+        }
       }
     ]
   ]
