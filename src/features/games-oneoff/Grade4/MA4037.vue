@@ -53,14 +53,8 @@
               <path :d="dirHint.path" />
               <polygon :points="dirHint.head" />
             </g>
-            <g data-drag="hand" class="hand">
-              <line
-                :x1="C[0]"
-                :y1="C[1]"
-                :x2="handEnd[0]"
-                :y2="handEnd[1]"
-                class="hand__hit"
-              />
+            <!-- 指針：只由動畫轉動，學生直接選答案 -->
+            <g class="hand hand--static">
               <line
                 :x1="C[0]"
                 :y1="C[1]"
@@ -127,14 +121,27 @@
         </svg>
 
         <div class="tools">
-          <button
-            type="button"
-            class="tool-btn tool-btn--reset"
-            @click="resetPointer"
-          >
-            指針回到起點
-          </button>
-          <span class="tools__how">{{ howText }}</span>
+          <template v-if="isProtractor">
+            <button
+              type="button"
+              class="tool-btn tool-btn--reset"
+              @click="resetPointer"
+            >
+              指針回到起點
+            </button>
+            <span class="tools__how">拖動紅色指針，靠近整十度會對齊</span>
+          </template>
+          <template v-else-if="canPlay">
+            <button type="button" class="tool-btn tool-btn--play" @click="play">
+              ▶ 播放動畫
+            </button>
+            <span class="tools__how">看指針怎麼轉，再選出答案</span>
+          </template>
+          <span v-else class="tools__how">
+            指針從 {{ gameData.start }} 開始{{
+              DIR[gameData.dir]
+            }}轉，想想看會停在哪裡
+          </span>
         </div>
       </div>
 
@@ -161,32 +168,25 @@
           </p>
         </template>
 
-        <template v-else>
-          <div class="number">
-            <span v-if="gameData.kind === 'end'" class="number__pre">停在</span>
-            <button
-              type="button"
-              class="slot"
-              data-cell="answer"
-              data-pad-field
-              aria-label="答案"
-              :class="{
-                'slot--filled': digits,
-                'slot--right': solved,
-                'slot--active': padEl,
-              }"
-              @click="openPad"
-            >
-              {{ digits || "？" }}
-            </button>
-            <span class="number__unit">{{ gameData.unit }}</span>
-          </div>
-          <FieldPad
-            :field="solved ? null : padEl"
-            @press="press"
-            @close="padEl = null"
-          />
-        </template>
+        <div v-else class="options">
+          <button
+            v-for="(opt, k) in gameData.options"
+            :key="opt"
+            type="button"
+            class="option"
+            :class="{
+              'option--picked': choice === k,
+              'option--wrong': wrongChoice === k,
+              'option--right': solved && choice === k,
+            }"
+            :data-option="LETTERS[k]"
+            :disabled="solved"
+            @click="pick(k)"
+          >
+            <span class="option__letter">{{ LETTERS[k] }}</span>
+            <span class="option__text">{{ opt }}</span>
+          </button>
+        </div>
 
         <p
           v-if="feedback"
@@ -202,7 +202,6 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import FieldPad from "./games/Common/FieldPad.vue";
 import ProtractorTool from "./games/Geometry/ProtractorTool.vue";
 
 const W = 600;
@@ -213,6 +212,8 @@ const HAND = 130;
 const P = [300, 350];
 const PR = 240;
 const DIR = { cw: "順時針", ccw: "逆時針" };
+const LETTERS = ["A", "B", "C"];
+const PLAY_MS = 1800;
 
 const rad = (d) => (d * Math.PI) / 180;
 // 鐘面角度：0° 在 12，順時針增加
@@ -220,16 +221,13 @@ const onClock = (deg, r) => [
   C[0] + r * Math.sin(rad(deg)),
   C[1] - r * Math.cos(rad(deg)),
 ];
-const clockAngle = (x, y) =>
-  ((Math.atan2(x - C[0], -(y - C[1])) * 180) / Math.PI + 360) % 360;
-const diff = (a, b) => ((((a - b) % 360) + 540) % 360) - 180;
 // 量角器上的方向（數學角：0° 在右、逆時針）
 const polar = (deg, r) => [r * Math.cos(rad(deg)), -r * Math.sin(rad(deg))];
 
-// 旋轉角：鐘面上拖動指針完成指定旋轉，再回答；關卡 5 在量角器上做兩段旋轉
+// 旋轉角：關卡 1～4 看鐘面指針旋轉後選答案（三選一）；關卡 5 在量角器上做兩段旋轉
 export default {
   name: "MA4037",
-  components: { FieldPad, ProtractorTool },
+  components: { ProtractorTool },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -247,16 +245,18 @@ export default {
       P,
       PR,
       DIR,
-      // 鐘面：從起點算起的累計轉動量（順時針為正）
+      LETTERS,
+      // 鐘面：動畫中從起點算起的轉動量（順時針為正）
       turn: 0,
+      timer: null,
       // 量角器：指針方向與第一次鎖定的位置
       startPhi: start,
       phi: start,
       lockedPhi: null,
       phase: 0,
       drag: null,
-      digits: "",
-      padEl: null,
+      choice: null,
+      wrongChoice: null,
       feedback: "",
       feedbackOk: false,
       solved: false,
@@ -269,10 +269,13 @@ export default {
     isProtractor() {
       return this.gameData.kind === "protractor";
     },
-    howText() {
-      return this.isProtractor
-        ? "拖動紅色指針，靠近整十度會對齊"
-        : "拖動紅色指針，靠近整大格會對齊";
+    // 關卡 4 問「會停在哪個數字」，播放到終點會直接看到答案，所以不播放
+    canPlay() {
+      return !this.isProtractor && this.gameData.kind !== "end";
+    },
+    expectedTurn() {
+      const q = this.gameData;
+      return q.dir === "cw" ? q.turn : -q.turn;
     },
     startDeg() {
       return (this.gameData.start % 12) * 30;
@@ -338,8 +341,12 @@ export default {
   created() {
     emitter.on("submitAnswer", this.checkAnswer);
   },
+  mounted() {
+    if (this.canPlay) this.play();
+  },
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
+    cancelAnimationFrame(this.timer);
   },
   methods: {
     tick(k) {
@@ -375,7 +382,28 @@ export default {
       return `M ${x1} ${y1} A ${r} ${r} 0 0 ${sweep} ${x2} ${y2}`;
     },
 
-    // ---- 拖動 ----
+    // ---- 鐘面動畫：每次都從起點重新轉 ----
+    play() {
+      cancelAnimationFrame(this.timer);
+      const target = this.expectedTurn;
+      const begin = performance.now();
+      this.turn = 0;
+      const step = (now) => {
+        const t = Math.min(1, (now - begin) / PLAY_MS);
+        const ease = t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
+        this.turn = target * ease;
+        if (t < 1) this.timer = requestAnimationFrame(step);
+      };
+      this.timer = requestAnimationFrame(step);
+    },
+    pick(k) {
+      if (this.solved) return;
+      this.choice = k;
+      this.wrongChoice = null;
+      this.feedback = "";
+    },
+
+    // ---- 關卡 5：拖動量角器上的指針 ----
     toLocal(event) {
       const svg = this.$refs.svg;
       const pt = svg.createSVGPoint();
@@ -389,59 +417,27 @@ export default {
       if (event.button !== undefined && event.button !== 0) return;
       const kind = event.target.closest?.("[data-drag]")?.dataset.drag;
       if (!kind) return;
-      const p = this.toLocal(event);
-      this.drag = { kind, last: clockAngle(...p) };
+      this.drag = { kind };
       this.feedback = "";
       event.currentTarget.setPointerCapture?.(event.pointerId);
     },
     onDrag(event) {
       if (!this.drag) return;
       const p = this.toLocal(event);
-      if (this.drag.kind === "hand") {
-        const now = clockAngle(...p);
-        this.turn = Math.max(
-          -360,
-          Math.min(360, this.turn + diff(now, this.drag.last))
-        );
-        this.drag.last = now;
-      } else {
-        const deg = (Math.atan2(-(p[1] - P[1]), p[0] - P[0]) * 180) / Math.PI;
-        // 只在上半圓；拖到下面時停在最近的一端
-        this.phi = deg >= 0 ? deg : deg < -90 ? 180 : 0;
-      }
+      const deg = (Math.atan2(-(p[1] - P[1]), p[0] - P[0]) * 180) / Math.PI;
+      // 只在上半圓；拖到下面時停在最近的一端
+      this.phi = deg >= 0 ? deg : deg < -90 ? 180 : 0;
     },
     endDrag() {
       if (!this.drag) return;
-      if (this.drag.kind === "hand") {
-        const near = Math.round(this.turn / 30) * 30;
-        if (Math.abs(near - this.turn) <= 8) this.turn = near;
-      } else {
-        const near = Math.round(this.phi / 10) * 10;
-        if (Math.abs(near - this.phi) <= 3) this.phi = near;
-      }
+      const near = Math.round(this.phi / 10) * 10;
+      if (Math.abs(near - this.phi) <= 3) this.phi = near;
       this.drag = null;
     },
     resetPointer() {
       if (this.solved) return;
-      this.turn = 0;
       this.phi = this.lockedPhi ?? this.startPhi;
       this.feedback = "";
-    },
-
-    openPad(event) {
-      if (this.solved) return;
-      this.padEl = event.currentTarget;
-    },
-    press(key) {
-      if (this.solved) return;
-      this.feedback = "";
-      if (key === "clear") {
-        this.digits = "";
-      } else if (key === "←") {
-        this.digits = this.digits.slice(0, -1);
-      } else if (this.digits.length < 3) {
-        this.digits = (this.digits + key).replace(/^0+(?=\d)/, "");
-      }
     },
 
     // ---- 判分 ----
@@ -502,43 +498,30 @@ export default {
         return;
       }
       const q = this.gameData;
-      const expectedTurn = q.dir === "cw" ? q.turn : -q.turn;
-      const rotated = Math.abs(this.turn - expectedTurn) < 1;
-      if (!this.digits && !rotated) {
+      if (this.choice === null) {
         this.feedbackOk = false;
-        this.feedback = `先把指針${DIR[q.dir]}轉，再輸入答案喔！`;
+        this.feedback = "請先選一個答案喔！";
         return;
       }
-      if (!this.digits) {
-        this.feedbackOk = false;
-        this.feedback = "指針轉好了！再用數字鍵輸入答案。";
-        return;
-      }
-      const value = Number(this.digits);
-      const answerOk = value === q.answer;
-      const unit = q.unit ? ` ${q.unit}` : "";
-      let hint = "";
-      if (!rotated) {
-        hint =
-          q.kind === "end"
-            ? `先把指針從 ${q.start} ${DIR[q.dir]}轉 ${q.turn}°（一大格是 30°）。`
-            : `先把指針從 ${q.start} ${DIR[q.dir]}轉到 ${q.end}。`;
-      } else if (!answerOk) {
-        hint =
-          q.kind === "grids"
-            ? "數數看指針走過幾大格。"
-            : q.kind === "end"
-              ? "看看指針最後停在哪個數字。"
-              : "一大格是 30°，數數看轉了幾大格。";
-      }
+      const label = (k) => `${LETTERS[k]}. ${q.options[k]}`;
+      const ok = LETTERS[this.choice] === q.answer;
+      const hint =
+        q.kind === "grids"
+          ? "看指針從起點走到終點，數數看走過幾大格。"
+          : q.kind === "end"
+            ? `一大格是 30°，從 ${q.start} 開始${DIR[q.dir]}數 ${q.turn / 30} 大格。`
+            : "一大格是 30°，數數看指針轉了幾大格。";
       this.finish(
-        rotated && answerOk,
-        `${q.text} ${q.answer}${unit}`,
-        `轉了 ${Math.abs(Math.round(this.turn))}°（${
-          this.turn >= 0 ? "順時針" : "逆時針"
-        }）；答 ${value}${unit}`,
+        ok,
+        `${q.text} ${label(LETTERS.indexOf(q.answer))}`,
+        label(this.choice),
         hint
       );
+      if (!ok) {
+        // 標出選錯的選項，重新選擇後清除；能播放的題目再播一次給學生看
+        this.wrongChoice = this.choice;
+        if (this.canPlay) this.play();
+      }
     },
   },
 };
@@ -685,6 +668,11 @@ export default {
 .hand {
   cursor: grab;
 
+  &--static {
+    cursor: default;
+    pointer-events: none;
+  }
+
   &__hit {
     stroke: transparent;
     stroke-width: 30;
@@ -732,6 +720,11 @@ export default {
   &--reset {
     background-color: #78909c;
     box-shadow: 0 3px 0 #455a64;
+  }
+
+  &--play {
+    background-color: #7e57c2;
+    box-shadow: 0 3px 0 #4527a0;
   }
 }
 
@@ -788,43 +781,66 @@ export default {
   }
 }
 
-.slot {
-  min-width: 5.5rem;
-  height: 3.8rem;
-  padding: 0 0.8rem;
+.options {
+  align-self: stretch;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2rem;
-  font-weight: $font-bold;
-  color: #9e9e9e;
-  background-color: #ffffff;
-  border: 4px dashed #90a4ae;
-  border-radius: 14px;
-
-  &--filled {
-    color: #0d47a1;
-    border-style: solid;
-    border-color: #42a5f5;
-  }
-
-  &--right {
-    color: #1b5e20;
-    background-color: #e8f5e9;
-    border-color: #43a047;
-  }
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
-.number {
+.option {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.6rem;
+  font-weight: $font-bold;
+  text-align: left;
+  color: #ffffff;
+  background-color: #26a69a;
+  border: 4px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 5px 0 #00796b;
+  cursor: pointer;
 
-  &__pre,
-  &__unit {
-    font-size: 1.7rem;
-    font-weight: $font-bold;
-    color: #333333;
+  &__letter {
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00796b;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+
+  &--picked {
+    background-color: #ff7043;
+    box-shadow: 0 5px 0 #d84315;
+  }
+
+  &--picked &__letter {
+    color: #d84315;
+  }
+
+  &--wrong {
+    background-color: #ef9a9a;
+    border-color: #c62828;
+    box-shadow: 0 5px 0 #c62828;
+  }
+
+  &--wrong &__letter {
+    color: #c62828;
+  }
+
+  &--right {
+    background-color: #43a047;
+    box-shadow: 0 5px 0 #1b5e20;
+  }
+
+  &:disabled {
+    cursor: default;
   }
 }
 
@@ -856,9 +872,14 @@ export default {
     line-height: 1.5;
   }
 
-  .slot {
-    height: 3.2rem;
-    font-size: 1.9rem;
+  .option {
+    padding: 0.45rem 0.6rem;
+    font-size: 1.3rem;
+  }
+
+  .option__letter {
+    width: 2rem;
+    height: 2rem;
   }
 
   .tool-btn {
@@ -872,16 +893,6 @@ export default {
 
   .feedback {
     font-size: 1rem;
-  }
-}
-// 答案框可以點：點了在旁邊出現數字板
-.slot {
-  cursor: pointer;
-
-  &--active {
-    border-style: solid;
-    border-color: #ffb300;
-    box-shadow: 0 0 0 4px #ffe082;
   }
 }
 </style>
