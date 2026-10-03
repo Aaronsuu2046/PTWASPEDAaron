@@ -1,14 +1,14 @@
 <template>
   <!-- 半圓量角器：放在父層 <svg> 裡，以中心點為原點 (0,0)、0° 線在 x 軸、刻度在上方 -->
-  <!-- 數字和實體量角器一樣沿著圓弧排，0 與 180 的字尾和底邊切齊 -->
+  <!-- 數字和實體量角器一樣沿著圓弧排；0 與 180 的中心落在 0° 線上，取代那一小段底線 -->
   <g class="protractor" :class="{ 'protractor--glass': glass }">
     <path :d="band(0, R)" class="protractor__body" />
     <path :d="band(OUTER_IN * R, R)" class="protractor__outer" />
     <path :d="band(INNER_IN * R, OUTER_IN * R)" class="protractor__inner" />
     <path
-      :d="`M ${-OUTER_IN * R} 0 A ${OUTER_IN * R} ${OUTER_IN * R} 0 0 1 ${
+      :d="`M ${-OUTER_IN * R} ${strip} V 0 A ${OUTER_IN * R} ${
         OUTER_IN * R
-      } 0`"
+      } 0 0 1 ${OUTER_IN * R} 0 V ${strip}`"
       class="protractor__divider"
     />
 
@@ -41,7 +41,6 @@
         :x="n.x"
         :y="n.y"
         :transform="`rotate(${n.turn} ${n.x} ${n.y})`"
-        :text-anchor="n.anchor"
         class="protractor__num protractor__num--outer"
         :font-size="outerSize"
       >
@@ -53,7 +52,6 @@
         :x="n.x"
         :y="n.y"
         :transform="`rotate(${n.turn} ${n.x} ${n.y})`"
-        :text-anchor="n.anchor"
         class="protractor__num protractor__num--inner"
         :font-size="innerSize"
       >
@@ -62,24 +60,19 @@
     </g>
 
     <!-- 0° 線：中心點就是底邊和放射導線交會的地方 -->
-    <line :x1="-R" y1="0" :x2="R" y2="0" class="protractor__base" />
+    <path :d="baseLine" class="protractor__base" />
   </g>
 </template>
 
 <script>
-import { OUTER_IN, INNER_IN, polar } from "./protractor.js";
+import { OUTER_IN, INNER_IN, BASE_STRIP, polar } from "./protractor.js";
 
 // 數字中心所在的半徑比例
 const OUTER_NUM = 0.875;
 const INNER_NUM = 0.71;
-// 一個數字的字寬約為字級的 0.55 倍
-const DIGIT_EM = 0.55;
-// 兩端數字離 0° 線的距離、兩端數字和旁邊數字之間的空隙（半徑比例）
-const END_LIFT = 0.01;
-const END_GAP = 0.02;
-// 數字大小（半徑比例）；字放大倍率再大也不超過上限，免得兩端擠在一起
-const OUTER_SIZE = { base: 0.06, max: 0.062 };
-const INNER_SIZE = { base: 0.05, max: 0.047 };
+// 數字大小（半徑比例）；數字沿圓弧排，上限讓相鄰的三位數之間留得出空隙
+const OUTER_SIZE = { base: 0.068, max: 0.075 };
+const INNER_SIZE = { base: 0.058, max: 0.062 };
 
 export default {
   name: "ProtractorTool",
@@ -131,6 +124,29 @@ export default {
       }
       return list;
     },
+    strip() {
+      return BASE_STRIP * this.R;
+    },
+    // 0° 線：兩端數字的位置留空，由數字取代那一段
+    baseLine() {
+      const R = this.R;
+      const holes = [
+        [OUTER_NUM * R, this.outerSize * 0.6],
+        [INNER_NUM * R, this.innerSize * 0.6],
+      ]
+        .flatMap(([x, half]) => [
+          [x - half, x + half],
+          [-x - half, -x + half],
+        ])
+        .sort((a, b) => a[0] - b[0]);
+      let d = "";
+      let from = -R;
+      holes.forEach(([a, b]) => {
+        d += `M ${from} 0 H ${a} `;
+        from = b;
+      });
+      return `${d}M ${from} 0 H ${R}`;
+    },
     outerSize() {
       return (
         this.R * Math.min(OUTER_SIZE.base * this.fontScale, OUTER_SIZE.max)
@@ -150,46 +166,24 @@ export default {
     },
   },
   methods: {
-    // 數字沿著圓弧轉向（字頭朝外），正對自己的刻度
-    // 0° 與 180° 兩端的數字和實體量角器一樣從底邊往上寫，字尾和底邊切齊；
-    // 緊鄰兩端的數字（例如 170）若會碰到，就沿圓弧往上挪一點
+    // 數字沿著圓弧轉向（字頭朝外），中心正對自己的刻度；
+    // 0° 與 180° 的數字中心（0 的中間、180 的 8）剛好落在 0° 線上
     ringNumbers(radius, size, labelOf) {
-      const R = this.R;
-      const r = radius * R;
-      const len = (label) => String(label).length * DIGIT_EM * size;
+      const r = radius * this.R;
       const list = [];
       for (let deg = 0; deg <= 180; deg += 10) {
-        const label = labelOf(deg);
-        if (deg === 0 || deg === 180) {
-          const x = deg === 0 ? r : -r;
-          list.push({
-            deg,
-            label,
-            x,
-            y: -END_LIFT * R,
-            turn: 90 - deg,
-            anchor: deg === 0 ? "end" : "start",
-          });
-          continue;
-        }
-        let at = deg;
-        if (deg === 10 || deg === 170) {
-          const end = labelOf(deg === 10 ? 0 : 180);
-          const need = END_LIFT * R + len(end) + END_GAP * R + len(label) / 2;
-          const lift = (Math.asin(Math.min(need / r, 1)) * 180) / Math.PI;
-          at = deg === 10 ? Math.max(10, lift) : Math.min(170, 180 - lift);
-        }
-        const [x, y] = polar(at, r);
-        list.push({ deg, label, x, y, turn: 90 - at, anchor: "middle" });
+        const [x, y] = polar(deg, r);
+        list.push({ deg, label: labelOf(deg), x, y, turn: 90 - deg });
       }
       return list;
     },
-    // 半徑 r1～r2 的上半圓環
+    // 半徑 r1～r2 的上半圓環，兩端往下延伸到 0° 線下方的底邊
     band(r1, r2) {
+      const h = this.strip;
       if (r1 === 0) {
-        return `M ${-r2} 0 A ${r2} ${r2} 0 0 1 ${r2} 0 Z`;
+        return `M ${-r2} ${h} V 0 A ${r2} ${r2} 0 0 1 ${r2} 0 V ${h} Z`;
       }
-      return `M ${-r2} 0 A ${r2} ${r2} 0 0 1 ${r2} 0 L ${r1} 0 A ${r1} ${r1} 0 0 0 ${-r1} 0 Z`;
+      return `M ${-r2} ${h} V 0 A ${r2} ${r2} 0 0 1 ${r2} 0 V ${h} H ${r1} V 0 A ${r1} ${r1} 0 0 0 ${-r1} 0 V ${h} Z`;
     },
   },
 };
@@ -244,6 +238,7 @@ export default {
   }
 
   &__num {
+    text-anchor: middle;
     dominant-baseline: central;
     font-weight: 700;
 
