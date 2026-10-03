@@ -1,0 +1,122 @@
+{
+  "id": "MA4041",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用計算機點按出正確答案"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "expression": "4395 ÷ 3",
+        "answer": "1465"
+      },
+      {
+        "expression": "5642 ÷ 7",
+        "answer": "806"
+      },
+      {
+        "expression": "4532 ÷ 4",
+        "answer": "1133"
+      },
+      {
+        "expression": "4296 ÷ 6",
+        "answer": "716"
+      },
+      {
+        "expression": "1287 ÷ 9",
+        "answer": "143"
+      }
+    ],
+    [
+      {
+        "expression": "6430 ÷ 5",
+        "answer": "1286"
+      },
+      {
+        "expression": "2905 ÷ 7",
+        "answer": "415"
+      },
+      {
+        "expression": "4024 ÷ 8",
+        "answer": "503"
+      },
+      {
+        "expression": "6507 ÷ 9",
+        "answer": "723"
+      },
+      {
+        "expression": "5070 ÷ 6",
+        "answer": "845"
+      }
+    ],
+    [
+      {
+        "expression": "3240 ÷ 4",
+        "answer": "810"
+      },
+      {
+        "expression": "4520 ÷ 5",
+        "answer": "904"
+      },
+      {
+        "expression": "3840 ÷ 3",
+        "answer": "1280"
+      },
+      {
+        "expression": "2964 ÷ 2",
+        "answer": "1482"
+      },
+      {
+        "expression": "4856 ÷ 4",
+        "answer": "1214"
+      }
+    ],
+    [
+      {
+        "expression": "6993 ÷ 9",
+        "answer": "777"
+      },
+      {
+        "expression": "4998 ÷ 6",
+        "answer": "833"
+      },
+      {
+        "expression": "5999 ÷ 7",
+        "answer": "857"
+      },
+      {
+        "expression": "4496 ÷ 8",
+        "answer": "562"
+      },
+      {
+        "expression": "6498 ÷ 9",
+        "answer": "722"
+      }
+    ],
+    [
+      {
+        "expression": "5706 ÷ 6",
+        "answer": "951"
+      },
+      {
+        "expression": "5600 ÷ 7",
+        "answer": "800"
+      },
+      {
+        "expression": "4304 ÷ 8",
+        "answer": "538"
+      },
+      {
+        "expression": "4086 ÷ 9",
+        "answer": "454"
+      },
+      {
+        "expression": "5406 ÷ 6",
+        "answer": "901"
+      }
+    ]
+  ]
+}

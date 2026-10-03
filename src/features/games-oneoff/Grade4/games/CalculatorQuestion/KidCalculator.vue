@@ -8,7 +8,8 @@
 import SimpleCalculator from "@/components/SimpleCalculator.vue";
 
 // 小學生版計算機：SimpleCalculator 加上明亮配色與放大的計算過程
-// 父元件用 ref 呼叫 read() 取得目前顯示的數字（還沒按過時回傳空字串）
+// 父元件用 ref 呼叫 read() 取得目前顯示的數字（還沒按過時回傳空字串），
+// lastExpression() 取得最後一次按「=」的算式
 export default {
   name: "KidCalculator",
   components: { SimpleCalculator },
@@ -19,6 +20,12 @@ export default {
       const untouched =
         calc.history.length === 0 && calc.input === "" && calc.display === "0";
       return untouched ? "" : calc.display;
+    },
+    // 最後一次按「=」的完整算式（例如「4395 ÷ 3 = 1465」）；按「=」之後又按了其他鍵就回傳空字串
+    lastExpression() {
+      const calc = this.$refs.calc;
+      if (!calc || !calc.evaluated || !calc.history.length) return "";
+      return calc.history[calc.history.length - 1];
     },
   },
 };

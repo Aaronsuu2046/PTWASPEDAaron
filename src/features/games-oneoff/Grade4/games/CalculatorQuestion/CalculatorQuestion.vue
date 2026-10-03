@@ -20,7 +20,10 @@
             {{ answered ? gameData.answer : "?" }}
           </span>
         </div>
-        <p v-if="wrong" class="feedback">
+        <p v-if="wrong && needExpression" class="feedback">
+          要在計算機依序按出「{{ gameData.expression }}」，再按「=」喔！
+        </p>
+        <p v-else-if="wrong" class="feedback">
           你按出的答案是 {{ lastAnswer }}，再算算看！
         </p>
         <p v-else class="feedback feedback--hint">
@@ -47,10 +50,17 @@ export default {
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
+    // 選填：除了結果正確，還要在計算機依序按出題目算式再按「=」（預設不檢查，維持原行為）
+    requireExpression: { type: Boolean, default: false },
   },
   emits: ["play-effect", "next-question", "add-record"],
   data() {
-    return { wrong: false, answered: false, lastAnswer: "" };
+    return {
+      wrong: false,
+      answered: false,
+      lastAnswer: "",
+      needExpression: false,
+    };
   },
   computed: {
     gameIntroText() {
@@ -67,12 +77,21 @@ export default {
     readCalculator() {
       return this.$refs.calculator?.read() ?? "";
     },
+    // 計算機最後一次按「=」的算式是不是題目的算式（忽略空白）
+    typedExpression() {
+      const flat = (text) => text.replace(/\s+/g, "");
+      const last = flat(this.$refs.calculator?.lastExpression() ?? "");
+      return last.startsWith(`${flat(this.gameData.expression)}=`);
+    },
     checkAnswer() {
       if (this.answered) return;
       const value = this.readCalculator();
-      const isCorrect =
+      const valueOk =
         value !== "" &&
         Math.abs(Number(value) - Number(this.gameData.answer)) < 1e-9;
+      this.needExpression =
+        this.requireExpression && valueOk && !this.typedExpression();
+      const isCorrect = valueOk && !this.needExpression;
       this.wrong = !isCorrect;
       this.lastAnswer = value || "（還沒有按）";
       this.$emit("add-record", [
