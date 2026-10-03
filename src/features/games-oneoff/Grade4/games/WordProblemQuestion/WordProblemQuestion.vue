@@ -28,6 +28,11 @@
             class="work-figure work-figure--tiles"
             :figure="gameData.figure"
           />
+          <SceneFigure
+            v-else-if="gameData.figure && gameData.figure.shape === 'scene'"
+            class="work-figure work-figure--scene"
+            :figure="gameData.figure"
+          />
           <RectFigure
             v-else-if="gameData.figure"
             class="work-figure"
@@ -156,6 +161,7 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import RectFigure from "./RectFigure.vue";
 import CompositeFigure from "./CompositeFigure.vue";
 import TileFigure from "./TileFigure.vue";
+import SceneFigure from "./SceneFigure.vue";
 import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
 import FieldPad from "../Common/FieldPad.vue";
 
@@ -171,12 +177,14 @@ const MAX_LENGTH = 7;
 // 選填 step.given（例如 ["a"]）：該部分由題目直接給定，不用填
 // 選填 step.remainder：除法有餘數時，結果後面多一格「… 餘數」（餘數為 0 時可空白或填 0）
 // 選填 answers: [{ prefix, value, unit }]：答案分成好幾格，取代 answer／unit
+// 選填 figure.shape "scene"：依題意畫的情境圖（SceneFigure）
 export default {
   name: "WordProblemQuestion",
   components: {
     RectFigure,
     CompositeFigure,
     TileFigure,
+    SceneFigure,
     KidCalculator,
     FieldPad,
   },
@@ -648,6 +656,11 @@ export default {
 
 .work-figure--tiles {
   width: clamp(13rem, 30%, 22rem);
+}
+
+.work-figure--scene {
+  width: clamp(14rem, 32%, 22rem);
+  padding: 0.3rem;
 }
 
 .work-block {
