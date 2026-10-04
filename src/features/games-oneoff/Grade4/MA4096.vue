@@ -5,7 +5,9 @@
     </div>
 
     <div class="game-area">
-      <p class="hint">提示：可以進行分數的互換再比比看！</p>
+      <p class="hint">
+        點一點或按住拖過去就能塗色。提示：可以進行分數的互換再比比看！
+      </p>
 
       <div class="compare">
         <div
