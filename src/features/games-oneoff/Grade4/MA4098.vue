@@ -13,51 +13,63 @@
         </template>
       </p>
 
-      <div class="work">
-        <div v-for="(row, r) in gameData.rows" :key="r" class="work-row">
-          <span class="work-label">{{ r === 0 ? "做法：" : "" }}</span>
-          <template v-for="(term, t) in row" :key="t">
-            <span v-if="term.kind === 'eq'" class="sign">＝</span>
-            <button
-              v-else-if="term.kind === 'op'"
-              v-bind="box(`r${r}t${t}o`)"
-              class="box box--op"
-              @click="activate(`r${r}t${t}o`)"
-            >
-              {{ showOp(values[`r${r}t${t}o`]) }}
-            </button>
-            <button
-              v-else-if="term.kind === 'int'"
-              v-bind="box(`r${r}t${t}v`)"
-              class="box box--int"
-              @click="activate(`r${r}t${t}v`)"
-            >
-              {{ values[`r${r}t${t}v`] }}
-            </button>
+      <div class="main">
+        <!-- 情境圖：原有、動作、結果是多少 -->
+        <div v-if="gameData.scene" class="scene" data-pad-avoid>
+          <FractionScene
+            :scene="gameData.scene"
+            :a="gameData.a"
+            :b="gameData.b"
+            :unit="gameData.unit"
+          />
+        </div>
+
+        <div class="work">
+          <div v-for="(row, r) in gameData.rows" :key="r" class="work-row">
+            <span class="work-label">{{ r === 0 ? "做法：" : "" }}</span>
+            <template v-for="(term, t) in row" :key="t">
+              <span v-if="term.kind === 'eq'" class="sign">＝</span>
+              <button
+                v-else-if="term.kind === 'op'"
+                v-bind="box(`r${r}t${t}o`)"
+                class="box box--op"
+                @click="activate(`r${r}t${t}o`)"
+              >
+                {{ showOp(values[`r${r}t${t}o`]) }}
+              </button>
+              <button
+                v-else-if="term.kind === 'int'"
+                v-bind="box(`r${r}t${t}v`)"
+                class="box box--int"
+                @click="activate(`r${r}t${t}v`)"
+              >
+                {{ values[`r${r}t${t}v`] }}
+              </button>
+              <FracBoxes
+                v-else
+                :prefix="`r${r}t${t}`"
+                :whole="term.whole"
+                :values="values"
+                :box="box"
+                @pick="activate"
+              />
+            </template>
+          </div>
+
+          <div class="work-row">
+            <span class="work-label">答：</span>
             <FracBoxes
-              v-else
-              :prefix="`r${r}t${t}`"
-              :whole="term.whole"
+              prefix="ans"
+              :whole="answerWhole"
               :values="values"
               :box="box"
               @pick="activate"
             />
-          </template>
-        </div>
-
-        <div class="work-row">
-          <span class="work-label">答：</span>
-          <FracBoxes
-            prefix="ans"
-            :whole="answerWhole"
-            :values="values"
-            :box="box"
-            @pick="activate"
-          />
-          <span class="unit">{{ gameData.unit }}</span>
-          <span v-if="answered && gameData.reference" class="reference">
-            （也就是 {{ gameData.reference }} {{ gameData.unit }}）
-          </span>
+            <span class="unit">{{ gameData.unit }}</span>
+            <span v-if="answered && gameData.reference" class="reference">
+              （也就是 {{ gameData.reference }} {{ gameData.unit }}）
+            </span>
+          </div>
         </div>
       </div>
 
@@ -77,6 +89,7 @@
 <script>
 import { h } from "vue";
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+import FractionScene from "./games/Fraction/FractionScene.vue";
 import FieldPad from "./games/Common/FieldPad.vue";
 
 const OPS = ["+", "-"];
@@ -130,7 +143,7 @@ const textOf = (x) => {
 // 分數格可寫成假分數或帶分數（數值與分母相同就對，不強制約分）；答對後顯示帶分數參考
 export default {
   name: "MA4098",
-  components: { FieldPad, FracBoxes },
+  components: { FractionScene, FieldPad, FracBoxes },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -411,7 +424,32 @@ export default {
   }
 }
 
+.main {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.scene {
+  flex: 0 1 auto;
+  align-self: stretch;
+  min-height: 0;
+  max-height: 24rem;
+  display: flex;
+  align-items: center;
+
+  :deep(.fraction-scene) {
+    height: 100%;
+    width: auto;
+  }
+}
+
 .work {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;

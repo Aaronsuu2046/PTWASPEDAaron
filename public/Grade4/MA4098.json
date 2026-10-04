@@ -26,6 +26,13 @@
           "d": 8,
           "whole": false
         },
+        "scene": {
+          "item": "juice",
+          "start": "原有",
+          "verb": "再倒進",
+          "result": "現在共有",
+          "mode": "add"
+        },
         "rows": [
           [
             {
@@ -84,6 +91,13 @@
           "n": 9,
           "d": 10,
           "whole": false
+        },
+        "scene": {
+          "item": "milk",
+          "start": "原有",
+          "verb": "再倒進",
+          "result": "現在共有",
+          "mode": "add"
         },
         "rows": [
           [
@@ -144,6 +158,13 @@
           "d": 15,
           "whole": false
         },
+        "scene": {
+          "item": "juice",
+          "start": "原有",
+          "verb": "再倒進",
+          "result": "現在共有",
+          "mode": "add"
+        },
         "rows": [
           [
             {
@@ -203,6 +224,13 @@
           "d": 7,
           "whole": false
         },
+        "scene": {
+          "item": "milk",
+          "start": "原有",
+          "verb": "再倒進",
+          "result": "現在共有",
+          "mode": "add"
+        },
         "rows": [
           [
             {
@@ -261,6 +289,13 @@
           "n": 12,
           "d": 13,
           "whole": false
+        },
+        "scene": {
+          "item": "juice",
+          "start": "原有",
+          "verb": "再倒進",
+          "result": "現在共有",
+          "mode": "add"
         },
         "rows": [
           [
@@ -323,6 +358,13 @@
           "d": 10,
           "whole": false
         },
+        "scene": {
+          "item": "flour",
+          "start": "原有",
+          "verb": "做麵包用掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -381,6 +423,13 @@
           "n": 6,
           "d": 16,
           "whole": false
+        },
+        "scene": {
+          "item": "bean",
+          "start": "原有",
+          "verb": "煮湯用掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -441,6 +490,13 @@
           "d": 9,
           "whole": false
         },
+        "scene": {
+          "item": "flour",
+          "start": "原有",
+          "verb": "做麵包用掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -500,6 +556,13 @@
           "d": 5,
           "whole": false
         },
+        "scene": {
+          "item": "bean",
+          "start": "原有",
+          "verb": "煮湯用掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -558,6 +621,13 @@
           "n": 4,
           "d": 7,
           "whole": false
+        },
+        "scene": {
+          "item": "flour",
+          "start": "原有",
+          "verb": "做麵包用掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -620,6 +690,13 @@
           "d": 6,
           "whole": true
         },
+        "scene": {
+          "item": "toast",
+          "start": "原有",
+          "verb": "做早餐用掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -678,6 +755,13 @@
           "n": 3,
           "d": 5,
           "whole": true
+        },
+        "scene": {
+          "item": "chocolate",
+          "start": "原有",
+          "verb": "大家吃掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -738,6 +822,13 @@
           "d": 10,
           "whole": true
         },
+        "scene": {
+          "item": "toast",
+          "start": "原有",
+          "verb": "做早餐用掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -796,6 +887,13 @@
           "n": 2,
           "d": 8,
           "whole": true
+        },
+        "scene": {
+          "item": "chocolate",
+          "start": "原有",
+          "verb": "大家吃掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -856,6 +954,13 @@
           "d": 7,
           "whole": true
         },
+        "scene": {
+          "item": "toast",
+          "start": "原有",
+          "verb": "做早餐用掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -913,6 +1018,13 @@
           "n": 5,
           "d": 8,
           "whole": false
+        },
+        "scene": {
+          "item": "candy",
+          "start": "桌上有",
+          "verb": "吃掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -986,6 +1098,13 @@
           "d": 6,
           "whole": false
         },
+        "scene": {
+          "item": "apple",
+          "start": "桌上有",
+          "verb": "吃掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -1057,6 +1176,13 @@
           "n": 7,
           "d": 4,
           "whole": false
+        },
+        "scene": {
+          "item": "candy",
+          "start": "桌上有",
+          "verb": "吃掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -1130,6 +1256,13 @@
           "d": 7,
           "whole": false
         },
+        "scene": {
+          "item": "apple",
+          "start": "桌上有",
+          "verb": "吃掉",
+          "result": "還剩",
+          "mode": "sub"
+        },
         "rows": [
           [
             {
@@ -1201,6 +1334,13 @@
           "n": 7,
           "d": 5,
           "whole": false
+        },
+        "scene": {
+          "item": "candy",
+          "start": "桌上有",
+          "verb": "吃掉",
+          "result": "還剩",
+          "mode": "sub"
         },
         "rows": [
           [
@@ -1279,6 +1419,13 @@
           "d": 9,
           "whole": true
         },
+        "scene": {
+          "item": "tea",
+          "start": "家裡有",
+          "verb": "爸爸再買",
+          "result": "現在共有",
+          "mode": "add"
+        },
         "rows": [
           [
             {
@@ -1350,6 +1497,13 @@
           "n": 4,
           "d": 6,
           "whole": true
+        },
+        "scene": {
+          "item": "tea",
+          "start": "家裡有",
+          "verb": "爸爸再買",
+          "result": "現在共有",
+          "mode": "add"
         },
         "rows": [
           [
@@ -1423,6 +1577,13 @@
           "d": 5,
           "whole": true
         },
+        "scene": {
+          "item": "tea",
+          "start": "家裡有",
+          "verb": "爸爸再買",
+          "result": "現在共有",
+          "mode": "add"
+        },
         "rows": [
           [
             {
@@ -1495,6 +1656,13 @@
           "d": 7,
           "whole": true
         },
+        "scene": {
+          "item": "tea",
+          "start": "家裡有",
+          "verb": "爸爸再買",
+          "result": "現在共有",
+          "mode": "add"
+        },
         "rows": [
           [
             {
@@ -1566,6 +1734,13 @@
           "n": 4,
           "d": 8,
           "whole": true
+        },
+        "scene": {
+          "item": "tea",
+          "start": "家裡有",
+          "verb": "爸爸再買",
+          "result": "現在共有",
+          "mode": "add"
         },
         "rows": [
           [
