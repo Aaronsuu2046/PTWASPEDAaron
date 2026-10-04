@@ -8,7 +8,7 @@
       <!-- 題目算式：答對後在問號處顯示標準答案 -->
       <div class="question-panel">
         <p class="question-label">用計算機算算看</p>
-        <div class="expression">
+        <div class="expression" :class="{ 'expression--compact': compact }">
           <span>{{ gameData.expression }} =</span>
           <span
             class="answer-box"
@@ -52,6 +52,8 @@ export default {
     introText: { type: Object, default: null },
     // 選填：除了結果正確，還要在計算機依序按出題目算式再按「=」（預設不檢查，維持原行為）
     requireExpression: { type: Boolean, default: false },
+    // 選填：算式比較長（例如小數加減）時，小螢幕上把算式字縮小，避免超出畫面（預設不縮）
+    compact: { type: Boolean, default: false },
   },
   emits: ["play-effect", "next-question", "add-record"],
   data() {
@@ -209,5 +211,11 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 0;
+}
+
+@media (max-width: 1100px), (max-height: 760px) {
+  .expression--compact {
+    font-size: 2.6rem;
+  }
 }
 </style>
