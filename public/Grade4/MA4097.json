@@ -1,0 +1,1031 @@
+{
+  "id": "MA4097",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "上面的圓圈等於下面相鄰兩個圓圈相加，填填看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 11,
+            "den": 12
+          },
+          "b": {
+            "whole": 0,
+            "num": 9,
+            "den": 12
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 20,
+            "den": 12,
+            "blank": true
+          },
+          "left": {
+            "whole": 0,
+            "num": 11,
+            "den": 12
+          },
+          "right": {
+            "whole": 0,
+            "num": 9,
+            "den": 12
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 20,
+          "den": 12
+        },
+        "reference": "1 8/12"
+      },
+      {
+        "code": "1-2",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 13,
+            "den": 6
+          },
+          "b": {
+            "whole": 0,
+            "num": 8,
+            "den": 6
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 21,
+            "den": 6,
+            "blank": true
+          },
+          "left": {
+            "whole": 0,
+            "num": 13,
+            "den": 6
+          },
+          "right": {
+            "whole": 0,
+            "num": 8,
+            "den": 6
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 21,
+          "den": 6
+        },
+        "reference": "3 3/6"
+      },
+      {
+        "code": "1-3",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 23,
+            "den": 5
+          },
+          "b": {
+            "whole": 0,
+            "num": 6,
+            "den": 5
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 29,
+            "den": 5,
+            "blank": true
+          },
+          "left": {
+            "whole": 0,
+            "num": 23,
+            "den": 5
+          },
+          "right": {
+            "whole": 0,
+            "num": 6,
+            "den": 5
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 29,
+          "den": 5
+        },
+        "reference": "5 4/5"
+      },
+      {
+        "code": "1-4",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 14,
+            "den": 13
+          },
+          "b": {
+            "whole": 0,
+            "num": 16,
+            "den": 13
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 30,
+            "den": 13,
+            "blank": true
+          },
+          "left": {
+            "whole": 0,
+            "num": 14,
+            "den": 13
+          },
+          "right": {
+            "whole": 0,
+            "num": 16,
+            "den": 13
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 30,
+          "den": 13
+        },
+        "reference": "2 4/13"
+      },
+      {
+        "code": "1-5",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 15,
+            "den": 14
+          },
+          "b": {
+            "whole": 0,
+            "num": 7,
+            "den": 14
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 22,
+            "den": 14,
+            "blank": true
+          },
+          "left": {
+            "whole": 0,
+            "num": 15,
+            "den": 14
+          },
+          "right": {
+            "whole": 0,
+            "num": 7,
+            "den": 14
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 22,
+          "den": 14
+        },
+        "reference": "1 8/14"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 8,
+            "den": 10
+          },
+          "b": {
+            "whole": 0,
+            "num": 5,
+            "den": 10
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 8,
+            "den": 10
+          },
+          "left": {
+            "whole": 0,
+            "num": 5,
+            "den": 10
+          },
+          "right": {
+            "whole": 0,
+            "num": 3,
+            "den": 10,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 3,
+          "den": 10
+        },
+        "reference": null
+      },
+      {
+        "code": "2-2",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 10,
+            "den": 14
+          },
+          "b": {
+            "whole": 0,
+            "num": 9,
+            "den": 14
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 10,
+            "den": 14
+          },
+          "left": {
+            "whole": 0,
+            "num": 9,
+            "den": 14
+          },
+          "right": {
+            "whole": 0,
+            "num": 1,
+            "den": 14,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 1,
+          "den": 14
+        },
+        "reference": null
+      },
+      {
+        "code": "2-3",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 13,
+            "den": 7
+          },
+          "b": {
+            "whole": 0,
+            "num": 9,
+            "den": 7
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 13,
+            "den": 7
+          },
+          "left": {
+            "whole": 0,
+            "num": 9,
+            "den": 7
+          },
+          "right": {
+            "whole": 0,
+            "num": 4,
+            "den": 7,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 4,
+          "den": 7
+        },
+        "reference": null
+      },
+      {
+        "code": "2-4",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 12,
+            "den": 13
+          },
+          "b": {
+            "whole": 0,
+            "num": 8,
+            "den": 13
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 12,
+            "den": 13
+          },
+          "left": {
+            "whole": 0,
+            "num": 8,
+            "den": 13
+          },
+          "right": {
+            "whole": 0,
+            "num": 4,
+            "den": 13,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 4,
+          "den": 13
+        },
+        "reference": null
+      },
+      {
+        "code": "2-5",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 0,
+            "num": 16,
+            "den": 12
+          },
+          "b": {
+            "whole": 0,
+            "num": 7,
+            "den": 12
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 0,
+            "num": 16,
+            "den": 12
+          },
+          "left": {
+            "whole": 0,
+            "num": 7,
+            "den": 12
+          },
+          "right": {
+            "whole": 0,
+            "num": 9,
+            "den": 12,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 9,
+          "den": 12
+        },
+        "reference": null
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 8,
+            "num": 2,
+            "den": 5
+          },
+          "b": {
+            "whole": 1,
+            "num": 1,
+            "den": 5
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 9,
+            "num": 3,
+            "den": 5,
+            "blank": true
+          },
+          "left": {
+            "whole": 8,
+            "num": 2,
+            "den": 5
+          },
+          "right": {
+            "whole": 1,
+            "num": 1,
+            "den": 5
+          }
+        },
+        "answer": {
+          "whole": 9,
+          "num": 3,
+          "den": 5
+        },
+        "reference": null
+      },
+      {
+        "code": "3-2",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 2,
+            "num": 4,
+            "den": 7
+          },
+          "b": {
+            "whole": 5,
+            "num": 2,
+            "den": 7
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 7,
+            "num": 6,
+            "den": 7,
+            "blank": true
+          },
+          "left": {
+            "whole": 2,
+            "num": 4,
+            "den": 7
+          },
+          "right": {
+            "whole": 5,
+            "num": 2,
+            "den": 7
+          }
+        },
+        "answer": {
+          "whole": 7,
+          "num": 6,
+          "den": 7
+        },
+        "reference": null
+      },
+      {
+        "code": "3-3",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 9,
+            "num": 3,
+            "den": 10
+          },
+          "b": {
+            "whole": 3,
+            "num": 4,
+            "den": 10
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 12,
+            "num": 7,
+            "den": 10,
+            "blank": true
+          },
+          "left": {
+            "whole": 9,
+            "num": 3,
+            "den": 10
+          },
+          "right": {
+            "whole": 3,
+            "num": 4,
+            "den": 10
+          }
+        },
+        "answer": {
+          "whole": 12,
+          "num": 7,
+          "den": 10
+        },
+        "reference": null
+      },
+      {
+        "code": "3-4",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 6,
+            "num": 7,
+            "den": 12
+          },
+          "b": {
+            "whole": 5,
+            "num": 3,
+            "den": 12
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 11,
+            "num": 10,
+            "den": 12,
+            "blank": true
+          },
+          "left": {
+            "whole": 6,
+            "num": 7,
+            "den": 12
+          },
+          "right": {
+            "whole": 5,
+            "num": 3,
+            "den": 12
+          }
+        },
+        "answer": {
+          "whole": 11,
+          "num": 10,
+          "den": 12
+        },
+        "reference": null
+      },
+      {
+        "code": "3-5",
+        "shape": "small",
+        "op": "+",
+        "expr": {
+          "a": {
+            "whole": 7,
+            "num": 5,
+            "den": 9
+          },
+          "b": {
+            "whole": 8,
+            "num": 2,
+            "den": 9
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 15,
+            "num": 7,
+            "den": 9,
+            "blank": true
+          },
+          "left": {
+            "whole": 7,
+            "num": 5,
+            "den": 9
+          },
+          "right": {
+            "whole": 8,
+            "num": 2,
+            "den": 9
+          }
+        },
+        "answer": {
+          "whole": 15,
+          "num": 7,
+          "den": 9
+        },
+        "reference": null
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 5,
+            "num": 7,
+            "den": 8
+          },
+          "b": {
+            "whole": 1,
+            "num": 2,
+            "den": 8
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 5,
+            "num": 7,
+            "den": 8
+          },
+          "left": {
+            "whole": 1,
+            "num": 2,
+            "den": 8
+          },
+          "right": {
+            "whole": 4,
+            "num": 5,
+            "den": 8,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 4,
+          "num": 5,
+          "den": 8
+        },
+        "reference": null
+      },
+      {
+        "code": "4-2",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 8,
+            "num": 9,
+            "den": 12
+          },
+          "b": {
+            "whole": 6,
+            "num": 7,
+            "den": 12
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 8,
+            "num": 9,
+            "den": 12
+          },
+          "left": {
+            "whole": 6,
+            "num": 7,
+            "den": 12
+          },
+          "right": {
+            "whole": 2,
+            "num": 2,
+            "den": 12,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 2,
+          "num": 2,
+          "den": 12
+        },
+        "reference": null
+      },
+      {
+        "code": "4-3",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 2,
+            "num": 0,
+            "den": 10
+          },
+          "b": {
+            "whole": 0,
+            "num": 5,
+            "den": 10
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 2,
+            "num": 0,
+            "den": 10
+          },
+          "left": {
+            "whole": 0,
+            "num": 5,
+            "den": 10
+          },
+          "right": {
+            "whole": 0,
+            "num": 15,
+            "den": 10,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 15,
+          "den": 10
+        },
+        "reference": "1 5/10"
+      },
+      {
+        "code": "4-4",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 3,
+            "num": 0,
+            "den": 7
+          },
+          "b": {
+            "whole": 0,
+            "num": 11,
+            "den": 7
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 3,
+            "num": 0,
+            "den": 7
+          },
+          "left": {
+            "whole": 0,
+            "num": 11,
+            "den": 7
+          },
+          "right": {
+            "whole": 0,
+            "num": 10,
+            "den": 7,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 10,
+          "den": 7
+        },
+        "reference": "1 3/7"
+      },
+      {
+        "code": "4-5",
+        "shape": "small",
+        "op": "-",
+        "expr": {
+          "a": {
+            "whole": 1,
+            "num": 0,
+            "den": 8
+          },
+          "b": {
+            "whole": 0,
+            "num": 2,
+            "den": 8
+          }
+        },
+        "nodes": {
+          "top": {
+            "whole": 1,
+            "num": 0,
+            "den": 8
+          },
+          "left": {
+            "whole": 0,
+            "num": 2,
+            "den": 8
+          },
+          "right": {
+            "whole": 0,
+            "num": 6,
+            "den": 8,
+            "blank": true
+          }
+        },
+        "answer": {
+          "whole": 0,
+          "num": 6,
+          "den": 8
+        },
+        "reference": null
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "shape": "big",
+        "nodes": {
+          "A": {
+            "whole": 0,
+            "num": 1,
+            "den": 15
+          },
+          "B": {
+            "whole": 0,
+            "num": 5,
+            "den": 15
+          },
+          "C": {
+            "whole": 0,
+            "num": 9,
+            "den": 15,
+            "blank": true
+          },
+          "D": {
+            "whole": 0,
+            "num": 6,
+            "den": 15
+          },
+          "E": {
+            "whole": 0,
+            "num": 14,
+            "den": 15
+          },
+          "F": {
+            "whole": 0,
+            "num": 20,
+            "den": 15,
+            "blank": true
+          }
+        }
+      },
+      {
+        "code": "5-2",
+        "shape": "big",
+        "nodes": {
+          "A": {
+            "whole": 0,
+            "num": 1,
+            "den": 9
+          },
+          "B": {
+            "whole": 0,
+            "num": 2,
+            "den": 9
+          },
+          "C": {
+            "whole": 0,
+            "num": 4,
+            "den": 9
+          },
+          "D": {
+            "whole": 0,
+            "num": 3,
+            "den": 9,
+            "blank": true
+          },
+          "E": {
+            "whole": 0,
+            "num": 6,
+            "den": 9
+          },
+          "F": {
+            "whole": 0,
+            "num": 9,
+            "den": 9
+          }
+        }
+      },
+      {
+        "code": "5-3",
+        "shape": "big",
+        "nodes": {
+          "A": {
+            "whole": 0,
+            "num": 3,
+            "den": 12
+          },
+          "B": {
+            "whole": 0,
+            "num": 1,
+            "den": 12
+          },
+          "C": {
+            "whole": 0,
+            "num": 5,
+            "den": 12,
+            "blank": true
+          },
+          "D": {
+            "whole": 0,
+            "num": 4,
+            "den": 12,
+            "blank": true
+          },
+          "E": {
+            "whole": 0,
+            "num": 6,
+            "den": 12
+          },
+          "F": {
+            "whole": 0,
+            "num": 10,
+            "den": 12
+          }
+        }
+      },
+      {
+        "code": "5-4",
+        "shape": "big",
+        "nodes": {
+          "A": {
+            "whole": 0,
+            "num": 4,
+            "den": 20
+          },
+          "B": {
+            "whole": 0,
+            "num": 3,
+            "den": 20
+          },
+          "C": {
+            "whole": 0,
+            "num": 8,
+            "den": 20,
+            "blank": true
+          },
+          "D": {
+            "whole": 0,
+            "num": 7,
+            "den": 20
+          },
+          "E": {
+            "whole": 0,
+            "num": 11,
+            "den": 20
+          },
+          "F": {
+            "whole": 0,
+            "num": 18,
+            "den": 20,
+            "blank": true
+          }
+        }
+      },
+      {
+        "code": "5-5",
+        "shape": "big",
+        "nodes": {
+          "A": {
+            "whole": 0,
+            "num": 2,
+            "den": 16
+          },
+          "B": {
+            "whole": 0,
+            "num": 4,
+            "den": 16,
+            "blank": true
+          },
+          "C": {
+            "whole": 0,
+            "num": 4,
+            "den": 16
+          },
+          "D": {
+            "whole": 0,
+            "num": 6,
+            "den": 16
+          },
+          "E": {
+            "whole": 0,
+            "num": 8,
+            "den": 16,
+            "blank": true
+          },
+          "F": {
+            "whole": 0,
+            "num": 14,
+            "den": 16
+          }
+        }
+      }
+    ]
+  ]
+}
