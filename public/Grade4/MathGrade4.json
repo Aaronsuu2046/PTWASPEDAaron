@@ -597,7 +597,7 @@
                 "Name": "分數連連看",
                 "Description": "把一樣的分數連起來",
                 "Img": "MA4091.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4092",
