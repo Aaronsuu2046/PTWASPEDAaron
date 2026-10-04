@@ -56,7 +56,7 @@
         />
         <slot name="item" :item="item" :col="c" />
         <span
-          v-if="c < 2"
+          v-if="c < ordered.length - 1"
           class="match3__dot match3__dot--right"
           :style="dotStyle(c, item.id, 'right')"
         />
@@ -80,6 +80,7 @@ function shuffle(list) {
 
 // 三欄連連看：左欄—中欄、中欄—右欄各連一條線，三張卡連成一組
 // columns：三個陣列 [{ id, ... }]，同一組的三張卡 id 相同；卡片內容由 slot "item" 畫
+// 也可以只給兩欄（左欄—右欄連一條線），這時右欄就是程式裡的「中欄」，只用 links[0]
 // 點一張卡再點相鄰欄的卡就連線，也可以從一張卡拖到相鄰欄；點已連線的左／右欄卡片可以重連
 // 父元件用 ref 呼叫 check() 判分
 export default {
@@ -308,7 +309,8 @@ export default {
     // 同一組三張卡 id 相同；回傳 { complete, wrong（連錯的線數）, links }，並標示連錯的線
     check() {
       const mids = this.columns[1].map((item) => item.id);
-      const complete = mids.every((m) => this.links[0][m] && this.links[1][m]);
+      const sides = this.columns.length === 2 ? [0] : [0, 1];
+      const complete = mids.every((m) => sides.every((s) => this.links[s][m]));
       const wrong = [];
       [0, 1].forEach((side) => {
         Object.entries(this.links[side]).forEach(([mid, outer]) => {
