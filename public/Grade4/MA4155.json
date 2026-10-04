@@ -27,7 +27,8 @@
         ],
         "answer": "2.48",
         "unit": "公升",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大瓶果汁 0.65 公升，小瓶果汁 0.31 公升。媽媽買 3 瓶大瓶果汁和 1 瓶小瓶果汁，一共買了多少公升的果汁？",
@@ -47,7 +48,8 @@
         ],
         "answer": "2.26",
         "unit": "公升",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大瓶果汁 0.65 公升，小瓶果汁 0.42 公升。媽媽買 4 瓶大瓶果汁和 1 瓶小瓶果汁，一共買了多少公升的果汁？",
@@ -67,7 +69,8 @@
         ],
         "answer": "3.02",
         "unit": "公升",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大瓶果汁 0.56 公升，小瓶果汁 0.35 公升。媽媽買 5 瓶大瓶果汁和 1 瓶小瓶果汁，一共買了多少公升的果汁？",
@@ -87,7 +90,8 @@
         ],
         "answer": "3.15",
         "unit": "公升",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大瓶果汁 0.75 公升，小瓶果汁 0.37 公升。媽媽買 6 瓶大瓶果汁和 1 瓶小瓶果汁，一共買了多少公升的果汁？",
@@ -107,7 +111,8 @@
         ],
         "answer": "4.87",
         "unit": "公升",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ],
     [
@@ -129,7 +134,8 @@
         ],
         "answer": "90",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "鉛筆一枝是 24 元，一枝鉛筆比一枝原子筆貴 18.65 元，同學買 20 枝原子筆，一共要多少元？",
@@ -149,7 +155,8 @@
         ],
         "answer": "107",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "鉛筆一枝是 15 元，一枝鉛筆比一枝原子筆貴 11.75 元，同學買 24 枝原子筆，一共要多少元？",
@@ -169,7 +176,8 @@
         ],
         "answer": "78",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "鉛筆一枝是 22 元，一枝鉛筆比一枝原子筆貴 19.28 元，同學買 25 枝原子筆，一共要多少元？",
@@ -189,7 +197,8 @@
         ],
         "answer": "68",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "鉛筆一枝是 18 元，一枝鉛筆比一枝原子筆貴 15.75 元，同學買 16 枝原子筆，一共要多少元？",
@@ -209,7 +218,8 @@
         ],
         "answer": "36",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ],
     [
@@ -231,7 +241,8 @@
         ],
         "answer": "18.8",
         "unit": "公斤",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "奶油一份 0.5 公斤，麵粉一包 0.79 公斤做一個蛋糕，共做 30 個，一共要多少公斤？",
@@ -251,7 +262,8 @@
         ],
         "answer": "38.7",
         "unit": "公斤",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "奶油一份 0.4 公斤，麵粉一包 0.82 公斤做一個蛋糕，共做 20 個，一共要多少公斤？",
@@ -271,7 +283,8 @@
         ],
         "answer": "24.4",
         "unit": "公斤",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "奶油一份 0.4 公斤，麵粉一包 0.68 公斤做一個蛋糕，共做 30 個，一共要多少公斤？",
@@ -291,7 +304,8 @@
         ],
         "answer": "32.4",
         "unit": "公斤",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "奶油一份 0.3 公斤，麵粉一包 0.59 公斤做一個蛋糕，共做 40 個，一共要多少公斤？",
@@ -311,7 +325,8 @@
         ],
         "answer": "35.6",
         "unit": "公斤",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ],
     [
@@ -333,7 +348,8 @@
         ],
         "answer": "7.79",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "一包餅乾 3.04 元，買 12 包，付了 27.34 元後，還差多少元？",
@@ -353,7 +369,8 @@
         ],
         "answer": "9.14",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "一包餅乾 2.45 元，買 13 包，付了 26.47 元後，還差多少元？",
@@ -373,7 +390,8 @@
         ],
         "answer": "5.38",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "一包餅乾 3.12 元，買 14 包，付了 37.52 元後，還差多少元？",
@@ -393,7 +411,8 @@
         ],
         "answer": "6.16",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "一包餅乾 2.06 元，買 13 包，付了 23.39 元後，還差多少元？",
@@ -413,7 +432,8 @@
         ],
         "answer": "3.39",
         "unit": "元",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ],
     [
@@ -435,7 +455,8 @@
         ],
         "answer": "19.5",
         "unit": "公尺",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大約每一步 0.6 公尺，小約每一步 0.46 公尺，兩人同時同地反方向走 13 步後，大約相距幾公尺？",
@@ -455,7 +476,8 @@
         ],
         "answer": "13.78",
         "unit": "公尺",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大約每一步 0.75 公尺，小約每一步 0.65 公尺，兩人同時同地反方向走 20 步後，大約相距幾公尺？",
@@ -475,7 +497,8 @@
         ],
         "answer": "28",
         "unit": "公尺",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大約每一步 0.6 公尺，小約每一步 0.43 公尺，兩人同時同地反方向走 25 步後，大約相距幾公尺？",
@@ -495,7 +518,8 @@
         ],
         "answer": "25.75",
         "unit": "公尺",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "大約每一步 0.7 公尺，小約每一步 0.62 公尺，兩人同時同地反方向走 9 步後，大約相距幾公尺？",
@@ -515,7 +539,8 @@
         ],
         "answer": "11.88",
         "unit": "公尺",
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ]
   ]

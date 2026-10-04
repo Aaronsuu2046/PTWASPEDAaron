@@ -17,13 +17,12 @@
             "op": "×",
             "b": "32",
             "result": "3904",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "3904",
-        "unit": "大卡"
+        "unit": "大卡",
+        "scratch": "vertical"
       },
       {
         "question": "一條巧克力熱量 125 大卡，21 條巧克力是多少大卡？",
@@ -33,13 +32,12 @@
             "op": "×",
             "b": "21",
             "result": "2625",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "2625",
-        "unit": "大卡"
+        "unit": "大卡",
+        "scratch": "vertical"
       },
       {
         "question": "一條巧克力熱量 132 大卡，35 條巧克力是多少大卡？",
@@ -49,13 +47,12 @@
             "op": "×",
             "b": "35",
             "result": "4620",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "4620",
-        "unit": "大卡"
+        "unit": "大卡",
+        "scratch": "vertical"
       },
       {
         "question": "一條巧克力熱量 136 大卡，26 條巧克力是多少大卡？",
@@ -65,13 +62,12 @@
             "op": "×",
             "b": "26",
             "result": "3536",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "3536",
-        "unit": "大卡"
+        "unit": "大卡",
+        "scratch": "vertical"
       },
       {
         "question": "一條巧克力熱量 129 大卡，28 條巧克力是多少大卡？",
@@ -81,13 +77,12 @@
             "op": "×",
             "b": "28",
             "result": "3612",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "3612",
-        "unit": "大卡"
+        "unit": "大卡",
+        "scratch": "vertical"
       }
     ],
     [
@@ -99,13 +94,12 @@
             "op": "×",
             "b": "30",
             "result": "12600",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "12600",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一箱果汁 270 元，爸爸買了 20 箱，共花了多少元？",
@@ -115,13 +109,12 @@
             "op": "×",
             "b": "20",
             "result": "5400",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "5400",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一箱果汁 310 元，爸爸買了 30 箱，共花了多少元？",
@@ -131,13 +124,12 @@
             "op": "×",
             "b": "30",
             "result": "9300",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "9300",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一箱果汁 290 元，爸爸買了 30 箱，共花了多少元？",
@@ -147,13 +139,12 @@
             "op": "×",
             "b": "30",
             "result": "8700",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "8700",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "一箱果汁 530 元，爸爸買了 20 箱，共花了多少元？",
@@ -163,13 +154,12 @@
             "op": "×",
             "b": "20",
             "result": "10600",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "10600",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       }
     ],
     [
@@ -181,13 +171,12 @@
             "op": "×",
             "b": "78",
             "result": "39702",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "39702",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "遊樂園門票一張 409 元，今天賣出 82 張門票，遊樂園共收入多少元？",
@@ -197,13 +186,12 @@
             "op": "×",
             "b": "82",
             "result": "33538",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "33538",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "遊樂園門票一張 309 元，今天賣出 91 張門票，遊樂園共收入多少元？",
@@ -213,13 +201,12 @@
             "op": "×",
             "b": "91",
             "result": "28119",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "28119",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "遊樂園門票一張 309 元，今天賣出 75 張門票，遊樂園共收入多少元？",
@@ -229,13 +216,12 @@
             "op": "×",
             "b": "75",
             "result": "23175",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "23175",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "遊樂園門票一張 409 元，今天賣出 93 張門票，遊樂園共收入多少元？",
@@ -245,13 +231,12 @@
             "op": "×",
             "b": "93",
             "result": "38037",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "38037",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       }
     ],
     [
@@ -263,13 +248,12 @@
             "op": "×",
             "b": "18",
             "result": "21600",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "21600",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥買一支手機，分期每個月付 1260 元，12 個月付完，他買這支手機花了幾元？",
@@ -279,13 +263,12 @@
             "op": "×",
             "b": "12",
             "result": "15120",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "15120",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥買一支手機，分期每個月付 1380 元，16 個月付完，他買這支手機花了幾元？",
@@ -295,13 +278,12 @@
             "op": "×",
             "b": "16",
             "result": "22080",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "22080",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥買一支手機，分期每個月付 1120 元，13 個月付完，他買這支手機花了幾元？",
@@ -311,13 +293,12 @@
             "op": "×",
             "b": "13",
             "result": "14560",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "14560",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "哥哥買一支手機，分期每個月付 1500 元，15 個月付完，他買這支手機花了幾元？",
@@ -327,13 +308,12 @@
             "op": "×",
             "b": "15",
             "result": "22500",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "22500",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       }
     ],
     [
@@ -345,13 +325,12 @@
             "op": "×",
             "b": "24",
             "result": "24288",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "24288",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "爸爸每個月的電話費是 1206 元，2 年的電話費共要多少元？",
@@ -361,13 +340,12 @@
             "op": "×",
             "b": "24",
             "result": "28944",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "28944",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "爸爸每個月的電話費是 1009 元，2 年的電話費共要多少元？",
@@ -377,13 +355,12 @@
             "op": "×",
             "b": "24",
             "result": "24216",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "24216",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "爸爸每個月的電話費是 1071 元，2 年的電話費共要多少元？",
@@ -393,13 +370,12 @@
             "op": "×",
             "b": "24",
             "result": "25704",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "25704",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       },
       {
         "question": "爸爸每個月的電話費是 1209 元，2 年的電話費共要多少元？",
@@ -409,13 +385,12 @@
             "op": "×",
             "b": "24",
             "result": "29016",
-            "given": [
-              "a"
-            ]
+            "given": ["a"]
           }
         ],
         "answer": "29016",
-        "unit": "元"
+        "unit": "元",
+        "scratch": "vertical"
       }
     ]
   ]

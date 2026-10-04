@@ -27,7 +27,8 @@
         ],
         "answer": "192",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的面積是多少？",
@@ -47,7 +48,8 @@
         ],
         "answer": "4800",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的面積是多少？",
@@ -67,7 +69,8 @@
         ],
         "answer": "150",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的面積是多少？",
@@ -87,7 +90,8 @@
         ],
         "answer": "700",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個長方形的面積是多少？",
@@ -107,7 +111,8 @@
         ],
         "answer": "91",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       }
     ],
     [
@@ -128,7 +133,8 @@
         ],
         "answer": "324",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的面積是多少？",
@@ -147,7 +153,8 @@
         ],
         "answer": "25",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的面積是多少？",
@@ -166,7 +173,8 @@
         ],
         "answer": "121",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的面積是多少？",
@@ -185,7 +193,8 @@
         ],
         "answer": "4900",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       },
       {
         "question": "算算看，這個正方形的面積是多少？",
@@ -204,7 +213,8 @@
         ],
         "answer": "144",
         "unit": "平方公分",
-        "unitOptions": ["公分", "平方公分"]
+        "unitOptions": ["公分", "平方公分"],
+        "scratch": "vertical"
       }
     ],
     [
@@ -227,7 +237,8 @@
         "answer": "64",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用 48 公分長的繩子圍成一個正方形，這個正方形的面積是多少？先算邊長，再算面積。",
@@ -248,7 +259,8 @@
         "answer": "144",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用 36 公分長的繩子圍成一個正方形，這個正方形的面積是多少？先算邊長，再算面積。",
@@ -269,7 +281,8 @@
         "answer": "81",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用 28 公分長的繩子圍成一個正方形，這個正方形的面積是多少？先算邊長，再算面積。",
@@ -290,7 +303,8 @@
         "answer": "49",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       },
       {
         "question": "用 40 公分長的繩子圍成一個正方形，這個正方形的面積是多少？先算邊長，再算面積。",
@@ -311,7 +325,8 @@
         "answer": "100",
         "unit": "平方公分",
         "unitOptions": ["公分", "平方公分"],
-        "revealMs": 3000
+        "revealMs": 3000,
+        "scratch": "vertical"
       }
     ]
   ]

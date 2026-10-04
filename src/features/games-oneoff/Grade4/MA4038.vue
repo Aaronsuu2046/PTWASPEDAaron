@@ -68,7 +68,19 @@
 
       <div class="side">
         <div class="sheet">
-          <p class="sheet__title">計算紙</p>
+          <div class="sheet__head">
+            <p class="sheet__title">計算紙</p>
+            <!-- 用寫好的算式畫直式，只是算算看，不計分 -->
+            <button
+              v-if="!solved"
+              type="button"
+              class="sheet__vertical"
+              data-pad-avoid
+              @click="toggleVertical"
+            >
+              {{ verticalOpen ? "收起直式" : "用直式算" }}
+            </button>
+          </div>
           <button
             v-for="(line, k) in lines"
             :key="k"
@@ -85,6 +97,37 @@
             {{ line || (padEl && focus === k ? "" : "點這裡寫算式")
             }}<span v-if="padEl && focus === k" class="caret" />
           </button>
+        </div>
+
+        <div v-if="verticalOpen && !solved" class="vertical">
+          <div class="vertical__steps">
+            <button
+              v-for="(_, k) in lines"
+              :key="`vline-${k}`"
+              type="button"
+              class="vertical__step"
+              :class="{ 'vertical__step--on': verticalLine === k }"
+              data-pad-avoid
+              @click="pickVerticalLine(k)"
+            >
+              第 {{ k + 1 }} 行
+            </button>
+          </div>
+          <KeepAlive>
+            <VerticalScratch
+              v-if="verticalExpr"
+              ref="vertical"
+              :key="verticalExpr.sig"
+              :a="verticalExpr.a"
+              :op="verticalExpr.op"
+              :b="verticalExpr.b"
+              @focus="onVerticalFocus"
+            />
+          </KeepAlive>
+          <p v-if="!verticalExpr" class="vertical__tip">
+            先在第 {{ verticalLine + 1 }} 行寫好算式（例如
+            90−30），這裡就會出現直式喔！
+          </p>
         </div>
 
         <div class="answer">
@@ -108,10 +151,12 @@
         <!-- 點算式行開「數字＋＋−＝」板，點答案格只開數字板 -->
         <FieldPad
           :field="solved ? null : padEl"
-          :kind="focus === 'answer' ? 'number' : 'expression'"
+          :kind="
+            focus === 'answer' || focus === 'vertical' ? 'number' : 'expression'
+          "
           :operators="OPS"
           @press="onPadKey"
-          @close="padEl = null"
+          @close="closePad"
         />
 
         <p v-if="feedback" class="feedback">{{ feedback }}</p>
@@ -123,6 +168,7 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import FieldPad from "./games/Common/FieldPad.vue";
+import VerticalScratch from "./games/Vertical/VerticalScratch.vue";
 
 const W = 600;
 const H = 340;
@@ -178,9 +224,10 @@ function buildFigure(q) {
 }
 
 // 角的合成與分解：看圖用加減算出未知角；計算紙的算式會記錄下來，只驗證最後答案
+// 「用直式算」：用計算紙某一行的前兩個數畫加減直式（不計分）
 export default {
   name: "MA4038",
-  components: { FieldPad },
+  components: { FieldPad, VerticalScratch },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -199,6 +246,8 @@ export default {
       padEl: null,
       feedback: "",
       solved: false,
+      verticalOpen: false,
+      verticalLine: 0,
     };
   },
   computed: {
@@ -208,6 +257,15 @@ export default {
     figure() {
       const f = buildFigure(this.gameData);
       return { ...f, segments: f.segs };
+    },
+    // 直式要算的：這一行最前面的「數 ＋／− 數」
+    verticalExpr() {
+      const m = (this.lines[this.verticalLine] || "").match(
+        /^(\d+)([+−])(\d+)/
+      );
+      if (!m) return null;
+      const op = m[2] === "−" ? "-" : "+";
+      return { a: m[1], op, b: m[3], sig: `${this.verticalLine}:${m[0]}` };
     },
     // 頂點位置：小角放左邊，大角放中間，讓射線都在畫面內
     V() {
@@ -260,10 +318,43 @@ export default {
     // ---- 計算紙輸入 ----
     openPad(target, event) {
       if (this.solved) return;
+      if (this.focus === "vertical") this.$refs.vertical?.blur();
+      // 直式跟著目前寫的那一行
+      if (typeof target === "number") this.verticalLine = target;
       this.focus = target;
       this.padEl = event.currentTarget;
     },
+    closePad() {
+      if (this.focus === "vertical") this.$refs.vertical?.blur();
+      this.padEl = null;
+    },
+    toggleVertical() {
+      if (this.focus === "vertical") this.closePad();
+      this.verticalOpen = !this.verticalOpen;
+    },
+    pickVerticalLine(k) {
+      if (this.focus === "vertical") this.closePad();
+      this.verticalLine = k;
+    },
+    // 點了直式的格子：輸入板移到那一格
+    onVerticalFocus() {
+      this.focus = "vertical";
+      this.syncVerticalPad();
+    },
+    syncVerticalPad() {
+      this.$nextTick(() => {
+        const id = this.$refs.vertical?.active;
+        this.padEl = id
+          ? this.$el.querySelector(`.vertical [data-cell="${id}"]`)
+          : null;
+      });
+    },
     onPadKey(key) {
+      if (this.focus === "vertical") {
+        this.$refs.vertical?.input(key === "clear" ? "←" : key);
+        this.syncVerticalPad();
+        return;
+      }
       this.press(key === "clear" ? "清除" : key);
     },
     press(key) {
@@ -285,6 +376,7 @@ export default {
 
     checkAnswer() {
       if (this.solved) return;
+      if (this.focus === "vertical") this.closePad();
       if (!this.answer) {
         this.feedback = "算好了，把答案填在「答」的格子裡喔！";
         this.focus = "answer";
@@ -507,11 +599,29 @@ export default {
   border: 3px solid #ffcc80;
   border-radius: 12px;
 
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__title {
     margin: 0;
     font-size: 1.1rem;
     font-weight: $font-bold;
     color: #8d6e63;
+  }
+
+  &__vertical {
+    padding: 0.15rem 0.7rem;
+    font-size: 1.05rem;
+    font-weight: $font-bold;
+    color: #ffffff;
+    background-color: #26a69a;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 3px 0 #00796b;
+    cursor: pointer;
   }
 
   &__line {
@@ -538,6 +648,60 @@ export default {
       border-color: #ffb300;
       background-color: #ffffff;
     }
+  }
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.4rem;
+  background-color: #e0f2f1;
+  border: 3px solid #80cbc4;
+  border-radius: 12px;
+
+  &__steps {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  &__step {
+    flex: 1;
+    padding: 0.15rem 0.4rem;
+    font-size: 1rem;
+    font-weight: $font-bold;
+    color: #00695c;
+    background-color: #ffffff;
+    border: 2px solid #80cbc4;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &--on {
+      color: #ffffff;
+      background-color: #26a69a;
+      border-color: #00796b;
+    }
+  }
+
+  &__tip {
+    margin: 0.3rem;
+    font-size: 1.1rem;
+    font-weight: $font-bold;
+    line-height: 1.4;
+    color: #00695c;
+  }
+
+  :deep(.vfill) {
+    --cell: 2.3rem;
+  }
+
+  :deep(.vfill__cell) {
+    font-size: 1.5rem;
+  }
+
+  :deep(.vfill__grid) {
+    padding: 0.3rem 0.6rem;
+    row-gap: 0.1rem;
   }
 }
 
@@ -623,6 +787,16 @@ export default {
 
   .feedback {
     font-size: 0.95rem;
+  }
+
+  .vertical {
+    :deep(.vfill) {
+      --cell: 1.9rem;
+    }
+
+    :deep(.vfill__cell) {
+      font-size: 1.3rem;
+    }
   }
 }
 </style>

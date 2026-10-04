@@ -26,7 +26,8 @@
         ],
         "answer": "144",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "邊長 9 公尺的正方形地墊，面積是多少？",
@@ -45,7 +46,8 @@
         ],
         "answer": "81",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "邊長 11 公尺的正方形地墊，面積是多少？",
@@ -64,7 +66,8 @@
         ],
         "answer": "121",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "邊長 5 公尺的正方形地墊，面積是多少？",
@@ -83,7 +86,8 @@
         ],
         "answer": "25",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "邊長 6 公尺的正方形地墊，面積是多少？",
@@ -102,7 +106,8 @@
         ],
         "answer": "36",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       }
     ],
     [
@@ -124,7 +129,8 @@
         ],
         "answer": "104",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "長 12 公尺、寬 4 公尺的長方形草地，面積是多少？",
@@ -144,7 +150,8 @@
         ],
         "answer": "48",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "長 11 公尺、寬 9 公尺的長方形草地，面積是多少？",
@@ -164,7 +171,8 @@
         ],
         "answer": "99",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "長 12 公尺、寬 7 公尺的長方形草地，面積是多少？",
@@ -184,7 +192,8 @@
         ],
         "answer": "84",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       },
       {
         "question": "長 14 公尺、寬 6 公尺的長方形草地，面積是多少？",
@@ -204,7 +213,8 @@
         ],
         "answer": "84",
         "unit": "平方公尺",
-        "unitOptions": ["公尺", "平方公尺"]
+        "unitOptions": ["公尺", "平方公尺"],
+        "scratch": "vertical"
       }
     ],
     [
@@ -236,7 +246,8 @@
         "answer": "8",
         "unit": "平方公尺",
         "unitOptions": ["公尺", "平方公尺"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "藍色是完好的磁磚，一格是 1 平方公尺。完好的磁磚面積一共是多少？",
@@ -267,7 +278,8 @@
         "answer": "6",
         "unit": "平方公尺",
         "unitOptions": ["公尺", "平方公尺"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "藍色是完好的磁磚，一格是 1 平方公尺。完好的磁磚面積一共是多少？",
@@ -298,7 +310,8 @@
         "answer": "6",
         "unit": "平方公尺",
         "unitOptions": ["公尺", "平方公尺"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "藍色是完好的磁磚，一格是 1 平方公尺。完好的磁磚面積一共是多少？",
@@ -329,7 +342,8 @@
         "answer": "6",
         "unit": "平方公尺",
         "unitOptions": ["公尺", "平方公尺"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       },
       {
         "question": "藍色是完好的磁磚，一格是 1 平方公尺。完好的磁磚面積一共是多少？",
@@ -360,7 +374,8 @@
         "answer": "8",
         "unit": "平方公尺",
         "unitOptions": ["公尺", "平方公尺"],
-        "stepCheck": "consistent"
+        "stepCheck": "consistent",
+        "scratch": "vertical"
       }
     ]
   ]
