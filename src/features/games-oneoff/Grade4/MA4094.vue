@@ -8,7 +8,7 @@
       <div class="shapes">
         <p class="shapes__hint">
           {{ gameData.whole }} 個圓，每個圓分成
-          {{ gameData.den }} 份。點一點，可以塗色數數看
+          {{ gameData.den }} 份。點一點或按住拖過去，可以塗色數數看
           <span class="shapes__count">已塗 {{ paintedCount }} 份</span>
           <button
             type="button"

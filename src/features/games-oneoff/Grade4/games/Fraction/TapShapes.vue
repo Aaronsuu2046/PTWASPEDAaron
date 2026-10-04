@@ -1,7 +1,12 @@
 <template>
-  <!-- 可以點擊塗色的圓形：count 個圓，每個切成 den 份；只是輔助，不列入作答 -->
+  <!-- 可以點擊或按住拖過去塗色的圓形：count 個圓，每個切成 den 份；只是輔助，不列入作答 -->
   <svg
+    ref="svg"
     class="tap-shapes"
+    @pointerdown="startPaint"
+    @pointermove="movePaint"
+    @pointerup="endPaint"
+    @pointercancel="endPaint"
     :viewBox="`0 0 ${cols * CELL} ${rows * CELL}`"
     role="img"
     :aria-label="`${count} 個圓，每個分成 ${den} 份，已塗 ${painted.length} 份`"
@@ -18,7 +23,6 @@
         class="tap-shapes__part"
         :class="{ 'tap-shapes__part--on': isOn(u, k) }"
         :data-part="`${u}-${k}`"
-        @click="toggle(u, k)"
       />
     </g>
   </svg>
@@ -28,7 +32,8 @@
 const CELL = 120;
 const R = 52;
 
-// 點一塊塗色、再點一次取消；父元件可呼叫 clear() 全部擦掉
+// 點一塊塗色、再點一次取消；按住拖過去可以一次塗好幾塊
+// （從沒塗的開始拖就是塗色，從塗好的開始拖就是擦掉）；父元件可呼叫 clear() 全部擦掉
 export default {
   name: "TapShapes",
   props: {
@@ -40,7 +45,7 @@ export default {
   },
   emits: ["change"],
   data() {
-    return { CELL, painted: [] };
+    return { CELL, painted: [], paintMode: null };
   },
   computed: {
     cols() {
@@ -63,13 +68,38 @@ export default {
     isOn(u, k) {
       return this.painted.includes(`${u}-${k}`);
     },
-    toggle(u, k) {
-      if (this.disabled) return;
-      const id = `${u}-${k}`;
-      this.painted = this.isOn(u, k)
-        ? this.painted.filter((p) => p !== id)
-        : [...this.painted, id];
+    // 把某一塊設成塗色（on）或不塗（off）
+    setPart(id, on) {
+      const has = this.painted.includes(id);
+      if (on === has) return;
+      this.painted = on
+        ? [...this.painted, id]
+        : this.painted.filter((p) => p !== id);
       this.$emit("change", this.painted.length);
+    },
+    partAt(event) {
+      const el = document.elementFromPoint(event.clientX, event.clientY);
+      const id = el?.closest?.("[data-part]")?.dataset.part;
+      return id && this.$refs.svg.contains(el) ? id : null;
+    },
+    // 按下去就開始；拖進第一塊時決定是塗色（那塊沒塗）還是擦掉（那塊已塗）
+    startPaint(event) {
+      if (this.disabled) return;
+      if (event.button !== undefined && event.button !== 0) return;
+      this.paintMode = "pending";
+      this.$refs.svg.setPointerCapture?.(event.pointerId);
+      this.movePaint(event);
+    },
+    movePaint(event) {
+      if (!this.paintMode) return;
+      const id = this.partAt(event);
+      if (!id) return;
+      if (this.paintMode === "pending")
+        this.paintMode = this.painted.includes(id) ? "erase" : "paint";
+      this.setPart(id, this.paintMode === "paint");
+    },
+    endPaint() {
+      this.paintMode = null;
     },
     clear() {
       this.painted = [];
@@ -82,6 +112,8 @@ export default {
 <style scoped lang="scss">
 .tap-shapes {
   display: block;
+  touch-action: none;
+  user-select: none;
   max-width: 100%;
   max-height: 100%;
 
