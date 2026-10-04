@@ -1,0 +1,172 @@
+{
+  "id": "MA4095",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把假分數換成整數。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "num": 4,
+        "den": 2,
+        "whole": 2
+      },
+      {
+        "code": "1-2",
+        "num": 6,
+        "den": 2,
+        "whole": 3
+      },
+      {
+        "code": "1-3",
+        "num": 8,
+        "den": 2,
+        "whole": 4
+      },
+      {
+        "code": "1-4",
+        "num": 10,
+        "den": 2,
+        "whole": 5
+      },
+      {
+        "code": "1-5",
+        "num": 12,
+        "den": 2,
+        "whole": 6
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "num": 18,
+        "den": 3,
+        "whole": 6
+      },
+      {
+        "code": "2-2",
+        "num": 9,
+        "den": 3,
+        "whole": 3
+      },
+      {
+        "code": "2-3",
+        "num": 12,
+        "den": 3,
+        "whole": 4
+      },
+      {
+        "code": "2-4",
+        "num": 6,
+        "den": 3,
+        "whole": 2
+      },
+      {
+        "code": "2-5",
+        "num": 15,
+        "den": 3,
+        "whole": 5
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "num": 28,
+        "den": 4,
+        "whole": 7
+      },
+      {
+        "code": "3-2",
+        "num": 24,
+        "den": 4,
+        "whole": 6
+      },
+      {
+        "code": "3-3",
+        "num": 20,
+        "den": 4,
+        "whole": 5
+      },
+      {
+        "code": "3-4",
+        "num": 16,
+        "den": 4,
+        "whole": 4
+      },
+      {
+        "code": "3-5",
+        "num": 12,
+        "den": 4,
+        "whole": 3
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "num": 20,
+        "den": 5,
+        "whole": 4
+      },
+      {
+        "code": "4-2",
+        "num": 15,
+        "den": 5,
+        "whole": 3
+      },
+      {
+        "code": "4-3",
+        "num": 10,
+        "den": 5,
+        "whole": 2
+      },
+      {
+        "code": "4-4",
+        "num": 14,
+        "den": 7,
+        "whole": 2
+      },
+      {
+        "code": "4-5",
+        "num": 21,
+        "den": 7,
+        "whole": 3
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "num": 12,
+        "den": 6,
+        "whole": 2
+      },
+      {
+        "code": "5-2",
+        "num": 18,
+        "den": 6,
+        "whole": 3
+      },
+      {
+        "code": "5-3",
+        "num": 24,
+        "den": 6,
+        "whole": 4
+      },
+      {
+        "code": "5-4",
+        "num": 16,
+        "den": 8,
+        "whole": 2
+      },
+      {
+        "code": "5-5",
+        "num": 24,
+        "den": 8,
+        "whole": 3
+      }
+    ]
+  ]
+}
