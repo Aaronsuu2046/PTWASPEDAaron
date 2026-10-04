@@ -1,0 +1,697 @@
+{
+  "id": "MA4091",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "連連看，塗色的部分是多少？並將分數與正確的讀法連起來。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 2,
+            "den": 4,
+            "reading": "四分之二個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 7,
+            "den": 4,
+            "reading": "四分之七個"
+          },
+          {
+            "id": "c",
+            "whole": 2,
+            "num": 2,
+            "den": 4,
+            "reading": "二又四分之二個"
+          }
+        ]
+      },
+      {
+        "code": "1-2",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 1,
+            "den": 3,
+            "reading": "三分之一個"
+          },
+          {
+            "id": "b",
+            "whole": 1,
+            "num": 1,
+            "den": 3,
+            "reading": "一又三分之一個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 5,
+            "den": 3,
+            "reading": "三分之五個"
+          }
+        ]
+      },
+      {
+        "code": "1-3",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 3,
+            "den": 4,
+            "reading": "四分之三個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 9,
+            "den": 4,
+            "reading": "四分之九個"
+          },
+          {
+            "id": "c",
+            "whole": 2,
+            "num": 3,
+            "den": 4,
+            "reading": "二又四分之三個"
+          }
+        ]
+      },
+      {
+        "code": "1-4",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 1,
+            "den": 3,
+            "reading": "三分之一個"
+          },
+          {
+            "id": "b",
+            "whole": 3,
+            "num": 1,
+            "den": 3,
+            "reading": "三又三分之一個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 7,
+            "den": 3,
+            "reading": "三分之七個"
+          }
+        ]
+      },
+      {
+        "code": "1-5",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 3,
+            "den": 4,
+            "reading": "四分之三個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 6,
+            "den": 4,
+            "reading": "四分之六個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 3,
+            "den": 4,
+            "reading": "一又四分之三個"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 2,
+            "den": 5,
+            "reading": "五分之二個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 9,
+            "den": 5,
+            "reading": "五分之九個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 2,
+            "den": 5,
+            "reading": "一又五分之二個"
+          }
+        ]
+      },
+      {
+        "code": "2-2",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 5,
+            "den": 6,
+            "reading": "六分之五個"
+          },
+          {
+            "id": "b",
+            "whole": 2,
+            "num": 3,
+            "den": 6,
+            "reading": "二又六分之三個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 10,
+            "den": 6,
+            "reading": "六分之十個"
+          }
+        ]
+      },
+      {
+        "code": "2-3",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 3,
+            "den": 5,
+            "reading": "五分之三個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 12,
+            "den": 5,
+            "reading": "五分之十二個"
+          },
+          {
+            "id": "c",
+            "whole": 2,
+            "num": 3,
+            "den": 5,
+            "reading": "二又五分之三個"
+          }
+        ]
+      },
+      {
+        "code": "2-4",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 3,
+            "den": 6,
+            "reading": "六分之三個"
+          },
+          {
+            "id": "b",
+            "whole": 1,
+            "num": 4,
+            "den": 6,
+            "reading": "一又六分之四個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 9,
+            "den": 6,
+            "reading": "六分之九個"
+          }
+        ]
+      },
+      {
+        "code": "2-5",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 4,
+            "den": 5,
+            "reading": "五分之四個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 8,
+            "den": 5,
+            "reading": "五分之八個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 1,
+            "den": 5,
+            "reading": "一又五分之一個"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 4,
+            "den": 7,
+            "reading": "七分之四個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 12,
+            "den": 7,
+            "reading": "七分之十二個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 3,
+            "den": 7,
+            "reading": "一又七分之三個"
+          }
+        ]
+      },
+      {
+        "code": "3-2",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 6,
+            "den": 8,
+            "reading": "八分之六個"
+          },
+          {
+            "id": "b",
+            "whole": 2,
+            "num": 1,
+            "den": 8,
+            "reading": "二又八分之一個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 11,
+            "den": 8,
+            "reading": "八分之十一個"
+          }
+        ]
+      },
+      {
+        "code": "3-3",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 5,
+            "den": 7,
+            "reading": "七分之五個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 10,
+            "den": 7,
+            "reading": "七分之十個"
+          },
+          {
+            "id": "c",
+            "whole": 2,
+            "num": 2,
+            "den": 7,
+            "reading": "二又七分之二個"
+          }
+        ]
+      },
+      {
+        "code": "3-4",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 7,
+            "den": 8,
+            "reading": "八分之七個"
+          },
+          {
+            "id": "b",
+            "whole": 1,
+            "num": 2,
+            "den": 8,
+            "reading": "一又八分之二個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 9,
+            "den": 8,
+            "reading": "八分之九個"
+          }
+        ]
+      },
+      {
+        "code": "3-5",
+        "shape": "circle",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 6,
+            "den": 7,
+            "reading": "七分之六個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 8,
+            "den": 7,
+            "reading": "七分之八個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 2,
+            "den": 7,
+            "reading": "一又七分之二個"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "shape": "grid",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 4,
+            "den": 9,
+            "reading": "九分之四個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 12,
+            "den": 9,
+            "reading": "九分之十二個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 2,
+            "den": 9,
+            "reading": "一又九分之二個"
+          }
+        ]
+      },
+      {
+        "code": "4-2",
+        "shape": "grid",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 6,
+            "den": 10,
+            "reading": "十分之六個"
+          },
+          {
+            "id": "b",
+            "whole": 2,
+            "num": 1,
+            "den": 10,
+            "reading": "二又十分之一個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 11,
+            "den": 10,
+            "reading": "十分之十一個"
+          }
+        ]
+      },
+      {
+        "code": "4-3",
+        "shape": "grid",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 4,
+            "den": 9,
+            "reading": "九分之四個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 10,
+            "den": 9,
+            "reading": "九分之十個"
+          },
+          {
+            "id": "c",
+            "whole": 2,
+            "num": 1,
+            "den": 9,
+            "reading": "二又九分之一個"
+          }
+        ]
+      },
+      {
+        "code": "4-4",
+        "shape": "grid",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 12,
+            "den": 10,
+            "reading": "十分之十二個"
+          },
+          {
+            "id": "b",
+            "whole": 1,
+            "num": 4,
+            "den": 10,
+            "reading": "一又十分之四個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 9,
+            "den": 10,
+            "reading": "十分之九個"
+          }
+        ]
+      },
+      {
+        "code": "4-5",
+        "shape": "grid",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 6,
+            "den": 9,
+            "reading": "九分之六個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 11,
+            "den": 9,
+            "reading": "九分之十一個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 6,
+            "den": 9,
+            "reading": "一又九分之六個"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 6,
+            "den": 12,
+            "reading": "十二分之六個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 14,
+            "den": 12,
+            "reading": "十二分之十四個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 5,
+            "den": 12,
+            "reading": "一又十二分之五個"
+          }
+        ]
+      },
+      {
+        "code": "5-2",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 7,
+            "den": 11,
+            "reading": "十一分之七個"
+          },
+          {
+            "id": "b",
+            "whole": 2,
+            "num": 7,
+            "den": 11,
+            "reading": "二又十一分之七個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 12,
+            "den": 11,
+            "reading": "十一分之十二個"
+          }
+        ]
+      },
+      {
+        "code": "5-3",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 5,
+            "den": 12,
+            "reading": "十二分之五個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 13,
+            "den": 12,
+            "reading": "十二分之十三個"
+          },
+          {
+            "id": "c",
+            "whole": 2,
+            "num": 1,
+            "den": 12,
+            "reading": "二又十二分之一個"
+          }
+        ]
+      },
+      {
+        "code": "5-4",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 14,
+            "den": 11,
+            "reading": "十一分之十四個"
+          },
+          {
+            "id": "b",
+            "whole": 1,
+            "num": 4,
+            "den": 11,
+            "reading": "一又十一分之四個"
+          },
+          {
+            "id": "c",
+            "whole": 0,
+            "num": 4,
+            "den": 11,
+            "reading": "十一分之四個"
+          }
+        ]
+      },
+      {
+        "code": "5-5",
+        "shape": "bar",
+        "items": [
+          {
+            "id": "a",
+            "whole": 0,
+            "num": 8,
+            "den": 12,
+            "reading": "十二分之八個"
+          },
+          {
+            "id": "b",
+            "whole": 0,
+            "num": 16,
+            "den": 12,
+            "reading": "十二分之十六個"
+          },
+          {
+            "id": "c",
+            "whole": 1,
+            "num": 6,
+            "den": 12,
+            "reading": "一又十二分之六個"
+          }
+        ]
+      }
+    ]
+  ]
+}
