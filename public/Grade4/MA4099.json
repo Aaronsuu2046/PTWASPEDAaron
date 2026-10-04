@@ -1,0 +1,297 @@
+{
+  "id": "MA4099",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "想一想，再填填看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "num": 1,
+        "den": 6,
+        "times": 4,
+        "product": 4,
+        "unit": "個",
+        "figure": "cake",
+        "question": "每人吃 {f} 個蛋糕，4 個人共吃了多少個蛋糕？",
+        "reference": null
+      },
+      {
+        "code": "1-2",
+        "num": 1,
+        "den": 5,
+        "times": 4,
+        "product": 4,
+        "unit": "個",
+        "figure": "cake",
+        "question": "每人吃 {f} 個蛋糕，4 個人共吃了多少個蛋糕？",
+        "reference": null
+      },
+      {
+        "code": "1-3",
+        "num": 1,
+        "den": 6,
+        "times": 3,
+        "product": 3,
+        "unit": "個",
+        "figure": "cake",
+        "question": "每人吃 {f} 個蛋糕，3 個人共吃了多少個蛋糕？",
+        "reference": null
+      },
+      {
+        "code": "1-4",
+        "num": 1,
+        "den": 5,
+        "times": 3,
+        "product": 3,
+        "unit": "個",
+        "figure": "cake",
+        "question": "每人吃 {f} 個蛋糕，3 個人共吃了多少個蛋糕？",
+        "reference": null
+      },
+      {
+        "code": "1-5",
+        "num": 1,
+        "den": 4,
+        "times": 2,
+        "product": 2,
+        "unit": "個",
+        "figure": "cake",
+        "question": "每人吃 {f} 個蛋糕，2 個人共吃了多少個蛋糕？",
+        "reference": null
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "num": 2,
+        "den": 8,
+        "times": 2,
+        "product": 4,
+        "unit": "公斤",
+        "figure": "rice",
+        "question": "每包米重 {f} 公斤，2 包米共重多少公斤？",
+        "reference": null
+      },
+      {
+        "code": "2-2",
+        "num": 2,
+        "den": 7,
+        "times": 3,
+        "product": 6,
+        "unit": "公斤",
+        "figure": "rice",
+        "question": "每包米重 {f} 公斤，3 包米共重多少公斤？",
+        "reference": null
+      },
+      {
+        "code": "2-3",
+        "num": 3,
+        "den": 9,
+        "times": 2,
+        "product": 6,
+        "unit": "公斤",
+        "figure": "rice",
+        "question": "每包米重 {f} 公斤，2 包米共重多少公斤？",
+        "reference": null
+      },
+      {
+        "code": "2-4",
+        "num": 3,
+        "den": 12,
+        "times": 3,
+        "product": 9,
+        "unit": "公斤",
+        "figure": "rice",
+        "question": "每包米重 {f} 公斤，3 包米共重多少公斤？",
+        "reference": null
+      },
+      {
+        "code": "2-5",
+        "num": 4,
+        "den": 9,
+        "times": 2,
+        "product": 8,
+        "unit": "公斤",
+        "figure": "rice",
+        "question": "每包米重 {f} 公斤，2 包米共重多少公斤？",
+        "reference": null
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "num": 3,
+        "den": 10,
+        "times": 5,
+        "product": 15,
+        "unit": "公升",
+        "figure": null,
+        "question": "每杯果汁有 {f} 公升，5 杯果汁共有多少公升？",
+        "reference": "1 5/10"
+      },
+      {
+        "code": "3-2",
+        "num": 5,
+        "den": 7,
+        "times": 8,
+        "product": 40,
+        "unit": "公升",
+        "figure": null,
+        "question": "每杯果汁有 {f} 公升，8 杯果汁共有多少公升？",
+        "reference": "5 5/7"
+      },
+      {
+        "code": "3-3",
+        "num": 4,
+        "den": 5,
+        "times": 6,
+        "product": 24,
+        "unit": "公升",
+        "figure": null,
+        "question": "每杯果汁有 {f} 公升，6 杯果汁共有多少公升？",
+        "reference": "4 4/5"
+      },
+      {
+        "code": "3-4",
+        "num": 7,
+        "den": 9,
+        "times": 6,
+        "product": 42,
+        "unit": "公升",
+        "figure": null,
+        "question": "每杯果汁有 {f} 公升，6 杯果汁共有多少公升？",
+        "reference": "4 6/9"
+      },
+      {
+        "code": "3-5",
+        "num": 6,
+        "den": 8,
+        "times": 7,
+        "product": 42,
+        "unit": "公升",
+        "figure": null,
+        "question": "每杯果汁有 {f} 公升，7 杯果汁共有多少公升？",
+        "reference": "5 2/8"
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "num": 3,
+        "den": 5,
+        "times": 5,
+        "product": 15,
+        "unit": "公升",
+        "figure": null,
+        "question": "每瓶油有 {f} 公升，5 瓶油共有多少公升？",
+        "reference": "3"
+      },
+      {
+        "code": "4-2",
+        "num": 6,
+        "den": 9,
+        "times": 6,
+        "product": 36,
+        "unit": "公升",
+        "figure": null,
+        "question": "每瓶油有 {f} 公升，6 瓶油共有多少公升？",
+        "reference": "4"
+      },
+      {
+        "code": "4-3",
+        "num": 6,
+        "den": 8,
+        "times": 4,
+        "product": 24,
+        "unit": "公升",
+        "figure": null,
+        "question": "每瓶油有 {f} 公升，4 瓶油共有多少公升？",
+        "reference": "3"
+      },
+      {
+        "code": "4-4",
+        "num": 5,
+        "den": 7,
+        "times": 7,
+        "product": 35,
+        "unit": "公升",
+        "figure": null,
+        "question": "每瓶油有 {f} 公升，7 瓶油共有多少公升？",
+        "reference": "5"
+      },
+      {
+        "code": "4-5",
+        "num": 9,
+        "den": 6,
+        "times": 2,
+        "product": 18,
+        "unit": "公升",
+        "figure": null,
+        "question": "每瓶油有 {f} 公升，2 瓶油共有多少公升？",
+        "reference": "3"
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "num": 15,
+        "den": 12,
+        "times": 5,
+        "product": 75,
+        "unit": "盒",
+        "figure": null,
+        "question": "做一個蛋糕需要 {f} 盒雞蛋，做 5 個蛋糕共需要多少盒雞蛋？",
+        "reference": "6 3/12"
+      },
+      {
+        "code": "5-2",
+        "num": 11,
+        "den": 5,
+        "times": 9,
+        "product": 99,
+        "unit": "盒",
+        "figure": null,
+        "question": "做一個蛋糕需要 {f} 盒雞蛋，做 9 個蛋糕共需要多少盒雞蛋？",
+        "reference": "19 4/5"
+      },
+      {
+        "code": "5-3",
+        "num": 13,
+        "den": 7,
+        "times": 6,
+        "product": 78,
+        "unit": "盒",
+        "figure": null,
+        "question": "做一個蛋糕需要 {f} 盒雞蛋，做 6 個蛋糕共需要多少盒雞蛋？",
+        "reference": "11 1/7"
+      },
+      {
+        "code": "5-4",
+        "num": 14,
+        "den": 4,
+        "times": 7,
+        "product": 98,
+        "unit": "盒",
+        "figure": null,
+        "question": "做一個蛋糕需要 {f} 盒雞蛋，做 7 個蛋糕共需要多少盒雞蛋？",
+        "reference": "24 2/4"
+      },
+      {
+        "code": "5-5",
+        "num": 13,
+        "den": 8,
+        "times": 7,
+        "product": 91,
+        "unit": "盒",
+        "figure": null,
+        "question": "做一個蛋糕需要 {f} 盒雞蛋，做 7 個蛋糕共需要多少盒雞蛋？",
+        "reference": "11 3/8"
+      }
+    ]
+  ]
+}
