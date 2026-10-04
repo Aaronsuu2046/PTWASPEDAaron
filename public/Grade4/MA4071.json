@@ -1,0 +1,147 @@
+{
+  "id": "MA4071",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "白紙平均分成 100 等分，藍色部分合起來是幾張紙？用小數表示。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "cells": 1,
+        "answer": "0.01"
+      },
+      {
+        "code": "1-2",
+        "cells": 2,
+        "answer": "0.02"
+      },
+      {
+        "code": "1-3",
+        "cells": 3,
+        "answer": "0.03"
+      },
+      {
+        "code": "1-4",
+        "cells": 4,
+        "answer": "0.04"
+      },
+      {
+        "code": "1-5",
+        "cells": 5,
+        "answer": "0.05"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "cells": 6,
+        "answer": "0.06"
+      },
+      {
+        "code": "2-2",
+        "cells": 7,
+        "answer": "0.07"
+      },
+      {
+        "code": "2-3",
+        "cells": 8,
+        "answer": "0.08"
+      },
+      {
+        "code": "2-4",
+        "cells": 9,
+        "answer": "0.09"
+      },
+      {
+        "code": "2-5",
+        "cells": 10,
+        "answer": "0.10"
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "cells": 11,
+        "answer": "0.11"
+      },
+      {
+        "code": "3-2",
+        "cells": 12,
+        "answer": "0.12"
+      },
+      {
+        "code": "3-3",
+        "cells": 13,
+        "answer": "0.13"
+      },
+      {
+        "code": "3-4",
+        "cells": 14,
+        "answer": "0.14"
+      },
+      {
+        "code": "3-5",
+        "cells": 15,
+        "answer": "0.15"
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "cells": 16,
+        "answer": "0.16"
+      },
+      {
+        "code": "4-2",
+        "cells": 17,
+        "answer": "0.17"
+      },
+      {
+        "code": "4-3",
+        "cells": 18,
+        "answer": "0.18"
+      },
+      {
+        "code": "4-4",
+        "cells": 19,
+        "answer": "0.19"
+      },
+      {
+        "code": "4-5",
+        "cells": 20,
+        "answer": "0.20"
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "cells": 21,
+        "answer": "0.21"
+      },
+      {
+        "code": "5-2",
+        "cells": 22,
+        "answer": "0.22"
+      },
+      {
+        "code": "5-3",
+        "cells": 23,
+        "answer": "0.23"
+      },
+      {
+        "code": "5-4",
+        "cells": 24,
+        "answer": "0.24"
+      },
+      {
+        "code": "5-5",
+        "cells": 25,
+        "answer": "0.25"
+      }
+    ]
+  ]
+}
