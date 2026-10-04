@@ -1,0 +1,172 @@
+{
+  "id": "MA4076",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在□裡填入 >、< 或 =。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "left": "0.6",
+        "right": "0.09",
+        "answer": ">"
+      },
+      {
+        "code": "1-2",
+        "left": "0.3",
+        "right": "0.03",
+        "answer": ">"
+      },
+      {
+        "code": "1-3",
+        "left": "0.7",
+        "right": "0.08",
+        "answer": ">"
+      },
+      {
+        "code": "1-4",
+        "left": "0.5",
+        "right": "0.05",
+        "answer": ">"
+      },
+      {
+        "code": "1-5",
+        "left": "0.2",
+        "right": "0.06",
+        "answer": ">"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "left": "0.50",
+        "right": "0.5",
+        "answer": "="
+      },
+      {
+        "code": "2-2",
+        "left": "0.10",
+        "right": "0.1",
+        "answer": "="
+      },
+      {
+        "code": "2-3",
+        "left": "0.70",
+        "right": "0.7",
+        "answer": "="
+      },
+      {
+        "code": "2-4",
+        "left": "0.80",
+        "right": "0.8",
+        "answer": "="
+      },
+      {
+        "code": "2-5",
+        "left": "0.60",
+        "right": "0.6",
+        "answer": "="
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "left": "1.30",
+        "right": "1.03",
+        "answer": ">"
+      },
+      {
+        "code": "3-2",
+        "left": "1.4",
+        "right": "1.25",
+        "answer": ">"
+      },
+      {
+        "code": "3-3",
+        "left": "2.62",
+        "right": "2.16",
+        "answer": ">"
+      },
+      {
+        "code": "3-4",
+        "left": "2.50",
+        "right": "2.47",
+        "answer": ">"
+      },
+      {
+        "code": "3-5",
+        "left": "1.93",
+        "right": "1.87",
+        "answer": ">"
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "left": "10.09",
+        "right": "11.2",
+        "answer": "<"
+      },
+      {
+        "code": "4-2",
+        "left": "11.08",
+        "right": "12.2",
+        "answer": "<"
+      },
+      {
+        "code": "4-3",
+        "left": "8.14",
+        "right": "10.01",
+        "answer": "<"
+      },
+      {
+        "code": "4-4",
+        "left": "6.99",
+        "right": "12.10",
+        "answer": "<"
+      },
+      {
+        "code": "4-5",
+        "left": "19.89",
+        "right": "20.01",
+        "answer": "<"
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "left": "16.2",
+        "right": "16.22",
+        "answer": "<"
+      },
+      {
+        "code": "5-2",
+        "left": "10.18",
+        "right": "10.2",
+        "answer": "<"
+      },
+      {
+        "code": "5-3",
+        "left": "13.42",
+        "right": "13.5",
+        "answer": "<"
+      },
+      {
+        "code": "5-4",
+        "left": "14.7",
+        "right": "14.71",
+        "answer": "<"
+      },
+      {
+        "code": "5-5",
+        "left": "16.27",
+        "right": "16.3",
+        "answer": "<"
+      }
+    ]
+  ]
+}
