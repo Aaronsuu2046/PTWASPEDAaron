@@ -1228,7 +1228,7 @@
                 "Name": "兩時刻間的時間量(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4193.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -1240,7 +1240,7 @@
                 "Name": "時刻與時間量的計算(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4194.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
