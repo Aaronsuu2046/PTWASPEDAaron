@@ -60,12 +60,15 @@ const PAD = 70;
 const pad2 = (n) => String(n).padStart(2, "0");
 
 // start、end：{ period, h, m, s, sec }（sec 是一天中的第幾秒）；withSeconds：時刻顯示到秒
+// unknown 選填：要求的那一端只標「？」
 export default {
   name: "TimeTimeline",
   props: {
     start: { type: Object, required: true },
     end: { type: Object, required: true },
     withSeconds: { type: Boolean, default: false },
+    // 選填：要學生求的那一端（"start" 或 "end"）標成「？」，數線位置照樣畫
+    unknown: { type: String, default: "" },
   },
   data() {
     return { W, PAD };
@@ -73,7 +76,11 @@ export default {
   computed: {
     nodes() {
       const list = [
-        { sec: this.start.sec, text: this.label(this.start), kind: "end" },
+        {
+          sec: this.start.sec,
+          text: this.unknown === "start" ? "？" : this.label(this.start),
+          kind: "end",
+        },
       ];
       if (!this.withSeconds) {
         // 中間的整點
@@ -85,7 +92,11 @@ export default {
           list.push({ sec: t, text, kind: h24 === 12 ? "noon" : "hour" });
         }
       }
-      list.push({ sec: this.end.sec, text: this.label(this.end), kind: "end" });
+      list.push({
+        sec: this.end.sec,
+        text: this.unknown === "end" ? "？" : this.label(this.end),
+        kind: "end",
+      });
       return list;
     },
     minorTicks() {
