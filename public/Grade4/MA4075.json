@@ -1,0 +1,147 @@
+{
+  "id": "MA4075",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "使用文字方塊把讀法記下來。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "number": "0.06",
+        "reading": "零點零六"
+      },
+      {
+        "code": "1-2",
+        "number": "0.03",
+        "reading": "零點零三"
+      },
+      {
+        "code": "1-3",
+        "number": "0.09",
+        "reading": "零點零九"
+      },
+      {
+        "code": "1-4",
+        "number": "0.04",
+        "reading": "零點零四"
+      },
+      {
+        "code": "1-5",
+        "number": "0.07",
+        "reading": "零點零七"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "number": "0.1",
+        "reading": "零點一"
+      },
+      {
+        "code": "2-2",
+        "number": "0.2",
+        "reading": "零點二"
+      },
+      {
+        "code": "2-3",
+        "number": "0.9",
+        "reading": "零點九"
+      },
+      {
+        "code": "2-4",
+        "number": "0.5",
+        "reading": "零點五"
+      },
+      {
+        "code": "2-5",
+        "number": "0.8",
+        "reading": "零點八"
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "number": "0.22",
+        "reading": "零點二二"
+      },
+      {
+        "code": "3-2",
+        "number": "0.61",
+        "reading": "零點六一"
+      },
+      {
+        "code": "3-3",
+        "number": "0.48",
+        "reading": "零點四八"
+      },
+      {
+        "code": "3-4",
+        "number": "0.37",
+        "reading": "零點三七"
+      },
+      {
+        "code": "3-5",
+        "number": "0.56",
+        "reading": "零點五六"
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "number": "1.06",
+        "reading": "一點零六"
+      },
+      {
+        "code": "4-2",
+        "number": "2.24",
+        "reading": "二點二四"
+      },
+      {
+        "code": "4-3",
+        "number": "3.12",
+        "reading": "三點一二"
+      },
+      {
+        "code": "4-4",
+        "number": "5.37",
+        "reading": "五點三七"
+      },
+      {
+        "code": "4-5",
+        "number": "9.08",
+        "reading": "九點零八"
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "number": "10.3",
+        "reading": "十點三"
+      },
+      {
+        "code": "5-2",
+        "number": "11.03",
+        "reading": "十一點零三"
+      },
+      {
+        "code": "5-3",
+        "number": "10.18",
+        "reading": "十點一八"
+      },
+      {
+        "code": "5-4",
+        "number": "20.4",
+        "reading": "二十點四"
+      },
+      {
+        "code": "5-5",
+        "number": "17.92",
+        "reading": "十七點九二"
+      }
+    ]
+  ]
+}
