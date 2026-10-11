@@ -16,6 +16,16 @@
           {{ status === "correct" ? gameData.answer : "" }}
         </span>
         <span class="question__num">{{ gameData.right }}</span>
+        <!-- 愛心：碰到小幽靈扣一顆，遊戲照常進行 -->
+        <span class="hearts" :class="{ 'hearts--hit': hitFlash }" data-hearts>
+          <span
+            v-for="k in MAX_HEARTS"
+            :key="k"
+            class="hearts__one"
+            :class="{ 'hearts__one--lost': k > hearts }"
+            >❤</span
+          >
+        </span>
       </div>
 
       <div class="play">
@@ -37,7 +47,17 @@
               :y="zone.y"
               :state="zoneState(zone)"
             />
+            <MazeEnemy
+              v-for="(enemy, k) in enemies"
+              :key="`enemy-${k}`"
+              :x="enemy.x"
+              :y="enemy.y"
+              :facing="enemy.dir"
+              :color="ENEMY_COLORS[k % ENEMY_COLORS.length]"
+              :move-ms="ENEMY_MS - 60"
+            />
             <MazePlayer
+              :class="{ 'player--hurt': invincible }"
               :x="player[0]"
               :y="player[1]"
               :facing="facing"
@@ -47,7 +67,9 @@
 
           <!-- 開始前的操作提示 -->
           <div v-if="status === 'ready'" class="overlay">
-            <p class="overlay__text">使用方向鍵或 WASD，走到正確的符號。</p>
+            <p class="overlay__text">
+              使用方向鍵或 WASD，走到正確的符號。<br />小心小幽靈，碰到會扣一顆愛心喔！
+            </p>
             <button
               type="button"
               class="overlay__btn"
@@ -102,7 +124,14 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import MazeBoard from "./MazeBoard.vue";
 import MazeAnswerZone from "./MazeAnswerZone.vue";
 import MazePlayer from "./MazePlayer.vue";
-import { DIRS, walkable, makeLevel, reshuffleZones } from "./maze.js";
+import MazeEnemy from "./MazeEnemy.vue";
+import {
+  DIRS,
+  walkable,
+  distances,
+  makeLevel,
+  reshuffleZones,
+} from "./maze.js";
 
 const SYMBOLS = [">", "<", "="];
 const KEYS = {
@@ -124,6 +153,15 @@ const PAD = [
 // 迷宮大小：7 × 5 個房間（15 × 11 格）
 const ROOMS = [7, 5];
 const MOVE_MS = 130;
+// 小幽靈：兩隻，比角色慢，在通道上隨機遊走（盡量不回頭），不會走進答案區
+const ENEMY_COUNT = 2;
+const ENEMY_MS = 420;
+const ENEMY_COLORS = ["#f48fb1", "#80cbc4"];
+// 出生點離起點至少幾步
+const ENEMY_MIN_DIST = 6;
+// 每關愛心數；被碰到後幾毫秒內不會再扣
+const MAX_HEARTS = 3;
+const INVINCIBLE_MS = 1500;
 const SHOW_MS = 900;
 
 function shuffle(list) {
@@ -143,10 +181,11 @@ function hundredths(text) {
 
 // 小數比大小迷宮：題目 { left, right, answer }，保留原始寫法（0.50 和 0.5）
 // 角色從中央起點出發，走進 >、<、= 其中一個答案區就判定；
+// 兩隻小幽靈在通道上隨機遊走，碰到扣一顆愛心（每關 3 顆），遊戲不暫停、不結束；
 // 答案區每次都隨機放在三個不同的死路盡頭，走錯可以再試一次（答案位置重新洗牌）
 export default {
   name: "DecimalMazeGame",
-  components: { MazeBoard, MazeAnswerZone, MazePlayer },
+  components: { MazeBoard, MazeAnswerZone, MazePlayer, MazeEnemy },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
@@ -156,6 +195,15 @@ export default {
     return {
       PAD,
       MOVE_MS,
+      ENEMY_MS,
+      ENEMY_COLORS,
+      MAX_HEARTS,
+      enemies: [],
+      enemyTimer: null,
+      hearts: MAX_HEARTS,
+      invincible: false,
+      invincibleTimer: null,
+      hitFlash: false,
       level: null,
       zones: [],
       player: [0, 0],
@@ -195,13 +243,87 @@ export default {
     window.removeEventListener("keyup", this.onKeyUp);
     window.removeEventListener("blur", this.releaseAll);
     this.releaseAll();
+    this.stopEnemies();
     clearTimeout(this.advanceTimer);
+    clearTimeout(this.invincibleTimer);
   },
   methods: {
     newLevel() {
       this.level = makeLevel(ROOMS[0], ROOMS[1], SYMBOLS.length);
       this.placeZones(this.level.zones);
       this.player = [...this.level.start];
+      this.spawnEnemies();
+    },
+    // 小幽靈放在離起點夠遠、不是答案區的通道上
+    spawnEnemies() {
+      const { tiles, start } = this.level;
+      const dist = distances(tiles, start[0], start[1]);
+      const cells = Object.entries(dist)
+        .filter(([, d]) => d >= ENEMY_MIN_DIST)
+        .map(([k]) => k.split(",").map(Number))
+        .filter(([x, y]) => !this.isZone(x, y));
+      this.enemies = shuffle(cells)
+        .slice(0, ENEMY_COUNT)
+        .map(([x, y]) => ({ x, y, dir: "down" }));
+    },
+    isZone(x, y) {
+      return this.zones.some((z) => z.x === x && z.y === y);
+    },
+    startEnemies() {
+      this.stopEnemies();
+      this.enemyTimer = setInterval(this.moveEnemies, ENEMY_MS);
+    },
+    stopEnemies() {
+      clearInterval(this.enemyTimer);
+      this.enemyTimer = null;
+    },
+    moveEnemies() {
+      if (this.status !== "playing") return;
+      const { tiles } = this.level;
+      const back = { up: "down", down: "up", left: "right", right: "left" };
+      this.enemies = this.enemies.map((e) => {
+        const options = Object.keys(DIRS).filter((d) => {
+          const nx = e.x + DIRS[d][0];
+          const ny = e.y + DIRS[d][1];
+          return walkable(tiles, nx, ny) && !this.isZone(nx, ny);
+        });
+        if (!options.length) return e;
+        // 盡量不回頭，走起來比較像在巡邏；死路才掉頭
+        const forward = options.filter((d) => d !== back[e.dir]);
+        const pool = forward.length ? forward : options;
+        const dir = pool[Math.floor(Math.random() * pool.length)];
+        return {
+          x: e.x + DIRS[dir][0],
+          y: e.y + DIRS[dir][1],
+          dir,
+          px: e.x,
+          py: e.y,
+        };
+      });
+      this.checkHit();
+    },
+    // 碰到（同一格，或和角色互換位置）就扣一顆愛心；不暫停、不結束
+    checkHit(prev = null) {
+      if (this.invincible || this.status !== "playing") return;
+      const [x, y] = this.player;
+      const hit = this.enemies.some(
+        (e) =>
+          (e.x === x && e.y === y) ||
+          (e.px === x &&
+            e.py === y &&
+            prev &&
+            e.x === prev[0] &&
+            e.y === prev[1])
+      );
+      if (!hit) return;
+      if (this.hearts > 0) this.hearts -= 1;
+      this.invincible = true;
+      this.hitFlash = true;
+      clearTimeout(this.invincibleTimer);
+      this.invincibleTimer = setTimeout(() => {
+        this.invincible = false;
+        this.hitFlash = false;
+      }, INVINCIBLE_MS);
     },
     placeZones(cells) {
       const symbols = shuffle(SYMBOLS);
@@ -212,7 +334,9 @@ export default {
       return this.status === "correct" ? "hit" : "wrong";
     },
     begin() {
-      if (this.status === "ready") this.status = "playing";
+      if (this.status !== "ready") return;
+      this.status = "playing";
+      this.startEnemies();
     },
     // 再試一次：角色回起點，三個答案區換位置（正確答案一定換到別的地方）
     retry() {
@@ -239,9 +363,11 @@ export default {
       // 這個迷宮放不出不同的位置時，就換一個新迷宮
       if (!cells || tries >= 20) this.newLevel();
       this.player = [...this.level.start];
+      this.spawnEnemies();
       this.facing = "down";
       this.hitSymbol = "";
       this.status = "playing";
+      this.startEnemies();
     },
     onSubmit() {
       // 這個單元用走的作答；按送出答案時提醒一下
@@ -292,7 +418,9 @@ export default {
       const nx = this.player[0] + dx;
       const ny = this.player[1] + dy;
       if (!walkable(this.level.tiles, nx, ny)) return;
+      const prev = this.player;
       this.player = [nx, ny];
+      this.checkHit(prev);
       this.moving = true;
       this.timer = setTimeout(() => {
         this.moving = false;
@@ -315,6 +443,7 @@ export default {
       ]);
       if (isCorrect) {
         this.status = "correct";
+        this.stopEnemies();
         this.$emit("play-effect", "CorrectSound");
         // 停一下讓學生看到□填上正確符號，再進下一關
         this.advanceTimer = setTimeout(
@@ -395,6 +524,53 @@ export default {
       border-color: #43a047;
       background-color: #e8f5e9;
     }
+  }
+}
+
+.hearts {
+  margin-left: 1rem;
+  display: flex;
+  gap: 0.15rem;
+  font-size: 1.8rem;
+
+  &__one {
+    color: #e53935;
+    transition:
+      color 0.2s,
+      transform 0.2s;
+
+    &--lost {
+      color: #cfd8dc;
+      transform: scale(0.85);
+    }
+  }
+
+  &--hit {
+    animation: hearts-shake 0.4s;
+  }
+}
+
+@keyframes hearts-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+// 被碰到後閃爍（無敵時間）
+.player--hurt {
+  animation: player-blink 0.25s steps(2) infinite;
+}
+
+@keyframes player-blink {
+  50% {
+    opacity: 0.25;
   }
 }
 
