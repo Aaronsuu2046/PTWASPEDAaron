@@ -76,6 +76,10 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import { ReadText, StopRead } from "@/lib/readtext.js";
+import { playLoud, stopLoud } from "./games/Common/loudAudio.js";
+
+// 語音檔播放音量（1.5 倍）
+const AUDIO_GAIN = 1.5;
 import PlaceValueBoard from "./games/Decimal/PlaceValueBoard.vue";
 
 const TILES = [..."零一二三四五六七八九", "十", "點"];
@@ -139,10 +143,16 @@ export default {
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
     StopRead();
+    stopLoud();
   },
   methods: {
-    speak() {
-      ReadText(this.gameData.reading);
+    // 有錄好的語音檔就放大 1.5 倍播放；讀不到時改用瀏覽器內建朗讀
+    async speak() {
+      const file = this.gameData.audio;
+      const played =
+        file &&
+        (await playLoud(`${import.meta.env.BASE_URL}${file}`, AUDIO_GAIN));
+      if (!played) ReadText(this.gameData.reading);
     },
     // 字塊放進第 k 格（k 沒給：選取的格子，否則第一個空格）
     place(ch, k = null) {
