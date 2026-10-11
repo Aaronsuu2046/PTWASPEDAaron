@@ -4,7 +4,7 @@
   "TotalLevel": 5,
   "IntroText": {
     "Type": "PlainText",
-    "Content": "在□裡填入 >、< 或 =。"
+    "Content": "走到正確的符號：>、< 還是 =？"
   },
   "GameConfig": {},
   "Questions": [
