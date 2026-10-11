@@ -568,7 +568,7 @@
                 "Name": "加減與除的混合計算(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA408C.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -580,7 +580,7 @@
                 "Name": "四則混合計算",
                 "Description": "把做法和答案記下來",
                 "Img": "MA408D.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           }
