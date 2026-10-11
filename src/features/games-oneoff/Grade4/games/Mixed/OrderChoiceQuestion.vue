@@ -21,17 +21,21 @@
         />
       </div>
 
-      <div class="expr" data-expr>
-        <span
-          v-for="(tok, k) in exprTokens"
-          :key="k"
-          :class="{ expr__paren: tok === '(' || tok === ')' }"
-          >{{ tok }}</span
-        >
+      <!-- 題目算式：一般 1 個；比較題 2 個（標 A、B） -->
+      <div class="exprs">
+        <div v-for="(card, c) in cards" :key="c" class="expr" data-expr>
+          <span v-if="cards.length > 1" class="expr__tag">{{ TAGS[c] }}</span>
+          <span
+            v-for="(tok, k) in tokens(card.expr)"
+            :key="k"
+            :class="{ expr__paren: tok === '(' || tok === ')' }"
+            >{{ tok }}</span
+          >
+        </div>
       </div>
 
       <div class="ask">
-        <span class="ask__text">這題要怎麼算？</span>
+        <span class="ask__text">{{ askText }}</span>
         <!-- 答案框：點選項放進來，或直接拖進來；點框可以清掉 -->
         <button
           type="button"
@@ -52,7 +56,7 @@
 
       <div class="choices">
         <button
-          v-for="c in CHOICES"
+          v-for="c in choices"
           :key="c.value"
           type="button"
           class="choice"
@@ -74,18 +78,21 @@
 
       <!-- 答對後：完整解題過程，先算的部分標出來 -->
       <div v-if="answered" class="solution">
-        <div class="solution__lines">
+        <div v-for="(card, c) in cards" :key="c" class="solution__lines">
           <p class="solution__line">
-            <span>{{ firstParts.before }}</span
-            ><span class="solution__first">{{ firstParts.first }}</span
-            ><span>{{ firstParts.after }}</span>
+            <span v-if="cards.length > 1" class="solution__tag">{{
+              TAGS[c]
+            }}</span>
+            <span>{{ firstParts(card).before }}</span
+            ><span class="solution__first">{{ firstParts(card).first }}</span
+            ><span>{{ firstParts(card).after }}</span>
           </p>
           <p
-            v-for="(s, k) in current.steps"
+            v-for="(s, k) in card.steps"
             :key="k"
             class="solution__line"
             :class="{
-              'solution__line--result': k === current.steps.length - 1,
+              'solution__line--result': k === card.steps.length - 1,
             }"
           >
             ＝{{ s }}
@@ -133,6 +140,8 @@ function shuffle(list) {
 // 每題二選一「由左而右／先算括號」（點選或拖曳到答案框），答錯顯示 GameConfig.Hint，
 // 答對後顯示完整解題過程，按「下一題」換題，最後一題按「完成」才進入完成畫面
 // 題目 { no, expr, answer: "ltr"|"paren", first: [start, end], steps: [第一步, 答案] }
+// 選填：比較題 { no, cards: [{ expr, first, steps }, …], answer }（兩個算式並排、解題過程各一欄）；
+// GameConfig.Choices: [{ value, label, icon }] 換掉兩個選項，GameConfig.Ask 換掉「這題要怎麼算？」
 export default {
   name: "OrderChoiceQuestion",
   props: {
@@ -147,7 +156,7 @@ export default {
       this.gameData.bank.length
     );
     return {
-      CHOICES,
+      TAGS: ["A", "B"],
       picked: shuffle(this.gameData.bank).slice(0, count),
       index: 0,
       choice: "",
@@ -173,16 +182,15 @@ export default {
     current() {
       return this.picked[this.index];
     },
-    exprTokens() {
-      return this.current.expr.match(/\d+|[^\d]/g);
+    // 一般題 { expr, first, steps }；比較題 { cards: [{ expr, first, steps }, …] }
+    cards() {
+      return this.current.cards || [this.current];
     },
-    firstParts() {
-      const { expr, first } = this.current;
-      return {
-        before: expr.slice(0, first[0]),
-        first: expr.slice(first[0], first[1]),
-        after: expr.slice(first[1]),
-      };
+    choices() {
+      return this.gameConfig?.Choices || CHOICES;
+    },
+    askText() {
+      return this.gameConfig?.Ask || "這題要怎麼算？";
     },
     chosenLabel() {
       return this.labelOf(this.choice);
@@ -195,8 +203,18 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    tokens(expr) {
+      return expr.match(/\d+|[^\d]/g);
+    },
+    firstParts({ expr, first }) {
+      return {
+        before: expr.slice(0, first[0]),
+        first: expr.slice(first[0], first[1]),
+        after: expr.slice(first[1]),
+      };
+    },
     labelOf(value) {
-      return CHOICES.find((c) => c.value === value)?.label || "";
+      return this.choices.find((c) => c.value === value)?.label || "";
     },
     setChoice(value) {
       if (this.answered) return;
@@ -271,7 +289,7 @@ export default {
       const q = this.current;
       const isCorrect = this.choice === q.answer;
       this.$emit("add-record", [
-        `${q.expr}（${this.labelOf(q.answer)}）`,
+        `${this.cards.map((c) => c.expr).join("／")}（${this.labelOf(q.answer)}）`,
         this.labelOf(this.choice),
         isCorrect ? "正確" : "錯誤",
       ]);
@@ -370,7 +388,14 @@ export default {
   }
 }
 
+.exprs {
+  display: flex;
+  gap: 1.2rem;
+}
+
 .expr {
+  display: flex;
+  align-items: center;
   padding: 0.9rem 2.6rem;
   font-size: 3.8rem;
   font-weight: $font-bold;
@@ -383,6 +408,21 @@ export default {
   &__paren {
     color: #e65100;
   }
+
+  &__tag {
+    margin-right: 0.8rem;
+    padding: 0 0.6rem;
+    font-size: 1.6rem;
+    color: #ffffff;
+    background-color: #7e57c2;
+    border-radius: 10px;
+  }
+}
+
+// 比較題兩個算式並排：字小一點
+.exprs:has(.expr + .expr) .expr {
+  padding: 0.6rem 1.4rem;
+  font-size: 2.6rem;
 }
 
 .ask {
@@ -456,16 +496,24 @@ export default {
     font-size: 1.6rem;
   }
 
-  &--ltr {
+  &--ltr,
+  &--other {
     color: #01579b;
     background-color: #e1f5fe;
     border: 3px solid #29b6f6;
   }
 
-  &--paren {
+  &--paren,
+  &--diff {
     color: #bf360c;
     background-color: #fff3e0;
     border: 3px solid #ff9800;
+  }
+
+  &--same {
+    color: #1b5e20;
+    background-color: #e8f5e9;
+    border: 3px solid #66bb6a;
   }
 
   &--chosen {
@@ -493,6 +541,8 @@ export default {
 .solution {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.6rem;
   padding: 0.6rem 1.6rem;
   background-color: #f1f8e9;
@@ -515,6 +565,16 @@ export default {
     &--result {
       color: #1b5e20;
     }
+  }
+
+  &__tag {
+    margin-right: 0.4rem;
+    padding: 0 0.4rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #7e57c2;
+    border-radius: 8px;
+    vertical-align: middle;
   }
 
   &__first {
