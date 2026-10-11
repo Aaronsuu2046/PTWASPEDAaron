@@ -111,7 +111,7 @@
         </div>
         <div class="scratch__tabs">
           <button
-            v-for="tab in TABS"
+            v-for="tab in tabs"
             :key="tab.value"
             type="button"
             class="scratch__tab"
@@ -165,10 +165,19 @@
               第 {{ s + 1 }} 步
             </button>
           </div>
-          <div class="scratch__body">
+          <!-- 輸入板不要蓋住直式本身 -->
+          <div class="scratch__body" data-pad-avoid>
             <KeepAlive>
+              <DivisionFill
+                v-if="scratchExpr && scratchExpr.op === '÷'"
+                ref="scratch"
+                :key="scratchExpr.sig"
+                :dividend="scratchExpr.a"
+                :divisor="scratchExpr.b"
+                @focus="onScratchFocus"
+              />
               <VerticalScratch
-                v-if="scratchExpr"
+                v-else-if="scratchExpr"
                 ref="scratch"
                 :key="scratchExpr.sig"
                 :a="scratchExpr.a"
@@ -181,6 +190,48 @@
               先在算式填好這一步的數和符號，這裡就會出現直式喔！
             </p>
           </div>
+        </div>
+
+        <!-- 選填 GameConfig.TimesTable：九九乘法表，點一格會標出那一列和那一行 -->
+        <div v-if="hasTimesTable" v-show="scratchTab === 'table'" class="times">
+          <table class="times__table" aria-label="九九乘法表">
+            <tr>
+              <th class="times__corner">×</th>
+              <th
+                v-for="c in 9"
+                :key="`th-${c}`"
+                :class="{ times__on: pickedCell && pickedCell[1] === c }"
+              >
+                {{ c }}
+              </th>
+            </tr>
+            <tr v-for="r in 9" :key="`tr-${r}`">
+              <th :class="{ times__on: pickedCell && pickedCell[0] === r }">
+                {{ r }}
+              </th>
+              <td
+                v-for="c in 9"
+                :key="`td-${r}-${c}`"
+                :class="{
+                  times__line:
+                    pickedCell && (pickedCell[0] === r || pickedCell[1] === c),
+                  times__picked:
+                    pickedCell && pickedCell[0] === r && pickedCell[1] === c,
+                }"
+                :data-times="`${r}x${c}`"
+                @click="pickedCell = [r, c]"
+              >
+                {{ r * c }}
+              </td>
+            </tr>
+          </table>
+          <p class="times__text">
+            {{
+              pickedCell
+                ? `${pickedCell[0]} × ${pickedCell[1]} ＝ ${pickedCell[0] * pickedCell[1]}`
+                : "點一格看看"
+            }}
+          </p>
         </div>
       </div>
 
@@ -200,6 +251,7 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import DrawingBoard from "@/components/DrawingBoard.vue";
 import FieldPad from "../Common/FieldPad.vue";
 import VerticalScratch from "../Vertical/VerticalScratch.vue";
+import DivisionFill from "../Vertical/DivisionFill.vue";
 import MixedScene from "./MixedScene.vue";
 
 const OPS = ["+", "-", "×", "÷"];
@@ -221,10 +273,17 @@ const MAX_LENGTH = 6;
 // （符號也要學生填時，直式跟著學生填的符號，不會先洩漏答案）
 // 選填 answers: [{ prefix, value, unit }]：答案列；選填 question：題目文字（應用題）
 // 選填 scene：情境圖（MixedScene），放在題目右邊
-// GameConfig.Hint：答錯時的提示
+// GameConfig.Hint：答錯時的提示；GameConfig.TimesTable: true 時計算紙多一個「九九表」分頁
+// 定位版的步驟是除法時用 DivisionFill 畫除法直式
 export default {
   name: "ChainExpressionQuestion",
-  components: { DrawingBoard, FieldPad, VerticalScratch, MixedScene },
+  components: {
+    DrawingBoard,
+    FieldPad,
+    VerticalScratch,
+    DivisionFill,
+    MixedScene,
+  },
   props: {
     gameData: { type: Object, required: true },
     gameConfig: { type: Object, default: () => ({}) },
@@ -234,7 +293,7 @@ export default {
   data() {
     return {
       OPS,
-      TABS,
+      pickedCell: null,
       values: {},
       active: null,
       activeEl: null,
@@ -281,6 +340,14 @@ export default {
     activeIsOp() {
       return Boolean(this.blanks.find((b) => b.key === this.active)?.isOp);
     },
+    hasTimesTable() {
+      return Boolean(this.gameConfig?.TimesTable);
+    },
+    tabs() {
+      return this.hasTimesTable
+        ? [...TABS, { value: "table", label: "九九表" }]
+        : TABS;
+    },
     scratchSteps() {
       return this.gameData.scratch || [];
     },
@@ -296,8 +363,10 @@ export default {
       const op = resolve(step.op);
       const b = resolve(step.b);
       if (!/^\d+$/.test(a) || !/^\d+$/.test(b)) return null;
-      // 直式只畫加、減、乘
-      if (!["+", "-", "×"].includes(op)) return null;
+      if (!OPS.includes(op)) return null;
+      // 除法直式：被除數、除數都要是正整數
+      if (op === "÷" && !(/^[1-9]\d*$/.test(a) && /^[1-9]\d*$/.test(b)))
+        return null;
       return { a, op, b, sig: `${this.scratchStep}:${a}${op}${b}` };
     },
   },
@@ -744,6 +813,76 @@ export default {
   :deep(.vfill__grid) {
     padding: 0.4rem 0.6rem;
     row-gap: 0.1rem;
+  }
+}
+
+.times {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+
+  &__table {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-weight: $font-bold;
+
+    th,
+    td {
+      width: 1.9rem;
+      height: 1.9rem;
+      text-align: center;
+      font-size: 1rem;
+      border: 1px solid #b2dfdb;
+    }
+
+    th {
+      color: #ffffff;
+      background-color: #26a69a;
+    }
+
+    td {
+      color: #37474f;
+      cursor: pointer;
+    }
+  }
+
+  &__corner {
+    background-color: #00796b !important;
+  }
+
+  &__on {
+    background-color: #ff9800 !important;
+  }
+
+  &__line {
+    background-color: #fff3e0;
+  }
+
+  &__picked {
+    color: #ffffff !important;
+    background-color: #ef6c00;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: $font-bold;
+    color: #00695c;
+  }
+}
+
+@media (max-width: 1100px), (max-height: 760px) {
+  .times__table {
+    th,
+    td {
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.9rem;
+    }
   }
 }
 
