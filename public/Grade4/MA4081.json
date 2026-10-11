@@ -7,7 +7,8 @@
     "Content": "這題要怎麼算？選選看正確的答案。"
   },
   "GameConfig": {
-    "PickCount": 5
+    "PickCount": 5,
+    "Hint": "提示：只有加、減且沒有括號時由左而右；有括號先算括號。"
   },
   "Questions": [
     [
