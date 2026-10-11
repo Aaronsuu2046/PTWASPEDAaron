@@ -41,6 +41,11 @@
             class="work-figure work-figure--tiles"
             :figure="gameData.figure"
           />
+          <DecimalScene
+            v-else-if="gameData.figure && gameData.figure.shape === 'decimal'"
+            class="work-figure work-figure--decimal"
+            :figure="gameData.figure"
+          />
           <SceneFigure
             v-else-if="gameData.figure && gameData.figure.shape === 'scene'"
             class="work-figure work-figure--scene"
@@ -226,6 +231,7 @@ import RectFigure from "./RectFigure.vue";
 import CompositeFigure from "./CompositeFigure.vue";
 import TileFigure from "./TileFigure.vue";
 import SceneFigure from "./SceneFigure.vue";
+import DecimalScene from "./DecimalScene.vue";
 import KidCalculator from "../CalculatorQuestion/KidCalculator.vue";
 import FieldPad from "../Common/FieldPad.vue";
 import DivisionFill from "../Vertical/DivisionFill.vue";
@@ -244,6 +250,7 @@ const MAX_LENGTH = 7;
 // 選填 step.remainder：除法有餘數時，結果後面多一格「… 餘數」（餘數為 0 時可空白或填 0）
 // 選填 answers: [{ prefix, value, unit }]：答案分成好幾格，取代 answer／unit
 // 選填 figure.shape "scene"：依題意畫的情境圖（SceneFigure）
+// 選填 figure.shape "decimal"：小數加減應用題的物品圖與長條圖（DecimalScene）
 // 選填 scratch（例如 "vertical"）：可打開直式計算紙，用學生在做法填的算式畫加減乘除直式，不計分；
 // 好幾步時跟著目前填的那一步，也可以自己切換
 export default {
@@ -253,6 +260,7 @@ export default {
     CompositeFigure,
     TileFigure,
     SceneFigure,
+    DecimalScene,
     KidCalculator,
     FieldPad,
     DivisionFill,
@@ -899,6 +907,10 @@ export default {
   width: clamp(13rem, 30%, 22rem);
 }
 
+.work-figure--decimal {
+  width: clamp(18rem, 40%, 27rem);
+  padding: 0.3rem;
+}
 .work-figure--scene {
   width: clamp(14rem, 32%, 22rem);
   padding: 0.3rem;
