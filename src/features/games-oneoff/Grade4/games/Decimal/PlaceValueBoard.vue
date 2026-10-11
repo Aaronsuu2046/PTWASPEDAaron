@@ -1,37 +1,42 @@
 <template>
   <!-- 小數定位板：十位、個位、十分位、百分位；小數點固定在個位和十分位之間 -->
-  <div class="pv-board" :style="{ '--cols': units.length }">
-    <span
-      v-for="(unit, k) in units"
-      :key="`h${k}`"
-      class="pv-board__head"
-      :style="{ backgroundColor: COLORS[k % COLORS.length] }"
-    >
-      {{ unit }}
-    </span>
-    <template v-for="(value, k) in values" :key="`c${k}`">
-      <button
-        v-if="editable"
-        type="button"
-        class="pv-board__cell pv-board__cell--input"
-        :class="{
-          'pv-board__cell--active': active === k,
-          'pv-board__cell--wrong': wrongCells.includes(k),
-          'pv-board__cell--correct': correct,
-        }"
-        :data-cell="k"
-        data-pad-field
-        :aria-label="`${units[k]}的數字`"
-        @click="$emit('pick', k, $event.currentTarget)"
+  <div
+    class="pv-wrap"
+    :style="{ '--cols': units.length, '--point': pointAfter }"
+  >
+    <div class="pv-board">
+      <span
+        v-for="(unit, k) in units"
+        :key="`h${k}`"
+        class="pv-board__head"
+        :style="{ backgroundColor: COLORS[k % COLORS.length] }"
       >
-        {{ value }}
-        <span v-if="k === pointAfter" class="pv-board__point" />
-      </button>
-      <span v-else class="pv-board__cell" :data-cell="k">
-        {{ value }}
-        <span v-if="k === pointAfter" class="pv-board__point" />
+        {{ unit }}
       </span>
-    </template>
+      <template v-for="(value, k) in values" :key="`c${k}`">
+        <button
+          v-if="editable"
+          type="button"
+          class="pv-board__cell pv-board__cell--input"
+          :class="{
+            'pv-board__cell--active': active === k,
+            'pv-board__cell--wrong': wrongCells.includes(k),
+            'pv-board__cell--correct': correct,
+          }"
+          :data-cell="k"
+          data-pad-field
+          :aria-label="`${units[k]}的數字`"
+          @click="$emit('pick', k, $event.currentTarget)"
+        >
+          {{ value }}
+        </button>
+        <span v-else class="pv-board__cell" :data-cell="k">
+          {{ value }}
+        </span>
+      </template>
+    </div>
+    <!-- 小數點：畫在格子外面一層，壓在兩欄之間的格線上，不會被格子的底色蓋掉 -->
+    <span class="pv-point" aria-hidden="true" />
   </div>
 </template>
 
@@ -62,9 +67,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.pv-wrap {
+  --cw: 5.6rem;
+  --border: 4px;
+  position: relative;
+  display: inline-block;
+}
+
+.pv-point {
+  position: absolute;
+  left: calc(var(--border) + (var(--point) + 1) * var(--cw) - 0.6rem);
+  bottom: calc(var(--border) + 0.8rem);
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #d84315;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .pv-board {
   display: grid;
-  grid-template-columns: repeat(var(--cols), 5.6rem);
+  grid-template-columns: repeat(var(--cols), var(--cw));
+  box-sizing: border-box;
   border: 4px solid #5d4037;
   border-radius: 14px;
   overflow: hidden;
@@ -96,6 +122,7 @@ export default {
     background-color: #ffffff;
     border: none;
     border-right: 2px solid #8d6e63;
+    box-sizing: border-box;
 
     &:last-child {
       border-right: none;
@@ -121,24 +148,14 @@ export default {
       color: #2e7d32;
     }
   }
-
-  // 小數點：畫在這一欄右下角的格線上
-  &__point {
-    position: absolute;
-    right: -0.55rem;
-    bottom: 0.9rem;
-    width: 1rem;
-    height: 1rem;
-    background-color: #d84315;
-    border-radius: 50%;
-    z-index: 1;
-  }
 }
 
 @media (max-width: 1100px), (max-height: 760px) {
-  .pv-board {
-    grid-template-columns: repeat(var(--cols), 4.6rem);
+  .pv-wrap {
+    --cw: 4.6rem;
+  }
 
+  .pv-board {
     &__head {
       font-size: 1.1rem;
     }
