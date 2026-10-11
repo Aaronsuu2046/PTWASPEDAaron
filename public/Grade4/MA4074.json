@@ -1,0 +1,212 @@
+{
+  "id": "MA4074",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "在定位板上記記看，並回答問題。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "mode": "board",
+        "prompt": "6 個 0.01 合起來",
+        "value": 6,
+        "answer": "0.06",
+        "digits": "0006"
+      },
+      {
+        "code": "1-2",
+        "mode": "board",
+        "prompt": "18 個 0.01 合起來",
+        "value": 18,
+        "answer": "0.18",
+        "digits": "0018"
+      },
+      {
+        "code": "1-3",
+        "mode": "board",
+        "prompt": "14 個 0.01 合起來",
+        "value": 14,
+        "answer": "0.14",
+        "digits": "0014"
+      },
+      {
+        "code": "1-4",
+        "mode": "board",
+        "prompt": "9 個 0.01 合起來",
+        "value": 9,
+        "answer": "0.09",
+        "digits": "0009"
+      },
+      {
+        "code": "1-5",
+        "mode": "board",
+        "prompt": "23 個 0.01 合起來",
+        "value": 23,
+        "answer": "0.23",
+        "digits": "0023"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "mode": "board",
+        "prompt": "10 個 0.01 合起來",
+        "value": 10,
+        "answer": "0.1",
+        "digits": "0010"
+      },
+      {
+        "code": "2-2",
+        "mode": "board",
+        "prompt": "20 個 0.01 合起來",
+        "value": 20,
+        "answer": "0.2",
+        "digits": "0020"
+      },
+      {
+        "code": "2-3",
+        "mode": "board",
+        "prompt": "40 個 0.01 合起來",
+        "value": 40,
+        "answer": "0.4",
+        "digits": "0040"
+      },
+      {
+        "code": "2-4",
+        "mode": "board",
+        "prompt": "50 個 0.01 合起來",
+        "value": 50,
+        "answer": "0.5",
+        "digits": "0050"
+      },
+      {
+        "code": "2-5",
+        "mode": "board",
+        "prompt": "30 個 0.01 合起來",
+        "value": 30,
+        "answer": "0.3",
+        "digits": "0030"
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "mode": "count",
+        "prompt": "0.05 是幾個 0.01 合起來的",
+        "decimal": "0.05",
+        "count": 5
+      },
+      {
+        "code": "3-2",
+        "mode": "count",
+        "prompt": "0.11 是幾個 0.01 合起來的",
+        "decimal": "0.11",
+        "count": 11
+      },
+      {
+        "code": "3-3",
+        "mode": "count",
+        "prompt": "0.08 是幾個 0.01 合起來的",
+        "decimal": "0.08",
+        "count": 8
+      },
+      {
+        "code": "3-4",
+        "mode": "count",
+        "prompt": "0.24 是幾個 0.01 合起來的",
+        "decimal": "0.24",
+        "count": 24
+      },
+      {
+        "code": "3-5",
+        "mode": "count",
+        "prompt": "0.07 是幾個 0.01 合起來的",
+        "decimal": "0.07",
+        "count": 7
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "mode": "count",
+        "prompt": "0.1 是幾個 0.01 合起來的",
+        "decimal": "0.1",
+        "count": 10
+      },
+      {
+        "code": "4-2",
+        "mode": "count",
+        "prompt": "0.3 是幾個 0.01 合起來的",
+        "decimal": "0.3",
+        "count": 30
+      },
+      {
+        "code": "4-3",
+        "mode": "count",
+        "prompt": "0.4 是幾個 0.01 合起來的",
+        "decimal": "0.4",
+        "count": 40
+      },
+      {
+        "code": "4-4",
+        "mode": "count",
+        "prompt": "0.2 是幾個 0.01 合起來的",
+        "decimal": "0.2",
+        "count": 20
+      },
+      {
+        "code": "4-5",
+        "mode": "count",
+        "prompt": "0.7 是幾個 0.01 合起來的",
+        "decimal": "0.7",
+        "count": 70
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "mode": "board",
+        "prompt": "2 個 1、9 個 0.1、4 個 0.01 合起來",
+        "value": 294,
+        "answer": "2.94",
+        "digits": "0294"
+      },
+      {
+        "code": "5-2",
+        "mode": "board",
+        "prompt": "4 個 1、7 個 0.1、5 個 0.01 合起來",
+        "value": 475,
+        "answer": "4.75",
+        "digits": "0475"
+      },
+      {
+        "code": "5-3",
+        "mode": "board",
+        "prompt": "8 個 1、2 個 0.1、1 個 0.01 合起來",
+        "value": 821,
+        "answer": "8.21",
+        "digits": "0821"
+      },
+      {
+        "code": "5-4",
+        "mode": "board",
+        "prompt": "9 個 1、0 個 0.1、4 個 0.01 合起來",
+        "value": 904,
+        "answer": "9.04",
+        "digits": "0904"
+      },
+      {
+        "code": "5-5",
+        "mode": "board",
+        "prompt": "4 個 1、0 個 0.1、6 個 0.01 合起來",
+        "value": 406,
+        "answer": "4.06",
+        "digits": "0406"
+      }
+    ]
+  ]
+}
