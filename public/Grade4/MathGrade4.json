@@ -535,14 +535,14 @@
                 "Name": "加減與乘的混合計算(計算題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4088.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4089",
                 "Name": "加減與乘的混合計算(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4089.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },

@@ -363,6 +363,176 @@
         用一樣多的錢
       </text>
     </g>
+
+    <!-- 筆記本 a 元、貼紙 b 元，買一本筆記本和 c 張貼紙 -->
+    <g v-else-if="scene.type === 'stationery'">
+      <g transform="translate(30 40)">
+        <rect width="70" height="90" rx="6" fill="#90caf9" />
+        <rect x="8" width="6" height="90" fill="#1e88e5" />
+        <line
+          x1="24"
+          y1="30"
+          x2="60"
+          y2="30"
+          stroke="#e3f2fd"
+          stroke-width="4"
+        />
+        <line
+          x1="24"
+          y1="46"
+          x2="60"
+          y2="46"
+          stroke="#e3f2fd"
+          stroke-width="4"
+        />
+        <text x="35" y="118" font-size="16" text-anchor="middle" fill="#0d47a1">
+          筆記本 {{ scene.a }} 元
+        </text>
+      </g>
+      <text x="124" y="92" font-size="28" fill="#e65100">＋</text>
+      <g transform="translate(160 44)">
+        <rect
+          v-for="k in 3"
+          :key="`stk-${k}`"
+          :x="(k - 1) * 30"
+          :y="(k - 1) * 8"
+          width="44"
+          height="44"
+          rx="8"
+          fill="#f8bbd0"
+          stroke="#ec407a"
+          stroke-width="2"
+        />
+        <text x="82" y="54" font-size="26" text-anchor="middle">⭐</text>
+        <text x="54" y="114" font-size="16" text-anchor="middle" fill="#ad1457">
+          貼紙一張 {{ scene.b }} 元
+        </text>
+      </g>
+      <text x="140" y="186" font-size="16" text-anchor="middle" fill="#e65100">
+        買 1 本筆記本和 {{ scene.c }} 張貼紙，共多少元？
+      </text>
+    </g>
+
+    <!-- 存錢：商品 a 元，每期存 b 元，存 c 期 -->
+    <g v-else-if="scene.type === 'saving'">
+      <rect
+        x="160"
+        y="36"
+        width="96"
+        height="70"
+        rx="12"
+        fill="#fff9c4"
+        stroke="#fbc02d"
+        stroke-width="3"
+      />
+      <text x="208" y="68" font-size="26" text-anchor="middle">🎁</text>
+      <text x="208" y="96" font-size="16" text-anchor="middle" fill="#e65100">
+        {{ scene.a }} 元
+      </text>
+      <g transform="translate(28 40)">
+        <ellipse cx="50" cy="40" rx="46" ry="34" fill="#f48fb1" />
+        <circle cx="86" cy="32" r="12" fill="#f06292" />
+        <rect x="38" y="4" width="24" height="6" rx="3" fill="#ad1457" />
+        <rect x="18" y="66" width="12" height="14" rx="3" fill="#f06292" />
+        <rect x="68" y="66" width="12" height="14" rx="3" fill="#f06292" />
+        <circle cx="70" cy="30" r="3" fill="#4e342e" />
+      </g>
+      <text x="78" y="148" font-size="16" text-anchor="middle" fill="#ad1457">
+        每期存 {{ scene.b }} 元
+      </text>
+      <text x="78" y="170" font-size="16" text-anchor="middle" fill="#ad1457">
+        存了 {{ scene.c }} 期
+      </text>
+      <text x="208" y="160" font-size="18" text-anchor="middle" fill="#e65100">
+        還差多少元？
+      </text>
+    </g>
+
+    <!-- 蝴蝶結：每個用 a 公分，原有 b 公分，做 c 個 -->
+    <g v-else-if="scene.type === 'bow'">
+      <text x="140" y="30" font-size="18" text-anchor="middle" fill="#0d47a1">
+        緞帶原有 {{ scene.b }} 公分
+      </text>
+      <rect x="24" y="44" width="232" height="14" rx="7" fill="#f48fb1" />
+      <g
+        v-for="k in Math.min(scene.c, 4)"
+        :key="`bow-${k}`"
+        :transform="`translate(${46 + (k - 1) * 56} 100)`"
+      >
+        <path d="M0 0 L-20 -14 L-20 14 Z" fill="#ec407a" />
+        <path d="M0 0 L20 -14 L20 14 Z" fill="#ec407a" />
+        <circle r="6" fill="#ad1457" />
+      </g>
+      <text v-if="scene.c > 4" x="262" y="106" font-size="22" fill="#ad1457">
+        …
+      </text>
+      <text x="140" y="150" font-size="17" text-anchor="middle" fill="#ad1457">
+        每個用 {{ scene.a }} 公分，做 {{ scene.c }} 個
+      </text>
+      <text x="140" y="186" font-size="18" text-anchor="middle" fill="#e65100">
+        還剩多少公分？
+      </text>
+    </g>
+
+    <!-- 奇異果銷量：每盒 a 顆，上午 b 盒、下午 c 盒 -->
+    <g v-else-if="scene.type === 'kiwisale'">
+      <text x="140" y="30" font-size="18" text-anchor="middle" fill="#0d47a1">
+        每盒 {{ scene.a }} 顆奇異果
+      </text>
+      <g
+        v-for="(part, k) in [
+          ['上午', scene.b, '#fff3e0'],
+          ['下午', scene.c, '#e3f2fd'],
+        ]"
+        :key="`half-${k}`"
+        :transform="`translate(${22 + k * 126} 44)`"
+      >
+        <rect width="110" height="108" rx="12" :fill="part[2]" />
+        <text x="55" y="26" font-size="18" text-anchor="middle" fill="#4e342e">
+          {{ part[0] }}
+        </text>
+        <rect
+          x="22"
+          y="38"
+          width="66"
+          height="34"
+          rx="6"
+          fill="#d7ccc8"
+          stroke="#8d6e63"
+          stroke-width="3"
+        />
+        <circle cx="44" cy="55" r="9" fill="#8d6e63" />
+        <circle cx="66" cy="55" r="9" fill="#8d6e63" />
+        <text x="55" y="96" font-size="17" text-anchor="middle" fill="#e65100">
+          賣 {{ part[1] }} 盒
+        </text>
+      </g>
+      <text x="140" y="186" font-size="18" text-anchor="middle" fill="#e65100">
+        一共賣出幾顆？
+      </text>
+    </g>
+
+    <!-- 衣服價差：上衣 a 元、背心 b 元，各買 c 件 -->
+    <g v-else-if="scene.type === 'clothes'">
+      <g transform="translate(40 40)">
+        <path
+          d="M20 0 L0 14 L10 30 L20 24 V84 H70 V24 L80 30 L90 14 L70 0 Q45 14 20 0 Z"
+          fill="#4fc3f7"
+        />
+        <text x="45" y="112" font-size="16" text-anchor="middle" fill="#01579b">
+          上衣 {{ scene.a }} 元
+        </text>
+      </g>
+      <g transform="translate(160 40)">
+        <path d="M22 0 L10 6 V84 H80 V6 L68 0 Q45 22 22 0 Z" fill="#ffb74d" />
+        <text x="45" y="112" font-size="16" text-anchor="middle" fill="#e65100">
+          背心 {{ scene.b }} 元
+        </text>
+      </g>
+      <text x="140" y="186" font-size="17" text-anchor="middle" fill="#c62828">
+        {{ scene.c }} 件上衣比 {{ scene.c }} 件背心貴多少元？
+      </text>
+    </g>
   </svg>
 </template>
 
@@ -382,7 +552,8 @@ const PACKETS = [
 ];
 
 // 併式應用題情境圖：scene { type, a, b, c?, total? }
-// type：bus|shop|blocks|donut|redpacket（加減）、kiwi|rope|flags|watermelon|cake（乘除）
+// type：bus|shop|blocks|donut|redpacket（加減）、kiwi|rope|flags|watermelon|cake（乘除）、
+// stationery|saving|bow|kiwisale|clothes（加減與乘）
 export default {
   name: "MixedScene",
   props: {
@@ -404,6 +575,11 @@ export default {
         flags: "學生分組和旗子",
         watermelon: "合買西瓜",
         cake: "雞蛋糕和起司燒",
+        stationery: "筆記本和貼紙",
+        saving: "存錢買禮物",
+        bow: "用緞帶做蝴蝶結",
+        kiwisale: "上午和下午賣出的奇異果",
+        clothes: "上衣和背心",
       }[this.scene.type];
     },
   },
