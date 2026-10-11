@@ -1,0 +1,160 @@
+{
+  "id": "MA4081",
+  "GameType": "SelfDefine",
+  "TotalLevel": 1,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "這題要怎麼算？選選看正確的答案。"
+  },
+  "GameConfig": {
+    "PickCount": 5
+  },
+  "Questions": [
+    [
+      {
+        "bank": [
+          {
+            "no": 1,
+            "expr": "25－13＋2",
+            "answer": "ltr",
+            "first": [0, 5],
+            "steps": ["12＋2", "14"]
+          },
+          {
+            "no": 2,
+            "expr": "100－(25＋25)",
+            "answer": "paren",
+            "first": [4, 11],
+            "steps": ["100－50", "50"]
+          },
+          {
+            "no": 3,
+            "expr": "18＋3－9",
+            "answer": "ltr",
+            "first": [0, 4],
+            "steps": ["21－9", "12"]
+          },
+          {
+            "no": 4,
+            "expr": "(32－22)－3",
+            "answer": "paren",
+            "first": [0, 7],
+            "steps": ["10－3", "7"]
+          },
+          {
+            "no": 5,
+            "expr": "40－(19＋7)",
+            "answer": "paren",
+            "first": [3, 9],
+            "steps": ["40－26", "14"]
+          },
+          {
+            "no": 6,
+            "expr": "50－12＋5",
+            "answer": "ltr",
+            "first": [0, 5],
+            "steps": ["38＋5", "43"]
+          },
+          {
+            "no": 7,
+            "expr": "12＋13＋7",
+            "answer": "ltr",
+            "first": [0, 5],
+            "steps": ["25＋7", "32"]
+          },
+          {
+            "no": 8,
+            "expr": "60－(15＋8)",
+            "answer": "paren",
+            "first": [3, 9],
+            "steps": ["60－23", "37"]
+          },
+          {
+            "no": 9,
+            "expr": "40＋(23－10)",
+            "answer": "paren",
+            "first": [3, 10],
+            "steps": ["40＋13", "53"]
+          },
+          {
+            "no": 10,
+            "expr": "(50－20)－10",
+            "answer": "paren",
+            "first": [0, 7],
+            "steps": ["30－10", "20"]
+          },
+          {
+            "no": 11,
+            "expr": "(54－12)－5",
+            "answer": "paren",
+            "first": [0, 7],
+            "steps": ["42－5", "37"]
+          },
+          {
+            "no": 12,
+            "expr": "55－(20－10)",
+            "answer": "paren",
+            "first": [3, 10],
+            "steps": ["55－10", "45"]
+          },
+          {
+            "no": 13,
+            "expr": "5＋12－10",
+            "answer": "ltr",
+            "first": [0, 4],
+            "steps": ["17－10", "7"]
+          },
+          {
+            "no": 14,
+            "expr": "15＋(25＋13)",
+            "answer": "paren",
+            "first": [3, 10],
+            "steps": ["15＋38", "53"]
+          },
+          {
+            "no": 15,
+            "expr": "21＋(25＋13)",
+            "answer": "paren",
+            "first": [3, 10],
+            "steps": ["21＋38", "59"]
+          },
+          {
+            "no": 16,
+            "expr": "32＋(29－6)",
+            "answer": "paren",
+            "first": [3, 9],
+            "steps": ["32＋23", "55"]
+          },
+          {
+            "no": 17,
+            "expr": "58＋(21－18)",
+            "answer": "paren",
+            "first": [3, 10],
+            "steps": ["58＋3", "61"]
+          },
+          {
+            "no": 18,
+            "expr": "(42＋13)－6",
+            "answer": "paren",
+            "first": [0, 7],
+            "steps": ["55－6", "49"]
+          },
+          {
+            "no": 19,
+            "expr": "(56＋28)－10",
+            "answer": "paren",
+            "first": [0, 7],
+            "steps": ["84－10", "74"]
+          },
+          {
+            "no": 20,
+            "expr": "43－(18＋11)",
+            "answer": "paren",
+            "first": [3, 10],
+            "steps": ["43－29", "14"]
+          }
+        ]
+      }
+    ]
+  ]
+}
