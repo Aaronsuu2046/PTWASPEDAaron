@@ -771,7 +771,7 @@ export default {
     raceCrash() {
       this.raceState = "crash";
       this.$emit("race-crash");
-      this.showBanner("撞到三角錐了！回到起點再出發", "#e65100");
+      this.showBanner("撞到了！回到起點", "#e65100");
       this.later(() => this.raceReset(), 1400);
     },
     raceJudge() {
@@ -964,6 +964,28 @@ export default {
 .driveWheel {
   width: 4.5rem;
   height: 4.5rem;
+}
+
+@media (max-width: 1100px), (max-height: 760px) {
+  .drivePanel {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .driveBtn {
+    width: 6.4rem;
+    height: 4.6rem;
+    font-size: 1.6rem;
+
+    &__arrow {
+      font-size: 1.3rem;
+    }
+  }
+
+  .driveWheel {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
 }
 
 #btnContainer {
