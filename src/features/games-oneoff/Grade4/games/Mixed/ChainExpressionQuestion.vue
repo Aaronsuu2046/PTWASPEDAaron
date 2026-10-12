@@ -25,7 +25,10 @@
           </button>
         </div>
 
-        <div class="main-row">
+        <div
+          class="main-row"
+          :class="{ 'main-row--scene': gameData.scene && !scratchOpen }"
+        >
           <div class="work-col">
             <!-- 遞等式：每一列是固定文字與空格，點空格出現輸入板 -->
             <div class="work-block">
@@ -618,6 +621,22 @@ export default {
   margin-left: auto;
 }
 
+// 有情境圖時：算式和圖都放大，圖填滿右邊剩下的空間；中間只留數字輸入板的寬度
+.main-row--scene {
+  gap: 18.5rem;
+
+  .work-col {
+    margin-left: clamp(0.5rem, 3%, 2rem);
+  }
+
+  .scene {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 14rem;
+    max-width: 30rem;
+  }
+}
+
 .question-text {
   margin: 0;
   padding: 0.8rem 1.2rem;
@@ -950,6 +969,32 @@ export default {
     }
   }
 
+  .main-row--scene {
+    .work-block {
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+    }
+
+    .work-row {
+      font-size: 2.7rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 2.1rem;
+    }
+
+    .fill-box {
+      min-width: 5.8rem;
+      height: 4rem;
+      font-size: 2.5rem;
+
+      &--op {
+        min-width: 3.8rem;
+      }
+    }
+  }
+
   .work-row--answer {
     margin-top: 0.2rem;
     padding-top: 0.4rem;
@@ -961,9 +1006,70 @@ export default {
   }
 }
 
+// 大螢幕：算式和圖再放大一點
+@media (min-width: 1400px) and (min-height: 860px) {
+  .work-panel--word .main-row--scene {
+    .scene {
+      max-width: 34rem;
+    }
+
+    .work-row {
+      font-size: 3.1rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 2.4rem;
+    }
+
+    .fill-box {
+      min-width: 6.6rem;
+      height: 4.6rem;
+      font-size: 2.9rem;
+
+      &--op {
+        min-width: 4.4rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 1100px), (max-height: 760px) {
   .scene {
     width: 14rem;
+  }
+
+  .work-panel--word .main-row--scene {
+    gap: 16rem;
+
+    .scene {
+      min-width: 12rem;
+      max-width: 22rem;
+    }
+
+    .work-block {
+      gap: 0.3rem;
+      padding: 0.6rem 1.4rem;
+    }
+
+    .work-row {
+      font-size: 2.2rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 1.8rem;
+    }
+
+    .fill-box {
+      min-width: 4.8rem;
+      height: 3.3rem;
+      font-size: 2rem;
+
+      &--op {
+        min-width: 3.1rem;
+      }
+    }
   }
 
   .work-panel--word {
