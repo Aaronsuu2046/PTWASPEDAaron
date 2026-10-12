@@ -483,14 +483,14 @@
                 "Name": "加與減的併式(計算題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4082.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4083",
                 "Name": "加與減的併式(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4083.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -509,14 +509,14 @@
                 "Name": "乘與除的併式(計算題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4085.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4086",
                 "Name": "乘與除的併式(應用題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4086.png",
-                "status": "draft"
+                "status": "ready"
               }
             ]
           },
@@ -535,7 +535,7 @@
                 "Name": "加減與乘的混合計算(計算題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA4088.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4089",
@@ -561,7 +561,7 @@
                 "Name": "加減與除的混合計算(計算題)",
                 "Description": "把做法和答案記下來",
                 "Img": "MA408B.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA408C",
