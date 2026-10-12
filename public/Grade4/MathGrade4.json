@@ -476,7 +476,7 @@
                 "Name": "加與減的併式(觀念題)",
                 "Description": "選選看正確的答案",
                 "Img": "MA4081.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4082",
@@ -502,7 +502,7 @@
                 "Name": "乘與除的併式(觀念題)",
                 "Description": "選選看正確的答案",
                 "Img": "MA4084.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4085",
@@ -528,7 +528,7 @@
                 "Name": "加減與乘的混合計算(概念釐清)",
                 "Description": "選選看正確的答案",
                 "Img": "MA4087.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA4088",
