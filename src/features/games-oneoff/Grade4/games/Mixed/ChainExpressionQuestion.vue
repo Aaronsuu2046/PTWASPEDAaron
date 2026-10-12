@@ -91,7 +91,7 @@
               {{ feedback }}
             </p>
           </div>
-          <!-- 選填 scene：應用題情境圖，放在最右邊（中間留給輸入板；打開計算紙時先收起來） -->
+          <!-- 選填 scene：應用題情境圖，放在算式右邊（輸入板可以蓋到它；打開計算紙時先收起來） -->
           <MixedScene
             v-if="gameData.scene && !scratchOpen"
             class="scene"
@@ -552,19 +552,21 @@ export default {
   margin-left: auto;
 }
 
-// 有情境圖時：算式和圖都放大，圖填滿右邊剩下的空間；中間只留數字輸入板的寬度
+// 有情境圖時：算式和圖都放大，兩塊並排置中、中間只留小間距（輸入板打開時可以蓋到圖）
 .main-row--scene {
-  gap: 18.5rem;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
 
   .work-col {
-    margin-left: clamp(0.5rem, 3%, 2rem);
+    margin-left: 0;
   }
 
   .scene {
-    flex: 1 1 0;
+    flex: 0 1 30rem;
     width: auto;
-    min-width: 12rem;
+    min-width: 14rem;
     max-width: 30rem;
+    margin-left: 0;
   }
 }
 
@@ -901,15 +903,12 @@ export default {
   }
 
   .work-panel--word .main-row--scene {
-    gap: 16rem;
-
-    .work-col {
-      margin-left: 0.5rem;
-    }
+    gap: 1.5rem;
 
     .scene {
-      min-width: 10rem;
-      max-width: 22rem;
+      flex-basis: 24rem;
+      min-width: 12rem;
+      max-width: 24rem;
     }
 
     .work-block {
@@ -999,6 +998,37 @@ export default {
 
     :deep(.vfill__cell) {
       font-size: 1.3rem;
+    }
+  }
+}
+
+// 寬但矮的螢幕（筆電常見）：寬度夠，算式和圖用中等大小
+@media (min-width: 1101px) and (max-height: 760px) {
+  .work-panel--word .main-row--scene {
+    gap: 3rem;
+
+    .scene {
+      flex-basis: 28rem;
+      max-width: 28rem;
+    }
+
+    .work-row {
+      font-size: 2.3rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 1.9rem;
+    }
+
+    .fill-box {
+      min-width: 5rem;
+      height: 3.4rem;
+      font-size: 2.1rem;
+
+      &--op {
+        min-width: 3.2rem;
+      }
     }
   }
 }
