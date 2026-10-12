@@ -632,7 +632,7 @@ export default {
   .scene {
     flex: 1 1 0;
     width: auto;
-    min-width: 14rem;
+    min-width: 12rem;
     max-width: 30rem;
   }
 }
@@ -976,21 +976,21 @@ export default {
     }
 
     .work-row {
-      font-size: 2.7rem;
+      font-size: 2.5rem;
     }
 
     .work-label,
     .work-unit {
-      font-size: 2.1rem;
+      font-size: 2rem;
     }
 
     .fill-box {
-      min-width: 5.8rem;
-      height: 4rem;
-      font-size: 2.5rem;
+      min-width: 5.4rem;
+      height: 3.7rem;
+      font-size: 2.3rem;
 
       &--op {
-        min-width: 3.8rem;
+        min-width: 3.5rem;
       }
     }
   }
@@ -1042,32 +1042,36 @@ export default {
   .work-panel--word .main-row--scene {
     gap: 16rem;
 
+    .work-col {
+      margin-left: 0.5rem;
+    }
+
     .scene {
-      min-width: 12rem;
+      min-width: 10rem;
       max-width: 22rem;
     }
 
     .work-block {
       gap: 0.3rem;
-      padding: 0.6rem 1.4rem;
+      padding: 0.5rem 1.2rem;
     }
 
     .work-row {
-      font-size: 2.2rem;
+      font-size: 1.9rem;
     }
 
     .work-label,
     .work-unit {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .fill-box {
-      min-width: 4.8rem;
-      height: 3.3rem;
-      font-size: 2rem;
+      min-width: 4.2rem;
+      height: 2.9rem;
+      font-size: 1.8rem;
 
       &--op {
-        min-width: 3.1rem;
+        min-width: 2.7rem;
       }
     }
   }
