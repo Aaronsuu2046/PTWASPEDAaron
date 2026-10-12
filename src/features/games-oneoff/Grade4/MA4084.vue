@@ -1,6 +1,7 @@
 <template>
-  <OrderChoiceQuestion
+  <RacingOrderQuestion
     :game-data="gameData"
+    :game-id="gameId"
     :game-config="gameConfig"
     :intro-text="introText"
     @play-effect="$emit('play-effect', $event)"
@@ -10,12 +11,13 @@
 </template>
 
 <script>
-import OrderChoiceQuestion from "./games/Mixed/OrderChoiceQuestion.vue";
+import RacingOrderQuestion from "./games/Mixed/RacingOrderQuestion.vue";
 
-// 乘與除的併式（觀念題）：1 關抽 5 題，選「由左而右／先算括號」，答對後看完整解題過程
+// 乘與除的併式（觀念題）：賽車選答，1 關抽 5 題，開進「由左而右一步一步算／先算括號的部分」，
+// 答對後看完整解題過程
 export default {
   name: "MA4084",
-  components: { OrderChoiceQuestion },
+  components: { RacingOrderQuestion },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
