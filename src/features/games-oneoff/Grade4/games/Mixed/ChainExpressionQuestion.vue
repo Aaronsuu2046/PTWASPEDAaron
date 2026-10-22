@@ -5,8 +5,15 @@
     </div>
 
     <div class="game-area">
-      <div class="work-panel">
-        <div class="tool-row">
+      <div
+        class="work-panel"
+        :class="{ 'work-panel--word': gameData.question }"
+      >
+        <div class="top-row">
+          <!-- 題目文字：輸入板盡量不要蓋住 -->
+          <p v-if="gameData.question" class="question-text" data-pad-avoid>
+            {{ gameData.question }}
+          </p>
           <!-- 計算紙：畫筆或定位版直式，只是算算看，不計分 -->
           <button
             type="button"
@@ -18,65 +25,79 @@
           </button>
         </div>
 
-        <p v-if="gameData.question" class="question-text">
-          {{ gameData.question }}
-        </p>
-
-        <!-- 遞等式：每一列是固定文字與空格，點空格出現輸入板 -->
-        <div class="work-block">
-          <div
-            v-for="(line, l) in parsedLines"
-            :key="`line-${l}`"
-            class="work-row"
-          >
-            <template v-for="(part, k) in line" :key="`${l}-${k}`">
-              <!-- 算式文字也標 data-pad-field：輸入板把它當成欄位避開，
+        <div
+          class="main-row"
+          :class="{ 'main-row--scene': gameData.scene && !scratchOpen }"
+        >
+          <div class="work-col">
+            <!-- 遞等式：每一列是固定文字與空格，點空格出現輸入板 -->
+            <div class="work-block">
+              <div
+                v-for="(line, l) in parsedLines"
+                :key="`line-${l}`"
+                class="work-row"
+              >
+                <template v-for="(part, k) in line" :key="`${l}-${k}`">
+                  <!-- 算式文字也標 data-pad-field：輸入板把它當成欄位避開，
                    會放到整個算式右邊，不會蓋住同一列的數字 -->
-              <span
-                v-if="part.text !== undefined"
-                class="work-text"
-                data-pad-field
-                >{{ part.text }}</span
-              >
-              <button
-                v-else
-                type="button"
-                class="fill-box"
-                :class="boxClass(part.key, part.isOp)"
-                :data-key="part.key"
-                data-pad-field
-                :aria-label="part.isOp ? '運算符號' : '數字'"
-                @click="activate(part.key)"
-              >
-                {{ display(part.key) }}
-              </button>
-            </template>
-          </div>
+                  <span
+                    v-if="part.text !== undefined"
+                    class="work-text"
+                    data-pad-field
+                    >{{ part.text }}</span
+                  >
+                  <button
+                    v-else
+                    type="button"
+                    class="fill-box"
+                    :class="boxClass(part.key, part.isOp)"
+                    :data-key="part.key"
+                    data-pad-field
+                    :aria-label="part.isOp ? '運算符號' : '數字'"
+                    @click="activate(part.key)"
+                  >
+                    {{ display(part.key) }}
+                  </button>
+                </template>
+              </div>
 
-          <!-- 選填 answers：答案列，前後有固定文字與單位 -->
-          <div v-if="gameData.answers" class="work-row work-row--answer">
-            <span class="work-label">答：</span>
-            <template v-for="(ans, k) in gameData.answers" :key="`ans-${k}`">
-              <span v-if="ans.prefix" class="work-unit">{{ ans.prefix }}</span>
-              <button
-                type="button"
-                class="fill-box fill-box--answer"
-                :class="boxClass(`answer${k}`, false)"
-                :data-key="`answer${k}`"
-                data-pad-field
-                aria-label="答案"
-                @click="activate(`answer${k}`)"
-              >
-                {{ display(`answer${k}`) }}
-              </button>
-              <span class="work-unit">{{ ans.unit }}</span>
-            </template>
+              <!-- 選填 answers：答案列，前後有固定文字與單位 -->
+              <div v-if="gameData.answers" class="work-row work-row--answer">
+                <span class="work-label">答：</span>
+                <template
+                  v-for="(ans, k) in gameData.answers"
+                  :key="`ans-${k}`"
+                >
+                  <span v-if="ans.prefix" class="work-unit">{{
+                    ans.prefix
+                  }}</span>
+                  <button
+                    type="button"
+                    class="fill-box fill-box--answer"
+                    :class="boxClass(`answer${k}`, false)"
+                    :data-key="`answer${k}`"
+                    data-pad-field
+                    aria-label="答案"
+                    @click="activate(`answer${k}`)"
+                  >
+                    {{ display(`answer${k}`) }}
+                  </button>
+                  <span class="work-unit">{{ ans.unit }}</span>
+                </template>
+              </div>
+            </div>
+
+            <p class="feedback" :class="{ 'feedback--hint': showHint }">
+              {{ feedback }}
+            </p>
           </div>
+          <!-- 選填 scene：應用題情境圖，放在算式右邊（輸入板可以蓋到它；打開計算紙時先收起來） -->
+          <MixedScene
+            v-if="gameData.scene && !scratchOpen"
+            class="scene"
+            :scene="gameData.scene"
+          />
         </div>
-
-        <p class="feedback" :class="{ 'feedback--hint': showHint }">
-          {{ feedback }}
-        </p>
       </div>
 
       <div v-if="scratchMounted" v-show="scratchOpen" class="scratch">
@@ -160,7 +181,7 @@
               />
             </KeepAlive>
             <p v-if="!scratchExpr" class="scratch__tip">
-              先在算式填好上一步的結果，這裡就會出現直式喔！
+              先在算式填好這一步的數和符號，這裡就會出現直式喔！
             </p>
           </div>
         </div>
@@ -182,6 +203,7 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import DrawingBoard from "@/components/DrawingBoard.vue";
 import FieldPad from "../Common/FieldPad.vue";
 import VerticalScratch from "../Vertical/VerticalScratch.vue";
+import MixedScene from "./MixedScene.vue";
 
 const OPS = ["+", "-", "×", "÷"];
 // 空格裡的運算符號顯示成和題目一樣的全形字
@@ -198,12 +220,14 @@ const MAX_LENGTH = 6;
 // 題目 { lines: ["300－(115＋7)", "＝300－[122]", "＝[178]"], scratch, answers?, question? }
 // lines 裡 [ ] 是要填的空格（依出現順序 b0、b1…），內容是數字或運算符號（+ - × ÷）；
 // 數字以數值比對，符號要完全相同，每格各自判定
-// scratch: [{ a, op, b }] 計算紙定位版可選的每一步，a／b 寫 "#0" 表示用學生填在第 0 格的數
+// scratch: [{ a, op, b }] 計算紙定位版可選的每一步，a／op／b 寫 "#0" 表示用學生填在第 0 格的內容
+// （符號也要學生填時，直式跟著學生填的符號，不會先洩漏答案）
 // 選填 answers: [{ prefix, value, unit }]：答案列；選填 question：題目文字（應用題）
+// 選填 scene：情境圖（MixedScene），放在題目右邊
 // GameConfig.Hint：答錯時的提示
 export default {
   name: "ChainExpressionQuestion",
-  components: { DrawingBoard, FieldPad, VerticalScratch },
+  components: { DrawingBoard, FieldPad, VerticalScratch, MixedScene },
   props: {
     gameData: { type: Object, required: true },
     gameConfig: { type: Object, default: () => ({}) },
@@ -272,14 +296,12 @@ export default {
         return m ? this.values[`b${m[1]}`] || "" : String(v);
       };
       const a = resolve(step.a);
+      const op = resolve(step.op);
       const b = resolve(step.b);
       if (!/^\d+$/.test(a) || !/^\d+$/.test(b)) return null;
-      return {
-        a,
-        op: step.op,
-        b,
-        sig: `${this.scratchStep}:${a}${step.op}${b}`,
-      };
+      // 直式只畫加、減、乘
+      if (!["+", "-", "×"].includes(op)) return null;
+      return { a, op, b, sig: `${this.scratchStep}:${a}${op}${b}` };
     },
   },
   created() {
@@ -482,12 +504,19 @@ export default {
   gap: 0.8rem;
 }
 
-.tool-row {
+.top-row {
   display: flex;
+  align-items: flex-start;
   justify-content: flex-end;
+  gap: 0.8rem;
+
+  .question-text {
+    flex: 1;
+  }
 }
 
 .scratch-toggle {
+  flex-shrink: 0;
   padding: 0.35rem 1rem;
   font-size: 1.2rem;
   font-weight: $font-bold;
@@ -497,6 +526,48 @@ export default {
   border-radius: 12px;
   box-shadow: 0 3px 0 #00796b;
   cursor: pointer;
+}
+
+.main-row {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// 算式靠左放，右邊留空間給輸入板
+.work-col {
+  min-width: 0;
+  margin-left: clamp(0.5rem, 5%, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.scene {
+  flex-shrink: 0;
+  width: 17rem;
+  height: auto;
+  margin-left: auto;
+}
+
+// 有情境圖時：算式和圖都放大，兩塊並排置中、中間只留小間距（輸入板打開時可以蓋到圖）
+.main-row--scene {
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+
+  .work-col {
+    margin-left: 0;
+  }
+
+  .scene {
+    flex: 0 1 30rem;
+    width: auto;
+    min-width: 14rem;
+    max-width: 30rem;
+    margin-left: 0;
+  }
 }
 
 .question-text {
@@ -511,9 +582,7 @@ export default {
 }
 
 .work-block {
-  // 靠左放，右邊留空間給輸入板
   align-self: flex-start;
-  margin-left: clamp(0.5rem, 6%, 5rem);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -587,7 +656,6 @@ export default {
 
 .feedback {
   align-self: flex-start;
-  margin-left: clamp(0.5rem, 6%, 5rem) !important;
   min-height: 3.2rem;
   max-width: 40rem;
   margin: 0;
@@ -735,7 +803,174 @@ export default {
   touch-action: none;
 }
 
+// 應用題：上面有題目和情境圖，算式格子小一點
+.work-panel--word {
+  gap: 0.5rem;
+
+  .question-text {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0.6rem 1rem;
+  }
+
+  .work-block {
+    gap: 0.35rem;
+    padding: 0.6rem 1.6rem;
+  }
+
+  .work-row {
+    font-size: 2.1rem;
+  }
+
+  .fill-box {
+    min-width: 4.6rem;
+    height: 3.1rem;
+    font-size: 2rem;
+
+    &--op {
+      min-width: 3rem;
+    }
+  }
+
+  .main-row--scene {
+    .work-block {
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+    }
+
+    .work-row {
+      font-size: 2.5rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 2rem;
+    }
+
+    .fill-box {
+      min-width: 5.4rem;
+      height: 3.7rem;
+      font-size: 2.3rem;
+
+      &--op {
+        min-width: 3.5rem;
+      }
+    }
+  }
+
+  .work-row--answer {
+    margin-top: 0.2rem;
+    padding-top: 0.4rem;
+  }
+
+  .feedback {
+    min-height: 2.6rem;
+    font-size: 1.15rem;
+  }
+}
+
+// 大螢幕：算式和圖再放大一點
+@media (min-width: 1400px) and (min-height: 860px) {
+  .work-panel--word .main-row--scene {
+    .scene {
+      max-width: 34rem;
+    }
+
+    .work-row {
+      font-size: 3.1rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 2.4rem;
+    }
+
+    .fill-box {
+      min-width: 6.6rem;
+      height: 4.6rem;
+      font-size: 2.9rem;
+
+      &--op {
+        min-width: 4.4rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 1100px), (max-height: 760px) {
+  .scene {
+    width: 14rem;
+  }
+
+  .work-panel--word .main-row--scene {
+    gap: 1.5rem;
+
+    .scene {
+      flex-basis: 24rem;
+      min-width: 12rem;
+      max-width: 24rem;
+    }
+
+    .work-block {
+      gap: 0.3rem;
+      padding: 0.5rem 1.2rem;
+    }
+
+    .work-row {
+      font-size: 1.9rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 1.6rem;
+    }
+
+    .fill-box {
+      min-width: 4.2rem;
+      height: 2.9rem;
+      font-size: 1.8rem;
+
+      &--op {
+        min-width: 2.7rem;
+      }
+    }
+  }
+
+  .work-panel--word {
+    .question-text {
+      font-size: 1.3rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .work-block {
+      gap: 0.2rem;
+      padding: 0.4rem 1.2rem;
+    }
+
+    .work-row {
+      font-size: 1.8rem;
+    }
+
+    .fill-box {
+      min-width: 4rem;
+      height: 2.7rem;
+      font-size: 1.7rem;
+
+      &--op {
+        min-width: 2.6rem;
+      }
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 1.5rem;
+    }
+
+    .feedback {
+      font-size: 1.05rem;
+    }
+  }
+
   .work-row {
     font-size: 2.2rem;
   }
@@ -763,6 +998,37 @@ export default {
 
     :deep(.vfill__cell) {
       font-size: 1.3rem;
+    }
+  }
+}
+
+// 寬但矮的螢幕（筆電常見）：寬度夠，算式和圖用中等大小
+@media (min-width: 1101px) and (max-height: 760px) {
+  .work-panel--word .main-row--scene {
+    gap: 3rem;
+
+    .scene {
+      flex-basis: 28rem;
+      max-width: 28rem;
+    }
+
+    .work-row {
+      font-size: 2.3rem;
+    }
+
+    .work-label,
+    .work-unit {
+      font-size: 1.9rem;
+    }
+
+    .fill-box {
+      min-width: 5rem;
+      height: 3.4rem;
+      font-size: 2.1rem;
+
+      &--op {
+        min-width: 3.2rem;
+      }
     }
   }
 }
