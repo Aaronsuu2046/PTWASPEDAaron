@@ -1,0 +1,347 @@
+{
+  "id": "MA4084",
+  "GameType": "SelfDefine",
+  "TotalLevel": 1,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "開車選出正確的算法！"
+  },
+  "GameConfig": {
+    "PickCount": 5,
+    "showSubmitButton": false,
+    "Hint": "提示：只有乘、除且沒有括號時，由左而右一步一步算；有括號先算括號的部分。"
+  },
+  "Questions": [
+    [
+      {
+        "bank": [
+          {
+            "no": 1,
+            "expr": "8×3×2",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "24×2",
+              "48"
+            ]
+          },
+          {
+            "no": 2,
+            "expr": "12÷(2×2)",
+            "answer": "paren",
+            "first": [
+              3,
+              8
+            ],
+            "steps": [
+              "12÷4",
+              "3"
+            ]
+          },
+          {
+            "no": 3,
+            "expr": "6×4÷12",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "24÷12",
+              "2"
+            ]
+          },
+          {
+            "no": 4,
+            "expr": "(28÷7)×1",
+            "answer": "paren",
+            "first": [
+              0,
+              6
+            ],
+            "steps": [
+              "4×1",
+              "4"
+            ]
+          },
+          {
+            "no": 5,
+            "expr": "30×(20÷5)",
+            "answer": "paren",
+            "first": [
+              3,
+              9
+            ],
+            "steps": [
+              "30×4",
+              "120"
+            ]
+          },
+          {
+            "no": 6,
+            "expr": "5×3×4",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "15×4",
+              "60"
+            ]
+          },
+          {
+            "no": 7,
+            "expr": "9×4×4",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "36×4",
+              "144"
+            ]
+          },
+          {
+            "no": 8,
+            "expr": "4×7×3",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "28×3",
+              "84"
+            ]
+          },
+          {
+            "no": 9,
+            "expr": "6×5×5",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "30×5",
+              "150"
+            ]
+          },
+          {
+            "no": 10,
+            "expr": "18÷(3×2)",
+            "answer": "paren",
+            "first": [
+              3,
+              8
+            ],
+            "steps": [
+              "18÷6",
+              "3"
+            ]
+          },
+          {
+            "no": 11,
+            "expr": "72÷(4×3)",
+            "answer": "paren",
+            "first": [
+              3,
+              8
+            ],
+            "steps": [
+              "72÷12",
+              "6"
+            ]
+          },
+          {
+            "no": 12,
+            "expr": "81÷(3×3)",
+            "answer": "paren",
+            "first": [
+              3,
+              8
+            ],
+            "steps": [
+              "81÷9",
+              "9"
+            ]
+          },
+          {
+            "no": 13,
+            "expr": "24÷(2×2)",
+            "answer": "paren",
+            "first": [
+              3,
+              8
+            ],
+            "steps": [
+              "24÷4",
+              "6"
+            ]
+          },
+          {
+            "no": 14,
+            "expr": "12×4÷8",
+            "answer": "ltr",
+            "first": [
+              0,
+              4
+            ],
+            "steps": [
+              "48÷8",
+              "6"
+            ]
+          },
+          {
+            "no": 15,
+            "expr": "11×6÷3",
+            "answer": "ltr",
+            "first": [
+              0,
+              4
+            ],
+            "steps": [
+              "66÷3",
+              "22"
+            ]
+          },
+          {
+            "no": 16,
+            "expr": "8×8÷4",
+            "answer": "ltr",
+            "first": [
+              0,
+              3
+            ],
+            "steps": [
+              "64÷4",
+              "16"
+            ]
+          },
+          {
+            "no": 17,
+            "expr": "14×6÷7",
+            "answer": "ltr",
+            "first": [
+              0,
+              4
+            ],
+            "steps": [
+              "84÷7",
+              "12"
+            ]
+          },
+          {
+            "no": 18,
+            "expr": "(40÷4)×2",
+            "answer": "paren",
+            "first": [
+              0,
+              6
+            ],
+            "steps": [
+              "10×2",
+              "20"
+            ]
+          },
+          {
+            "no": 19,
+            "expr": "(54÷6)×3",
+            "answer": "paren",
+            "first": [
+              0,
+              6
+            ],
+            "steps": [
+              "9×3",
+              "27"
+            ]
+          },
+          {
+            "no": 20,
+            "expr": "(52÷4)×4",
+            "answer": "paren",
+            "first": [
+              0,
+              6
+            ],
+            "steps": [
+              "13×4",
+              "52"
+            ]
+          },
+          {
+            "no": 21,
+            "expr": "(98÷7)×5",
+            "answer": "paren",
+            "first": [
+              0,
+              6
+            ],
+            "steps": [
+              "14×5",
+              "70"
+            ]
+          },
+          {
+            "no": 22,
+            "expr": "25×(24÷6)",
+            "answer": "paren",
+            "first": [
+              3,
+              9
+            ],
+            "steps": [
+              "25×4",
+              "100"
+            ]
+          },
+          {
+            "no": 23,
+            "expr": "15×(24÷8)",
+            "answer": "paren",
+            "first": [
+              3,
+              9
+            ],
+            "steps": [
+              "15×3",
+              "45"
+            ]
+          },
+          {
+            "no": 24,
+            "expr": "35×(45÷9)",
+            "answer": "paren",
+            "first": [
+              3,
+              9
+            ],
+            "steps": [
+              "35×5",
+              "175"
+            ]
+          },
+          {
+            "no": 25,
+            "expr": "18×(42÷7)",
+            "answer": "paren",
+            "first": [
+              3,
+              9
+            ],
+            "steps": [
+              "18×6",
+              "108"
+            ]
+          }
+        ]
+      }
+    ]
+  ]
+}
