@@ -1,0 +1,162 @@
+{
+  "id": "MA4073",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "想想看，再回答問題。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "question": "種地瓜的部分是0.03塊地嗎？",
+        "answer": false,
+        "veg": "地瓜",
+        "value": "0.03"
+      },
+      {
+        "code": "1-2",
+        "question": "種地瓜的部分是0.3塊地嗎？",
+        "answer": true,
+        "veg": "地瓜",
+        "value": "0.3"
+      },
+      {
+        "code": "1-3",
+        "question": "其中的0.3塊地是種地瓜嗎？",
+        "answer": true,
+        "veg": "地瓜",
+        "value": "0.3"
+      },
+      {
+        "code": "1-4",
+        "question": "其中的0.3塊地是種小黃瓜嗎？",
+        "answer": false,
+        "veg": "小黃瓜",
+        "value": "0.3"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "question": "種小黃瓜的部分是0.24塊地嗎？",
+        "answer": true,
+        "veg": "小黃瓜",
+        "value": "0.24"
+      },
+      {
+        "code": "2-2",
+        "question": "種小黃瓜的部分是0.25塊地嗎？",
+        "answer": false,
+        "veg": "小黃瓜",
+        "value": "0.25"
+      },
+      {
+        "code": "2-3",
+        "question": "其中的0.24塊地是種小黃瓜嗎？",
+        "answer": true,
+        "veg": "小黃瓜",
+        "value": "0.24"
+      },
+      {
+        "code": "2-4",
+        "question": "其中的0.24塊地是種菠菜嗎？",
+        "answer": false,
+        "veg": "菠菜",
+        "value": "0.24"
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "question": "種胡蘿蔔的部分是0.26塊地嗎？",
+        "answer": false,
+        "veg": "胡蘿蔔",
+        "value": "0.26"
+      },
+      {
+        "code": "3-2",
+        "question": "種胡蘿蔔的部分是0.28塊地嗎？",
+        "answer": true,
+        "veg": "胡蘿蔔",
+        "value": "0.28"
+      },
+      {
+        "code": "3-3",
+        "question": "其中的0.28塊地是種地瓜嗎？",
+        "answer": false,
+        "veg": "地瓜",
+        "value": "0.28"
+      },
+      {
+        "code": "3-4",
+        "question": "其中的0.28塊地是種胡蘿蔔嗎？",
+        "answer": true,
+        "veg": "胡蘿蔔",
+        "value": "0.28"
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "question": "種蔥的部分是0.6塊地嗎？",
+        "answer": false,
+        "veg": "蔥",
+        "value": "0.6"
+      },
+      {
+        "code": "4-2",
+        "question": "種蔥的部分是0.06塊地嗎？",
+        "answer": true,
+        "veg": "蔥",
+        "value": "0.06"
+      },
+      {
+        "code": "4-3",
+        "question": "其中的0.06塊地是種胡蘿蔔嗎？",
+        "answer": false,
+        "veg": "胡蘿蔔",
+        "value": "0.06"
+      },
+      {
+        "code": "4-4",
+        "question": "其中的0.06塊地是種蔥嗎？",
+        "answer": true,
+        "veg": "蔥",
+        "value": "0.06"
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "question": "種菠菜的部分是0.13塊地嗎？",
+        "answer": false,
+        "veg": "菠菜",
+        "value": "0.13"
+      },
+      {
+        "code": "5-2",
+        "question": "種菠菜的部分是0.12塊地嗎？",
+        "answer": true,
+        "veg": "菠菜",
+        "value": "0.12"
+      },
+      {
+        "code": "5-3",
+        "question": "其中的0.12塊地是種蔥嗎？",
+        "answer": false,
+        "veg": "蔥",
+        "value": "0.12"
+      },
+      {
+        "code": "5-4",
+        "question": "其中的0.12塊地是種菠菜嗎？",
+        "answer": true,
+        "veg": "菠菜",
+        "value": "0.12"
+      }
+    ]
+  ]
+}
