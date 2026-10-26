@@ -29,8 +29,18 @@
             />
           </g>
 
-          <!-- 平角：畫成一直線 -->
-          <line v-if="figure.straight" v-bind="straightLine" class="ray" />
+          <!-- 平角：從頂點往兩邊的兩條反向射線（共線），再畫一條 180° 的角弧 -->
+          <template v-if="figure.straight">
+            <path :d="straightArc" class="arc__line arc__line--straight" />
+            <line
+              v-for="deg in [0, 180]"
+              :key="`st${deg}`"
+              :x1="V[0]"
+              :y1="V[1]"
+              v-bind="rayEnd(deg)"
+              class="ray"
+            />
+          </template>
           <line
             v-for="deg in figure.rays"
             :key="`r${deg}`"
@@ -39,9 +49,16 @@
             v-bind="rayEnd(deg)"
             class="ray"
           />
-          <!-- 直角方框 -->
+          <!-- 直角記號：在 90° 角內、兩邊和射線平行的小正方形 -->
           <path v-if="figure.right" :d="rightMark" class="right-mark" />
           <circle :cx="V[0]" :cy="V[1]" r="6" class="vertex" />
+          <text
+            v-if="figure.straight"
+            v-bind="straightLabel"
+            class="label label--total"
+          >
+            180°
+          </text>
 
           <!-- 角的標示 -->
           <g v-for="(seg, k) in figure.segments" :key="`l${k}`">
@@ -61,99 +78,54 @@
         </svg>
         <p class="legend">
           <span class="legend__q">？</span>是要求的角
-          <template v-if="figure.right">；<b>□</b> 是直角</template>
-          <template v-if="figure.straight">；一條直線是平角</template>
+          <template v-if="figure.right">
+            ；<span class="legend__right" />是直角（90°）
+          </template>
+          <template v-if="figure.straight">
+            ；兩條射線成一直線是平角（180°）
+          </template>
         </p>
       </div>
 
       <div class="side">
-        <div class="sheet">
-          <div class="sheet__head">
-            <p class="sheet__title">計算紙</p>
-            <!-- 用寫好的算式畫直式，只是算算看，不計分 -->
-            <button
-              v-if="!solved"
-              type="button"
-              class="sheet__vertical"
-              data-pad-avoid
-              @click="toggleVertical"
-            >
-              {{ verticalOpen ? "收起直式" : "用直式算" }}
-            </button>
+        <!-- 算式：關卡 1～3 一列；關卡 4～5 分「先算」「再算」兩列，最後是答案欄 -->
+        <div class="work">
+          <div v-for="(row, r) in rows" :key="r" class="work__row">
+            <span v-if="row.label" class="work__label">{{ row.label }}</span>
+            <template v-for="(cell, c) in row.cells" :key="c">
+              <span v-if="cell.text" class="work__text">{{ cell.text }}</span>
+              <button
+                v-else
+                type="button"
+                class="cell"
+                :class="cellClass(cell)"
+                :data-cell="cell.key"
+                data-pad-field
+                @click="openPad(cell, $event)"
+              >
+                {{ values[cell.key] || "" }}
+              </button>
+            </template>
           </div>
-          <button
-            v-for="(line, k) in lines"
-            :key="k"
-            type="button"
-            class="sheet__line"
-            :class="{
-              'sheet__line--focus': padEl && focus === k,
-              'sheet__line--empty': !line,
-            }"
-            :data-line="k"
-            data-pad-field
-            @click="openPad(k, $event)"
-          >
-            {{ line || (padEl && focus === k ? "" : "點這裡寫算式")
-            }}<span v-if="padEl && focus === k" class="caret" />
-          </button>
-        </div>
-
-        <div v-if="verticalOpen && !solved" class="vertical">
-          <div class="vertical__steps">
+          <div class="work__row work__row--answer">
+            <span class="work__label">答：</span>
             <button
-              v-for="(_, k) in lines"
-              :key="`vline-${k}`"
               type="button"
-              class="vertical__step"
-              :class="{ 'vertical__step--on': verticalLine === k }"
-              data-pad-avoid
-              @click="pickVerticalLine(k)"
+              class="cell cell--answer"
+              :class="cellClass(answerCell)"
+              data-cell="answer"
+              data-pad-field
+              @click="openPad(answerCell, $event)"
             >
-              第 {{ k + 1 }} 行
+              {{ values.answer || "" }}
             </button>
+            <span class="work__text">度</span>
           </div>
-          <KeepAlive>
-            <VerticalScratch
-              v-if="verticalExpr"
-              ref="vertical"
-              :key="verticalExpr.sig"
-              :a="verticalExpr.a"
-              :op="verticalExpr.op"
-              :b="verticalExpr.b"
-              @focus="onVerticalFocus"
-            />
-          </KeepAlive>
-          <p v-if="!verticalExpr" class="vertical__tip">
-            先在第 {{ verticalLine + 1 }} 行寫好算式（例如
-            90−30），這裡就會出現直式喔！
-          </p>
         </div>
 
-        <div class="answer">
-          答：
-          <button
-            type="button"
-            class="answer__slot"
-            :class="{
-              'answer__slot--focus': padEl && focus === 'answer',
-              'answer__slot--right': solved,
-            }"
-            data-line="answer"
-            data-pad-field
-            @click="openPad('answer', $event)"
-          >
-            {{ answer || "？" }}
-          </button>
-          度
-        </div>
-
-        <!-- 點算式行開「數字＋＋−＝」板，點答案格只開數字板 -->
         <FieldPad
           :field="solved ? null : padEl"
-          :kind="
-            focus === 'answer' || focus === 'vertical' ? 'number' : 'expression'
-          "
+          :kind="focus && focus.op ? 'operator' : 'number'"
           :operators="OPS"
           @press="onPadKey"
           @close="closePad"
@@ -168,13 +140,12 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import FieldPad from "./games/Common/FieldPad.vue";
-import VerticalScratch from "./games/Vertical/VerticalScratch.vue";
 
 const W = 600;
 const H = 340;
 const RAY = 225;
-const OPS = ["+", "−", "="];
-const MAX_LINE = 16;
+const OPS = ["+", "−"];
+const MAX_DIGITS = 3;
 
 const rad = (d) => (d * Math.PI) / 180;
 const polar = (v, deg, r) => [
@@ -223,11 +194,63 @@ function buildFigure(q) {
   return { segs, rays, straight, right, total };
 }
 
-// 角的合成與分解：看圖用加減算出未知角；計算紙的算式會記錄下來，只驗證最後答案
-// 「用直式算」：用計算紙某一行的前兩個數畫加減直式（不計分）
+// 算式格子：固定數字直接顯示，其餘是要填的格子 { key, ans, op? }
+// 關卡 1～3（比照 MA3075）：「已知數 □ □ ＝ □」一列；
+// 關卡 4～5（比照 MA3125）：「先算：總角 □ 已知角 ＝ □」「再算：□ □ 已知角 ＝ □」
+function buildRows(q) {
+  const fix = (n) => ({ text: String(n) });
+  const eq = { text: "＝" };
+  if (q.kind === "middle") {
+    const [k1, k2] = q.known;
+    const first = q.total - k1;
+    return [
+      {
+        label: "先算：",
+        cells: [
+          fix(q.total),
+          { key: "op1", ans: "−", op: true },
+          fix(k1),
+          eq,
+          { key: "r1", ans: first },
+        ],
+      },
+      {
+        label: "再算：",
+        cells: [
+          { key: "c2", ans: first },
+          { key: "op2", ans: "−", op: true },
+          fix(k2),
+          eq,
+          { key: "r2", ans: q.answer },
+        ],
+      },
+    ];
+  }
+  const [a, op, b] =
+    q.kind === "sum"
+      ? [q.parts[0], "+", q.parts[1]]
+      : q.kind === "rest"
+        ? [q.total, "−", q.known]
+        : [q.big, "−", q.small];
+  return [
+    {
+      label: "",
+      cells: [
+        fix(a),
+        { key: "op1", ans: op, op: true },
+        { key: "b1", ans: b },
+        eq,
+        { key: "r1", ans: q.answer },
+      ],
+    },
+  ];
+}
+
+// 角的合成與分解：看圖用加減算出未知角，把算式和答案填進格子；每一格都會檢查，
+// 答錯只標出錯的或沒填的格子，全部正確才過關
 export default {
   name: "MA4038",
-  components: { FieldPad, VerticalScratch },
+  components: { FieldPad },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -240,14 +263,13 @@ export default {
       W,
       H,
       OPS,
-      lines: ["", ""],
-      answer: "",
+      values: {},
+      wrong: {},
+      checked: false,
       focus: null,
       padEl: null,
       feedback: "",
       solved: false,
-      verticalOpen: false,
-      verticalLine: 0,
     };
   },
   computed: {
@@ -258,28 +280,39 @@ export default {
       const f = buildFigure(this.gameData);
       return { ...f, segments: f.segs };
     },
-    // 直式要算的：這一行最前面的「數 ＋／− 數」
-    verticalExpr() {
-      const m = (this.lines[this.verticalLine] || "").match(
-        /^(\d+)([+−])(\d+)/
-      );
-      if (!m) return null;
-      const op = m[2] === "−" ? "-" : "+";
-      return { a: m[1], op, b: m[3], sig: `${this.verticalLine}:${m[0]}` };
+    rows() {
+      return buildRows(this.gameData);
+    },
+    answerCell() {
+      return { key: "answer", ans: this.gameData.answer };
+    },
+    // 所有要填的格子（含答案欄）
+    cells() {
+      return [
+        ...this.rows.flatMap((row) => row.cells.filter((c) => c.key)),
+        this.answerCell,
+      ];
     },
     // 頂點位置：小角放左邊，大角放中間，讓射線都在畫面內
     V() {
       return this.figure.total <= 90 ? [150, 300] : [300, 295];
     },
-    straightLine() {
-      const [x1, y1] = polar(this.V, 180, RAY);
-      const [x2, y2] = polar(this.V, 0, RAY);
-      return { x1, y1, x2, y2 };
+    // 平角的 180° 角弧（在最外圈，虛線）
+    straightArc() {
+      const r = 150;
+      const [x1, y1] = polar(this.V, 0, r);
+      const [x2, y2] = polar(this.V, 180, r);
+      return `M ${x1} ${y1} A ${r} ${r} 0 0 0 ${x2} ${y2}`;
     },
+    straightLabel() {
+      const [x, y] = polar(this.V, 160, 172);
+      return { x, y };
+    },
+    // 直角記號：小正方形，兩邊分別和 0°、90° 的射線平行
     rightMark() {
-      const s = 22;
+      const s = 30;
       const [vx, vy] = this.V;
-      return `M ${vx + s} ${vy} L ${vx + s} ${vy - s} L ${vx} ${vy - s}`;
+      return `M ${vx} ${vy} L ${vx + s} ${vy} L ${vx + s} ${vy - s} L ${vx} ${vy - s} Z`;
     },
   },
   created() {
@@ -315,79 +348,100 @@ export default {
       return kind === "c" ? { cx: x, cy: y } : { x, y };
     },
 
-    // ---- 計算紙輸入 ----
-    openPad(target, event) {
+    // ---- 填格子 ----
+    norm(key) {
+      return key === "-" ? "−" : key;
+    },
+    same(cell, value) {
+      return cell.op
+        ? value === cell.ans
+        : value !== "" && Number(value) === cell.ans;
+    },
+    cellClass(cell) {
+      return {
+        "cell--op": cell.op,
+        "cell--focus": this.padEl && this.focus?.key === cell.key,
+        "cell--wrong": this.wrong[cell.key],
+        "cell--right":
+          (this.checked || this.solved) &&
+          !this.wrong[cell.key] &&
+          this.same(cell, this.values[cell.key] ?? ""),
+      };
+    },
+    openPad(cell, event) {
       if (this.solved) return;
-      if (this.focus === "vertical") this.$refs.vertical?.blur();
-      // 直式跟著目前寫的那一行
-      if (typeof target === "number") this.verticalLine = target;
-      this.focus = target;
+      this.focus = cell;
       this.padEl = event.currentTarget;
     },
     closePad() {
-      if (this.focus === "vertical") this.$refs.vertical?.blur();
       this.padEl = null;
     },
-    toggleVertical() {
-      if (this.focus === "vertical") this.closePad();
-      this.verticalOpen = !this.verticalOpen;
-    },
-    pickVerticalLine(k) {
-      if (this.focus === "vertical") this.closePad();
-      this.verticalLine = k;
-    },
-    // 點了直式的格子：輸入板移到那一格
-    onVerticalFocus() {
-      this.focus = "vertical";
-      this.syncVerticalPad();
-    },
-    syncVerticalPad() {
-      this.$nextTick(() => {
-        const id = this.$refs.vertical?.active;
-        this.padEl = id
-          ? this.$el.querySelector(`.vertical [data-cell="${id}"]`)
-          : null;
-      });
-    },
-    onPadKey(key) {
-      if (this.focus === "vertical") {
-        this.$refs.vertical?.input(key === "clear" ? "←" : key);
-        this.syncVerticalPad();
-        return;
+    onPadKey(raw) {
+      const cell = this.focus;
+      if (this.solved || !cell) return;
+      const key = this.norm(raw);
+      const now = this.values[cell.key] || "";
+      let next = now;
+      if (key === "clear" || key === "清除") next = "";
+      else if (key === "←") next = now.slice(0, -1);
+      else if (cell.op) {
+        if (OPS.includes(key)) next = key;
+      } else if (/^\d$/.test(key) && now.length < MAX_DIGITS) {
+        next = (now + key).replace(/^0+(?=\d)/, "");
       }
-      this.press(key === "clear" ? "清除" : key);
-    },
-    press(key) {
-      if (this.solved || this.focus === null) return;
+      if (next === now) return;
+      this.values = { ...this.values, [cell.key]: next };
+      // 改了哪一格就只清掉那一格的錯誤標示
+      if (this.wrong[cell.key]) {
+        const { [cell.key]: _drop, ...rest } = this.wrong;
+        this.wrong = rest;
+      }
       this.feedback = "";
-      if (this.focus === "answer") {
-        if (key === "←") this.answer = this.answer.slice(0, -1);
-        else if (key === "清除") this.answer = "";
-        else if (!OPS.includes(key) && this.answer.length < 3) {
-          this.answer = (this.answer + key).replace(/^0+(?=\d)/, "");
-        }
-        return;
-      }
-      const k = this.focus;
-      if (key === "←") this.lines[k] = this.lines[k].slice(0, -1);
-      else if (key === "清除") this.lines[k] = "";
-      else if (this.lines[k].length < MAX_LINE) this.lines[k] += key;
+      // 運算符號選好就收起
+      if (cell.op && OPS.includes(next)) this.closePad();
+    },
+    // 學生寫的算式（沒填的格子記成 □）
+    written() {
+      const show = (cell) =>
+        cell.text ?? (this.values[cell.key] ? this.values[cell.key] : "□");
+      const lines = this.rows.map(
+        (row) => row.label + row.cells.map(show).join(" ")
+      );
+      return `${lines.join("；")}；答 ${this.values.answer || "□"} 度`;
+    },
+    correctWork() {
+      const show = (cell) => cell.text ?? String(cell.ans);
+      const lines = this.rows.map(
+        (row) => row.label + row.cells.map(show).join(" ")
+      );
+      return `${lines.join("；")}；答 ${this.gameData.answer} 度`;
+    },
+    describe() {
+      const q = this.gameData;
+      const name = q.total === 90 ? "直角" : "平角";
+      if (q.kind === "sum")
+        return `已知 ${q.parts[0]}° 和 ${q.parts[1]}°，求兩角合起來的角`;
+      if (q.kind === "rest")
+        return `${name} ${q.total}° 扣掉 ${q.known}°，求？`;
+      if (q.kind === "diff") return `${q.big}° 扣掉 ${q.small}°，求？`;
+      return `${name} ${q.total}° 扣掉兩邊 ${q.known[0]}° 和 ${q.known[1]}°，求中間的角`;
     },
 
     checkAnswer() {
       if (this.solved) return;
-      if (this.focus === "vertical") this.closePad();
-      if (!this.answer) {
-        this.feedback = "算好了，把答案填在「答」的格子裡喔！";
-        this.focus = "answer";
-        return;
-      }
+      this.closePad();
+      const wrong = {};
+      this.cells.forEach((cell) => {
+        if (!this.same(cell, this.values[cell.key] ?? ""))
+          wrong[cell.key] = true;
+      });
+      this.wrong = wrong;
+      this.checked = true;
+      const ok = Object.keys(wrong).length === 0;
       const q = this.gameData;
-      const ok = Number(this.answer) === q.answer;
-      const work = this.lines.filter(Boolean).join("；") || "（沒有寫算式）";
       this.$emit("add-record", [
-        `${q.hint.replace(/-/g, "−")}=${q.answer}（${q.answer} 度）`,
-        `算式：${work}；答 ${this.answer} 度`,
+        `${this.describe()}（${this.correctWork()}）`,
+        this.written(),
         ok ? "正確" : "錯誤",
       ]);
       if (ok) {
@@ -395,19 +449,20 @@ export default {
         this.solved = true;
         this.$emit("play-effect", "CorrectSound");
         this.$emit("next-question");
-      } else {
-        const tips = {
-          sum: "？是兩個角合起來的角，要用加法。",
-          rest:
-            q.total === 90
-              ? "直角是 90°，用 90 減掉已知的角。"
-              : "平角是 180°，用 180 減掉已知的角。",
-          diff: "？是大角扣掉小角剩下的部分，要用減法。",
-          middle: `${q.total === 90 ? "直角是 90°" : "平角是 180°"}，扣掉兩邊已知的角。`,
-        };
-        this.feedback = `不對喔！${tips[q.kind]}`;
-        this.$emit("play-effect", "WrongSound");
+        return;
       }
+      const empty = this.cells.some((c) => !(this.values[c.key] ?? ""));
+      const tips = {
+        sum: "？是兩個角合起來的角，要用加法。",
+        rest:
+          q.total === 90
+            ? "直角是 90°，用 90 減掉已知的角。"
+            : "平角是 180°，用 180 減掉已知的角。",
+        diff: "？是大角扣掉小角剩下的部分，要用減法。",
+        middle: `${q.total === 90 ? "直角是 90°" : "平角是 180°"}，先扣掉一邊的角，再扣掉另一邊的角。`,
+      };
+      this.feedback = `${empty ? "還有空格沒填喔！" : "紅色的格子不對喔！"}${tips[q.kind]}`;
+      this.$emit("play-effect", "WrongSound");
     },
   },
 };
@@ -473,7 +528,7 @@ export default {
 }
 
 .right-mark {
-  fill: none;
+  fill: rgba(255, 255, 255, 0.85);
   stroke: #37474f;
   stroke-width: 3;
 }
@@ -522,6 +577,12 @@ export default {
       stroke-width: 4;
       stroke-dasharray: 9 6;
     }
+
+    &--straight {
+      stroke: #8e24aa;
+      stroke-width: 3;
+      stroke-dasharray: 8 6;
+    }
   }
 }
 
@@ -563,6 +624,16 @@ export default {
   font-weight: $font-bold;
   color: #5d4037;
 
+  &__right {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.2rem;
+    vertical-align: -0.1rem;
+    border: 2px solid #37474f;
+    background-color: #ffffff;
+  }
+
   &__q {
     display: inline-block;
     width: 1.6rem;
@@ -577,7 +648,7 @@ export default {
 }
 
 .side {
-  width: 18rem;
+  width: 21rem;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -586,170 +657,74 @@ export default {
   overflow-y: auto;
 }
 
-.sheet {
+.work {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  padding: 0.4rem 0.5rem;
-  background-color: #fffde7;
-  background-image: repeating-linear-gradient(
-    transparent 0 2.6rem,
-    #ffe0b2 2.6rem 2.7rem
-  );
+  gap: 0.6rem;
+  padding: 0.7rem 0.8rem;
+  background-color: #ffffff;
   border: 3px solid #ffcc80;
-  border-radius: 12px;
+  border-radius: 14px;
 
-  &__head {
+  &__row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-
-  &__title {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: $font-bold;
-    color: #8d6e63;
-  }
-
-  &__vertical {
-    padding: 0.15rem 0.7rem;
-    font-size: 1.05rem;
-    font-weight: $font-bold;
-    color: #ffffff;
-    background-color: #26a69a;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 3px 0 #00796b;
-    cursor: pointer;
-  }
-
-  &__line {
-    height: 2.6rem;
-    padding: 0 0.5rem;
-    text-align: left;
-    font-size: 1.5rem;
+    gap: 0.25rem;
+    font-size: 1.7rem;
     font-weight: $font-bold;
     color: #0d47a1;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 3px dashed #bcaaa4;
-    border-radius: 10px;
-    cursor: pointer;
     white-space: nowrap;
-    overflow: hidden;
 
-    &--empty {
-      font-size: 1.05rem;
-      color: #a1887f;
-    }
-
-    &--focus {
-      border-style: solid;
-      border-color: #ffb300;
-      background-color: #ffffff;
-    }
-  }
-}
-
-.vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 0.4rem;
-  background-color: #e0f2f1;
-  border: 3px solid #80cbc4;
-  border-radius: 12px;
-
-  &__steps {
-    display: flex;
-    gap: 0.4rem;
-  }
-
-  &__step {
-    flex: 1;
-    padding: 0.15rem 0.4rem;
-    font-size: 1rem;
-    font-weight: $font-bold;
-    color: #00695c;
-    background-color: #ffffff;
-    border: 2px solid #80cbc4;
-    border-radius: 10px;
-    cursor: pointer;
-
-    &--on {
-      color: #ffffff;
-      background-color: #26a69a;
-      border-color: #00796b;
+    &--answer {
+      margin-top: 0.2rem;
+      padding-top: 0.5rem;
+      border-top: 2px dashed #cfd8dc;
+      color: #333333;
     }
   }
 
-  &__tip {
-    margin: 0.3rem;
-    font-size: 1.1rem;
-    font-weight: $font-bold;
-    line-height: 1.4;
-    color: #00695c;
-  }
-
-  :deep(.vfill) {
-    --cell: 2.3rem;
-  }
-
-  :deep(.vfill__cell) {
-    font-size: 1.5rem;
-  }
-
-  :deep(.vfill__grid) {
-    padding: 0.3rem 0.6rem;
-    row-gap: 0.1rem;
+  &__label {
+    font-size: 1.3rem;
+    color: #5d4037;
   }
 }
 
-.caret {
-  display: inline-block;
-  width: 3px;
-  height: 1.4rem;
-  margin-left: 2px;
-  vertical-align: middle;
-  background-color: #ff6f00;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.answer {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 1.6rem;
+.cell {
+  min-width: 3.6rem;
+  height: 3rem;
+  padding: 0 0.3rem;
+  font-size: 1.7rem;
   font-weight: $font-bold;
-  color: #333333;
+  color: #1565c0;
+  background-color: #fffde7;
+  border: 3px dashed #ffb300;
+  border-radius: 10px;
+  cursor: pointer;
 
-  &__slot {
-    min-width: 5.5rem;
-    height: 3.2rem;
-    font-size: 2rem;
-    font-weight: $font-bold;
-    color: #0d47a1;
-    background-color: #ffffff;
-    border: 4px dashed #90a4ae;
-    border-radius: 12px;
-    cursor: pointer;
+  &--op {
+    min-width: 2.6rem;
+    color: #ef6c00;
+  }
 
-    &--focus {
-      border-style: solid;
-      border-color: #ffb300;
-    }
+  &--answer {
+    min-width: 4.6rem;
+  }
 
-    &--right {
-      color: #1b5e20;
-      background-color: #e8f5e9;
-      border-color: #43a047;
-    }
+  &--focus {
+    border: 4px solid #1e88e5;
+    background-color: #e3f2fd;
+  }
+
+  &--right {
+    color: #2e7d32;
+    border: 3px solid #43a047;
+    background-color: #e8f5e9;
+  }
+
+  &--wrong {
+    color: #c62828;
+    border: 4px solid #e53935;
+    background-color: #ffebee;
   }
 }
 
@@ -763,21 +738,33 @@ export default {
 
 @media (max-width: 1100px) {
   .side {
-    width: 15.5rem;
+    width: 17.5rem;
     gap: 0.35rem;
   }
 
-  .sheet__line {
-    height: 2.3rem;
-    font-size: 1.3rem;
+  .work {
+    padding: 0.5rem;
+
+    &__row {
+      font-size: 1.35rem;
+    }
+
+    &__label {
+      font-size: 1.05rem;
+    }
   }
 
-  .answer {
+  .cell {
+    min-width: 2.9rem;
+    height: 2.5rem;
     font-size: 1.35rem;
 
-    &__slot {
-      height: 2.8rem;
-      font-size: 1.7rem;
+    &--op {
+      min-width: 2.1rem;
+    }
+
+    &--answer {
+      min-width: 3.8rem;
     }
   }
 
@@ -787,16 +774,6 @@ export default {
 
   .feedback {
     font-size: 0.95rem;
-  }
-
-  .vertical {
-    :deep(.vfill) {
-      --cell: 1.9rem;
-    }
-
-    :deep(.vfill__cell) {
-      font-size: 1.3rem;
-    }
   }
 }
 </style>
