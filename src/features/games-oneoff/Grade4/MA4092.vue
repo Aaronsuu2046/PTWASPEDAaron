@@ -78,14 +78,6 @@
           <p class="info__sub">點卡片再點框，或直接拖曳；每一類有 2 張</p>
           <p v-if="feedback" class="info__feedback">{{ feedback }}</p>
         </div>
-        <div class="rules">
-          <p class="rules__title">提示</p>
-          <p><b class="rules__tag rules__tag--0">真分數</b>分子＜分母</p>
-          <p><b class="rules__tag rules__tag--1">假分數</b>分子≥分母</p>
-          <p>
-            <b class="rules__tag rules__tag--2">帶分數</b>整數和真分數合起來
-          </p>
-        </div>
       </div>
     </div>
 
@@ -108,6 +100,16 @@ import StackedFraction from "./games/Fraction/StackedFraction.vue";
 
 const DRAG_THRESHOLD = 8;
 const CATEGORIES = ["真分數", "假分數", "帶分數"];
+
+// 腳本的文字說明，放在右側功能區「點我看提示」
+const HINT = {
+  title: "分數的種類",
+  groups: [
+    { title: "真分數", rules: ["分子比分母小的分數。"] },
+    { title: "假分數", rules: ["分子比分母大，或分子和分母一樣大的分數。"] },
+    { title: "帶分數", rules: ["把一個整數和一個真分數寫在一起的分數。"] },
+  ],
+};
 
 function shuffle(list) {
   const result = [...list];
@@ -133,7 +135,7 @@ export default {
     gameConfig: { type: Object, default: () => ({}) },
     introText: { type: Object, default: null },
   },
-  emits: ["play-effect", "next-question", "add-record"],
+  emits: ["play-effect", "next-question", "add-record", "side-hint"],
   data() {
     return {
       CATEGORIES,
@@ -164,9 +166,11 @@ export default {
   },
   created() {
     emitter.on("submitAnswer", this.checkAnswer);
+    this.$emit("side-hint", HINT);
   },
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
+    this.$emit("side-hint", null);
   },
   methods: {
     fracOf(card) {
@@ -461,8 +465,7 @@ export default {
   gap: 1rem;
 }
 
-.info,
-.rules {
+.info {
   padding: 0.8rem 1rem;
   background-color: #ffffff;
   border: 3px solid #ffcc80;
@@ -490,39 +493,6 @@ export default {
     font-size: 1.15rem;
     font-weight: $font-bold;
     color: #c62828;
-  }
-}
-
-.rules {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  font-size: 1.1rem;
-  color: #4e342e;
-  background-color: #fff8e1;
-
-  &__title {
-    font-size: 1.2rem;
-    font-weight: $font-bold;
-  }
-
-  &__tag {
-    display: inline-block;
-    margin-right: 0.4rem;
-    padding: 0 0.4rem;
-    border-radius: 8px;
-
-    &--0 {
-      background-color: #c8e6c9;
-    }
-
-    &--1 {
-      background-color: #ffe0b2;
-    }
-
-    &--2 {
-      background-color: #bbdefb;
-    }
   }
 }
 
@@ -561,8 +531,7 @@ export default {
     gap: 0.6rem;
   }
 
-  .info,
-  .rules {
+  .info {
     padding: 0.6rem 0.7rem;
   }
 
@@ -572,10 +541,6 @@ export default {
 
   .info__sub {
     font-size: 0.95rem;
-  }
-
-  .rules {
-    font-size: 1rem;
   }
 }
 
