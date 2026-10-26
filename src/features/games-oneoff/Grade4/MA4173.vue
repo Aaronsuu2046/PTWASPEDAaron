@@ -13,7 +13,7 @@
       <!-- 關卡 1、2：點字卡依序放進空格，點空格可把字卡退回；
            也可以把字卡拖到指定空格，或把空格裡的字卡拖到別格／拖出去退回 -->
       <template v-if="isCards">
-        <div class="slot-list" :class="{ 'slot-list--wrong': wrong }">
+        <div class="slot-list">
           <button
             v-for="(card, index) in slots"
             :key="`slot-${index}`"
@@ -21,6 +21,7 @@
             class="digit-card digit-card--slot"
             :class="{
               'digit-card--empty': card === null,
+              'digit-card--wrong': wrongSlots[index],
               'digit-card--hover': drag && drag.moved && hoverSlot === index,
               'digit-card--dragging':
                 drag &&
@@ -29,6 +30,7 @@
                 drag.index === index,
             }"
             :data-slot="index"
+            :aria-label="slotLabel(card, index)"
             @click="onClick(() => returnCard(index))"
             @pointerdown="card !== null && startDrag($event, 'slot', index)"
             @pointermove="onDrag"
@@ -38,6 +40,9 @@
             {{ card === null ? "" : gameData.cards[card] }}
           </button>
         </div>
+        <p v-if="wrongSlots.some(Boolean)" class="wrong-tip">
+          紅色框的格子不對，換一張字卡再試試
+        </p>
         <div class="card-list">
           <button
             v-for="(digit, index) in gameData.cards"
@@ -62,6 +67,14 @@
             {{ digit }}
           </button>
         </div>
+        <button
+          type="button"
+          class="reset-button"
+          :disabled="slots.every((card) => card === null)"
+          @click="resetSlots"
+        >
+          全部拿回來
+        </button>
       </template>
 
       <!-- 關卡 3～5：選擇奇／偶 -->
@@ -145,6 +158,8 @@ export default {
     return {
       // 每個空格放的是 cards 的索引，null 表示空
       slots: Array.from({ length: this.gameData.slots || 0 }, () => null),
+      // 關卡 1、2：送出後放錯或沒填的格子標紅，換掉那格就只清除那格
+      wrongSlots: Array.from({ length: this.gameData.slots || 0 }, () => false),
       HINTS: [
         {
           title: "加法規律",
@@ -209,8 +224,10 @@ export default {
     },
     userAnswer() {
       if (!this.isCards) return this.selected;
+      if (this.slots.every((card) => card === null)) return "";
+      // 沒填的格子以 □ 表示，保留完整排列
       return this.slots
-        .map((card) => (card === null ? "" : this.gameData.cards[card]))
+        .map((card) => (card === null ? "□" : this.gameData.cards[card]))
         .join("");
     },
   },
@@ -224,15 +241,26 @@ export default {
     tableValue(row, col) {
       return this.gameData.table === "+" ? row + col : row * col;
     },
+    slotLabel(card, index) {
+      const text = card === null ? "空格" : `字卡 ${this.gameData.cards[card]}`;
+      return `第 ${index + 1} 格：${text}${this.wrongSlots[index] ? "，不對" : ""}`;
+    },
+    // 改動某一格時，只清除那一格的錯誤標示
+    setSlot(slotIndex, card) {
+      this.slots[slotIndex] = card;
+      this.wrongSlots[slotIndex] = false;
+    },
     placeCard(index) {
       const empty = this.slots.indexOf(null);
       if (empty === -1) return;
-      this.slots[empty] = index;
-      this.wrong = false;
+      this.setSlot(empty, index);
     },
     returnCard(slotIndex) {
-      this.slots[slotIndex] = null;
-      this.wrong = false;
+      if (this.slots[slotIndex] === null) return;
+      this.setSlot(slotIndex, null);
+    },
+    resetSlots() {
+      this.slots.forEach((_, index) => this.setSlot(index, null));
     },
     onClick(action) {
       // 拖曳結束時瀏覽器仍會送出 click，略過這一次
@@ -294,17 +322,15 @@ export default {
       const card = this.dragCard;
       if (from === "slot") {
         if (slotIndex === null) {
-          this.slots[index] = null;
-        } else {
-          this.slots[index] = this.slots[slotIndex];
-          this.slots[slotIndex] = card;
+          this.setSlot(index, null);
+        } else if (slotIndex !== index) {
+          const other = this.slots[slotIndex];
+          this.setSlot(index, other);
+          this.setSlot(slotIndex, card);
         }
       } else if (slotIndex !== null) {
-        this.slots[slotIndex] = card;
-      } else {
-        return;
+        this.setSlot(slotIndex, card);
       }
-      this.wrong = false;
     },
     selectOption(option) {
       this.selected = option;
@@ -313,6 +339,14 @@ export default {
     checkAnswer() {
       if (this.answered) return;
       const isCorrect = this.userAnswer === this.gameData.answer;
+      if (this.isCards) {
+        // 每一格獨立比對位值：放錯或沒填才標紅，正確的格子保留不動
+        this.wrongSlots = this.slots.map(
+          (card, index) =>
+            card === null ||
+            String(this.gameData.cards[card]) !== this.gameData.answer[index]
+        );
+      }
       this.wrong = !isCorrect;
       this.$emit("add-record", [
         this.gameData.answer,
@@ -392,9 +426,28 @@ export default {
 .slot-list {
   padding: 0.6rem;
   border-radius: 12px;
+}
 
-  &--wrong {
-    outline: 4px solid #e53935;
+.wrong-tip {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: $font-bold;
+  color: #c62828;
+}
+
+.reset-button {
+  padding: 0.4rem 1.4rem;
+  font-size: 1.3rem;
+  font-weight: $font-bold;
+  color: #ffffff;
+  background-color: #8d6e63;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
 }
 
@@ -423,6 +476,12 @@ export default {
   &--used {
     opacity: 0.3;
     cursor: default;
+  }
+
+  &--wrong {
+    border: 5px solid #e53935;
+    background-color: #ffebee;
+    box-shadow: 0 4px 0 #ef9a9a;
   }
 
   &--hover {
