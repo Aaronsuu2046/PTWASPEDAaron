@@ -20,6 +20,7 @@
               :whole="item.whole"
               :num="item.num"
               :den="item.den"
+              :slots="figureSlots"
             />
             <StackedFraction
               v-else-if="col === 1"
@@ -46,6 +47,8 @@ import MatchThree from "./games/Fraction/MatchThree.vue";
 import FractionFigure from "./games/Fraction/FractionFigure.vue";
 import StackedFraction from "./games/Fraction/StackedFraction.vue";
 
+const BAR_SLOTS = 3;
+
 const fracText = (item) =>
   item.whole
     ? `${item.whole} ${item.num}/${item.den}`
@@ -71,6 +74,17 @@ export default {
       return (
         this.introText?.Content ||
         "連連看，塗色的部分是多少？並將分數與正確的讀法連起來。"
+      );
+    },
+    // 長條圖：每張卡都預留同樣條數的高度，單一長條不會被放大，
+    // 不同題目的長條也是同一個大小（題庫最多 3 條）
+    figureSlots() {
+      if (this.gameData.shape !== "bar") return 0;
+      return Math.max(
+        BAR_SLOTS,
+        ...this.gameData.items.map((item) =>
+          Math.ceil((item.whole * item.den + item.num) / item.den)
+        )
       );
     },
     // 三欄都用同一組資料，同一組的 id 相同
