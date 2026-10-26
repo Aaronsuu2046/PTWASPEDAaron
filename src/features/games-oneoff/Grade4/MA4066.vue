@@ -37,7 +37,7 @@
               :y2="s.q[1]"
               class="tri__focus-side"
             />
-            <path :d="t.rightMark" class="tri__right" />
+            <path v-if="t.rightMark" :d="t.rightMark" class="tri__right" />
             <circle
               v-for="v in t.vertices.filter((x) => x.focus)"
               :key="`focus-${v.name}`"
@@ -128,7 +128,13 @@
       </div>
 
       <div class="side">
-        <p class="prompt">{{ gameData.text }}</p>
+        <!-- 線段名稱（兩個點）上方加橫線，例如 AB 上面一條線；角的名稱不加 -->
+        <p class="prompt" :aria-label="spoken(gameData.text)">
+          <template v-for="(part, k) in segParts(gameData.text)" :key="k">
+            <span v-if="part.seg" class="seg">{{ part.text }}</span>
+            <template v-else>{{ part.text }}</template>
+          </template>
+        </p>
 
         <template v-if="isChoice">
           <div
@@ -140,7 +146,8 @@
               'slot--hover': hoverSlot,
             }"
           >
-            {{ choice || "？" }}
+            <span v-if="choice && isSide" class="seg">{{ choice }}</span>
+            <template v-else>{{ choice || "？" }}</template>
           </div>
           <p class="side__tip">點選或拖曳答案到框框裡</p>
           <div class="options">
@@ -151,6 +158,7 @@
               class="option"
               :class="{ 'option--picked': choice === opt }"
               :data-option="opt"
+              :aria-label="isSide ? `線段 ${opt}` : opt"
               :disabled="solved"
               @pointerdown="startPick($event, opt)"
               @pointermove="onPick"
@@ -158,7 +166,8 @@
               @pointercancel="pick = null"
               @click="onOptionClick(opt)"
             >
-              {{ opt }}
+              <span v-if="isSide" class="seg">{{ opt }}</span>
+              <template v-else>{{ opt }}</template>
             </button>
           </div>
           <div
@@ -166,7 +175,8 @@
             class="option option--ghost"
             :style="{ left: `${pick.x}px`, top: `${pick.y}px` }"
           >
-            {{ pick.opt }}
+            <span v-if="isSide" class="seg">{{ pick.opt }}</span>
+            <template v-else>{{ pick.opt }}</template>
           </div>
         </template>
 
@@ -196,7 +206,12 @@
           />
         </template>
 
-        <p v-if="feedback" class="feedback">{{ feedback }}</p>
+        <p v-if="feedback" class="feedback" :aria-label="spoken(feedback)">
+          <template v-for="(part, k) in segParts(feedback)" :key="k">
+            <span v-if="part.seg" class="seg">{{ part.text }}</span>
+            <template v-else>{{ part.text }}</template>
+          </template>
+        </p>
       </div>
     </div>
   </div>
@@ -221,6 +236,9 @@ const START = {
   abc: { x: 165, y: 205, angle: 0 },
   def: { x: 470, y: 195, angle: 120 },
 };
+
+// 題目裡連在一起的兩個大寫字母是線段名稱（AB、DE…）；單一字母是點或角
+const SEGMENT = /([A-Z]{2})(?![A-Z])/g;
 
 const normalize = (value) => String(value).toUpperCase().replace(/[\s∠]/g, "");
 // 邊是無方向線段：DE 與 ED 視為同一條
@@ -277,6 +295,9 @@ export default {
           lengths: { AB: 6, BC: 8, AC: 10, DE: 6, EF: 8, DF: 10 },
         }
       );
+    },
+    isSide() {
+      return this.gameData.kind === "side";
     },
     isChoice() {
       return ["vertex", "side", "angle"].includes(this.gameData.kind);
@@ -339,8 +360,8 @@ export default {
             p: pts[i],
             q: pts[j],
             label: away(mid, 26),
-            // 邊長只標在三角形甲上，三角形乙要靠對應邊找
-            text: id === "abc" ? `${lengths[name]} 公分` : "",
+            // 三角形乙只標邊長，三角形甲只標角度（要靠對應邊、對應角找）
+            text: id === "def" ? `${lengths[name]} 公分` : "",
             focus: this.focus.side && sameSide(this.focus.side, name),
           };
         });
@@ -359,9 +380,13 @@ export default {
         const p1 = [b[0] + ua[0] * m, b[1] + ua[1] * m];
         const p2 = [p1[0] + uc[0] * m, p1[1] + uc[1] * m];
         const p3 = [b[0] + uc[0] * m, b[1] + uc[1] * m];
-        const rightMark = `M ${p1[0]} ${p1[1]} L ${p2[0]} ${p2[1]} L ${p3[0]} ${p3[1]}`;
+        // 直角記號也是角度提示，只畫在三角形甲
+        const rightMark =
+          id === "abc"
+            ? `M ${p1[0]} ${p1[1]} L ${p2[0]} ${p2[1]} L ${p3[0]} ${p3[1]}`
+            : "";
 
-        // 角度只標在三角形甲的兩個銳角內側
+        // 角度只標在三角形甲：兩個銳角內側，以及直角旁的 90°
         const angleTexts =
           id === "abc"
             ? [
@@ -369,6 +394,11 @@ export default {
                   name: names[0],
                   p: toward(a, 36),
                   text: `${angles[names[0]]}°`,
+                },
+                {
+                  name: names[1],
+                  p: toward(b, 40),
+                  text: `${angles[names[1]]}°`,
                 },
                 {
                   name: names[2],
@@ -402,6 +432,19 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    // 把文字切成一般文字與線段名稱，線段名稱另外加上方橫線
+    segParts(text) {
+      return String(text)
+        .split(SEGMENT)
+        .filter((t) => t !== "")
+        .map((t) => ({ text: t, seg: /^[A-Z]{2}$/.test(t) }));
+    },
+    // 螢幕閱讀與下載紀錄：「邊 AB」寫成「線段 AB」，單獨的線段名稱前面加「線段」
+    spoken(text) {
+      return String(text)
+        .replace(/邊 ([A-Z]{2})(?![A-Z])/g, "線段 $1")
+        .replace(/(^|[^ 段])([A-Z]{2})(?![A-Z])/g, "$1線段 $2");
+    },
     // ---- 三角形：拖曳與旋轉 ----
     svgScale() {
       const ctm = this.$refs.svg?.getScreenCTM();
@@ -553,8 +596,8 @@ export default {
 
       const suffix = unit ? ` ${unit}` : "";
       this.$emit("add-record", [
-        `${this.gameData.text} ${answer}${suffix}`,
-        `${given}${suffix}`,
+        `${this.spoken(this.gameData.text)} ${this.spoken(answer)}${suffix}`,
+        `${this.spoken(given)}${suffix}`,
         ok ? "正確" : "錯誤",
       ]);
       if (ok) {
@@ -572,6 +615,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// 線段名稱：字母上方一條橫線（用框線畫，不靠組合字元，換字型也不會錯位）
+.seg {
+  display: inline-block;
+  padding-top: 0.08em;
+  line-height: 1.1;
+  border-top: 0.09em solid currentColor;
+}
+
 .outer-container {
   width: 100%;
   height: 100%;
