@@ -1,6 +1,6 @@
 <template>
   <div class="kid-calc">
-    <SimpleCalculator ref="calc" />
+    <SimpleCalculator ref="calc" :backspace="backspace" />
   </div>
 </template>
 
@@ -13,6 +13,10 @@ import SimpleCalculator from "@/components/SimpleCalculator.vue";
 export default {
   name: "KidCalculator",
   components: { SimpleCalculator },
+  props: {
+    // 選填：顯示「⌫」退格鍵（預設不顯示，維持原本按鍵）
+    backspace: { type: Boolean, default: false },
+  },
   methods: {
     read() {
       const calc = this.$refs.calc;

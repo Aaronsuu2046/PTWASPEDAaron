@@ -45,6 +45,10 @@ const OPS = ['+', '−', '×', '÷'];
 
 export default {
   name: 'SimpleCalculator',
+  props: {
+    // 選填：用「⌫」退格鍵取代原本沒有作用的「()」鍵（預設不換，維持原本按鍵）
+    backspace: { type: Boolean, default: false },
+  },
   data() {
     return {
       display: '0',
@@ -58,7 +62,8 @@ export default {
   },
   computed: {
     flatKeys() {
-      return LAYOUT.flat();
+      const keys = LAYOUT.flat();
+      return this.backspace ? keys.map((k) => (k === '()' ? '⌫' : k)) : keys;
     },
     displayFontSize() {
       const len = this.display.length;
@@ -77,6 +82,7 @@ export default {
       if (key === 'C')   { this.clear(); return; }
       if (key === '+/−') { this.negate(); return; }
       if (key === '%')   { this.percent(); return; }
+      if (key === '⌫')   this.backspaceKey();
       // '()' no-op for simple mode
     },
 
@@ -149,6 +155,14 @@ export default {
       this.evaluated = false;
     },
 
+    // 刪掉正在輸入的數字最後一位；按過「=」之後不動結果
+    backspaceKey() {
+      if (this.evaluated || this.input === '') return;
+      this.input = this.input.slice(0, -1);
+      if (this.input === '-') this.input = '';
+      this.display = this.input || '0';
+    },
+
     negate() {
       const val = parseFloat(this.input || this.display);
       if (isNaN(val)) return;
@@ -190,7 +204,7 @@ export default {
       if (key === '=')              return 'calc-btn --equal';
       if (key === 'C')              return 'calc-btn --clear';
       if (OPS.includes(key))        return 'calc-btn --op';
-      if (['%', '()'].includes(key))return 'calc-btn --op';
+      if (['%', '()', '⌫'].includes(key))return 'calc-btn --op';
       if (['+/−', '.'].includes(key))return 'calc-btn --fn';
       return 'calc-btn --num';
     },
