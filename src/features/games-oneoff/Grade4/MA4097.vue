@@ -17,8 +17,9 @@
             <span class="formula__op">＝</span>
             <span v-if="answered" v-html="numberHtml(gameData.answer)" />
             <span v-else class="formula__q">？</span>
+            <!-- 帶分數參考：整數在左、分子分母上下排，和題目的分數同一版式 -->
             <span v-if="answered && gameData.reference" class="formula__ref">
-              （{{ gameData.reference }}）
+              （<span v-html="numberHtml(gameData.reference)" />）
             </span>
           </template>
           <template v-else> 上面的圓圈 ＝ 正下方相鄰兩個圓圈相加 </template>
@@ -358,6 +359,8 @@ export default {
   }
 
   &__ref {
+    display: inline-flex;
+    align-items: center;
     color: #2e7d32;
   }
 }
