@@ -83,7 +83,7 @@
         </div>
 
         <!-- 開始／結束面板 -->
-        <div v-if="phase !== 'playing'" class="panel">
+        <div v-if="phase === 'ready' || phase === 'done'" class="panel">
           <template v-if="phase === 'ready'">
             <p class="panel__title">找出三角形！</p>
             <p class="panel__text">
@@ -132,16 +132,22 @@ const ASSETS = {
   mole: getGameAssets("MA4062", "MA4062_mole.png"),
 };
 // 土堆左上角位置（%）：後排在上、前排在下且與後排交錯，前排蓋在後排前面
+// 土堆寬是草地的 18%（高 27%），放大後兩排仍放得下
 const HOLE_POSITIONS = [
-  { x: 4.5, y: 36, z: 1 },
-  { x: 36.5, y: 36, z: 1 },
-  { x: 68.5, y: 36, z: 1 },
-  { x: 20.5, y: 71, z: 2 },
-  { x: 52.5, y: 71, z: 2 },
-  { x: 84.5, y: 71, z: 2 },
+  { x: 1.5, y: 43, z: 1 },
+  { x: 33.9, y: 43, z: 1 },
+  { x: 66.3, y: 43, z: 1 },
+  { x: 17.7, y: 73, z: 2 },
+  { x: 50.1, y: 73, z: 2 },
+  { x: 82, y: 73, z: 2 },
 ];
 const RISE_MS = 300;
-const MAX_VISIBLE = 4;
+// 節奏（參考 MA3076）：同時最多 2 張，約 1.5～2.2 秒出一張，每張停留 3.5～5 秒
+const MAX_VISIBLE = 2;
+const SPAWN_MS = [1500, 2200];
+const STAY_MS = [3500, 5000];
+// 打中第 passScore 個三角形後，等勾勾回饋播完再結束
+const FINISH_MS = 600;
 const rand = (min, max) => min + Math.random() * (max - min);
 
 // 認識三角形 2：打地鼠，點「是三角形」的題卡得分，點錯扣愛心；
@@ -243,10 +249,10 @@ export default {
           () => {
             if (!this.holes[index]?.result) this.lower(index, key);
           },
-          rand(2800, 4500)
+          rand(...STAY_MS)
         );
       }
-      this.later(this.spawn, rand(700, 1300));
+      this.later(this.spawn, rand(...SPAWN_MS));
     },
     raise(index, key) {
       const hole = this.holes[index];
@@ -292,11 +298,18 @@ export default {
         this.lives -= 1;
         this.playSound("WrongAnswer.mp3");
       }
+      if (isTriangle && this.hits >= this.passScore) {
+        // 達標：馬上停掉倒數與出題、鎖住點擊，等勾勾回饋播完就過關（只會觸發一次）
+        this.clearTimers();
+        this.phase = "finishing";
+        this.later(() => this.endRound(), FINISH_MS);
+        return;
+      }
       this.later(() => this.lower(index, hole.key), 500);
       if (this.lives <= 0) this.endRound();
     },
     endRound() {
-      if (this.phase !== "playing") return;
+      if (this.phase !== "playing" && this.phase !== "finishing") return;
       this.clearTimers();
       this.timeLeft = Math.max(this.timeLeft, 0);
       this.phase = "done";
@@ -404,11 +417,11 @@ export default {
   overflow: hidden;
 }
 
-// 一個洞：寬為草地的 15%，高依土堆圖 4:3（= 草地高度的 22.5%）
+// 一個洞：寬為草地的 18%，高依土堆圖 4:3（= 草地高度的 27%）
 .hole {
   position: absolute;
-  width: 15%;
-  height: 22.5%;
+  width: 18%;
+  height: 27%;
 
   &__mound {
     position: absolute;
@@ -427,7 +440,7 @@ export default {
     bottom: 78%;
     z-index: 1;
     width: 100%;
-    height: 170%;
+    height: 180%;
     overflow: hidden;
   }
 }
@@ -458,13 +471,13 @@ export default {
   &__card {
     position: relative;
     z-index: 1;
-    width: 62%;
+    width: 74%;
     aspect-ratio: 1;
     margin-bottom: -15%;
     padding: 6%;
     background-color: #ffffff;
-    border: 4px solid #8d6e63;
-    border-radius: 14px;
+    border: 5px solid #8d6e63;
+    border-radius: 16px;
     box-shadow: 0 4px 0 #6d4c41;
   }
 
@@ -543,7 +556,8 @@ export default {
 
 .hint {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: $font-bold;
   color: #6d4c41;
 }
 
