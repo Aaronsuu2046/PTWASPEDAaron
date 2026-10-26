@@ -19,7 +19,10 @@
       </transition>
 
       <!-- 直式乘法計算板 -->
-      <div class="board-area" :class="{ 'board-area--full': !gameData.billCount }">
+      <div
+        class="board-area"
+        :class="{ 'board-area--full': !gameData.billCount }"
+      >
         <p class="question-label">
           {{ gameData.operand1 }} × {{ gameData.operand2 }} = ________
         </p>
@@ -50,6 +53,7 @@ export default {
     return {
       boardReply: false,
       answered: false,
+      attempt: 0,
     };
   },
   computed: {
@@ -78,16 +82,49 @@ export default {
     onReply(isCorrect) {
       this.boardReply = isCorrect;
     },
+    // 答題紀錄：直式最下面一列（乘積）每一格帶位值，沒填的格子記成 □
+    placeName(i) {
+      return ["個", "十", "百", "千", "萬", "十萬"][i] || `第${i + 1}位`;
+    },
+    withPlaces(digits) {
+      const n = digits.length;
+      return digits
+        .map((d, i) => `${this.placeName(n - 1 - i)}${d === "" ? "□" : d}`)
+        .join(" ");
+    },
+    studentDigits() {
+      return [...this.$el.querySelectorAll(".table__button--answer")]
+        .filter(
+          (b) =>
+            !b.classList.contains("table__button--operator") &&
+            getComputedStyle(b.closest("td")).visibility !== "hidden"
+        )
+        .map((b) => b.textContent.trim());
+    },
+    record(ok) {
+      const { operand1, operand2 } = this.gameData;
+      const product = String(operand1 * operand2);
+      const given = this.studentDigits();
+      const value = given.some((d) => d !== "")
+        ? given.map((d) => d || "□").join("")
+        : "（沒有填）";
+      this.attempt += 1;
+      this.$emit("add-record", [
+        `題目：${operand1}×${operand2}；正確答案：${product}（${this.withPlaces(product.split(""))}）`,
+        `第 ${this.attempt} 次作答：${value}（${this.withPlaces(given)}）`,
+        ok ? "正確" : "錯誤",
+      ]);
+    },
     checkAnswer() {
       if (this.answered) return;
       if (this.boardReply) {
         this.answered = true;
         this.$emit("play-effect", "CorrectSound");
-        this.$emit("add-record", ["不支援", "不支援", "正確"]);
+        this.record(true);
         this.$emit("next-question");
       } else {
         this.$emit("play-effect", "WrongSound");
-        this.$emit("add-record", ["不支援", "不支援", "錯誤"]);
+        this.record(false);
         emitter.emit("checkAnswer");
       }
     },
