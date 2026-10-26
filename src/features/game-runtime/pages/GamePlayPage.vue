@@ -82,6 +82,7 @@
                     }
                   "
                   @reappear-code="reappearCode"
+                  @side-hint="(hint) => (sideHint = hint)"
                 />
               </div>
               <div v-else class="intro">
@@ -127,7 +128,12 @@
               <hintbutton
                 v-if="GameStatus === 'Progressing' && Hint['Type'] !== 'Method'"
                 :hint-info="hintInfo"
+                :hide-button="!!sideHint"
                 @open-hint-modal="openMediaModal"
+              />
+              <SideHintButton
+                v-if="GameStatus === 'Progressing' && sideHint"
+                :hint="sideHint"
               />
             </template>
           </SideBar>
@@ -159,6 +165,7 @@ import GameHeader from "@/features/game-runtime/components/GameHeader.vue";
 import LevelAndTime from "@/features/game-runtime/components/LevelAndTime.vue";
 import MediaModal from "@/features/game-runtime/components/MediaModal.vue";
 import hintbutton from "@/features/game-runtime/components/hintbutton.vue";
+import SideHintButton from "@/features/game-runtime/components/SideHintButton.vue";
 import * as ImportUrl from "@/lib/get-assets.js";
 import { defineAsyncComponent } from "vue";
 import EffectWindow from "@/features/game-runtime/components/EffectWindow.vue";
@@ -175,6 +182,7 @@ export default {
     ...templateComponents,
     TechModal,
     hintbutton,
+    SideHintButton,
     GameStart,
     GameOver,
     GameHeader,
@@ -226,6 +234,8 @@ export default {
       questionOrder: [],
       questionCopy: [],
       showMediaModal: false,
+      // 自訂遊戲透過 side-hint 事件提供的文字提示（顯示在右側功能區）
+      sideHint: null,
       // SentData2ChildComponent: {},
     };
   },
