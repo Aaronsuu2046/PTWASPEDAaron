@@ -1,0 +1,800 @@
+{
+  "id": "MA4195",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把答案記下來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "mode": "after",
+        "start": {
+          "month": 3,
+          "day": 20,
+          "period": "上午",
+          "hour": 7,
+          "offset": 0
+        },
+        "end": {
+          "month": 3,
+          "day": 21,
+          "period": "上午",
+          "hour": 4,
+          "offset": 21
+        },
+        "hours": 21,
+        "midnights": [
+          {
+            "offset": 17,
+            "month": 3,
+            "day": 21
+          }
+        ],
+        "question": "奶奶在 3 月 20 日上午 7 時 開始燉煮雞湯，燉煮了 21 小時，完成時是幾月幾日上午或下午幾時？"
+      },
+      {
+        "code": "1-2",
+        "mode": "after",
+        "start": {
+          "month": 5,
+          "day": 2,
+          "period": "上午",
+          "hour": 9,
+          "offset": 0
+        },
+        "end": {
+          "month": 5,
+          "day": 3,
+          "period": "上午",
+          "hour": 5,
+          "offset": 20
+        },
+        "hours": 20,
+        "midnights": [
+          {
+            "offset": 15,
+            "month": 5,
+            "day": 3
+          }
+        ],
+        "question": "奶奶在 5 月 2 日上午 9 時 開始燉煮雞湯，燉煮了 20 小時，完成時是幾月幾日上午或下午幾時？"
+      },
+      {
+        "code": "1-3",
+        "mode": "after",
+        "start": {
+          "month": 4,
+          "day": 10,
+          "period": "上午",
+          "hour": 10,
+          "offset": 0
+        },
+        "end": {
+          "month": 4,
+          "day": 11,
+          "period": "上午",
+          "hour": 4,
+          "offset": 18
+        },
+        "hours": 18,
+        "midnights": [
+          {
+            "offset": 14,
+            "month": 4,
+            "day": 11
+          }
+        ],
+        "question": "奶奶在 4 月 10 日上午 10 時 開始燉煮雞湯，燉煮了 18 小時，完成時是幾月幾日上午或下午幾時？"
+      },
+      {
+        "code": "1-4",
+        "mode": "after",
+        "start": {
+          "month": 2,
+          "day": 6,
+          "period": "上午",
+          "hour": 11,
+          "offset": 0
+        },
+        "end": {
+          "month": 2,
+          "day": 7,
+          "period": "上午",
+          "hour": 6,
+          "offset": 19
+        },
+        "hours": 19,
+        "midnights": [
+          {
+            "offset": 13,
+            "month": 2,
+            "day": 7
+          }
+        ],
+        "question": "奶奶在 2 月 6 日上午 11 時 開始燉煮雞湯，燉煮了 19 小時，完成時是幾月幾日上午或下午幾時？"
+      },
+      {
+        "code": "1-5",
+        "mode": "after",
+        "start": {
+          "month": 12,
+          "day": 24,
+          "period": "上午",
+          "hour": 7,
+          "offset": 0
+        },
+        "end": {
+          "month": 12,
+          "day": 25,
+          "period": "上午",
+          "hour": 5,
+          "offset": 22
+        },
+        "hours": 22,
+        "midnights": [
+          {
+            "offset": 17,
+            "month": 12,
+            "day": 25
+          }
+        ],
+        "question": "奶奶在 12 月 24 日上午 7 時 開始燉煮雞湯，燉煮了 22 小時，完成時是幾月幾日上午或下午幾時？"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "mode": "before",
+        "start": {
+          "month": 2,
+          "day": 3,
+          "period": "下午",
+          "hour": 4,
+          "offset": 0
+        },
+        "end": {
+          "month": 2,
+          "day": 4,
+          "period": "上午",
+          "hour": 8,
+          "offset": 16
+        },
+        "hours": 16,
+        "midnights": [
+          {
+            "offset": 8,
+            "month": 2,
+            "day": 4
+          }
+        ],
+        "question": "電梯維修在 2 月 4 日上午 8 時 結束，一共維修了 16 小時，是從幾月幾日上午或下午幾時開始維修的？"
+      },
+      {
+        "code": "2-2",
+        "mode": "before",
+        "start": {
+          "month": 6,
+          "day": 20,
+          "period": "下午",
+          "hour": 3,
+          "offset": 0
+        },
+        "end": {
+          "month": 6,
+          "day": 21,
+          "period": "上午",
+          "hour": 9,
+          "offset": 18
+        },
+        "hours": 18,
+        "midnights": [
+          {
+            "offset": 9,
+            "month": 6,
+            "day": 21
+          }
+        ],
+        "question": "電梯維修在 6 月 21 日上午 9 時 結束，一共維修了 18 小時，是從幾月幾日上午或下午幾時開始維修的？"
+      },
+      {
+        "code": "2-3",
+        "mode": "before",
+        "start": {
+          "month": 11,
+          "day": 20,
+          "period": "下午",
+          "hour": 8,
+          "offset": 0
+        },
+        "end": {
+          "month": 11,
+          "day": 21,
+          "period": "上午",
+          "hour": 10,
+          "offset": 14
+        },
+        "hours": 14,
+        "midnights": [
+          {
+            "offset": 4,
+            "month": 11,
+            "day": 21
+          }
+        ],
+        "question": "電梯維修在 11 月 21 日上午 10 時 結束，一共維修了 14 小時，是從幾月幾日上午或下午幾時開始維修的？"
+      },
+      {
+        "code": "2-4",
+        "mode": "before",
+        "start": {
+          "month": 3,
+          "day": 28,
+          "period": "下午",
+          "hour": 5,
+          "offset": 0
+        },
+        "end": {
+          "month": 3,
+          "day": 29,
+          "period": "上午",
+          "hour": 8,
+          "offset": 15
+        },
+        "hours": 15,
+        "midnights": [
+          {
+            "offset": 7,
+            "month": 3,
+            "day": 29
+          }
+        ],
+        "question": "電梯維修在 3 月 29 日上午 8 時 結束，一共維修了 15 小時，是從幾月幾日上午或下午幾時開始維修的？"
+      },
+      {
+        "code": "2-5",
+        "mode": "before",
+        "start": {
+          "month": 1,
+          "day": 19,
+          "period": "下午",
+          "hour": 2,
+          "offset": 0
+        },
+        "end": {
+          "month": 1,
+          "day": 20,
+          "period": "上午",
+          "hour": 7,
+          "offset": 17
+        },
+        "hours": 17,
+        "midnights": [
+          {
+            "offset": 10,
+            "month": 1,
+            "day": 20
+          }
+        ],
+        "question": "電梯維修在 1 月 20 日上午 7 時 結束，一共維修了 17 小時，是從幾月幾日上午或下午幾時開始維修的？"
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "mode": "between",
+        "start": {
+          "month": 8,
+          "day": 22,
+          "period": "上午",
+          "hour": 11,
+          "offset": 0
+        },
+        "end": {
+          "month": 8,
+          "day": 24,
+          "period": "上午",
+          "hour": 9,
+          "offset": 46
+        },
+        "hours": 46,
+        "midnights": [
+          {
+            "offset": 13,
+            "month": 8,
+            "day": 23
+          },
+          {
+            "offset": 37,
+            "month": 8,
+            "day": 24
+          }
+        ],
+        "question": "公園從 8 月 22 日上午 11 時 開始關閉整修，到 8 月 24 日上午 9 時 重新開放，公園關閉了幾日幾小時？",
+        "answer": [1, 22]
+      },
+      {
+        "code": "3-2",
+        "mode": "between",
+        "start": {
+          "month": 3,
+          "day": 8,
+          "period": "上午",
+          "hour": 10,
+          "offset": 0
+        },
+        "end": {
+          "month": 3,
+          "day": 11,
+          "period": "上午",
+          "hour": 8,
+          "offset": 70
+        },
+        "hours": 70,
+        "midnights": [
+          {
+            "offset": 14,
+            "month": 3,
+            "day": 9
+          },
+          {
+            "offset": 38,
+            "month": 3,
+            "day": 10
+          },
+          {
+            "offset": 62,
+            "month": 3,
+            "day": 11
+          }
+        ],
+        "question": "公園從 3 月 8 日上午 10 時 開始關閉整修，到 3 月 11 日上午 8 時 重新開放，公園關閉了幾日幾小時？",
+        "answer": [2, 22]
+      },
+      {
+        "code": "3-3",
+        "mode": "between",
+        "start": {
+          "month": 7,
+          "day": 14,
+          "period": "上午",
+          "hour": 11,
+          "offset": 0
+        },
+        "end": {
+          "month": 7,
+          "day": 17,
+          "period": "上午",
+          "hour": 5,
+          "offset": 66
+        },
+        "hours": 66,
+        "midnights": [
+          {
+            "offset": 13,
+            "month": 7,
+            "day": 15
+          },
+          {
+            "offset": 37,
+            "month": 7,
+            "day": 16
+          },
+          {
+            "offset": 61,
+            "month": 7,
+            "day": 17
+          }
+        ],
+        "question": "公園從 7 月 14 日上午 11 時 開始關閉整修，到 7 月 17 日上午 5 時 重新開放，公園關閉了幾日幾小時？",
+        "answer": [2, 18]
+      },
+      {
+        "code": "3-4",
+        "mode": "between",
+        "start": {
+          "month": 5,
+          "day": 10,
+          "period": "上午",
+          "hour": 9,
+          "offset": 0
+        },
+        "end": {
+          "month": 5,
+          "day": 15,
+          "period": "上午",
+          "hour": 6,
+          "offset": 117
+        },
+        "hours": 117,
+        "midnights": [
+          {
+            "offset": 15,
+            "month": 5,
+            "day": 11
+          },
+          {
+            "offset": 39,
+            "month": 5,
+            "day": 12
+          },
+          {
+            "offset": 63,
+            "month": 5,
+            "day": 13
+          },
+          {
+            "offset": 87,
+            "month": 5,
+            "day": 14
+          },
+          {
+            "offset": 111,
+            "month": 5,
+            "day": 15
+          }
+        ],
+        "question": "公園從 5 月 10 日上午 9 時 開始關閉整修，到 5 月 15 日上午 6 時 重新開放，公園關閉了幾日幾小時？",
+        "answer": [4, 21]
+      },
+      {
+        "code": "3-5",
+        "mode": "between",
+        "start": {
+          "month": 9,
+          "day": 27,
+          "period": "上午",
+          "hour": 10,
+          "offset": 0
+        },
+        "end": {
+          "month": 9,
+          "day": 30,
+          "period": "上午",
+          "hour": 7,
+          "offset": 69
+        },
+        "hours": 69,
+        "midnights": [
+          {
+            "offset": 14,
+            "month": 9,
+            "day": 28
+          },
+          {
+            "offset": 38,
+            "month": 9,
+            "day": 29
+          },
+          {
+            "offset": 62,
+            "month": 9,
+            "day": 30
+          }
+        ],
+        "question": "公園從 9 月 27 日上午 10 時 開始關閉整修，到 9 月 30 日上午 7 時 重新開放，公園關閉了幾日幾小時？",
+        "answer": [2, 21]
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "mode": "between",
+        "start": {
+          "month": 7,
+          "day": 2,
+          "period": "上午",
+          "hour": 11,
+          "offset": 0
+        },
+        "end": {
+          "month": 7,
+          "day": 13,
+          "period": "下午",
+          "hour": 2,
+          "offset": 267
+        },
+        "hours": 267,
+        "midnights": [
+          {
+            "offset": 13,
+            "month": 7,
+            "day": 3
+          },
+          {
+            "offset": 37,
+            "month": 7,
+            "day": 4
+          },
+          {
+            "offset": 61,
+            "month": 7,
+            "day": 5
+          },
+          {
+            "offset": 85,
+            "month": 7,
+            "day": 6
+          },
+          {
+            "offset": 109,
+            "month": 7,
+            "day": 7
+          },
+          {
+            "offset": 133,
+            "month": 7,
+            "day": 8
+          },
+          {
+            "offset": 157,
+            "month": 7,
+            "day": 9
+          },
+          {
+            "offset": 181,
+            "month": 7,
+            "day": 10
+          },
+          {
+            "offset": 205,
+            "month": 7,
+            "day": 11
+          },
+          {
+            "offset": 229,
+            "month": 7,
+            "day": 12
+          },
+          {
+            "offset": 253,
+            "month": 7,
+            "day": 13
+          }
+        ],
+        "question": "小明一家在 7 月 2 日上午 11 時 到達日本，7 月 13 日下午 2 時 離開日本，他們在日本停留了幾日幾小時？",
+        "answer": [11, 3]
+      },
+      {
+        "code": "4-2",
+        "mode": "between",
+        "start": {
+          "month": 6,
+          "day": 10,
+          "period": "下午",
+          "hour": 2,
+          "offset": 0
+        },
+        "end": {
+          "month": 6,
+          "day": 18,
+          "period": "上午",
+          "hour": 10,
+          "offset": 188
+        },
+        "hours": 188,
+        "midnights": [
+          {
+            "offset": 10,
+            "month": 6,
+            "day": 11
+          },
+          {
+            "offset": 34,
+            "month": 6,
+            "day": 12
+          },
+          {
+            "offset": 58,
+            "month": 6,
+            "day": 13
+          },
+          {
+            "offset": 82,
+            "month": 6,
+            "day": 14
+          },
+          {
+            "offset": 106,
+            "month": 6,
+            "day": 15
+          },
+          {
+            "offset": 130,
+            "month": 6,
+            "day": 16
+          },
+          {
+            "offset": 154,
+            "month": 6,
+            "day": 17
+          },
+          {
+            "offset": 178,
+            "month": 6,
+            "day": 18
+          }
+        ],
+        "question": "小明一家在 6 月 10 日下午 2 時 到達日本，6 月 18 日上午 10 時 離開日本，他們在日本停留了幾日幾小時？",
+        "answer": [7, 20]
+      },
+      {
+        "code": "4-3",
+        "mode": "between",
+        "start": {
+          "month": 4,
+          "day": 10,
+          "period": "下午",
+          "hour": 3,
+          "offset": 0
+        },
+        "end": {
+          "month": 4,
+          "day": 17,
+          "period": "上午",
+          "hour": 11,
+          "offset": 164
+        },
+        "hours": 164,
+        "midnights": [
+          {
+            "offset": 9,
+            "month": 4,
+            "day": 11
+          },
+          {
+            "offset": 33,
+            "month": 4,
+            "day": 12
+          },
+          {
+            "offset": 57,
+            "month": 4,
+            "day": 13
+          },
+          {
+            "offset": 81,
+            "month": 4,
+            "day": 14
+          },
+          {
+            "offset": 105,
+            "month": 4,
+            "day": 15
+          },
+          {
+            "offset": 129,
+            "month": 4,
+            "day": 16
+          },
+          {
+            "offset": 153,
+            "month": 4,
+            "day": 17
+          }
+        ],
+        "question": "小明一家在 4 月 10 日下午 3 時 到達日本，4 月 17 日上午 11 時 離開日本，他們在日本停留了幾日幾小時？",
+        "answer": [6, 20]
+      },
+      {
+        "code": "4-4",
+        "mode": "between",
+        "start": {
+          "month": 10,
+          "day": 23,
+          "period": "上午",
+          "hour": 8,
+          "offset": 0
+        },
+        "end": {
+          "month": 10,
+          "day": 30,
+          "period": "下午",
+          "hour": 8,
+          "offset": 180
+        },
+        "hours": 180,
+        "midnights": [
+          {
+            "offset": 16,
+            "month": 10,
+            "day": 24
+          },
+          {
+            "offset": 40,
+            "month": 10,
+            "day": 25
+          },
+          {
+            "offset": 64,
+            "month": 10,
+            "day": 26
+          },
+          {
+            "offset": 88,
+            "month": 10,
+            "day": 27
+          },
+          {
+            "offset": 112,
+            "month": 10,
+            "day": 28
+          },
+          {
+            "offset": 136,
+            "month": 10,
+            "day": 29
+          },
+          {
+            "offset": 160,
+            "month": 10,
+            "day": 30
+          }
+        ],
+        "question": "小明一家在 10 月 23 日上午 8 時 到達日本，10 月 30 日下午 8 時 離開日本，他們在日本停留了幾日幾小時？",
+        "answer": [7, 12]
+      },
+      {
+        "code": "4-5",
+        "mode": "between",
+        "start": {
+          "month": 6,
+          "day": 19,
+          "period": "下午",
+          "hour": 7,
+          "offset": 0
+        },
+        "end": {
+          "month": 6,
+          "day": 26,
+          "period": "上午",
+          "hour": 9,
+          "offset": 158
+        },
+        "hours": 158,
+        "midnights": [
+          {
+            "offset": 5,
+            "month": 6,
+            "day": 20
+          },
+          {
+            "offset": 29,
+            "month": 6,
+            "day": 21
+          },
+          {
+            "offset": 53,
+            "month": 6,
+            "day": 22
+          },
+          {
+            "offset": 77,
+            "month": 6,
+            "day": 23
+          },
+          {
+            "offset": 101,
+            "month": 6,
+            "day": 24
+          },
+          {
+            "offset": 125,
+            "month": 6,
+            "day": 25
+          },
+          {
+            "offset": 149,
+            "month": 6,
+            "day": 26
+          }
+        ],
+        "question": "小明一家在 6 月 19 日下午 7 時 到達日本，6 月 26 日上午 9 時 離開日本，他們在日本停留了幾日幾小時？",
+        "answer": [6, 14]
+      }
+    ]
+  ]
+}
