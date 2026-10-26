@@ -55,8 +55,10 @@
 const R = 34;
 const CELL = 22;
 const BAR_W = 200;
-const BAR_H = 26;
+// 長條扁一點、上下間距小一點，三條疊起來時才能橫向放大，等分線看得清楚
+const BAR_H = 16;
 const GAP = 10;
+const BAR_GAP = 6;
 
 // 方格的行列：盡量接近正方形（9 → 3×3、10 → 2×5）
 function gridOf(den) {
@@ -74,6 +76,8 @@ export default {
     whole: { type: Number, default: 0 },
     num: { type: Number, required: true },
     den: { type: Number, required: true },
+    // 選填：預留幾個圖形的位置，讓同一題不同張數的圖形縮放比例一致（不填就照實際張數）
+    slots: { type: Number, default: 0 },
   },
   data() {
     return { CELL, BAR_W, BAR_H };
@@ -84,6 +88,10 @@ export default {
     },
     count() {
       return Math.max(1, Math.ceil(this.total / this.den));
+    },
+    // 版面大小以預留張數計算，實際圖形從上面（或左邊）開始排
+    room() {
+      return Math.max(this.count, this.slots);
     },
     grid() {
       return gridOf(this.den);
@@ -99,24 +107,30 @@ export default {
     stacked() {
       return this.shape === "bar";
     },
+    gap() {
+      return this.stacked ? BAR_GAP : GAP;
+    },
     layout() {
       const { w, h } = this.unitSize;
       const pad = 4;
       return this.stacked
         ? {
             w: w + pad * 2,
-            h: this.count * h + (this.count - 1) * GAP + pad * 2,
+            h: this.room * h + (this.room - 1) * this.gap + pad * 2,
           }
         : {
-            w: this.count * w + (this.count - 1) * GAP + pad * 2,
+            w: this.room * w + (this.room - 1) * this.gap + pad * 2,
             h: h + pad * 2,
           };
     },
     units() {
       const { w, h } = this.unitSize;
+      // 預留的空位平均分在兩側，實際圖形置中
+      const shift =
+        ((this.room - this.count) * ((this.stacked ? h : w) + this.gap)) / 2;
       return Array.from({ length: this.count }, (_, u) => ({
-        x: 4 + (this.stacked ? 0 : u * (w + GAP)),
-        y: 4 + (this.stacked ? u * (h + GAP) : 0),
+        x: 4 + (this.stacked ? 0 : u * (w + this.gap) + shift),
+        y: 4 + (this.stacked ? u * (h + this.gap) + shift : 0),
         filled: Math.min(this.den, Math.max(0, this.total - u * this.den)),
       }));
     },
