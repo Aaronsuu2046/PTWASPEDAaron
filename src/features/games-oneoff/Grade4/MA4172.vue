@@ -25,9 +25,10 @@
               'fragment-card--selected': selected === option.label,
               'fragment-card--wrong': wrong && selected === option.label,
             }"
+            :aria-label="describe(option)"
             @click="select(option.label)"
           >
-            <span class="fragment-card__label">{{ option.label }}</span>
+            <!-- 選項只顯示碎片本身；label（ㄅ、ㄆ、ㄇ）只當內部答案代號，不顯示 -->
             <div class="fragment" :style="fragmentStyle(option.cells)">
               <span
                 v-for="([r, c, value], index) in option.cells"
@@ -133,7 +134,7 @@
             }"
             @click="select(option.label)"
           >
-            {{ option.label }}<span class="option-text">{{ option.text }}</span>
+            <span class="option-text">{{ option.text }}</span>
           </button>
         </div>
       </div>
@@ -227,6 +228,20 @@ export default {
         gridTemplateColumns: `repeat(${cols}, 2.3rem)`,
       };
     },
+    // 紀錄與螢幕閱讀用選項的實際內容（文字選項的文字；碎片寫出上面看得到的數字）
+    describe(option) {
+      if (!option) return "未作答";
+      if (option.text) return option.text;
+      const shown = (option.cells || [])
+        .map(([, , value]) => value)
+        .filter((value) => value !== null);
+      // 不同碎片可能寫著一樣的數字（差在排列位置），所以加上是第幾張
+      const index = this.gameData.options.indexOf(option) + 1;
+      return `第 ${index} 張碎片（寫著 ${shown.join("、")}）`;
+    },
+    optionOf(label) {
+      return this.gameData.options.find((o) => o.label === label);
+    },
     select(label) {
       this.selected = label;
       this.wrong = false;
@@ -236,8 +251,8 @@ export default {
       const isCorrect = this.selected === this.gameData.answer;
       this.wrong = !isCorrect;
       this.$emit("add-record", [
-        this.gameData.answer,
-        this.selected || "未作答",
+        `${this.gameData.question} ${this.describe(this.optionOf(this.gameData.answer))}`,
+        this.selected ? this.describe(this.optionOf(this.selected)) : "未作答",
         isCorrect ? "正確" : "錯誤",
       ]);
       if (isCorrect) {
@@ -332,7 +347,7 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.3rem 1rem 0.6rem;
+  padding: 0.6rem 1rem;
   background-color: #ffffff;
   border: 3px solid #bdbdbd;
   border-radius: 12px;
@@ -346,11 +361,6 @@ export default {
   &--wrong {
     border-color: #e53935;
     background-color: #ffebee;
-  }
-
-  &__label {
-    font-size: 1.5rem;
-    font-weight: $font-bold;
   }
 }
 
@@ -525,7 +535,7 @@ export default {
 }
 
 .option-text {
-  margin-left: 0.6rem;
+  margin: 0;
 }
 
 .button--onclick {
