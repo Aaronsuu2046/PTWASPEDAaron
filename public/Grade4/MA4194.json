@@ -1,0 +1,460 @@
+{
+  "id": "MA4194",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "mode": "forward",
+        "question": "妹妹上午 8:50 開始上鋼琴課，上了 1 小時 30 分鐘，下課時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 8,
+          "m": 50,
+          "s": 0,
+          "sec": 31800
+        },
+        "end": {
+          "period": "上午",
+          "h": 10,
+          "m": 20,
+          "s": 0,
+          "sec": 37200
+        },
+        "duration": [1, 30],
+        "durationText": "1 小時 30 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "1-2",
+        "mode": "forward",
+        "question": "妹妹上午 9:30 開始上鋼琴課，上了 50 分鐘，下課時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 9,
+          "m": 30,
+          "s": 0,
+          "sec": 34200
+        },
+        "end": {
+          "period": "上午",
+          "h": 10,
+          "m": 20,
+          "s": 0,
+          "sec": 37200
+        },
+        "duration": [0, 50],
+        "durationText": "50 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "1-3",
+        "mode": "forward",
+        "question": "妹妹上午 9:30 開始上鋼琴課，上了 40 分鐘，下課時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 9,
+          "m": 30,
+          "s": 0,
+          "sec": 34200
+        },
+        "end": {
+          "period": "上午",
+          "h": 10,
+          "m": 10,
+          "s": 0,
+          "sec": 36600
+        },
+        "duration": [0, 40],
+        "durationText": "40 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "1-4",
+        "mode": "forward",
+        "question": "妹妹上午 10:00 開始上鋼琴課，上了 1 小時 10 分鐘，下課時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 10,
+          "m": 0,
+          "s": 0,
+          "sec": 36000
+        },
+        "end": {
+          "period": "上午",
+          "h": 11,
+          "m": 10,
+          "s": 0,
+          "sec": 40200
+        },
+        "duration": [1, 10],
+        "durationText": "1 小時 10 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "1-5",
+        "mode": "forward",
+        "question": "妹妹上午 9:50 開始上鋼琴課，上了 1 小時 20 分鐘，下課時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 9,
+          "m": 50,
+          "s": 0,
+          "sec": 35400
+        },
+        "end": {
+          "period": "上午",
+          "h": 11,
+          "m": 10,
+          "s": 0,
+          "sec": 40200
+        },
+        "duration": [1, 20],
+        "durationText": "1 小時 20 分鐘",
+        "crossesNoon": false
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "mode": "forward",
+        "question": "哥哥上午 11:20 進電影院看電影，電影播放了 1 小時 48 分鐘，散場時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 11,
+          "m": 20,
+          "s": 0,
+          "sec": 40800
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 8,
+          "s": 0,
+          "sec": 47280
+        },
+        "duration": [1, 48],
+        "durationText": "1 小時 48 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "2-2",
+        "mode": "forward",
+        "question": "哥哥上午 11:38 進電影院看電影，電影播放了 2 小時 17 分鐘，散場時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 11,
+          "m": 38,
+          "s": 0,
+          "sec": 41880
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 55,
+          "s": 0,
+          "sec": 50100
+        },
+        "duration": [2, 17],
+        "durationText": "2 小時 17 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "2-3",
+        "mode": "forward",
+        "question": "哥哥上午 11:50 進電影院看電影，電影播放了 2 小時 33 分鐘，散場時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 11,
+          "m": 50,
+          "s": 0,
+          "sec": 42600
+        },
+        "end": {
+          "period": "下午",
+          "h": 2,
+          "m": 23,
+          "s": 0,
+          "sec": 51780
+        },
+        "duration": [2, 33],
+        "durationText": "2 小時 33 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "2-4",
+        "mode": "forward",
+        "question": "哥哥上午 11:40 進電影院看電影，電影播放了 1 小時 53 分鐘，散場時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 11,
+          "m": 40,
+          "s": 0,
+          "sec": 42000
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 33,
+          "s": 0,
+          "sec": 48780
+        },
+        "duration": [1, 53],
+        "durationText": "1 小時 53 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "2-5",
+        "mode": "forward",
+        "question": "哥哥上午 10:58 進電影院看電影，電影播放了 2 小時 29 分鐘，散場時是上午或下午幾點幾分？",
+        "start": {
+          "period": "上午",
+          "h": 10,
+          "m": 58,
+          "s": 0,
+          "sec": 39480
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 27,
+          "s": 0,
+          "sec": 48420
+        },
+        "duration": [2, 29],
+        "durationText": "2 小時 29 分鐘",
+        "crossesNoon": true
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "mode": "backward",
+        "question": "籃球活動在下午 5:25 結束，活動進行了 2 小時 15 分鐘，活動是上午或下午幾點幾分開始的？",
+        "start": {
+          "period": "下午",
+          "h": 3,
+          "m": 10,
+          "s": 0,
+          "sec": 54600
+        },
+        "end": {
+          "period": "下午",
+          "h": 5,
+          "m": 25,
+          "s": 0,
+          "sec": 62700
+        },
+        "duration": [2, 15],
+        "durationText": "2 小時 15 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "3-2",
+        "mode": "backward",
+        "question": "籃球活動在下午 4:30 結束，活動進行了 2 小時 40 分鐘，活動是上午或下午幾點幾分開始的？",
+        "start": {
+          "period": "下午",
+          "h": 1,
+          "m": 50,
+          "s": 0,
+          "sec": 49800
+        },
+        "end": {
+          "period": "下午",
+          "h": 4,
+          "m": 30,
+          "s": 0,
+          "sec": 59400
+        },
+        "duration": [2, 40],
+        "durationText": "2 小時 40 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "3-3",
+        "mode": "backward",
+        "question": "籃球活動在下午 5:28 結束，活動進行了 1 小時 50 分鐘，活動是上午或下午幾點幾分開始的？",
+        "start": {
+          "period": "下午",
+          "h": 3,
+          "m": 38,
+          "s": 0,
+          "sec": 56280
+        },
+        "end": {
+          "period": "下午",
+          "h": 5,
+          "m": 28,
+          "s": 0,
+          "sec": 62880
+        },
+        "duration": [1, 50],
+        "durationText": "1 小時 50 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "3-4",
+        "mode": "backward",
+        "question": "籃球活動在下午 3:21 結束，活動進行了 2 小時 8 分鐘，活動是上午或下午幾點幾分開始的？",
+        "start": {
+          "period": "下午",
+          "h": 1,
+          "m": 13,
+          "s": 0,
+          "sec": 47580
+        },
+        "end": {
+          "period": "下午",
+          "h": 3,
+          "m": 21,
+          "s": 0,
+          "sec": 55260
+        },
+        "duration": [2, 8],
+        "durationText": "2 小時 8 分鐘",
+        "crossesNoon": false
+      },
+      {
+        "code": "3-5",
+        "mode": "backward",
+        "question": "籃球活動在下午 4:25 結束，活動進行了 1 小時 54 分鐘，活動是上午或下午幾點幾分開始的？",
+        "start": {
+          "period": "下午",
+          "h": 2,
+          "m": 31,
+          "s": 0,
+          "sec": 52260
+        },
+        "end": {
+          "period": "下午",
+          "h": 4,
+          "m": 25,
+          "s": 0,
+          "sec": 59100
+        },
+        "duration": [1, 54],
+        "durationText": "1 小時 54 分鐘",
+        "crossesNoon": false
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "mode": "backward",
+        "question": "我們在下午 2:20 離開博物館，在博物館參觀了 3 小時 35 分鐘，是上午或下午幾點幾分開始參觀的？",
+        "start": {
+          "period": "上午",
+          "h": 10,
+          "m": 45,
+          "s": 0,
+          "sec": 38700
+        },
+        "end": {
+          "period": "下午",
+          "h": 2,
+          "m": 20,
+          "s": 0,
+          "sec": 51600
+        },
+        "duration": [3, 35],
+        "durationText": "3 小時 35 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "4-2",
+        "mode": "backward",
+        "question": "我們在下午 1:20 離開博物館，在博物館參觀了 3 小時 30 分鐘，是上午或下午幾點幾分開始參觀的？",
+        "start": {
+          "period": "上午",
+          "h": 9,
+          "m": 50,
+          "s": 0,
+          "sec": 35400
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 20,
+          "s": 0,
+          "sec": 48000
+        },
+        "duration": [3, 30],
+        "durationText": "3 小時 30 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "4-3",
+        "mode": "backward",
+        "question": "我們在下午 3:00 離開博物館，在博物館參觀了 3 小時 12 分鐘，是上午或下午幾點幾分開始參觀的？",
+        "start": {
+          "period": "上午",
+          "h": 11,
+          "m": 48,
+          "s": 0,
+          "sec": 42480
+        },
+        "end": {
+          "period": "下午",
+          "h": 3,
+          "m": 0,
+          "s": 0,
+          "sec": 54000
+        },
+        "duration": [3, 12],
+        "durationText": "3 小時 12 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "4-4",
+        "mode": "backward",
+        "question": "我們在下午 1:00 離開博物館，在博物館參觀了 2 小時 45 分鐘，是上午或下午幾點幾分開始參觀的？",
+        "start": {
+          "period": "上午",
+          "h": 10,
+          "m": 15,
+          "s": 0,
+          "sec": 36900
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 0,
+          "s": 0,
+          "sec": 46800
+        },
+        "duration": [2, 45],
+        "durationText": "2 小時 45 分鐘",
+        "crossesNoon": true
+      },
+      {
+        "code": "4-5",
+        "mode": "backward",
+        "question": "我們在下午 1:05 離開博物館，在博物館參觀了 2 小時 30 分鐘，是上午或下午幾點幾分開始參觀的？",
+        "start": {
+          "period": "上午",
+          "h": 10,
+          "m": 35,
+          "s": 0,
+          "sec": 38100
+        },
+        "end": {
+          "period": "下午",
+          "h": 1,
+          "m": 5,
+          "s": 0,
+          "sec": 47100
+        },
+        "duration": [2, 30],
+        "durationText": "2 小時 30 分鐘",
+        "crossesNoon": true
+      }
+    ]
+  ]
+}
