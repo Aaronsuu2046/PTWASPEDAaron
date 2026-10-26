@@ -1,5 +1,9 @@
 <template>
-  <div v-if="visible" class="calculator-tool-overlay">
+  <div
+    v-if="visible"
+    class="calculator-tool-overlay"
+    :class="{ 'calculator-tool-overlay--passthrough': activeTab === 'kidcalc' }"
+  >
     <div class="tool-container">
       <!-- 功能內容區域 -->
       <div class="content-area">
@@ -10,6 +14,26 @@
             @close="closeFloatingCalculator"
             @calculator-result="handleCalculatorResult"
           />
+        </div>
+
+        <!-- 計算機（四年級以上）：浮在右邊，開著時仍可以點題目的答案格；
+             只用來算，不會代填答案。用 v-show 保留算到一半的內容 -->
+        <div
+          v-if="hasKidCalculator"
+          v-show="activeTab === 'kidcalc'"
+          class="kid-calc-panel"
+        >
+          <div class="kid-calc-panel__head">
+            <span>算好再自己填到答案格</span>
+            <button
+              type="button"
+              class="kid-calc-panel__close"
+              @click="activeTab = 'none'"
+            >
+              收起計算機
+            </button>
+          </div>
+          <KidCalculator backspace />
         </div>
 
         <!-- 計算紙 -->
@@ -35,6 +59,13 @@
             <div class="function-buttons">
               <button class="function-btn" @click="switchToCalculator">
                 計算板
+              </button>
+              <button
+                v-if="hasKidCalculator"
+                class="function-btn"
+                @click="activeTab = 'kidcalc'"
+              >
+                計算機
               </button>
               <button class="function-btn" @click="activeTab = 'scratch'">
                 畫筆
@@ -68,6 +99,14 @@
                 計算板
               </button>
               <button
+                v-if="hasKidCalculator"
+                class="tool-btn"
+                :class="{ active: activeTab === 'kidcalc' }"
+                @click="activeTab = 'kidcalc'"
+              >
+                計算機
+              </button>
+              <button
                 class="tool-btn"
                 :class="{ active: activeTab === 'scratch' }"
                 @click="activeTab = 'scratch'"
@@ -97,6 +136,10 @@
 import FloatingCalculator from "./FloatingCalculator.vue";
 import ScratchSheets from "./ScratchSheets.vue";
 import MultiplicationTable from "./MultiplicationTable.vue";
+import KidCalculator from "@/features/games-oneoff/Grade4/games/CalculatorQuestion/KidCalculator.vue";
+
+// 四年級以上才有「計算機」（計算板仍保留給所有年級）
+const KID_CALCULATOR_MIN_GRADE = 4;
 
 export default {
   name: "CalculatorTool",
@@ -104,11 +147,17 @@ export default {
     FloatingCalculator,
     ScratchSheets,
     MultiplicationTable,
+    KidCalculator,
   },
   props: {
     visible: {
       type: Boolean,
       default: false,
+    },
+    // 遊戲路由的年級；4 以上顯示「計算機」，沒傳就不顯示
+    grade: {
+      type: Number,
+      default: 0,
     },
   },
   emits: ["close", "saveCanvas"],
@@ -118,6 +167,11 @@ export default {
       showFloatingCalculator: false,
       scratchBackground: null,
     };
+  },
+  computed: {
+    hasKidCalculator() {
+      return this.grade >= KID_CALCULATOR_MIN_GRADE;
+    },
   },
   watch: {
     activeTab(newTab) {
@@ -151,6 +205,8 @@ export default {
     handleCalculatorResult(result) {
       console.log("計算結果:", result);
     },
+    // GamePlayPage 換關時透過 ref 呼叫
+    // eslint-disable-next-line vue/no-unused-properties
     clearDrawing() {
       this.scratchBackground = null;
       this.$refs.scratchSheet?.clearCanvas();
@@ -171,6 +227,55 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}
+
+// 計算機開著時，除了計算機和右邊的工具列，其他地方點得到底下的題目
+.calculator-tool-overlay--passthrough {
+  pointer-events: none;
+
+  .kid-calc-panel,
+  .control-panel {
+    pointer-events: auto;
+  }
+}
+
+.kid-calc-panel {
+  align-self: stretch;
+  margin: 1rem 1rem 1rem auto;
+  width: 20rem;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  background-color: #fffde7;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #5d4037;
+  }
+
+  &__close {
+    padding: 0.3rem 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #fb8c00;
+    border: none;
+    border-radius: 10px;
+  }
+
+  :deep(.kid-calc) {
+    flex: 1;
+    min-height: 0;
+  }
 }
 
 .tool-container {

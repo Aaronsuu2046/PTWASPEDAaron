@@ -138,6 +138,7 @@
       v-if="calculatorToolVisible"
       ref="calculatorTool"
       :visible="calculatorToolVisible"
+      :grade="Number(Grade) || 0"
       @close="calculatorToolVisible = false"
       @save-canvas="saveCanvasBackground"
     />
