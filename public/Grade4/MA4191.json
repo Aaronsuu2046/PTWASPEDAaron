@@ -1,0 +1,324 @@
+{
+  "id": "MA4191",
+  "GameType": "SelfDefine",
+  "TotalLevel": 6,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把做法和答案記下來"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "mode": "toSmall",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 4,
+        "small": 12,
+        "total": 108
+      },
+      {
+        "code": "1-2",
+        "mode": "toSmall",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 3,
+        "small": 18,
+        "total": 90
+      },
+      {
+        "code": "1-3",
+        "mode": "toSmall",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 2,
+        "small": 16,
+        "total": 64
+      },
+      {
+        "code": "1-4",
+        "mode": "toSmall",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 2,
+        "small": 5,
+        "total": 53
+      },
+      {
+        "code": "1-5",
+        "mode": "toSmall",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 3,
+        "small": 11,
+        "total": 83
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "mode": "toBig",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 1,
+        "small": 4,
+        "total": 28
+      },
+      {
+        "code": "2-2",
+        "mode": "toBig",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 2,
+        "small": 16,
+        "total": 64
+      },
+      {
+        "code": "2-3",
+        "mode": "toBig",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 1,
+        "small": 13,
+        "total": 37
+      },
+      {
+        "code": "2-4",
+        "mode": "toBig",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 1,
+        "small": 16,
+        "total": 40
+      },
+      {
+        "code": "2-5",
+        "mode": "toBig",
+        "bigUnit": "日",
+        "smallUnit": "小時",
+        "factor": 24,
+        "big": 3,
+        "small": 8,
+        "total": 80
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "mode": "toSmall",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 2,
+        "small": 15,
+        "total": 135
+      },
+      {
+        "code": "3-2",
+        "mode": "toSmall",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 4,
+        "small": 35,
+        "total": 275
+      },
+      {
+        "code": "3-3",
+        "mode": "toSmall",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 3,
+        "small": 22,
+        "total": 202
+      },
+      {
+        "code": "3-4",
+        "mode": "toSmall",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 4,
+        "small": 10,
+        "total": 250
+      },
+      {
+        "code": "3-5",
+        "mode": "toSmall",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 2,
+        "small": 27,
+        "total": 147
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "mode": "toBig",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 2,
+        "small": 25,
+        "total": 145
+      },
+      {
+        "code": "4-2",
+        "mode": "toBig",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 3,
+        "small": 20,
+        "total": 200
+      },
+      {
+        "code": "4-3",
+        "mode": "toBig",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 2,
+        "small": 18,
+        "total": 138
+      },
+      {
+        "code": "4-4",
+        "mode": "toBig",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 3,
+        "small": 19,
+        "total": 199
+      },
+      {
+        "code": "4-5",
+        "mode": "toBig",
+        "bigUnit": "小時",
+        "smallUnit": "分鐘",
+        "factor": 60,
+        "big": 3,
+        "small": 33,
+        "total": 213
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "mode": "toSmall",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 4,
+        "small": 37,
+        "total": 277
+      },
+      {
+        "code": "5-2",
+        "mode": "toSmall",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 3,
+        "small": 28,
+        "total": 208
+      },
+      {
+        "code": "5-3",
+        "mode": "toSmall",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 2,
+        "small": 35,
+        "total": 155
+      },
+      {
+        "code": "5-4",
+        "mode": "toSmall",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 5,
+        "small": 20,
+        "total": 320
+      },
+      {
+        "code": "5-5",
+        "mode": "toSmall",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 4,
+        "small": 46,
+        "total": 286
+      }
+    ],
+    [
+      {
+        "code": "6-1",
+        "mode": "toBig",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 2,
+        "small": 39,
+        "total": 159
+      },
+      {
+        "code": "6-2",
+        "mode": "toBig",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 4,
+        "small": 7,
+        "total": 247
+      },
+      {
+        "code": "6-3",
+        "mode": "toBig",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 5,
+        "small": 1,
+        "total": 301
+      },
+      {
+        "code": "6-4",
+        "mode": "toBig",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 3,
+        "small": 38,
+        "total": 218
+      },
+      {
+        "code": "6-5",
+        "mode": "toBig",
+        "bigUnit": "分鐘",
+        "smallUnit": "秒",
+        "factor": 60,
+        "big": 3,
+        "small": 44,
+        "total": 224
+      }
+    ]
+  ]
+}
