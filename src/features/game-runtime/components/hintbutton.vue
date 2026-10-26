@@ -20,7 +20,7 @@
         </div> -->
 
     <button
-      v-if="showhint"
+      v-if="showhint && !hideButton"
       class="btn btn-primary text-nowrap img-hover-zoom"
       data-bs-toggle="modal"
       data-bs-target="#hint"
@@ -53,6 +53,11 @@ export default {
     hintInfo: {
       type: Object,
       required: true,
+    },
+    // 遊戲自己提供文字提示時隱藏這顆按鈕，只保留生命值
+    hideButton: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ["openHintModal"],

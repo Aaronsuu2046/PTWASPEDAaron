@@ -92,26 +92,6 @@
             {{ option }}
           </button>
         </div>
-        <!-- 關卡 5：原稿附的奇偶規律提示，按鈕切換顯示 -->
-        <template v-if="gameData.hint">
-          <button
-            type="button"
-            class="hint-button"
-            @click="showHint = !showHint"
-          >
-            {{ showHint ? "收起提示" : "看提示" }}
-          </button>
-          <div v-if="showHint" class="hint-box">
-            <div
-              v-for="group in HINTS"
-              :key="group.title"
-              class="hint-box__group"
-            >
-              <p class="hint-box__title">{{ group.title }}</p>
-              <p v-for="rule in group.rules" :key="rule">{{ rule }}</p>
-            </div>
-          </div>
-        </template>
       </template>
     </div>
 
@@ -132,6 +112,37 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 // 移動超過這個距離（px）才算拖曳，否則視為點選
 const DRAG_THRESHOLD = 8;
 
+// 關卡 5：原稿附的奇偶規律提示，顯示在右側功能區「點我看提示」
+const HINTS = [
+  {
+    title: "加法規律",
+    rules: [
+      "奇數＋奇數＝偶數",
+      "偶數＋偶數＝偶數",
+      "奇數＋偶數＝奇數",
+      "偶數＋奇數＝奇數",
+    ],
+  },
+  {
+    title: "減法規律",
+    rules: [
+      "奇數－奇數＝偶數",
+      "偶數－偶數＝偶數",
+      "奇數－偶數＝奇數",
+      "偶數－奇數＝奇數",
+    ],
+  },
+  {
+    title: "乘法規律",
+    rules: [
+      "奇數×奇數＝奇數",
+      "偶數×偶數＝偶數",
+      "奇數×偶數＝偶數",
+      "偶數×奇數＝偶數",
+    ],
+  },
+];
+
 export default {
   name: "MA4173",
   props: {
@@ -140,41 +151,11 @@ export default {
     gameConfig: { type: Object, default: () => ({}) },
     introText: { type: Object, default: null },
   },
-  emits: ["play-effect", "next-question", "add-record"],
+  emits: ["play-effect", "next-question", "add-record", "side-hint"],
   data() {
     return {
       // 每個空格放的是 cards 的索引，null 表示空
       slots: Array.from({ length: this.gameData.slots || 0 }, () => null),
-      HINTS: [
-        {
-          title: "加法規律",
-          rules: [
-            "奇數＋奇數＝偶數",
-            "偶數＋偶數＝偶數",
-            "奇數＋偶數＝奇數",
-            "偶數＋奇數＝奇數",
-          ],
-        },
-        {
-          title: "減法規律",
-          rules: [
-            "奇數－奇數＝偶數",
-            "偶數－偶數＝偶數",
-            "奇數－偶數＝奇數",
-            "偶數－奇數＝奇數",
-          ],
-        },
-        {
-          title: "乘法規律",
-          rules: [
-            "奇數×奇數＝奇數",
-            "偶數×偶數＝偶數",
-            "奇數×偶數＝偶數",
-            "偶數×奇數＝偶數",
-          ],
-        },
-      ],
-      showHint: false,
       drag: null,
       hoverSlot: null,
       suppressClick: false,
@@ -216,9 +197,13 @@ export default {
   },
   created() {
     emitter.on("submitAnswer", this.checkAnswer);
+    if (this.gameData.hint) {
+      this.$emit("side-hint", { title: "奇偶數規律", groups: HINTS });
+    }
   },
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
+    if (this.gameData.hint) this.$emit("side-hint", null);
   },
   methods: {
     tableValue(row, col) {
@@ -485,34 +470,6 @@ export default {
     padding: 0.6rem 1.5rem;
     font-size: 28px;
     background-color: $primary-btn-bg;
-  }
-}
-
-.hint-button {
-  padding: 0.3rem 1.2rem;
-  font-size: 1.1rem;
-  color: #ffffff;
-  background-color: #fb8c00;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.hint-box {
-  display: flex;
-  gap: 1.5rem;
-  padding: 0.6rem 1rem;
-  background-color: #ffffff;
-  border: 3px solid #fb8c00;
-  border-radius: 12px;
-
-  p {
-    margin: 0;
-    font-size: 1rem;
-  }
-
-  &__title {
-    font-weight: $font-bold;
   }
 }
 
