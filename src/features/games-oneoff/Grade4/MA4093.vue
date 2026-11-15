@@ -7,56 +7,52 @@
     <div class="game-area">
       <p class="question">{{ gameData.question }}</p>
 
-      <div class="figures">
-        <div class="figure">
-          <ContainerFigure
-            :theme="gameData.theme"
-            :capacity="gameData.den"
-            :count="gameData.den"
+      <!-- 正式插圖：一張圖裡有一個裝滿的容器和一個沒裝滿的容器，檔名對應題目代碼 -->
+      <!-- 插圖在左、作答區在右，插圖可以用滿高度 -->
+      <div class="work">
+        <div class="scene">
+          <img
+            class="scene__img"
+            :src="sceneSrc"
+            :alt="sceneAlt"
+            draggable="false"
           />
         </div>
-        <div class="figure">
-          <ContainerFigure
-            :theme="gameData.theme"
-            :capacity="gameData.den"
-            :count="gameData.part"
-          />
-        </div>
-      </div>
 
-      <div class="answers">
-        <div class="answer">
-          <span class="answer__label">帶分數</span>
-          <button
-            v-bind="box('mw')"
-            class="box box--whole"
-            @click="activate('mw')"
-          >
-            {{ values.mw }}
-          </button>
-          <span class="frac">
-            <button v-bind="box('mn')" class="box" @click="activate('mn')">
-              {{ values.mn }}
+        <div class="answers">
+          <div class="answer">
+            <span class="answer__label">帶分數</span>
+            <button
+              v-bind="box('mw')"
+              class="box box--whole"
+              @click="activate('mw')"
+            >
+              {{ values.mw }}
             </button>
-            <span class="frac__bar" />
-            <button v-bind="box('md')" class="box" @click="activate('md')">
-              {{ values.md }}
-            </button>
-          </span>
-          <span class="answer__unit">{{ gameData.unit }}</span>
-        </div>
-        <div class="answer">
-          <span class="answer__label">假分數</span>
-          <span class="frac">
-            <button v-bind="box('in')" class="box" @click="activate('in')">
-              {{ values.in }}
-            </button>
-            <span class="frac__bar" />
-            <button v-bind="box('id')" class="box" @click="activate('id')">
-              {{ values.id }}
-            </button>
-          </span>
-          <span class="answer__unit">{{ gameData.unit }}</span>
+            <span class="frac">
+              <button v-bind="box('mn')" class="box" @click="activate('mn')">
+                {{ values.mn }}
+              </button>
+              <span class="frac__bar" />
+              <button v-bind="box('md')" class="box" @click="activate('md')">
+                {{ values.md }}
+              </button>
+            </span>
+            <span class="answer__unit">{{ gameData.unit }}</span>
+          </div>
+          <div class="answer">
+            <span class="answer__label">假分數</span>
+            <span class="frac">
+              <button v-bind="box('in')" class="box" @click="activate('in')">
+                {{ values.in }}
+              </button>
+              <span class="frac__bar" />
+              <button v-bind="box('id')" class="box" @click="activate('id')">
+                {{ values.id }}
+              </button>
+            </span>
+            <span class="answer__unit">{{ gameData.unit }}</span>
+          </div>
         </div>
       </div>
 
@@ -73,7 +69,7 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import ContainerFigure from "./games/Fraction/ContainerFigure.vue";
+import { getGameAssets } from "@/lib/get-assets.js";
 import FieldPad from "./games/Common/FieldPad.vue";
 
 const KEYS = ["mw", "mn", "md", "in", "id"];
@@ -84,7 +80,7 @@ const MAX_LENGTH = 2;
 // 題目 { question, theme, unit, measure, den, part, mixed: { whole, num, den }, improper: { num, den } }
 export default {
   name: "MA4093",
-  components: { ContainerFigure, FieldPad },
+  components: { FieldPad },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -103,6 +99,14 @@ export default {
     };
   },
   computed: {
+    sceneSrc() {
+      return getGameAssets("MA4093", `${this.gameData.code}.PNG`);
+    },
+    // 螢幕閱讀：說明圖裡有什麼（不含答案）
+    sceneAlt() {
+      const { den, part, item, measure, unit } = this.gameData;
+      return `一${unit}裝滿 ${den} ${measure}${item}，另一${unit}只有 ${part} ${measure}${item}`;
+    },
     gameIntroText() {
       return this.introText?.Content || "用帶分數和假分數表示";
     },
@@ -244,33 +248,38 @@ export default {
   border-radius: 14px;
 }
 
-.figures {
+// 正式插圖 1200×800，等比例完整顯示，留空間給題目與作答區
+.scene {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    user-select: none;
+  }
+}
+
+.work {
   flex: 1;
   min-height: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-}
-
-.figure {
-  flex: 0 1 17rem;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
-
-  :deep(.container-figure) {
-    flex: 1;
-    min-height: 0;
-  }
+  gap: 1.5rem;
 }
 
 .answers {
+  flex-shrink: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.2rem;
 }
 
 .answer {
