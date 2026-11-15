@@ -1,0 +1,327 @@
+{
+  "id": "MA2018",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "從錢包拿出剛好的錢買東西。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "product": "toycar",
+        "name": "玩具車",
+        "price": 109,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "1": 9
+        }
+      },
+      {
+        "code": "1-2",
+        "product": "toycar",
+        "name": "玩具車",
+        "price": 108,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "1": 9
+        }
+      },
+      {
+        "code": "1-3",
+        "product": "toycar",
+        "name": "玩具車",
+        "price": 112,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "1": 9
+        }
+      },
+      {
+        "code": "1-4",
+        "product": "toycar",
+        "name": "玩具車",
+        "price": 110,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "1": 9
+        }
+      },
+      {
+        "code": "1-5",
+        "product": "toycar",
+        "name": "玩具車",
+        "price": 105,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "1": 9
+        }
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "product": "robot",
+        "name": "機器人",
+        "price": 136,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "2-2",
+        "product": "robot",
+        "name": "機器人",
+        "price": 124,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "2-3",
+        "product": "robot",
+        "name": "機器人",
+        "price": 121,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "2-4",
+        "product": "robot",
+        "name": "機器人",
+        "price": 130,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "2-5",
+        "product": "robot",
+        "name": "機器人",
+        "price": 129,
+        "wallet": {
+          "100": 1,
+          "10": 2,
+          "5": 4,
+          "1": 4
+        }
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "product": "watch",
+        "name": "手錶",
+        "price": 153,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 4,
+          "5": 1,
+          "1": 5
+        }
+      },
+      {
+        "code": "3-2",
+        "product": "watch",
+        "name": "手錶",
+        "price": 148,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 4,
+          "5": 1,
+          "1": 5
+        }
+      },
+      {
+        "code": "3-3",
+        "product": "watch",
+        "name": "手錶",
+        "price": 145,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 4,
+          "5": 1,
+          "1": 5
+        }
+      },
+      {
+        "code": "3-4",
+        "product": "watch",
+        "name": "手錶",
+        "price": 157,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 4,
+          "5": 1,
+          "1": 5
+        }
+      },
+      {
+        "code": "3-5",
+        "product": "watch",
+        "name": "手錶",
+        "price": 142,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 4,
+          "5": 1,
+          "1": 5
+        }
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "product": "figure",
+        "name": "公仔",
+        "price": 174,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 3,
+          "5": 2,
+          "1": 6
+        }
+      },
+      {
+        "code": "4-2",
+        "product": "figure",
+        "name": "公仔",
+        "price": 168,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 3,
+          "5": 2,
+          "1": 6
+        }
+      },
+      {
+        "code": "4-3",
+        "product": "figure",
+        "name": "公仔",
+        "price": 165,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 3,
+          "5": 2,
+          "1": 6
+        }
+      },
+      {
+        "code": "4-4",
+        "product": "figure",
+        "name": "公仔",
+        "price": 177,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 3,
+          "5": 2,
+          "1": 6
+        }
+      },
+      {
+        "code": "4-5",
+        "product": "figure",
+        "name": "公仔",
+        "price": 179,
+        "wallet": {
+          "100": 1,
+          "50": 2,
+          "10": 3,
+          "5": 2,
+          "1": 6
+        }
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "product": "pencilcase",
+        "name": "鉛筆盒",
+        "price": 187,
+        "wallet": {
+          "50": 4,
+          "10": 3,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "5-2",
+        "product": "pencilcase",
+        "name": "鉛筆盒",
+        "price": 198,
+        "wallet": {
+          "50": 4,
+          "10": 3,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "5-3",
+        "product": "pencilcase",
+        "name": "鉛筆盒",
+        "price": 185,
+        "wallet": {
+          "50": 4,
+          "10": 3,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "5-4",
+        "product": "pencilcase",
+        "name": "鉛筆盒",
+        "price": 197,
+        "wallet": {
+          "50": 4,
+          "10": 3,
+          "5": 4,
+          "1": 4
+        }
+      },
+      {
+        "code": "5-5",
+        "product": "pencilcase",
+        "name": "鉛筆盒",
+        "price": 186,
+        "wallet": {
+          "50": 4,
+          "10": 3,
+          "5": 4,
+          "1": 4
+        }
+      }
+    ]
+  ]
+}
