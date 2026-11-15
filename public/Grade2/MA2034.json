@@ -1,0 +1,137 @@
+{
+  "id": "MA2034",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "量量看，找出符合長度的物品。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "question": "哪一根吸管剛好 14 公分？",
+        "target": 14,
+        "mode": "exact",
+        "objects": [
+          {
+            "name": "紅色吸管",
+            "shape": "straw",
+            "color": "#e53935",
+            "length": 13,
+            "start": 1
+          },
+          {
+            "name": "藍色吸管",
+            "shape": "straw",
+            "color": "#1e88e5",
+            "length": 14,
+            "start": 0
+          }
+        ],
+        "answer": "藍色吸管"
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "question": "哪一段膠帶剛好 10 公分？",
+        "target": 10,
+        "mode": "exact",
+        "objects": [
+          {
+            "name": "條紋紙膠帶",
+            "shape": "tape-stripe",
+            "color": "#ab47bc",
+            "length": 10,
+            "start": 3
+          },
+          {
+            "name": "花朵紙膠帶",
+            "shape": "tape-flower",
+            "color": "#f06292",
+            "length": 8,
+            "start": 2
+          }
+        ],
+        "answer": "條紋紙膠帶"
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "question": "哪一個吊飾剛好 8 公分？",
+        "target": 8,
+        "mode": "exact",
+        "objects": [
+          {
+            "name": "10 公分串珠",
+            "shape": "beads",
+            "color": "#ffffff",
+            "length": 10,
+            "start": 2
+          },
+          {
+            "name": "8 公分串珠",
+            "shape": "beads",
+            "color": "#ffffff",
+            "length": 8,
+            "start": 4
+          }
+        ],
+        "answer": "8 公分串珠"
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "question": "哪一個吊飾比較接近 7 公分？",
+        "target": 7,
+        "mode": "near",
+        "objects": [
+          {
+            "name": "愛心吊飾",
+            "shape": "charm-heart",
+            "color": "#ec407a",
+            "length": 6.8,
+            "start": 3
+          },
+          {
+            "name": "星星吊飾",
+            "shape": "charm-star",
+            "color": "#ffca28",
+            "length": 6.2,
+            "start": 1
+          }
+        ],
+        "answer": "愛心吊飾"
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "question": "哪一段膠帶比較接近 10 公分？",
+        "target": 10,
+        "mode": "near",
+        "objects": [
+          {
+            "name": "圓點紙膠帶",
+            "shape": "tape-dot",
+            "color": "#26a69a",
+            "length": 10.8,
+            "start": 2
+          },
+          {
+            "name": "小碎花紙膠帶",
+            "shape": "tape-floral",
+            "color": "#ff8a65",
+            "length": 9.9,
+            "start": 3
+          }
+        ],
+        "answer": "小碎花紙膠帶"
+      }
+    ]
+  ]
+}

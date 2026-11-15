@@ -1,0 +1,256 @@
+{
+  "id": "MA2033",
+  "GameType": "SelfDefine",
+  "TotalLevel": 4,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用尺量量看，當個精準測量師！"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "question": "移動尺或紅豆，量量看紅豆長幾公分？",
+        "object": {
+          "name": "紅豆",
+          "shape": "redbean",
+          "color": "#c62828",
+          "length": 1,
+          "start": 2
+        },
+        "answer": 1,
+        "draggable": true
+      },
+      {
+        "code": "1-2",
+        "question": "移動尺或小棒棒糖，量量看小棒棒糖長幾公分？",
+        "object": {
+          "name": "小棒棒糖",
+          "shape": "lollipop",
+          "color": "#ec407a",
+          "length": 8,
+          "start": 2
+        },
+        "answer": 8,
+        "draggable": true
+      },
+      {
+        "code": "1-3",
+        "question": "移動尺或長尾夾，量量看長尾夾長幾公分？",
+        "object": {
+          "name": "長尾夾",
+          "shape": "clip",
+          "color": "#37474f",
+          "length": 3,
+          "start": 2
+        },
+        "answer": 3,
+        "draggable": true
+      },
+      {
+        "code": "1-4",
+        "question": "移動尺或笑臉貼紙，量量看笑臉貼紙長幾公分？",
+        "object": {
+          "name": "笑臉貼紙",
+          "shape": "smile",
+          "color": "#ffeb3b",
+          "length": 2,
+          "start": 2
+        },
+        "answer": 2,
+        "draggable": true
+      },
+      {
+        "code": "1-5",
+        "question": "移動尺或比讚貼紙，量量看比讚貼紙長幾公分？",
+        "object": {
+          "name": "比讚貼紙",
+          "shape": "thumb",
+          "color": "#ffee58",
+          "length": 4,
+          "start": 2
+        },
+        "answer": 4,
+        "draggable": true
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "question": "移動尺或大棒棒糖，量量看大棒棒糖長幾公分？",
+        "object": {
+          "name": "大棒棒糖",
+          "shape": "lollipop",
+          "color": "#ab47bc",
+          "length": 13,
+          "start": 2
+        },
+        "answer": 13,
+        "draggable": true
+      },
+      {
+        "code": "2-2",
+        "question": "移動尺或釘書機，量量看釘書機長幾公分？",
+        "object": {
+          "name": "釘書機",
+          "shape": "stapler",
+          "color": "#1e88e5",
+          "length": 10,
+          "start": 2
+        },
+        "answer": 10,
+        "draggable": true
+      },
+      {
+        "code": "2-3",
+        "question": "移動尺或原子筆，量量看原子筆長幾公分？",
+        "object": {
+          "name": "原子筆",
+          "shape": "pen",
+          "color": "#42a5f5",
+          "length": 15,
+          "start": 0
+        },
+        "answer": 15,
+        "draggable": true
+      },
+      {
+        "code": "2-4",
+        "question": "移動尺或湯匙，量量看湯匙長幾公分？",
+        "object": {
+          "name": "湯匙",
+          "shape": "spoon",
+          "color": "#cfd8dc",
+          "length": 12,
+          "start": 2
+        },
+        "answer": 12,
+        "draggable": true
+      },
+      {
+        "code": "2-5",
+        "question": "移動尺或鉛筆，量量看鉛筆長幾公分？",
+        "object": {
+          "name": "鉛筆",
+          "shape": "pencil",
+          "color": "#ffb300",
+          "length": 11,
+          "start": 2
+        },
+        "answer": 11,
+        "draggable": true
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "question": "用直尺量量看，釘子高幾公分？",
+        "object": {
+          "name": "釘子",
+          "shape": "nail",
+          "color": "#9e9e9e",
+          "length": 4,
+          "start": 1
+        },
+        "answer": 4,
+        "vertical": true,
+        "draggable": true
+      },
+      {
+        "code": "3-2",
+        "question": "用直尺量量看，牛奶糖高幾公分？",
+        "object": {
+          "name": "牛奶糖",
+          "shape": "caramel",
+          "color": "#ffcc80",
+          "length": 8,
+          "start": 1
+        },
+        "answer": 8,
+        "vertical": true,
+        "draggable": true
+      },
+      {
+        "code": "3-3",
+        "question": "用直尺量量看，玩具旗桿高幾公分？",
+        "object": {
+          "name": "玩具旗桿",
+          "shape": "flag",
+          "color": "#e53935",
+          "length": 10,
+          "start": 0
+        },
+        "answer": 10,
+        "vertical": true,
+        "draggable": true
+      },
+      {
+        "code": "3-4",
+        "question": "用直尺量量看，泡泡水高幾公分？",
+        "object": {
+          "name": "泡泡水",
+          "shape": "bubble",
+          "color": "#4fc3f7",
+          "length": 9,
+          "start": 1
+        },
+        "answer": 9,
+        "vertical": true,
+        "draggable": true
+      },
+      {
+        "code": "3-5",
+        "question": "用直尺量量看，養樂多高幾公分？",
+        "object": {
+          "name": "養樂多",
+          "shape": "yakult",
+          "color": "#fff9c4",
+          "length": 7,
+          "start": 1
+        },
+        "answer": 7,
+        "vertical": true,
+        "draggable": true
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "question": "原子筆放在尺上，它長幾公分？",
+        "object": {
+          "name": "原子筆",
+          "shape": "pen",
+          "color": "#42a5f5",
+          "length": 10,
+          "start": 3
+        },
+        "answer": 10
+      },
+      {
+        "code": "4-2",
+        "question": "魔術方塊放在尺上，它長幾公分？",
+        "object": {
+          "name": "魔術方塊",
+          "shape": "cube",
+          "color": "#7e57c2",
+          "length": 6,
+          "start": 2
+        },
+        "answer": 6
+      },
+      {
+        "code": "4-3",
+        "question": "迴紋針放在尺上，它長幾公分？",
+        "object": {
+          "name": "迴紋針",
+          "shape": "paperclip",
+          "color": "#78909c",
+          "length": 3,
+          "start": 1
+        },
+        "answer": 3
+      }
+    ]
+  ]
+}
