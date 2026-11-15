@@ -1,0 +1,197 @@
+{
+  "id": "MA2016",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "數數看積木，把數填進定位板。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "hundreds": 1,
+        "tens": 4,
+        "ones": 3,
+        "answer": 143
+      },
+      {
+        "code": "1-2",
+        "hundreds": 1,
+        "tens": 3,
+        "ones": 5,
+        "answer": 135
+      },
+      {
+        "code": "1-3",
+        "hundreds": 1,
+        "tens": 6,
+        "ones": 4,
+        "answer": 164
+      },
+      {
+        "code": "1-4",
+        "hundreds": 1,
+        "tens": 8,
+        "ones": 2,
+        "answer": 182
+      },
+      {
+        "code": "1-5",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 7,
+        "answer": 157
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 1,
+        "answer": 101
+      },
+      {
+        "code": "2-2",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 5,
+        "answer": 105
+      },
+      {
+        "code": "2-3",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 7,
+        "answer": 107
+      },
+      {
+        "code": "2-4",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 4,
+        "answer": 104
+      },
+      {
+        "code": "2-5",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 8,
+        "answer": 108
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "hundreds": 2,
+        "tens": 0,
+        "ones": 0,
+        "answer": 200
+      },
+      {
+        "code": "3-2",
+        "hundreds": 1,
+        "tens": 8,
+        "ones": 0,
+        "answer": 180
+      },
+      {
+        "code": "3-3",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 0,
+        "answer": 150
+      },
+      {
+        "code": "3-4",
+        "hundreds": 1,
+        "tens": 3,
+        "ones": 0,
+        "answer": 130
+      },
+      {
+        "code": "3-5",
+        "hundreds": 1,
+        "tens": 4,
+        "ones": 0,
+        "answer": 140
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 11,
+        "answer": 161
+      },
+      {
+        "code": "4-2",
+        "hundreds": 1,
+        "tens": 4,
+        "ones": 14,
+        "answer": 154
+      },
+      {
+        "code": "4-3",
+        "hundreds": 1,
+        "tens": 3,
+        "ones": 17,
+        "answer": 147
+      },
+      {
+        "code": "4-4",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 16,
+        "answer": 136
+      },
+      {
+        "code": "4-5",
+        "hundreds": 1,
+        "tens": 1,
+        "ones": 13,
+        "answer": 123
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "hundreds": 0,
+        "tens": 12,
+        "ones": 3,
+        "answer": 123
+      },
+      {
+        "code": "5-2",
+        "hundreds": 0,
+        "tens": 11,
+        "ones": 5,
+        "answer": 115
+      },
+      {
+        "code": "5-3",
+        "hundreds": 0,
+        "tens": 10,
+        "ones": 5,
+        "answer": 105
+      },
+      {
+        "code": "5-4",
+        "hundreds": 0,
+        "tens": 10,
+        "ones": 7,
+        "answer": 107
+      },
+      {
+        "code": "5-5",
+        "hundreds": 0,
+        "tens": 13,
+        "ones": 5,
+        "answer": 135
+      }
+    ]
+  ]
+}
