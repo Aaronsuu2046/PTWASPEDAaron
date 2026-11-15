@@ -8,12 +8,26 @@
       <p v-if="gameData.stem" class="stem-text">{{ gameData.stem }}</p>
       <p class="question-text">{{ gameData.question }}</p>
 
-      <!-- 關卡 1、2：基準數字表與三張碎片選項 -->
-      <template v-if="isFragment">
-        <div class="base-table" :style="gridStyle(base.cols)">
-          <span v-for="cell in baseCells" :key="cell" class="base-table__cell">
-            {{ cell <= base.maxShown ? cell : "" }}
-          </span>
+      <!-- 關卡 1、2：正式插圖的基準數字表與三張碎片圖；
+           基準表直的（關卡 1）時碎片排在右邊，橫的（關卡 2）時碎片排在下面 -->
+      <div
+        v-if="isFragment"
+        class="board"
+        :class="tallBase ? 'board--side' : 'board--stack'"
+      >
+        <div class="board__picture">
+          <svg
+            class="picture"
+            :viewBox="gameData.imageView.view.join(' ')"
+            role="img"
+            :aria-label="baseAlt"
+          >
+            <image
+              :href="imageOf(gameData.image)"
+              :width="gameData.imageView.size[0]"
+              :height="gameData.imageView.size[1]"
+            />
+          </svg>
         </div>
         <div class="fragment-list">
           <button
@@ -25,104 +39,42 @@
               'fragment-card--selected': selected === option.label,
               'fragment-card--wrong': wrong && selected === option.label,
             }"
+            :data-option="option.image"
             :aria-label="describe(option)"
             @click="select(option.label)"
           >
-            <!-- 選項只顯示碎片本身；label（ㄅ、ㄆ、ㄇ）只當內部答案代號，不顯示 -->
-            <div class="fragment" :style="fragmentStyle(option.cells)">
-              <span
-                v-for="([r, c, value], index) in option.cells"
-                :key="index"
-                class="fragment__cell"
-                :style="{ gridRow: r + 1, gridColumn: c + 1 }"
-              >
-                {{ value === null ? "" : value }}
-              </span>
-            </div>
+            <!-- 選項只顯示碎片圖；label（ㄅ、ㄆ、ㄇ）只當內部答案代號，不顯示 -->
+            <svg
+              class="fragment-card__img"
+              :viewBox="option.imageView.view.join(' ')"
+              aria-hidden="true"
+            >
+              <image
+                :href="imageOf(option.image)"
+                :width="option.imageView.size[0]"
+                :height="option.imageView.size[1]"
+              />
+            </svg>
           </button>
         </div>
-      </template>
+      </div>
 
-      <!-- 關卡 3～5：圖表與選項；座位表題的選項放在右側，節省高度 -->
-      <div v-else class="choice-area" :class="{ 'choice-area--side': isSeat }">
-        <!-- 關卡 3：4 月月曆 -->
-        <table v-if="gameData.type === 'calendar'" class="calendar">
-          <tr>
-            <th colspan="7" class="calendar__month">4 月</th>
-          </tr>
-          <tr>
-            <th
-              v-for="(day, col) in WEEKDAYS"
-              :key="day"
-              :class="{ 'calendar--weekend': col === 0 || col === 6 }"
-            >
-              {{ day }}
-            </th>
-          </tr>
-          <tr v-for="(week, weekIndex) in calendarWeeks" :key="weekIndex">
-            <td
-              v-for="(day, col) in week"
-              :key="col"
-              :class="{
-                'calendar--weekend': col === 0 || col === 6,
-                calendar__hidden: isHiddenCell(day, weekIndex),
-              }"
-            >
-              {{ day !== null && isDayVisible(day) ? day : "" }}
-            </td>
-          </tr>
-        </table>
-
-        <!-- 關卡 4：高鐵座位表 -->
-        <div v-else-if="gameData.type === 'hsr'" class="seat-map seat-map--hsr">
-          <span class="seat-map__window">窗戶</span>
-          <div class="seat-map__rows">
-            <div class="seat-map__row seat-map__sides">
-              <span>（左邊）</span>
-              <span>（右邊）</span>
-            </div>
-            <div v-for="row in [1, 2, 3, 4]" :key="row" class="seat-map__row">
-              <span v-if="row === 1" class="seat seat--luggage"
-                >行李放置區</span
-              >
-              <template v-else>
-                <span v-for="seat in ['E', 'D']" :key="seat" class="seat">
-                  {{ row }}{{ seat }}
-                </span>
-              </template>
-              <span class="seat-map__aisle">走道</span>
-              <span v-for="seat in ['C', 'B', 'A']" :key="seat" class="seat">
-                {{ row }}{{ seat }}
-              </span>
-            </div>
-            <span class="seat-map__more">⋮</span>
-          </div>
-          <span class="seat-map__window">窗戶</span>
+      <!-- 關卡 3～5：正式插圖（月曆、高鐵座位表、客運座位表）在左，文字選項在右 -->
+      <div v-else class="board board--side">
+        <div class="board__picture">
+          <svg
+            class="picture"
+            :viewBox="gameData.imageView.view.join(' ')"
+            role="img"
+            :aria-label="PICTURE_ALT[gameData.type] || ''"
+          >
+            <image
+              :href="imageOf(gameData.image)"
+              :width="gameData.imageView.size[0]"
+              :height="gameData.imageView.size[1]"
+            />
+          </svg>
         </div>
-
-        <!-- 關卡 5：客運座位表 -->
-        <div v-else-if="gameData.type === 'bus'" class="seat-map seat-map--bus">
-          <span class="seat-map__window">窗戶</span>
-          <div class="seat-map__rows">
-            <div class="seat-map__row seat-map__front">
-              <span class="seat-map__driver">司機</span>
-              <span class="seat-map__door">門</span>
-            </div>
-            <div class="seat-map__row seat-map__sides">
-              <span>（左邊）</span>
-              <span>（右邊）</span>
-            </div>
-            <div v-for="row in BUS_ROWS" :key="row" class="seat-map__row">
-              <span class="seat">{{ row * 3 + 2 }}</span>
-              <span class="seat">{{ row * 3 + 3 }}</span>
-              <span class="seat-map__aisle">走道</span>
-              <span class="seat">{{ row * 3 + 1 }}</span>
-            </div>
-            <span class="seat-map__more">⋮</span>
-          </div>
-          <span class="seat-map__window">窗戶</span>
-        </div>
-
         <div class="option-group">
           <button
             v-for="option in gameData.options"
@@ -144,7 +96,18 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
+import { getGameAssets } from "@/lib/get-assets.js";
 
+// 螢幕閱讀用的圖片說明（不含答案）
+const PICTURE_ALT = {
+  calendar: "4 月的月曆，只看得到前兩週的日期，其他被墨水遮住",
+  hsr: "高鐵座位表，左邊是 E、D，走道右邊是 C、B、A",
+  bus: "客運座位表，左邊兩排、走道右邊一排，座位號碼依序排列",
+};
+
+// 數字排列的規律：題圖與碎片圖都用正式插圖（src/assets/games/MA4172）
+// 題目 { code, type, image, imageView, question, options: [{ label, image?, imageView?, cells?, text? }], answer }
+// imageView { size: 原圖寬高, view: 去掉四周空白後要顯示的範圍 }：用 SVG viewBox 等比例顯示，不切到內容
 export default {
   name: "MA4172",
   props: {
@@ -156,8 +119,7 @@ export default {
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
-      WEEKDAYS: ["日", "一", "二", "三", "四", "五", "六"],
-      BUS_ROWS: [0, 1, 2, 3, 4],
+      PICTURE_ALT,
       selected: "",
       wrong: false,
       answered: false,
@@ -167,38 +129,17 @@ export default {
     gameIntroText() {
       return this.introText?.Content || "觀察數字排列的規律回答問題";
     },
-    isSeat() {
-      return ["hsr", "bus"].includes(this.gameData.type);
-    },
     isFragment() {
       return this.gameData.type === "fragment";
     },
-    base() {
-      return this.gameData.base || {};
+    // 基準表列數比欄數多（關卡 1）就是直的
+    tallBase() {
+      const { rows, cols } = this.gameData.base || {};
+      return rows > cols;
     },
-    // 基準表依「由左到右」或「依欄遞增」排列，輸出成逐列的格子
-    baseCells() {
-      const { rows, cols, order } = this.base;
-      const cells = [];
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          cells.push(order === "row" ? r * cols + c + 1 : c * rows + r + 1);
-        }
-      }
-      return cells;
-    },
-    calendarWeeks() {
-      const { firstWeekday, days } = this.gameData.calendar;
-      const cells = [
-        ...Array(firstWeekday).fill(null),
-        ...Array.from({ length: days }, (_, i) => i + 1),
-      ];
-      const weeks = [];
-      // 最後一週補空格，讓表格維持 7 欄
-      while (cells.length % 7 !== 0) cells.push(null);
-      for (let i = 0; i < cells.length; i += 7)
-        weeks.push(cells.slice(i, i + 7));
-      return weeks;
+    baseAlt() {
+      const { rows, cols, maxShown } = this.gameData.base || {};
+      return `${rows} 列 ${cols} 欄的數字表，從 1 寫到 ${maxShown}`;
     },
   },
   created() {
@@ -208,25 +149,8 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
-    // 原稿第一週之後被雲朵遮住：看不到的日期和月底後的空白都遮起來
-    isHiddenCell(day, weekIndex) {
-      if (day === null) return weekIndex > 0;
-      return !this.isDayVisible(day);
-    },
-    isDayVisible(day) {
-      const visible = this.gameData.calendar?.visibleDays;
-      return !visible || visible.includes(day);
-    },
-    gridStyle(cols) {
-      return { gridTemplateColumns: `repeat(${cols}, 1fr)` };
-    },
-    fragmentStyle(cells) {
-      const rows = Math.max(...cells.map(([r]) => r)) + 1;
-      const cols = Math.max(...cells.map(([, c]) => c)) + 1;
-      return {
-        gridTemplateRows: `repeat(${rows}, 2.3rem)`,
-        gridTemplateColumns: `repeat(${cols}, 2.3rem)`,
-      };
+    imageOf(name) {
+      return getGameAssets("MA4172", name);
     },
     // 紀錄與螢幕閱讀用選項的實際內容（文字選項的文字；碎片寫出上面看得到的數字）
     describe(option) {
@@ -291,12 +215,10 @@ export default {
 .game-area {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   background-color: $sub-color;
   border-radius: $border-radius;
   padding: $padding--small;
@@ -315,43 +237,83 @@ export default {
   text-align: center;
 }
 
-.base-table {
-  display: grid;
-  gap: 2px;
-  padding: 2px;
-  background-color: #8d6e63;
+// 題圖區：插圖等比例完整顯示（object-fit: contain），選項排在旁邊或下面
+.board {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
 
-  &__cell {
-    min-width: 2.2rem;
-    min-height: 1.6rem;
-    padding: 0.05rem 0.3rem;
-    font-size: 1rem;
-    text-align: center;
+  &--side {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  &--stack {
+    flex-direction: column;
+  }
+
+  &__picture {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
     background-color: #ffffff;
+    border-radius: 14px;
   }
+}
 
-  &__more {
-    margin: -0.6rem 0 0;
-    font-size: 1.2rem;
-    line-height: 1;
-  }
+// SVG 預設 preserveAspectRatio="xMidYMid meet"：等比例縮放、完整顯示
+.picture {
+  width: 100%;
+  height: 100%;
+  user-select: none;
 }
 
 .fragment-list {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.8rem;
+
+  .board--side & {
+    flex: 0 0 44%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .board--stack & {
+    flex: 0 0 42%;
+    min-height: 0;
+    justify-content: center;
+  }
 }
 
 .fragment-card {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1rem;
+  justify-content: center;
+  padding: 0.4rem;
   background-color: #ffffff;
-  border: 3px solid #bdbdbd;
+  border: 4px solid #bdbdbd;
   border-radius: 12px;
   cursor: pointer;
+
+  .board--stack & {
+    flex: 0 1 12rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+  }
 
   &--selected {
     border-color: #1e88e5;
@@ -364,178 +326,25 @@ export default {
   }
 }
 
-.fragment {
-  display: grid;
-
-  &__cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: $font-bold;
-    background-color: #fff8e1;
-    border: 2px solid #8d6e63;
-    margin: -1px;
-  }
-}
-
-.calendar {
-  border-collapse: collapse;
-  background-color: #ffffff;
-  font-size: 1.2rem;
-
-  &--weekend {
-    color: #d32f2f;
-  }
-
-  // 原稿用雲朵遮住的日期
-  &__hidden {
-    background-color: #cfe8f7;
-    border-color: #cfe8f7 !important;
-  }
-
-  &__month {
-    font-size: 1.3rem;
-    background-color: #ffcc80 !important;
-  }
-
-  th,
-  td {
-    width: 3rem;
-    height: 2.1rem;
-    text-align: center;
-    border: 2px solid #8d6e63;
-  }
-
-  th {
-    background-color: #ffe0b2;
-  }
-}
-
-// 窗戶在每一排的左右兩側，中間是座位
-.seat-map {
-  display: flex;
-  align-items: stretch;
-  gap: 0.5rem;
-
-  &__rows {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-  }
-
-  &__row {
-    display: grid;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  &--hsr &__row {
-    grid-template-columns: repeat(2, 3.4rem) 4rem repeat(3, 3.4rem);
-  }
-
-  &--bus &__row {
-    grid-template-columns: repeat(2, 3.4rem) 4rem 3.4rem;
-  }
-
-  &__aisle {
-    width: 4rem;
-    text-align: center;
-    color: #6d4c41;
-    font-size: 0.95rem;
-    letter-spacing: 0.3em;
-  }
-
-  &__window {
-    display: flex;
-    align-items: center;
-    writing-mode: vertical-rl;
-    letter-spacing: 0.4em;
-    padding: 0 0.3rem;
-    font-size: 0.95rem;
-    color: #01579b;
-    background-color: #b3e5fc;
-    border-radius: 6px;
-  }
-
-  &__more {
-    line-height: 1;
-  }
-}
-
-.seat-map__sides {
-  display: flex !important;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.9rem;
-  color: #555555;
-}
-
-.seat-map__front {
-  display: flex !important;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.seat-map__driver,
-.seat-map__door {
-  padding: 0.2rem 0.8rem;
-  font-size: 0.95rem;
-  background-color: #e0e0e0;
-  border-radius: 6px;
-}
-
-.seat--luggage {
-  grid-column: span 2;
-  font-size: 0.8rem;
-  line-height: 1.3;
-  background-color: #eeeeee;
-}
-
-.seat {
-  min-width: 0;
-  padding: 0.2rem 0.4rem;
-  font-size: 1.15rem;
-  font-weight: $font-bold;
-  text-align: center;
-  background-color: #ffffff;
-  border: 2px solid #8d6e63;
-  border-radius: 8px 8px 4px 4px;
-}
-
-.choice-area {
+.option-group {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-
-  &--side {
-    flex-direction: row;
-    gap: 2.5rem;
-
-    .option-group {
-      flex-direction: column;
-    }
-  }
-}
-
-.option-group {
-  display: flex;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 1.2rem;
 
   button {
     @extend .button-basic;
     border: none;
     min-width: 9rem;
-    padding: 0.5rem 1.2rem;
-    font-size: 24px;
+    padding: 0.6rem 1.2rem;
+    font-size: 26px;
     background-color: $primary-btn-bg;
   }
 }
 
 .option-text {
-  margin: 0;
+  white-space: nowrap;
 }
 
 .button--onclick {
@@ -545,5 +354,16 @@ export default {
 
 .option--wrong {
   outline: 3px solid #e53935;
+}
+
+@media (max-width: 1100px) {
+  .question-text {
+    font-size: 1.35rem;
+  }
+
+  .option-group button {
+    min-width: 7.5rem;
+    font-size: 22px;
+  }
 }
 </style>
