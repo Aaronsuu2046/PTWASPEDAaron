@@ -1,0 +1,451 @@
+{
+  "id": "MA2032",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "用尺量量看，當個新手測量師！"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "mode": "fixed",
+        "question": "橡皮擦長幾公分？",
+        "objects": [
+          {
+            "name": "橡皮擦",
+            "shape": "eraser",
+            "color": "#f48fb1",
+            "start": 0,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      },
+      {
+        "code": "1-2",
+        "mode": "fixed",
+        "question": "鈕扣長幾公分？",
+        "objects": [
+          {
+            "name": "鈕扣",
+            "shape": "button",
+            "color": "#42a5f5",
+            "start": 0,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      },
+      {
+        "code": "1-3",
+        "mode": "fixed",
+        "question": "豆子長幾公分？",
+        "objects": [
+          {
+            "name": "豆子",
+            "shape": "bean",
+            "color": "#8bc34a",
+            "start": 0,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "mode": "fixed",
+        "question": "小螞蟻長幾公分？（看看頭和尾在哪裡）",
+        "objects": [
+          {
+            "name": "小螞蟻",
+            "shape": "ant",
+            "color": "#5d4037",
+            "start": 11,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      },
+      {
+        "code": "2-2",
+        "mode": "fixed",
+        "question": "小螞蟻長幾公分？（看看頭和尾在哪裡）",
+        "objects": [
+          {
+            "name": "小螞蟻",
+            "shape": "ant",
+            "color": "#5d4037",
+            "start": 2,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      },
+      {
+        "code": "2-3",
+        "mode": "fixed",
+        "question": "小螞蟻長幾公分？（看看頭和尾在哪裡）",
+        "objects": [
+          {
+            "name": "小螞蟻",
+            "shape": "ant",
+            "color": "#5d4037",
+            "start": 6,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      },
+      {
+        "code": "2-4",
+        "mode": "fixed",
+        "question": "小螞蟻長幾公分？（看看頭和尾在哪裡）",
+        "objects": [
+          {
+            "name": "小螞蟻",
+            "shape": "ant",
+            "color": "#5d4037",
+            "start": 9,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      },
+      {
+        "code": "2-5",
+        "mode": "fixed",
+        "question": "小螞蟻長幾公分？（看看頭和尾在哪裡）",
+        "objects": [
+          {
+            "name": "小螞蟻",
+            "shape": "ant",
+            "color": "#5d4037",
+            "start": 13,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [1]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "mode": "drag",
+        "question": "移動尺或貼紙，量量看這排貼紙長幾公分？",
+        "objects": [
+          {
+            "name": "貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 2,
+            "length": 3,
+            "draggable": true
+          }
+        ],
+        "rulerDraggable": true,
+        "answers": [3]
+      },
+      {
+        "code": "3-2",
+        "mode": "drag",
+        "question": "移動尺或貼紙，量量看這排貼紙長幾公分？",
+        "objects": [
+          {
+            "name": "貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 2,
+            "length": 4,
+            "draggable": true
+          }
+        ],
+        "rulerDraggable": true,
+        "answers": [4]
+      },
+      {
+        "code": "3-3",
+        "mode": "drag",
+        "question": "移動尺或貼紙，量量看這排貼紙長幾公分？",
+        "objects": [
+          {
+            "name": "貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 2,
+            "length": 5,
+            "draggable": true
+          }
+        ],
+        "rulerDraggable": true,
+        "answers": [5]
+      },
+      {
+        "code": "3-4",
+        "mode": "drag",
+        "question": "移動尺或貼紙，量量看這排貼紙長幾公分？",
+        "objects": [
+          {
+            "name": "貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 2,
+            "length": 8,
+            "draggable": true
+          }
+        ],
+        "rulerDraggable": true,
+        "answers": [8]
+      },
+      {
+        "code": "3-5",
+        "mode": "drag",
+        "question": "移動尺或貼紙，量量看這排貼紙長幾公分？",
+        "objects": [
+          {
+            "name": "貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 2,
+            "length": 12,
+            "draggable": true
+          }
+        ],
+        "rulerDraggable": true,
+        "answers": [12]
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "mode": "join",
+        "question": "把藍色貼紙接在黃色貼紙後面，兩排貼紙接起來一共長幾公分？",
+        "objects": [
+          {
+            "name": "黃色貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 0,
+            "length": 3,
+            "draggable": false
+          },
+          {
+            "name": "藍色貼紙",
+            "shape": "stickers",
+            "color": "#42a5f5",
+            "start": 12,
+            "length": 2,
+            "draggable": true
+          }
+        ],
+        "answers": [5]
+      },
+      {
+        "code": "4-2",
+        "mode": "join",
+        "question": "把藍色貼紙接在黃色貼紙後面，兩排貼紙接起來一共長幾公分？",
+        "objects": [
+          {
+            "name": "黃色貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 0,
+            "length": 4,
+            "draggable": false
+          },
+          {
+            "name": "藍色貼紙",
+            "shape": "stickers",
+            "color": "#42a5f5",
+            "start": 10,
+            "length": 4,
+            "draggable": true
+          }
+        ],
+        "answers": [8]
+      },
+      {
+        "code": "4-3",
+        "mode": "join",
+        "question": "把藍色貼紙接在黃色貼紙後面，兩排貼紙接起來一共長幾公分？",
+        "objects": [
+          {
+            "name": "黃色貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 0,
+            "length": 5,
+            "draggable": false
+          },
+          {
+            "name": "藍色貼紙",
+            "shape": "stickers",
+            "color": "#42a5f5",
+            "start": 12,
+            "length": 2,
+            "draggable": true
+          }
+        ],
+        "answers": [7]
+      },
+      {
+        "code": "4-4",
+        "mode": "join",
+        "question": "把藍色貼紙接在黃色貼紙後面，兩排貼紙接起來一共長幾公分？",
+        "objects": [
+          {
+            "name": "黃色貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 0,
+            "length": 6,
+            "draggable": false
+          },
+          {
+            "name": "藍色貼紙",
+            "shape": "stickers",
+            "color": "#42a5f5",
+            "start": 10,
+            "length": 4,
+            "draggable": true
+          }
+        ],
+        "answers": [10]
+      },
+      {
+        "code": "4-5",
+        "mode": "join",
+        "question": "把藍色貼紙接在黃色貼紙後面，兩排貼紙接起來一共長幾公分？",
+        "objects": [
+          {
+            "name": "黃色貼紙",
+            "shape": "stickers",
+            "color": "#ffb300",
+            "start": 0,
+            "length": 7,
+            "draggable": false
+          },
+          {
+            "name": "藍色貼紙",
+            "shape": "stickers",
+            "color": "#42a5f5",
+            "start": 12,
+            "length": 2,
+            "draggable": true
+          }
+        ],
+        "answers": [9]
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "mode": "fixed",
+        "question": "量量看，每樣東西各長幾公分？",
+        "objects": [
+          {
+            "name": "石頭",
+            "shape": "stone",
+            "color": "#90a4ae",
+            "start": 2,
+            "length": 4,
+            "draggable": false
+          },
+          {
+            "name": "蝌蚪",
+            "shape": "tadpole",
+            "color": "#455a64",
+            "start": 7,
+            "length": 2,
+            "draggable": false
+          },
+          {
+            "name": "彈珠",
+            "shape": "marble",
+            "color": "#7e57c2",
+            "start": 11,
+            "length": 1,
+            "draggable": false
+          }
+        ],
+        "answers": [4, 2, 1]
+      },
+      {
+        "code": "5-2",
+        "mode": "fixed",
+        "question": "量量看，每樣東西各長幾公分？",
+        "objects": [
+          {
+            "name": "巧克力",
+            "shape": "choco",
+            "color": "#795548",
+            "start": 0,
+            "length": 12,
+            "draggable": false
+          },
+          {
+            "name": "棒棒糖",
+            "shape": "lollipop",
+            "color": "#ec407a",
+            "start": 3,
+            "length": 8,
+            "draggable": false
+          },
+          {
+            "name": "草莓軟糖",
+            "shape": "gummy",
+            "color": "#e53935",
+            "start": 9,
+            "length": 2,
+            "draggable": false
+          }
+        ],
+        "answers": [12, 8, 2]
+      },
+      {
+        "code": "5-3",
+        "mode": "fixed",
+        "question": "量量看，每樣東西各長幾公分？",
+        "objects": [
+          {
+            "name": "長尾夾",
+            "shape": "clip",
+            "color": "#37474f",
+            "start": 5,
+            "length": 3,
+            "draggable": false
+          },
+          {
+            "name": "迴紋針",
+            "shape": "paperclip",
+            "color": "#78909c",
+            "start": 1,
+            "length": 5,
+            "draggable": false
+          },
+          {
+            "name": "釘書機",
+            "shape": "stapler",
+            "color": "#1e88e5",
+            "start": 3,
+            "length": 10,
+            "draggable": false
+          }
+        ],
+        "answers": [3, 5, 10]
+      }
+    ]
+  ]
+}
