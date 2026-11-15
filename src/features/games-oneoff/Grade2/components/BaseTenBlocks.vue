@@ -30,6 +30,7 @@
         v-for="i in tens"
         :key="`t${i}`"
         class="rod"
+        :class="{ 'is-merging': mergingAt('ten', i) }"
         viewBox="0 0 10 100"
         data-block="ten"
         aria-label="十"
@@ -52,6 +53,7 @@
         v-for="i in ones"
         :key="`o${i}`"
         class="cube"
+        :class="{ 'is-merging': mergingAt('one', i) }"
         viewBox="0 0 10 10"
         data-block="one"
         aria-label="一"
@@ -79,6 +81,13 @@ export default {
     tens: { type: Number, default: 0 },
     ones: { type: Number, default: 0 },
     unit: { type: Number, default: 16 },
+    // 選填：換算動畫，把前 count 個 kind（"one"／"ten"）標成正在合併
+    highlight: { type: Object, default: null },
+  },
+  methods: {
+    mergingAt(kind, i) {
+      return this.highlight?.kind === kind && i <= (this.highlight.count ?? 10);
+    },
   },
 };
 </script>
@@ -102,6 +111,26 @@ export default {
       grid-template-columns: repeat(5, var(--unit));
       gap: calc(var(--unit) * 0.3);
     }
+  }
+}
+
+// 換算時，要合併的 10 個積木閃動並縮小
+.is-merging {
+  animation: merge 0.7s ease-in-out forwards;
+}
+
+@keyframes merge {
+  0% {
+    transform: scale(1);
+    filter: none;
+  }
+  40% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 6px #ff4081);
+  }
+  100% {
+    transform: scale(0.4);
+    opacity: 0.2;
   }
 }
 
