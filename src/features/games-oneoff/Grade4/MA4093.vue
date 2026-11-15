@@ -14,7 +14,6 @@
             :capacity="gameData.den"
             :count="gameData.den"
           />
-          <span class="figure__label">滿滿 1 {{ gameData.unit }}</span>
         </div>
         <div class="figure">
           <ContainerFigure
@@ -22,7 +21,6 @@
             :capacity="gameData.den"
             :count="gameData.part"
           />
-          <span class="figure__label">沒有裝滿</span>
         </div>
       </div>
 
@@ -106,7 +104,7 @@ export default {
   },
   computed: {
     gameIntroText() {
-      return this.introText?.Content || "用帶分數或假分數回答問題。";
+      return this.introText?.Content || "用帶分數和假分數表示";
     },
     expected() {
       const { mixed, improper } = this.gameData;
@@ -266,12 +264,6 @@ export default {
   :deep(.container-figure) {
     flex: 1;
     min-height: 0;
-  }
-
-  &__label {
-    font-size: 1.2rem;
-    font-weight: $font-bold;
-    color: #5d4037;
   }
 }
 
