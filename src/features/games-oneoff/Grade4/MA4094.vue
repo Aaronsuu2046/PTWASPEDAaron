@@ -30,31 +30,39 @@
         </div>
       </div>
 
-      <div class="equation">
-        <span class="equation__whole">{{ gameData.whole }}</span>
-        <span class="equation__sign">＝</span>
-        <span class="frac">
-          <button
-            type="button"
-            class="box"
-            :class="{
-              'box--active': padOpen && !answered,
-              'box--wrong': wrong,
-              'box--correct': answered,
-            }"
-            data-key="num"
-            data-pad-field
-            aria-label="分子"
-            @click="openPad"
-          >
-            {{ value }}
-          </button>
-          <span class="frac__bar" />
-          <span class="frac__den">{{ gameData.den }}</span>
-        </span>
-      </div>
+      <div class="answer-row">
+        <div class="equation">
+          <span class="equation__whole">{{ gameData.whole }}</span>
+          <span class="equation__sign">＝</span>
+          <span class="frac">
+            <button
+              type="button"
+              class="box"
+              :class="{
+                'box--active': padOpen && !answered,
+                'box--wrong': wrong,
+                'box--correct': answered,
+              }"
+              data-key="num"
+              data-pad-field
+              aria-label="分子"
+              @click="openPad"
+            >
+              {{ value }}
+            </button>
+            <span class="frac__bar" />
+            <span class="frac__den">{{ gameData.den }}</span>
+          </span>
+        </div>
 
-      <p v-if="feedback" class="feedback">{{ feedback }}</p>
+        <div v-if="feedback" class="help">
+          <p class="feedback">{{ feedback }}</p>
+          <!-- 答錯時依這一題的圓個數與分母，一步一步提示怎麼數（不直接給答案） -->
+          <ol v-if="steps.length" class="steps">
+            <li v-for="step in steps" :key="step">{{ step }}</li>
+          </ol>
+        </div>
+      </div>
 
       <FieldPad
         :field="padOpen && !answered ? padEl : null"
@@ -71,6 +79,7 @@ import TapShapes from "./games/Fraction/TapShapes.vue";
 import FieldPad from "./games/Common/FieldPad.vue";
 
 const MAX_LENGTH = 2;
+const DIGITS = "零一二三四五六七八九十";
 
 // 整數化為假分數：「整數 ＝ □ / 分母」只填分子；
 // 下方畫同樣多個圓、每個按分母等分，可點擊塗色當輔助（不列入判定）
@@ -93,12 +102,17 @@ export default {
       paintedCount: 0,
       wrong: false,
       feedback: "",
+      steps: [],
       answered: false,
     };
   },
   computed: {
     gameIntroText() {
       return this.introText?.Content || "把整數化為假分數。";
+    },
+    // 「幾分之一」的讀法，例如分母 4 →「四分之一」
+    unitFraction() {
+      return `${DIGITS[this.gameData.den]}分之一`;
     },
   },
   created() {
@@ -117,6 +131,7 @@ export default {
       if (this.answered) return;
       this.wrong = false;
       this.feedback = "";
+      this.steps = [];
       if (key === "clear") this.value = "";
       else if (key === "←") this.value = this.value.slice(0, -1);
       else if (/^\d$/.test(key) && this.value.length < MAX_LENGTH)
@@ -140,12 +155,18 @@ export default {
         this.answered = true;
         this.wrong = false;
         this.feedback = "";
+        this.steps = [];
         this.padOpen = false;
         this.$emit("play-effect", "CorrectSound");
         this.$emit("next-question");
       } else {
         this.wrong = true;
-        this.feedback = `1 個圓有 ${den} 份，${whole} 個圓共有幾份？`;
+        this.feedback = "再想想看，照下面的步驟數一數：";
+        this.steps = [
+          `先確認：有 ${whole} 個完整的圓。`,
+          `每一個圓都被分成 ${den} 份，1 份就是 1 個「${this.unitFraction}」。`,
+          `${whole} 個圓合起來，共有幾個「${this.unitFraction}」？可以塗色數數看。`,
+        ];
         this.$emit("play-effect", "WrongSound");
       }
     },
@@ -319,11 +340,37 @@ export default {
   }
 }
 
+// 算式在左、答錯提示在右，避免提示把上面的圓擠小
+.answer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
 .feedback {
   margin: 0;
   font-size: 1.3rem;
   font-weight: $font-bold;
   color: #c62828;
+}
+
+.steps {
+  margin: 0;
+  padding: 0.4rem 1rem 0.4rem 2.4rem;
+  font-size: 1.2rem;
+  font-weight: $font-bold;
+  line-height: 1.5;
+  color: #4e342e;
+  background-color: #fff8e1;
+  border: 3px solid #ffb74d;
+  border-radius: 14px;
 }
 
 @media (max-width: 1100px), (max-height: 760px) {
