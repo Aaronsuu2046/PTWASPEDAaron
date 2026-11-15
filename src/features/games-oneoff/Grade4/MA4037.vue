@@ -53,8 +53,20 @@
               <path :d="dirHint.path" />
               <polygon :points="dirHint.head" />
             </g>
-            <!-- 指針：只由動畫轉動，學生直接選答案 -->
-            <g class="hand hand--static">
+            <!-- 指針：關卡 1～3 只由動畫轉動；關卡 4 可拖動當作答輔助（答案仍用選項） -->
+            <g
+              :data-drag="canDragClock ? 'clock' : null"
+              class="hand"
+              :class="{ 'hand--static': !canDragClock }"
+            >
+              <line
+                v-if="canDragClock"
+                :x1="C[0]"
+                :y1="C[1]"
+                :x2="handEnd[0]"
+                :y2="handEnd[1]"
+                class="hand__hit"
+              />
               <line
                 :x1="C[0]"
                 :y1="C[1]"
@@ -137,11 +149,18 @@
             </button>
             <span class="tools__how">看指針怎麼轉，再選出答案</span>
           </template>
-          <span v-else class="tools__how">
-            指針從 {{ gameData.start }} 開始{{
-              DIR[gameData.dir]
-            }}轉，想想看會停在哪裡
-          </span>
+          <template v-else>
+            <button
+              type="button"
+              class="tool-btn tool-btn--reset"
+              @click="resetPointer"
+            >
+              指針回到起點
+            </button>
+            <span class="tools__how">
+              可以拖動紅色指針{{ DIR[gameData.dir] }}轉轉看，再選出答案
+            </span>
+          </template>
         </div>
       </div>
 
@@ -224,7 +243,8 @@ const onClock = (deg, r) => [
 // 量角器上的方向（數學角：0° 在右、逆時針）
 const polar = (deg, r) => [r * Math.cos(rad(deg)), -r * Math.sin(rad(deg))];
 
-// 旋轉角：關卡 1～4 看鐘面指針旋轉後選答案（三選一）；關卡 5 在量角器上做兩段旋轉
+// 旋轉角：關卡 1～4 看鐘面指針旋轉後選答案（三選一），關卡 4 可拖動指針輔助；
+// 關卡 5 在量角器上做兩段旋轉
 export default {
   name: "MA4037",
   components: { ProtractorTool },
@@ -248,6 +268,7 @@ export default {
       LETTERS,
       // 鐘面：動畫中從起點算起的轉動量（順時針為正）
       turn: 0,
+      rawTurn: 0,
       timer: null,
       // 量角器：指針方向與第一次鎖定的位置
       startPhi: start,
@@ -272,6 +293,10 @@ export default {
     // 關卡 4 問「會停在哪個數字」，播放到終點會直接看到答案，所以不播放
     canPlay() {
       return !this.isProtractor && this.gameData.kind !== "end";
+    },
+    // 關卡 4：鐘面指針可以拖動（和關卡 5 一樣拖紅色指針），選項仍是正式答案
+    canDragClock() {
+      return this.gameData.kind === "end";
     },
     expectedTurn() {
       const q = this.gameData;
@@ -418,24 +443,50 @@ export default {
       const kind = event.target.closest?.("[data-drag]")?.dataset.drag;
       if (!kind) return;
       this.drag = { kind };
-      this.feedback = "";
+      if (kind === "clock") cancelAnimationFrame(this.timer);
+      if (kind !== "clock") this.feedback = "";
       event.currentTarget.setPointerCapture?.(event.pointerId);
     },
     onDrag(event) {
       if (!this.drag) return;
       const p = this.toLocal(event);
+      if (this.drag.kind === "clock") {
+        this.dragClock(p);
+        return;
+      }
       const deg = (Math.atan2(-(p[1] - P[1]), p[0] - P[0]) * 180) / Math.PI;
       // 只在上半圓；拖到下面時停在最近的一端
       this.phi = deg >= 0 ? deg : deg < -90 ? 180 : 0;
     },
+    // 鐘面指針繞中心轉：累計轉動量（順時針為正），沿每一小格（6°）移動，
+    // 放開時靠近整大格（30°）就對齊
+    dragClock(p) {
+      const deg = (Math.atan2(p[0] - C[0], -(p[1] - C[1])) * 180) / Math.PI;
+      let delta = deg - (this.startDeg + this.rawTurn);
+      delta = ((((delta + 180) % 360) + 360) % 360) - 180;
+      this.rawTurn = Math.max(-354, Math.min(354, this.rawTurn + delta));
+      this.turn = Math.round(this.rawTurn / 6) * 6;
+    },
     endDrag() {
       if (!this.drag) return;
+      if (this.drag.kind === "clock") {
+        const near = Math.round(this.turn / 30) * 30;
+        if (Math.abs(near - this.turn) <= 6) this.turn = near;
+        this.rawTurn = this.turn;
+        this.drag = null;
+        return;
+      }
       const near = Math.round(this.phi / 10) * 10;
       if (Math.abs(near - this.phi) <= 3) this.phi = near;
       this.drag = null;
     },
     resetPointer() {
       if (this.solved) return;
+      if (this.canDragClock) {
+        this.turn = 0;
+        this.rawTurn = 0;
+        return;
+      }
       this.phi = this.lockedPhi ?? this.startPhi;
       this.feedback = "";
     },

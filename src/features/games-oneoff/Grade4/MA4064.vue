@@ -72,6 +72,7 @@
           :size="110"
           :start-x="boardWidth - 150"
           :start-y="boardHeight - 14"
+          snap-selector=".tri-card polygon"
           @tap="forwardTap"
         />
       </div>
@@ -88,7 +89,9 @@
             {{ showSquare ? "收起三角板" : "拿出三角板" }}
           </button>
           <template v-if="showSquare">
-            <p class="tools__hint">拖曳移動，按鈕旋轉</p>
+            <p class="tools__hint">
+              拖曳移動，按鈕旋轉；直角靠近三角形的頂點會自動對齊
+            </p>
             <div class="tools__buttons">
               <button type="button" class="tool" @click="rotate(-15)">
                 左轉
