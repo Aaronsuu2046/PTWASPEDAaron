@@ -1,0 +1,125 @@
+{
+  "id": "MA2035",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "先算一算，再用尺和圖驗證看看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "type": "join",
+        "question": "火車頭長 2 公分，車廂一共長 9 公分，接起來一共多長？",
+        "a": 2,
+        "b": 9,
+        "op": "+",
+        "answer": 11,
+        "objects": [
+          {
+            "name": "火車頭",
+            "shape": "train-head",
+            "color": "#e53935",
+            "length": 2
+          },
+          {
+            "name": "車廂",
+            "shape": "train-cars",
+            "color": "#42a5f5",
+            "length": 9
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "type": "join",
+        "question": "彩色珠珠吊飾前段長 8 公分，後段長 3 公分，接起來一共多長？",
+        "a": 8,
+        "b": 3,
+        "op": "+",
+        "answer": 11,
+        "objects": [
+          {
+            "name": "前段",
+            "shape": "beads",
+            "color": "#ffffff",
+            "length": 8
+          },
+          {
+            "name": "後段",
+            "shape": "beads",
+            "color": "#ffffff",
+            "length": 3
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "type": "compare",
+        "question": "湯匙長 13 公分，袋子長 11 公分，湯匙比袋子長多少公分？",
+        "a": 13,
+        "b": 11,
+        "op": "-",
+        "answer": 2,
+        "objects": [
+          {
+            "name": "湯匙",
+            "shape": "spoon",
+            "color": "#cfd8dc",
+            "length": 13
+          },
+          {
+            "name": "袋子",
+            "shape": "bag",
+            "color": "#a1887f",
+            "length": 11
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "type": "cut",
+        "question": "紙膠帶原來長 9 公分，剪掉 3 公分，還剩下多少公分？",
+        "a": 9,
+        "b": 3,
+        "op": "-",
+        "answer": 6,
+        "objects": [
+          {
+            "name": "紙膠帶",
+            "shape": "tape-stripe",
+            "color": "#ab47bc",
+            "length": 9
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "type": "cut",
+        "question": "吸管原來長 14 公分，剪掉 5 公分，還剩下多長？",
+        "a": 14,
+        "b": 5,
+        "op": "-",
+        "answer": 9,
+        "objects": [
+          {
+            "name": "吸管",
+            "shape": "straw",
+            "color": "#43a047",
+            "length": 14
+          }
+        ]
+      }
+    ]
+  ]
+}

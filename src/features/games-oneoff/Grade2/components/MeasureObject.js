@@ -489,6 +489,91 @@ const ObjectShape = {
                 "stroke-width": 2,
               }),
         ]);
+      case "train-head":
+        return h("g", [
+          h("rect", {
+            x: 1,
+            y: 6,
+            width: w - 2,
+            height: OH - 16,
+            rx: 6,
+            fill: color,
+            stroke: "#37474f",
+            "stroke-width": 2,
+          }),
+          h("rect", {
+            x: w * 0.55,
+            y: 1,
+            width: w * 0.3,
+            height: 10,
+            fill: "#37474f",
+          }),
+          h("circle", { cx: w * 0.3, cy: OH - 6, r: 5, fill: "#37474f" }),
+          h("circle", { cx: w * 0.75, cy: OH - 6, r: 5, fill: "#37474f" }),
+        ]);
+      case "train-cars":
+        return h(
+          "g",
+          Array.from(
+            { length: Math.max(1, Math.round(w / cm / 3)) },
+            (_, k, arr) => {
+              const cw = w / Math.max(1, Math.round(w / cm / 3));
+              return h("g", [
+                h("rect", {
+                  x: k * cw + 2,
+                  y: 6,
+                  width: cw - 4,
+                  height: OH - 16,
+                  rx: 5,
+                  fill: color,
+                  stroke: "#37474f",
+                  "stroke-width": 2,
+                }),
+                h("rect", {
+                  x: k * cw + 8,
+                  y: 10,
+                  width: cw - 16,
+                  height: 8,
+                  fill: "#e1f5fe",
+                }),
+                h("circle", {
+                  cx: k * cw + cw * 0.25,
+                  cy: OH - 6,
+                  r: 5,
+                  fill: "#37474f",
+                }),
+                h("circle", {
+                  cx: k * cw + cw * 0.75,
+                  cy: OH - 6,
+                  r: 5,
+                  fill: "#37474f",
+                }),
+              ]);
+            }
+          )
+        );
+      case "bag":
+        return h("g", [
+          h("rect", {
+            x: 1,
+            y: 4,
+            width: w - 2,
+            height: OH - 8,
+            rx: 4,
+            fill: color,
+            stroke: "#5d4037",
+            "stroke-width": 2,
+          }),
+          h("line", {
+            x1: 8,
+            y1: 10,
+            x2: w - 8,
+            y2: 10,
+            stroke: "#ffffff",
+            "stroke-width": 2,
+            "stroke-dasharray": "6 4",
+          }),
+        ]);
       default:
         return rect({ rx: 5 });
     }
