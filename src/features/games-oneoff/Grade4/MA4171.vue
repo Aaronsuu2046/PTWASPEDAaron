@@ -5,37 +5,59 @@
     </div>
 
     <div class="game-area">
-      <!-- 規律方格：空格顯示學生放入的圖形 -->
-      <div
-        class="pattern-grid"
-        :class="`pattern-grid--${gameData.kind}`"
-        :style="{ gridTemplateColumns: `repeat(${cols}, 1fr)` }"
-      >
-        <template v-for="(row, r) in gameData.grid" :key="`r-${r}`">
-          <div
-            v-for="(cell, c) in row"
-            :key="`c-${r}-${c}`"
-            class="pattern-grid__cell"
-            :data-blank="cell === null ? '' : null"
+      <!-- 正式題圖；空格位置疊一個放置區，放入的選項圖畫在空格裡 -->
+      <div class="picture">
+        <svg
+          class="picture__svg"
+          :viewBox="gameData.area.join(' ')"
+          role="img"
+          :aria-label="`規律圖形，第 ${blankRow + 1} 列第 ${blankCol + 1} 格是空格`"
+        >
+          <image
+            :href="imageOf(gameData.image)"
+            :width="gameData.size[0]"
+            :height="gameData.size[1]"
+          />
+          <g
+            class="slot"
             :class="{
-              'pattern-grid__cell--blank': cell === null,
-              'pattern-grid__cell--wrong': cell === null && wrong,
-              'pattern-grid__cell--hover': cell === null && overBlank,
-              'pattern-grid__cell--block-right': isBlockEdge(c),
+              'slot--hover': overBlank,
+              'slot--wrong': wrong,
+              'slot--filled': placedOption,
             }"
+            data-blank
           >
-            <PatternTile
-              v-if="cell !== null"
-              :kind="gameData.kind"
-              :variant="cell"
+            <rect
+              :x="slot.x"
+              :y="slot.y"
+              :width="slot.w"
+              :height="slot.h"
+              class="slot__bg"
             />
-            <PatternTile
-              v-else-if="selected !== null"
-              :kind="gameData.kind"
-              :variant="gameData.options[selected - 1]"
+            <svg
+              v-if="placedOption"
+              :x="slot.x"
+              :y="slot.y"
+              :width="slot.w"
+              :height="slot.h"
+              :viewBox="placedOption.view.join(' ')"
+              preserveAspectRatio="none"
+            >
+              <image
+                :href="imageOf(placedOption.image)"
+                :width="placedOption.size[0]"
+                :height="placedOption.size[1]"
+              />
+            </svg>
+            <rect
+              :x="slot.x"
+              :y="slot.y"
+              :width="slot.w"
+              :height="slot.h"
+              class="slot__frame"
             />
-          </div>
-        </template>
+          </g>
+        </svg>
       </div>
 
       <!-- 選項：點一下或拖曳到空格都可以放入 -->
@@ -43,22 +65,26 @@
         <p class="option-hint">點選或拖曳圖形放入空格</p>
         <div class="option-list">
           <button
-            v-for="(option, index) in gameData.options"
-            :key="index"
+            v-for="(option, index) in options"
+            :key="option.key"
             type="button"
             class="option-tile"
-            :class="[
-              `option-tile--${gameData.kind}`,
-              { 'option-tile--selected': selected === index + 1 },
-            ]"
+            :class="{ 'option-tile--selected': selected === option.key }"
+            :data-option="option.key"
             :aria-label="`選項 ${index + 1}`"
-            @click="onOptionClick(index + 1)"
-            @pointerdown="startDrag($event, index + 1)"
+            @click="onOptionClick(option.key)"
+            @pointerdown="startDrag($event, option.key)"
             @pointermove="onDrag"
             @pointerup="endDrag"
             @pointercancel="cancelDrag"
           >
-            <PatternTile :kind="gameData.kind" :variant="option" />
+            <svg class="option-tile__svg" :viewBox="option.view.join(' ')">
+              <image
+                :href="imageOf(option.image)"
+                :width="option.size[0]"
+                :height="option.size[1]"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -67,28 +93,45 @@
     <!-- 拖曳中跟著手指／滑鼠移動的圖塊 -->
     <div
       v-if="drag && drag.moved"
-      class="drag-ghost"
-      :class="`option-tile--${gameData.kind}`"
+      class="option-tile drag-ghost"
       :style="{ left: `${drag.x}px`, top: `${drag.y}px` }"
     >
-      <PatternTile
-        :kind="gameData.kind"
-        :variant="gameData.options[drag.index - 1]"
-      />
+      <svg
+        class="option-tile__svg"
+        :viewBox="optionOf(drag.key).view.join(' ')"
+      >
+        <image
+          :href="imageOf(optionOf(drag.key).image)"
+          :width="optionOf(drag.key).size[0]"
+          :height="optionOf(drag.key).size[1]"
+        />
+      </svg>
     </div>
   </div>
 </template>
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import PatternTile from "./games/MA4171/PatternTile.vue";
+import { getGameAssets } from "@/lib/get-assets.js";
 
 // 移動超過這個距離（px）才算拖曳，否則視為點選
 const DRAG_THRESHOLD = 8;
 
+function shuffle(list) {
+  const result = [...list];
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+// 觀察圖形規律填空：正式題圖（src/assets/games/MA4171/關卡-題號.png）的方格中有一格空白，
+// 從四張選項圖（關卡-A～D.png）選一張放進去
+// 題目 { code, image, size, area: 方格範圍 [x, y, 寬, 高], grid: [列, 欄], blank: [列, 欄],
+//        options: [{ key, image, size, view }], answer: 選項 key }
 export default {
   name: "MA4171",
-  components: { PatternTile },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -98,6 +141,8 @@ export default {
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
+      // 選項順序每次洗牌；判定與紀錄都用選項 key（對應檔名 A～D），不受順序影響
+      options: shuffle(this.gameData.options),
       selected: null,
       wrong: false,
       answered: false,
@@ -112,8 +157,27 @@ export default {
         this.introText?.Content || "觀察圖形的規律，在空格處放入正確的答案"
       );
     },
-    cols() {
-      return this.gameData.grid[0].length;
+    blankRow() {
+      return this.gameData.blank[0];
+    },
+    blankCol() {
+      return this.gameData.blank[1];
+    },
+    // 空格在原圖上的位置（與 viewBox 同一座標）
+    slot() {
+      const [x, y, w, h] = this.gameData.area;
+      const [rows, cols] = this.gameData.grid;
+      const cw = w / cols;
+      const ch = h / rows;
+      return {
+        x: x + this.blankCol * cw,
+        y: y + this.blankRow * ch,
+        w: cw,
+        h: ch,
+      };
+    },
+    placedOption() {
+      return this.selected ? this.optionOf(this.selected) : null;
     },
   },
   created() {
@@ -123,28 +187,29 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
-    // 關卡 1 以粗線分出 2×2 區塊
-    isBlockEdge(c) {
-      const block = this.gameData.block;
-      return !!block && (c + 1) % block[1] === 0 && c + 1 < this.cols;
+    imageOf(name) {
+      return getGameAssets("MA4171", name);
     },
-    select(index) {
-      this.selected = index;
+    optionOf(key) {
+      return this.gameData.options.find((o) => o.key === key);
+    },
+    select(key) {
+      this.selected = key;
       this.wrong = false;
     },
-    onOptionClick(index) {
+    onOptionClick(key) {
       // 拖曳結束時瀏覽器仍會送出 click，略過這一次
       if (this.suppressClick) {
         this.suppressClick = false;
         return;
       }
-      this.select(index);
+      this.select(key);
     },
-    startDrag(event, index) {
+    startDrag(event, key) {
       if (event.button !== undefined && event.button !== 0) return;
       this.suppressClick = false;
       this.drag = {
-        index,
+        key,
         startX: event.clientX,
         startY: event.clientY,
         x: event.clientX,
@@ -172,7 +237,7 @@ export default {
       if (!this.drag) return;
       if (this.drag.moved) {
         this.suppressClick = true;
-        if (this.isOverBlank(event)) this.select(this.drag.index);
+        if (this.isOverBlank(event)) this.select(this.drag.key);
       }
       this.cancelDrag();
     },
@@ -188,8 +253,9 @@ export default {
       if (this.answered) return;
       const isCorrect = this.selected === this.gameData.answer;
       this.wrong = !isCorrect;
+      const where = `${this.gameData.code} 第 ${this.blankRow + 1} 列第 ${this.blankCol + 1} 格`;
       this.$emit("add-record", [
-        `選項 ${this.gameData.answer}`,
+        `${where}：選項 ${this.gameData.answer}`,
         this.selected ? `選項 ${this.selected}` : "未作答",
         isCorrect ? "正確" : "錯誤",
       ]);
@@ -230,63 +296,56 @@ export default {
   flex: 1;
   min-height: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
+  gap: 0.8rem;
   background-color: $sub-color;
   border-radius: $border-radius;
   padding: $padding--small;
 }
 
-.pattern-grid {
-  display: grid;
-  border: 3px solid #555555;
-  background-color: #555555;
-  gap: 1px;
+// 題圖等比例完整顯示（SVG 預設 xMidYMid meet）
+.picture {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &__cell {
-    width: 4.6rem;
-    height: 3.45rem;
-    background-color: #ffffff;
+  &__svg {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-    &--blank {
-      background-color: #eeeeee;
-      outline: 3px dashed #1e88e5;
-      outline-offset: -3px;
-    }
-
-    &--wrong {
-      outline-color: #e53935;
-      background-color: #ffebee;
-    }
-
-    &--hover {
-      outline-color: #43a047;
-      background-color: #e8f5e9;
-    }
-
-    &--block-right {
-      border-right: 3px solid #555555;
-    }
+.slot {
+  &__bg {
+    fill: #ffffff;
   }
 
-  // 方形圖塊（愛心）
-  &--heart &__cell,
-  &--cornerHeart &__cell {
-    width: 3.2rem;
-    height: 3.2rem;
+  &__frame {
+    fill: none;
+    stroke: #fb8c00;
+    stroke-width: 6;
+    stroke-dasharray: 14 8;
   }
 
-  &--cornerHeart {
-    background-color: #c9b98f;
-    border-color: #c9b98f;
-    gap: 3px;
+  &--filled &__frame {
+    stroke: #1e88e5;
+    stroke-dasharray: none;
   }
 
-  // 關卡 1 格子較少，放大一些
-  &--mark &__cell {
-    width: 6rem;
-    height: 4.5rem;
+  &--hover &__frame {
+    stroke: #43a047;
+    stroke-width: 9;
+    stroke-dasharray: none;
+  }
+
+  &--wrong &__frame {
+    stroke: #e53935;
+    stroke-width: 9;
+    stroke-dasharray: none;
   }
 }
 
@@ -294,61 +353,57 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 
 .option-hint {
   margin: 0;
-  font-size: 1.1rem;
-  color: #555555;
+  font-size: 1.2rem;
+  font-weight: $font-bold;
+  color: #5d4037;
 }
 
 .option-list {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 0.8rem;
+  display: flex;
+  gap: 1.4rem;
 }
 
 .option-tile {
-  width: 5.6rem;
-  height: 4.2rem;
-  padding: 0;
-  background: #ffffff;
-  border: 3px solid #9e9e9e;
-  border-radius: 6px;
+  width: 6.5rem;
+  height: 6.5rem;
+  padding: 0.35rem;
+  background-color: #ffffff;
+  border: 4px solid #bdbdbd;
+  border-radius: 12px;
   cursor: grab;
-  overflow: hidden;
   touch-action: none;
   user-select: none;
 
-  &--heart,
-  &--cornerHeart {
-    width: 4.4rem;
-    height: 4.4rem;
+  &__svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
   }
 
   &--selected {
     border-color: #1e88e5;
-    box-shadow: 0 0 0 3px #90caf9;
+    box-shadow: 0 0 0 4px #90caf9;
   }
 }
+
 .drag-ghost {
   position: fixed;
   z-index: 1000;
-  width: 5.6rem;
-  height: 4.2rem;
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0.85;
-  background: #ffffff;
-  border: 3px solid #1e88e5;
-  border-radius: 6px;
-  overflow: hidden;
+}
 
-  &.option-tile--heart,
-  &.option-tile--cornerHeart {
-    width: 4.4rem;
-    height: 4.4rem;
+@media (max-width: 1100px) {
+  .option-tile {
+    width: 5.5rem;
+    height: 5.5rem;
   }
 }
 </style>
