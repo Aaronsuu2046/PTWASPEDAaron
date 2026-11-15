@@ -16,7 +16,8 @@
         </span>
       </div>
 
-      <div class="work">
+      <!-- 直式放到最大：依可用空間算格子大小（--fit-cell） -->
+      <div ref="work" class="work" :style="{ '--fit-cell': `${cell}px` }">
         <DivisionFill
           ref="division"
           :dividend="gameData.dividend"
@@ -25,22 +26,10 @@
           @change="feedback = ''"
           @focus="onDivisionFocus"
         />
-        <div class="legend">
-          <p class="legend__item">
-            <span class="legend__swatch legend__swatch--answer" />
-            黃色格子：填商{{ hasRemainder ? "和餘數" : "" }}
-          </p>
-          <p class="legend__item">
-            <span class="legend__swatch legend__swatch--helper" />
-            白色格子：可以寫計算過程，不填也可以
-          </p>
-          <p class="legend__hint">
-            點格子會出現數字板，填好會自動跳到右邊下一格
-          </p>
-        </div>
       </div>
 
-      <p v-if="feedback" class="feedback">{{ feedback }}</p>
+      <!-- 提示列一直佔著位置，出現或消失時直式才不會跟著縮放 -->
+      <p class="feedback">{{ feedback }}</p>
 
       <!-- 點格子才出現的數字板，會跟著目前的格子移動 -->
       <FieldPad
@@ -59,6 +48,12 @@ import FieldPad from "./games/Common/FieldPad.vue";
 
 // 四位數÷二位數（計算）：用除法直式算，商要寫在正確的位值上；
 // 只判黃色的答案格（商、有餘數時的餘數），中間的計算過程不強迫填
+
+// 格子大小的上下限（px）
+const MIN_CELL = 30;
+const MAX_CELL = 76;
+// 改格子大小後，直式的高度要等下一次畫面更新才會變，量之前先等一下
+const FIT_DELAY_MS = 150;
 export default {
   name: "MA4047",
   components: { DivisionFill, FieldPad },
@@ -75,6 +70,7 @@ export default {
       answered: false,
       padOpen: false,
       padEl: null,
+      cell: 42,
     };
   },
   computed: {
@@ -92,10 +88,46 @@ export default {
   created() {
     emitter.on("submitAnswer", this.checkAnswer);
   },
+  mounted() {
+    this.observer = new ResizeObserver(() => this.fit());
+    this.observer.observe(this.$refs.work);
+    this.fit();
+  },
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
+    this.observer?.disconnect();
+    clearTimeout(this.fitTimer);
   },
   methods: {
+    // 量直式目前的大小，等比例放大或縮小到剛好放進計算區
+    // （等畫面更新後再量，並以實際套用的格子大小為準，避免量到舊尺寸）
+    fit(tries = 6) {
+      clearTimeout(this.fitTimer);
+      this.fitTimer = setTimeout(() => {
+        const work = this.$refs.work;
+        const fill = work?.querySelector(".dfill");
+        if (!fill || !fill.offsetWidth || tries <= 0) return;
+        const applied = parseFloat(
+          getComputedStyle(fill).getPropertyValue("--cell")
+        );
+        const scale = Math.min(
+          (work.clientWidth - 16) / fill.offsetWidth,
+          (work.clientHeight - 8) / fill.offsetHeight
+        );
+        const next = Math.max(
+          MIN_CELL,
+          Math.min(MAX_CELL, Math.floor(applied * scale))
+        );
+        if (Math.abs(next - applied) >= 1) {
+          this.cell = next;
+          this.fit(tries - 1);
+        } else if (this.padOpen) {
+          // 格子大小變了，數字板重新對準目前的格子
+          this.padEl = null;
+          this.syncPad();
+        }
+      }, FIT_DELAY_MS);
+    },
     onDivisionFocus() {
       this.padOpen = true;
       this.syncPad();
@@ -212,98 +244,33 @@ export default {
 .work {
   flex: 1;
   min-height: 0;
+  align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
-  overflow: auto;
-}
-
-.legend {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  max-width: 14rem;
-
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-    font-size: 1.15rem;
-    font-weight: $font-bold;
-    line-height: 1.4;
-    color: #4e342e;
-  }
-
-  &__swatch {
-    flex-shrink: 0;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 6px;
-
-    &--answer {
-      background-color: #fff176;
-      border: 3px solid #fbc02d;
-    }
-
-    &--helper {
-      background-color: #ffffff;
-      border: 2px dashed #b0bec5;
-    }
-  }
-
-  &__hint {
-    margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.4;
-    color: #6d4c41;
-  }
+  overflow: hidden;
 }
 
 .feedback {
+  min-height: 1.6em;
   margin: 0;
   font-size: 1.3rem;
   font-weight: $font-bold;
   color: #c62828;
 }
 
-// 直式列數多：格子縮小一點才放得下
+// 格子大小由 fit() 依空間計算，字跟著格子等比例放大
 .work :deep(.dfill) {
-  --cell: 2.6rem;
+  --cell: var(--fit-cell, 2.6rem);
 }
 
 .work :deep(.dfill__cell) {
-  font-size: 1.7rem;
+  font-size: calc(var(--cell) * 0.65);
 }
 
 @media (max-width: 1100px), (max-height: 760px) {
-  .work {
-    gap: 1.2rem;
-  }
-
   .equation {
     font-size: 1.6rem;
-  }
-
-  .legend {
-    max-width: 11rem;
-
-    &__item {
-      font-size: 1rem;
-    }
-
-    &__hint {
-      font-size: 0.9rem;
-    }
-  }
-
-  .work :deep(.dfill) {
-    --cell: 2.1rem;
-  }
-
-  .work :deep(.dfill__cell) {
-    font-size: 1.4rem;
   }
 }
 </style>

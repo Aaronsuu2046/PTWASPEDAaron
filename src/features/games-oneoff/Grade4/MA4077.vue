@@ -2,7 +2,6 @@
   <CalculatorQuestion
     :game-data="gameData"
     :intro-text="introText"
-    require-expression
     compact
     @play-effect="$emit('play-effect', $event)"
     @add-record="$emit('add-record', $event)"
@@ -13,7 +12,7 @@
 <script>
 import CalculatorQuestion from "./games/CalculatorQuestion/CalculatorQuestion.vue";
 
-// 小數的加減（計算題）：在計算機依序按出題目算式（+ 或 −），再按「=」；結果以數值判定（2.9 與 2.90 相同）
+// 小數的加減（計算題）：用計算機算，再點橫式的問號用小鍵盤填答案；以數值判定（2.9 與 2.90 相同）
 export default {
   name: "MA4077",
   components: { CalculatorQuestion },

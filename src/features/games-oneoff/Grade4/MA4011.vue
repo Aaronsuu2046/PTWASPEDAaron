@@ -34,10 +34,14 @@
       <!-- 右側：定位板 -->
       <div class="board-area">
         <p class="board-label">定位板</p>
-        <NumberBoard
-          :component-config="boardConfig"
-          @reply-answer="onBoardReply"
-        />
+        <!-- 記下學生點過哪幾格，紀錄裡才分得出「沒動過」的格子 -->
+        <div class="board-wrap" @click="onBoardClick">
+          <NumberBoard
+            ref="board"
+            :component-config="boardConfig"
+            @reply-answer="onBoardReply"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -49,14 +53,14 @@ import { getGameAssets } from "@/lib/get-assets.js";
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 
 const FILE_EXT = {
-  "1": "png",
-  "5": "png",
-  "10": "png",
-  "50": "png",
-  "100": "png",
-  "500": "jpg",
-  "1000": "jpg",
-  "10000": "png",
+  1: "png",
+  5: "png",
+  10: "png",
+  50: "png",
+  100: "png",
+  500: "jpg",
+  1000: "jpg",
+  10000: "png",
 };
 
 export default {
@@ -76,6 +80,8 @@ export default {
       boardReply: false,
       showSuccessImage: false,
       answered: false,
+      touched: [],
+      attempt: 0,
       denomOrder: ["10000", "1000", "500", "100", "50", "10", "5", "1"],
     };
   },
@@ -110,12 +116,55 @@ export default {
     onBoardReply(reply) {
       this.boardReply = reply;
     },
+    onBoardClick(event) {
+      const cell = event.target.closest?.(".number-board__cell--clickable");
+      if (cell) this.touched[cell.cellIndex] = true;
+    },
+    // 答題紀錄：每一格帶位值，例如「萬3 千0 百2 十0 個0」；學生沒點過的格子標「未作答」
+    describeBills() {
+      const order = ["10000", "1000", "500", "100", "50", "10", "5", "1"];
+      return order
+        .filter((d) => this.gameData.bills[d])
+        .map((d) => `${d}元×${this.gameData.bills[d]}`)
+        .join("、");
+    },
+    expectedText() {
+      const units = this.boardConfig.Unit;
+      const digits = String(this.gameData.answer)
+        .padStart(units.length, "0")
+        .split("");
+      const cells = units.map((u, i) => `${u}${digits[i]}`).join(" ");
+      return `${this.gameData.answer}（${cells}）`;
+    },
+    givenText() {
+      const units = this.boardConfig.Unit;
+      const numbers = this.$refs.board?.numbers || [];
+      const cells = units
+        .map((u, i) => {
+          const d = String(numbers[i] ?? "").trim();
+          return this.touched[i] ? `${u}${d}` : `${u}${d}（未作答）`;
+        })
+        .join(" ");
+      const value = numbers
+        .join("")
+        .trim()
+        .replace(/^0+(?=\d)/, "");
+      return `${value}（${cells}）`;
+    },
+    record(ok) {
+      this.attempt += 1;
+      this.$emit("add-record", [
+        `${this.describeBills()}，共多少元？正確答案 ${this.expectedText()}`,
+        `第 ${this.attempt} 次作答：${this.givenText()}`,
+        ok ? "正確" : "錯誤",
+      ]);
+    },
     checkAnswer() {
       if (this.answered) return;
       if (this.boardReply) {
         this.answered = true;
         this.$emit("play-effect", "CorrectSound");
-        this.$emit("add-record", ["不支援", "不支援", "正確"]);
+        this.record(true);
         if (this.gameData.successImage) {
           this.showSuccessImage = true;
           setTimeout(() => this.$emit("next-question"), 5000);
@@ -124,7 +173,7 @@ export default {
         }
       } else {
         this.$emit("play-effect", "WrongSound");
-        this.$emit("add-record", ["不支援", "不支援", "錯誤"]);
+        this.record(false);
         emitter.emit("checkAnswer");
       }
     },
@@ -133,6 +182,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+// 只用來接點擊事件，不影響定位板原本的版面
+.board-wrap {
+  display: contents;
+}
+
 .outer-container {
   width: 100%;
   height: 100%;
@@ -186,9 +240,15 @@ export default {
     object-fit: contain;
     border-radius: 4px;
 
-    &.bill-large  { height: 80px; }
-    &.bill-medium { height: 55px; }
-    &.bill-small  { height: 38px; }
+    &.bill-large {
+      height: 80px;
+    }
+    &.bill-medium {
+      height: 55px;
+    }
+    &.bill-small {
+      height: 38px;
+    }
   }
 
   .success-display {

@@ -197,6 +197,16 @@
           >
             放回
           </button>
+          <!-- 拼圖區裡選取的碎片也可以直接量（照它現在擺的方向） -->
+          <button
+            type="button"
+            class="tool tool--measure"
+            :disabled="!selectedOnBoard"
+            :aria-label="`量角 ${selected}`"
+            @click="measureSelected"
+          >
+            量
+          </button>
           <span class="tools__how">點碎片會放到紅點上，也可以拖過去</span>
         </div>
       </div>
@@ -252,7 +262,7 @@
 
       <MeasureDialog
         v-if="measuring"
-        :from="trayRot(measuring)"
+        :from="measureFrom"
         :angle="measuring.angle"
         color="#2e7d32"
         @close="measuring = null"
@@ -349,6 +359,12 @@ export default {
       return (
         this.boardPieces.some((p) => p.id === this.selected) && !this.solved
       );
+    },
+    // 量角器的基準線：托盤裡是托盤的擺法，拼圖區裡是碎片目前的方向
+    measureFrom() {
+      const p = this.measuring;
+      if (!p) return 0;
+      return p.where === "board" ? p.rot : this.trayRot(p);
     },
     selectedInTray() {
       return this.trayPieces.some((p) => p.id === this.selected);
@@ -466,6 +482,10 @@ export default {
       p.where = "board";
       this.snapTo(p, side);
       this.selected = p.id;
+    },
+    measureSelected() {
+      const p = this.pieces.find((q) => q.id === this.selected);
+      if (p && p.where === "board" && !this.solved) this.measuring = p;
     },
     toTray(id) {
       const p = this.pieces.find((q) => q.id === id);
@@ -943,6 +963,12 @@ export default {
   &--back {
     background-color: #78909c;
     box-shadow: 0 3px 0 #455a64;
+  }
+
+  // 和托盤碎片上的「量」同色
+  &--measure {
+    background-color: #7e57c2;
+    box-shadow: 0 3px 0 #4527a0;
   }
 
   &:disabled {

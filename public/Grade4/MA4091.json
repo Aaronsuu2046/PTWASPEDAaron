@@ -18,21 +18,21 @@
             "whole": 0,
             "num": 2,
             "den": 4,
-            "reading": "四分之二個"
+            "reading": "四分之二"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 7,
             "den": 4,
-            "reading": "四分之七個"
+            "reading": "四分之七"
           },
           {
             "id": "c",
             "whole": 2,
             "num": 2,
             "den": 4,
-            "reading": "二又四分之二個"
+            "reading": "二又四分之二"
           }
         ]
       },
@@ -45,21 +45,21 @@
             "whole": 0,
             "num": 1,
             "den": 3,
-            "reading": "三分之一個"
+            "reading": "三分之一"
           },
           {
             "id": "b",
             "whole": 1,
             "num": 1,
             "den": 3,
-            "reading": "一又三分之一個"
+            "reading": "一又三分之一"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 5,
             "den": 3,
-            "reading": "三分之五個"
+            "reading": "三分之五"
           }
         ]
       },
@@ -72,21 +72,21 @@
             "whole": 0,
             "num": 3,
             "den": 4,
-            "reading": "四分之三個"
+            "reading": "四分之三"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 9,
             "den": 4,
-            "reading": "四分之九個"
+            "reading": "四分之九"
           },
           {
             "id": "c",
             "whole": 2,
             "num": 3,
             "den": 4,
-            "reading": "二又四分之三個"
+            "reading": "二又四分之三"
           }
         ]
       },
@@ -99,21 +99,21 @@
             "whole": 0,
             "num": 1,
             "den": 3,
-            "reading": "三分之一個"
+            "reading": "三分之一"
           },
           {
             "id": "b",
             "whole": 3,
             "num": 1,
             "den": 3,
-            "reading": "三又三分之一個"
+            "reading": "三又三分之一"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 7,
             "den": 3,
-            "reading": "三分之七個"
+            "reading": "三分之七"
           }
         ]
       },
@@ -126,21 +126,21 @@
             "whole": 0,
             "num": 3,
             "den": 4,
-            "reading": "四分之三個"
+            "reading": "四分之三"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 6,
             "den": 4,
-            "reading": "四分之六個"
+            "reading": "四分之六"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 3,
             "den": 4,
-            "reading": "一又四分之三個"
+            "reading": "一又四分之三"
           }
         ]
       }
@@ -155,21 +155,21 @@
             "whole": 0,
             "num": 2,
             "den": 5,
-            "reading": "五分之二個"
+            "reading": "五分之二"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 9,
             "den": 5,
-            "reading": "五分之九個"
+            "reading": "五分之九"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 2,
             "den": 5,
-            "reading": "一又五分之二個"
+            "reading": "一又五分之二"
           }
         ]
       },
@@ -182,21 +182,21 @@
             "whole": 0,
             "num": 5,
             "den": 6,
-            "reading": "六分之五個"
+            "reading": "六分之五"
           },
           {
             "id": "b",
             "whole": 2,
             "num": 3,
             "den": 6,
-            "reading": "二又六分之三個"
+            "reading": "二又六分之三"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 10,
             "den": 6,
-            "reading": "六分之十個"
+            "reading": "六分之十"
           }
         ]
       },
@@ -209,21 +209,21 @@
             "whole": 0,
             "num": 3,
             "den": 5,
-            "reading": "五分之三個"
+            "reading": "五分之三"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 12,
             "den": 5,
-            "reading": "五分之十二個"
+            "reading": "五分之十二"
           },
           {
             "id": "c",
             "whole": 2,
             "num": 3,
             "den": 5,
-            "reading": "二又五分之三個"
+            "reading": "二又五分之三"
           }
         ]
       },
@@ -236,21 +236,21 @@
             "whole": 0,
             "num": 3,
             "den": 6,
-            "reading": "六分之三個"
+            "reading": "六分之三"
           },
           {
             "id": "b",
             "whole": 1,
             "num": 4,
             "den": 6,
-            "reading": "一又六分之四個"
+            "reading": "一又六分之四"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 9,
             "den": 6,
-            "reading": "六分之九個"
+            "reading": "六分之九"
           }
         ]
       },
@@ -263,21 +263,21 @@
             "whole": 0,
             "num": 4,
             "den": 5,
-            "reading": "五分之四個"
+            "reading": "五分之四"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 8,
             "den": 5,
-            "reading": "五分之八個"
+            "reading": "五分之八"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 1,
             "den": 5,
-            "reading": "一又五分之一個"
+            "reading": "一又五分之一"
           }
         ]
       }
@@ -292,21 +292,21 @@
             "whole": 0,
             "num": 4,
             "den": 7,
-            "reading": "七分之四個"
+            "reading": "七分之四"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 12,
             "den": 7,
-            "reading": "七分之十二個"
+            "reading": "七分之十二"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 3,
             "den": 7,
-            "reading": "一又七分之三個"
+            "reading": "一又七分之三"
           }
         ]
       },
@@ -319,21 +319,21 @@
             "whole": 0,
             "num": 6,
             "den": 8,
-            "reading": "八分之六個"
+            "reading": "八分之六"
           },
           {
             "id": "b",
             "whole": 2,
             "num": 1,
             "den": 8,
-            "reading": "二又八分之一個"
+            "reading": "二又八分之一"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 11,
             "den": 8,
-            "reading": "八分之十一個"
+            "reading": "八分之十一"
           }
         ]
       },
@@ -346,21 +346,21 @@
             "whole": 0,
             "num": 5,
             "den": 7,
-            "reading": "七分之五個"
+            "reading": "七分之五"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 10,
             "den": 7,
-            "reading": "七分之十個"
+            "reading": "七分之十"
           },
           {
             "id": "c",
             "whole": 2,
             "num": 2,
             "den": 7,
-            "reading": "二又七分之二個"
+            "reading": "二又七分之二"
           }
         ]
       },
@@ -373,21 +373,21 @@
             "whole": 0,
             "num": 7,
             "den": 8,
-            "reading": "八分之七個"
+            "reading": "八分之七"
           },
           {
             "id": "b",
             "whole": 1,
             "num": 2,
             "den": 8,
-            "reading": "一又八分之二個"
+            "reading": "一又八分之二"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 9,
             "den": 8,
-            "reading": "八分之九個"
+            "reading": "八分之九"
           }
         ]
       },
@@ -400,21 +400,21 @@
             "whole": 0,
             "num": 6,
             "den": 7,
-            "reading": "七分之六個"
+            "reading": "七分之六"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 8,
             "den": 7,
-            "reading": "七分之八個"
+            "reading": "七分之八"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 2,
             "den": 7,
-            "reading": "一又七分之二個"
+            "reading": "一又七分之二"
           }
         ]
       }
@@ -429,21 +429,21 @@
             "whole": 0,
             "num": 4,
             "den": 9,
-            "reading": "九分之四個"
+            "reading": "九分之四"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 12,
             "den": 9,
-            "reading": "九分之十二個"
+            "reading": "九分之十二"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 2,
             "den": 9,
-            "reading": "一又九分之二個"
+            "reading": "一又九分之二"
           }
         ]
       },
@@ -456,21 +456,21 @@
             "whole": 0,
             "num": 6,
             "den": 10,
-            "reading": "十分之六個"
+            "reading": "十分之六"
           },
           {
             "id": "b",
             "whole": 2,
             "num": 1,
             "den": 10,
-            "reading": "二又十分之一個"
+            "reading": "二又十分之一"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 11,
             "den": 10,
-            "reading": "十分之十一個"
+            "reading": "十分之十一"
           }
         ]
       },
@@ -483,21 +483,21 @@
             "whole": 0,
             "num": 4,
             "den": 9,
-            "reading": "九分之四個"
+            "reading": "九分之四"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 10,
             "den": 9,
-            "reading": "九分之十個"
+            "reading": "九分之十"
           },
           {
             "id": "c",
             "whole": 2,
             "num": 1,
             "den": 9,
-            "reading": "二又九分之一個"
+            "reading": "二又九分之一"
           }
         ]
       },
@@ -510,21 +510,21 @@
             "whole": 0,
             "num": 12,
             "den": 10,
-            "reading": "十分之十二個"
+            "reading": "十分之十二"
           },
           {
             "id": "b",
             "whole": 1,
             "num": 4,
             "den": 10,
-            "reading": "一又十分之四個"
+            "reading": "一又十分之四"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 9,
             "den": 10,
-            "reading": "十分之九個"
+            "reading": "十分之九"
           }
         ]
       },
@@ -537,21 +537,21 @@
             "whole": 0,
             "num": 6,
             "den": 9,
-            "reading": "九分之六個"
+            "reading": "九分之六"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 11,
             "den": 9,
-            "reading": "九分之十一個"
+            "reading": "九分之十一"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 6,
             "den": 9,
-            "reading": "一又九分之六個"
+            "reading": "一又九分之六"
           }
         ]
       }
@@ -566,21 +566,21 @@
             "whole": 0,
             "num": 6,
             "den": 12,
-            "reading": "十二分之六個"
+            "reading": "十二分之六"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 14,
             "den": 12,
-            "reading": "十二分之十四個"
+            "reading": "十二分之十四"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 5,
             "den": 12,
-            "reading": "一又十二分之五個"
+            "reading": "一又十二分之五"
           }
         ]
       },
@@ -593,21 +593,21 @@
             "whole": 0,
             "num": 7,
             "den": 11,
-            "reading": "十一分之七個"
+            "reading": "十一分之七"
           },
           {
             "id": "b",
             "whole": 2,
             "num": 7,
             "den": 11,
-            "reading": "二又十一分之七個"
+            "reading": "二又十一分之七"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 12,
             "den": 11,
-            "reading": "十一分之十二個"
+            "reading": "十一分之十二"
           }
         ]
       },
@@ -620,21 +620,21 @@
             "whole": 0,
             "num": 5,
             "den": 12,
-            "reading": "十二分之五個"
+            "reading": "十二分之五"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 13,
             "den": 12,
-            "reading": "十二分之十三個"
+            "reading": "十二分之十三"
           },
           {
             "id": "c",
             "whole": 2,
             "num": 1,
             "den": 12,
-            "reading": "二又十二分之一個"
+            "reading": "二又十二分之一"
           }
         ]
       },
@@ -647,21 +647,21 @@
             "whole": 0,
             "num": 14,
             "den": 11,
-            "reading": "十一分之十四個"
+            "reading": "十一分之十四"
           },
           {
             "id": "b",
             "whole": 1,
             "num": 4,
             "den": 11,
-            "reading": "一又十一分之四個"
+            "reading": "一又十一分之四"
           },
           {
             "id": "c",
             "whole": 0,
             "num": 4,
             "den": 11,
-            "reading": "十一分之四個"
+            "reading": "十一分之四"
           }
         ]
       },
@@ -674,21 +674,21 @@
             "whole": 0,
             "num": 8,
             "den": 12,
-            "reading": "十二分之八個"
+            "reading": "十二分之八"
           },
           {
             "id": "b",
             "whole": 0,
             "num": 16,
             "den": 12,
-            "reading": "十二分之十六個"
+            "reading": "十二分之十六"
           },
           {
             "id": "c",
             "whole": 1,
             "num": 6,
             "den": 12,
-            "reading": "一又十二分之六個"
+            "reading": "一又十二分之六"
           }
         ]
       }

@@ -5,34 +5,44 @@
     </div>
 
     <div class="game-area">
-      <!-- 題目算式：答對後在問號處顯示標準答案 -->
+      <!-- 題目算式：問號是答案格，點了用小鍵盤填；計算機只用來算，不會自動代填 -->
       <div class="question-panel">
         <p class="question-label">用計算機算算看</p>
         <div class="expression" :class="{ 'expression--compact': compact }">
           <span>{{ gameData.expression }} =</span>
-          <span
+          <button
+            type="button"
             class="answer-box"
             :class="{
+              'answer-box--active': padOpen && !answered,
               'answer-box--wrong': wrong,
               'answer-box--correct': answered,
             }"
+            data-pad-field
+            aria-label="答案"
+            @click="openPad"
           >
-            {{ answered ? gameData.answer : "?" }}
-          </span>
+            {{ value === "" ? "?" : value }}
+          </button>
         </div>
-        <p v-if="wrong && needExpression" class="feedback">
-          要在計算機依序按出「{{ gameData.expression }}」，再按「=」喔！
+        <p v-if="wrong && value === ''" class="feedback">
+          問號的格子還沒填答案喔！
         </p>
-        <p v-else-if="wrong" class="feedback">
-          你按出的答案是 {{ lastAnswer }}，再算算看！
-        </p>
+        <p v-else-if="wrong" class="feedback">答案不對，再用計算機算算看！</p>
         <p v-else class="feedback feedback--hint">
-          在計算機按出算式，按「=」後送出答案
+          用計算機算出答案，點問號的格子填進去，再送出答案
         </p>
       </div>
 
+      <FieldPad
+        :field="padOpen && !answered ? padEl : null"
+        :decimal="decimal"
+        @press="press"
+        @close="padOpen = false"
+      />
+
       <div class="calculator-panel">
-        <KidCalculator ref="calculator" />
+        <KidCalculator />
       </div>
     </div>
   </div>
@@ -41,32 +51,39 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import KidCalculator from "./KidCalculator.vue";
+import FieldPad from "../Common/FieldPad.vue";
 
-// 小數計算題共用：題目 { expression, answer }，以計算機目前顯示的數值判定，
-// 等值表示（例如 29.0 與 29）視為相同
+const MAX_LENGTH = 10;
+
+// 計算機題共用：題目 { expression, answer }
+// 學生用計算機算，再點橫式的問號用小鍵盤填答案；只以答案格的內容判定，
+// 計算機的顯示與操作歷程不影響、也不會代填答案。等值表示（例如 29.0 與 29）視為相同
 export default {
   name: "CalculatorQuestion",
-  components: { KidCalculator },
+  components: { KidCalculator, FieldPad },
   props: {
     gameData: { type: Object, required: true },
     introText: { type: Object, default: null },
-    // 選填：除了結果正確，還要在計算機依序按出題目算式再按「=」（預設不檢查，維持原行為）
-    requireExpression: { type: Boolean, default: false },
     // 選填：算式比較長（例如小數加減）時，小螢幕上把算式字縮小，避免超出畫面（預設不縮）
     compact: { type: Boolean, default: false },
   },
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
+      value: "",
+      padOpen: false,
+      padEl: null,
       wrong: false,
       answered: false,
-      lastAnswer: "",
-      needExpression: false,
     };
   },
   computed: {
     gameIntroText() {
       return this.introText?.Content || "使用計算機點按出正確答案";
+    },
+    // 答案有小數時，小鍵盤才出現小數點
+    decimal() {
+      return String(this.gameData.answer).includes(".");
     },
   },
   created() {
@@ -76,26 +93,30 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
-    readCalculator() {
-      return this.$refs.calculator?.read() ?? "";
+    openPad(event) {
+      if (this.answered) return;
+      this.padEl = event.currentTarget;
+      this.padOpen = true;
     },
-    // 計算機最後一次按「=」的算式是不是題目的算式（忽略空白）
-    typedExpression() {
-      const flat = (text) => text.replace(/\s+/g, "");
-      const last = flat(this.$refs.calculator?.lastExpression() ?? "");
-      return last.startsWith(`${flat(this.gameData.expression)}=`);
+    press(key) {
+      if (this.answered) return;
+      this.wrong = false;
+      const full = this.value.length >= MAX_LENGTH;
+      if (key === "clear") this.value = "";
+      else if (key === "←") this.value = this.value.slice(0, -1);
+      else if (key === "." && !full && !this.value.includes("."))
+        this.value = `${this.value || "0"}.`;
+      else if (/^\d$/.test(key) && !full)
+        this.value = this.value === "0" ? key : this.value + key;
     },
     checkAnswer() {
       if (this.answered) return;
-      const value = this.readCalculator();
-      const valueOk =
+      const value = this.value;
+      const isCorrect =
         value !== "" &&
+        !value.endsWith(".") &&
         Math.abs(Number(value) - Number(this.gameData.answer)) < 1e-9;
-      this.needExpression =
-        this.requireExpression && valueOk && !this.typedExpression();
-      const isCorrect = valueOk && !this.needExpression;
       this.wrong = !isCorrect;
-      this.lastAnswer = value || "（還沒有按）";
       this.$emit("add-record", [
         this.gameData.answer,
         value || "未作答",
@@ -103,6 +124,7 @@ export default {
       ]);
       if (isCorrect) {
         this.answered = true;
+        this.padOpen = false;
         this.$emit("play-effect", "CorrectSound");
         this.$emit("next-question");
       } else {
@@ -173,11 +195,19 @@ export default {
 .answer-box {
   min-width: 7rem;
   padding: 0.2rem 1rem;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
   text-align: center;
   color: #1e88e5;
   background-color: #ffffff;
   border: 4px dashed #1e88e5;
   border-radius: 12px;
+
+  &--active {
+    border-style: solid;
+    box-shadow: 0 0 0 4px #90caf9;
+  }
 
   &--wrong {
     color: #e53935;
