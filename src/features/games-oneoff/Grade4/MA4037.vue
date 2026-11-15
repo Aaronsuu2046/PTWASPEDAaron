@@ -139,9 +139,9 @@
               class="tool-btn tool-btn--reset"
               @click="resetPointer"
             >
-              指針回到起點
+              吸管回到起點
             </button>
-            <span class="tools__how">拖動紅色指針，靠近整十度會對齊</span>
+            <span class="tools__how">拖動吸管，靠近整十度會對齊</span>
           </template>
           <template v-else-if="canPlay">
             <button type="button" class="tool-btn tool-btn--play" @click="play">
@@ -285,6 +285,8 @@ export default {
   },
   computed: {
     gameIntroText() {
+      // 關卡 5 依腳本稱「吸管」
+      if (this.isProtractor) return "移動吸管，再回答問題。";
       return this.introText?.Content || "移動指針，再回答問題。";
     },
     isProtractor() {
@@ -428,7 +430,7 @@ export default {
       this.feedback = "";
     },
 
-    // ---- 關卡 5：拖動量角器上的指針 ----
+    // ---- 關卡 5：拖動量角器上的吸管 ----
     toLocal(event) {
       const svg = this.$refs.svg;
       const pt = svg.createSVGPoint();
@@ -512,7 +514,7 @@ export default {
       const moved = this.phi !== (this.lockedPhi ?? this.startPhi);
       if (!moved) {
         this.feedbackOk = false;
-        this.feedback = "先拖動紅色指針轉轉看喔！";
+        this.feedback = "先拖動吸管轉轉看喔！";
         return;
       }
       if (this.phase === 0) {
@@ -522,7 +524,7 @@ export default {
           this.lockedPhi = this.phi;
           this.phase = 1;
           this.feedbackOk = true;
-          this.feedback = `第一次轉好了！指針停在${q.ring} ${now}°，接著${DIR[q.turns[1].dir]}轉 ${q.turns[1].deg}°。`;
+          this.feedback = `第一次轉好了！吸管停在${q.ring} ${now}°，接著${DIR[q.turns[1].dir]}轉 ${q.turns[1].deg}°。`;
           return;
         }
         this.finish(
