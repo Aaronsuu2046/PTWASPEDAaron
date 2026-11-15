@@ -41,27 +41,27 @@
         </p>
       </div>
 
-      <!-- 直式：第 0 欄放運算符號，1～3 欄是百、十、個 -->
-      <div class="form" data-pad-avoid>
+      <!-- 直式：第 0 欄放運算符號，後面是位值欄（加法：百、十、個；減法：十、個） -->
+      <div class="form" :style="{ '--cols': cols }" data-pad-avoid>
         <div class="form__heads">
           <span />
-          <span v-for="h in HEADS" :key="h">{{ h }}</span>
+          <span v-for="h in heads" :key="h">{{ h }}</span>
         </div>
-        <!-- 進位格（十位、百位上方） -->
+        <!-- 加法：十位、百位上方的進位格；減法：十位、個位上方的退位標記 -->
         <div class="form__row form__row--carry">
           <span />
-          <template v-for="col in 3" :key="`c${col}`">
+          <template v-for="col in cols" :key="`m${col}`">
             <button
-              v-if="col < 3"
+              v-if="markCols.includes(col)"
               type="button"
               class="cell cell--carry"
-              :class="inputClass(`carry${col}`)"
-              :data-input="`carry${col}`"
+              :class="[inputClass(`mark${col}`), { 'cell--borrow': isSub }]"
+              :data-input="`mark${col}`"
               data-pad-field
-              :aria-label="`${HEADS[col - 1]}的進位`"
-              @click="activate($event, `carry${col}`)"
+              :aria-label="markLabel(col)"
+              @click="activate($event, `mark${col}`)"
             >
-              {{ values[`carry${col}`] ?? "" }}
+              {{ values[`mark${col}`] ?? "" }}
             </button>
             <span v-else />
           </template>
@@ -86,10 +86,11 @@
             >
           </span>
           <span
-            v-for="col in 3"
+            v-for="col in cols"
             :key="`r${row}c${col}`"
             class="cell cell--digit"
             :class="{
+              'cell--struck': isStruck(row, col),
               'cell--target': dropHint === `r${row}c${col}`,
               'cell--wrong':
                 wrongRows.includes(row) && digitAt(row, col) !== '',
@@ -111,14 +112,14 @@
         <div class="form__row">
           <span class="cell cell--op">＝</span>
           <button
-            v-for="col in 3"
+            v-for="col in cols"
             :key="`a${col}`"
             type="button"
             class="cell cell--answer"
             :class="inputClass(`ans${col}`)"
             :data-input="`ans${col}`"
             data-pad-field
-            :aria-label="`答案的${HEADS[col - 1]}`"
+            :aria-label="`答案的${heads[col - 1]}`"
             @click="activate($event, `ans${col}`)"
           >
             {{ values[`ans${col}`] ?? "" }}
@@ -151,7 +152,8 @@ import FieldPad from "../../Grade4/games/Common/FieldPad.vue";
 const HEADS = ["百位", "十位", "個位"];
 const DRAG_THRESHOLD = 8;
 
-// 二位數加法：橫式轉直式與計算（GameConfig.Op＝"+"）
+// 二位數加減法：橫式轉直式與計算（GameConfig.Op＝"+" 加法、"-" 減法）
+// 減法：被減數放上面，只有十、個兩欄；個位不夠減時，十位上方填借 1 後的數（被減數的十位會畫線）、個位上方填 10
 // 題目 { code, a, b, answer }
 // ① 把 a、b 兩張數字卡與「＋」拖進直式：數字卡放下的那一格是它的最高位，所以要讓個位對齊個位欄；
 //    兩個數放哪一列都可以，「＋」放在第二列左邊
@@ -185,8 +187,22 @@ export default {
     };
   },
   computed: {
+    isSub() {
+      return this.gameConfig?.Op === "-";
+    },
     OP_SHOW() {
-      return "＋";
+      return this.isSub ? "－" : "＋";
+    },
+    // 位值欄數：加法有百、十、個；減法（二位數）只有十、個
+    cols() {
+      return this.isSub ? 2 : 3;
+    },
+    heads() {
+      return HEADS.slice(3 - this.cols);
+    },
+    // 上方標記格放在第 1、2 欄：加法是百、十位的進位；減法是十位借 1 後的數、個位加的 10
+    markCols() {
+      return [1, 2];
     },
     gameIntroText() {
       return (
@@ -199,9 +215,18 @@ export default {
         .filter((id) => (id === "op" ? !this.placed.op : !this.placed[id]))
         .map((id) => ({ id, text: this.textOf(id) }));
     },
-    // 正確的進位與答案（百、十、個）
+    // 正確的標記格與答案；沒有的位是空字串
     expected() {
       const { a, b, answer } = this.gameData;
+      if (this.isSub) {
+        const borrow = a % 10 < b % 10;
+        return {
+          mark1: borrow ? String(Math.floor(a / 10) - 1) : "",
+          mark2: borrow ? "10" : "",
+          ans1: answer >= 10 ? String(Math.floor(answer / 10)) : "",
+          ans2: String(answer % 10),
+        };
+      }
       const carryT = (a % 10) + (b % 10) >= 10;
       const tensSum =
         (Math.floor(a / 10) % 10) +
@@ -209,8 +234,8 @@ export default {
         (carryT ? 1 : 0);
       const carryH = tensSum >= 10;
       return {
-        carry1: carryH ? "1" : "",
-        carry2: carryT ? "1" : "",
+        mark1: carryH ? "1" : "",
+        mark2: carryT ? "1" : "",
         ans1: answer >= 100 ? String(Math.floor(answer / 100)) : "",
         ans2: String(Math.floor(answer / 10) % 10),
         ans3: String(answer % 10),
@@ -224,6 +249,20 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    markLabel(col) {
+      if (this.isSub)
+        return col === 1 ? "十位借 1 之後剩下的數" : "個位加上的 10";
+      return `${this.heads[col - 1]}的進位`;
+    },
+    // 減法：十位上方填了借位後的數，就把被減數的十位畫一條線
+    isStruck(row, col) {
+      return (
+        this.isSub &&
+        col === 1 &&
+        this.tileAt(row) === "a" &&
+        !!this.values.mark1
+      );
+    },
     textOf(id) {
       if (id === "op") return this.OP_SHOW;
       return String(this.gameData[id]);
@@ -250,7 +289,7 @@ export default {
         if (!m) return false;
         const row = Number(m[1]);
         const col = Number(m[2]);
-        if (col + this.textOf(id).length - 1 > 3) {
+        if (col + this.textOf(id).length - 1 > this.cols) {
           this.feedback = "放不下喔！數字卡放下的那一格是它的最高位。";
           return false;
         }
@@ -348,8 +387,15 @@ export default {
       if (this.answered || !this.active) return;
       const k = this.active;
       const values = { ...this.values };
-      if (key === "clear" || key === "←") delete values[k];
-      else if (/^\d$/.test(key)) values[k] = key;
+      // 減法個位上方要填 10，可以放兩位；其他格只放一位
+      const max = this.isSub && k === "mark2" ? 2 : 1;
+      const cur = values[k] || "";
+      if (key === "clear") delete values[k];
+      else if (key === "←") {
+        if (cur.length > 1) values[k] = cur.slice(0, -1);
+        else delete values[k];
+      } else if (/^\d$/.test(key))
+        values[k] = max > 1 && cur.length < max ? cur + key : key;
       this.values = values;
       this.wrongKeys = this.wrongKeys.filter((w) => w !== k);
       this.feedback = "";
@@ -361,46 +407,58 @@ export default {
         if (!id) return "（空）";
         const pad = this.placed[id].col - 1;
         return `${"_".repeat(pad)}${this.textOf(id)}${"_".repeat(
-          3 - pad - this.textOf(id).length
+          this.cols - pad - this.textOf(id).length
         )}`;
       };
       return `${row(1)}／${this.placed.op ? this.OP_SHOW : ""}${row(2)}`;
     },
     answerText(pick) {
-      const carry = [pick("carry1"), pick("carry2")]
-        .map((v) => v || "_")
-        .join("");
-      const ans = [pick("ans1"), pick("ans2"), pick("ans3")]
-        .map((v) => v || "_")
-        .join("");
-      return `進位 ${carry}，答案 ${ans}`;
+      const marks = this.markCols.map((c) => pick(`mark${c}`) || "_");
+      const ans = Array.from(
+        { length: this.cols },
+        (_, i) => pick(`ans${i + 1}`) || "_"
+      ).join("");
+      const label = this.isSub ? "退位" : "進位";
+      return `${label} ${marks.join(this.isSub ? "、" : "")}，答案 ${ans}`;
+    },
+    // 答案前面沒有的位：空著或填 0 都可以
+    sameValue(key, expected) {
+      const v = this.values[key] || "";
+      if (expected === "" && key.startsWith("ans"))
+        return v === "" || v === "0";
+      return v === expected;
     },
     checkAnswer() {
       if (this.answered) return;
       const { code, a, b, answer } = this.gameData;
       if (!this.placed.a || !this.placed.b || !this.placed.op) {
-        this.feedback = "先把兩個數和「＋」都放進直式喔！";
+        this.feedback = `先把兩個數和「${this.OP_SHOW}」都放進直式喔！`;
         return;
       }
-      const needed = ["ans2", "ans3"].concat(answer >= 100 ? ["ans1"] : []);
+      const exp = this.expected;
+      const needed = Object.keys(exp).filter(
+        (k) => k.startsWith("ans") && exp[k] !== ""
+      );
       const empty = needed.filter((k) => !this.values[k]);
       if (empty.length) {
         this.wrongKeys = empty;
         this.feedback = "答案還沒填完喔！";
         return;
       }
-      // 對齊：數字卡的個位要在個位欄（第 3 欄）
+      // 對齊：數字卡的個位要在個位欄（最後一欄）
       this.wrongRows = [1, 2].filter((r) => {
         const id = this.tileAt(r);
-        return this.placed[id].col + this.textOf(id).length - 1 !== 3;
+        return this.placed[id].col + this.textOf(id).length - 1 !== this.cols;
       });
-      const exp = this.expected;
+      // 減法：被減數要放在上面
+      const swapped = this.isSub && this.tileAt(1) !== "a";
+      if (swapped) this.wrongRows = [1, 2];
       this.wrongKeys = Object.keys(exp).filter(
-        (k) => (this.values[k] || "") !== exp[k]
+        (k) => !this.sameValue(k, exp[k])
       );
       const isCorrect = !this.wrongRows.length && !this.wrongKeys.length;
       this.$emit("add-record", [
-        `${code} ${a}＋${b}＝${answer}（${this.answerText((k) => exp[k])}）`,
+        `${code} ${a}${this.OP_SHOW}${b}＝${answer}（${this.answerText((k) => exp[k])}）`,
         `直式 ${this.formText()}，${this.answerText((k) => this.values[k])}`,
         isCorrect ? "正確" : "錯誤",
       ]);
@@ -413,9 +471,14 @@ export default {
         return;
       }
       const tips = [];
-      if (this.wrongRows.length) tips.push("個位要對齊個位");
-      if (this.wrongKeys.some((k) => k.startsWith("carry")))
-        tips.push("滿 10 要進位，沒進位的格子空著");
+      if (swapped) tips.push("被減數要放在上面");
+      else if (this.wrongRows.length) tips.push("個位要對齊個位");
+      if (this.wrongKeys.some((k) => k.startsWith("mark")))
+        tips.push(
+          this.isSub
+            ? "個位不夠減時，十位借 1（十位寫少 1 的數）、個位加 10；不用退位就空著"
+            : "滿 10 要進位，沒進位的格子空著"
+        );
       if (this.wrongKeys.some((k) => k.startsWith("ans")))
         tips.push("再算一次紅色的格子");
       this.feedback = `紅色的地方不對喔！${tips.join("；")}。`;
@@ -542,7 +605,7 @@ export default {
   &__heads,
   &__row {
     display: grid;
-    grid-template-columns: 3.6rem repeat(3, 4.2rem);
+    grid-template-columns: 3.6rem repeat(var(--cols), 4.2rem);
     gap: 0.4rem;
     justify-items: center;
     align-items: center;
@@ -600,6 +663,20 @@ export default {
     background-color: #fce4ec;
     border: 3px dashed #f48fb1;
     cursor: pointer;
+  }
+
+  // 減法的退位標記：藍色
+  &--borrow {
+    color: #1565c0;
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+  }
+
+  // 被減數十位借走 1：畫一條斜線
+  &--struck .placed {
+    text-decoration: line-through;
+    text-decoration-color: #e53935;
+    text-decoration-thickness: 4px;
   }
 
   &--answer {
@@ -671,7 +748,7 @@ export default {
   .form {
     &__heads,
     &__row {
-      grid-template-columns: 3rem repeat(3, 3.6rem);
+      grid-template-columns: 3rem repeat(var(--cols), 3.6rem);
     }
   }
 
