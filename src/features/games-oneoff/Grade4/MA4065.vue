@@ -21,31 +21,50 @@
             :data-option="opt.optionId"
             @click="select(opt.optionId)"
           >
-            <svg viewBox="0 0 160 120" class="option__svg">
-              <MarkedTriangle :vertices="opt.vertices" :color="opt.color" />
+            <!-- 正式插圖；透明的 polygon 對齊圖上的頂點，三角板可吸附量測 -->
+            <svg
+              :viewBox="opt.view.join(' ')"
+              class="option__svg"
+              role="img"
+              :aria-label="`三角形 ${opt.label}`"
+            >
+              <image
+                :href="imageOf(opt.image)"
+                :width="opt.size[0]"
+                :height="opt.size[1]"
+              />
+              <polygon
+                :points="pointsOf(opt)"
+                class="option__hit"
+                fill="transparent"
+              />
             </svg>
           </button>
         </div>
 
-        <!-- 關卡 5：點選複合圖形中的色塊 -->
+        <!-- 關卡 5：正式複合圖；每個色塊疊一個對齊的透明點選區（座標同原圖） -->
         <svg
           v-else
           class="composite"
-          :viewBox="compositeViewBox"
+          :viewBox="gameData.view.join(' ')"
           role="group"
           aria-label="複合圖形"
         >
+          <image
+            :href="imageOf(gameData.image)"
+            :width="gameData.size[0]"
+            :height="gameData.size[1]"
+          />
           <polygon
-            v-for="(piece, i) in gameData.options"
+            v-for="piece in gameData.options"
             :key="piece.optionId"
-            :points="piece.vertices.map((p) => p.join(',')).join(' ')"
-            :fill="piece.color"
+            :points="pointsOf(piece)"
             class="composite__piece"
             :class="pieceClass(piece.optionId)"
             :data-option="piece.optionId"
             tabindex="0"
             role="button"
-            :aria-label="`第 ${i + 1} 塊`"
+            :aria-label="`色塊 ${piece.label}`"
             @click="select(piece.optionId)"
             @keydown.enter.prevent="select(piece.optionId)"
             @keydown.space.prevent="select(piece.optionId)"
@@ -58,6 +77,7 @@
           :size="130"
           :start-x="boardWidth - 170"
           :start-y="boardHeight - 16"
+          snap-selector=".option__hit, .composite__piece"
           @tap="forwardTap"
         />
       </div>
@@ -99,7 +119,7 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import SetSquare from "./games/Geometry/SetSquare.vue";
-import MarkedTriangle from "./games/Geometry/MarkedTriangle.vue";
+import { getGameAssets } from "@/lib/get-assets.js";
 
 function shuffle(list) {
   const result = [...list];
@@ -112,9 +132,11 @@ function shuffle(list) {
 
 // 認識等腰直角三角形：關卡 1～4 從 2～3 張圖卡選出等腰直角三角形（位置隨機），
 // 關卡 5 在複合圖形中點選唯一的等腰直角三角形色塊；以 optionId 判分
+// 圖片都是正式插圖（src/assets/games/MA4065）；vertices 為原圖像素座標，
+// view 為要顯示的範圍（SVG viewBox，等比例完整顯示）
 export default {
   name: "MA4065",
-  components: { SetSquare, MarkedTriangle },
+  components: { SetSquare },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -139,19 +161,6 @@ export default {
     gameIntroText() {
       return this.introText?.Content || "找出等腰直角三角形。";
     },
-    compositeViewBox() {
-      const pts = this.gameData.outer || [];
-      if (!pts.length) return "0 0 300 200";
-      const xs = pts.map((p) => p[0]);
-      const ys = pts.map((p) => p[1]);
-      const pad = 12;
-      return [
-        Math.min(...xs) - pad,
-        Math.min(...ys) - pad,
-        Math.max(...xs) - Math.min(...xs) + pad * 2,
-        Math.max(...ys) - Math.min(...ys) + pad * 2,
-      ].join(" ");
-    },
   },
   created() {
     emitter.on("submitAnswer", this.checkAnswer);
@@ -165,6 +174,12 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    imageOf(name) {
+      return getGameAssets("MA4065", name);
+    },
+    pointsOf(shape) {
+      return shape.vertices.map((p) => p.join(",")).join(" ");
+    },
     optionClass(id) {
       return {
         "option--selected": this.selected === id,
@@ -206,7 +221,7 @@ export default {
     },
     describe(id) {
       const opt = this.gameData.options.find((o) => o.optionId === id);
-      return opt ? `${opt.optionId}(${opt.kind})` : "未選";
+      return opt ? `${this.gameData.code} ${opt.label}` : "未選";
     },
     checkAnswer() {
       if (this.answered) return;
@@ -289,8 +304,8 @@ export default {
 }
 
 .option {
-  width: 16rem;
-  height: 12rem;
+  width: 18rem;
+  height: 13.5rem;
   padding: 0.4rem;
   background-color: #ffffff;
   border: 4px solid #b0bec5;
@@ -299,8 +314,8 @@ export default {
   cursor: pointer;
 
   .options--3 & {
-    width: 13rem;
-    height: 9.75rem;
+    width: 15rem;
+    height: 11.25rem;
   }
 
   &__svg {
@@ -332,8 +347,10 @@ export default {
   max-width: 40rem;
   max-height: 27rem;
 
+  // 透明點選區疊在圖上：平常看不出來，選取或答錯時加框和淡色
   &__piece {
-    stroke: #37474f;
+    fill: transparent;
+    stroke: transparent;
     stroke-width: 3;
     stroke-linejoin: round;
     cursor: pointer;
@@ -341,25 +358,27 @@ export default {
 
     &:hover,
     &:focus-visible {
-      filter: brightness(0.93);
+      fill: rgba(30, 136, 229, 0.12);
       stroke: #1e88e5;
-      stroke-width: 5;
+      stroke-width: 6;
     }
 
     &--selected {
+      fill: rgba(255, 179, 0, 0.25) !important;
       stroke: #ffb300 !important;
-      stroke-width: 7 !important;
-      filter: brightness(1.05);
+      stroke-width: 10 !important;
     }
 
     &--wrong {
+      fill: rgba(229, 57, 53, 0.2) !important;
       stroke: #e53935 !important;
-      stroke-width: 6 !important;
+      stroke-width: 10 !important;
     }
 
     &--correct {
+      fill: rgba(67, 160, 71, 0.2) !important;
       stroke: #43a047 !important;
-      stroke-width: 7 !important;
+      stroke-width: 10 !important;
     }
   }
 }
@@ -469,12 +488,12 @@ export default {
   }
 
   .option {
-    width: 13rem;
-    height: 9.75rem;
+    width: 14rem;
+    height: 10.5rem;
 
     .options--3 & {
-      width: 10rem;
-      height: 7.5rem;
+      width: 11rem;
+      height: 8.25rem;
     }
   }
 
