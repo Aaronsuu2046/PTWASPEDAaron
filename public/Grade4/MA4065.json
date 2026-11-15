@@ -1,1944 +1,1165 @@
 {
- "id": "MA4065",
- "GameType": "SelfDefine",
- "TotalLevel": 5,
- "IntroText": {
-  "Type": "PlainText",
-  "Content": "找出等腰直角三角形。"
- },
- "GameConfig": {},
- "Questions": [
-  [
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o1",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        32.0,
-        12.0
-       ],
-       [
-        128.0,
-        12.0
-       ],
-       [
-        32.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#bbdefb"
-     },
-     {
-      "optionId": "o2",
-      "kind": "acuteScalene",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        24.3,
-        12.0
-       ],
-       [
-        135.7,
-        31.6
-       ],
-       [
-        47.6,
-        108.0
-       ]
-      ],
-      "angles": [
-       66.4,
-       50.9,
-       62.7
-      ],
-      "color": "#b2ebf2"
-     }
+  "id": "MA4065",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "找出等腰直角三角形。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "1-1甲",
+            "label": "甲",
+            "image": "1-1甲.PNG",
+            "size": [800, 800],
+            "view": [132, 156, 459, 489],
+            "vertices": [
+              [162, 615],
+              [561, 186],
+              [505, 534]
+            ],
+            "angles": [33.8, 33.8, 112.4],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "1-1乙",
+            "label": "乙",
+            "image": "1-1乙.PNG",
+            "size": [800, 800],
+            "view": [157, 257, 567, 316],
+            "vertices": [
+              [439, 287],
+              [694, 541],
+              [187, 543]
+            ],
+            "angles": [89.7, 45.1, 45.2],
+            "isRightIsosceles": true
+          }
+        ],
+        "answer": "1-1乙"
+      },
+      {
+        "code": "1-2",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "1-2甲",
+            "label": "甲",
+            "image": "1-2甲.PNG",
+            "size": [800, 800],
+            "view": [302, 312, 381, 379],
+            "vertices": [
+              [332, 343],
+              [653, 342],
+              [337, 661]
+            ],
+            "angles": [89.3, 45.1, 45.6],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "1-2乙",
+            "label": "乙",
+            "image": "1-2乙.PNG",
+            "size": [800, 800],
+            "view": [77, 164, 591, 621],
+            "vertices": [
+              [107, 400],
+              [638, 194],
+              [553, 755]
+            ],
+            "angles": [59.7, 60.2, 60.1],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "1-2甲"
+      },
+      {
+        "code": "1-3",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "1-3甲",
+            "label": "甲",
+            "image": "1-3甲.PNG",
+            "size": [800, 800],
+            "view": [271, 39, 437, 730],
+            "vertices": [
+              [301, 69],
+              [678, 281],
+              [337, 739]
+            ],
+            "angles": [57.6, 82.7, 39.7],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "1-3乙",
+            "label": "乙",
+            "image": "1-3乙.PNG",
+            "size": [800, 800],
+            "view": [144, 279, 507, 396],
+            "vertices": [
+              [509, 309],
+              [621, 645],
+              [174, 425]
+            ],
+            "angles": [89.3, 45.4, 45.3],
+            "isRightIsosceles": true
+          }
+        ],
+        "answer": "1-3乙"
+      },
+      {
+        "code": "1-4",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "1-4甲",
+            "label": "甲",
+            "image": "1-4甲.PNG",
+            "size": [800, 800],
+            "view": [115, 187, 544, 267],
+            "vertices": [
+              [518, 217],
+              [629, 424],
+              [145, 420]
+            ],
+            "angles": [89.6, 61.3, 29],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "1-4乙",
+            "label": "乙",
+            "image": "1-4乙.PNG",
+            "size": [800, 800],
+            "view": [218, 257, 545, 421],
+            "vertices": [
+              [374, 287],
+              [733, 417],
+              [248, 648]
+            ],
+            "angles": [89.3, 45.4, 45.3],
+            "isRightIsosceles": true
+          }
+        ],
+        "answer": "1-4乙"
+      },
+      {
+        "code": "1-5",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "1-5甲",
+            "label": "甲",
+            "image": "1-5甲.PNG",
+            "size": [800, 800],
+            "view": [108, 253, 469, 470],
+            "vertices": [
+              [138, 286],
+              [547, 283],
+              [547, 693]
+            ],
+            "angles": [45.3, 89.6, 45.1],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "1-5乙",
+            "label": "乙",
+            "image": "1-5乙.PNG",
+            "size": [800, 800],
+            "view": [239, 144, 335, 637],
+            "vertices": [
+              [498, 174],
+              [544, 751],
+              [269, 397]
+            ],
+            "angles": [50.3, 33.3, 96.4],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "1-5甲"
+      }
     ],
-    "answer": "o1"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o3",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        128.0,
-        12.0
-       ],
-       [
-        128.0,
-        108.0
-       ],
-       [
-        32.0,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#c8e6c9"
-     },
-     {
-      "optionId": "o4",
-      "kind": "isoNonRight",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        40.0,
-        12.0
-       ],
-       [
-        120.0,
-        12.0
-       ],
-       [
-        80.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       67.4,
-       67.4,
-       45.2
-      ],
-      "color": "#fff9c4"
-     }
+    [
+      {
+        "code": "2-1",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "2-1A",
+            "label": "A",
+            "image": "2-1A.PNG",
+            "size": [800, 800],
+            "view": [268, 112, 440, 480],
+            "vertices": [
+              [369, 142],
+              [678, 562],
+              [298, 421]
+            ],
+            "angles": [50.6, 33.3, 96.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "2-1B",
+            "label": "B",
+            "image": "2-1B.PNG",
+            "size": [800, 800],
+            "view": [68, 133, 720, 393],
+            "vertices": [
+              [426, 163],
+              [758, 495],
+              [98, 496]
+            ],
+            "angles": [89.6, 45.1, 45.3],
+            "isRightIsosceles": true
+          }
+        ],
+        "answer": "2-1B"
+      },
+      {
+        "code": "2-2",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "2-2A",
+            "label": "A",
+            "image": "2-2A.PNG",
+            "size": [800, 800],
+            "view": [254, 103, 388, 610],
+            "vertices": [
+              [284, 133],
+              [612, 355],
+              [386, 683]
+            ],
+            "angles": [45.4, 89.5, 45.1],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "2-2B",
+            "label": "B",
+            "image": "2-2B.PNG",
+            "size": [800, 800],
+            "view": [286, 100, 439, 442],
+            "vertices": [
+              [334, 130],
+              [695, 500],
+              [316, 512]
+            ],
+            "angles": [47, 47.5, 85.5],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "2-2A"
+      },
+      {
+        "code": "2-3",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "2-3A",
+            "label": "A",
+            "image": "2-3A.PNG",
+            "size": [800, 800],
+            "view": [69, 233, 715, 225],
+            "vertices": [
+              [99, 263],
+              [754, 272],
+              [423, 428]
+            ],
+            "angles": [26.2, 26, 127.8],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "2-3B",
+            "label": "B",
+            "image": "2-3B.PNG",
+            "size": [800, 800],
+            "view": [101, 212, 631, 353],
+            "vertices": [
+              [131, 249],
+              [702, 242],
+              [420, 535]
+            ],
+            "angles": [45.4, 45.4, 89.2],
+            "isRightIsosceles": true
+          }
+        ],
+        "answer": "2-3B"
+      },
+      {
+        "code": "2-4",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "2-4A",
+            "label": "A",
+            "image": "2-4A.PNG",
+            "size": [800, 800],
+            "view": [188, 162, 483, 488],
+            "vertices": [
+              [327, 192],
+              [641, 502],
+              [218, 620]
+            ],
+            "angles": [59.7, 60.2, 60.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "2-4B",
+            "label": "B",
+            "image": "2-4B.PNG",
+            "size": [800, 800],
+            "view": [227, 127, 508, 408],
+            "vertices": [
+              [257, 157],
+              [705, 398],
+              [359, 505]
+            ],
+            "angles": [45.4, 45.5, 89.2],
+            "isRightIsosceles": true
+          }
+        ],
+        "answer": "2-4B"
+      },
+      {
+        "code": "2-5",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "2-5A",
+            "label": "A",
+            "image": "2-5A.PNG",
+            "size": [800, 800],
+            "view": [267, 72, 487, 473],
+            "vertices": [
+              [297, 102],
+              [724, 496],
+              [313, 515]
+            ],
+            "angles": [45.1, 45.3, 89.6],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "2-5B",
+            "label": "B",
+            "image": "2-5B.PNG",
+            "size": [800, 800],
+            "view": [115, 187, 544, 267],
+            "vertices": [
+              [518, 217],
+              [629, 424],
+              [145, 420]
+            ],
+            "angles": [89.6, 61.3, 29],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "2-5A"
+      }
     ],
-    "answer": "o3"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o5",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        128.0,
-        108.0
-       ],
-       [
-        32.0,
-        108.0
-       ],
-       [
-        128.0,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffe0b2"
-     },
-     {
-      "optionId": "o6",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        12.0,
-        17.5
-       ],
-       [
-        148.0,
-        17.5
-       ],
-       [
-        12.0,
-        102.5
-       ]
-      ],
-      "angles": [
-       90.0,
-       32.0,
-       58.0
-      ],
-      "color": "#dcedc8"
-     }
+    [
+      {
+        "code": "3-1",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "3-1ㄅ",
+            "label": "ㄅ",
+            "image": "3-1ㄅ.PNG",
+            "size": [800, 800],
+            "view": [51, 87, 591, 621],
+            "vertices": [
+              [81, 323],
+              [612, 117],
+              [527, 678]
+            ],
+            "angles": [59.7, 60.2, 60.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "3-1ㄆ",
+            "label": "ㄆ",
+            "image": "3-1ㄆ.PNG",
+            "size": [800, 800],
+            "view": [267, 72, 487, 473],
+            "vertices": [
+              [297, 102],
+              [724, 496],
+              [313, 515]
+            ],
+            "angles": [45.1, 45.3, 89.6],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "3-1ㄇ",
+            "label": "ㄇ",
+            "image": "3-1ㄇ.PNG",
+            "size": [800, 800],
+            "view": [141, 79, 459, 489],
+            "vertices": [
+              [171, 538],
+              [570, 109],
+              [514, 457]
+            ],
+            "angles": [33.8, 33.8, 112.4],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "3-1ㄆ"
+      },
+      {
+        "code": "3-2",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "3-2ㄅ",
+            "label": "ㄅ",
+            "image": "3-2ㄅ.PNG",
+            "size": [800, 800],
+            "view": [66, 135, 709, 391],
+            "vertices": [
+              [415, 165],
+              [745, 490],
+              [96, 496]
+            ],
+            "angles": [89.4, 45.1, 45.5],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "3-2ㄆ",
+            "label": "ㄆ",
+            "image": "3-2ㄆ.PNG",
+            "size": [800, 800],
+            "view": [133, 137, 463, 475],
+            "vertices": [
+              [163, 303],
+              [566, 167],
+              [486, 582]
+            ],
+            "angles": [59.5, 60.4, 60.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "3-2ㄇ",
+            "label": "ㄇ",
+            "image": "3-2ㄇ.PNG",
+            "size": [800, 800],
+            "view": [194, 98, 456, 580],
+            "vertices": [
+              [397, 128],
+              [620, 402],
+              [224, 648]
+            ],
+            "angles": [57.5, 82.7, 39.7],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "3-2ㄅ"
+      },
+      {
+        "code": "3-3",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "3-3ㄅ",
+            "label": "ㄅ",
+            "image": "3-3ㄅ.PNG",
+            "size": [800, 800],
+            "view": [133, 204, 471, 363],
+            "vertices": [
+              [163, 234],
+              [574, 308],
+              [531, 537]
+            ],
+            "angles": [29.3, 89.6, 61.2],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "3-3ㄆ",
+            "label": "ㄆ",
+            "image": "3-3ㄆ.PNG",
+            "size": [800, 800],
+            "view": [114, 192, 486, 475],
+            "vertices": [
+              [557, 222],
+              [570, 637],
+              [144, 240]
+            ],
+            "angles": [89.3, 45.2, 45.5],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "3-3ㄇ",
+            "label": "ㄇ",
+            "image": "3-3ㄇ.PNG",
+            "size": [800, 800],
+            "view": [69, 262, 715, 225],
+            "vertices": [
+              [99, 292],
+              [754, 301],
+              [423, 457]
+            ],
+            "angles": [26.2, 26, 127.8],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "3-3ㄆ"
+      },
+      {
+        "code": "3-4",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "3-4ㄅ",
+            "label": "ㄅ",
+            "image": "3-4ㄅ.PNG",
+            "size": [800, 800],
+            "view": [165, 220, 585, 452],
+            "vertices": [
+              [433, 250],
+              [720, 642],
+              [195, 321]
+            ],
+            "angles": [109.6, 22.3, 48.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "3-4ㄆ",
+            "label": "ㄆ",
+            "image": "3-4ㄆ.PNG",
+            "size": [800, 800],
+            "view": [267, 67, 356, 620],
+            "vertices": [
+              [297, 97],
+              [593, 362],
+              [325, 657]
+            ],
+            "angles": [45.3, 89.6, 45.1],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "3-4ㄇ",
+            "label": "ㄇ",
+            "image": "3-4ㄇ.PNG",
+            "size": [800, 800],
+            "view": [268, 112, 440, 480],
+            "vertices": [
+              [369, 142],
+              [678, 562],
+              [298, 421]
+            ],
+            "angles": [50.6, 33.3, 96.1],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "3-4ㄆ"
+      },
+      {
+        "code": "3-5",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "3-5ㄅ",
+            "label": "ㄅ",
+            "image": "3-5ㄅ.PNG",
+            "size": [800, 800],
+            "view": [88, 180, 548, 469],
+            "vertices": [
+              [118, 293],
+              [526, 210],
+              [606, 619]
+            ],
+            "angles": [45.2, 89.6, 45.2],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "3-5ㄆ",
+            "label": "ㄆ",
+            "image": "3-5ㄆ.PNG",
+            "size": [800, 800],
+            "view": [160, 110, 509, 654],
+            "vertices": [
+              [190, 140],
+              [639, 140],
+              [429, 734]
+            ],
+            "angles": [68.1, 70.5, 41.4],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "3-5ㄇ",
+            "label": "ㄇ",
+            "image": "3-5ㄇ.PNG",
+            "size": [800, 800],
+            "view": [131, 215, 505, 341],
+            "vertices": [
+              [161, 357],
+              [606, 245],
+              [513, 526]
+            ],
+            "angles": [39.8, 57.6, 82.7],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "3-5ㄅ"
+      }
     ],
-    "answer": "o5"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o7",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        32.0,
-        108.0
-       ],
-       [
-        32.0,
-        12.0
-       ],
-       [
-        128.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#e1bee7"
-     },
-     {
-      "optionId": "o8",
-      "kind": "equilateral",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        24.6,
-        12.0
-       ],
-       [
-        135.4,
-        12.0
-       ],
-       [
-        80.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       60.0,
-       60.0,
-       60.0
-      ],
-      "color": "#f8bbd0"
-     }
+    [
+      {
+        "code": "4-1",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "4-1甲",
+            "label": "甲",
+            "image": "4-1甲.PNG",
+            "size": [800, 800],
+            "view": [205, 291, 562, 500],
+            "vertices": [
+              [489, 321],
+              [737, 761],
+              [235, 366]
+            ],
+            "angles": [109.4, 22.4, 48.2],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "4-1乙",
+            "label": "乙",
+            "image": "4-1乙.PNG",
+            "size": [800, 800],
+            "view": [295, 157, 487, 473],
+            "vertices": [
+              [325, 187],
+              [752, 581],
+              [341, 600]
+            ],
+            "angles": [45.1, 45.3, 89.6],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "4-1丙",
+            "label": "丙",
+            "image": "4-1丙.PNG",
+            "size": [800, 800],
+            "view": [24, 249, 731, 347],
+            "vertices": [
+              [54, 400],
+              [725, 279],
+              [429, 566]
+            ],
+            "angles": [34.1, 33.9, 112],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "4-1乙"
+      },
+      {
+        "code": "4-2",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "4-2甲",
+            "label": "甲",
+            "image": "4-2甲.PNG",
+            "size": [800, 800],
+            "view": [246, 279, 437, 290],
+            "vertices": [
+              [424, 309],
+              [653, 459],
+              [276, 539]
+            ],
+            "angles": [89.5, 45.2, 45.3],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "4-2乙",
+            "label": "乙",
+            "image": "4-2乙.PNG",
+            "size": [800, 800],
+            "view": [261, 233, 527, 413],
+            "vertices": [
+              [291, 263],
+              [758, 428],
+              [291, 616]
+            ],
+            "angles": [70.5, 41.4, 68.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "4-2丙",
+            "label": "丙",
+            "image": "4-2丙.PNG",
+            "size": [800, 800],
+            "view": [271, 251, 357, 506],
+            "vertices": [
+              [303, 310],
+              [598, 281],
+              [301, 727]
+            ],
+            "angles": [95.9, 50.7, 33.4],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "4-2甲"
+      },
+      {
+        "code": "4-3",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "4-3甲",
+            "label": "甲",
+            "image": "4-3甲.PNG",
+            "size": [800, 800],
+            "view": [119, 324, 484, 296],
+            "vertices": [
+              [149, 356],
+              [573, 354],
+              [573, 590]
+            ],
+            "angles": [29.2, 89.7, 61.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "4-3乙",
+            "label": "乙",
+            "image": "4-3乙.PNG",
+            "size": [800, 800],
+            "view": [155, 271, 552, 365],
+            "vertices": [
+              [490, 301],
+              [677, 606],
+              [185, 491]
+            ],
+            "angles": [89.6, 45.3, 45.1],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "4-3丙",
+            "label": "丙",
+            "image": "4-3丙.PNG",
+            "size": [800, 800],
+            "view": [54, 166, 654, 364],
+            "vertices": [
+              [84, 500],
+              [678, 196],
+              [455, 494]
+            ],
+            "angles": [26.2, 26.1, 127.7],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "4-3乙"
+      },
+      {
+        "code": "4-4",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "4-4甲",
+            "label": "甲",
+            "image": "4-4甲.PNG",
+            "size": [800, 800],
+            "view": [224, 54, 349, 525],
+            "vertices": [
+              [527, 84],
+              [543, 542],
+              [254, 549]
+            ],
+            "angles": [32.4, 89.4, 58.2],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "4-4乙",
+            "label": "乙",
+            "image": "4-4乙.PNG",
+            "size": [800, 800],
+            "view": [118, 244, 582, 397],
+            "vertices": [
+              [148, 420],
+              [670, 274],
+              [482, 611]
+            ],
+            "angles": [45.4, 45.2, 89.4],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "4-4丙",
+            "label": "丙",
+            "image": "4-4丙.PNG",
+            "size": [800, 800],
+            "view": [145, 155, 470, 522],
+            "vertices": [
+              [175, 430],
+              [585, 185],
+              [437, 647]
+            ],
+            "angles": [70.5, 41.4, 68.1],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "4-4乙"
+      },
+      {
+        "code": "4-5",
+        "type": "choose",
+        "options": [
+          {
+            "optionId": "4-5甲",
+            "label": "甲",
+            "image": "4-5甲.PNG",
+            "size": [800, 800],
+            "view": [234, 198, 508, 408],
+            "vertices": [
+              [264, 228],
+              [712, 469],
+              [366, 576]
+            ],
+            "angles": [45.4, 45.5, 89.2],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "4-5乙",
+            "label": "乙",
+            "image": "4-5乙.PNG",
+            "size": [800, 800],
+            "view": [261, 153, 281, 533],
+            "vertices": [
+              [291, 656],
+              [502, 183],
+              [512, 472]
+            ],
+            "angles": [26.2, 26, 127.8],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "4-5丙",
+            "label": "丙",
+            "image": "4-5丙.PNG",
+            "size": [800, 800],
+            "view": [188, 162, 483, 488],
+            "vertices": [
+              [327, 192],
+              [641, 502],
+              [218, 620]
+            ],
+            "angles": [59.7, 60.2, 60.1],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "4-5甲"
+      }
     ],
-    "answer": "o7"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o9",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        80.0,
-        26.0
-       ],
-       [
-        148.0,
-        94.0
-       ],
-       [
-        12.0,
-        94.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffcdd2"
-     },
-     {
-      "optionId": "o10",
-      "kind": "obtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        12.0,
-        34.2
-       ],
-       [
-        105.8,
-        34.2
-       ],
-       [
-        148.0,
-        85.8
-       ]
-      ],
-      "angles": [
-       20.8,
-       129.3,
-       29.9
-      ],
-      "color": "#d1c4e9"
-     }
-    ],
-    "answer": "o9"
-   }
-  ],
-  [
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o11",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        104.0,
-        60.0
-       ],
-       [
-        56.0,
-        108.0
-       ],
-       [
-        56.0,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffe0b2"
-     },
-     {
-      "optionId": "o12",
-      "kind": "acuteScalene",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        126.3,
-        74.3
-       ],
-       [
-        33.7,
-        108.0
-       ],
-       [
-        66.9,
-        12.0
-       ]
-      ],
-      "angles": [
-       66.4,
-       50.9,
-       62.7
-      ],
-      "color": "#dcedc8"
-     }
-    ],
-    "answer": "o11"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o13",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        80.0,
-        94.0
-       ],
-       [
-        12.0,
-        26.0
-       ],
-       [
-        148.0,
-        26.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#e1bee7"
-     },
-     {
-      "optionId": "o14",
-      "kind": "isoNonRightObtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        96.8,
-        12.0
-       ],
-       [
-        96.8,
-        108.0
-       ],
-       [
-        63.2,
-        60.0
-       ]
-      ],
-      "angles": [
-       35.0,
-       35.0,
-       110.0
-      ],
-      "color": "#f8bbd0"
-     }
-    ],
-    "answer": "o13"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o15",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        56.0,
-        60.0
-       ],
-       [
-        104.0,
-        12.0
-       ],
-       [
-        104.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffcdd2"
-     },
-     {
-      "optionId": "o16",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        90.8,
-        108.0
-       ],
-       [
-        34.3,
-        87.4
-       ],
-       [
-        125.7,
-        12.0
-       ]
-      ],
-      "angles": [
-       89.9,
-       59.6,
-       30.5
-      ],
-      "color": "#d1c4e9"
-     }
-    ],
-    "answer": "o15"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o17",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        49.5,
-        12.0
-       ],
-       [
-        145.5,
-        46.9
-       ],
-       [
-        14.5,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.1,
-       45.0,
-       45.0
-      ],
-      "color": "#b2ebf2"
-     },
-     {
-      "optionId": "o18",
-      "kind": "equilateral",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        38.4,
-        12.0
-       ],
-       [
-        121.6,
-        60.0
-       ],
-       [
-        38.4,
-        108.0
-       ]
-      ],
-      "angles": [
-       60.0,
-       60.0,
-       60.0
-      ],
-      "color": "#bbdefb"
-     }
-    ],
-    "answer": "o17"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o19",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        110.5,
-        108.0
-       ],
-       [
-        14.5,
-        73.1
-       ],
-       [
-        145.5,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.1,
-       45.0,
-       45.0
-      ],
-      "color": "#fff9c4"
-     },
-     {
-      "optionId": "o20",
-      "kind": "obtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        138.8,
-        12.0
-       ],
-       [
-        89.9,
-        96.8
-       ],
-       [
-        21.2,
-        108.0
-       ]
-      ],
-      "angles": [
-       20.8,
-       129.2,
-       30.0
-      ],
-      "color": "#c8e6c9"
-     }
-    ],
-    "answer": "o19"
-   }
-  ],
-  [
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o21",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        32.0,
-        12.0
-       ],
-       [
-        128.0,
-        12.0
-       ],
-       [
-        32.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#bbdefb"
-     },
-     {
-      "optionId": "o22",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        12.0,
-        17.5
-       ],
-       [
-        148.0,
-        17.5
-       ],
-       [
-        12.0,
-        102.5
-       ]
-      ],
-      "angles": [
-       90.0,
-       32.0,
-       58.0
-      ],
-      "color": "#e1bee7"
-     },
-     {
-      "optionId": "o23",
-      "kind": "isoNonRight",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        40.0,
-        12.0
-       ],
-       [
-        120.0,
-        12.0
-       ],
-       [
-        80.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       67.4,
-       67.4,
-       45.2
-      ],
-      "color": "#fff9c4"
-     }
-    ],
-    "answer": "o21"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o24",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        128.0,
-        12.0
-       ],
-       [
-        128.0,
-        108.0
-       ],
-       [
-        32.0,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#c8e6c9"
-     },
-     {
-      "optionId": "o25",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        148.0,
-        20.0
-       ],
-       [
-        148.0,
-        100.0
-       ],
-       [
-        12.0,
-        20.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       59.5,
-       30.5
-      ],
-      "color": "#ffcdd2"
-     },
-     {
-      "optionId": "o26",
-      "kind": "isoNonRightObtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        148.0,
-        83.8
-       ],
-       [
-        12.0,
-        83.8
-       ],
-       [
-        80.0,
-        36.2
-       ]
-      ],
-      "angles": [
-       35.0,
-       35.0,
-       110.0
-      ],
-      "color": "#dcedc8"
-     }
-    ],
-    "answer": "o24"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o27",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        128.0,
-        108.0
-       ],
-       [
-        32.0,
-        108.0
-       ],
-       [
-        128.0,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffe0b2"
-     },
-     {
-      "optionId": "o28",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        148.0,
-        102.5
-       ],
-       [
-        12.0,
-        102.5
-       ],
-       [
-        148.0,
-        17.5
-       ]
-      ],
-      "angles": [
-       90.0,
-       32.0,
-       58.0
-      ],
-      "color": "#b2ebf2"
-     },
-     {
-      "optionId": "o29",
-      "kind": "isoNonRight",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        137.6,
-        12.0
-       ],
-       [
-        137.6,
-        108.0
-       ],
-       [
-        22.4,
-        60.0
-       ]
-      ],
-      "angles": [
-       67.4,
-       67.4,
-       45.2
-      ],
-      "color": "#f8bbd0"
-     }
-    ],
-    "answer": "o27"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o30",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        32.0,
-        108.0
-       ],
-       [
-        32.0,
-        12.0
-       ],
-       [
-        128.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#e1bee7"
-     },
-     {
-      "optionId": "o31",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        12.0,
-        100.0
-       ],
-       [
-        12.0,
-        20.0
-       ],
-       [
-        148.0,
-        100.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       59.5,
-       30.5
-      ],
-      "color": "#fff9c4"
-     },
-     {
-      "optionId": "o32",
-      "kind": "isoNonRightObtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        63.2,
-        108.0
-       ],
-       [
-        63.2,
-        12.0
-       ],
-       [
-        96.8,
-        60.0
-       ]
-      ],
-      "angles": [
-       35.0,
-       35.0,
-       110.0
-      ],
-      "color": "#d1c4e9"
-     }
-    ],
-    "answer": "o30"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o33",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        80.0,
-        26.0
-       ],
-       [
-        148.0,
-        94.0
-       ],
-       [
-        12.0,
-        94.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffcdd2"
-     },
-     {
-      "optionId": "o34",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        48.1,
-        28.8
-       ],
-       [
-        148.0,
-        86.5
-       ],
-       [
-        12.0,
-        91.2
-       ]
-      ],
-      "angles": [
-       90.0,
-       32.0,
-       58.0
-      ],
-      "color": "#dcedc8"
-     },
-     {
-      "optionId": "o35",
-      "kind": "isoNonRight",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        44.0,
-        12.0
-       ],
-       [
-        116.0,
-        31.3
-       ],
-       [
-        56.9,
-        108.0
-       ]
-      ],
-      "angles": [
-       67.3,
-       67.4,
-       45.3
-      ],
-      "color": "#bbdefb"
-     }
-    ],
-    "answer": "o33"
-   }
-  ],
-  [
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o36",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        80.0,
-        94.0
-       ],
-       [
-        12.0,
-        26.0
-       ],
-       [
-        148.0,
-        26.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#c8e6c9"
-     },
-     {
-      "optionId": "o37",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        121.2,
-        59.6
-       ],
-       [
-        93.2,
-        108.0
-       ],
-       [
-        38.8,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       59.6,
-       30.4
-      ],
-      "color": "#ffcdd2"
-     },
-     {
-      "optionId": "o38",
-      "kind": "isoNonRightObtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        148.0,
-        96.2
-       ],
-       [
-        12.0,
-        46.7
-       ],
-       [
-        97.3,
-        23.8
-       ]
-      ],
-      "angles": [
-       35.0,
-       35.0,
-       110.0
-      ],
-      "color": "#f8bbd0"
-     }
-    ],
-    "answer": "o36"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o39",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        104.0,
-        60.0
-       ],
-       [
-        56.0,
-        108.0
-       ],
-       [
-        56.0,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffe0b2"
-     },
-     {
-      "optionId": "o40",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        111.9,
-        91.2
-       ],
-       [
-        12.0,
-        33.5
-       ],
-       [
-        148.0,
-        28.8
-       ]
-      ],
-      "angles": [
-       90.0,
-       32.0,
-       58.0
-      ],
-      "color": "#b2ebf2"
-     },
-     {
-      "optionId": "o41",
-      "kind": "isoNonRight",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        93.4,
-        12.0
-       ],
-       [
-        139.9,
-        92.5
-       ],
-       [
-        20.1,
-        108.0
-       ]
-      ],
-      "angles": [
-       67.4,
-       67.4,
-       45.3
-      ],
-      "color": "#d1c4e9"
-     }
-    ],
-    "answer": "o39"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o42",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        56.0,
-        60.0
-       ],
-       [
-        104.0,
-        12.0
-       ],
-       [
-        104.0,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#e1bee7"
-     },
-     {
-      "optionId": "o43",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        38.8,
-        60.4
-       ],
-       [
-        66.8,
-        12.0
-       ],
-       [
-        121.2,
-        108.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       59.6,
-       30.4
-      ],
-      "color": "#fff9c4"
-     },
-     {
-      "optionId": "o44",
-      "kind": "isoNonRightObtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        49.3,
-        108.0
-       ],
-       [
-        104.8,
-        12.0
-       ],
-       [
-        110.7,
-        79.4
-       ]
-      ],
-      "angles": [
-       35.0,
-       35.0,
-       110.0
-      ],
-      "color": "#bbdefb"
-     }
-    ],
-    "answer": "o42"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o45",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        115.2,
-        82.4
-       ],
-       [
-        44.8,
-        108.0
-       ],
-       [
-        89.6,
-        12.0
-       ]
-      ],
-      "angles": [
-       90.0,
-       45.0,
-       45.0
-      ],
-      "color": "#ffcdd2"
-     },
-     {
-      "optionId": "o46",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        82.3,
-        12.0
-       ],
-       [
-        137.7,
-        108.0
-       ],
-       [
-        22.3,
-        46.6
-       ]
-      ],
-      "angles": [
-       90.0,
-       32.0,
-       58.0
-      ],
-      "color": "#dcedc8"
-     },
-     {
-      "optionId": "o47",
-      "kind": "isoNonRight",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        139.9,
-        27.5
-       ],
-       [
-        93.4,
-        108.0
-       ],
-       [
-        20.1,
-        12.0
-       ]
-      ],
-      "angles": [
-       67.4,
-       67.4,
-       45.3
-      ],
-      "color": "#c8e6c9"
-     }
-    ],
-    "answer": "o45"
-   },
-   {
-    "type": "choose",
-    "options": [
-     {
-      "optionId": "o48",
-      "kind": "RI",
-      "isRightIsosceles": true,
-      "vertices": [
-       [
-        49.5,
-        108.0
-       ],
-       [
-        14.5,
-        12.0
-       ],
-       [
-        145.5,
-        73.1
-       ]
-      ],
-      "angles": [
-       90.1,
-       45.0,
-       45.0
-      ],
-      "color": "#b2ebf2"
-     },
-     {
-      "optionId": "o49",
-      "kind": "rightNonIso",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        101.1,
-        83.7
-       ],
-       [
-        58.9,
-        108.0
-       ],
-       [
-        59.7,
-        12.0
-       ]
-      ],
-      "angles": [
-       89.9,
-       59.6,
-       30.5
-      ],
-      "color": "#f8bbd0"
-     },
-     {
-      "optionId": "o50",
-      "kind": "isoNonRightObtuse",
-      "isRightIsosceles": false,
-      "vertices": [
-       [
-        104.8,
-        108.0
-       ],
-       [
-        49.3,
-        12.0
-       ],
-       [
-        110.7,
-        40.6
-       ]
-      ],
-      "angles": [
-       35.0,
-       35.0,
-       110.0
-      ],
-      "color": "#ffe0b2"
-     }
-    ],
-    "answer": "o48"
-   }
-  ],
-  [
-   {
-    "type": "composite",
-    "outer": [
-     [
-      0,
-      0
-     ],
-     [
-      300,
-      0
-     ],
-     [
-      300,
-      200
-     ],
-     [
-      0,
-      200
-     ]
-    ],
-    "options": [
-     {
-      "optionId": "c0p0",
-      "vertices": [
-       [
-        0,
-        200
-       ],
-       [
-        200,
-        200
-       ],
-       [
-        0,
-        0
-       ]
-      ],
-      "isRightIsosceles": true,
-      "kind": "RI",
-      "color": "#ffcc80"
-     },
-     {
-      "optionId": "c0p1",
-      "vertices": [
-       [
-        300,
-        0
-       ],
-       [
-        300,
-        200
-       ],
-       [
-        200,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "rightNonIso",
-      "color": "#90caf9"
-     },
-     {
-      "optionId": "c0p2",
-      "vertices": [
-       [
-        0,
-        0
-       ],
-       [
-        150,
-        0
-       ],
-       [
-        200,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#a5d6a7"
-     },
-     {
-      "optionId": "c0p3",
-      "vertices": [
-       [
-        150,
-        0
-       ],
-       [
-        300,
-        0
-       ],
-       [
-        200,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "acuteScalene",
-      "color": "#ce93d8"
-     }
-    ],
-    "answer": "c0p0"
-   },
-   {
-    "type": "composite",
-    "outer": [
-     [
-      0,
-      200
-     ],
-     [
-      300,
-      200
-     ],
-     [
-      150,
-      0
-     ]
-    ],
-    "options": [
-     {
-      "optionId": "c1p0",
-      "vertices": [
-       [
-        0,
-        200
-       ],
-       [
-        150,
-        200
-       ],
-       [
-        150,
-        0
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "rightNonIso",
-      "color": "#90caf9"
-     },
-     {
-      "optionId": "c1p1",
-      "vertices": [
-       [
-        150,
-        200
-       ],
-       [
-        250,
-        200
-       ],
-       [
-        150,
-        100
-       ]
-      ],
-      "isRightIsosceles": true,
-      "kind": "RI",
-      "color": "#a5d6a7"
-     },
-     {
-      "optionId": "c1p2",
-      "vertices": [
-       [
-        150,
-        0
-       ],
-       [
-        150,
-        100
-       ],
-       [
-        300,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#ce93d8"
-     },
-     {
-      "optionId": "c1p3",
-      "vertices": [
-       [
-        150,
-        100
-       ],
-       [
-        250,
-        200
-       ],
-       [
-        300,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#fff59d"
-     }
-    ],
-    "answer": "c1p1"
-   },
-   {
-    "type": "composite",
-    "outer": [
-     [
-      0,
-      0
-     ],
-     [
-      300,
-      0
-     ],
-     [
-      300,
-      200
-     ],
-     [
-      0,
-      200
-     ]
-    ],
-    "options": [
-     {
-      "optionId": "c2p0",
-      "vertices": [
-       [
-        0,
-        0
-       ],
-       [
-        300,
-        0
-       ],
-       [
-        100,
-        100
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#a5d6a7"
-     },
-     {
-      "optionId": "c2p1",
-      "vertices": [
-       [
-        300,
-        0
-       ],
-       [
-        300,
-        200
-       ],
-       [
-        100,
-        100
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "isoNonRight",
-      "color": "#ce93d8"
-     },
-     {
-      "optionId": "c2p2",
-      "vertices": [
-       [
-        300,
-        200
-       ],
-       [
-        0,
-        200
-       ],
-       [
-        100,
-        100
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#fff59d"
-     },
-     {
-      "optionId": "c2p3",
-      "vertices": [
-       [
-        0,
-        200
-       ],
-       [
-        0,
-        0
-       ],
-       [
-        100,
-        100
-       ]
-      ],
-      "isRightIsosceles": true,
-      "kind": "RI",
-      "color": "#80deea"
-     }
-    ],
-    "answer": "c2p3"
-   },
-   {
-    "type": "composite",
-    "outer": [
-     [
-      0,
-      200
-     ],
-     [
-      300,
-      200
-     ],
-     [
-      0,
-      0
-     ]
-    ],
-    "options": [
-     {
-      "optionId": "c3p0",
-      "vertices": [
-       [
-        0,
-        200
-       ],
-       [
-        100,
-        200
-       ],
-       [
-        0,
-        100
-       ]
-      ],
-      "isRightIsosceles": true,
-      "kind": "RI",
-      "color": "#ce93d8"
-     },
-     {
-      "optionId": "c3p1",
-      "vertices": [
-       [
-        0,
-        100
-       ],
-       [
-        100,
-        200
-       ],
-       [
-        300,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#fff59d"
-     },
-     {
-      "optionId": "c3p2",
-      "vertices": [
-       [
-        0,
-        0
-       ],
-       [
-        0,
-        100
-       ],
-       [
-        150,
-        100
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "rightNonIso",
-      "color": "#80deea"
-     },
-     {
-      "optionId": "c3p3",
-      "vertices": [
-       [
-        0,
-        100
-       ],
-       [
-        150,
-        100
-       ],
-       [
-        300,
-        200
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#ffcc80"
-     }
-    ],
-    "answer": "c3p0"
-   },
-   {
-    "type": "composite",
-    "outer": [
-     [
-      0,
-      200
-     ],
-     [
-      300,
-      200
-     ],
-     [
-      240,
-      80
-     ],
-     [
-      60,
-      80
-     ]
-    ],
-    "options": [
-     {
-      "optionId": "c4p0",
-      "vertices": [
-       [
-        100,
-        200
-       ],
-       [
-        200,
-        200
-       ],
-       [
-        150,
-        150
-       ]
-      ],
-      "isRightIsosceles": true,
-      "kind": "RI",
-      "color": "#fff59d"
-     },
-     {
-      "optionId": "c4p1",
-      "vertices": [
-       [
-        0,
-        200
-       ],
-       [
-        100,
-        200
-       ],
-       [
-        150,
-        150
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#80deea"
-     },
-     {
-      "optionId": "c4p2",
-      "vertices": [
-       [
-        200,
-        200
-       ],
-       [
-        300,
-        200
-       ],
-       [
-        150,
-        150
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "obtuse",
-      "color": "#ffcc80"
-     },
-     {
-      "optionId": "c4p3",
-      "vertices": [
-       [
-        300,
-        200
-       ],
-       [
-        240,
-        80
-       ],
-       [
-        150,
-        150
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "acuteScalene",
-      "color": "#90caf9"
-     },
-     {
-      "optionId": "c4p4",
-      "vertices": [
-       [
-        240,
-        80
-       ],
-       [
-        60,
-        80
-       ],
-       [
-        150,
-        150
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "isoNonRightObtuse",
-      "color": "#a5d6a7"
-     },
-     {
-      "optionId": "c4p5",
-      "vertices": [
-       [
-        60,
-        80
-       ],
-       [
-        0,
-        200
-       ],
-       [
-        150,
-        150
-       ]
-      ],
-      "isRightIsosceles": false,
-      "kind": "acuteScalene",
-      "color": "#ce93d8"
-     }
-    ],
-    "answer": "c4p0"
-   }
+    [
+      {
+        "code": "5-1",
+        "type": "composite",
+        "image": "5-1.PNG",
+        "size": [800, 800],
+        "view": [147, 225, 483, 381],
+        "options": [
+          {
+            "optionId": "5-1丁",
+            "label": "丁",
+            "vertices": [
+              [171, 347],
+              [508, 246],
+              [609, 583]
+            ],
+            "angles": [45, 90, 45],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "5-1丙",
+            "label": "丙",
+            "vertices": [
+              [514, 245],
+              [610, 245],
+              [610, 568]
+            ],
+            "angles": [73.4, 90, 16.6],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-1乙",
+            "label": "乙",
+            "vertices": [
+              [167, 351],
+              [604, 586],
+              [167, 586]
+            ],
+            "angles": [61.7, 28.3, 90],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-1甲",
+            "label": "甲",
+            "vertices": [
+              [168, 245],
+              [496, 245],
+              [168, 343]
+            ],
+            "angles": [90, 16.6, 73.4],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "5-1丁"
+      },
+      {
+        "code": "5-2",
+        "type": "composite",
+        "image": "5-2.PNG",
+        "size": [800, 800],
+        "view": [88, 175, 642, 395],
+        "options": [
+          {
+            "optionId": "5-2ㄅ",
+            "label": "ㄅ",
+            "vertices": [
+              [112, 195],
+              [454, 199],
+              [108, 536]
+            ],
+            "angles": [90, 44.9, 45.1],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "5-2ㄆ",
+            "label": "ㄆ",
+            "vertices": [
+              [120, 533],
+              [462, 199],
+              [705, 202]
+            ],
+            "angles": [14.8, 135, 30.2],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-2ㄇ",
+            "label": "ㄇ",
+            "vertices": [
+              [351, 409],
+              [710, 205],
+              [706, 548]
+            ],
+            "angles": [51, 59.7, 69.3],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-2ㄈ",
+            "label": "ㄈ",
+            "vertices": [
+              [114, 543],
+              [346, 413],
+              [696, 550]
+            ],
+            "angles": [30, 129.4, 20.7],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "5-2ㄅ"
+      },
+      {
+        "code": "5-3",
+        "type": "composite",
+        "image": "5-3.PNG",
+        "size": [800, 800],
+        "view": [138, 129, 559, 472],
+        "options": [
+          {
+            "optionId": "5-3ㄅ",
+            "label": "ㄅ",
+            "vertices": [
+              [163, 149],
+              [669, 154],
+              [162, 255]
+            ],
+            "angles": [90, 11.8, 78.2],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-3ㄆ",
+            "label": "ㄆ",
+            "vertices": [
+              [166, 261],
+              [392, 215],
+              [471, 573]
+            ],
+            "angles": [57.2, 90.9, 31.9],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-3ㄇ",
+            "label": "ㄇ",
+            "vertices": [
+              [162, 265],
+              [469, 579],
+              [158, 575]
+            ],
+            "angles": [45.1, 44.9, 90],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "5-3ㄈ",
+            "label": "ㄈ",
+            "vertices": [
+              [398, 214],
+              [674, 159],
+              [476, 569]
+            ],
+            "angles": [88.9, 53, 38.2],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-3ㄉ",
+            "label": "ㄉ",
+            "vertices": [
+              [478, 577],
+              [677, 165],
+              [673, 581]
+            ],
+            "angles": [65.4, 25.2, 89.4],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "5-3ㄇ"
+      },
+      {
+        "code": "5-4",
+        "type": "composite",
+        "image": "5-4.PNG",
+        "size": [800, 800],
+        "view": [117, 210, 590, 365],
+        "options": [
+          {
+            "optionId": "5-4ㄅ",
+            "label": "ㄅ",
+            "vertices": [
+              [239, 232],
+              [357, 533],
+              [138, 232]
+            ],
+            "angles": [111.4, 14.6, 54],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-4ㄆ",
+            "label": "ㄆ",
+            "vertices": [
+              [245, 231],
+              [682, 230],
+              [371, 550]
+            ],
+            "angles": [68.6, 45.7, 65.7],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-4ㄇ",
+            "label": "ㄇ",
+            "vertices": [
+              [375, 555],
+              [685, 235],
+              [687, 554]
+            ],
+            "angles": [45.7, 44.4, 89.8],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "5-4ㄈ",
+            "label": "ㄈ",
+            "vertices": [
+              [145, 555],
+              [310, 479],
+              [365, 555]
+            ],
+            "angles": [24.7, 101.2, 54.1],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-4ㄉ",
+            "label": "ㄉ",
+            "vertices": [
+              [137, 240],
+              [306, 473],
+              [138, 551]
+            ],
+            "angles": [35.8, 79, 65.3],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "5-4ㄇ"
+      },
+      {
+        "code": "5-5",
+        "type": "composite",
+        "image": "5-5.PNG",
+        "size": [800, 800],
+        "view": [230, 118, 417, 601],
+        "options": [
+          {
+            "optionId": "5-5ㄅ",
+            "label": "ㄅ",
+            "vertices": [
+              [250, 139],
+              [415, 138],
+              [250, 690]
+            ],
+            "angles": [90.3, 73, 16.6],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-5ㄆ",
+            "label": "ㄆ",
+            "vertices": [
+              [420, 142],
+              [624, 347],
+              [257, 688]
+            ],
+            "angles": [61.5, 88, 30.5],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-5ㄇ",
+            "label": "ㄇ",
+            "vertices": [
+              [424, 138],
+              [627, 138],
+              [627, 341]
+            ],
+            "angles": [45, 90, 45],
+            "isRightIsosceles": true
+          },
+          {
+            "optionId": "5-5ㄈ",
+            "label": "ㄈ",
+            "vertices": [
+              [517, 454],
+              [627, 351],
+              [627, 694]
+            ],
+            "angles": [108.5, 46.9, 24.6],
+            "isRightIsosceles": false
+          },
+          {
+            "optionId": "5-5ㄉ",
+            "label": "ㄉ",
+            "vertices": [
+              [512, 458],
+              [624, 699],
+              [254, 699]
+            ],
+            "angles": [71.9, 65.1, 43],
+            "isRightIsosceles": false
+          }
+        ],
+        "answer": "5-5ㄇ"
+      }
+    ]
   ]
- ]
 }
