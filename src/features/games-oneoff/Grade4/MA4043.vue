@@ -2,7 +2,6 @@
   <CalculatorQuestion
     :game-data="gameData"
     :intro-text="introText"
-    require-expression
     @play-effect="$emit('play-effect', $event)"
     @add-record="$emit('add-record', $event)"
     @next-question="$emit('next-question')"
@@ -12,7 +11,7 @@
 <script>
 import CalculatorQuestion from "./games/CalculatorQuestion/CalculatorQuestion.vue";
 
-// 二位數÷二位數（計算題）：在計算機依序按出被除數、÷、除數，再按「=」
+// 二位數÷二位數（計算題）：用計算機算，再點橫式的問號用小鍵盤填答案
 export default {
   name: "MA4043",
   components: { CalculatorQuestion },
