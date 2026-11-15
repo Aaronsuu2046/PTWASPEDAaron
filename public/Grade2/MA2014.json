@@ -1,0 +1,222 @@
+{
+  "id": "MA2014",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "數一數積木，選出正確的數。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 0,
+        "options": [110, 102, 120],
+        "answer": 120
+      },
+      {
+        "code": "1-2",
+        "hundreds": 1,
+        "tens": 4,
+        "ones": 0,
+        "options": [114, 104, 140],
+        "answer": 140
+      },
+      {
+        "code": "1-3",
+        "hundreds": 1,
+        "tens": 3,
+        "ones": 0,
+        "options": [140, 103, 130],
+        "answer": 130
+      },
+      {
+        "code": "1-4",
+        "hundreds": 1,
+        "tens": 6,
+        "ones": 0,
+        "options": [116, 106, 160],
+        "answer": 160
+      },
+      {
+        "code": "1-5",
+        "hundreds": 1,
+        "tens": 8,
+        "ones": 0,
+        "options": [210, 108, 180],
+        "answer": 180
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 8,
+        "options": [118, 107, 108],
+        "answer": 108
+      },
+      {
+        "code": "2-2",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 5,
+        "options": [104, 106, 105],
+        "answer": 105
+      },
+      {
+        "code": "2-3",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 7,
+        "options": [109, 108, 107],
+        "answer": 107
+      },
+      {
+        "code": "2-4",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 6,
+        "options": [160, 103, 106],
+        "answer": 106
+      },
+      {
+        "code": "2-5",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 2,
+        "options": [201, 120, 102],
+        "answer": 102
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "hundreds": 1,
+        "tens": 4,
+        "ones": 6,
+        "options": [145, 156, 146],
+        "answer": 146
+      },
+      {
+        "code": "3-2",
+        "hundreds": 1,
+        "tens": 3,
+        "ones": 9,
+        "options": [140, 149, 139],
+        "answer": 139
+      },
+      {
+        "code": "3-3",
+        "hundreds": 1,
+        "tens": 1,
+        "ones": 7,
+        "options": [107, 118, 117],
+        "answer": 117
+      },
+      {
+        "code": "3-4",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 4,
+        "options": [144, 134, 124],
+        "answer": 124
+      },
+      {
+        "code": "3-5",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 8,
+        "options": [157, 156, 158],
+        "answer": 158
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "hundreds": 0,
+        "tens": 10,
+        "ones": 0,
+        "options": [110, 90, 100],
+        "answer": 100
+      },
+      {
+        "code": "4-2",
+        "hundreds": 0,
+        "tens": 11,
+        "ones": 0,
+        "options": [100, 101, 110],
+        "answer": 110
+      },
+      {
+        "code": "4-3",
+        "hundreds": 0,
+        "tens": 12,
+        "ones": 0,
+        "options": [110, 100, 120],
+        "answer": 120
+      },
+      {
+        "code": "4-4",
+        "hundreds": 0,
+        "tens": 13,
+        "ones": 0,
+        "options": [140, 103, 130],
+        "answer": 130
+      },
+      {
+        "code": "4-5",
+        "hundreds": 0,
+        "tens": 14,
+        "ones": 0,
+        "options": [100, 150, 140],
+        "answer": 140
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 16,
+        "options": [156, 167, 166],
+        "answer": 166
+      },
+      {
+        "code": "5-2",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 11,
+        "options": [121, 141, 131],
+        "answer": 131
+      },
+      {
+        "code": "5-3",
+        "hundreds": 1,
+        "tens": 3,
+        "ones": 14,
+        "options": [134, 104, 144],
+        "answer": 144
+      },
+      {
+        "code": "5-4",
+        "hundreds": 1,
+        "tens": 1,
+        "ones": 13,
+        "options": [113, 132, 123],
+        "answer": 123
+      },
+      {
+        "code": "5-5",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 12,
+        "options": [112, 123, 132],
+        "answer": 132
+      }
+    ]
+  ]
+}
