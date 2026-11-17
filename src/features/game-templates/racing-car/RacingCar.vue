@@ -181,6 +181,7 @@ export default {
     // waitStart：車子先停在左側原點（兩條車道中間），第一次按上／下才選好車道並出發；
     //   答案框一開始就整個看得到；答錯重試時也回到原點等待
     // speedRatio：每格畫面前進畫面寬的多少（預設 0.003）
+    // holdOnWrong：答錯時停在答案框、不自動重試，由外層收到 race-wrong 後決定換題
     racingConfig: {
       type: Object,
       default: null,
@@ -231,6 +232,7 @@ export default {
         holdOnCorrect: true,
         heightRatio: 0.42,
         waitStart: false,
+        holdOnWrong: false,
         speedRatio: 0.003,
         ...this.racingConfig,
       };
@@ -820,6 +822,10 @@ export default {
       }
       this.raceState = "wrong";
       this.$emit("race-wrong", chosen);
+      if (this.cfg.holdOnWrong) {
+        this.showBanner("答錯了！", "#c62828");
+        return;
+      }
       this.showBanner("再試一次！", "#c62828");
       this.later(() => {
         // 重試：答案位置和障礙物重新洗牌
