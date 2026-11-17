@@ -54,11 +54,12 @@ const RACING = {
   obstacles: false,
   holdOnCorrect: true,
   waitStart: true,
+  holdOnWrong: true,
   speedRatio: 0.0022,
 };
 const ASK = "哪一個才對？按「上」或「下」選車道，車子就會出發！";
-// 答錯時先讓學生看正確關係，再換題；要比 RacingCar 自己重設（1.4 秒）早，才不會先回到舊題目
-const SWAP_MS = 1300;
+// 答錯時車子停在答案框（holdOnWrong），先讓學生看正確關係，再換題
+const SWAP_MS = 2600;
 const NEXT_MS = 1600;
 
 function pickOther(bank, current) {
@@ -143,6 +144,7 @@ export default {
     },
     // 答錯：顯示正確關係，之後換同一關的另一題、車子回到原點
     onWrong() {
+      if (this.shown) return;
       this.shown = true;
       this.feedbackKind = "wrong";
       this.feedback = `不對喔！正確的是 ${this.relation}。換一題再試試看！`;
