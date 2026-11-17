@@ -1,0 +1,47 @@
+{
+  "id": "MA2012",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "把一樣的數連起來，聲音卡可以點一下聽聽看。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1",
+        "pool": "zero",
+        "columns": ["number", "text"]
+      }
+    ],
+    [
+      {
+        "code": "2",
+        "pool": "zero",
+        "columns": ["number", "voice"]
+      }
+    ],
+    [
+      {
+        "code": "3",
+        "pool": "any",
+        "columns": ["number", "text"]
+      }
+    ],
+    [
+      {
+        "code": "4",
+        "pool": "any",
+        "columns": ["number", "voice"]
+      }
+    ],
+    [
+      {
+        "code": "5",
+        "pool": "any",
+        "columns": ["number", "voice", "text"]
+      }
+    ]
+  ]
+}

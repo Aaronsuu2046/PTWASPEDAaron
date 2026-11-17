@@ -1,0 +1,205 @@
+[
+  {
+    "lableName": "上學期",
+    "gameItem": [
+      {
+        "Title": "1 - 200以內的數",
+        "Section": [
+          {
+            "Title": "數到 200",
+            "Games": [
+              {
+                "id": "MA2011",
+                "Name": "數到 200",
+                "Description": "甜甜圈分組計數",
+                "Img": "MA2011.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2012",
+                "Name": "數到 200",
+                "Description": "讀法連連看",
+                "Img": "MA2012.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2013",
+                "Name": "數到 200",
+                "Description": "填寫數線",
+                "Img": "MA2013.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "幾個百、幾個十、幾個一",
+            "Games": [
+              {
+                "id": "MA2014",
+                "Name": "幾個百、幾個十、幾個一",
+                "Description": "積木選答",
+                "Img": "MA2014.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2015",
+                "Name": "幾個百、幾個十、幾個一",
+                "Description": "拿出指定的積木數量",
+                "Img": "MA2015.png",
+                "status": "draft"
+              },
+              {
+                "id": "MA2016",
+                "Name": "幾個百、幾個十、幾個一",
+                "Description": "定位板與十進位換算",
+                "Img": "MA2016.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "使用錢幣",
+            "Games": [
+              {
+                "id": "MA2017",
+                "Name": "使用錢幣",
+                "Description": "點數錢幣與兌換",
+                "Img": "MA2017.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2018",
+                "Name": "使用錢幣",
+                "Description": "拿出正確的錢幣",
+                "Img": "MA2018.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "比大小",
+            "Games": [
+              {
+                "id": "MA2019",
+                "Name": "比大小",
+                "Description": "紅綠燈賽車選答",
+                "Img": "MA2019.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA201A",
+                "Name": "比大小",
+                "Description": "重量比一比",
+                "Img": "MA201A.png",
+                "status": "draft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Title": "2 - 二位數的加減",
+        "Section": [
+          {
+            "Title": "二位數加法",
+            "Games": [
+              {
+                "id": "MA2021",
+                "Name": "二位數加法",
+                "Description": "橫式轉直式與計算",
+                "Img": "MA2021.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2022",
+                "Name": "二位數加法應用",
+                "Description": "用直式解題",
+                "Img": "MA2022.png",
+                "status": "draft"
+              }
+            ]
+          },
+          {
+            "Title": "二位數減法",
+            "Games": [
+              {
+                "id": "MA2023",
+                "Name": "二位數減法",
+                "Description": "橫式轉直式與計算",
+                "Img": "MA2023.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2024",
+                "Name": "二位數減法應用",
+                "Description": "用直式解題",
+                "Img": "MA2024.png",
+                "status": "draft"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Title": "3 - 長度",
+        "Section": [
+          {
+            "Title": "個別單位測量",
+            "Games": [
+              {
+                "id": "MA2031",
+                "Name": "個別單位測量",
+                "Description": "長度大偵探",
+                "Img": "MA2031.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "認識公分",
+            "Games": [
+              {
+                "id": "MA2032",
+                "Name": "認識公分",
+                "Description": "新手測量師",
+                "Img": "MA2032.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "量長度",
+            "Games": [
+              {
+                "id": "MA2033",
+                "Name": "量長度",
+                "Description": "精準測量師",
+                "Img": "MA2033.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2034",
+                "Name": "量長度",
+                "Description": "長度估算師",
+                "Img": "MA2034.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "長度的加減",
+            "Games": [
+              {
+                "id": "MA2035",
+                "Name": "長度的加減",
+                "Description": "長度計算家",
+                "Img": "MA2035.png",
+                "status": "ready"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
