@@ -1,6 +1,7 @@
 <template>
-  <OrderChoiceQuestion
+  <RacingOrderQuestion
     :game-data="gameData"
+    :game-id="gameId"
     :game-config="gameConfig"
     :intro-text="introText"
     @play-effect="$emit('play-effect', $event)"
@@ -10,12 +11,12 @@
 </template>
 
 <script>
-import OrderChoiceQuestion from "./games/Mixed/OrderChoiceQuestion.vue";
+import RacingOrderQuestion from "./games/Mixed/RacingOrderQuestion.vue";
 
-// 加減與乘的混合計算（概念釐清）：1 關抽 5 題，比較兩個算式的答案「一樣／不一樣」，答對後看兩個算式的解題過程
+// 加減與乘的混合計算（概念釐清）：賽車選答，1 關抽 5 題，比較兩個算式的答案，開進「一樣／不一樣」，答對後看兩個算式的解題過程
 export default {
   name: "MA4087",
-  components: { OrderChoiceQuestion },
+  components: { RacingOrderQuestion },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
