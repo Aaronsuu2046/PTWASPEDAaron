@@ -1,5 +1,5 @@
 <template>
-  <!-- 二年級商品圖（自己畫的 SVG，可縮放）：玩具車、機器人、手錶、公仔、鉛筆盒 -->
+  <!-- 二年級商品圖（自己畫的 SVG，可縮放）：玩具車、機器人、手錶、公仔、鉛筆盒、筆記本、水壺、玩偶、衣服 -->
   <svg viewBox="0 0 120 100" class="product" :aria-label="label" role="img">
     <g v-if="type === 'toycar'">
       <path
@@ -73,6 +73,68 @@
       <circle cx="47" cy="40" r="3" fill="#f48fb1" />
       <circle cx="73" cy="40" r="3" fill="#f48fb1" />
     </g>
+    <g v-else-if="type === 'notebook'">
+      <rect x="30" y="8" width="64" height="84" rx="6" fill="#42a5f5" />
+      <rect x="30" y="8" width="12" height="84" rx="4" fill="#1e88e5" />
+      <rect x="50" y="22" width="36" height="16" rx="3" fill="#ffffff" />
+      <line x1="54" y1="30" x2="82" y2="30" stroke="#90caf9" stroke-width="3" />
+      <g fill="#cfd8dc">
+        <circle cx="30" cy="20" r="3.5" />
+        <circle cx="30" cy="36" r="3.5" />
+        <circle cx="30" cy="52" r="3.5" />
+        <circle cx="30" cy="68" r="3.5" />
+        <circle cx="30" cy="84" r="3.5" />
+      </g>
+      <path d="M78 92 V70 L84 76 L90 70 V92 Z" fill="#ffca28" />
+    </g>
+    <g v-else-if="type === 'bottle'">
+      <rect x="50" y="4" width="20" height="12" rx="3" fill="#ef6c00" />
+      <rect x="46" y="14" width="28" height="8" rx="3" fill="#ffa726" />
+      <path
+        d="M44 22 H76 Q84 22 84 32 V88 Q84 96 76 96 H44 Q36 96 36 88 V32 Q36 22 44 22 Z"
+        fill="#4dd0e1"
+      />
+      <rect x="36" y="46" width="48" height="26" fill="#00acc1" />
+      <path d="M58 52 Q64 60 58 66 Q52 60 58 52 Z" fill="#e0f7fa" />
+      <rect x="42" y="28" width="6" height="58" rx="3" fill="#b2ebf2" />
+    </g>
+    <g v-else-if="type === 'doll'">
+      <circle cx="40" cy="20" r="11" fill="#a1887f" />
+      <circle cx="80" cy="20" r="11" fill="#a1887f" />
+      <circle cx="40" cy="20" r="5" fill="#ffccbc" />
+      <circle cx="80" cy="20" r="5" fill="#ffccbc" />
+      <ellipse cx="60" cy="72" rx="26" ry="24" fill="#a1887f" />
+      <ellipse cx="60" cy="76" rx="15" ry="14" fill="#d7ccc8" />
+      <circle cx="60" cy="36" r="24" fill="#a1887f" />
+      <ellipse cx="60" cy="44" rx="11" ry="8" fill="#d7ccc8" />
+      <circle cx="51" cy="32" r="3" fill="#3e2723" />
+      <circle cx="69" cy="32" r="3" fill="#3e2723" />
+      <ellipse cx="60" cy="41" rx="4" ry="3" fill="#3e2723" />
+      <path d="M50 58 L60 64 L70 58 L70 66 L60 62 L50 66 Z" fill="#e53935" />
+      <ellipse cx="38" cy="90" rx="10" ry="7" fill="#8d6e63" />
+      <ellipse cx="82" cy="90" rx="10" ry="7" fill="#8d6e63" />
+    </g>
+    <g v-else-if="type === 'clothes'">
+      <path
+        d="M42 10 L22 20 L8 44 L24 54 L32 42 V94 H88 V42 L96 54 L112 44 L98 20 L78 10 Q70 22 60 22 Q50 22 42 10 Z"
+        fill="#ec407a"
+      />
+      <path
+        d="M42 10 Q50 22 60 22 Q70 22 78 10"
+        fill="none"
+        stroke="#ad1457"
+        stroke-width="3"
+      />
+      <rect
+        x="32"
+        y="60"
+        width="56"
+        height="10"
+        fill="#ffffff"
+        opacity="0.85"
+      />
+      <circle cx="60" cy="40" r="8" fill="#ffeb3b" />
+    </g>
     <g v-else>
       <rect x="10" y="30" width="100" height="44" rx="18" fill="#26a69a" />
       <line
@@ -100,6 +162,10 @@ const LABELS = {
   watch: "手錶",
   figure: "公仔",
   pencilcase: "鉛筆盒",
+  notebook: "筆記本",
+  bottle: "水壺",
+  doll: "玩偶",
+  clothes: "衣服",
 };
 
 export default {

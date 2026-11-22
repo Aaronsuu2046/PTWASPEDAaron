@@ -46,7 +46,7 @@
               :disabled="!inZone('tray').length || answered"
               @click="clearTray"
             >
-              全部拿回錢包
+              {{ gameConfig?.ClearLabel || "全部拿回錢包" }}
             </button>
           </div>
           <div class="zone__coins">
@@ -102,7 +102,7 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import MoneyItem from "./components/MoneyItem.vue";
 import ProductIcon from "./components/ProductIcon.vue";
 
-const DENOMS = [100, 50, 10, 5, 1];
+const DENOMS = [1000, 500, 100, 50, 10, 5, 1];
 const ZONES = [
   { id: "wallet", label: "錢包" },
   { id: "tray", label: "付款盤" },
@@ -111,6 +111,8 @@ const DRAG_THRESHOLD = 8;
 
 // 使用錢幣－拿出正確的錢幣：從錢包（每種錢幣有數量上限）把錢移到付款盤，湊出商品價格
 // 題目 { code, product, name, price, wallet: { 面額: 數量 } }；總額剛好等於價格就對（可用的配置不只一種）
+// 面額可到 500、1000。選填 GameConfig.ClearLabel：清空付款盤按鈕的文字；
+// GameConfig.WarnOver：付款盤超過價格時立刻提示（不自動送出）
 export default {
   name: "MA2018",
   components: { MoneyItem, ProductIcon },
@@ -159,10 +161,24 @@ export default {
   methods: {
     // 錢包裡的錢最多 15 枚：依視窗寬度決定錢幣大小
     fit() {
-      const n = this.coins.length + (this.gameData.wallet[100] ? 1 : 0);
+      const w = this.gameData.wallet;
+      // 鈔票比硬幣寬，每種鈔票多算一格
+      const n = this.coins.length + [100, 500, 1000].filter((d) => w[d]).length;
       const wide = window.innerWidth > 1100;
       const base = wide ? 76 : 62;
       this.size = n > 13 ? base - 8 : base;
+      this.shrinkToFit();
+    },
+    // 畫出來若錢包或付款盤放不下（例如 6 種錢幣全放進付款盤），就每次縮小一點直到放得下；放得下就不變
+    async shrinkToFit() {
+      for (let i = 0; i < 12; i += 1) {
+        await this.$nextTick();
+        const over = [
+          ...(this.$el?.querySelectorAll?.(".zone__coins") || []),
+        ].some((el) => el.scrollHeight > el.clientHeight + 1);
+        if (!over || this.size <= 34) return;
+        this.size -= 4;
+      }
     },
     inZone(zone) {
       return this.coins.filter((c) => c.zone === zone);
@@ -177,6 +193,9 @@ export default {
       if (this.answered) return;
       coin.zone = zone;
       this.feedback = "";
+      this.shrinkToFit();
+      if (this.gameConfig?.WarnOver && this.trayTotal > this.gameData.price)
+        this.feedback = this.gameConfig.WarnOver;
     },
     onCoinClick(coin) {
       if (this.suppressClick) {
