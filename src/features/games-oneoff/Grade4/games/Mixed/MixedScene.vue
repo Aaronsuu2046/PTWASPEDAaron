@@ -565,10 +565,10 @@
         <circle cx="36" cy="12" r="5" fill="#e53935" />
       </g>
       <text x="224" y="130" font-size="16" text-anchor="middle" fill="#ad1457">
-        蛋糕 {{ scene.c }} 元
+        起司蛋糕 {{ scene.c }} 元
       </text>
       <text x="140" y="182" font-size="16" text-anchor="middle" fill="#e65100">
-        奶茶和蛋糕各一份，共多少元？
+        奶茶和起司蛋糕各一份，共多少元？
       </text>
     </g>
 
@@ -616,7 +616,7 @@
       </text>
     </g>
 
-    <!-- 番茄：每箱 a 公斤，昨天賣 b 公斤，今天賣 c 箱 -->
+    <!-- 番茄：每箱 a 公斤，昨天採收 b 公斤，今天採收 c 箱 -->
     <g v-else-if="scene.type === 'tomato'">
       <g
         v-for="(day, k) in [
@@ -659,12 +659,12 @@
       </text>
     </g>
 
-    <!-- 卡牌：哥哥 a 包、姊姊 b 包，共 c 元 -->
+    <!-- 卡牌：哥哥 a 包、姐姐 b 包，共 c 元 -->
     <g v-else-if="scene.type === 'cards'">
       <g
         v-for="(who, k) in [
           ['哥哥', scene.a, '#64b5f6'],
-          ['姊姊', scene.b, '#f48fb1'],
+          ['姐姐', scene.b, '#f48fb1'],
         ]"
         :key="`who-${k}`"
         :transform="`translate(${30 + k * 124} 22)`"
@@ -769,10 +769,10 @@ export default {
         bow: "用緞帶做蝴蝶結",
         kiwisale: "上午和下午賣出的奇異果",
         clothes: "上衣和背心",
-        milktea: "奶茶和蛋糕",
+        milktea: "奶茶和起司蛋糕",
         mooncake: "一盒一盒的月餅",
-        tomato: "昨天和今天賣出的番茄",
-        cards: "哥哥和姊姊買的卡牌",
+        tomato: "昨天和今天採收的番茄",
+        cards: "哥哥和姐姐買的卡牌",
         donutpay: "買甜甜圈付錢和找錢",
       }[this.scene.type];
     },
