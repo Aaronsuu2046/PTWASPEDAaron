@@ -1,0 +1,249 @@
+{
+  "id": "MA2116",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "比大小！把車開到正確的答案。"
+  },
+  "GameConfig": {
+    "WrongNext": true
+  },
+  "Questions": [
+    [
+      {
+        "code": "1",
+        "bank": [
+          {
+            "code": "1-1",
+            "left": "265",
+            "op": "□",
+            "right": "256",
+            "options": ["＜", "＞"],
+            "answer": "＞"
+          },
+          {
+            "code": "1-2",
+            "left": "237",
+            "op": "□",
+            "right": "239",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          },
+          {
+            "code": "1-3",
+            "left": "399",
+            "op": "□",
+            "right": "299",
+            "options": ["＜", "＞"],
+            "answer": "＞"
+          },
+          {
+            "code": "1-4",
+            "left": "253",
+            "op": "□",
+            "right": "325",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          },
+          {
+            "code": "1-5",
+            "left": "278",
+            "op": "□",
+            "right": "301",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "2",
+        "bank": [
+          {
+            "code": "2-1",
+            "left": "460",
+            "op": "□",
+            "right": "406",
+            "options": ["＜", "＞"],
+            "answer": "＞"
+          },
+          {
+            "code": "2-2",
+            "left": "450",
+            "op": "□",
+            "right": "540",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          },
+          {
+            "code": "2-3",
+            "left": "596",
+            "op": "□",
+            "right": "593",
+            "options": ["＜", "＞"],
+            "answer": "＞"
+          },
+          {
+            "code": "2-4",
+            "left": "521",
+            "op": "□",
+            "right": "571",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          },
+          {
+            "code": "2-5",
+            "left": "404",
+            "op": "□",
+            "right": "440",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "3",
+        "bank": [
+          {
+            "code": "3-1",
+            "left": "740",
+            "op": "□",
+            "right": "704",
+            "options": ["＜", "＞"],
+            "answer": "＞"
+          },
+          {
+            "code": "3-2",
+            "left": "609",
+            "op": "□",
+            "right": "612",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          },
+          {
+            "code": "3-3",
+            "left": "701",
+            "op": "□",
+            "right": "699",
+            "options": ["＜", "＞"],
+            "answer": "＞"
+          },
+          {
+            "code": "3-4",
+            "left": "698",
+            "op": "□",
+            "right": "703",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          },
+          {
+            "code": "3-5",
+            "left": "709",
+            "op": "□",
+            "right": "710",
+            "options": ["＜", "＞"],
+            "answer": "＜"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "4",
+        "bank": [
+          {
+            "code": "4-1",
+            "left": "898",
+            "op": "＞",
+            "right": "□",
+            "options": ["889", "905"],
+            "answer": "889"
+          },
+          {
+            "code": "4-2",
+            "left": "832",
+            "op": "＜",
+            "right": "□",
+            "options": ["911", "832"],
+            "answer": "911"
+          },
+          {
+            "code": "4-3",
+            "left": "□",
+            "op": "＞",
+            "right": "900",
+            "options": ["800", "903"],
+            "answer": "903"
+          },
+          {
+            "code": "4-4",
+            "left": "□",
+            "op": "＜",
+            "right": "817",
+            "options": ["900", "800"],
+            "answer": "800"
+          },
+          {
+            "code": "4-5",
+            "left": "992",
+            "op": "＜",
+            "right": "□",
+            "options": ["990", "999"],
+            "answer": "999"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "5",
+        "bank": [
+          {
+            "code": "5-1",
+            "left": "999",
+            "op": "＞",
+            "right": "□",
+            "options": ["909", "1000"],
+            "answer": "909"
+          },
+          {
+            "code": "5-2",
+            "left": "978",
+            "op": "＜",
+            "right": "□",
+            "options": ["983", "937"],
+            "answer": "983"
+          },
+          {
+            "code": "5-3",
+            "left": "□",
+            "op": "＞",
+            "right": "990",
+            "options": ["1000", "900"],
+            "answer": "1000"
+          },
+          {
+            "code": "5-4",
+            "left": "□",
+            "op": "＜",
+            "right": "937",
+            "options": ["942", "922"],
+            "answer": "922"
+          },
+          {
+            "code": "5-5",
+            "left": "969",
+            "op": "＜",
+            "right": "□",
+            "options": ["964", "971"],
+            "answer": "971"
+          }
+        ]
+      }
+    ]
+  ]
+}

@@ -71,6 +71,7 @@ function pickOther(bank, current) {
 // 比大小－紅綠燈賽車選答：題目上方顯示不等式，兩條車道終點各放一個選項（數字或 ＞／＜）
 // 每關題目 { code, bank: [{ code, left, op, right, options, answer }] }：left／right 為 "□" 表示要填的數；
 // op 為 "□" 表示要填大於或小於。答對進下一關；答錯顯示正確關係後，車子回原點並換同一關的另一題
+// 選填 GameConfig.WrongNext：答錯時本題失敗，顯示正確關係後直接進下一關（不在同一關換題重來）
 export default {
   name: "MA2019",
   components: { RacingCar },
@@ -147,6 +148,11 @@ export default {
       if (this.shown) return;
       this.shown = true;
       this.feedbackKind = "wrong";
+      if (this.gameConfig?.WrongNext) {
+        this.feedback = `不對喔！正確的是 ${this.relation}。`;
+        this.timer = setTimeout(() => this.$emit("next-question"), SWAP_MS);
+        return;
+      }
       this.feedback = `不對喔！正確的是 ${this.relation}。換一題再試試看！`;
       this.timer = setTimeout(() => {
         this.current = pickOther(this.gameData.bank, this.current);
