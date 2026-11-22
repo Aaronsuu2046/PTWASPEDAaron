@@ -413,7 +413,7 @@
       </text>
     </g>
 
-    <!-- 存錢：商品 a 元，每期存 b 元，存 c 期 -->
+    <!-- 存錢：商品 a 元，每天（period＝month 時每個月）存 b 元，存 c 天（月） -->
     <g v-else-if="scene.type === 'saving'">
       <rect
         x="160"
@@ -438,10 +438,10 @@
         <circle cx="70" cy="30" r="3" fill="#4e342e" />
       </g>
       <text x="78" y="148" font-size="16" text-anchor="middle" fill="#ad1457">
-        每期存 {{ scene.b }} 元
+        {{ scene.period === "month" ? "每個月" : "每天" }}存 {{ scene.b }} 元
       </text>
       <text x="78" y="170" font-size="16" text-anchor="middle" fill="#ad1457">
-        存了 {{ scene.c }} 期
+        存了{{ scene.period === "month" ? "一年" : "一個禮拜" }}
       </text>
       <text x="208" y="160" font-size="18" text-anchor="middle" fill="#e65100">
         還差多少元？
