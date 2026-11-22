@@ -250,6 +250,25 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "比大小",
+            "Games": [
+              {
+                "id": "MA2116",
+                "Name": "比大小",
+                "Description": "1000以內賽車選答",
+                "Img": "MA2116.png",
+                "status": "ready"
+              },
+              {
+                "id": "MA2117",
+                "Name": "比大小",
+                "Description": "數字猜猜樂",
+                "Img": "MA2117.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }
