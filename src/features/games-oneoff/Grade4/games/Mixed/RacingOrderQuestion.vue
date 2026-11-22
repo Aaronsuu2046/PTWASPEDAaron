@@ -15,9 +15,9 @@
             :key="n"
             class="progress__dot"
             :class="{
-              'progress__dot--done':
-                n - 1 < index || (n - 1 === index && answered),
-              'progress__dot--now': n - 1 === index && !answered,
+              'progress__dot--done': results[n - 1] === 'ok',
+              'progress__dot--wrong': results[n - 1] === 'wrong',
+              'progress__dot--now': n - 1 === index && !results[n - 1],
             }"
           />
         </div>
@@ -34,10 +34,7 @@
 
         <p
           class="feedback"
-          :class="{
-            'feedback--wrong': feedbackKind === 'wrong',
-            'feedback--crash': feedbackKind === 'crash',
-          }"
+          :class="{ 'feedback--wrong': feedbackKind === 'wrong' }"
           data-feedback
         >
           {{ feedback || ASK }}
@@ -54,7 +51,6 @@
           @add-record="onRecord"
           @race-correct="onCorrect"
           @race-wrong="onWrong"
-          @race-crash="onCrash"
         />
 
         <!-- 答對後：完整解題過程，先算的部分標出來，按鈕確認才換題 -->
@@ -95,9 +91,18 @@ const LABELS = {
   paren: "先算括號\n的部分",
 };
 const plain = (text) => String(text).replace(/\n/g, "");
-const ASK = "這題要怎麼算？按「上」「下」把車開進正確的答案！";
+const ASK = "這題要怎麼算？按「上」或「下」選車道，車子就會出發！";
 const HINT = "提示：有括號先算括號的部分；沒有括號就由左而右一步一步算。";
-const RACING = { obstacles: true, holdOnCorrect: true };
+// 不放三角錐；車子停在原點，第一次按上／下才出發（2026-11-15 需求更新）
+const RACING = {
+  obstacles: false,
+  holdOnCorrect: true,
+  waitStart: true,
+  holdOnWrong: true,
+  speedRatio: 0.0022,
+};
+// 答錯：本題失敗，留一點時間看答錯回饋後直接換下一題（不重答同一題）
+const WRONG_MS = 2600;
 
 function shuffle(list) {
   const result = [...list];
@@ -109,8 +114,10 @@ function shuffle(list) {
 }
 
 // 併式觀念題（賽車選答）：只有 1 關，從題庫隨機抽 PickCount（5）題、同輪不重複；
-// 兩條車道終點放「由左而右一步一步算／先算括號的部分」，車子自動前進，學生用上下鍵換道；
-// 答對後顯示完整解題過程，按「下一題」才換題，第 5 題按「完成」進入完成畫面
+// 兩條車道終點放「由左而右一步一步算／先算括號的部分」，車子停在原點，
+// 第一次按上／下選好車道才出發，出發後仍可換道；
+// 答對後顯示完整解題過程，按「下一題」才換題，第 5 題按「完成」進入完成畫面；
+// 答錯則本題失敗，顯示正確答案後直接換下一題（車子回原點、答案重新洗牌）
 // 題目 { no, expr, answer: "ltr"|"paren", first: [start, end], steps: [第一步, 答案] }
 // 選填 GameConfig.Hint：答錯時的提示
 export default {
@@ -135,6 +142,7 @@ export default {
       index: 0,
       raceKey: 0,
       answered: false,
+      results: [],
       feedback: "",
       feedbackKind: "",
     };
@@ -171,6 +179,9 @@ export default {
       };
     },
   },
+  beforeUnmount() {
+    clearTimeout(this.timer);
+  },
   methods: {
     onRecord([answer, chosen, result]) {
       this.$emit("add-record", [
@@ -181,19 +192,27 @@ export default {
     },
     onCorrect() {
       this.answered = true;
+      this.results[this.index] = "ok";
       this.feedback = "";
       this.feedbackKind = "";
     },
     onWrong() {
-      this.feedback = `再試一次！${this.gameConfig?.Hint || HINT}`;
+      if (this.results[this.index]) return;
+      this.results[this.index] = "wrong";
+      const right = plain(this.raceData.Options[this.raceData.Answer]);
+      this.feedback = `答錯了！正確的是「${right}」。${
+        this.gameConfig?.Hint || HINT
+      }`;
       this.feedbackKind = "wrong";
-    },
-    onCrash() {
-      this.feedback = "撞到三角錐了，回到起點再出發（不算答錯）";
-      this.feedbackKind = "crash";
+      this.timer = setTimeout(this.advance, WRONG_MS);
     },
     goNext() {
       if (!this.answered) return;
+      this.advance();
+    },
+    // 換下一題；最後一題就進入完成畫面
+    advance() {
+      clearTimeout(this.timer);
       if (this.isLast) {
         this.$emit("next-question");
         return;
@@ -274,6 +293,11 @@ export default {
       background-color: #66bb6a;
       border-color: #43a047;
     }
+
+    &--wrong {
+      background-color: #ef9a9a;
+      border-color: #e53935;
+    }
   }
 }
 
@@ -306,12 +330,6 @@ export default {
     color: #c62828;
     background-color: #fff8e1;
     border: 2px solid #ffca28;
-  }
-
-  &--crash {
-    color: #e65100;
-    background-color: #fff3e0;
-    border: 2px solid #ffb74d;
   }
 }
 

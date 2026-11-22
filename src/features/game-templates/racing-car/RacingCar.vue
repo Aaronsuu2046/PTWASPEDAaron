@@ -177,7 +177,11 @@ export default {
       required: true,
     },
     // 選填：開啟「自動前進、上下換道、障礙物、答對先停住」玩法；不傳就是原本的行為
-    // { obstacles: true, holdOnCorrect: true, heightRatio: 0.42 }
+    // { obstacles: true, holdOnCorrect: true, heightRatio: 0.42, waitStart: false }
+    // waitStart：車子先停在左側原點（兩條車道中間），第一次按上／下才選好車道並出發；
+    //   答案框一開始就整個看得到；答錯重試時也回到原點等待
+    // speedRatio：每格畫面前進畫面寬的多少（預設 0.003）
+    // holdOnWrong：答錯時停在答案框、不自動重試，由外層收到 race-wrong 後決定換題
     racingConfig: {
       type: Object,
       default: null,
@@ -227,6 +231,9 @@ export default {
         obstacles: true,
         holdOnCorrect: true,
         heightRatio: 0.42,
+        waitStart: false,
+        holdOnWrong: false,
+        speedRatio: 0.003,
         ...this.racingConfig,
       };
     },
@@ -285,6 +292,11 @@ export default {
     initializeScene() {
       this.options = canvasTools.shuffleOptions(this.gameData.Options);
       this.currentOptionId = Math.floor(Math.random() * this.options.length);
+      if (this.cfg?.waitStart) {
+        // -1：還沒選車道，車子停在兩條車道中間
+        this.currentOptionId = -1;
+        this.raceState = "wait";
+      }
       if (this.cfg) {
         // 寬度扣掉右邊的駕駛區，高度不超過容器
         const el = this.$refs.container;
@@ -293,7 +305,7 @@ export default {
         const fitH = (el.clientHeight || fitW) / this.cfg.heightRatio;
         this.gameWidth = Math.max(300, Math.min(fitW, fitH));
         this.gameHeight = this.gameWidth * this.cfg.heightRatio;
-        this.speed = this.gameWidth * 0.003;
+        this.speed = this.gameWidth * this.cfg.speedRatio;
       } else {
         this.gameWidth = this.$refs.container.clientWidth * 0.8;
         this.gameHeight = this.gameWidth / 2;
@@ -332,6 +344,11 @@ export default {
         x: this.gameWidth * (this.cfg ? TUNNEL_AT : 1),
         y: 0,
       };
+      if (this.cfg?.waitStart) {
+        // 停在原點時答案框整個在畫面內，學生先看清楚再選車道
+        this.tunnelOffset.x =
+          this.gameWidth * 0.98 - this.laneHeight * (1.5 + 0.3);
+      }
       for (let i = 0; i < this.options.length; i++) {
         const tunnel = {
           x: canvasTools.offset(this.configRoad[i], this.tunnelOffset).x,
@@ -424,14 +441,8 @@ export default {
       this.configCar.height = this.laneHeight * 0.8;
       this.configCar.width = this.laneHeight * 0.8;
       this.carOffset = { x: this.laneHeight * 0.2, y: this.laneHeight * 0.1 };
-      this.configCar.x = canvasTools.offset(
-        this.configRoad[this.currentOptionId],
-        this.carOffset
-      ).x;
-      this.configCar.y = canvasTools.offset(
-        this.configRoad[this.currentOptionId],
-        this.carOffset
-      ).y;
+      this.configCar.x = this.carOffset.x;
+      this.configCar.y = this.laneY(this.currentOptionId);
     },
     setBtnStyle() {
       const btnCon = document.getElementById("btnContainer");
@@ -546,6 +557,10 @@ export default {
       }
     },
     getCurrentOptionId(direction) {
+      if (this.cfg && this.raceState === "wait") {
+        this.startRace(direction);
+        return;
+      }
       if (
         this.cfg &&
         (direction === "right" ||
@@ -675,7 +690,23 @@ export default {
       );
     },
     laneY(lane) {
+      // -1（還沒選車道）：停在所有車道的正中間
+      if (lane < 0)
+        return (
+          (this.laneHeight * (this.options.length - 1)) / 2 + this.carOffset.y
+        );
       return this.laneHeight * lane + this.carOffset.y;
+    },
+    // 選填 waitStart：第一次按上／下，先開到那條車道，同時開始往前
+    startRace(direction) {
+      if (this.paused || this.inputLocked) return;
+      if (direction !== "up" && direction !== "down") return;
+      this.currentOptionId = direction === "up" ? 0 : this.options.length - 1;
+      this.raceState = "run";
+      this.movement = direction;
+      this.canMove = false;
+      requestAnimationFrame(this.moveCar);
+      requestAnimationFrame(this.moveRoad);
     },
     // 每題 0～2 個三角錐，只放在道路中段；同一個位置不會把上下兩條路都擋住，
     // 擋在不同車道的兩個錐子前後至少隔一段距離，來得及換道
@@ -791,6 +822,10 @@ export default {
       }
       this.raceState = "wrong";
       this.$emit("race-wrong", chosen);
+      if (this.cfg.holdOnWrong) {
+        this.showBanner("答錯了！", "#c62828");
+        return;
+      }
       this.showBanner("再試一次！", "#c62828");
       this.later(() => {
         // 重試：答案位置和障礙物重新洗牌
@@ -805,12 +840,18 @@ export default {
       this.roadX = 0;
       if (newObstacles) this.makeObstacles();
       this.syncRoadX();
+      if (this.cfg.waitStart) this.currentOptionId = -1;
       this.configCar.y = this.laneY(this.currentOptionId);
       this.configCar.rotation = 0;
       this.canMove = true;
       this.movement = "idle";
       this.inputLocked = false;
       this.bannerText = "";
+      if (this.cfg.waitStart) {
+        // 停在原點，等學生再按上／下
+        this.raceState = "wait";
+        return;
+      }
       this.raceState = "run";
       requestAnimationFrame(this.moveRoad);
     },
