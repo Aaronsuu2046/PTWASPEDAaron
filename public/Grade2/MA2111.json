@@ -1,0 +1,147 @@
+{
+  "id": "MA2111",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "將正確的讀音與記法連起來。"
+  },
+  "GameConfig": {},
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "values": [320, 550, 100],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "1-2",
+        "values": [400, 110, 970],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "1-3",
+        "values": [470, 600, 220],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "1-4",
+        "values": [180, 900, 770],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "1-5",
+        "values": [810, 440, 1000],
+        "columns": ["number", "text"]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "values": [1000, 280, 330],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "2-2",
+        "values": [590, 660, 200],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "2-3",
+        "values": [300, 880, 630],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "2-4",
+        "values": [710, 500, 990],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "2-5",
+        "values": [440, 360, 700],
+        "columns": ["number", "voice"]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "values": [104, 134, 145],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "3-2",
+        "values": [294, 209, 213],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "3-3",
+        "values": [749, 702, 714],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "3-4",
+        "values": [417, 442, 408],
+        "columns": ["number", "text"]
+      },
+      {
+        "code": "3-5",
+        "values": [949, 909, 999],
+        "columns": ["number", "text"]
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "values": [225, 204, 282],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "4-2",
+        "values": [678, 664, 603],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "4-3",
+        "values": [345, 303, 338],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "4-4",
+        "values": [829, 891, 805],
+        "columns": ["number", "voice"]
+      },
+      {
+        "code": "4-5",
+        "values": [567, 525, 501],
+        "columns": ["number", "voice"]
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "values": [1000, 520, 609],
+        "columns": ["number", "voice", "text"]
+      },
+      {
+        "code": "5-2",
+        "values": [512, 800, 311],
+        "columns": ["number", "voice", "text"]
+      },
+      {
+        "code": "5-3",
+        "values": [906, 409, 123],
+        "columns": ["number", "voice", "text"]
+      },
+      {
+        "code": "5-4",
+        "values": [400, 571, 505],
+        "columns": ["number", "voice", "text"]
+      },
+      {
+        "code": "5-5",
+        "values": [136, 890, 801],
+        "columns": ["number", "voice", "text"]
+      }
+    ]
+  ]
+}
