@@ -22,14 +22,17 @@
           />
         </div>
 
-        <!-- 題目固定在道路上方 -->
-        <div class="expr" data-expr>
-          <span
-            v-for="(tok, k) in exprTokens"
-            :key="k"
-            :class="{ expr__paren: tok === '(' || tok === ')' }"
-            >{{ tok }}</span
-          >
+        <!-- 題目固定在道路上方；比較題（cards）並排兩個算式 -->
+        <div class="exprs" :class="{ 'exprs--pair': cards.length > 1 }">
+          <div v-for="(card, c) in cards" :key="c" class="expr" data-expr>
+            <span v-if="cards.length > 1" class="expr__tag">{{ TAGS[c] }}</span>
+            <span
+              v-for="(tok, k) in tokens(card.expr)"
+              :key="k"
+              :class="{ expr__paren: tok === '(' || tok === ')' }"
+              >{{ tok }}</span
+            >
+          </div>
         </div>
 
         <p
@@ -37,7 +40,7 @@
           :class="{ 'feedback--wrong': feedbackKind === 'wrong' }"
           data-feedback
         >
-          {{ feedback || ASK }}
+          {{ feedback || askText }}
         </p>
       </div>
 
@@ -56,23 +59,33 @@
         <!-- 答對後：完整解題過程，先算的部分標出來，按鈕確認才換題 -->
         <div v-if="answered" class="solution" data-solution>
           <p class="solution__title">答對了！這樣算：</p>
-          <div class="solution__lines">
-            <p class="solution__line">
-              <span>{{ firstParts.before }}</span
-              ><span class="solution__first">{{ firstParts.first }}</span
-              ><span>{{ firstParts.after }}</span>
-            </p>
-            <p
-              v-for="(s, k) in current.steps"
-              :key="k"
-              class="solution__line"
-              :class="{
-                'solution__line--result': k === current.steps.length - 1,
-              }"
-            >
-              ＝{{ s }}
-            </p>
+          <div class="solution__cards">
+            <div v-for="(card, c) in cards" :key="c" class="solution__lines">
+              <p class="solution__line">
+                <span v-if="cards.length > 1" class="solution__tag">{{
+                  TAGS[c]
+                }}</span>
+                <span>{{ firstParts(card).before }}</span
+                ><span class="solution__first">{{
+                  firstParts(card).first
+                }}</span
+                ><span>{{ firstParts(card).after }}</span>
+              </p>
+              <p
+                v-for="(s, k) in card.steps"
+                :key="k"
+                class="solution__line"
+                :class="{
+                  'solution__line--result': k === card.steps.length - 1,
+                }"
+              >
+                ＝{{ s }}
+              </p>
+            </div>
           </div>
+          <p v-if="conclusion" class="solution__conclusion">
+            {{ conclusion }}
+          </p>
           <button type="button" class="next" data-next @click="goNext">
             {{ isLast ? "完成" : "下一題" }}
           </button>
@@ -91,7 +104,8 @@ const LABELS = {
   paren: "先算括號\n的部分",
 };
 const plain = (text) => String(text).replace(/\n/g, "");
-const ASK = "這題要怎麼算？按「上」或「下」選車道，車子就會出發！";
+const GO = "按「上」或「下」選車道，車子就會出發！";
+const ASK = `這題要怎麼算？${GO}`;
 const HINT = "提示：有括號先算括號的部分；沒有括號就由左而右一步一步算。";
 // 不放三角錐；車子停在原點，第一次按上／下才出發（2026-11-15 需求更新）
 const RACING = {
@@ -119,6 +133,8 @@ function shuffle(list) {
 // 答對後顯示完整解題過程，按「下一題」才換題，第 5 題按「完成」進入完成畫面；
 // 答錯則本題失敗，顯示正確答案後直接換下一題（車子回原點、答案重新洗牌）
 // 題目 { no, expr, answer: "ltr"|"paren", first: [start, end], steps: [第一步, 答案] }
+// 比較題（MA4087、MA408A）：{ no, cards: [{ expr, first, steps }, { … }], answer: "same"|"diff" }，
+//   兩個終點放 GameConfig.Choices 的 label（一樣／不一樣），題目上方問 GameConfig.Ask
 // 選填 GameConfig.Hint：答錯時的提示
 export default {
   name: "RacingOrderQuestion",
@@ -136,8 +152,8 @@ export default {
       this.gameData.bank.length
     );
     return {
-      ASK,
       RACING,
+      TAGS: ["A", "B"],
       picked: shuffle(this.gameData.bank).slice(0, count),
       index: 0,
       raceKey: 0,
@@ -160,32 +176,61 @@ export default {
     current() {
       return this.picked[this.index];
     },
+    isCompare() {
+      return Array.isArray(this.current.cards);
+    },
+    // 每題要顯示的算式：觀念題一個，比較題兩個
+    cards() {
+      return this.isCompare ? this.current.cards : [this.current];
+    },
+    choices() {
+      if (this.isCompare) return this.gameConfig?.Choices || [];
+      return [
+        { value: "ltr", label: LABELS.ltr },
+        { value: "paren", label: LABELS.paren },
+      ];
+    },
+    askText() {
+      if (this.isCompare)
+        return `${this.gameConfig?.Ask || "兩個算式的答案一樣嗎？"}${GO}`;
+      return ASK;
+    },
     raceData() {
       return {
         Question: "",
-        Options: [LABELS.ltr, LABELS.paren],
-        Answer: this.current.answer === "ltr" ? 0 : 1,
+        Options: this.choices.map((c) => c.label),
+        Answer: this.choices.findIndex((c) => c.value === this.current.answer),
       };
     },
-    exprTokens() {
-      return this.current.expr.match(/\d+|[^\d]/g);
-    },
-    firstParts() {
-      const { expr, first } = this.current;
-      return {
-        before: expr.slice(0, first[0]),
-        first: expr.slice(first[0], first[1]),
-        after: expr.slice(first[1]),
-      };
+    // 比較題答對後的結論，例如「74 和 49 不一樣」
+    conclusion() {
+      if (!this.isCompare) return "";
+      const [a, b] = this.cards.map((c) => c.steps[c.steps.length - 1]);
+      const label = this.choices.find(
+        (c) => c.value === this.current.answer
+      )?.label;
+      return `${a} 和 ${b} ${label}`;
     },
   },
   beforeUnmount() {
     clearTimeout(this.timer);
   },
   methods: {
+    tokens(expr) {
+      return expr.match(/\d+|[^\d]/g);
+    },
+    firstParts(card) {
+      const { expr, first } = card;
+      return {
+        before: expr.slice(0, first[0]),
+        first: expr.slice(first[0], first[1]),
+        after: expr.slice(first[1]),
+      };
+    },
     onRecord([answer, chosen, result]) {
+      const expr = this.cards.map((c) => c.expr).join("／");
       this.$emit("add-record", [
-        `${this.current.expr}（${plain(answer)}）`,
+        `${expr}（${plain(answer)}）`,
         plain(chosen),
         result,
       ]);
@@ -301,6 +346,16 @@ export default {
   }
 }
 
+.exprs {
+  display: flex;
+  gap: 1.2rem;
+
+  &--pair .expr {
+    font-size: 2.6rem;
+    padding: 0.3rem 1.4rem;
+  }
+}
+
 .expr {
   padding: 0.3rem 2.4rem;
   font-size: 3.2rem;
@@ -313,6 +368,16 @@ export default {
 
   &__paren {
     color: #e65100;
+  }
+
+  &__tag {
+    margin-right: 0.6rem;
+    padding: 0 0.6rem;
+    font-size: 0.6em;
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #fb8c00;
+    border-radius: 10px;
   }
 }
 
@@ -363,10 +428,35 @@ export default {
     color: #2e7d32;
   }
 
+  &__cards {
+    display: flex;
+    gap: 2.2rem;
+  }
+
   &__lines {
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
+  }
+
+  &__tag {
+    margin-right: 0.5rem;
+    padding: 0 0.5rem;
+    font-size: 0.65em;
+    vertical-align: middle;
+    color: #ffffff;
+    background-color: #fb8c00;
+    border-radius: 10px;
+  }
+
+  &__conclusion {
+    margin: 0;
+    padding: 0.2rem 1.2rem;
+    font-size: 1.8rem;
+    font-weight: $font-bold;
+    color: #ffffff;
+    background-color: #43a047;
+    border-radius: 14px;
   }
 
   &__line {
@@ -410,6 +500,19 @@ export default {
 
   .solution__line {
     font-size: 1.8rem;
+  }
+
+  .exprs--pair .expr {
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .solution__cards {
+    gap: 1.4rem;
+  }
+
+  .solution__conclusion {
+    font-size: 1.5rem;
   }
 }
 </style>
