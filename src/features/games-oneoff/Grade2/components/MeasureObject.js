@@ -377,6 +377,118 @@ const ObjectShape = {
             })
           ),
         ]);
+      case "straw":
+        return h("g", [
+          h("rect", {
+            x: 1,
+            y: OH / 2 - 6,
+            width: w - 2,
+            height: 12,
+            rx: 6,
+            fill: color,
+            stroke: "#37474f",
+            "stroke-width": 2,
+          }),
+          ...Array.from({ length: Math.floor(w / 24) }, (_, k) =>
+            h("line", {
+              x1: 12 + k * 24,
+              y1: OH / 2 - 5,
+              x2: 20 + k * 24,
+              y2: OH / 2 + 5,
+              stroke: "#ffffff",
+              "stroke-width": 3,
+            })
+          ),
+        ]);
+      case "tape-stripe":
+      case "tape-flower":
+      case "tape-dot":
+      case "tape-floral":
+        return h("g", [
+          h("rect", {
+            x: 1,
+            y: 8,
+            width: w - 2,
+            height: OH - 16,
+            rx: 2,
+            fill: color,
+            stroke: "#37474f",
+            "stroke-width": 2,
+          }),
+          ...Array.from({ length: Math.floor(w / 18) }, (_, k) =>
+            shape === "tape-stripe"
+              ? h("line", {
+                  x1: 8 + k * 18,
+                  y1: 9,
+                  x2: 8 + k * 18,
+                  y2: OH - 9,
+                  stroke: "#ffffff",
+                  "stroke-width": 4,
+                })
+              : h("circle", {
+                  cx: 10 + k * 18,
+                  cy: OH / 2,
+                  r: shape === "tape-dot" ? 3.5 : 5,
+                  fill: shape === "tape-flower" ? "#ffeb3b" : "#ffffff",
+                })
+          ),
+        ]);
+      case "beads":
+        return h("g", [
+          h("line", {
+            x1: 1,
+            y1: OH / 2,
+            x2: w - 1,
+            y2: OH / 2,
+            stroke: "#5d4037",
+            "stroke-width": 2,
+          }),
+          ...Array.from(
+            { length: Math.max(1, Math.floor((w - 4) / 16)) },
+            (_, k) =>
+              h("circle", {
+                cx: 10 + k * 16,
+                cy: OH / 2,
+                r: 7,
+                fill: ["#ef5350", "#ffca28", "#42a5f5", "#66bb6a"][k % 4],
+                stroke: "#37474f",
+                "stroke-width": 1.5,
+              })
+          ),
+        ]);
+      case "charm-heart":
+      case "charm-star":
+        return h("g", [
+          h("line", {
+            x1: 1,
+            y1: OH / 2,
+            x2: w - 34,
+            y2: OH / 2,
+            stroke: "#8d6e63",
+            "stroke-width": 3,
+          }),
+          h("circle", {
+            cx: 4,
+            cy: OH / 2,
+            r: 4,
+            fill: "none",
+            stroke: "#8d6e63",
+            "stroke-width": 2,
+          }),
+          shape === "charm-heart"
+            ? h("path", {
+                d: `M${w - 18} ${OH - 4} L${w - 34} ${OH / 2 - 2} A8 8 0 0 1 ${w - 18} 10 A8 8 0 0 1 ${w - 2} ${OH / 2 - 2} Z`,
+                fill: color,
+                stroke: "#ad1457",
+                "stroke-width": 2,
+              })
+            : h("polygon", {
+                points: `${w - 18},3 ${w - 13},14 ${w - 2},15 ${w - 10},23 ${w - 8},35 ${w - 18},29 ${w - 28},35 ${w - 26},23 ${w - 34},15 ${w - 23},14`,
+                fill: color,
+                stroke: "#f57f17",
+                "stroke-width": 2,
+              }),
+        ]);
       default:
         return rect({ rx: 5 });
     }
