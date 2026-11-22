@@ -1,7 +1,8 @@
-// 二年級數的讀法（國小教材）：100＝一百、101＝一百零一、110＝一百一十、115＝一百一十五、200＝二百
+// 二年級數的讀法（國小教材）：100＝一百、101＝一百零一、110＝一百一十、115＝一百一十五、200＝二百、1000＝一千
 const DIGITS = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
 
 export function readNumber(n) {
+  if (n === 1000) return "一千";
   if (!Number.isInteger(n) || n < 0 || n > 999) throw new Error(`不支援 ${n}`);
   if (n < 10) return DIGITS[n];
   const h = Math.floor(n / 100);

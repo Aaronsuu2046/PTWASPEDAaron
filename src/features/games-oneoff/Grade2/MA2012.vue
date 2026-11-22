@@ -64,6 +64,7 @@ const HEADS = { number: "數字", text: "讀法", voice: "聲音" };
 
 // 數到 200－讀法連連看：每次隨機產生 3 個不重複的數，把數字和讀法（文字或語音）連起來
 // 題目 { code, pool: "zero"|"any", columns: ["number", "text"|"voice", ...] }
+// 選填 values：直接指定這題的 3 個數（MA2111 等固定題庫用），不從 pool 隨機產生；紀錄前面會加題號
 // 第 5 關三欄：數字－語音－讀法，同一個數的三張卡連成一組
 export default {
   name: "MA2012",
@@ -76,7 +77,8 @@ export default {
   },
   emits: ["play-effect", "next-question", "add-record"],
   data() {
-    const values = pickDistinct(POOLS[this.gameData.pool], 3);
+    const values =
+      this.gameData.values || pickDistinct(POOLS[this.gameData.pool], 3);
     return {
       items: values.map((value) => ({
         id: String(value),
@@ -126,8 +128,11 @@ export default {
       this.playing = item.id;
       clearTimeout(this.playTimer);
       this.playTimer = setTimeout(() => (this.playing = null), 1500);
-      if (!synth || typeof window.SpeechSynthesisUtterance !== "function")
+      if (!synth || typeof window.SpeechSynthesisUtterance !== "function") {
+        // 沒有語音功能：提示請大人幫忙念，不在卡片上顯示答案
+        this.feedback = "這台裝置不能播放聲音，請老師或家長幫忙念出來。";
         return;
+      }
       synth.cancel();
       const utter = new window.SpeechSynthesisUtterance(item.reading);
       utter.lang = "zh-TW";
@@ -172,7 +177,12 @@ export default {
           return parts.join("－");
         })
         .join("；");
-      this.$emit("add-record", [expected, actual, isCorrect ? "正確" : "錯誤"]);
+      const code = this.gameData.values ? `${this.gameData.code} ` : "";
+      this.$emit("add-record", [
+        `${code}${expected}`,
+        actual,
+        isCorrect ? "正確" : "錯誤",
+      ]);
       if (isCorrect) {
         this.answered = true;
         this.feedback = "";
