@@ -231,6 +231,18 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "認識及使用錢幣",
+            "Games": [
+              {
+                "id": "MA2114",
+                "Name": "認識及使用錢幣",
+                "Description": "點數錢幣與兌換",
+                "Img": "MA2114.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }

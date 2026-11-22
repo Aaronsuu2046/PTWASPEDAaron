@@ -19,9 +19,11 @@ const FILES = {
   10: "10.png",
   50: "50.png",
   100: "100.png",
+  500: "500.png",
+  1000: "1000.png",
 };
 
-// 二年級錢幣：value 為 1、5、10、50、100（100 是鈔票）；size 為硬幣格子的高度（px）
+// 二年級錢幣：value 為 1、5、10、50、100、500、1000（100 以上是鈔票）；size 為硬幣格子的高度（px）
 export default {
   name: "MoneyItem",
   props: {
