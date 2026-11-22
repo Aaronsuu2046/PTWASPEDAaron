@@ -65,7 +65,7 @@
                 "Name": "使用錢幣",
                 "Description": "點數錢幣與兌換",
                 "Img": "MA2017.png",
-                "status": "draft"
+                "status": "ready"
               },
               {
                 "id": "MA2018",
