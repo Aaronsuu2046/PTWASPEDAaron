@@ -74,8 +74,8 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import FieldPad from "../Grade4/games/Common/FieldPad.vue";
 import MoneyItem from "./components/MoneyItem.vue";
 
-const DENOMS = [100, 50, 10, 5, 1];
-const RULES = [
+const DENOMS = [1000, 500, 100, 50, 10, 5, 1];
+const ALL_RULES = [
   { id: "1to10", from: 1, count: 10, to: 10, label: "10 個 1 元 ➜ 1 個 10 元" },
   { id: "5to10", from: 5, count: 2, to: 10, label: "2 個 5 元 ➜ 1 個 10 元" },
   {
@@ -92,12 +92,38 @@ const RULES = [
     to: 100,
     label: "2 個 50 元 ➜ 1 張 100 元",
   },
+  {
+    id: "100to500",
+    from: 100,
+    count: 5,
+    to: 500,
+    label: "5 張 100 元 ➜ 1 張 500 元",
+  },
+  {
+    id: "100to1000",
+    from: 100,
+    count: 10,
+    to: 1000,
+    label: "10 張 100 元 ➜ 1 張 1000 元",
+  },
+  {
+    id: "500to1000",
+    from: 500,
+    count: 2,
+    to: 1000,
+    label: "2 張 500 元 ➜ 1 張 1000 元",
+  },
 ];
+// 沒指定 rules 時（MA2017）用的兌換按鈕
+const DEFAULT_RULES = ["1to10", "5to10", "10to100", "50to100"];
 const MERGE_MS = 700;
-const MAX_LENGTH = 3;
+// 答案最少可以填 3 位數；答案是 4 位數（1000）時放寬到 4 位
+const MIN_LENGTH = 3;
 
 // 使用錢幣－點數錢幣與兌換：數出錢幣共有多少元；可以把小面額換成大面額（不可逆、總額不變），只判定填的總額
-// 題目 { code, coins: { 面額: 數量 }, answer }
+// 題目 { code, coins: { 面額: 數量 }, answer }；面額可到 500、1000
+// 選填 rules：這題要顯示的兌換按鈕 id（見 ALL_RULES），不填就是 MA2017 原本的四種
+// 選填 GameConfig.WrongHint：答錯時的提示
 export default {
   name: "MA2017",
   components: { FieldPad, MoneyItem },
@@ -111,8 +137,9 @@ export default {
   data() {
     const coins = {};
     DENOMS.forEach((d) => (coins[d] = this.gameData.coins[d] || 0));
+    const ids = this.gameData.rules || DEFAULT_RULES;
     return {
-      RULES,
+      RULES: ids.map((id) => ALL_RULES.find((r) => r.id === id)),
       coins,
       merging: null,
       size: 60,
@@ -133,6 +160,9 @@ export default {
         value: d,
         count: this.coins[d],
       }));
+    },
+    maxLength() {
+      return Math.max(MIN_LENGTH, String(this.gameData.answer).length);
     },
     total() {
       return DENOMS.reduce((sum, d) => sum + d * this.coins[d], 0);
@@ -211,7 +241,7 @@ export default {
       this.feedback = "";
       if (key === "clear") this.value = "";
       else if (key === "←") this.value = this.value.slice(0, -1);
-      else if (/^\d$/.test(key) && this.value.length < MAX_LENGTH)
+      else if (/^\d$/.test(key) && this.value.length < this.maxLength)
         this.value = this.value === "0" ? key : this.value + key;
     },
     coinText(coins) {
@@ -243,7 +273,9 @@ export default {
         return;
       }
       this.wrong = true;
-      this.feedback = "再數一次：先數大的錢，再數小的錢；也可以先換成大面額。";
+      this.feedback =
+        this.gameConfig?.WrongHint ||
+        "再數一次：先數大的錢，再數小的錢；也可以先換成大面額。";
       this.$emit("play-effect", "WrongSound");
     },
   },
