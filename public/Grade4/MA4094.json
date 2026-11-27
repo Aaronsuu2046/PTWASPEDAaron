@@ -4,7 +4,7 @@
   "TotalLevel": 5,
   "IntroText": {
     "Type": "PlainText",
-    "Content": "把整數化為假分數。"
+    "Content": "把整數化為假分數"
   },
   "GameConfig": {},
   "Questions": [

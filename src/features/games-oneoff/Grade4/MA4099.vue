@@ -26,6 +26,7 @@
         />
       </div>
 
+      <!-- 依腳本示意圖：num/den × □ ＝ (num × □) / den ＝ □ / den，答：□/□（只寫假分數，沒有整數格） -->
       <div class="work">
         <div class="work-row">
           <span class="work-label">做法：</span>
@@ -40,6 +41,21 @@
           </button>
           <span class="sign">＝</span>
           <span class="frac">
+            <span class="frac__top">
+              （{{ gameData.num }} ×
+              <button v-bind="box('t2')" class="box" @click="activate('t2')">
+                {{ values.t2 }}
+              </button>
+              ）
+            </span>
+            <span class="frac__bar" />
+            <span>{{ gameData.den }}</span>
+          </span>
+        </div>
+        <div class="work-row">
+          <span class="work-label" />
+          <span class="sign">＝</span>
+          <span class="frac">
             <button v-bind="box('p')" class="box" @click="activate('p')">
               {{ values.p }}
             </button>
@@ -49,13 +65,6 @@
         </div>
         <div class="work-row">
           <span class="work-label">答：</span>
-          <button
-            v-bind="box('aw')"
-            class="box box--int"
-            @click="activate('aw')"
-          >
-            {{ values.aw }}
-          </button>
           <span class="frac">
             <button v-bind="box('an')" class="box" @click="activate('an')">
               {{ values.an }}
@@ -66,13 +75,25 @@
             </button>
           </span>
           <span class="unit">{{ gameData.unit }}</span>
-          <span v-if="answered && gameData.reference" class="reference">
-            （也就是 {{ gameData.reference }} {{ gameData.unit }}）
+          <!-- 假分數答對後，用分線寫法顯示換成帶分數（或整數）的參考答案 -->
+          <span v-if="answered && reference" class="reference">
+            （<span class="frac frac--small">
+              <span>{{ gameData.product }}</span>
+              <span class="frac__bar" />
+              <span>{{ gameData.den }}</span>
+            </span>
+            ＝
+            <span v-if="reference.w" class="reference__whole">{{
+              reference.w
+            }}</span>
+            <span v-if="reference.n" class="frac frac--small">
+              <span>{{ reference.n }}</span>
+              <span class="frac__bar" />
+              <span>{{ gameData.den }}</span>
+            </span>
+            ）
           </span>
         </div>
-        <p class="work-hint">
-          答案可以寫假分數，整數格可以空著。需要時可按右邊「計算工具」看九九乘法表。
-        </p>
       </div>
 
       <p v-if="feedback" class="feedback">{{ feedback }}</p>
@@ -91,13 +112,13 @@ import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import TimesFigure from "./games/Fraction/TimesFigure.vue";
 import FieldPad from "./games/Common/FieldPad.vue";
 
-const KEYS = ["t", "p", "aw", "an", "ad"];
+const KEYS = ["t", "t2", "p", "an", "ad"];
 const MAX_LENGTH = 3;
 const REVEAL_MS = 2200;
 
-// 分數的整數倍：做法「num/den × □ ＝ □/den」填倍數和乘積分子（分母固定），再填答案
-// 答案可寫假分數、帶分數或整數（數值相同、有分數時分母相同就對）；答對後顯示帶分數或整數參考
-// 題目 { question（{f} 換成分數）, num, den, times, product, unit, figure, reference }
+// 分數的整數倍（依腳本）：做法「num/den × □ ＝ (num × □)/den ＝ □/den」，答案用假分數 □/□
+// 假分數答對後，顯示換成帶分數（或整數）的參考答案；右側「點我看提示」放腳本的提示文字
+// 題目 { question（{f} 換成分數）, num, den, times, product, unit, figure, hint }
 export default {
   name: "MA4099",
   components: { TimesFigure, FieldPad },
@@ -107,7 +128,7 @@ export default {
     gameConfig: { type: Object, default: () => ({}) },
     introText: { type: Object, default: null },
   },
-  emits: ["play-effect", "next-question", "add-record"],
+  emits: ["play-effect", "next-question", "add-record", "side-hint"],
   data() {
     return {
       values: Object.fromEntries(KEYS.map((k) => [k, ""])),
@@ -121,7 +142,13 @@ export default {
   },
   computed: {
     gameIntroText() {
-      return this.introText?.Content || "想一想，再填填看。";
+      return this.introText?.Content || "想一想，再填填看";
+    },
+    // 答案是假分數時的參考：帶分數或整數
+    reference() {
+      const { product, den } = this.gameData;
+      if (product < den) return null;
+      return { w: Math.floor(product / den), n: product % den };
     },
     questionParts() {
       return this.gameData.question
@@ -133,8 +160,22 @@ export default {
   created() {
     emitter.on("submitAnswer", this.checkAnswer);
   },
+  mounted() {
+    if (this.gameData.hint)
+      this.$emit("side-hint", {
+        title: "提示",
+        groups: [
+          { title: "想一想", rules: [this.gameData.hint] },
+          {
+            title: "算不出來時",
+            rules: ["可以打開右邊「計算工具」的九九乘法表。"],
+          },
+        ],
+      });
+  },
   beforeUnmount() {
     emitter.off("submitAnswer", this.checkAnswer);
+    this.$emit("side-hint", null);
     clearTimeout(this.revealTimer);
   },
   methods: {
@@ -173,42 +214,28 @@ export default {
       this.wrongKeys = this.wrongKeys.filter((w) => w !== k);
       this.feedback = "";
     },
-    // 答案：寫成分數（可帶整數）時分母要和題目相同；剛好是整數時也可以只寫整數
-    answerOk() {
-      const { product, den } = this.gameData;
-      const w = Number(this.values.aw || 0);
-      const n = this.values.an;
-      const d = this.values.ad;
-      if (n === "" && d === "")
-        return product % den === 0 && w === product / den;
-      return Number(d) === den && w * den + Number(n) === product;
-    },
     checkAnswer() {
       if (this.answered) return;
       const v = this.values;
-      const empty = ["t", "p"].filter((k) => v[k] === "");
-      const answerEmpty = v.aw === "" && v.an === "" && v.ad === "";
-      const fracHalf = (v.an === "") !== (v.ad === "");
-      if (empty.length || answerEmpty || fracHalf) {
-        this.wrongKeys = [
-          ...empty,
-          ...(answerEmpty ? ["an", "ad"] : []),
-          ...(fracHalf ? [v.an === "" ? "an" : "ad"] : []),
-        ];
+      const empty = KEYS.filter((k) => v[k] === "");
+      if (empty.length) {
+        this.wrongKeys = empty;
         this.feedback = "空白的格子都要填喔！";
         return;
       }
       const { num, den, times, product, unit } = this.gameData;
       const wrong = [];
+      // 逐格檢查，只標出填錯的格子
       if (Number(v.t) !== times) wrong.push("t");
+      if (Number(v.t2) !== times) wrong.push("t2");
       if (Number(v.p) !== product) wrong.push("p");
-      if (!this.answerOk()) wrong.push("aw", "an", "ad");
+      if (Number(v.an) !== product) wrong.push("an");
+      if (Number(v.ad) !== den) wrong.push("ad");
       this.wrongKeys = wrong;
       const isCorrect = wrong.length === 0;
-      const typedAns = `${v.aw ? `${v.aw} ` : ""}${v.an || v.ad ? `${v.an || "_"}/${v.ad || "_"}` : ""}`;
       this.$emit("add-record", [
-        `${num}/${den}×${times}＝${product}/${den}；答 ${product}/${den} ${unit}`,
-        `${num}/${den}×${v.t}＝${v.p}/${den}；答 ${typedAns} ${unit}`,
+        `${num}/${den}×${times}＝(${num}×${times})/${den}＝${product}/${den}；答 ${product}/${den} ${unit}`,
+        `${num}/${den}×${v.t}＝(${num}×${v.t2})/${den}＝${v.p}/${den}；答 ${v.an}/${v.ad} ${unit}`,
         isCorrect ? "正確" : "錯誤",
       ]);
       if (isCorrect) {
@@ -216,7 +243,7 @@ export default {
         this.feedback = "";
         this.closePad();
         this.$emit("play-effect", "CorrectSound");
-        if (this.gameData.reference)
+        if (this.reference)
           this.revealTimer = setTimeout(
             () => this.$emit("next-question"),
             REVEAL_MS
@@ -224,7 +251,7 @@ export default {
         else this.$emit("next-question");
       } else {
         this.feedback = wrong.includes("p")
-          ? `分母不變，分子要乘 ${v.t || "幾"}，算算看 ${num} × ${v.t || "？"} 是多少？`
+          ? `分母不變，分子要乘 ${times}，算算看 ${num} × ${times} 是多少？`
           : "紅色的格子不對，再想一想！";
         this.$emit("play-effect", "WrongSound");
       }
@@ -336,15 +363,6 @@ export default {
   color: #00695c;
 }
 
-.work-hint {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 1.05rem;
-  color: #6d4c41;
-}
-
 .frac {
   display: inline-flex;
   flex-direction: column;
@@ -362,6 +380,21 @@ export default {
     background-color: #37474f;
     border-radius: 2px;
   }
+
+  &__top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  &--small {
+    font-size: 1.25rem;
+
+    .frac__bar {
+      min-width: 1.4rem;
+      height: 3px;
+    }
+  }
 }
 
 .sign,
@@ -372,9 +405,20 @@ export default {
 }
 
 .reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   font-size: 1.3rem;
   font-weight: $font-bold;
   color: #2e7d32;
+
+  &__whole {
+    font-size: 1.5rem;
+  }
+
+  .frac {
+    color: #2e7d32;
+  }
 }
 
 .box {

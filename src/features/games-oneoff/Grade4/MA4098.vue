@@ -29,6 +29,12 @@
             <span class="work-label">{{ r === 0 ? "做法：" : "" }}</span>
             <template v-for="(term, t) in row" :key="t">
               <span v-if="term.kind === 'eq'" class="sign">＝</span>
+              <!-- 腳本黑字：題目已給的數直接顯示 -->
+              <span
+                v-else-if="term.given"
+                class="given"
+                v-html="numberHtml(term)"
+              />
               <button
                 v-else-if="term.kind === 'op'"
                 v-bind="box(`r${r}t${t}o`)"
@@ -66,8 +72,11 @@
               @pick="activate"
             />
             <span class="unit">{{ gameData.unit }}</span>
+            <!-- 假分數答對後，用分線寫法顯示換成帶分數的參考答案 -->
             <span v-if="answered && gameData.reference" class="reference">
-              （也就是 {{ gameData.reference }} {{ gameData.unit }}）
+              （<span class="qnum" v-html="numberHtml(gameData.answer)" />
+              ＝
+              <span class="qnum" v-html="numberHtml(gameData.reference)" />）
             </span>
           </div>
         </div>
@@ -138,9 +147,10 @@ const textOf = (x) => {
   return x.w ? `${x.w} ${x.n}/${x.d}` : `${x.n}/${x.d}`;
 };
 
-// 同分母分數加減（應用題）：做法每一格都要填（運算符號、分子、分母、整數、結果），答案也要填
+// 同分母分數加減（應用題）：依腳本，黑字（term.given）直接顯示，紅字挖空要填（運算符號一律要選）
 // 第 4 關先把整數換成假分數、第 5 關先把假分數換成整數
-// 分數格可寫成假分數或帶分數（數值與分母相同就對，不強制約分）；答對後顯示帶分數參考
+// 整數格只出現在腳本寫成帶分數的數；分數格數值與分母相同就對（不強制約分）
+// 答案是假分數時，答對後用分線寫法顯示換成帶分數的參考（reference）
 export default {
   name: "MA4098",
   components: { FractionScene, FieldPad, FracBoxes },
@@ -163,13 +173,13 @@ export default {
       }
     };
     this.gameData.rows.forEach((row, r) =>
-      row.forEach((term, t) => add(`r${r}t${t}`, term))
+      row.forEach((term, t) => {
+        if (!term.given) add(`r${r}t${t}`, term);
+      })
     );
+    // 整數格只在答案本來就寫成帶分數時才出現；答案是假分數就只有分子、分母
     const answer = this.gameData.answer;
-    const answerWhole =
-      answer.kind === "frac"
-        ? answer.w > 0 || totalOf(answer) >= answer.d
-        : true;
+    const answerWhole = answer.kind === "frac" && answer.w > 0;
     if (answerWhole) values.answ = "";
     values.ansn = "";
     values.ansd = "";
@@ -294,7 +304,7 @@ export default {
     },
     checkAnswer() {
       if (this.answered) return;
-      // 整數格可以空著（寫假分數）；其他格子都要填
+      // 帶分數的整數格可以空著（寫假分數）；其他格子都要填
       const empty = Object.keys(this.values).filter(
         (k) => this.values[k] === "" && !k.endsWith("w")
       );
@@ -307,7 +317,7 @@ export default {
       const wrong = [];
       rows.forEach((row, r) =>
         row.forEach((term, t) => {
-          if (term.kind !== "eq")
+          if (term.kind !== "eq" && !term.given)
             wrong.push(...this.checkTerm(`r${r}t${t}`, term));
         })
       );
@@ -319,7 +329,11 @@ export default {
           .map((row, r) =>
             row
               .map((term, t) =>
-                term.kind === "eq" ? "＝" : fn(`r${r}t${t}`, term)
+                term.kind === "eq"
+                  ? "＝"
+                  : term.given
+                    ? textOf(term)
+                    : fn(`r${r}t${t}`, term)
               )
               .join(" ")
           )
@@ -481,9 +495,43 @@ export default {
 }
 
 .reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   font-size: 1.3rem;
   font-weight: $font-bold;
   color: #2e7d32;
+
+  .qnum {
+    color: #2e7d32;
+  }
+}
+
+// 題目已給的數（腳本黑字）：和格子差不多大，直接顯示
+.given {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 2rem;
+  font-weight: $font-bold;
+  color: #0d47a1;
+
+  :deep(.qf) {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.7rem;
+    line-height: 1.1;
+  }
+
+  :deep(.qf__bar) {
+    align-self: stretch;
+    min-width: 2rem;
+    height: 4px;
+    margin: 0.1rem 0;
+    background-color: #37474f;
+    border-radius: 2px;
+  }
 }
 
 :deep(.fbox) {

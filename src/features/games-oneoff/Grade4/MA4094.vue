@@ -7,8 +7,10 @@
     <div class="game-area">
       <div class="shapes">
         <p class="shapes__hint">
-          {{ gameData.whole }} 個圓，每個圓分成
-          {{ gameData.den }} 份。點一點或按住拖過去，可以塗色數數看
+          <span class="shapes__question">
+            1張披薩平分成{{ gameData.den }}份。
+          </span>
+          <span class="shapes__tip">點一點或按住拖過去，可以塗色數數看</span>
           <span class="shapes__count">已塗 {{ paintedCount }} 份</span>
           <button
             type="button"
@@ -57,10 +59,39 @@
 
         <div v-if="feedback" class="help">
           <p class="feedback">{{ feedback }}</p>
-          <!-- 答錯時依這一題的圓個數與分母，一步一步提示怎麼數（不直接給答案） -->
-          <ol v-if="steps.length" class="steps">
-            <li v-for="step in steps" :key="step">{{ step }}</li>
-          </ol>
+          <!-- 答錯時依腳本的提示框，數字依這一題調整；要填的地方留（&nbsp;&nbsp;&nbsp;）不直接給答案 -->
+          <div v-if="showHint" class="steps">
+            <p>
+              1張是{{ gameData.den }}個<span class="mini-frac"
+                ><span>1</span><span class="mini-frac__bar" /><span>{{
+                  gameData.den
+                }}</span></span
+              >張，
+            </p>
+            <p>
+              {{ gameData.whole }}張是{{ gameData.den }}×{{
+                gameData.whole
+              }}=<span class="blank">（&nbsp;&nbsp;&nbsp;）</span>個<span
+                class="mini-frac"
+                ><span>1</span><span class="mini-frac__bar" /><span>{{
+                  gameData.den
+                }}</span></span
+              >張，
+            </p>
+            <p>
+              <span class="blank">（&nbsp;&nbsp;&nbsp;）</span>個<span
+                class="mini-frac"
+                ><span>1</span><span class="mini-frac__bar" /><span>{{
+                  gameData.den
+                }}</span></span
+              >張合起來是<span class="mini-frac"
+                ><span class="blank">（&nbsp;&nbsp;&nbsp;）</span
+                ><span class="mini-frac__bar" /><span>{{
+                  gameData.den
+                }}</span></span
+              >張。
+            </p>
+          </div>
         </div>
       </div>
 
@@ -79,7 +110,6 @@ import TapShapes from "./games/Fraction/TapShapes.vue";
 import FieldPad from "./games/Common/FieldPad.vue";
 
 const MAX_LENGTH = 2;
-const DIGITS = "零一二三四五六七八九十";
 
 // 整數化為假分數：「整數 ＝ □ / 分母」只填分子；
 // 下方畫同樣多個圓、每個按分母等分，可點擊塗色當輔助（不列入判定）
@@ -102,17 +132,13 @@ export default {
       paintedCount: 0,
       wrong: false,
       feedback: "",
-      steps: [],
+      showHint: false,
       answered: false,
     };
   },
   computed: {
     gameIntroText() {
-      return this.introText?.Content || "把整數化為假分數。";
-    },
-    // 「幾分之一」的讀法，例如分母 4 →「四分之一」
-    unitFraction() {
-      return `${DIGITS[this.gameData.den]}分之一`;
+      return this.introText?.Content || "把整數化為假分數";
     },
   },
   created() {
@@ -131,7 +157,7 @@ export default {
       if (this.answered) return;
       this.wrong = false;
       this.feedback = "";
-      this.steps = [];
+      this.showHint = false;
       if (key === "clear") this.value = "";
       else if (key === "←") this.value = this.value.slice(0, -1);
       else if (/^\d$/.test(key) && this.value.length < MAX_LENGTH)
@@ -155,18 +181,14 @@ export default {
         this.answered = true;
         this.wrong = false;
         this.feedback = "";
-        this.steps = [];
+        this.showHint = false;
         this.padOpen = false;
         this.$emit("play-effect", "CorrectSound");
         this.$emit("next-question");
       } else {
         this.wrong = true;
-        this.feedback = "再想想看，照下面的步驟數一數：";
-        this.steps = [
-          `先確認：有 ${whole} 個完整的圓。`,
-          `每一個圓都被分成 ${den} 份，1 份就是 1 個「${this.unitFraction}」。`,
-          `${whole} 個圓合起來，共有幾個「${this.unitFraction}」？可以塗色數數看。`,
-        ];
+        this.feedback = "再想想看：";
+        this.showHint = true;
         this.$emit("play-effect", "WrongSound");
       }
     },
@@ -228,6 +250,16 @@ export default {
     font-size: 1.15rem;
     font-weight: $font-bold;
     color: #5d4037;
+  }
+
+  &__question {
+    font-size: 1.5rem;
+    color: #3e2723;
+  }
+
+  &__tip {
+    font-size: 1rem;
+    color: #8d6e63;
   }
 
   &__count {
@@ -363,7 +395,7 @@ export default {
 
 .steps {
   margin: 0;
-  padding: 0.4rem 1rem 0.4rem 2.4rem;
+  padding: 0.4rem 1.2rem;
   font-size: 1.2rem;
   font-weight: $font-bold;
   line-height: 1.5;
@@ -371,6 +403,32 @@ export default {
   background-color: #fff8e1;
   border: 3px solid #ffb74d;
   border-radius: 14px;
+
+  p {
+    margin: 0.15rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.mini-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.2rem;
+  font-size: 0.85em;
+  line-height: 1.05;
+
+  &__bar {
+    align-self: stretch;
+    height: 2px;
+    background-color: currentColor;
+  }
+}
+
+.blank {
+  color: #c62828;
 }
 
 @media (max-width: 1100px), (max-height: 760px) {
