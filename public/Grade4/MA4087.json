@@ -4,12 +4,12 @@
   "TotalLevel": 1,
   "IntroText": {
     "Type": "PlainText",
-    "Content": "開車選出兩個算式的答案一樣還是不一樣！"
+    "Content": "想一想，再選選看"
   },
   "GameConfig": {
     "PickCount": 5,
     "showSubmitButton": false,
-    "Ask": "兩個算式的答案一樣嗎？",
+    "Ask": "兩個算式的答案會一樣嗎？",
     "Choices": [
       {
         "value": "same",
@@ -22,7 +22,7 @@
         "icon": "≠"
       }
     ],
-    "Hint": "提示：有括號先算括號；沒有括號先算乘，再算加減。"
+    "Hint": "提示：在加減與乘的併式中，如果有括號，要先算括號的部分；沒有括號，要先算乘的部分，再算加、減。"
   },
   "Questions": [
     [
