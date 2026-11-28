@@ -4,12 +4,105 @@
       <p>{{ gameIntroText }}</p>
     </div>
 
-    <div class="game-area">
+    <div class="game-area" :class="{ 'game-area--word': isWord }">
       <div class="left">
-        <p class="equation" data-equation>
-          {{ gameData.a }} {{ OP_SHOW }} {{ gameData.b }} ＝
-        </p>
-        <p class="step">① 把數字和符號拖到直式（或點一下再點格子）</p>
+        <template v-if="isWord">
+          <!-- 應用題：先讀題目，自己把橫式填出來 -->
+          <p class="word" data-word>{{ gameData.text }}</p>
+          <p class="step">① 依照題目完成橫式</p>
+          <div class="hrow" data-hrow>
+            <template v-for="f in H_FIELDS" :key="f.key">
+              <span v-if="f.key === 'hans'" class="hrow__eq">＝</span>
+              <button
+                type="button"
+                class="hcell"
+                :class="[
+                  inputClass(f.key),
+                  `hcell--${f.size}`,
+                  { 'hcell--op': f.key === 'hop' },
+                ]"
+                :data-input="f.key"
+                data-pad-field
+                :aria-label="f.label"
+                @click="activate($event, f.key)"
+              >
+                {{ hShow(f.key) }}
+              </button>
+            </template>
+          </div>
+          <!-- 積木輔助：先放第一個數，再把十條、方塊拖進來（或點一下）加上去；不計分 -->
+          <div class="aid" data-pad-avoid>
+            <div
+              class="aid__board"
+              :class="{ 'aid__board--over': aidOver }"
+              data-aid
+            >
+              <BaseTenBlocks
+                :tens="aid.tens"
+                :ones="aid.ones"
+                :unit="aidUnit"
+                variant="orange"
+              />
+              <!-- 減法：積木圖上可以用畫筆圈、劃掉（計算紙），不計分 -->
+              <DrawingBoard
+                v-if="isSub"
+                ref="paper"
+                class="aid__paper"
+                :component-config="brush"
+              />
+            </div>
+            <div v-if="isSub" class="aid__side aid__side--tools">
+              <span class="aid__label">計算紙</span>
+              <button
+                v-for="t in PAPER_TOOLS"
+                :key="t.id"
+                type="button"
+                class="aid__tool"
+                :class="{ 'aid__tool--on': tool === t.id }"
+                :data-paper="t.id"
+                @click="useTool(t.id)"
+              >
+                {{ t.label }}
+              </button>
+            </div>
+            <div v-else class="aid__side">
+              <button
+                v-for="k in ['ten', 'one']"
+                :key="k"
+                type="button"
+                class="aid__src"
+                :data-aid-src="k"
+                :aria-label="k === 'ten' ? '加一條十' : '加一個一'"
+                @pointerdown="startAidDrag($event, k)"
+                @pointermove="onAidDrag"
+                @pointerup="endAidDrag($event, k)"
+                @pointercancel="aidDrag = null"
+              >
+                <BaseTenBlocks
+                  :tens="k === 'ten' ? 1 : 0"
+                  :ones="k === 'one' ? 1 : 0"
+                  :unit="aidUnit"
+                  variant="orange"
+                />
+              </button>
+              <button
+                type="button"
+                class="aid__reset"
+                data-aid-reset
+                @click="resetAid"
+              >
+                重來
+              </button>
+            </div>
+          </div>
+          <p class="step">② 把橫式的數字和符號拖到直式（或點一下再點格子）</p>
+        </template>
+        <template v-else>
+          <p class="equation" data-equation>
+            {{ gameData.a }} {{ OP_SHOW }} {{ gameData.b }} ＝
+          </p>
+          <p class="step">① 把數字和符號拖到直式（或點一下再點格子）</p>
+        </template>
         <div class="tiles" data-zone="tiles">
           <button
             v-for="tile in trayTiles"
@@ -29,9 +122,13 @@
           >
             {{ tile.text }}
           </button>
-          <span v-if="!trayTiles.length" class="tiles__done">都放好了！</span>
+          <span v-if="!trayTiles.length" class="tiles__done">{{
+            isWord && !hReady ? "先完成上面的橫式" : "都放好了！"
+          }}</span>
         </div>
-        <p class="step">② 用直式算算看，答案填在最下面一列</p>
+        <p class="step">
+          {{ isWord ? "③" : "②" }} 用直式算算看，答案填在最下面一列
+        </p>
         <p
           v-if="feedback"
           class="feedback"
@@ -129,6 +226,8 @@
 
       <FieldPad
         :field="active && !answered ? activeEl : null"
+        :kind="active === 'hop' ? 'operator' : 'number'"
+        :operators="['+', '-']"
         @press="press"
         @close="active = null"
       />
@@ -148,9 +247,28 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import FieldPad from "../../Grade4/games/Common/FieldPad.vue";
+import BaseTenBlocks from "../components/BaseTenBlocks.vue";
+import DrawingBoard from "@/components/DrawingBoard.vue";
 
 const HEADS = ["百位", "十位", "個位"];
 const DRAG_THRESHOLD = 8;
+// 應用題模式（GameConfig.WordProblem）的橫式欄位
+const H_FIELDS = [
+  { key: "ha", label: "第一個數", size: "2" },
+  { key: "hop", label: "運算符號", size: "op" },
+  { key: "hb", label: "第二個數", size: "2" },
+  { key: "hans", label: "答案", size: "3" },
+];
+const H_MAX = { ha: 2, hb: 2, hans: 3 };
+const OP_TEXT = { "+": "＋", "-": "－" };
+// 減法應用題的計算紙工具
+const PAPER_TOOLS = [
+  { id: "pen", label: "畫筆" },
+  { id: "eraser", label: "橡皮擦" },
+  { id: "clear", label: "清除" },
+];
+const PEN = { color: "#e53935", size: 3 };
+const ERASER = { color: "eraser", size: 18 };
 
 // 二位數加減法：橫式轉直式與計算（GameConfig.Op＝"+" 加法、"-" 減法）
 // 減法：被減數放上面，只有十、個兩欄；個位不夠減時，十位上方填借 1 後的數（被減數的十位會畫線）、個位上方填 10
@@ -159,9 +277,11 @@ const DRAG_THRESHOLD = 8;
 //    兩個數放哪一列都可以，「＋」放在第二列左邊
 // ② 在答案列填百、十、個位（答案只有兩位時百位空著），要進位的位在上方進位格填 1、不進位就空著
 // 送出時全部都要完成；答錯只標示錯的地方
+// 選填 GameConfig.WordProblem：題目 { text, a, b, answer } 先讀文字題、用數字鍵盤／符號鍵盤填橫式
+// （加法兩個數前後對調也算對），直式的數字卡改用學生填的數；積木輔助可加十條、方塊，不計分
 export default {
   name: "VerticalCalc",
-  components: { FieldPad },
+  components: { FieldPad, BaseTenBlocks, DrawingBoard },
   props: {
     gameData: { type: Object, required: true },
     gameConfig: { type: Object, default: () => ({}) },
@@ -171,6 +291,14 @@ export default {
   data() {
     return {
       HEADS,
+      H_FIELDS,
+      aid: this.initialAid(),
+      aidUnit: 7,
+      PAPER_TOOLS,
+      tool: "pen",
+      brush: { ...PEN },
+      aidDrag: null,
+      aidOver: false,
       // 每張數字卡放在哪一列、從哪一欄開始（1～3）
       placed: { a: null, b: null, op: false },
       selected: null,
@@ -187,6 +315,13 @@ export default {
     };
   },
   computed: {
+    isWord() {
+      return !!this.gameConfig?.WordProblem;
+    },
+    // 橫式的兩個數和符號都填了，才拿得到數字卡
+    hReady() {
+      return !!(this.values.ha && this.values.hb && this.values.hop);
+    },
     isSub() {
       return this.gameConfig?.Op === "-";
     },
@@ -211,6 +346,7 @@ export default {
       );
     },
     trayTiles() {
+      if (this.isWord && !this.hReady) return [];
       return ["a", "op", "b"]
         .filter((id) => (id === "op" ? !this.placed.op : !this.placed[id]))
         .map((id) => ({ id, text: this.textOf(id) }));
@@ -264,8 +400,68 @@ export default {
       );
     },
     textOf(id) {
+      if (this.isWord) {
+        if (id === "op") return OP_TEXT[this.values.hop] || "";
+        return this.values[id === "a" ? "ha" : "hb"] || "";
+      }
       if (id === "op") return this.OP_SHOW;
       return String(this.gameData[id]);
+    },
+    hShow(key) {
+      const v = this.values[key] || "";
+      return key === "hop" ? OP_TEXT[v] || "" : v;
+    },
+    // ── 積木輔助（應用題模式）──
+    initialAid() {
+      const a = Number(this.gameData.a) || 0;
+      return { tens: Math.floor(a / 10), ones: a % 10 };
+    },
+    addAid(kind) {
+      if (this.answered) return;
+      const aid = { ...this.aid };
+      if (kind === "ten") aid.tens = Math.min(aid.tens + 1, 30);
+      else aid.ones = Math.min(aid.ones + 1, 30);
+      this.aid = aid;
+    },
+    useTool(id) {
+      if (id === "clear") {
+        this.$refs.paper?.clear();
+        return;
+      }
+      this.tool = id;
+      this.brush = id === "eraser" ? { ...ERASER } : { ...PEN };
+    },
+    resetAid() {
+      this.aid = this.initialAid();
+    },
+    startAidDrag(event, kind) {
+      if (this.answered) return;
+      if (event.button !== undefined && event.button !== 0) return;
+      this.aidDrag = { kind, x: event.clientX, y: event.clientY, moved: false };
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    },
+    onAidDrag(event) {
+      if (!this.aidDrag) return;
+      if (
+        Math.hypot(
+          event.clientX - this.aidDrag.x,
+          event.clientY - this.aidDrag.y
+        ) > DRAG_THRESHOLD
+      )
+        this.aidDrag.moved = true;
+      if (this.aidDrag.moved) {
+        const el = document.elementFromPoint(event.clientX, event.clientY);
+        this.aidOver = !!el?.closest?.("[data-aid]");
+      }
+    },
+    // 點一下或拖到積木板上都加一塊；拖到別處不算
+    endAidDrag(event, kind) {
+      if (!this.aidDrag) return;
+      const { moved } = this.aidDrag;
+      const el = document.elementFromPoint(event.clientX, event.clientY);
+      if (!moved || el?.closest?.("[data-aid]")) this.addAid(kind);
+      this.aidDrag = null;
+      this.aidOver = false;
     },
     tileAt(row) {
       return ["a", "b"].find((id) => this.placed[id]?.row === row) || null;
@@ -387,10 +583,13 @@ export default {
       if (this.answered || !this.active) return;
       const k = this.active;
       const values = { ...this.values };
-      // 減法個位上方要填 10，可以放兩位；其他格只放一位
-      const max = this.isSub && k === "mark2" ? 2 : 1;
+      // 減法個位上方要填 10，可以放兩位；橫式的數可以放兩、三位；其他格只放一位
+      const max = H_MAX[k] || (this.isSub && k === "mark2" ? 2 : 1);
       const cur = values[k] || "";
-      if (key === "clear") delete values[k];
+      if (k === "hop") {
+        if (key === "clear" || key === "←") delete values[k];
+        else if (OP_TEXT[key]) values[k] = key;
+      } else if (key === "clear") delete values[k];
       else if (key === "←") {
         if (cur.length > 1) values[k] = cur.slice(0, -1);
         else delete values[k];
@@ -428,9 +627,36 @@ export default {
         return v === "" || v === "0";
       return v === expected;
     },
+    // 應用題：橫式各格對不對（加法兩個數對調也可以）
+    hWrongKeys() {
+      const { a, b, answer } = this.gameData;
+      const v = this.values;
+      const op = this.isSub ? "-" : "+";
+      const wrong = [];
+      const na = Number(v.ha);
+      const nb = Number(v.hb);
+      const inOrder = na === a && nb === b;
+      const swapped = !this.isSub && na === b && nb === a;
+      if (!inOrder && !swapped) {
+        if (na !== a && !(!this.isSub && na === b)) wrong.push("ha");
+        if (nb !== b && !(!this.isSub && nb === a)) wrong.push("hb");
+        if (!wrong.length) wrong.push("ha", "hb");
+      }
+      if (v.hop !== op) wrong.push("hop");
+      if (Number(v.hans) !== answer) wrong.push("hans");
+      return wrong;
+    },
     checkAnswer() {
       if (this.answered) return;
       const { code, a, b, answer } = this.gameData;
+      if (this.isWord) {
+        const empty = H_FIELDS.map((f) => f.key).filter((k) => !this.values[k]);
+        if (empty.length) {
+          this.wrongKeys = empty;
+          this.feedback = "先依照題目把橫式填完喔！";
+          return;
+        }
+      }
       if (!this.placed.a || !this.placed.b || !this.placed.op) {
         this.feedback = `先把兩個數和「${this.OP_SHOW}」都放進直式喔！`;
         return;
@@ -456,10 +682,15 @@ export default {
       this.wrongKeys = Object.keys(exp).filter(
         (k) => !this.sameValue(k, exp[k])
       );
+      if (this.isWord) this.wrongKeys.push(...this.hWrongKeys());
       const isCorrect = !this.wrongRows.length && !this.wrongKeys.length;
       this.$emit("add-record", [
         `${code} ${a}${this.OP_SHOW}${b}＝${answer}（${this.answerText((k) => exp[k])}）`,
-        `直式 ${this.formText()}，${this.answerText((k) => this.values[k])}`,
+        `${
+          this.isWord
+            ? `橫式 ${this.values.ha}${OP_TEXT[this.values.hop] || "?"}${this.values.hb}＝${this.values.hans}；`
+            : ""
+        }直式 ${this.formText()}，${this.answerText((k) => this.values[k])}`,
         isCorrect ? "正確" : "錯誤",
       ]);
       this.active = null;
@@ -471,6 +702,8 @@ export default {
         return;
       }
       const tips = [];
+      if (this.wrongKeys.some((k) => k.startsWith("h")))
+        tips.push("再讀一次題目，橫式紅色的格子不對");
       if (swapped) tips.push("被減數要放在上面");
       else if (this.wrongRows.length) tips.push("個位要對齊個位");
       if (this.wrongKeys.some((k) => k.startsWith("mark")))
@@ -540,11 +773,217 @@ export default {
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.08);
 }
 
+// 應用題模式：內容較多，靠上排、間距小一點
+.game-area--word {
+  align-items: flex-start;
+
+  .left {
+    gap: 0.35rem;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .tiles {
+    min-height: 3.8rem;
+  }
+
+  .tile {
+    height: 3.6rem;
+    min-width: 4.2rem;
+    font-size: 2rem;
+  }
+
+  .form {
+    align-self: center;
+  }
+
+  @media (max-width: 1100px), (max-height: 760px) {
+    .word {
+      font-size: 1.15rem;
+    }
+
+    .step {
+      font-size: 1rem;
+    }
+
+    .tiles {
+      min-height: 3.2rem;
+    }
+
+    .tile {
+      height: 3rem;
+      font-size: 1.7rem;
+    }
+
+    .hcell {
+      height: 2.9rem;
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.word {
+  margin: 0;
+  padding: 0.3rem 1rem;
+  font-size: 1.4rem;
+  font-weight: $font-bold;
+  line-height: 1.4;
+  color: #3e2723;
+  background-color: #ffffff;
+  border-radius: 14px;
+}
+
+.hrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 0.2rem;
+
+  &__eq {
+    font-size: 2rem;
+    color: #333333;
+  }
+}
+
+.hcell {
+  position: relative;
+  height: 3.4rem;
+  font-size: 2rem;
+  font-weight: $font-bold;
+  color: #1565c0;
+  background-color: #ffffff;
+  border: 3px dashed #90a4ae;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &--2 {
+    width: 4.6rem;
+  }
+
+  &--3 {
+    width: 5.6rem;
+  }
+
+  &--op {
+    width: 3.4rem;
+    color: #e65100;
+  }
+
+  &.cell--active {
+    border-style: solid;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 3px #90caf9;
+  }
+
+  &.cell--wrong {
+    border-style: solid;
+    border-color: #e53935;
+    background-color: #ffebee;
+  }
+
+  &.cell--correct {
+    border-style: solid;
+    border-color: #43a047;
+    background-color: #e8f5e9;
+  }
+}
+
+.aid {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  max-width: 100%;
+
+  &__board {
+    position: relative;
+    min-width: 12rem;
+    min-height: 4.8rem;
+    max-width: 24rem;
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 3px solid #ffcc80;
+    border-radius: 12px;
+
+    &--over {
+      background-color: #fff9c4;
+      border-color: #fbc02d;
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  &__src {
+    padding: 0.2rem 0.4rem;
+    background-color: #fff3e0;
+    border: 2px dashed #ffb74d;
+    border-radius: 10px;
+    cursor: grab;
+    touch-action: none;
+  }
+
+  &__paper {
+    position: absolute;
+    inset: 0;
+    cursor: crosshair;
+    touch-action: none;
+  }
+
+  &__side--tools {
+    justify-content: center;
+  }
+
+  &__label {
+    font-size: 0.95rem;
+    font-weight: $font-bold;
+    color: #6d4c41;
+  }
+
+  &__tool {
+    width: 4.8rem;
+    white-space: nowrap;
+    padding: 0.2rem 0;
+    font-size: 1rem;
+    font-weight: $font-bold;
+    color: #ffffff;
+    background-color: #90a4ae;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &--on {
+      background-color: #e53935;
+    }
+  }
+
+  &__reset {
+    padding: 0.15rem 0.6rem;
+    font-size: 1rem;
+    font-weight: $font-bold;
+    color: #ffffff;
+    background-color: #90a4ae;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
 .step {
   margin: 0;
   font-size: 1.2rem;
   font-weight: $font-bold;
   color: #5d4037;
+
+  &--hint {
+    font-weight: normal;
+    color: #8d6e63;
+  }
 }
 
 .tiles {

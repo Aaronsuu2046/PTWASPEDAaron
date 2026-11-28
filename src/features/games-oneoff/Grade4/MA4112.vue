@@ -10,7 +10,7 @@
     @next-question="$emit('next-question')"
   />
 
-  <!-- 關卡 4：定位板直式，填最後的乘積 -->
+  <!-- 關卡 4：簡便算法直式（依腳本）：不是 0 的數字靠右對齊，末尾的 0（橘色）放到虛線右邊，填最後的乘積 -->
   <div v-else ref="root" class="outer-container">
     <div class="title">
       <p>{{ gameIntroText }}</p>
@@ -19,29 +19,24 @@
     <div class="game-area">
       <p class="hint-text">
         用直式算算看：{{ gameData.a }} × {{ gameData.b }} = ?
-        <span class="hint-text__sub">（橘色的 0 可以先不算，最後再補上）</span>
+        <span class="hint-text__sub">
+          先算虛線左邊的 {{ core.a }} × {{ core.b }}，再把橘色的
+          {{ core.zeros }} 個 0 補在後面
+        </span>
       </p>
 
       <div class="board-wrap">
         <table class="board" aria-label="定位板直式">
-          <thead>
-            <tr>
-              <th
-                v-for="(name, c) in placeNames"
-                :key="`h-${c}`"
-                class="board__head"
-              >
-                {{ name }}
-              </th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
               <td
                 v-for="(cell, c) in rowA"
                 :key="`a-${c}`"
                 class="board__cell"
-                :class="{ 'board__cell--zero': cell.trailingZero }"
+                :class="{
+                  'board__cell--zero': cell.trailingZero,
+                  'board__cell--split': c === splitCol,
+                }"
               >
                 {{ cell.digit }}
               </td>
@@ -51,20 +46,27 @@
                 v-for="(cell, c) in rowB"
                 :key="`b-${c}`"
                 class="board__cell"
-                :class="{ 'board__cell--zero': cell.trailingZero }"
+                :class="{
+                  'board__cell--zero': cell.trailingZero,
+                  'board__cell--split': c === splitCol,
+                }"
               >
                 {{ cell.digit }}
               </td>
             </tr>
             <tr class="board__row--answer">
-              <td v-for="(value, c) in answerCells" :key="`r-${c}`">
+              <td
+                v-for="(value, c) in answerCells"
+                :key="`r-${c}`"
+                :class="{ 'board__cell--split': c === splitCol }"
+              >
                 <button
                   v-if="c > 0"
                   type="button"
                   class="answer-cell"
                   :class="{
                     'answer-cell--active': !answered && padOpen && active === c,
-                    'answer-cell--wrong': wrong,
+                    'answer-cell--wrong': wrongCols.includes(c),
                     'answer-cell--correct': answered,
                   }"
                   :data-col="c"
@@ -117,7 +119,9 @@ function shuffleNotIdentity(list) {
 
 // 末幾位為 0 的乘法
 // mode "link"：pairs [{ expression, answer }]，右欄答案隨機排列後交給 LinkGame
-// mode "vertical"：a × b，在定位板上由右往左填乘積
+// mode "vertical"：a × b 的簡便算法直式（依腳本「題目協助定位且有虛線」）：
+//   兩數不是 0 的部分靠右對齊在虛線左邊，末尾的 0（橘色）往虛線右邊排；
+//   乘積也靠右對齊，學生由右往左填，答錯只標出填錯的格子
 export default {
   name: "MA4112",
   components: {
@@ -145,7 +149,7 @@ export default {
       active: null,
       padOpen: false,
       padEl: null,
-      wrong: false,
+      wrongCols: [],
       answered: false,
     };
   },
@@ -176,10 +180,34 @@ export default {
         ]),
       };
     },
-    // 欄位數：最長的數字位數，再加最左邊放「×」的一欄
+    // 拆成「不是 0 的部分」與末尾 0 的個數，例如 140 → 14 和 1 個 0
+    core() {
+      const split = (n) => {
+        const head = n.replace(/0+$/, "") || "0";
+        return { head, zeros: n.length - head.length };
+      };
+      const a = split(this.gameData.a);
+      const b = split(this.gameData.b);
+      return {
+        a: a.head,
+        b: b.head,
+        za: a.zeros,
+        zb: b.zeros,
+        zeros: a.zeros + b.zeros,
+      };
+    },
+    // 虛線左邊的欄數（放不是 0 的部分）
+    coreWidth() {
+      const { a, b, zeros } = this.core;
+      return Math.max(a.length, b.length, this.gameData.answer.length - zeros);
+    },
+    // 欄位數：最左邊放「×」一欄＋虛線左邊＋末尾 0 的欄數
     columns() {
-      const { a, b, answer } = this.gameData;
-      return Math.max(a.length, b.length, answer.length) + 1;
+      return 1 + this.coreWidth + this.core.zeros;
+    },
+    // 虛線畫在這一欄的右邊
+    splitCol() {
+      return this.coreWidth;
     },
     placeNames() {
       return Array.from({ length: this.columns }, (_, c) =>
@@ -187,10 +215,10 @@ export default {
       );
     },
     rowA() {
-      return this.alignRow(this.gameData.a, "");
+      return this.alignRow(this.core.a, this.core.za, "");
     },
     rowB() {
-      return this.alignRow(this.gameData.b, "×");
+      return this.alignRow(this.core.b, this.core.zb, "×");
     },
   },
   created() {
@@ -203,16 +231,17 @@ export default {
     if (!this.isLink) emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
-    // 數字靠右對齊到定位板，標出末尾的 0
-    alignRow(number, sign) {
-      const trailing = number.length - number.replace(/0+$/, "").length;
+    // 不是 0 的部分靠右對齊到虛線左邊，末尾的 0 接在虛線右邊（橘色）
+    alignRow(head, zeros, sign) {
       return Array.from({ length: this.columns }, (_, c) => {
         if (c === 0) return { digit: sign, trailingZero: false };
-        const i = c - (this.columns - number.length);
-        return {
-          digit: i >= 0 ? number[i] : "",
-          trailingZero: i >= number.length - trailing,
-        };
+        if (c > this.splitCol)
+          return {
+            digit: c - this.splitCol <= zeros ? "0" : "",
+            trailingZero: c - this.splitCol <= zeros,
+          };
+        const i = c - (this.splitCol + 1 - head.length);
+        return { digit: i >= 0 ? head[i] : "", trailingZero: false };
       });
     },
     activate(c) {
@@ -240,7 +269,7 @@ export default {
         }
         cells[this.active] = "";
         this.answerCells = cells;
-        this.wrong = false;
+        this.wrongCols = this.wrongCols.filter((w) => w !== this.active);
       } else {
         this.press(key);
       }
@@ -248,7 +277,7 @@ export default {
     },
     press(key) {
       if (this.answered || this.active === null) return;
-      this.wrong = false;
+      this.wrongCols = this.wrongCols.filter((w) => w !== this.active);
       const cells = [...this.answerCells];
       if (key === "清除") {
         this.answerCells = Array(this.columns).fill("");
@@ -276,7 +305,13 @@ export default {
       if (this.answered) return;
       const value = this.userAnswer();
       const isCorrect = value === this.gameData.answer;
-      this.wrong = !isCorrect;
+      // 逐格比對（乘積靠右對齊），只標出填錯或該填沒填的格子
+      const expected = this.gameData.answer.padStart(this.columns - 1, " ");
+      this.wrongCols = isCorrect
+        ? []
+        : this.answerCells
+            .map((d, c) => (c > 0 && (d || " ") !== expected[c - 1] ? c : null))
+            .filter((c) => c !== null);
       this.$emit("add-record", [
         `${this.gameData.a} × ${this.gameData.b} = ${this.gameData.answer}`,
         value === "" ? "未作答" : value === null ? "有空格未填" : value,
@@ -358,19 +393,6 @@ export default {
   th {
     width: 3.6rem;
     text-align: center;
-    // 各位之間用虛線分隔，協助對齊位值
-    border-left: 2px dashed #90a4ae;
-
-    &:first-child {
-      border-left: none;
-    }
-  }
-
-  &__head {
-    height: 2rem;
-    font-size: 1.1rem;
-    color: #1565c0;
-    background-color: #e3f2fd;
   }
 
   &__cell {
@@ -381,6 +403,11 @@ export default {
     &--zero {
       color: #ef6c00;
     }
+  }
+
+  // 虛線：左邊是不是 0 的部分，右邊是末尾的 0
+  &__cell--split {
+    border-right: 3px dashed #ef6c00;
   }
 
   &__row--times td {
