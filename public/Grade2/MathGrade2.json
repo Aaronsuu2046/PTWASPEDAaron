@@ -214,6 +214,18 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "2 的乘法",
+            "Games": [
+              {
+                "id": "MA2052",
+                "Name": "2 的乘法",
+                "Description": "圖像操作與乘法表填空",
+                "Img": "MA2052.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }
