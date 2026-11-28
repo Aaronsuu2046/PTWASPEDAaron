@@ -396,7 +396,7 @@ export default {
     padding: 0 0.5rem;
     font-size: 1.9rem;
     font-weight: $font-bold;
-    color: #e65100;
+    color: #0d47a1; // 學生填的字用深藍色，不和紅色錯誤標示混淆
     background-color: #fff176;
     border: 3px solid #fbc02d;
     border-radius: 10px;
@@ -490,7 +490,7 @@ export default {
     padding: 0 0.4rem;
     font-size: 1.8rem;
     font-weight: $font-bold;
-    color: #e65100;
+    color: #0d47a1;
     background-color: #fff176;
     border: 3px solid #fbc02d;
     border-radius: 10px;
