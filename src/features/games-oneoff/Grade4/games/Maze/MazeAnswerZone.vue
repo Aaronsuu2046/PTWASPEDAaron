@@ -24,7 +24,7 @@
     <text
       x="0.5"
       y="0.53"
-      font-size="0.72"
+      :font-size="fontSize"
       font-weight="700"
       text-anchor="middle"
       dominant-baseline="middle"
@@ -46,10 +46,13 @@ export default {
     x: { type: Number, required: true },
     y: { type: Number, required: true },
     state: { type: String, default: "" },
+    // 選填：答案區底色（不傳就依 >、<、= 取色）與字級（例如多位數要小一點）
+    fill: { type: String, default: "" },
+    fontSize: { type: Number, default: 0.72 },
   },
   computed: {
     color() {
-      return COLORS[this.symbol] || "#546e7a";
+      return this.fill || COLORS[this.symbol] || "#546e7a";
     },
   },
 };
