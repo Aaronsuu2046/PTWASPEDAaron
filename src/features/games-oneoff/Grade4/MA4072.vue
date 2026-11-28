@@ -5,27 +5,13 @@
     </div>
 
     <div class="game-area">
-      <!-- 積木代表多少 -->
+      <!-- 積木代表多少（芳汶插圖：1 張、0.1 張、0.01 張） -->
       <div class="legend">
-        <span class="legend__item">
-          <BaseTenDecimalBlocks
-            :flats="1"
-            class="legend__icon legend__icon--flat"
-          />
-          1 張百格板 ＝ 1
-        </span>
-        <span class="legend__item">
-          <BaseTenDecimalBlocks :rods="1" class="legend__icon" />
-          1 條 ＝ 0.1
-        </span>
-        <span class="legend__item">
-          <BaseTenDecimalBlocks
-            :cubes="1"
-            tight
-            class="legend__icon legend__icon--cube"
-          />
-          1 個小方塊 ＝ 0.01
-        </span>
+        <img
+          :src="legendSrc"
+          class="legend__img"
+          alt="1 張百格板是 1 張，1 條是 0.1 張，1 個小方塊是 0.01 張"
+        />
       </div>
       <!-- 配對：每列左邊是積木圖、右邊是空格；把右側的小數卡放進空格（點選或拖曳） -->
       <div class="board">
@@ -36,11 +22,10 @@
             class="pair-row"
           >
             <div class="pair-row__blocks">
-              <BaseTenDecimalBlocks
+              <img
+                :src="imageOf(pair)"
                 class="card-blocks"
-                :rods="pair.rods"
-                :cubes="pair.cubes"
-                :grouped="pair.grouped"
+                :alt="blocksText(pair)"
               />
             </div>
             <span class="pair-row__eq">＝</span>
@@ -99,12 +84,22 @@
 
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
-import BaseTenDecimalBlocks from "./games/Decimal/BaseTenDecimalBlocks.vue";
+import { getGameAssets } from "@/lib/get-assets.js";
 
 const blocksText = (item) =>
   [item.rods && `${item.rods} 條`, item.cubes && `${item.cubes} 個`]
     .filter(Boolean)
     .join("＋");
+
+// 芳汶插圖的檔名（src/assets/games/MA4072/）：
+// 1-1～1-14：5～9、11～19 個小方塊；2-1～2-5：20～60 個（10 個一排）；2-0：10 個一排（由 2-1 裁出）
+// 3-1～3-9：1 條＋1～9 個；4-1～4-9：2 條＋1～9 個；4-10～4-18：3 條＋1～9 個
+function imageName({ rods, cubes, grouped }) {
+  if (rods === 0 && grouped) return `2-${cubes / 10 - 1}`;
+  if (rods === 0) return `1-${cubes < 10 ? cubes - 4 : cubes - 5}`;
+  if (rods === 1) return `3-${cubes}`;
+  return `4-${(rods - 2) * 9 + cubes}`;
+}
 
 const DRAG_THRESHOLD = 8;
 
@@ -122,7 +117,7 @@ function shuffle(list) {
 // 題目 { pairs: [{ id, rods, cubes, grouped, value, answer }] }
 export default {
   name: "MA4072",
-  components: { BaseTenDecimalBlocks },
+
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -132,6 +127,7 @@ export default {
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
+      legendSrc: getGameAssets("MA4072", "legend.PNG"),
       cards: shuffle(this.gameData.pairs),
       // placed[列] = 放進去的小數卡索引
       placed: this.gameData.pairs.map(() => null),
@@ -154,6 +150,10 @@ export default {
     emitter.off("submitAnswer", this.checkAnswer);
   },
   methods: {
+    blocksText,
+    imageOf(pair) {
+      return getGameAssets("MA4072", `${imageName(pair)}.PNG`);
+    },
     clearMark(r) {
       this.wrongRows = this.wrongRows.filter((i) => i !== r);
       this.feedback = "";
@@ -291,29 +291,14 @@ export default {
 
 .legend {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem 1.6rem;
-  font-size: 1.15rem;
-  font-weight: $font-bold;
-  color: #4e342e;
 
-  &__item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.2rem 0.8rem;
+  &__img {
+    height: 6.4rem;
+    width: auto;
+    padding: 0.2rem 1rem;
     background-color: #ffffff;
     border-radius: 12px;
-  }
-
-  &__icon {
-    height: 2.4rem;
-    width: auto;
-
-    &--cube {
-      height: 1.2rem;
-    }
   }
 }
 
@@ -449,8 +434,9 @@ export default {
 }
 
 .card-blocks {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .hint {
@@ -469,8 +455,8 @@ export default {
 }
 
 @media (max-width: 1100px), (max-height: 760px) {
-  .legend {
-    font-size: 1rem;
+  .legend__img {
+    height: 4.8rem;
   }
 
   .slot,
