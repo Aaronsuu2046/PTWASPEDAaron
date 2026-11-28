@@ -1,0 +1,237 @@
+{
+  "id": "MA2051",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "試試看用連加算式，算一算"
+  },
+  "GameConfig": {
+    "Hint": "把食物放到河馬嘴裡，觀察河馬頭上的數字如何增加！"
+  },
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "question": "一籠包子有5個，河馬吃了2籠共有幾個包子呢？",
+        "kind": "bun",
+        "per": 5,
+        "count": 2,
+        "unit": "個",
+        "total": 10
+      },
+      {
+        "code": "1-2",
+        "question": "一籠包子有5個，河馬吃了3籠共有幾個包子呢？",
+        "kind": "bun",
+        "per": 5,
+        "count": 3,
+        "unit": "個",
+        "total": 15
+      },
+      {
+        "code": "1-3",
+        "question": "一籠包子有5個，河馬吃了4籠共有幾個包子呢？",
+        "kind": "bun",
+        "per": 5,
+        "count": 4,
+        "unit": "個",
+        "total": 20
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "question": "一個盤子裝3根地瓜，河馬吃了2盤共有幾根地瓜呢？",
+        "kind": "potato",
+        "per": 3,
+        "count": 2,
+        "unit": "根",
+        "total": 6
+      },
+      {
+        "code": "2-2",
+        "question": "一個盤子裝3根地瓜，河馬吃了3盤共有幾根地瓜呢？",
+        "kind": "potato",
+        "per": 3,
+        "count": 3,
+        "unit": "根",
+        "total": 9
+      },
+      {
+        "code": "2-3",
+        "question": "一個盤子裝3根地瓜，河馬吃了4盤共有幾根地瓜呢？",
+        "kind": "potato",
+        "per": 3,
+        "count": 4,
+        "unit": "根",
+        "total": 12
+      },
+      {
+        "code": "2-4",
+        "question": "一個盤子裝3根地瓜，河馬吃了5盤共有幾根地瓜呢？",
+        "kind": "potato",
+        "per": 3,
+        "count": 5,
+        "unit": "根",
+        "total": 15
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "question": "一包甜椒有2個，河馬吃了2包共有幾個甜椒呢？",
+        "kind": "pepper",
+        "per": 2,
+        "count": 2,
+        "unit": "個",
+        "total": 4,
+        "times": 2
+      },
+      {
+        "code": "3-2",
+        "question": "一包甜椒有2個，河馬吃了3包共有幾個甜椒呢？",
+        "kind": "pepper",
+        "per": 2,
+        "count": 3,
+        "unit": "個",
+        "total": 6,
+        "times": 3
+      },
+      {
+        "code": "3-3",
+        "question": "一包甜椒有2個，河馬吃了4包共有幾個甜椒呢？",
+        "kind": "pepper",
+        "per": 2,
+        "count": 4,
+        "unit": "個",
+        "total": 8,
+        "times": 4
+      },
+      {
+        "code": "3-4",
+        "question": "一包甜椒有2個，河馬吃了5包共有幾個甜椒呢？",
+        "kind": "pepper",
+        "per": 2,
+        "count": 5,
+        "unit": "個",
+        "total": 10,
+        "times": 5
+      },
+      {
+        "code": "3-5",
+        "question": "一包甜椒有2個，河馬吃了6包共有幾個甜椒呢？",
+        "kind": "pepper",
+        "per": 2,
+        "count": 6,
+        "unit": "個",
+        "total": 12,
+        "times": 6
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "question": "一包紅蘿蔔有4根，河馬吃了2包共有幾根紅蘿蔔呢？",
+        "kind": "carrot",
+        "per": 4,
+        "count": 2,
+        "unit": "根",
+        "total": 8,
+        "times": 2
+      },
+      {
+        "code": "4-2",
+        "question": "一包紅蘿蔔有4根，河馬吃了3包共有幾根紅蘿蔔呢？",
+        "kind": "carrot",
+        "per": 4,
+        "count": 3,
+        "unit": "根",
+        "total": 12,
+        "times": 3
+      },
+      {
+        "code": "4-3",
+        "question": "一包紅蘿蔔有4根，河馬吃了4包共有幾根紅蘿蔔呢？",
+        "kind": "carrot",
+        "per": 4,
+        "count": 4,
+        "unit": "根",
+        "total": 16,
+        "times": 4
+      },
+      {
+        "code": "4-4",
+        "question": "一包紅蘿蔔有4根，河馬吃了5包共有幾根紅蘿蔔呢？",
+        "kind": "carrot",
+        "per": 4,
+        "count": 5,
+        "unit": "根",
+        "total": 20,
+        "times": 5
+      },
+      {
+        "code": "4-5",
+        "question": "一包紅蘿蔔有4根，河馬吃了6包共有幾根紅蘿蔔呢？",
+        "kind": "carrot",
+        "per": 4,
+        "count": 6,
+        "unit": "根",
+        "total": 24,
+        "times": 6
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "question": "一箱蘋果有6顆，河馬吃了2箱共有幾顆蘋果呢？",
+        "kind": "apple",
+        "per": 6,
+        "count": 2,
+        "unit": "顆",
+        "total": 12,
+        "times": 2
+      },
+      {
+        "code": "5-2",
+        "question": "一箱蘋果有6顆，河馬吃了3箱共有幾顆蘋果呢？",
+        "kind": "apple",
+        "per": 6,
+        "count": 3,
+        "unit": "顆",
+        "total": 18,
+        "times": 3
+      },
+      {
+        "code": "5-3",
+        "question": "一箱蘋果有6顆，河馬吃了4箱共有幾顆蘋果呢？",
+        "kind": "apple",
+        "per": 6,
+        "count": 4,
+        "unit": "顆",
+        "total": 24,
+        "times": 4
+      },
+      {
+        "code": "5-4",
+        "question": "一箱蘋果有6顆，河馬吃了5箱共有幾顆蘋果呢？",
+        "kind": "apple",
+        "per": 6,
+        "count": 5,
+        "unit": "顆",
+        "total": 30,
+        "times": 5
+      },
+      {
+        "code": "5-5",
+        "question": "一箱蘋果有6顆，河馬吃了6箱共有幾顆蘋果呢？",
+        "kind": "apple",
+        "per": 6,
+        "count": 6,
+        "unit": "顆",
+        "total": 36,
+        "times": 6
+      }
+    ]
+  ]
+}

@@ -199,6 +199,35 @@
             ]
           }
         ]
+      },
+      {
+        "Title": "5 - 2、5、4、8的乘法",
+        "Section": [
+          {
+            "Title": "「倍」的問題",
+            "Games": [
+              {
+                "id": "MA2051",
+                "Name": "「倍」的問題",
+                "Description": "河馬的「倍數」饗宴",
+                "Img": "MA2051.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "2 的乘法",
+            "Games": [
+              {
+                "id": "MA2052",
+                "Name": "2 的乘法",
+                "Description": "圖像操作與乘法表填空",
+                "Img": "MA2052.png",
+                "status": "ready"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
