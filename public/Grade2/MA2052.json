@@ -1,0 +1,228 @@
+{
+  "id": "MA2052",
+  "GameType": "SelfDefine",
+  "TotalLevel": 3,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "完成 2 的乘法表吧！"
+  },
+  "GameConfig": {
+    "Icon": "cherries",
+    "Hint": "數一數有幾顆櫻桃"
+  },
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "rows": [
+          {
+            "a": 2,
+            "b": 1,
+            "p": 2,
+            "blank": false
+          },
+          {
+            "a": 2,
+            "b": 2,
+            "p": 4,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "p": 6,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "1-2",
+        "rows": [
+          {
+            "a": 2,
+            "b": 1,
+            "p": 2,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 2,
+            "p": 4,
+            "blank": false
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "p": 6,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "1-3",
+        "rows": [
+          {
+            "a": 2,
+            "b": 1,
+            "p": 2,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 2,
+            "p": 4,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "p": 6,
+            "blank": false
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "rows": [
+          {
+            "a": 2,
+            "b": 4,
+            "p": 8,
+            "blank": false
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "p": 10,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 6,
+            "p": 12,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "2-2",
+        "rows": [
+          {
+            "a": 2,
+            "b": 4,
+            "p": 8,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "p": 10,
+            "blank": false
+          },
+          {
+            "a": 2,
+            "b": 6,
+            "p": 12,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "2-3",
+        "rows": [
+          {
+            "a": 2,
+            "b": 4,
+            "p": 8,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 5,
+            "p": 10,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 6,
+            "p": 12,
+            "blank": false
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "rows": [
+          {
+            "a": 2,
+            "b": 7,
+            "p": 14,
+            "blank": false
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "p": 16,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "p": 18,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "3-2",
+        "rows": [
+          {
+            "a": 2,
+            "b": 7,
+            "p": 14,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "p": 16,
+            "blank": false
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "p": 18,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "3-3",
+        "rows": [
+          {
+            "a": 2,
+            "b": 7,
+            "p": 14,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "p": 16,
+            "blank": true
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "p": 18,
+            "blank": false
+          }
+        ]
+      }
+    ]
+  ]
+}
