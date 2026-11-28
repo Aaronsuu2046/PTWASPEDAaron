@@ -43,8 +43,29 @@
                 :unit="aidUnit"
                 variant="orange"
               />
+              <!-- 減法：積木圖上可以用畫筆圈、劃掉（計算紙），不計分 -->
+              <DrawingBoard
+                v-if="isSub"
+                ref="paper"
+                class="aid__paper"
+                :component-config="brush"
+              />
             </div>
-            <div class="aid__side">
+            <div v-if="isSub" class="aid__side aid__side--tools">
+              <span class="aid__label">計算紙</span>
+              <button
+                v-for="t in PAPER_TOOLS"
+                :key="t.id"
+                type="button"
+                class="aid__tool"
+                :class="{ 'aid__tool--on': tool === t.id }"
+                :data-paper="t.id"
+                @click="useTool(t.id)"
+              >
+                {{ t.label }}
+              </button>
+            </div>
+            <div v-else class="aid__side">
               <button
                 v-for="k in ['ten', 'one']"
                 :key="k"
@@ -227,6 +248,7 @@
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import FieldPad from "../../Grade4/games/Common/FieldPad.vue";
 import BaseTenBlocks from "../components/BaseTenBlocks.vue";
+import DrawingBoard from "@/components/DrawingBoard.vue";
 
 const HEADS = ["百位", "十位", "個位"];
 const DRAG_THRESHOLD = 8;
@@ -239,6 +261,14 @@ const H_FIELDS = [
 ];
 const H_MAX = { ha: 2, hb: 2, hans: 3 };
 const OP_TEXT = { "+": "＋", "-": "－" };
+// 減法應用題的計算紙工具
+const PAPER_TOOLS = [
+  { id: "pen", label: "畫筆" },
+  { id: "eraser", label: "橡皮擦" },
+  { id: "clear", label: "清除" },
+];
+const PEN = { color: "#e53935", size: 3 };
+const ERASER = { color: "eraser", size: 18 };
 
 // 二位數加減法：橫式轉直式與計算（GameConfig.Op＝"+" 加法、"-" 減法）
 // 減法：被減數放上面，只有十、個兩欄；個位不夠減時，十位上方填借 1 後的數（被減數的十位會畫線）、個位上方填 10
@@ -251,7 +281,7 @@ const OP_TEXT = { "+": "＋", "-": "－" };
 // （加法兩個數前後對調也算對），直式的數字卡改用學生填的數；積木輔助可加十條、方塊，不計分
 export default {
   name: "VerticalCalc",
-  components: { FieldPad, BaseTenBlocks },
+  components: { FieldPad, BaseTenBlocks, DrawingBoard },
   props: {
     gameData: { type: Object, required: true },
     gameConfig: { type: Object, default: () => ({}) },
@@ -264,6 +294,9 @@ export default {
       H_FIELDS,
       aid: this.initialAid(),
       aidUnit: 7,
+      PAPER_TOOLS,
+      tool: "pen",
+      brush: { ...PEN },
       aidDrag: null,
       aidOver: false,
       // 每張數字卡放在哪一列、從哪一欄開始（1～3）
@@ -389,6 +422,14 @@ export default {
       if (kind === "ten") aid.tens = Math.min(aid.tens + 1, 30);
       else aid.ones = Math.min(aid.ones + 1, 30);
       this.aid = aid;
+    },
+    useTool(id) {
+      if (id === "clear") {
+        this.$refs.paper?.clear();
+        return;
+      }
+      this.tool = id;
+      this.brush = id === "eraser" ? { ...ERASER } : { ...PEN };
     },
     resetAid() {
       this.aid = this.initialAid();
@@ -854,6 +895,7 @@ export default {
   max-width: 100%;
 
   &__board {
+    position: relative;
     min-width: 12rem;
     min-height: 4.8rem;
     max-width: 24rem;
@@ -884,6 +926,40 @@ export default {
     border-radius: 10px;
     cursor: grab;
     touch-action: none;
+  }
+
+  &__paper {
+    position: absolute;
+    inset: 0;
+    cursor: crosshair;
+    touch-action: none;
+  }
+
+  &__side--tools {
+    justify-content: center;
+  }
+
+  &__label {
+    font-size: 0.95rem;
+    font-weight: $font-bold;
+    color: #6d4c41;
+  }
+
+  &__tool {
+    width: 4.8rem;
+    white-space: nowrap;
+    padding: 0.2rem 0;
+    font-size: 1rem;
+    font-weight: $font-bold;
+    color: #ffffff;
+    background-color: #90a4ae;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &--on {
+      background-color: #e53935;
+    }
   }
 
   &__reset {
