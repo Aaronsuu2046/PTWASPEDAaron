@@ -1,6 +1,10 @@
 <template>
   <!-- 百格板、十條、個位方塊：照題目給的數量畫，不會自動換位（例如 14 條十就畫 14 條） -->
-  <div class="blocks" :style="{ '--unit': `${unit}px` }">
+  <div
+    class="blocks"
+    :class="{ 'blocks--orange': variant === 'orange' }"
+    :style="{ '--unit': `${unit}px` }"
+  >
     <div v-if="hundreds" class="blocks__group blocks__group--hundreds">
       <svg
         v-for="i in hundreds"
@@ -48,7 +52,11 @@
         />
       </svg>
     </div>
-    <div v-if="ones" class="blocks__group blocks__group--ones">
+    <div
+      v-if="ones"
+      class="blocks__group blocks__group--ones"
+      :style="{ '--ones-cols': Math.min(ones, 5) }"
+    >
       <svg
         v-for="i in ones"
         :key="`o${i}`"
@@ -83,6 +91,8 @@ export default {
     unit: { type: Number, default: 16 },
     // 選填：換算動畫，把前 count 個 kind（"one"／"ten"）標成正在合併
     highlight: { type: Object, default: null },
+    // 選填配色："orange"＝橘色十條、白色小方塊（MA2112）；不傳是原本的綠色十條、黃色小方塊
+    variant: { type: String, default: "" },
   },
   methods: {
     mergingAt(kind, i) {
@@ -108,7 +118,8 @@ export default {
     &--ones {
       // 個位方塊每 5 個一排，方便數；超過 10 個也照數量排，不換成十條
       display: grid;
-      grid-template-columns: repeat(5, var(--unit));
+      // 不滿 5 個時只佔實際的寬度，才不會被擠到下一行
+      grid-template-columns: repeat(var(--ones-cols, 5), var(--unit));
       gap: calc(var(--unit) * 0.3);
     }
   }
@@ -168,6 +179,22 @@ export default {
     fill: #ffb300;
     stroke: #e65100;
     stroke-width: 0.8;
+  }
+}
+
+.blocks--orange {
+  .rod__bg {
+    fill: #e65100;
+  }
+
+  .rod__cell {
+    fill: #ffb74d;
+  }
+
+  .cube__cell {
+    fill: #ffffff;
+    stroke: #616161;
+    stroke-width: 1.2;
   }
 }
 </style>

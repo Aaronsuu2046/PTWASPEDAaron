@@ -13,23 +13,25 @@
           :tens="gameData.tens"
           :ones="gameData.ones"
           :unit="unit"
+          :variant="gameConfig?.BlockVariant || ''"
         />
       </div>
 
       <div class="option-group">
+        <!-- 選項可能有重複的錯誤選項（例如 MA2112 3-2），所以用原本的索引當 key、記錄選了哪一顆 -->
         <button
           v-for="opt in options"
-          :key="opt"
+          :key="opt.i"
           type="button"
           :class="{
-            'button--onclick': selected === opt,
-            'option--wrong': wrong && selected === opt,
-            'option--correct': answered && selected === opt,
+            'button--onclick': picked === opt.i,
+            'option--wrong': wrong && picked === opt.i,
+            'option--correct': answered && picked === opt.i,
           }"
-          :data-option="opt"
+          :data-option="opt.value"
           @click="select(opt)"
         >
-          {{ opt }}
+          {{ opt.value }}
         </button>
       </div>
 
@@ -59,6 +61,7 @@ const UNIT_MIN = 10;
 
 // 幾個百、幾個十、幾個一－積木選答：看百格板、十條、個位方塊，三選一選出數量
 // 題目 { code, hundreds, tens, ones, options: [三個數], answer }；選項每次洗牌，判定用數值
+// 選填 GameConfig.WrongHint：答錯時的提示；GameConfig.BlockVariant：積木配色（見 BaseTenBlocks）
 export default {
   name: "MA2014",
   components: { BaseTenBlocks },
@@ -71,7 +74,8 @@ export default {
   emits: ["play-effect", "next-question", "add-record"],
   data() {
     return {
-      options: shuffle(this.gameData.options),
+      options: shuffle(this.gameData.options.map((value, i) => ({ value, i }))),
+      picked: null,
       selected: null,
       wrong: false,
       answered: false,
@@ -120,7 +124,8 @@ export default {
     },
     select(opt) {
       if (this.answered) return;
-      this.selected = opt;
+      this.picked = opt.i;
+      this.selected = opt.value;
       this.wrong = false;
       this.feedback = "";
     },
@@ -145,7 +150,9 @@ export default {
         return;
       }
       this.wrong = true;
-      this.feedback = "再數一次：一片百格板是 100，一條是 10，一個小方塊是 1。";
+      this.feedback =
+        this.gameConfig?.WrongHint ||
+        "再數一次：一片百格板是 100，一條是 10，一個小方塊是 1。";
       this.$emit("play-effect", "WrongSound");
     },
   },
