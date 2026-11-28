@@ -238,6 +238,18 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "4 的乘法",
+            "Games": [
+              {
+                "id": "MA2054",
+                "Name": "4 的乘法",
+                "Description": "圖像操作與乘法表填空",
+                "Img": "MA2054.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }
