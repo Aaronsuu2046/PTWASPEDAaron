@@ -11,7 +11,7 @@
     [
       {
         "code": "1-1",
-        "question": "果汁原有 {a} 公升，再倒進 {b} 公升，現在共有多少公升？",
+        "question": "有{a}公升的果汁，媽媽再加入{b}公升的果汁，現在一共有幾公升的果汁？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -29,8 +29,8 @@
         "scene": {
           "item": "juice",
           "start": "原有",
-          "verb": "再倒進",
-          "result": "現在共有",
+          "verb": "媽媽再加入",
+          "result": "現在一共有",
           "mode": "add"
         },
         "rows": [
@@ -40,7 +40,8 @@
               "w": 0,
               "n": 5,
               "d": 8,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -61,7 +62,7 @@
               "w": 0,
               "n": 15,
               "d": 8,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -70,14 +71,19 @@
           "w": 0,
           "n": 15,
           "d": 8,
-          "whole": true
+          "whole": false
         },
         "unit": "公升",
-        "reference": "1 7/8"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 7,
+          "d": 8
+        }
       },
       {
         "code": "1-2",
-        "question": "牛奶原有 {a} 公升，再倒進 {b} 公升，現在共有多少公升？",
+        "question": "有{a}公升的果汁，媽媽再加入{b}公升的果汁，現在一共有幾公升的果汁？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -93,10 +99,10 @@
           "whole": false
         },
         "scene": {
-          "item": "milk",
+          "item": "juice",
           "start": "原有",
-          "verb": "再倒進",
-          "result": "現在共有",
+          "verb": "媽媽再加入",
+          "result": "現在一共有",
           "mode": "add"
         },
         "rows": [
@@ -106,7 +112,8 @@
               "w": 0,
               "n": 6,
               "d": 10,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -127,7 +134,7 @@
               "w": 0,
               "n": 15,
               "d": 10,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -136,14 +143,19 @@
           "w": 0,
           "n": 15,
           "d": 10,
-          "whole": true
+          "whole": false
         },
         "unit": "公升",
-        "reference": "1 5/10"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 5,
+          "d": 10
+        }
       },
       {
         "code": "1-3",
-        "question": "果汁原有 {a} 公升，再倒進 {b} 公升，現在共有多少公升？",
+        "question": "有{a}公升的果汁，媽媽再加入{b}公升的果汁，現在一共有幾公升的果汁？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -161,8 +173,8 @@
         "scene": {
           "item": "juice",
           "start": "原有",
-          "verb": "再倒進",
-          "result": "現在共有",
+          "verb": "媽媽再加入",
+          "result": "現在一共有",
           "mode": "add"
         },
         "rows": [
@@ -172,7 +184,8 @@
               "w": 0,
               "n": 9,
               "d": 15,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -193,7 +206,7 @@
               "w": 0,
               "n": 20,
               "d": 15,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -202,14 +215,19 @@
           "w": 0,
           "n": 20,
           "d": 15,
-          "whole": true
+          "whole": false
         },
         "unit": "公升",
-        "reference": "1 5/15"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 5,
+          "d": 15
+        }
       },
       {
         "code": "1-4",
-        "question": "牛奶原有 {a} 公升，再倒進 {b} 公升，現在共有多少公升？",
+        "question": "有{a}公升的牛奶，爸爸再加入{b}公升的紅茶，現在一共有幾公升的奶茶？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -227,8 +245,8 @@
         "scene": {
           "item": "milk",
           "start": "原有",
-          "verb": "再倒進",
-          "result": "現在共有",
+          "verb": "爸爸再加入",
+          "result": "現在一共有",
           "mode": "add"
         },
         "rows": [
@@ -238,7 +256,8 @@
               "w": 0,
               "n": 8,
               "d": 7,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -259,7 +278,7 @@
               "w": 0,
               "n": 22,
               "d": 7,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -268,14 +287,19 @@
           "w": 0,
           "n": 22,
           "d": 7,
-          "whole": true
+          "whole": false
         },
         "unit": "公升",
-        "reference": "3 1/7"
+        "reference": {
+          "kind": "frac",
+          "w": 3,
+          "n": 1,
+          "d": 7
+        }
       },
       {
         "code": "1-5",
-        "question": "果汁原有 {a} 公升，再倒進 {b} 公升，現在共有多少公升？",
+        "question": "有{a}公升的牛奶，爸爸再加入{b}公升的紅茶，現在一共有幾公升的奶茶？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -291,10 +315,10 @@
           "whole": false
         },
         "scene": {
-          "item": "juice",
+          "item": "milk",
           "start": "原有",
-          "verb": "再倒進",
-          "result": "現在共有",
+          "verb": "爸爸再加入",
+          "result": "現在一共有",
           "mode": "add"
         },
         "rows": [
@@ -304,7 +328,8 @@
               "w": 0,
               "n": 9,
               "d": 13,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -325,7 +350,7 @@
               "w": 0,
               "n": 21,
               "d": 13,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -334,16 +359,21 @@
           "w": 0,
           "n": 21,
           "d": 13,
-          "whole": true
+          "whole": false
         },
         "unit": "公升",
-        "reference": "1 8/13"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 8,
+          "d": 13
+        }
       }
     ],
     [
       {
         "code": "2-1",
-        "question": "麵粉原有 {a} 公斤，做麵包用掉 {b} 公斤，還剩多少公斤？",
+        "question": "家裡還有{a}公斤的麵粉，姊姊做餅乾用掉了{b}公斤，請問還剩下幾公斤的麵粉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -360,9 +390,9 @@
         },
         "scene": {
           "item": "flour",
-          "start": "原有",
-          "verb": "做麵包用掉",
-          "result": "還剩",
+          "start": "家裡還有",
+          "verb": "做餅乾用掉",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -372,7 +402,8 @@
               "w": 0,
               "n": 15,
               "d": 10,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -409,7 +440,7 @@
       },
       {
         "code": "2-2",
-        "question": "綠豆原有 {a} 公斤，煮湯用掉 {b} 公斤，還剩多少公斤？",
+        "question": "家裡還有{a}公斤的麵粉，姊姊做餅乾用掉了{b}公斤，請問還剩下幾公斤的麵粉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -425,10 +456,10 @@
           "whole": false
         },
         "scene": {
-          "item": "bean",
-          "start": "原有",
-          "verb": "煮湯用掉",
-          "result": "還剩",
+          "item": "flour",
+          "start": "家裡還有",
+          "verb": "做餅乾用掉",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -438,7 +469,8 @@
               "w": 0,
               "n": 14,
               "d": 16,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -475,7 +507,7 @@
       },
       {
         "code": "2-3",
-        "question": "麵粉原有 {a} 公斤，做麵包用掉 {b} 公斤，還剩多少公斤？",
+        "question": "家裡還有{a}公斤的麵粉，姊姊做餅乾用掉了{b}公斤，請問還剩下幾公斤的麵粉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -492,9 +524,9 @@
         },
         "scene": {
           "item": "flour",
-          "start": "原有",
-          "verb": "做麵包用掉",
-          "result": "還剩",
+          "start": "家裡還有",
+          "verb": "做餅乾用掉",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -504,7 +536,8 @@
               "w": 0,
               "n": 11,
               "d": 9,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -541,7 +574,7 @@
       },
       {
         "code": "2-4",
-        "question": "綠豆原有 {a} 公斤，煮湯用掉 {b} 公斤，還剩多少公斤？",
+        "question": "家裡還有{a}公斤的綠豆，媽媽煮綠豆湯用掉了{b}公斤，請問還剩下幾公斤的綠豆？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -558,9 +591,9 @@
         },
         "scene": {
           "item": "bean",
-          "start": "原有",
-          "verb": "煮湯用掉",
-          "result": "還剩",
+          "start": "家裡還有",
+          "verb": "煮綠豆湯用掉",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -570,7 +603,8 @@
               "w": 0,
               "n": 17,
               "d": 5,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -591,7 +625,7 @@
               "w": 0,
               "n": 9,
               "d": 5,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -600,14 +634,19 @@
           "w": 0,
           "n": 9,
           "d": 5,
-          "whole": true
+          "whole": false
         },
         "unit": "公斤",
-        "reference": "1 4/5"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 4,
+          "d": 5
+        }
       },
       {
         "code": "2-5",
-        "question": "麵粉原有 {a} 公斤，做麵包用掉 {b} 公斤，還剩多少公斤？",
+        "question": "家裡還有{a}公斤的綠豆，媽媽煮綠豆湯用掉了{b}公斤，請問還剩下幾公斤的綠豆？（用假分數回答）",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -623,10 +662,10 @@
           "whole": false
         },
         "scene": {
-          "item": "flour",
-          "start": "原有",
-          "verb": "做麵包用掉",
-          "result": "還剩",
+          "item": "bean",
+          "start": "家裡還有",
+          "verb": "煮綠豆湯用掉",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -636,7 +675,8 @@
               "w": 0,
               "n": 13,
               "d": 7,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "op",
@@ -657,7 +697,7 @@
               "w": 0,
               "n": 9,
               "d": 7,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -666,16 +706,21 @@
           "w": 0,
           "n": 9,
           "d": 7,
-          "whole": true
+          "whole": false
         },
         "unit": "公斤",
-        "reference": "1 2/7"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 2,
+          "d": 7
+        }
       }
     ],
     [
       {
         "code": "3-1",
-        "question": "吐司原有 {a} 條，做早餐用掉 {b} 條，還剩多少條？",
+        "question": "早餐店買了{a}條土司，用了{b}條，請問還剩下幾條土司？",
         "a": {
           "kind": "frac",
           "w": 2,
@@ -692,9 +737,9 @@
         },
         "scene": {
           "item": "toast",
-          "start": "原有",
-          "verb": "做早餐用掉",
-          "result": "還剩",
+          "start": "早餐店買了",
+          "verb": "用了",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -704,7 +749,8 @@
               "w": 2,
               "n": 5,
               "d": 6,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "op",
@@ -741,7 +787,7 @@
       },
       {
         "code": "3-2",
-        "question": "巧克力原有 {a} 條，大家吃掉 {b} 條，還剩多少條？",
+        "question": "早餐店買了{a}條土司，用了{b}條，請問還剩下幾條土司？",
         "a": {
           "kind": "frac",
           "w": 4,
@@ -757,10 +803,10 @@
           "whole": true
         },
         "scene": {
-          "item": "chocolate",
-          "start": "原有",
-          "verb": "大家吃掉",
-          "result": "還剩",
+          "item": "toast",
+          "start": "早餐店買了",
+          "verb": "用了",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -770,7 +816,8 @@
               "w": 4,
               "n": 4,
               "d": 5,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "op",
@@ -807,7 +854,7 @@
       },
       {
         "code": "3-3",
-        "question": "吐司原有 {a} 條，做早餐用掉 {b} 條，還剩多少條？",
+        "question": "早餐店買了{a}條土司，用了{b}條，請問還剩下幾條土司？",
         "a": {
           "kind": "frac",
           "w": 13,
@@ -824,9 +871,9 @@
         },
         "scene": {
           "item": "toast",
-          "start": "原有",
-          "verb": "做早餐用掉",
-          "result": "還剩",
+          "start": "早餐店買了",
+          "verb": "用了",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -836,7 +883,8 @@
               "w": 13,
               "n": 8,
               "d": 10,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "op",
@@ -873,7 +921,7 @@
       },
       {
         "code": "3-4",
-        "question": "巧克力原有 {a} 條，大家吃掉 {b} 條，還剩多少條？",
+        "question": "哥哥買了{a}條巧克力，吃了{b}條，請問還剩下幾條巧克力？",
         "a": {
           "kind": "frac",
           "w": 6,
@@ -890,9 +938,9 @@
         },
         "scene": {
           "item": "chocolate",
-          "start": "原有",
-          "verb": "大家吃掉",
-          "result": "還剩",
+          "start": "哥哥買了",
+          "verb": "吃了",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -902,7 +950,8 @@
               "w": 6,
               "n": 5,
               "d": 8,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "op",
@@ -939,7 +988,7 @@
       },
       {
         "code": "3-5",
-        "question": "吐司原有 {a} 條，做早餐用掉 {b} 條，還剩多少條？",
+        "question": "哥哥買了{a}條巧克力，吃了{b}條，請問還剩下幾條巧克力？",
         "a": {
           "kind": "frac",
           "w": 11,
@@ -955,10 +1004,10 @@
           "whole": true
         },
         "scene": {
-          "item": "toast",
-          "start": "原有",
-          "verb": "做早餐用掉",
-          "result": "還剩",
+          "item": "chocolate",
+          "start": "哥哥買了",
+          "verb": "吃了",
+          "result": "還剩下",
           "mode": "sub"
         },
         "rows": [
@@ -968,7 +1017,8 @@
               "w": 11,
               "n": 6,
               "d": 7,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "op",
@@ -1007,7 +1057,7 @@
     [
       {
         "code": "4-1",
-        "question": "桌上有 {a} 盒糖果，吃掉 {b} 盒，還剩多少盒？（用假分數算算看）",
+        "question": "桌上放了{a}盒糖果，弟弟吃了{b}盒，請問還剩幾盒糖果？（用假分數計算）",
         "a": {
           "kind": "int",
           "v": 2
@@ -1021,8 +1071,8 @@
         },
         "scene": {
           "item": "candy",
-          "start": "桌上有",
-          "verb": "吃掉",
+          "start": "桌上放了",
+          "verb": "弟弟吃了",
           "result": "還剩",
           "mode": "sub"
         },
@@ -1030,7 +1080,8 @@
           [
             {
               "kind": "int",
-              "v": 2
+              "v": 2,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1040,7 +1091,7 @@
               "w": 0,
               "n": 16,
               "d": 8,
-              "whole": true
+              "whole": false
             }
           ],
           [
@@ -1060,7 +1111,8 @@
               "w": 0,
               "n": 5,
               "d": 8,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1070,7 +1122,7 @@
               "w": 0,
               "n": 11,
               "d": 8,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -1079,14 +1131,19 @@
           "w": 0,
           "n": 11,
           "d": 8,
-          "whole": true
+          "whole": false
         },
         "unit": "盒",
-        "reference": "1 3/8"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 3,
+          "d": 8
+        }
       },
       {
         "code": "4-2",
-        "question": "桌上有 {a} 盒蘋果，吃掉 {b} 盒，還剩多少盒？（用假分數算算看）",
+        "question": "桌上放了{a}盒糖果，弟弟吃了{b}盒，請問還剩幾盒糖果？（用假分數計算）",
         "a": {
           "kind": "int",
           "v": 3
@@ -1099,9 +1156,9 @@
           "whole": false
         },
         "scene": {
-          "item": "apple",
-          "start": "桌上有",
-          "verb": "吃掉",
+          "item": "candy",
+          "start": "桌上放了",
+          "verb": "弟弟吃了",
           "result": "還剩",
           "mode": "sub"
         },
@@ -1109,7 +1166,8 @@
           [
             {
               "kind": "int",
-              "v": 3
+              "v": 3,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1119,7 +1177,7 @@
               "w": 0,
               "n": 18,
               "d": 6,
-              "whole": true
+              "whole": false
             }
           ],
           [
@@ -1139,7 +1197,8 @@
               "w": 0,
               "n": 9,
               "d": 6,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1149,7 +1208,7 @@
               "w": 0,
               "n": 9,
               "d": 6,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -1158,14 +1217,19 @@
           "w": 0,
           "n": 9,
           "d": 6,
-          "whole": true
+          "whole": false
         },
         "unit": "盒",
-        "reference": "1 3/6"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 3,
+          "d": 6
+        }
       },
       {
         "code": "4-3",
-        "question": "桌上有 {a} 盒糖果，吃掉 {b} 盒，還剩多少盒？（用假分數算算看）",
+        "question": "桌上放了{a}盒糖果，弟弟吃了{b}盒，請問還剩幾盒糖果？（用假分數計算）",
         "a": {
           "kind": "int",
           "v": 4
@@ -1179,8 +1243,8 @@
         },
         "scene": {
           "item": "candy",
-          "start": "桌上有",
-          "verb": "吃掉",
+          "start": "桌上放了",
+          "verb": "弟弟吃了",
           "result": "還剩",
           "mode": "sub"
         },
@@ -1188,7 +1252,8 @@
           [
             {
               "kind": "int",
-              "v": 4
+              "v": 4,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1198,7 +1263,7 @@
               "w": 0,
               "n": 16,
               "d": 4,
-              "whole": true
+              "whole": false
             }
           ],
           [
@@ -1218,7 +1283,8 @@
               "w": 0,
               "n": 7,
               "d": 4,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1228,7 +1294,7 @@
               "w": 0,
               "n": 9,
               "d": 4,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -1237,14 +1303,19 @@
           "w": 0,
           "n": 9,
           "d": 4,
-          "whole": true
+          "whole": false
         },
         "unit": "盒",
-        "reference": "2 1/4"
+        "reference": {
+          "kind": "frac",
+          "w": 2,
+          "n": 1,
+          "d": 4
+        }
       },
       {
         "code": "4-4",
-        "question": "桌上有 {a} 盒蘋果，吃掉 {b} 盒，還剩多少盒？（用假分數算算看）",
+        "question": "桌上放了{a}盒蘋果，媽媽吃了{b}盒，請問還剩幾盒蘋果？（用假分數計算）",
         "a": {
           "kind": "int",
           "v": 2
@@ -1258,8 +1329,8 @@
         },
         "scene": {
           "item": "apple",
-          "start": "桌上有",
-          "verb": "吃掉",
+          "start": "桌上放了",
+          "verb": "媽媽吃了",
           "result": "還剩",
           "mode": "sub"
         },
@@ -1267,7 +1338,8 @@
           [
             {
               "kind": "int",
-              "v": 2
+              "v": 2,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1277,7 +1349,7 @@
               "w": 0,
               "n": 14,
               "d": 7,
-              "whole": true
+              "whole": false
             }
           ],
           [
@@ -1297,7 +1369,8 @@
               "w": 0,
               "n": 3,
               "d": 7,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1307,7 +1380,7 @@
               "w": 0,
               "n": 11,
               "d": 7,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -1316,14 +1389,19 @@
           "w": 0,
           "n": 11,
           "d": 7,
-          "whole": true
+          "whole": false
         },
         "unit": "盒",
-        "reference": "1 4/7"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 4,
+          "d": 7
+        }
       },
       {
         "code": "4-5",
-        "question": "桌上有 {a} 盒糖果，吃掉 {b} 盒，還剩多少盒？（用假分數算算看）",
+        "question": "桌上放了{a}盒蘋果，媽媽吃了{b}盒，請問還剩幾盒蘋果？（用假分數計算）",
         "a": {
           "kind": "int",
           "v": 3
@@ -1336,9 +1414,9 @@
           "whole": false
         },
         "scene": {
-          "item": "candy",
-          "start": "桌上有",
-          "verb": "吃掉",
+          "item": "apple",
+          "start": "桌上放了",
+          "verb": "媽媽吃了",
           "result": "還剩",
           "mode": "sub"
         },
@@ -1346,7 +1424,8 @@
           [
             {
               "kind": "int",
-              "v": 3
+              "v": 3,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1356,7 +1435,7 @@
               "w": 0,
               "n": 15,
               "d": 5,
-              "whole": true
+              "whole": false
             }
           ],
           [
@@ -1376,7 +1455,8 @@
               "w": 0,
               "n": 7,
               "d": 5,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1386,7 +1466,7 @@
               "w": 0,
               "n": 8,
               "d": 5,
-              "whole": true
+              "whole": false
             }
           ]
         ],
@@ -1395,16 +1475,21 @@
           "w": 0,
           "n": 8,
           "d": 5,
-          "whole": true
+          "whole": false
         },
         "unit": "盒",
-        "reference": "1 3/5"
+        "reference": {
+          "kind": "frac",
+          "w": 1,
+          "n": 3,
+          "d": 5
+        }
       }
     ],
     [
       {
         "code": "5-1",
-        "question": "家裡有 {a} 包茶葉，爸爸再買 {b} 包，現在共有多少包？",
+        "question": "家裡有{a}包茶葉，爸爸再買了{b}包，現在家裡有幾包茶葉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -1422,7 +1507,7 @@
         "scene": {
           "item": "tea",
           "start": "家裡有",
-          "verb": "爸爸再買",
+          "verb": "爸爸再買了",
           "result": "現在共有",
           "mode": "add"
         },
@@ -1433,7 +1518,8 @@
               "w": 0,
               "n": 18,
               "d": 9,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1457,7 +1543,8 @@
               "w": 1,
               "n": 5,
               "d": 9,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1483,7 +1570,7 @@
       },
       {
         "code": "5-2",
-        "question": "家裡有 {a} 包茶葉，爸爸再買 {b} 包，現在共有多少包？",
+        "question": "家裡有{a}包茶葉，爸爸再買了{b}包，現在家裡有幾包茶葉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -1501,7 +1588,7 @@
         "scene": {
           "item": "tea",
           "start": "家裡有",
-          "verb": "爸爸再買",
+          "verb": "爸爸再買了",
           "result": "現在共有",
           "mode": "add"
         },
@@ -1512,7 +1599,8 @@
               "w": 0,
               "n": 18,
               "d": 6,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1536,7 +1624,8 @@
               "w": 4,
               "n": 4,
               "d": 6,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1562,7 +1651,7 @@
       },
       {
         "code": "5-3",
-        "question": "家裡有 {a} 包茶葉，爸爸再買 {b} 包，現在共有多少包？",
+        "question": "家裡有{a}包茶葉，爸爸再買了{b}包，現在家裡有幾包茶葉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -1580,7 +1669,7 @@
         "scene": {
           "item": "tea",
           "start": "家裡有",
-          "verb": "爸爸再買",
+          "verb": "爸爸再買了",
           "result": "現在共有",
           "mode": "add"
         },
@@ -1591,7 +1680,8 @@
               "w": 0,
               "n": 20,
               "d": 5,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1615,7 +1705,8 @@
               "w": 1,
               "n": 4,
               "d": 5,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1641,7 +1732,7 @@
       },
       {
         "code": "5-4",
-        "question": "家裡有 {a} 包茶葉，爸爸再買 {b} 包，現在共有多少包？",
+        "question": "家裡有{a}包茶葉，爸爸再買了{b}包，現在家裡有幾包茶葉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -1659,7 +1750,7 @@
         "scene": {
           "item": "tea",
           "start": "家裡有",
-          "verb": "爸爸再買",
+          "verb": "爸爸再買了",
           "result": "現在共有",
           "mode": "add"
         },
@@ -1670,7 +1761,8 @@
               "w": 0,
               "n": 21,
               "d": 7,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1694,7 +1786,8 @@
               "w": 4,
               "n": 4,
               "d": 7,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1720,7 +1813,7 @@
       },
       {
         "code": "5-5",
-        "question": "家裡有 {a} 包茶葉，爸爸再買 {b} 包，現在共有多少包？",
+        "question": "家裡有{a}包茶葉，爸爸再買了{b}包，現在家裡有幾包茶葉？",
         "a": {
           "kind": "frac",
           "w": 0,
@@ -1738,7 +1831,7 @@
         "scene": {
           "item": "tea",
           "start": "家裡有",
-          "verb": "爸爸再買",
+          "verb": "爸爸再買了",
           "result": "現在共有",
           "mode": "add"
         },
@@ -1749,7 +1842,8 @@
               "w": 0,
               "n": 16,
               "d": 8,
-              "whole": false
+              "whole": false,
+              "given": true
             },
             {
               "kind": "eq"
@@ -1773,7 +1867,8 @@
               "w": 5,
               "n": 4,
               "d": 8,
-              "whole": true
+              "whole": true,
+              "given": true
             },
             {
               "kind": "eq"

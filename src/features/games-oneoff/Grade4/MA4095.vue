@@ -7,9 +7,14 @@
     <div class="game-area">
       <div class="figure-card">
         <div class="figure-card__head">
-          <span>
-            {{ gameData.num }} 個 {{ gameData.den }} 分之 1，每
-            {{ gameData.den }} 個是 1。用畫筆圈圈看
+          <span class="figure-card__question">
+            <span class="mini-frac"
+              ><span>{{ gameData.den }}</span
+              ><span class="mini-frac__bar" /><span>{{
+                gameData.den
+              }}</span></span
+            >塊太陽餅和1塊太陽餅一樣多。
+            <span class="figure-card__tip">可以用畫筆圈圈看（不計分）</span>
           </span>
           <div class="drawing-tools">
             <button
@@ -32,7 +37,7 @@
           </div>
         </div>
         <div class="figure-card__body">
-          <PieceGroups :num="gameData.num" :den="gameData.den" />
+          <SunCakePieces :num="gameData.num" :den="gameData.den" />
           <DrawingBoard
             ref="drawingBoard"
             class="figure-card__board"
@@ -65,7 +70,41 @@
         </button>
       </div>
 
-      <p v-if="feedback" class="feedback">{{ feedback }}</p>
+      <div v-if="feedback" class="help">
+        <p class="feedback">{{ feedback }}</p>
+        <!-- 答錯時依腳本的提示框，數字依這一題調整；要填的地方留（&nbsp;&nbsp;&nbsp;）不直接給答案 -->
+        <div v-if="showHint" class="hint">
+          <p>
+            <span class="mini-frac"
+              ><span>{{ gameData.num }}</span
+              ><span class="mini-frac__bar" /><span>{{
+                gameData.den
+              }}</span></span
+            >塊太陽餅是{{ gameData.num }}個<span class="mini-frac"
+              ><span>1</span><span class="mini-frac__bar" /><span>{{
+                gameData.den
+              }}</span></span
+            >塊，每{{ gameData.den }}個<span class="mini-frac"
+              ><span>1</span><span class="mini-frac__bar" /><span>{{
+                gameData.den
+              }}</span></span
+            >塊合起來是1塊，
+          </p>
+          <p>
+            {{ gameData.num }}個<span class="mini-frac"
+              ><span>1</span><span class="mini-frac__bar" /><span>{{
+                gameData.den
+              }}</span></span
+            >塊一共能合成<span class="blank">（&nbsp;&nbsp;&nbsp;）</span
+            >塊太陽餅。
+          </p>
+          <p>
+            {{ gameData.num }}÷{{ gameData.den }}=<span class="blank"
+              >（&nbsp;&nbsp;&nbsp;）</span
+            >
+          </p>
+        </div>
+      </div>
 
       <FieldPad
         :field="padOpen && !answered ? padEl : null"
@@ -79,7 +118,7 @@
 <script>
 import { subComponentsVerifyAnswer as emitter } from "@/lib/mitt.js";
 import DrawingBoard from "@/components/DrawingBoard.vue";
-import PieceGroups from "./games/Fraction/PieceGroups.vue";
+import SunCakePieces from "./games/Fraction/SunCakePieces.vue";
 import FieldPad from "./games/Common/FieldPad.vue";
 
 const PEN = { color: "#e53935", size: 4 };
@@ -87,11 +126,11 @@ const ERASER = { color: "eraser", size: 24 };
 const MAX_LENGTH = 2;
 
 // 假分數化為整數：「假分數 ＝ □」只填整數；
-// 圖上 num 張 1/den 小卡每 den 張一組，可用畫筆圈選分組（畫筆不列入判定）
+// 圖上 num 塊「1/den 塊太陽餅」平均排開，可用畫筆圈選分組（畫筆不列入判定）；答錯顯示腳本的提示框
 // 題目 { num, den, whole }
 export default {
   name: "MA4095",
-  components: { DrawingBoard, PieceGroups, FieldPad },
+  components: { DrawingBoard, SunCakePieces, FieldPad },
   props: {
     gameData: { type: Object, required: true },
     gameId: { type: String, required: true },
@@ -108,12 +147,13 @@ export default {
       padEl: null,
       wrong: false,
       feedback: "",
+      showHint: false,
       answered: false,
     };
   },
   computed: {
     gameIntroText() {
-      return this.introText?.Content || "把假分數換成整數。";
+      return this.introText?.Content || "把假分數換成整數";
     },
   },
   created() {
@@ -136,6 +176,7 @@ export default {
       if (this.answered) return;
       this.wrong = false;
       this.feedback = "";
+      this.showHint = false;
       if (key === "clear") this.value = "";
       else if (key === "←") this.value = this.value.slice(0, -1);
       else if (/^\d$/.test(key) && this.value.length < MAX_LENGTH)
@@ -164,7 +205,8 @@ export default {
         this.$emit("next-question");
       } else {
         this.wrong = true;
-        this.feedback = `每 ${den} 個 ${den} 分之 1 是 1，數數看可以分成幾組？`;
+        this.feedback = "再想想看：";
+        this.showHint = true;
         this.$emit("play-effect", "WrongSound");
       }
     },
@@ -228,6 +270,21 @@ export default {
     color: #5d4037;
   }
 
+  &__question {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    color: #3e2723;
+  }
+
+  &__tip {
+    margin-left: 0.8rem;
+    font-size: 1rem;
+    color: #8d6e63;
+  }
+
   &__body {
     position: relative;
     flex: 1;
@@ -236,7 +293,7 @@ export default {
     align-items: center;
     justify-content: center;
 
-    :deep(.piece-groups) {
+    :deep(.sun-cake-pieces) {
       width: 100%;
       height: 100%;
     }
@@ -329,6 +386,49 @@ export default {
     background-color: #e8f5e9;
     color: #2e7d32;
   }
+}
+
+.help {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hint {
+  padding: 0.4rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: $font-bold;
+  line-height: 1.5;
+  color: #4e342e;
+  background-color: #fff8e1;
+  border: 3px solid #ffb74d;
+  border-radius: 14px;
+
+  p {
+    margin: 0.15rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.mini-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.2rem;
+  font-size: 0.85em;
+  line-height: 1.05;
+
+  &__bar {
+    align-self: stretch;
+    height: 2px;
+    background-color: currentColor;
+  }
+}
+
+.blank {
+  color: #c62828;
 }
 
 .feedback {
