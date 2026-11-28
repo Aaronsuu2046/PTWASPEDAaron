@@ -250,6 +250,18 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "8 的乘法",
+            "Games": [
+              {
+                "id": "MA2055",
+                "Name": "8 的乘法",
+                "Description": "圖像操作與乘法表填空",
+                "Img": "MA2055.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }

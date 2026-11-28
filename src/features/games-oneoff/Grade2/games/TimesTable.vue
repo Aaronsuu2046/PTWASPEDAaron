@@ -289,12 +289,16 @@ export default {
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-columns: repeat(var(--cols), var(--cell));
-    grid-auto-rows: var(--cell);
+    width: 100%;
+    // 每格依面板寬度放大（一列 5 格剛好排滿），最大 --cell
+    grid-template-columns: repeat(
+      var(--cols),
+      minmax(0, min(var(--cell), calc((100% - 2rem) / 5)))
+    );
     align-content: center;
     justify-content: center;
     gap: 0.5rem;
-    --cell: 5.6rem;
+    --cell: 7rem;
   }
 }
 
@@ -308,6 +312,7 @@ export default {
 }
 
 .group-cell {
+  aspect-ratio: 1;
   padding: 0.25rem;
   background-color: #fffde7;
   border: 2px solid #ffe082;
@@ -429,7 +434,7 @@ export default {
 
 @media (max-width: 1100px), (max-height: 760px) {
   .observe__groups {
-    --cell: 4.4rem;
+    --cell: 6rem;
   }
 
   .observe__head {
@@ -439,6 +444,11 @@ export default {
   .one-group {
     width: 3.8rem;
     height: 3.8rem;
+  }
+
+  .table {
+    flex: 0.75;
+    padding: 0.6rem 0.8rem;
   }
 
   .table__row {
