@@ -262,6 +262,18 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "2、4、5、8 乘法大挑戰",
+            "Games": [
+              {
+                "id": "MA2056",
+                "Name": "2、4、5、8 乘法大挑戰",
+                "Description": "迷宮選答",
+                "Img": "MA2056.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }
