@@ -1,0 +1,228 @@
+{
+  "id": "MA2055",
+  "GameType": "SelfDefine",
+  "TotalLevel": 3,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "完成 8 的乘法表吧！"
+  },
+  "GameConfig": {
+    "Icon": "milk",
+    "Hint": "數一數牛奶有幾盒"
+  },
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "rows": [
+          {
+            "a": 8,
+            "b": 1,
+            "p": 8,
+            "blank": false
+          },
+          {
+            "a": 8,
+            "b": 2,
+            "p": 16,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 3,
+            "p": 24,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "1-2",
+        "rows": [
+          {
+            "a": 8,
+            "b": 1,
+            "p": 8,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 2,
+            "p": 16,
+            "blank": false
+          },
+          {
+            "a": 8,
+            "b": 3,
+            "p": 24,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "1-3",
+        "rows": [
+          {
+            "a": 8,
+            "b": 1,
+            "p": 8,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 2,
+            "p": 16,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 3,
+            "p": 24,
+            "blank": false
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "rows": [
+          {
+            "a": 8,
+            "b": 4,
+            "p": 32,
+            "blank": false
+          },
+          {
+            "a": 8,
+            "b": 5,
+            "p": 40,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 6,
+            "p": 48,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "2-2",
+        "rows": [
+          {
+            "a": 8,
+            "b": 4,
+            "p": 32,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 5,
+            "p": 40,
+            "blank": false
+          },
+          {
+            "a": 8,
+            "b": 6,
+            "p": 48,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "2-3",
+        "rows": [
+          {
+            "a": 8,
+            "b": 4,
+            "p": 32,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 5,
+            "p": 40,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 6,
+            "p": 48,
+            "blank": false
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "rows": [
+          {
+            "a": 8,
+            "b": 7,
+            "p": 56,
+            "blank": false
+          },
+          {
+            "a": 8,
+            "b": 8,
+            "p": 64,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 9,
+            "p": 72,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "3-2",
+        "rows": [
+          {
+            "a": 8,
+            "b": 7,
+            "p": 56,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 8,
+            "p": 64,
+            "blank": false
+          },
+          {
+            "a": 8,
+            "b": 9,
+            "p": 72,
+            "blank": true
+          }
+        ]
+      },
+      {
+        "code": "3-3",
+        "rows": [
+          {
+            "a": 8,
+            "b": 7,
+            "p": 56,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 8,
+            "p": 64,
+            "blank": true
+          },
+          {
+            "a": 8,
+            "b": 9,
+            "p": 72,
+            "blank": false
+          }
+        ]
+      }
+    ]
+  ]
+}
