@@ -250,6 +250,30 @@
                 "status": "ready"
               }
             ]
+          },
+          {
+            "Title": "8 的乘法",
+            "Games": [
+              {
+                "id": "MA2055",
+                "Name": "8 的乘法",
+                "Description": "圖像操作與乘法表填空",
+                "Img": "MA2055.png",
+                "status": "ready"
+              }
+            ]
+          },
+          {
+            "Title": "2、4、5、8 乘法大挑戰",
+            "Games": [
+              {
+                "id": "MA2056",
+                "Name": "2、4、5、8 乘法大挑戰",
+                "Description": "迷宮選答",
+                "Img": "MA2056.png",
+                "status": "ready"
+              }
+            ]
           }
         ]
       }

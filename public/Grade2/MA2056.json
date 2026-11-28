@@ -1,0 +1,199 @@
+{
+  "id": "MA2056",
+  "GameType": "SelfDefine",
+  "TotalLevel": 5,
+  "IntroText": {
+    "Type": "PlainText",
+    "Content": "帶小精靈到正確的乘法答案"
+  },
+  "GameConfig": {
+    "Hint": "操控小精靈到正確的乘法結果吧"
+  },
+  "Questions": [
+    [
+      {
+        "code": "1-1",
+        "a": 2,
+        "b": 3,
+        "answer": 6,
+        "distractors": [8, 9, 12]
+      },
+      {
+        "code": "1-2",
+        "a": 2,
+        "b": 6,
+        "answer": 12,
+        "distractors": [14, 16, 8]
+      },
+      {
+        "code": "1-3",
+        "a": 2,
+        "b": 7,
+        "answer": 14,
+        "distractors": [9, 16, 18]
+      },
+      {
+        "code": "1-4",
+        "a": 2,
+        "b": 8,
+        "answer": 16,
+        "distractors": [18, 14, 12]
+      },
+      {
+        "code": "1-5",
+        "a": 2,
+        "b": 9,
+        "answer": 18,
+        "distractors": [36, 12, 14]
+      }
+    ],
+    [
+      {
+        "code": "2-1",
+        "a": 5,
+        "b": 3,
+        "answer": 15,
+        "distractors": [25, 24, 13]
+      },
+      {
+        "code": "2-2",
+        "a": 5,
+        "b": 5,
+        "answer": 25,
+        "distractors": [15, 20, 10]
+      },
+      {
+        "code": "2-3",
+        "a": 5,
+        "b": 7,
+        "answer": 35,
+        "distractors": [21, 67, 33]
+      },
+      {
+        "code": "2-4",
+        "a": 5,
+        "b": 8,
+        "answer": 40,
+        "distractors": [32, 36, 44]
+      },
+      {
+        "code": "2-5",
+        "a": 5,
+        "b": 9,
+        "answer": 45,
+        "distractors": [35, 37, 63]
+      }
+    ],
+    [
+      {
+        "code": "3-1",
+        "a": 4,
+        "b": 3,
+        "answer": 12,
+        "distractors": [16, 15, 18]
+      },
+      {
+        "code": "3-2",
+        "a": 4,
+        "b": 4,
+        "answer": 16,
+        "distractors": [18, 8, 32]
+      },
+      {
+        "code": "3-3",
+        "a": 4,
+        "b": 6,
+        "answer": 24,
+        "distractors": [18, 12, 32]
+      },
+      {
+        "code": "3-4",
+        "a": 4,
+        "b": 8,
+        "answer": 32,
+        "distractors": [36, 24, 40]
+      },
+      {
+        "code": "3-5",
+        "a": 4,
+        "b": 9,
+        "answer": 36,
+        "distractors": [32, 42, 56]
+      }
+    ],
+    [
+      {
+        "code": "4-1",
+        "a": 8,
+        "b": 3,
+        "answer": 24,
+        "distractors": [64, 20, 56]
+      },
+      {
+        "code": "4-2",
+        "a": 8,
+        "b": 6,
+        "answer": 48,
+        "distractors": [42, 52, 36]
+      },
+      {
+        "code": "4-3",
+        "a": 8,
+        "b": 7,
+        "answer": 56,
+        "distractors": [48, 78, 63]
+      },
+      {
+        "code": "4-4",
+        "a": 8,
+        "b": 8,
+        "answer": 64,
+        "distractors": [56, 60, 63]
+      },
+      {
+        "code": "4-5",
+        "a": 8,
+        "b": 9,
+        "answer": 72,
+        "distractors": [56, 81, 62]
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "a": 2,
+        "b": 5,
+        "answer": 10,
+        "distractors": [15, 7, 11]
+      },
+      {
+        "code": "5-2",
+        "a": 5,
+        "b": 6,
+        "answer": 30,
+        "distractors": [36, 10, 11]
+      },
+      {
+        "code": "5-3",
+        "a": 4,
+        "b": 7,
+        "answer": 28,
+        "distractors": [21, 27, 128]
+      },
+      {
+        "code": "5-4",
+        "a": 8,
+        "b": 7,
+        "answer": 56,
+        "distractors": [21, 48, 69]
+      },
+      {
+        "code": "5-5",
+        "a": 8,
+        "b": 4,
+        "answer": 32,
+        "distractors": [24, 28, 36]
+      }
+    ]
+  ]
+}

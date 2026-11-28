@@ -64,27 +64,27 @@
 
     <!-- 8 瓶牛奶：兩排各 4 瓶 -->
     <template v-else-if="kind === 'milk'">
-      <rect x="4" y="6" width="92" height="88" rx="8" fill="#e3f2fd" />
+      <!-- 8 盒牛奶：兩排各 4 盒，屋頂形紙盒 -->
+      <rect x="2" y="4" width="96" height="92" rx="8" fill="#e3f2fd" />
       <g v-for="(p, i) in milkSpots" :key="i">
+        <path
+          :d="`M${p.x - 10} ${p.y - 9} L${p.x - 5} ${p.y - 18} L${p.x + 5} ${p.y - 18} L${p.x + 10} ${p.y - 9} Z`"
+          fill="#bbdefb"
+          stroke="#1e88e5"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+        />
         <rect
-          :x="p.x - 7"
-          :y="p.y - 14"
-          width="14"
-          height="32"
-          rx="5"
+          :x="p.x - 10"
+          :y="p.y - 9"
+          width="20"
+          height="26"
+          rx="1.5"
           fill="#ffffff"
-          stroke="#64b5f6"
-          stroke-width="2"
+          stroke="#1e88e5"
+          stroke-width="1.5"
         />
-        <rect
-          :x="p.x - 4"
-          :y="p.y - 20"
-          width="8"
-          height="7"
-          rx="2"
-          fill="#1e88e5"
-        />
-        <rect :x="p.x - 7" :y="p.y" width="14" height="6" fill="#90caf9" />
+        <rect :x="p.x - 10" :y="p.y + 3" width="20" height="7" fill="#42a5f5" />
       </g>
     </template>
   </svg>
@@ -95,7 +95,7 @@ const LABELS = {
   cherries: "2 顆櫻桃",
   flower: "1 朵花有 5 片花瓣",
   clover: "1 株有 4 片葉子",
-  milk: "8 瓶牛奶",
+  milk: "8 盒牛奶",
 };
 
 export default {
@@ -108,8 +108,8 @@ export default {
       return LABELS[this.kind] || "一組圖案";
     },
     milkSpots() {
-      const xs = [17, 39, 61, 83];
-      return [30, 72].flatMap((y) => xs.map((x) => ({ x, y })));
+      const xs = [14, 38, 62, 86];
+      return [28, 72].flatMap((y) => xs.map((x) => ({ x, y })));
     },
   },
 };
