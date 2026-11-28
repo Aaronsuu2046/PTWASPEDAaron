@@ -390,10 +390,10 @@ export default {
     font-size: 2.2rem;
     font-weight: $font-bold;
     color: #ffffff;
-    background-color: #ff7043;
+    background-color: #1e88e5;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 4px 0 #d84315;
+    box-shadow: 0 4px 0 #1565c0;
     cursor: grab;
     touch-action: none;
     user-select: none;
@@ -452,7 +452,7 @@ export default {
     margin: 0.1rem;
     width: calc(var(--cell) - 0.2rem);
     height: calc(var(--cell) - 0.2rem);
-    color: #e65100;
+    color: #0d47a1; // 學生填的字用深藍色，不和紅色錯誤標示混淆
     background-color: #fff176;
     border: 3px solid #fbc02d;
     border-radius: 10px;

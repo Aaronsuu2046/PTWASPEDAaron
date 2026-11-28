@@ -84,7 +84,8 @@ import PlaceValueBoard from "./games/Decimal/PlaceValueBoard.vue";
 
 const TILES = [..."零一二三四五六七八九", "十", "點"];
 const DRAG_THRESHOLD = 8;
-const HINT_AFTER = 3; // 連續答錯幾次給一個提示字塊
+const HINT_AFTER = 3; // 連續答錯幾次給提示
+const PLACE_VALUE = ["點", "十"]; // 腳本藍字：讀法中的位值字
 
 function shuffle(list) {
   const result = [...list];
@@ -104,7 +105,7 @@ function toCells(text) {
 
 // 二位小數讀音拼圖：左邊定位板顯示小數，右邊依讀音字數排空格，用字塊依序填入
 // 字塊（零～九、十、點）可重複使用、每題洗牌；點字塊放進選取的格子（沒選就放第一個空格），也可拖曳
-// 連續答錯 3 次，在一個錯的位置放上不可移動的藍色提示字塊
+// 連續答錯 3 次，依腳本把讀法中的位值字（點、十）放上不可移動的藍色提示字塊
 // 題目 { number, reading }
 export default {
   name: "MA4075",
@@ -259,17 +260,26 @@ export default {
       if (this.misses >= HINT_AFTER) this.giveHint();
       this.$emit("play-effect", "WrongSound");
     },
-    // 在第一個錯的位置放上正確的藍色字塊，之後不能移動
+    // 依腳本：提示答案中的「位值」字（點、十），放上不可移動的藍色字塊（不是隨機挑一格）
     giveHint() {
-      const k = this.wrongSlots[0];
-      if (k === undefined) return;
-      const slots = [...this.slots];
-      slots[k] = this.gameData.reading[k];
-      this.slots = slots;
-      this.locked = [...this.locked, k];
-      this.wrongSlots = this.wrongSlots.filter((i) => i !== k);
+      const { reading } = this.gameData;
+      const keys = [...reading]
+        .map((ch, k) => (PLACE_VALUE.includes(ch) ? k : null))
+        .filter((k) => k !== null && !this.locked.includes(k));
       this.misses = 0;
-      this.feedback = "給你一個提示：藍色的字已經放好了！";
+      if (!keys.length) {
+        this.feedback = "位值的字（點、十）已經放好了，再聽一次讀音想想看！";
+        return;
+      }
+      const slots = [...this.slots];
+      keys.forEach((k) => {
+        slots[k] = reading[k];
+      });
+      this.slots = slots;
+      this.locked = [...this.locked, ...keys];
+      this.wrongSlots = this.wrongSlots.filter((i) => !keys.includes(i));
+      if (keys.includes(this.selected)) this.selected = null;
+      this.feedback = "給你一個提示：位值的字（藍色）已經放好了！";
     },
   },
 };
