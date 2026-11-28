@@ -1,7 +1,7 @@
 {
   "id": "MA2033",
   "GameType": "SelfDefine",
-  "TotalLevel": 4,
+  "TotalLevel": 5,
   "IntroText": {
     "Type": "PlainText",
     "Content": "用尺量量看，當個精準測量師！"
@@ -250,6 +250,44 @@
           "start": 1
         },
         "answer": 3
+      }
+    ],
+    [
+      {
+        "code": "5-1",
+        "question": "棒棒糖放在尺上，它長幾公分？",
+        "object": {
+          "name": "棒棒糖",
+          "shape": "lollipop",
+          "color": "#ff7043",
+          "length": 9,
+          "start": 2
+        },
+        "answer": 9
+      },
+      {
+        "code": "5-2",
+        "question": "彩虹筆放在尺上，它長幾公分？",
+        "object": {
+          "name": "彩虹筆",
+          "shape": "rainbow-pen",
+          "color": "#e53935",
+          "length": 11,
+          "start": 3
+        },
+        "answer": 11
+      },
+      {
+        "code": "5-3",
+        "question": "比讚貼紙放在尺上，它長幾公分？",
+        "object": {
+          "name": "比讚貼紙",
+          "shape": "thumb",
+          "color": "#ffee58",
+          "length": 4,
+          "start": 8
+        },
+        "answer": 4
       }
     ]
   ]

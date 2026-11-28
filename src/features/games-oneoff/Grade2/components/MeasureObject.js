@@ -288,6 +288,55 @@ const ObjectShape = {
             fill: "#0d47a1",
           }),
         ]);
+      // 彩虹筆：筆身是彩虹色的直條紋，左端筆蓋、右端筆尖（MA2033 第 5 關）
+      case "rainbow-pen": {
+        const COLORS = [
+          "#e53935",
+          "#fb8c00",
+          "#fdd835",
+          "#43a047",
+          "#1e88e5",
+          "#8e24aa",
+        ];
+        const body = w - 14;
+        const band = body / COLORS.length;
+        return h("g", [
+          ...COLORS.map((c, k) =>
+            h("rect", {
+              x: 1 + k * band,
+              y: 12,
+              width: band + 0.5,
+              height: 16,
+              fill: c,
+            })
+          ),
+          h("rect", {
+            x: 1,
+            y: 12,
+            width: body,
+            height: 16,
+            rx: 4,
+            fill: "none",
+            stroke: "#37474f",
+            "stroke-width": 2,
+          }),
+          h("polygon", {
+            points: `${body + 1},12 ${w - 1},20 ${body + 1},28`,
+            fill: "#ffe0b2",
+            stroke: "#37474f",
+            "stroke-width": 2,
+            "stroke-linejoin": "round",
+          }),
+          h("rect", {
+            x: 1,
+            y: 8,
+            width: w * 0.12,
+            height: 6,
+            rx: 3,
+            fill: "#37474f",
+          }),
+        ]);
+      }
       case "nail":
         return h("g", [
           h("rect", {

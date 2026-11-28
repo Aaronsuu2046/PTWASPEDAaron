@@ -18,7 +18,7 @@
           @pointerup="endDrag"
           @pointercancel="endDrag"
         >
-          <!-- 橫尺（關卡 1、2、4）：0～15 公分 -->
+          <!-- 橫尺（關卡 1、2、4、5）：0～15 公分 -->
           <template v-if="!vertical">
             <g
               :class="{ draggable: canDrag }"
